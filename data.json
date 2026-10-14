@@ -1,0 +1,239 @@
+{
+  "title": "Austin's Project Tracker",
+  "updated": "2026-10-14",
+  "categories": [
+    {
+      "id": "top-priority",
+      "name": "⭐ Top priority",
+      "projects": [
+        {
+          "id": "phd-application",
+          "name": "PhD application",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t1",
+              "text": "Finish PhD application",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        }
+      ],
+      "pinned": true
+    },
+    {
+      "id": "iphone-apps",
+      "name": "📱 iPhone apps",
+      "projects": [
+        {
+          "id": "lanesync-sprint-timing",
+          "name": "LaneSync (sprint timing)",
+          "status": "live on App Store, marketing phase",
+          "tasks": [
+            {
+              "id": "t2",
+              "text": "Make video ads",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t3",
+              "text": "Post on Instagram",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t4",
+              "text": "Message social media creators",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t5",
+              "text": "Post on Reddit",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "stridelab-sprint-form-analysis",
+          "name": "StrideLab (sprint form analysis)",
+          "status": "submitted, awaiting App Store review",
+          "tasks": [
+            {
+              "id": "t6",
+              "text": "Follow up with App Review if no response soon",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "trolley-tracker-miami-beach",
+          "name": "Trolley Tracker (Miami Beach)",
+          "status": "waiting on city legal for real-time location data",
+          "tasks": [
+            {
+              "id": "t7",
+              "text": "Follow up with Miami Beach legal (~Oct 21)",
+              "done": false,
+              "notes": "",
+              "due": "2026-10-21"
+            }
+          ]
+        },
+        {
+          "id": "chordflow-guitar-piano-bass-and-cuatrofl",
+          "name": "ChordFlow (guitar/piano/bass) and CuatroFlow (Puerto Rican cuatro)",
+          "status": "prototyping, low priority",
+          "tasks": [
+            {
+              "id": "t8",
+              "text": "Play with prototypes",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roblox-games",
+      "name": "🎮 Roblox games",
+      "projects": [
+        {
+          "id": "crash-mode",
+          "name": "Crash Mode",
+          "status": "best avg session time, optimizing playtime",
+          "tasks": [
+            {
+              "id": "t9",
+              "text": "Restart ad campaign to test new version",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t10",
+              "text": "Test new version myself (including on mobile)",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "flying-machines-paper-airplane-builder",
+          "name": "Flying Machines (paper-airplane builder)",
+          "status": "balancing",
+          "tasks": [
+            {
+              "id": "t11",
+              "text": "Playtest difficulty after latest fixes",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "plunder-seas-sea-of-thieves-style",
+          "name": "Plunder Seas (Sea of Thieves style)",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t12",
+              "text": "Playtest (myself or someone else)",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "zombie-raiders-arc-raiders-with-zombies",
+          "name": "Zombie Raiders (Arc Raiders with zombies)",
+          "status": "nearly complete",
+          "tasks": [
+            {
+              "id": "t13",
+              "text": "Playtest more",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t14",
+              "text": "Decide: publish as-is now vs wait for 3D assets from ChatGPT",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "name": "💼 Work",
+      "projects": [
+        {
+          "id": "raven-eval",
+          "name": "Raven eval",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t15",
+              "text": "Stress test the Raven eval",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "ambr-outreach",
+          "name": "AMBR outreach",
+          "status": "automated, keep an eye on it",
+          "tasks": []
+        }
+      ]
+    },
+    {
+      "id": "reading-book-club",
+      "name": "📚 Reading (book club)",
+      "projects": [
+        {
+          "id": "book-club",
+          "name": "Book club",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t16",
+              "text": "Plato reading (due Thu Oct 15)",
+              "done": false,
+              "notes": "",
+              "due": "2026-10-15"
+            },
+            {
+              "id": "t17",
+              "text": "Old Testament reading (due Thu Oct 15)",
+              "done": false,
+              "notes": "",
+              "due": "2026-10-15"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

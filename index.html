@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Tracker</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1 id="title">Project Tracker</h1>
+<div class="toolbar">
+<button id="voiceAdd" title="Add a task by voice">🎤 Add by voice</button>
+<label class="toggle"><input type="checkbox" id="showDone" checked> Show done</label>
+<label class="toggle"><input type="checkbox" id="onlyDone"> Done only</label>
+<button id="addProject">＋ Project</button>
+<button id="export">⬇ Export</button>
+<label class="btn">⬆ Import<input type="file" id="import" accept=".json,application/json" hidden></label>
+<button id="reset" class="danger">↺ Reset to latest from server</button>
+</div><div id="msg" role="status"></div></header>
+<main><section id="pinned"></section><div id="cats"></div></main>
+<script src="app.js"></script></body></html>
