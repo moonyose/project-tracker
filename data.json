@@ -36,14 +36,14 @@
               "id": "t2",
               "text": "Make video ads",
               "done": false,
-              "notes": "",
+              "notes": "Apple Ads account live with $100 promo credit as of Oct 12",
               "due": null
             },
             {
               "id": "t3",
               "text": "Post on Instagram",
               "done": false,
-              "notes": "",
+              "notes": "lanesyncapp Meta/Instagram account setup started Oct 13\u201314",
               "due": null
             },
             {
@@ -73,6 +73,13 @@
               "done": false,
               "notes": "",
               "due": null
+            },
+            {
+              "id": "t27",
+              "text": "Accept updated Apple Developer Program License Agreement",
+              "done": false,
+              "notes": "Needed for App Store Connect / certificates; emailed Oct 14",
+              "due": "2026-11-13"
             }
           ]
         },
