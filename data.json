@@ -4,7 +4,7 @@
   "categories": [
     {
       "id": "top-priority",
-      "name": "⭐ Top priority",
+      "name": "\u2b50 Top priority",
       "projects": [
         {
           "id": "phd-application",
@@ -25,7 +25,7 @@
     },
     {
       "id": "iphone-apps",
-      "name": "📱 iPhone apps",
+      "name": "\ud83d\udcf1 iPhone apps",
       "projects": [
         {
           "id": "lanesync-sprint-timing",
@@ -65,7 +65,7 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "submitted, awaiting App Store review",
+          "status": "Responded to Apple's Oct 8 \"changes needed\" feedback; awaiting App Review reply",
           "tasks": [
             {
               "id": "t6",
@@ -108,7 +108,7 @@
     },
     {
       "id": "roblox-games",
-      "name": "🎮 Roblox games",
+      "name": "\ud83c\udfae Roblox games",
       "projects": [
         {
           "id": "crash-mode",
@@ -184,7 +184,7 @@
     },
     {
       "id": "work",
-      "name": "💼 Work",
+      "name": "\ud83d\udcbc Work",
       "projects": [
         {
           "id": "raven-eval",
@@ -210,7 +210,7 @@
     },
     {
       "id": "reading-book-club",
-      "name": "📚 Reading (book club)",
+      "name": "\ud83d\udcda Reading (book club)",
       "projects": [
         {
           "id": "book-club",
@@ -237,7 +237,7 @@
     },
     {
       "id": "personal",
-      "name": "🏠 Personal",
+      "name": "\ud83c\udfe0 Personal",
       "projects": [
         {
           "id": "embroidered-sweaters",
