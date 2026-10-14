@@ -4,7 +4,7 @@
   "categories": [
     {
       "id": "top-priority",
-      "name": "\u2b50 Top priority",
+      "name": "⭐ Top priority",
       "projects": [
         {
           "id": "phd-application",
@@ -25,7 +25,7 @@
     },
     {
       "id": "iphone-apps",
-      "name": "\ud83d\udcf1 iPhone apps",
+      "name": "📱 iPhone apps",
       "projects": [
         {
           "id": "lanesync-sprint-timing",
@@ -43,7 +43,7 @@
               "id": "t3",
               "text": "Post on Instagram",
               "done": false,
-              "notes": "lanesyncapp Meta/Instagram account setup started Oct 13\u201314",
+              "notes": "lanesyncapp Meta/Instagram account setup started Oct 13–14",
               "due": null
             },
             {
@@ -115,7 +115,7 @@
     },
     {
       "id": "roblox-games",
-      "name": "\ud83c\udfae Roblox games",
+      "name": "🎮 Roblox games",
       "projects": [
         {
           "id": "crash-mode",
@@ -169,7 +169,7 @@
         {
           "id": "zombie-raiders-arc-raiders-with-zombies",
           "name": "Zombie Raiders (Arc Raiders with zombies)",
-          "status": "nearly complete",
+          "status": "decided to publish as-is and see how it does",
           "tasks": [
             {
               "id": "t13",
@@ -181,8 +181,8 @@
             {
               "id": "t14",
               "text": "Decide: publish as-is now vs wait for 3D assets from ChatGPT",
-              "done": false,
-              "notes": "",
+              "done": true,
+              "notes": "Decided to publish as-is and see how it does (Oct 14).",
               "due": null
             }
           ]
@@ -191,7 +191,7 @@
     },
     {
       "id": "work",
-      "name": "\ud83d\udcbc Work",
+      "name": "💼 Work",
       "projects": [
         {
           "id": "raven-eval",
@@ -217,7 +217,7 @@
     },
     {
       "id": "reading-book-club",
-      "name": "\ud83d\udcda Reading (book club)",
+      "name": "📚 Reading (book club)",
       "projects": [
         {
           "id": "book-club",
@@ -244,18 +244,18 @@
     },
     {
       "id": "personal",
-      "name": "\ud83c\udfe0 Personal",
+      "name": "🏠 Personal",
       "projects": [
         {
           "id": "embroidered-sweaters",
           "name": "Embroidered sweaters (for wife's law firm)",
-          "status": "",
+          "status": "handled",
           "tasks": [
             {
               "id": "t18",
               "text": "Get sweaters embroidered",
-              "done": false,
-              "notes": "",
+              "done": true,
+              "notes": "Austin said he has this set (Oct 14).",
               "due": null
             }
           ]
@@ -269,7 +269,7 @@
               "id": "t19",
               "text": "Help recruit a new immigration attorney",
               "done": false,
-              "notes": "",
+              "notes": "Shortlist of 10 Miami/South Florida recruitable immigration associates saved at /workspace/todo/immigration-attorney-shortlist.md (bios WebFetch-verified). Prefer Spanish-speaking; mix of boutiques + Fragomen.",
               "due": null
             }
           ]
@@ -294,17 +294,31 @@
           "status": "",
           "tasks": [
             {
+              "id": "t28",
+              "text": "Gather Mercury docs (Articles, EIN letter, owner IDs, address)",
+              "done": false,
+              "notes": "Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc — CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0–2 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "due": null
+            },
+            {
               "id": "t21",
               "text": "Open Mercury bank account",
               "done": false,
-              "notes": "",
+              "notes": "Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc — CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0–2 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
               "due": null
             },
             {
               "id": "t22",
               "text": "Fund it with $500",
               "done": false,
-              "notes": "",
+              "notes": "After Mercury account is approved: fund Collins Park Enterprises Mercury account with $500 (ACH from personal/other bank, wire, or Mercury deposit methods). Confirm $500 posts before relying on the account.",
+              "due": null
+            },
+            {
+              "id": "t29",
+              "text": "Apply at mercury.com for Collins Park Enterprises LLC",
+              "done": false,
+              "notes": "Submit after docs ready. Typical review 0–2 business days. Optional Plaid link to expedite.",
               "due": null
             }
           ]
@@ -315,31 +329,52 @@
           "status": "",
           "tasks": [
             {
+              "id": "t30",
+              "text": "Gather Mercury docs (Articles, EIN letter, owner IDs, address)",
+              "done": false,
+              "notes": "Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc — CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0–2 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "due": null
+            },
+            {
+              "id": "t31",
+              "text": "Apply at mercury.com for Jonathan Edwards Homes LLC",
+              "done": false,
+              "notes": "Submit after docs ready. Typical review 0–2 business days. Optional Plaid link to Chase to expedite.",
+              "due": null
+            },
+            {
               "id": "t23",
               "text": "Open Mercury bank account",
               "done": false,
-              "notes": "",
+              "notes": "Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc — CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0–2 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
               "due": null
             },
             {
               "id": "t24",
               "text": "Move money from Chase to Mercury",
               "done": false,
-              "notes": "",
+              "notes": "After Jonathan Edwards Mercury account is open: transfer balance from Chase business account to Mercury (ACH via linked accounts/Plaid, or outbound wire from Chase using Mercury routing/account). Keep Chase open until funds fully clear and post on Mercury.",
               "due": null
             },
             {
               "id": "t25",
               "text": "Close Chase account",
               "done": false,
-              "notes": "Only after transfer clears",
+              "notes": "Only after Chase→Mercury transfer has fully cleared and balance is confirmed in Mercury. Then close the Chase account; do not close early.",
               "due": null
             },
             {
               "id": "t26",
               "text": "Tell Emma to deposit checks into the Mercury account",
               "done": false,
-              "notes": "",
+              "notes": "Draft note to Emma: \"Hi Emma — we've opened (or are opening) a Mercury business account for Jonathan Edwards Homes LLC. Going forward, please deposit all checks into the Mercury account instead of Chase. I'll text/email the Mercury routing and account numbers as soon as they're live. Thanks! — Austin\"",
+              "due": null
+            },
+            {
+              "id": "t32",
+              "text": "Confirm Chase→Mercury transfer cleared before closing Chase",
+              "done": false,
+              "notes": "Verify Mercury balance; wait for ACH hold if any; then proceed to close Chase (t25).",
               "due": null
             }
           ]
