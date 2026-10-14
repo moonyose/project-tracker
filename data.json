@@ -43,7 +43,7 @@
               "id": "t3",
               "text": "Post on Instagram",
               "done": false,
-              "notes": "lanesyncapp Meta/Instagram setup Oct 13\u201314; Meta for Developers account registered Oct 14 (welcome email to amunoz919)",
+              "notes": "lanesyncapp Meta/Instagram setup Oct 13\u201314; Meta for Developers account registered Oct 14 (welcome email to amunoz919); Meta app 'LaneSync' switched to live mode Oct 14",
               "due": null
             },
             {
@@ -56,8 +56,8 @@
             {
               "id": "t5",
               "text": "Post on Reddit",
-              "done": false,
-              "notes": "",
+              "done": true,
+              "notes": "Posted r/Sprinting as u/Current-Special on 2026-10-14 ~13:58 ET; title offered free month. AutoMod only as of wake check.",
               "due": null
             }
           ]
@@ -291,13 +291,13 @@
         {
           "id": "collins-park-enterprises-llc",
           "name": "Collins Park Enterprises LLC",
-          "status": "",
+          "status": "LLC officially approved by FL (Oct 14); formation docs + operating agreement ready in Northwest account",
           "tasks": [
             {
               "id": "t28",
               "text": "Gather Mercury docs (Articles, EIN letter, owner IDs, address)",
               "done": false,
-              "notes": "Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "notes": "Oct 14, 2026: Northwest Registered Agent says the state approved Collins Park Enterprises LLC; formation documents (Articles) and an Operating Agreement template are in the Northwest account (emails to austin.a.munoz@gmail.com). Next: download Articles, complete/sign Operating Agreement, get EIN (IRS online, free), then apply. Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
               "due": null
             },
             {
