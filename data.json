@@ -234,6 +234,110 @@
           ]
         }
       ]
+    },
+    {
+      "id": "personal",
+      "name": "🏠 Personal",
+      "projects": [
+        {
+          "id": "embroidered-sweaters",
+          "name": "Embroidered sweaters (for wife's law firm)",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t18",
+              "text": "Get sweaters embroidered",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "recruit-immigration-attorney",
+          "name": "Recruit immigration attorney (for wife's firm)",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t19",
+              "text": "Help recruit a new immigration attorney",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "dentist",
+          "name": "Dentist",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t20",
+              "text": "Dentist appointment Sat Oct 17, 11:45 AM",
+              "done": false,
+              "notes": "",
+              "due": "2026-10-17"
+            }
+          ]
+        },
+        {
+          "id": "collins-park-enterprises-llc",
+          "name": "Collins Park Enterprises LLC",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t21",
+              "text": "Open Mercury bank account",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t22",
+              "text": "Fund it with $500",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        },
+        {
+          "id": "jonathan-edwards-homes-llc",
+          "name": "Jonathan Edwards Homes LLC",
+          "status": "",
+          "tasks": [
+            {
+              "id": "t23",
+              "text": "Open Mercury bank account",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t24",
+              "text": "Move money from Chase to Mercury",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t25",
+              "text": "Close Chase account",
+              "done": false,
+              "notes": "Only after transfer clears",
+              "due": null
+            },
+            {
+              "id": "t26",
+              "text": "Tell Emma to deposit checks into the Mercury account",
+              "done": false,
+              "notes": "",
+              "due": null
+            }
+          ]
+        }
+      ]
     }
   ]
 }
