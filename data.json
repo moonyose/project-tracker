@@ -135,6 +135,13 @@
               "done": false,
               "notes": "",
               "due": null
+            },
+            {
+              "id": "t33",
+              "text": "Fix steering sensitivity",
+              "done": false,
+              "notes": "",
+              "due": null
             }
           ]
         },
@@ -146,6 +153,13 @@
             {
               "id": "t11",
               "text": "Playtest difficulty after latest fixes",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t34",
+              "text": "Adjust wind balance (wind is making flying too hard)",
               "done": false,
               "notes": "",
               "due": null
