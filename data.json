@@ -227,14 +227,14 @@
             {
               "id": "t16",
               "text": "Plato reading (Menexenus) \u2014 Thu class canceled",
-              "done": false,
+              "done": true,
               "notes": "Oct 15 ~10:12 AM ET: Tim O'Leary (rector@allsoulsmb.org) canceled Thursday 12:30 Menexenus class (cold). Sunday morning class still on. Classmate asked whether to pick up Menexenus next week or move on to 3rd session.",
               "due": null
             },
             {
               "id": "t17",
               "text": "Old Testament / bible study \u2014 tonight canceled; catch up next week",
-              "done": false,
+              "done": true,
               "notes": "Oct 15 ~10:16 AM ET: Tim canceled bible study tonight (cold). Planned reading was Noach (Genesis 6\u201311:32); next week cover Noach + Lech Lecha (Genesis 12:1\u201317:27).",
               "due": null
             }
