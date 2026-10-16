@@ -305,34 +305,34 @@
         {
           "id": "collins-park-enterprises-llc",
           "name": "Collins Park Enterprises LLC",
-          "status": "LLC officially approved by FL (Oct 14); formation docs + Operating Agreement + Initial Resolution in Northwest account",
+          "status": "Mercury account APPROVED Oct 16 (~12:41 PM ET); Operating Agreement signed via Dropbox Sign Oct 16; $1,000 initial transfer from Ally in transit",
           "tasks": [
             {
               "id": "t28",
               "text": "Gather Mercury docs (Articles, EIN letter, owner IDs, address)",
-              "done": false,
-              "notes": "Oct 14 ~3:41 PM ET: Northwest uploaded Initial Resolution for Collins Park Enterprises LLC (email to austin.a.munoz@gmail.com) \u2014 download with Articles. Oct 14, 2026: Northwest Registered Agent says the state approved Collins Park Enterprises LLC; formation documents (Articles) and an Operating Agreement template are in the Northwest account (emails to austin.a.munoz@gmail.com). Next: download Articles, complete/sign Operating Agreement, get EIN (IRS online, free), then apply. Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "done": true,
+              "notes": "Done Oct 16: Articles of Organization and EIN letter emailed to austin.a.munoz@gmail.com + collinsparkenterprises.com (~12:04\u201312:08 PM ET); Operating Agreement signed via Dropbox Sign (~12:25 PM ET), signed copy emailed ~12:27 PM ET. Oct 14 ~3:41 PM ET: Northwest uploaded Initial Resolution for Collins Park Enterprises LLC (email to austin.a.munoz@gmail.com) \u2014 download with Articles. Oct 14, 2026: Northwest Registered Agent says the state approved Collins Park Enterprises LLC; formation documents (Articles) and an Operating Agreement template are in the Northwest account (emails to austin.a.munoz@gmail.com). Next: download Articles, complete/sign Operating Agreement, get EIN (IRS online, free), then apply. Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
               "due": null
             },
             {
               "id": "t21",
               "text": "Open Mercury bank account",
-              "done": false,
-              "notes": "Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "done": true,
+              "notes": "Done Oct 16: 'Welcome to Mercury, Collins Park Enterprises' approval ~12:41 PM ET; passkey added ~12:30 PM ET; checking \u2022\u20224738. Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
               "due": null
             },
             {
               "id": "t22",
               "text": "Fund it with $500",
               "done": false,
-              "notes": "After Mercury account is approved: fund Collins Park Enterprises Mercury account with $500 (ACH from personal/other bank, wire, or Mercury deposit methods). Confirm $500 posts before relying on the account.",
+              "notes": "Oct 16 ~12:49 PM ET: Mercury confirms $1,000 transfer from Ally Checking \u2022\u20226931 on its way to Collins Park Mercury checking \u2022\u20224738 (more than the $500 target). Confirm it posts (ACH typically 1\u20133 business days) before relying on the account. After Mercury account is approved: fund Collins Park Enterprises Mercury account with $500 (ACH from personal/other bank, wire, or Mercury deposit methods). Confirm $500 posts before relying on the account.",
               "due": null
             },
             {
               "id": "t29",
               "text": "Apply at mercury.com for Collins Park Enterprises LLC",
-              "done": false,
-              "notes": "Submit after docs ready. Typical review 0\u20132 business days. Optional Plaid link to expedite.",
+              "done": true,
+              "notes": "Done Oct 16: applied ~12:30 PM ET (email verified, Ally linked via Plaid to expedite). Submit after docs ready. Typical review 0\u20132 business days. Optional Plaid link to expedite.",
               "due": null
             }
           ]
