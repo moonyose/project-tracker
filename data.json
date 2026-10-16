@@ -72,13 +72,13 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "Responded to Apple's Oct 8 \"changes needed\" feedback; awaiting App Review reply",
+          "status": "live on App Store; accepted Oct 16 (~7 PM ET)",
           "tasks": [
             {
               "id": "t6",
               "text": "Follow up with App Review if no response soon",
-              "done": false,
-              "notes": "",
+              "done": true,
+              "notes": "Closed Oct 16 ~7 PM ET — StrideLab accepted into the App Store; no further App Review follow-up needed.",
               "due": null
             },
             {
