@@ -30,7 +30,7 @@
         {
           "id": "lanesync-sprint-timing",
           "name": "LaneSync (sprint timing)",
-          "status": "live on App Store, marketing phase; v1.0.1 (builds 11 and 12) in TestFlight Oct 15",
+          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16 (~1:37 PM ET, eligible for distribution; release it in App Store Connect if set to manual)",
           "tasks": [
             {
               "id": "t2",
