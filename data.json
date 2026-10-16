@@ -1,6 +1,6 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "categories": [
     {
       "id": "top-priority",
@@ -340,34 +340,34 @@
         {
           "id": "jonathan-edwards-homes-llc",
           "name": "Jonathan Edwards Homes LLC",
-          "status": "",
+          "status": "Mercury APPROVED Oct 16 (~2:30 PM ET, checking \u2022\u20224171, savings \u2022\u20222915)",
           "tasks": [
             {
               "id": "t30",
-              "text": "Gather Mercury docs (Articles, EIN letter, owner IDs, address)",
-              "done": false,
-              "notes": "Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "text": "Gather Mercury docs (Articles, EIN CP575, and the 2025 Smart Investments income statement)",
+              "done": true,
+              "notes": "Done Oct 16: gathered Articles, EIN CP575, and the 2025 Smart Investments income statement (plus owner IDs / physical address as needed for Mercury).",
               "due": null
             },
             {
               "id": "t31",
               "text": "Apply at mercury.com for Jonathan Edwards Homes LLC",
-              "done": false,
-              "notes": "Submit after docs ready. Typical review 0\u20132 business days. Optional Plaid link to Chase to expedite.",
+              "done": true,
+              "notes": "Done Oct 16: submitted at mercury.com ~2:30 PM ET.",
               "due": null
             },
             {
               "id": "t23",
               "text": "Open Mercury bank account",
-              "done": false,
-              "notes": "Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "done": true,
+              "notes": "Done Oct 16: Mercury APPROVED ~2:30 PM ET; checking \u2022\u20224171, savings \u2022\u20222915.",
               "due": null
             },
             {
               "id": "t24",
               "text": "Move money from Chase to Mercury",
               "done": false,
-              "notes": "After Jonathan Edwards Mercury account is open: transfer balance from Chase business account to Mercury (ACH via linked accounts/Plaid, or outbound wire from Chase using Mercury routing/account). Keep Chase open until funds fully clear and post on Mercury.",
+              "notes": "Chase \u2022\u20229371 linked via Plaid; $2,499 ACH pull submitted Oct 16 ~2:45 PM ET, arriving Oct 19\u201320 (first pull capped under $2,500). Move the rest after Emma confirms; keep the Chase minimum balance until then.",
               "due": null
             },
             {
@@ -381,7 +381,7 @@
               "id": "t26",
               "text": "Tell Emma to deposit checks into the Mercury account",
               "done": false,
-              "notes": "Draft note to Emma: \"Hi Emma \u2014 we've opened (or are opening) a Mercury business account for Jonathan Edwards Homes LLC. Going forward, please deposit all checks into the Mercury account instead of Chase. I'll text/email the Mercury routing and account numbers as soon as they're live. Thanks! \u2014 Austin\"",
+              "notes": "Austin texted Emma the new routing/account details Oct 16 ~2:55 PM ET; waiting for her confirmation.",
               "due": null
             },
             {
