@@ -115,6 +115,13 @@
               "done": false,
               "notes": "",
               "due": null
+            },
+            {
+              "id": "t40",
+              "text": "Changing a clip's type (e.g. stride to start) must trigger a full re-analysis and re-segmentation, with a visible re-analysis step. Bug: switching stride to start currently just relabels it. It doesn't detect the set position or launch, still shows stride/drive phases, and only adds start tips.",
+              "done": false,
+              "notes": "",
+              "due": null
             }
           ]
         },
