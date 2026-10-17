@@ -1,6 +1,6 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "categories": [
     {
       "id": "top-priority",
@@ -78,7 +78,7 @@
               "id": "t6",
               "text": "Follow up with App Review if no response soon",
               "done": true,
-              "notes": "Closed Oct 16 ~7 PM ET — StrideLab accepted into the App Store; no further App Review follow-up needed.",
+              "notes": "Closed Oct 16 ~7 PM ET \u2014 StrideLab accepted into the App Store; no further App Review follow-up needed.",
               "due": null
             },
             {
@@ -86,6 +86,34 @@
               "text": "Accept updated Apple Developer Program License Agreement",
               "done": true,
               "notes": "Signed Oct 14, 2026 \u2014 Apple confirmation to amunoz919; Team AUSTIN ANDRES MUNOZ (N8RA297MHC)",
+              "due": null
+            },
+            {
+              "id": "t36",
+              "text": "When a clip is uploaded or recorded, explicitly ask the user whether it's a start, a stride/mid-run clip, or a curve. Auto-detection can be used as a hint, but always ask.",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t37",
+              "text": "Share a full report: export the entire scrollable results screen, not just the current Instagram-story image.",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t38",
+              "text": "When exporting or sharing the skeleton-overlay video, include the tips, or offer the option to export with or without tips.",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t39",
+              "text": "Detect a 3-point vs 4-point start, or let the user specify which. If it looks like a 3-point start, show a caveat that the analysis is designed for 4-point starts.",
+              "done": false,
+              "notes": "",
               "due": null
             }
           ]
