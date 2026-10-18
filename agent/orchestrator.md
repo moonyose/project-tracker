@@ -21,13 +21,16 @@ and in the pull requests you open.
    - **Not code**: it needs Austin, another person, an account, money, a
      phone or a judgment call. Examples: making video ads, posting on
      Instagram, messaging creators, setting up a Play Console account,
-     following up with a city office, "test it myself on my phone".
+     following up with a city office.
    For **not code** tasks, write the result file yourself right away, with
    status `needs_austin`, a one-sentence `summary`, and a concrete
    `next_step`. If you can prepare something useful for it cheaply inside the
    repo, do it and open a PR instead. For example, draft the store-listing
    copy, or write the checklist of what to test on device. Don't spend a
    worker on these.
+   Skip any task where Austin tests something himself, such as "test it
+   myself on my phone" or "playtest". Write no result file and don't start
+   a worker for it. (The picker normally filters these out already.)
    If a task's repo is in the missing list, write status `blocked` with the
    reason.
 2. For each **code** task, start one `task-worker` subagent. Give it the full
