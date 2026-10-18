@@ -13,9 +13,19 @@ import datetime as dt
 import hashlib
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# Tasks that are Austin testing something himself ("Test new version myself",
+# "Playtest more", ...) are his to do, not Claude's. Skip them without spending anything.
+SELF_TEST = re.compile(r"\bmyself\b|^\s*(play[- ]?test|test|try)\b", re.I)
+
+
+def is_self_test(t):
+    return bool(SELF_TEST.search(t.get("text") or ""))
 
 
 def task_hash(t):
@@ -53,7 +63,7 @@ def main():
                 if not pc or not pc.get("enabled") or not pc.get("repos"):
                     continue
                 for t in p["tasks"]:
-                    if t.get("done"):
+                    if t.get("done") or is_self_test(t):
                         continue
                     h = task_hash(t)
                     a = t.get("agent") or {}
