@@ -1,4 +1,13 @@
 {
- "spent_usd": 0,
- "runs": []
+ "spent_usd": 0.4426,
+ "runs": [
+  {
+   "at": "2026-10-18T13:14+00:00",
+   "cost_usd": 0.4426,
+   "turns": 5,
+   "session": "4c4e5131-af0f-47f2-8ea0-e89dda46f6d5",
+   "tasks": 6,
+   "run_id": "39130553777"
+  }
+ ]
 }

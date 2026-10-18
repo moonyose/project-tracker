@@ -38,7 +38,15 @@
               "text": "Make video ads",
               "done": false,
               "notes": "Apple Ads account live with $100 promo credit as of Oct 12. Meta Ads: 3 LaneSync ads approved Oct 14 ~4:57 PM ET (email to amunoz919) \u2014 Full workout Reel, 30s finishes, 15s finish \u2014 scheduled/running. Oct 15: App Store Connect API access approved (~11:58 AM ET; generate keys in Users and Access); Apple Ads invites sent to amunoz919+ads@gmail.com and austin.munoz@collinsparkenterprises.com (~12:02\u201312:10 PM ET) for API/user access setup. Meta Marketing API onboarding email for app 'Product Marketing Tracker' (South Beach Skate Company business) ~1:48 PM ET Oct 15.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "needs_austin",
+                "summary": "Making video ads means filming, editing and choosing creative, so it isn't a code change and nothing was done in the LaneSync repo.",
+                "hash": "69327fab7475",
+                "at": "2026-10-18T13:14+00:00",
+                "verified": "Not a code task; no worker started.",
+                "next_step": "Check how the 3 Meta ads running since Oct 14 are doing (CTR and installs), then cut 1\u20132 new variants of whichever one is winning, plus a vertical cut for Apple Ads."
+              }
             },
             {
               "id": "t3",
@@ -97,35 +105,75 @@
               "text": "When a clip is uploaded or recorded, explicitly ask the user whether it's a start, a stride/mid-run clip, or a curve. Auto-detection can be used as a hint, but always ask.",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "blocked",
+                "summary": "Not attempted: the worker for this task was denied shell (Bash) access on the runner, so it could not create a branch, build, run Tools/verify.sh, or open a PR. No code was changed.",
+                "hash": "21435aa45618",
+                "at": "2026-10-18T13:14+00:00",
+                "verified": "Nothing verified. Every Bash call (including a plain git fetch) was refused with 'running in don't ask mode'.",
+                "next_step": "Allow Bash for task-worker agents in the scheduled run's permission settings, then re-queue t36 together with t40 (both touch clip-type selection and the analysis flow)."
+              }
             },
             {
               "id": "t37",
               "text": "Share a full report: export the entire scrollable results screen, not just the current Instagram-story image.",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "blocked",
+                "summary": "Not attempted. The worker was denied shell access on the runner: every git command (fetch, status) was refused with 'running in don't ask mode'. Only a plain ls got through. Without git and xcodebuild it could not create the worktree or branch, build, run Tools/verify.sh, push, or open a PR. No code was changed. This task was paired with t38 on one branch (claude/t37-t38-share-export).",
+                "hash": "8c0841c07654",
+                "at": "2026-10-18T13:14+00:00",
+                "verified": "Nothing verified. git and build commands were refused by the permission system.",
+                "next_step": "Allow Bash (git, xcodebuild, gh, Tools/*.sh) for task-worker agents in the scheduled run's permission settings, then re-queue t37 together with t38 (both touch sharing and export of results)."
+              }
             },
             {
               "id": "t38",
               "text": "When exporting or sharing the skeleton-overlay video, include the tips, or offer the option to export with or without tips.",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "blocked",
+                "summary": "Not attempted. The worker was denied shell access on the runner: every git command (fetch, status) was refused with 'running in don't ask mode'. Only a plain ls got through. Without git and xcodebuild it could not create the worktree or branch, build, run Tools/verify.sh, push, or open a PR. No code was changed. This task was paired with t37 on one branch (claude/t37-t38-share-export).",
+                "hash": "272ce0da14a0",
+                "at": "2026-10-18T13:14+00:00",
+                "verified": "Nothing verified. git and build commands were refused by the permission system.",
+                "next_step": "Allow Bash (git, xcodebuild, gh, Tools/*.sh) for task-worker agents in the scheduled run's permission settings, then re-queue t38 together with t37 (both touch sharing and export of results)."
+              }
             },
             {
               "id": "t39",
               "text": "Detect a 3-point vs 4-point start, or let the user specify which. If it looks like a 3-point start, show a caveat that the analysis is designed for 4-point starts.",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "blocked",
+                "summary": "Not started: this run wasn't allowed to run shell commands (git, xcodebuild, gh), so no worker could branch, build or open a PR for StrideLab.",
+                "hash": "8413d7413427",
+                "at": "2026-10-18T13:14+00:00",
+                "verified": "Nothing run. The orchestrator and the first worker both had every shell command denied ('don't ask' permission mode).",
+                "next_step": "Allow Bash in the scheduled run's Claude Code permission settings (e.g. permissions.allow or a non-'dontAsk' mode in the workflow), then re-queue t39."
+              }
             },
             {
               "id": "t40",
               "text": "Changing a clip's type (e.g. stride to start) must trigger a full re-analysis and re-segmentation, with a visible re-analysis step. Bug: switching stride to start currently just relabels it. It doesn't detect the set position or launch, still shows stride/drive phases, and only adds start tips.",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "blocked",
+                "summary": "Not attempted: the worker for this task was denied shell (Bash) access on the runner, so it could not create a branch, build, run Tools/verify.sh, or open a PR. No code was changed.",
+                "hash": "f1420c7157ba",
+                "at": "2026-10-18T13:14+00:00",
+                "verified": "Nothing verified. Every Bash call (including a plain git fetch) was refused with 'running in don't ask mode'.",
+                "next_step": "Allow Bash for task-worker agents in the scheduled run's permission settings, then re-queue t40 (together with t36, same branch claude/t40-t36-clip-type-reanalysis)."
+              }
             }
           ]
         },
