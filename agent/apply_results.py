@@ -18,7 +18,7 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATUSES = {"pr_opened", "needs_austin", "blocked", "failed", "done_no_change"}
+STATUSES = {"pr_opened", "needs_austin", "blocked", "failed", "done_no_change", "skipped_not_code"}
 
 
 def main(queue_path, results_dir, claude_out=None):

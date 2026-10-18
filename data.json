@@ -40,12 +40,10 @@
               "notes": "Apple Ads account live with $100 promo credit as of Oct 12. Meta Ads: 3 LaneSync ads approved Oct 14 ~4:57 PM ET (email to amunoz919) \u2014 Full workout Reel, 30s finishes, 15s finish \u2014 scheduled/running. Oct 15: App Store Connect API access approved (~11:58 AM ET; generate keys in Users and Access); Apple Ads invites sent to amunoz919+ads@gmail.com and austin.munoz@collinsparkenterprises.com (~12:02\u201312:10 PM ET) for API/user access setup. Meta Marketing API onboarding email for app 'Product Marketing Tracker' (South Beach Skate Company business) ~1:48 PM ET Oct 15.",
               "due": null,
               "agent": {
-                "status": "needs_austin",
-                "summary": "Making video ads means filming, editing and choosing creative, so it isn't a code change and nothing was done in the LaneSync repo.",
+                "status": "skipped_not_code",
+                "summary": "Not a coding task; the bot skips these.",
                 "hash": "69327fab7475",
-                "at": "2026-10-18T13:14+00:00",
-                "verified": "Not a code task; no worker started.",
-                "next_step": "Check how the 3 Meta ads running since Oct 14 are doing (CTR and installs), then cut 1\u20132 new variants of whichever one is winning, plus a vertical cut for Apple Ads."
+                "at": "2026-10-18T13:14+00:00"
               }
             },
             {
@@ -55,12 +53,10 @@
               "notes": "lanesyncapp Meta/Instagram setup Oct 13\u201314; Meta for Developers account registered Oct 14 (welcome email to amunoz919); Meta app 'LaneSync' switched to live mode Oct 14",
               "due": null,
               "agent": {
-                "status": "needs_austin",
-                "summary": "Posting on Instagram needs you logged into the lanesyncapp account and choosing what to post, so the scheduled run can't do it.",
+                "status": "skipped_not_code",
+                "summary": "Not a coding task; the bot skips these.",
                 "hash": "ff9a08bab177",
-                "at": "2026-10-18T13:33+00:00",
-                "verified": "Not a code task; nothing run.",
-                "next_step": "Open Instagram as @lanesyncapp and post a short clip of LaneSync timing a sprint, with an App Store link in the bio. v1.0.1 has passed review, so release it in App Store Connect first if it's set to manual release."
+                "at": "2026-10-18T13:33+00:00"
               }
             },
             {

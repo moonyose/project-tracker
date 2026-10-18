@@ -14,31 +14,33 @@ and in the pull requests you open.
 
 ## What to do
 
-1. Read the queue. For each task, decide which kind it is:
+1. Read the queue. **This bot only does coding work:** improvements and
+   fixes to Austin's apps and Roblox games, made in their repos. For each
+   task, decide whether it is one:
    - **Code**: a change that can be made and checked inside one of the
-     task's repos (a bug fix, a feature, a UI change, a test, a refactor,
-     store-listing text that lives in the repo).
-   - **Not code**: it needs Austin, another person, an account, money, a
-     phone or a judgment call. Examples: making video ads, posting on
-     Instagram, messaging creators, setting up a Play Console account,
-     following up with a city office, "test it myself on my phone".
-   For **not code** tasks, write the result file yourself right away, with
-   status `needs_austin`, a one-sentence `summary`, and a concrete
-   `next_step`. If you can prepare something useful for it cheaply inside the
-   repo, do it and open a PR instead. For example, draft the store-listing
-   copy, or write the checklist of what to test on device. Don't spend a
-   worker on these.
+     task's repos, such as a bug fix, a feature, a UI change, a test or a
+     refactor.
+   - **Anything else**: skip it. That covers social media, ads, marketing,
+     outreach, store listings, accounts and payments, anything Austin tests
+     himself, and anything needing a person or a judgment call. Don't do any
+     work on it and don't start a worker. Write a result file with status
+     `skipped_not_code` and a few words of `summary`, so it isn't queued
+     again. Austin doesn't see these.
    If a task's repo is in the missing list, write status `blocked` with the
    reason.
 2. For each **code** task, start one `task-worker` subagent. Give it the full
    task object from the queue (task_id, text, notes, repos, verify,
-   project_notes, previous_attempt) and the paths above. Run at most
-   {{PARALLEL}} workers at a time. Tasks in the same repo may run in
-   parallel because each worker uses its own git worktree and branch.
-   Two tasks that would edit the same code and would conflict go to one
-   worker, which handles them on one branch with one PR. That worker writes
-   a result file for each task.
-3. When all workers have finished, check that every task in the queue has a
+   project_notes, previous_attempt) and the paths above.
+   **Run workers in the foreground and wait for them.** To run several at
+   once, put up to {{PARALLEL}} `Agent` tool calls in one message. Never set
+   `run_in_background`. This run ends the moment you stop, and any worker
+   still running is killed with its work lost. When a batch returns, start
+   the next batch, until every code task has had a worker.
+   Tasks in the same repo may run in parallel because each worker uses its
+   own git worktree and branch. Two tasks that would edit the same code and
+   would conflict go to one worker, which handles them on one branch with
+   one PR. That worker writes a result file for each task.
+3. Only after every worker has returned, check that every task in the queue has a
    result file. Write any missing one with status `failed` and what you
    know. Then stop.
 
@@ -62,7 +64,7 @@ and in the pull requests you open.
 ```json
 {
   "task_id": "t31",
-  "status": "pr_opened | needs_austin | blocked | failed | done_no_change",
+  "status": "pr_opened | needs_austin | blocked | failed | done_no_change | skipped_not_code",
   "summary": "One or two plain sentences Austin will read on his to-do list.",
   "pr_url": "https://github.com/moonyose/StrideLab/pull/12",
   "verified": "What you actually ran and what passed, e.g. 'xcodebuild build OK (iPhone 17 sim), Tools/verify.sh 0 failures; bend not available on runner'",
