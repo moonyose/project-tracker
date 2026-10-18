@@ -21,7 +21,22 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Tasks that are Austin testing something himself ("Test new version myself",
 # "Playtest more", ...) are his to do, not Claude's. Skip them without spending anything.
-SELF_TEST = re.compile(r"\bmyself\b|^\s*(play[- ]?test|test|try)\b", re.I)
+SELF_TEST = re.compile(r"\bmyself\b|^\s*(play[- ]?test|test|try|play with)\b", re.I)
+
+
+# The bot only does coding work (app and Roblox game improvements). Social media,
+# ads, marketing, outreach and account/admin tasks are skipped outright.
+NOT_CODE = re.compile(
+    r"^\s*(post|make (\w+ )?(video )?ads?|run ads|restart (the )?ad|message|email|text|call|reply|dm|"
+    r"follow up|reach out|set up .*\baccount|pay|fund|move money|close .*\baccount|tell |ask |"
+    r"schedule|book |recruit|read )\b"
+    r"|instagram post|social media|ad campaign|marketing|influencer|outreach",
+    re.I,
+)
+
+
+def is_not_code(t):
+    return bool(NOT_CODE.search(t.get("text") or ""))
 
 
 def is_self_test(t):
@@ -63,7 +78,7 @@ def main():
                 if not pc or not pc.get("enabled") or not pc.get("repos"):
                     continue
                 for t in p["tasks"]:
-                    if t.get("done") or is_self_test(t):
+                    if t.get("done") or is_self_test(t) or is_not_code(t):
                         continue
                     h = task_hash(t)
                     a = t.get("agent") or {}

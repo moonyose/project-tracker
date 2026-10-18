@@ -14,23 +14,18 @@ and in the pull requests you open.
 
 ## What to do
 
-1. Read the queue. For each task, decide which kind it is:
+1. Read the queue. **This bot only does coding work:** improvements and
+   fixes to Austin's apps and Roblox games, made in their repos. For each
+   task, decide whether it is one:
    - **Code**: a change that can be made and checked inside one of the
-     task's repos (a bug fix, a feature, a UI change, a test, a refactor,
-     store-listing text that lives in the repo).
-   - **Not code**: it needs Austin, another person, an account, money, a
-     phone or a judgment call. Examples: making video ads, posting on
-     Instagram, messaging creators, setting up a Play Console account,
-     following up with a city office.
-   For **not code** tasks, write the result file yourself right away, with
-   status `needs_austin`, a one-sentence `summary`, and a concrete
-   `next_step`. If you can prepare something useful for it cheaply inside the
-   repo, do it and open a PR instead. For example, draft the store-listing
-   copy, or write the checklist of what to test on device. Don't spend a
-   worker on these.
-   Skip any task where Austin tests something himself, such as "test it
-   myself on my phone" or "playtest". Write no result file and don't start
-   a worker for it. (The picker normally filters these out already.)
+     task's repos, such as a bug fix, a feature, a UI change, a test or a
+     refactor.
+   - **Anything else**: skip it. That covers social media, ads, marketing,
+     outreach, store listings, accounts and payments, anything Austin tests
+     himself, and anything needing a person or a judgment call. Don't do any
+     work on it and don't start a worker. Write a result file with status
+     `skipped_not_code` and a few words of `summary`, so it isn't queued
+     again. Austin doesn't see these.
    If a task's repo is in the missing list, write status `blocked` with the
    reason.
 2. For each **code** task, start one `task-worker` subagent. Give it the full
@@ -69,7 +64,7 @@ and in the pull requests you open.
 ```json
 {
   "task_id": "t31",
-  "status": "pr_opened | needs_austin | blocked | failed | done_no_change",
+  "status": "pr_opened | needs_austin | blocked | failed | done_no_change | skipped_not_code",
   "summary": "One or two plain sentences Austin will read on his to-do list.",
   "pr_url": "https://github.com/moonyose/StrideLab/pull/12",
   "verified": "What you actually ran and what passed, e.g. 'xcodebuild build OK (iPhone 17 sim), Tools/verify.sh 0 failures; bend not available on runner'",
