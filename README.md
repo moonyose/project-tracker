@@ -4,6 +4,7 @@ Personal project tracker. Live: https://moonyose.github.io/project-tracker/
 
 Data lives in `data.json`; in-browser edits are stored in localStorage (`pt-state-v1`) and layered on top.
 Nothing edited in the browser is committed back. Use Export to save a copy.
+Bump `rev` in `data.json` when reopening tasks on the server: a newer `rev` drops localStorage archive overrides for those IDs so `done:false` from the file wins.
 
 - **Archive**: checking a task (or clicking 🗑) moves it to the 🗄 Archive tab with a `completedAt` date. ↩ un-archives it. 🗑 inside the Archive deletes it permanently.
 - Tasks deleted with the old hard-delete are brought back into the Archive automatically from `data.json`, flagged ♻ recovered, and ⚠ was open if they weren't done.

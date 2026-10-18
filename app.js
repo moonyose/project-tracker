@@ -25,18 +25,35 @@ function recover(base,S){
       if(!lp){if(!del.has(p.id))continue;lp={...structuredClone(p),tasks:[]};lc.projects.push(lp)}
       for(const t of p.tasks)if(del.has(t.id)||del.has(p.id)){if(!purged.has(t.id)&&!lp.tasks.some(x=>x.id===t.id))lp.tasks.push(arch(t,p))}}}
   S.deleted=[];return got}
+// When data.json bumps `rev`, drop localStorage overrides for tasks the server has reopened
+// (done:false). Otherwise an archived-in-browser copy keeps hiding the reopened task.
+function applyServerReopens(base,S){
+  const srvRev=+(base.rev||0),locRev=+(S.rev||0);
+  if(srvRev<=locRev){S.rev=Math.max(srvRev,locRev);return 0}
+  const st={};for(const c of base.categories||[])for(const p of c.projects||[])for(const t of p.tasks||[])st[t.id]=t;
+  let n=0;
+  for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks){const b=st[t.id];if(!b||b.done)continue;
+    // Server open state wins: reopen + take server text/notes/attachments
+    if(t.done||t.text!==b.text||(b.notes!=null&&t.notes!==b.notes))n++;
+    t.done=false;delete t.completedAt;delete t.wasOpen;delete t.archivedBy;delete t.recovered;
+    t.text=b.text;if(b.notes!=null)t.notes=b.notes;if(b.due!==undefined)t.due=b.due;
+    if(b.attachments)t.attachments=structuredClone(b.attachments)}
+  S.rev=srvRev;return n}
 async function load(){
   try{server=await (await fetch('data.json?'+Date.now())).json()}catch(e){server={categories:[]};msg('Could not load data.json')}
   let local=null;try{local=JSON.parse(localStorage.getItem(KEY))}catch{}
   S=merge(server,local);S.deleted=S.deleted||[];S.purged=S.purged||[];
   const got=recover(server,S);
+  const reopened=applyServerReopens(server,S);
   // backfill completedAt from server data for done tasks
   const st={};for(const c of server.categories)for(const p of c.projects)for(const t of p.tasks)st[t.id]=t;
   for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks){const b=st[t.id];
     if(t.done&&!t.completedAt)t.completedAt=b?.completedAt||new Date().toISOString();
     if(b?.attachments&&!t.attachments)t.attachments=b.attachments}
-  if(local||got.length)localStorage.setItem(KEY,JSON.stringify(S));
-  if(got.length)setTimeout(()=>msg(`Recovered ${got.length} deleted task(s) into the Archive`),50);if(S.title)$('#title').textContent=S.title;render()}
+  if(local||got.length||reopened)localStorage.setItem(KEY,JSON.stringify(S));
+  if(got.length)setTimeout(()=>msg(`Recovered ${got.length} deleted task(s) into the Archive`),50);
+  else if(reopened)setTimeout(()=>msg(`Synced ${reopened} reopened task(s) from server`),50);
+  if(S.title)$('#title').textContent=S.title;render()}
 function find(tid){for(const c of S.categories)for(const p of c.projects){const t=p.tasks.find(x=>x.id===tid);if(t)return{c,p,t}}}
 function proj(pid){for(const c of S.categories){const p=c.projects.find(x=>x.id===pid);if(p)return{c,p}}}
 function listen(cb,btn){
