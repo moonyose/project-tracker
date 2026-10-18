@@ -107,12 +107,10 @@
               "notes": "",
               "due": null,
               "agent": {
-                "status": "blocked",
-                "summary": "Not attempted: the worker for this task was denied shell (Bash) access on the runner, so it could not create a branch, build, run Tools/verify.sh, or open a PR. No code was changed.",
+                "status": "retry",
+                "summary": "Re-queued after fixing the run\u2019s shell permissions.",
                 "hash": "21435aa45618",
-                "at": "2026-10-18T13:14+00:00",
-                "verified": "Nothing verified. Every Bash call (including a plain git fetch) was refused with 'running in don't ask mode'.",
-                "next_step": "Allow Bash for task-worker agents in the scheduled run's permission settings, then re-queue t36 together with t40 (both touch clip-type selection and the analysis flow)."
+                "at": "2026-10-18T13:14+00:00"
               }
             },
             {
@@ -122,12 +120,10 @@
               "notes": "",
               "due": null,
               "agent": {
-                "status": "blocked",
-                "summary": "Not attempted. The worker was denied shell access on the runner: every git command (fetch, status) was refused with 'running in don't ask mode'. Only a plain ls got through. Without git and xcodebuild it could not create the worktree or branch, build, run Tools/verify.sh, push, or open a PR. No code was changed. This task was paired with t38 on one branch (claude/t37-t38-share-export).",
+                "status": "retry",
+                "summary": "Re-queued after fixing the run\u2019s shell permissions.",
                 "hash": "8c0841c07654",
-                "at": "2026-10-18T13:14+00:00",
-                "verified": "Nothing verified. git and build commands were refused by the permission system.",
-                "next_step": "Allow Bash (git, xcodebuild, gh, Tools/*.sh) for task-worker agents in the scheduled run's permission settings, then re-queue t37 together with t38 (both touch sharing and export of results)."
+                "at": "2026-10-18T13:14+00:00"
               }
             },
             {
@@ -137,12 +133,10 @@
               "notes": "",
               "due": null,
               "agent": {
-                "status": "blocked",
-                "summary": "Not attempted. The worker was denied shell access on the runner: every git command (fetch, status) was refused with 'running in don't ask mode'. Only a plain ls got through. Without git and xcodebuild it could not create the worktree or branch, build, run Tools/verify.sh, push, or open a PR. No code was changed. This task was paired with t37 on one branch (claude/t37-t38-share-export).",
+                "status": "retry",
+                "summary": "Re-queued after fixing the run\u2019s shell permissions.",
                 "hash": "272ce0da14a0",
-                "at": "2026-10-18T13:14+00:00",
-                "verified": "Nothing verified. git and build commands were refused by the permission system.",
-                "next_step": "Allow Bash (git, xcodebuild, gh, Tools/*.sh) for task-worker agents in the scheduled run's permission settings, then re-queue t38 together with t37 (both touch sharing and export of results)."
+                "at": "2026-10-18T13:14+00:00"
               }
             },
             {
@@ -152,12 +146,10 @@
               "notes": "",
               "due": null,
               "agent": {
-                "status": "blocked",
-                "summary": "Not started: this run wasn't allowed to run shell commands (git, xcodebuild, gh), so no worker could branch, build or open a PR for StrideLab.",
+                "status": "retry",
+                "summary": "Re-queued after fixing the run\u2019s shell permissions.",
                 "hash": "8413d7413427",
-                "at": "2026-10-18T13:14+00:00",
-                "verified": "Nothing run. The orchestrator and the first worker both had every shell command denied ('don't ask' permission mode).",
-                "next_step": "Allow Bash in the scheduled run's Claude Code permission settings (e.g. permissions.allow or a non-'dontAsk' mode in the workflow), then re-queue t39."
+                "at": "2026-10-18T13:14+00:00"
               }
             },
             {
@@ -167,12 +159,10 @@
               "notes": "",
               "due": null,
               "agent": {
-                "status": "blocked",
-                "summary": "Not attempted: the worker for this task was denied shell (Bash) access on the runner, so it could not create a branch, build, run Tools/verify.sh, or open a PR. No code was changed.",
+                "status": "retry",
+                "summary": "Re-queued after fixing the run\u2019s shell permissions.",
                 "hash": "f1420c7157ba",
-                "at": "2026-10-18T13:14+00:00",
-                "verified": "Nothing verified. Every Bash call (including a plain git fetch) was refused with 'running in don't ask mode'.",
-                "next_step": "Allow Bash for task-worker agents in the scheduled run's permission settings, then re-queue t40 (together with t36, same branch claude/t40-t36-clip-type-reanalysis)."
+                "at": "2026-10-18T13:14+00:00"
               }
             }
           ]

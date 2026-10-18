@@ -6,15 +6,27 @@ confidence, or an honest result saying why there isn't one.
 
 ## Setup
 
+Shell commands run under an allow-list in a run nobody can approve, so how
+you write them matters:
+
+- **Never `cd` into a directory and run `git` in the same command.** It is
+  always refused, because git can run hooks from the new directory. Use
+  `git -C <path> <subcommand>` instead.
+- `cd <dir> && <non-git command>` is fine, for example `cd {{WORK}}/wt-t36 &&
+  ./Tools/verify.sh` or `cd {{WORK}}/wt-t36 && xcodebuild ...`.
+- Don't put `main` or `master` anywhere in a branch name, and don't use
+  `git -c`, `git config` or `git remote`. Those are denied.
+- If a command is refused, read the reason and rewrite it in an allowed
+  form. Don't give up on the first refusal.
+
 ```bash
-cd {{WORK}}/<Repo>
-git fetch origin
-git worktree add ../wt-<task_id> -b claude/<task_id>-<short-slug> origin/HEAD
-cd ../wt-<task_id>
+git -C {{WORK}}/<Repo> fetch origin
+git -C {{WORK}}/<Repo> worktree add {{WORK}}/wt-<task_id> -b claude/<task_id>-<short-slug> origin/HEAD
 ```
 
-Do all your work in that worktree. Other workers may be using the same
-repo at the same time.
+Do all your work in `{{WORK}}/wt-<task_id>`, and always run git there as
+`git -C {{WORK}}/wt-<task_id> ...`. Other workers may be using the same repo
+at the same time.
 
 ## Understand before you change anything
 
@@ -54,7 +66,7 @@ repo at the same time.
    `.claude/screenshots/<task_id>.png` on your branch so it shows in the PR,
    if the flow is reachable without a real camera or account.
 5. Then start a `reviewer` subagent. Give it the task text, the diff
-   (`git diff origin/HEAD...`) and your notes. Ask it to find real defects:
+   (`git -C {{WORK}}/wt-<task_id> diff origin/HEAD...`) and your notes. Ask it to find real defects:
    wrong behavior, missed cases the task names, regressions, broken laws or
    tests. Fix what it finds that's real, then re-run the build and checks.
 
@@ -66,7 +78,7 @@ it's verified.
 
 - Commit with a clear message. End it with
   `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
-- `git push -u origin HEAD`
+- `git -C {{WORK}}/wt-<task_id> push -u origin HEAD`
 - `gh pr create --repo <owner/repo> --base <default branch> --title "<short
   title>" --body-file <file>`. The body has these sections:
   - **To-do:** the task text, verbatim
@@ -85,4 +97,4 @@ assets, a real device or camera, or account access. Say exactly what
 decision or input you need. If you made progress worth keeping, push the
 branch, open the PR as a draft (`--draft`) and explain what's left.
 
-Clean up at the end: `git worktree remove --force ../wt-<task_id>`.
+Clean up at the end: `git -C {{WORK}}/<Repo> worktree remove --force {{WORK}}/wt-<task_id>`.
