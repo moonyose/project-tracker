@@ -1,0 +1,50 @@
+{
+  "model": "claude-opus-5-5",
+  "budget": {
+    "total_usd": 190,
+    "per_run_usd": 20,
+    "stop_after": "2026-11-06"
+  },
+  "max_tasks_per_run": 6,
+  "max_parallel_workers": 3,
+  "projects": {
+    "stridelab-sprint-form-analysis": {
+      "repos": ["moonyose/StrideLab"],
+      "platform": "ios",
+      "priority": 1,
+      "enabled": true,
+      "verify": [
+        "xcodebuild build for an iOS Simulator (scheme StrideLab)",
+        "./Tools/verify.sh (engine checks; must exit 0)",
+        "bend PROOF.bend if the bend CLI is available (prints 'All terms check.'); if not, say so in the PR"
+      ],
+      "notes": "Read README.md, DESIGN.md and LAWS.bend before changing analysis code. Swift mirrors Bend files (Kinds.bend, Tips.bend, ...): if you change a rule that has a Bend twin, change both and run the matching Tools/*_differential.sh."
+    },
+    "lanesync-sprint-timing": {
+      "repos": ["moonyose/LaneSync"],
+      "platform": "ios",
+      "priority": 2,
+      "enabled": true,
+      "verify": ["xcodebuild build for an iOS Simulator (scheme LaneSync)"]
+    },
+    "trolley-tracker-miami-beach": {
+      "repos": ["moonyose/TrolleyTracker"],
+      "platform": "ios",
+      "priority": 3,
+      "enabled": true,
+      "verify": ["xcodebuild build + test for an iOS Simulator (scheme TrolleyTracker)"]
+    },
+    "chordflow-guitar-piano-bass-and-cuatrofl": {
+      "repos": ["moonyose/ChordFlow", "moonyose/CuatroFlow"],
+      "platform": "ios",
+      "priority": 4,
+      "enabled": true,
+      "verify": ["xcodebuild build + test for an iOS Simulator"]
+    },
+    "crash-mode": { "repos": [], "platform": "roblox", "priority": 5, "enabled": false, "notes": "Not on GitHub yet." },
+    "flying-machines-paper-airplane-builder": { "repos": [], "platform": "roblox", "priority": 5, "enabled": false, "notes": "Not on GitHub yet." },
+    "plunder-seas-sea-of-thieves-style": { "repos": [], "platform": "roblox", "priority": 6, "enabled": false, "notes": "Not on GitHub yet." },
+    "zombie-raiders-arc-raiders-with-zombies": { "repos": [], "platform": "roblox", "priority": 6, "enabled": false, "notes": "Not on GitHub yet." },
+    "raven-eval": { "repos": ["moonyose/raven-eval-benchmark"], "platform": "code", "priority": 7, "enabled": false }
+  }
+}

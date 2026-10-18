@@ -1,0 +1,122 @@
+name: Claude works the to-do list
+
+# Every ~4 hours from 8am to 8pm Eastern, plus a manual "Run workflow" button.
+# If nothing new is on the list, the run stops before calling Claude, so it costs nothing.
+on:
+  schedule:
+    - cron: "17 0,12,16,20 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: claude-agent
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  # Quick Linux check first, so the Mac runner only starts when there's new work.
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      has_work: ${{ steps.select.outputs.has_work }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: select
+        env:
+          QUEUE: /tmp/queue.json
+          HAS_KEYS: ${{ secrets.ANTHROPIC_API_KEY != '' && secrets.AGENT_GH_TOKEN != '' }}
+        run: |
+          if [ "$HAS_KEYS" != "true" ]; then
+            echo "::notice::Skipping: add the ANTHROPIC_API_KEY and AGENT_GH_TOKEN repository secrets to turn the agent on."
+            echo "has_work=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          python3 agent/select.py
+
+  work:
+    needs: check
+    if: needs.check.outputs.has_work == 'true'
+    runs-on: macos-latest        # has Xcode + iOS simulators; free on public repos
+    timeout-minutes: 150
+    env:
+      TRACKER: ${{ github.workspace }}/tracker
+      WORK: ${{ github.workspace }}/work
+      RESULTS: ${{ github.workspace }}/_run/results
+      QUEUE: ${{ github.workspace }}/_run/queue.json
+      GH_TOKEN: ${{ secrets.AGENT_GH_TOKEN }}
+    steps:
+      - name: Check out the tracker
+        uses: actions/checkout@v4
+        with:
+          path: tracker
+          token: ${{ secrets.AGENT_GH_TOKEN }}
+
+      - name: Pick tasks (free — no Claude yet)
+        id: select
+        run: |
+          mkdir -p "$(dirname "$QUEUE")" "$RESULTS"
+          python3 "$TRACKER/agent/select.py"
+
+      - name: Clone the app repos
+        id: clone
+        if: steps.select.outputs.has_work == 'true'
+        run: |
+          git config --global user.name "Claude (for Austin)"
+          git config --global user.email "noreply@anthropic.com"
+          git config --global url."https://x-access-token:${GH_TOKEN}@github.com/".insteadOf "https://github.com/"
+          mkdir -p "$WORK" "$RESULTS"
+          missing=""
+          for r in ${{ steps.select.outputs.repos }}; do
+            name="${r#*/}"
+            if git clone -q --filter=blob:limit=20m "https://github.com/$r.git" "$WORK/$name" 2>/dev/null; then
+              echo "cloned $r"
+            else
+              echo "::warning::could not clone $r"; missing="$missing $r"
+            fi
+          done
+          echo "missing=$missing" >> "$GITHUB_OUTPUT"
+
+      - name: Install Claude Code
+        if: steps.select.outputs.has_work == 'true'
+        run: npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 && claude --version
+
+      - name: Claude works the queue (Opus, capped at the run budget)
+        id: claude
+        if: steps.select.outputs.has_work == 'true'
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MISSING: ${{ steps.clone.outputs.missing }}
+          CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH: "2"
+          DISABLE_TELEMETRY: "1"
+        run: |
+          python3 "$TRACKER/agent/render.py" "$RUNNER_TEMP/run"
+          cd "$WORK"
+          # Output goes to a file, not the log: this repo is public.
+          claude -p "$(cat "$RUNNER_TEMP/run/prompt.md")" \
+            --model "${{ steps.select.outputs.model }}" \
+            --agents "$RUNNER_TEMP/run/agents.json" \
+            --add-dir "$TRACKER" "$RESULTS" \
+            --settings "$TRACKER/agent/permissions.json" \
+            --permission-mode dontAsk \
+            --permission-prompts none \
+            --max-budget-usd "${{ steps.select.outputs.run_budget }}" \
+            --max-turns 300 \
+            --output-format json \
+            > "$RUNNER_TEMP/claude.json" 2> "$RUNNER_TEMP/claude.err" || echo "claude exited with $?"
+          ls "$RESULTS" | sed 's/^/result: /'
+
+      - name: Write results back to the to-do list
+        if: always() && steps.select.outputs.has_work == 'true'
+        run: |
+          cd "$TRACKER"
+          for i in 1 2 3 4; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python3 agent/apply_results.py "$QUEUE" "$RESULTS" "$RUNNER_TEMP/claude.json"
+            git add data.json agent/ledger.json
+            git -c user.name="Claude (for Austin)" -c user.email="noreply@anthropic.com" \
+              commit -qm "Agent run: $(ls "$RESULTS" | wc -l | tr -d ' ') task result(s)" || exit 0
+            git push -q origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          echo "::error::could not push results"; exit 1

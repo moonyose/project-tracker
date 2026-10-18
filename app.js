@@ -49,7 +49,8 @@ async function load(){
   const st={};for(const c of server.categories)for(const p of c.projects)for(const t of p.tasks)st[t.id]=t;
   for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks){const b=st[t.id];
     if(t.done&&!t.completedAt)t.completedAt=b?.completedAt||new Date().toISOString();
-    if(b?.attachments&&!t.attachments)t.attachments=b.attachments}
+    if(b?.attachments&&!t.attachments)t.attachments=b.attachments;
+    if(b?.agent)t.agent=b.agent;else delete t.agent}
   if(local||got.length||reopened)localStorage.setItem(KEY,JSON.stringify(S));
   if(got.length)setTimeout(()=>msg(`Recovered ${got.length} deleted task(s) into the Archive`),50);
   else if(reopened)setTimeout(()=>msg(`Synced ${reopened} reopened task(s) from server`),50);
@@ -71,7 +72,13 @@ function taskHTML(t){
   return`<li class="${t.done?'done':''}" data-t="${t.id}"><div class="row"><input type="checkbox" ${t.done?'checked':''} data-a="toggle">
   <span class="txt">${esc(t.text)}${t.due?`<span class="due">📅 ${esc(t.due)}</span>`:''}</span>
   <button class="ic" data-a="att" title="Attach file or link">📎</button><button class="ic" data-a="edit" title="Edit">✏️</button><button class="ic" data-a="del" title="Archive (delete)">🗑</button></div>
-  ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${attHTML(t)}</li>`}
+  ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${attHTML(t)}${agentHTML(t.agent)}</li>`}
+// What the scheduled Claude run did with this task (written to data.json by agent/apply_results.py).
+const AG={pr_opened:['🤖','PR ready to review','ok'],needs_austin:['🙋','Needs you','warn'],blocked:['⛔','Blocked','bad'],
+  failed:['⚠️','Claude couldn’t finish','bad'],retry:['⏳','Claude will retry next run','mut'],done_no_change:['🤖','Checked — nothing to change','mut']};
+const safeUrl=u=>/^https:\/\/github\.com\//.test(u||'')?u:'';
+function agentHTML(a){if(!a||!AG[a.status])return'';const[i,l,k]=AG[a.status],u=safeUrl(a.pr_url);
+  return`<div class="agent ${k}"><b>${i} ${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${l} ↗</a>`:l}</b>${a.summary?`<span>${esc(a.summary)}</span>`:''}${a.next_step?`<span class="nx">Next: ${esc(a.next_step)}</span>`:''}</div>`}
 function archHTML(){
   const rows=[];for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks)if(t.done)rows.push({c,p,t});
   rows.sort((a,b)=>(b.t.completedAt||'').localeCompare(a.t.completedAt||''));
