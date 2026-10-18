@@ -41,6 +41,7 @@ def main(out_dir):
             "prompt": worker,
             "model": model,
             "tools": ["Bash", "Read", "Edit", "Write", "Glob", "Grep", "Agent(reviewer)"],
+            "background": False,
         },
         "reviewer": {
             "description": "Independent reviewer of a worker's diff before the PR is opened. Finds real defects; does not edit.",
@@ -54,6 +55,7 @@ def main(out_dir):
             ),
             "model": model,
             "tools": ["Bash", "Read", "Glob", "Grep"],
+            "background": False,
         },
     }
     os.makedirs(out_dir, exist_ok=True)

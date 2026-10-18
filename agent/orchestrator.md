@@ -32,13 +32,17 @@ and in the pull requests you open.
    reason.
 2. For each **code** task, start one `task-worker` subagent. Give it the full
    task object from the queue (task_id, text, notes, repos, verify,
-   project_notes, previous_attempt) and the paths above. Run at most
-   {{PARALLEL}} workers at a time. Tasks in the same repo may run in
-   parallel because each worker uses its own git worktree and branch.
-   Two tasks that would edit the same code and would conflict go to one
-   worker, which handles them on one branch with one PR. That worker writes
-   a result file for each task.
-3. When all workers have finished, check that every task in the queue has a
+   project_notes, previous_attempt) and the paths above.
+   **Run workers in the foreground and wait for them.** To run several at
+   once, put up to {{PARALLEL}} `Agent` tool calls in one message. Never set
+   `run_in_background`. This run ends the moment you stop, and any worker
+   still running is killed with its work lost. When a batch returns, start
+   the next batch, until every code task has had a worker.
+   Tasks in the same repo may run in parallel because each worker uses its
+   own git worktree and branch. Two tasks that would edit the same code and
+   would conflict go to one worker, which handles them on one branch with
+   one PR. That worker writes a result file for each task.
+3. Only after every worker has returned, check that every task in the queue has a
    result file. Write any missing one with status `failed` and what you
    know. Then stop.
 
