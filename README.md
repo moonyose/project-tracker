@@ -9,3 +9,5 @@ Bump `rev` in `data.json` when reopening tasks on the server: a newer `rev` drop
 - **Archive**: checking a task (or clicking 🗑) moves it to the 🗄 Archive tab with a `completedAt` date. ↩ un-archives it. 🗑 inside the Archive deletes it permanently.
 - Tasks deleted with the old hard-delete are brought back into the Archive automatically from `data.json`, flagged ♻ recovered, and ⚠ was open if they weren't done.
 - **Attachments**: `"attachments": [{"name": "...", "url": "attachments/file.pdf"}]` on a task. Put the files in `attachments/`. The 📎 button adds a link, or a small file (≤1.5 MB) stored only in that browser.
+- **Rev / done overrides**: a task with `"doneRev": N` and `done:true` is forced done in browsers whose stored rev is < N (bump `rev` to N too).
+- **Finished cards**: when every task on a card is done, the card is hidden from Active; its tasks appear in the Archive grouped by project, with 🗂 View archived card.

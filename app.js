@@ -32,7 +32,9 @@ function applyServerReopens(base,S){
   if(srvRev<=locRev){S.rev=Math.max(srvRev,locRev);return 0}
   const st={};for(const c of base.categories||[])for(const p of c.projects||[])for(const t of p.tasks||[])st[t.id]=t;
   let n=0;
-  for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks){const b=st[t.id];if(!b||b.done)continue;
+  for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks){const b=st[t.id];if(!b)continue;
+    // Server marked done in a newer rev (doneRev): done state wins over the browser copy
+    if(b.done){if(+(b.doneRev||0)>locRev&&!t.done){t.done=true;t.completedAt=b.completedAt;n++}else if(+(b.doneRev||0)>locRev)t.completedAt=b.completedAt;continue}
     // Server open state wins: reopen + take server text/notes/attachments
     if(t.done||t.text!==b.text||(b.notes!=null&&t.notes!==b.notes))n++;
     t.done=false;delete t.completedAt;delete t.wasOpen;delete t.archivedBy;delete t.recovered;
@@ -53,7 +55,7 @@ async function load(){
     if(b?.agent)t.agent=b.agent;else delete t.agent}
   if(local||got.length||reopened)localStorage.setItem(KEY,JSON.stringify(S));
   if(got.length)setTimeout(()=>msg(`Recovered ${got.length} deleted task(s) into the Archive`),50);
-  else if(reopened)setTimeout(()=>msg(`Synced ${reopened} reopened task(s) from server`),50);
+  else if(reopened)setTimeout(()=>msg(`Synced ${reopened} task change(s) from server`),50);
   if(S.title)$('#title').textContent=S.title;render()}
 function find(tid){for(const c of S.categories)for(const p of c.projects){const t=p.tasks.find(x=>x.id===tid);if(t)return{c,p,t}}}
 function proj(pid){for(const c of S.categories){const p=c.projects.find(x=>x.id===pid);if(p)return{c,p}}}
@@ -79,24 +81,29 @@ const AG={pr_opened:['🤖','PR ready to review','ok'],needs_austin:['🙋','Nee
 const safeUrl=u=>/^https:\/\/github\.com\//.test(u||'')?u:'';
 function agentHTML(a){if(!a||!AG[a.status])return'';const[i,l,k]=AG[a.status],u=safeUrl(a.pr_url);
   return`<div class="agent ${k}"><b>${i} ${u?`<a href="${esc(u)}" target="_blank" rel="noopener">${l} ↗</a>`:l}</b>${a.summary?`<span>${esc(a.summary)}</span>`:''}${a.next_step?`<span class="nx">Next: ${esc(a.next_step)}</span>`:''}</div>`}
+const allDone=p=>p.tasks.length>0&&p.tasks.every(t=>t.done);
+let openArch=new Set();
 function archHTML(){
-  const rows=[];for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks)if(t.done)rows.push({c,p,t});
-  rows.sort((a,b)=>(b.t.completedAt||'').localeCompare(a.t.completedAt||''));
-  if(!rows.length)return'<p class="pct">Nothing archived yet.</p>';
-  return`<div class="card"><ul>${rows.map(({c,p,t})=>`<li class="done" data-t="${t.id}"><div class="row"><input type="checkbox" checked data-a="toggle" title="Un-archive (mark not done)">
-  <span class="txt">${esc(t.text)}${t.wasOpen?'<span class="due" title="Was not done when deleted">⚠ was open</span>':''}<div class="meta">${esc(p.name)} · ${esc(c.name)} · ✅ ${fmt(t.completedAt)}${t.recovered?' · ♻ recovered':''}</div></span>
+  const groups=[];for(const c of S.categories)for(const p of c.projects){const ts=p.tasks.filter(t=>t.done);if(ts.length)groups.push({c,p,ts,last:ts.reduce((m,t)=>(t.completedAt||'')>m?t.completedAt:m,'')})}
+  if(!groups.length)return'<p class="pct">Nothing archived yet.</p>';
+  groups.sort((a,b)=>b.last.localeCompare(a.last));
+  return groups.map(({c,p,ts})=>{ts.sort((a,b)=>(b.completedAt||'').localeCompare(a.completedAt||''));const full=allDone(p);
+  return`<div class="card" data-p="${p.id}"><div class="ph"><h3>${esc(p.name)}</h3><span class="pct">${esc(c.name)}${full?' · 📦 card archived':''}</span></div>
+  ${full?`<button class="add" data-a="viewcard">${openArch.has(p.id)?'Hide archived card':'🗂 View archived card'}</button>${openArch.has(p.id)?`<div class="archcard">${cardHTML(p,true)}</div>`:''}`:''}
+  <ul>${ts.map(t=>`<li class="done" data-t="${t.id}"><div class="row"><input type="checkbox" checked data-a="toggle" title="Un-archive (mark not done)">
+  <span class="txt">${esc(t.text)}${t.wasOpen?'<span class="due" title="Was not done when deleted">⚠ was open</span>':''}<div class="meta">✅ ${fmt(t.completedAt)}${t.recovered?' · ♻ recovered':''}</div></span>
   <button class="ic" data-a="unarch" title="Un-archive">↩</button><button class="ic" data-a="att" title="Attach file or link">📎</button><button class="ic" data-a="purge" title="Delete permanently">🗑</button></div>
-  ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${attHTML(t)}</li>`).join('')}</ul></div>`}
-function cardHTML(p){
+  ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${attHTML(t)}</li>`).join('')}</ul></div>`}).join('')}
+function cardHTML(p,ro){
   const n=p.tasks.length,d=p.tasks.filter(t=>t.done).length,pc=n?Math.round(d/n*100):0;
   return`<div class="card" data-p="${p.id}"><div class="ph"><h3>${esc(p.name)}</h3>
-  <span><button class="ic" data-a="rename" title="Rename">✏️</button><button class="ic" data-a="delp" title="Delete project">🗑</button></span></div>
-  <div class="status" data-a="status" title="Click to edit status">${esc(p.status)}</div>
+  ${ro?'':`<span><button class="ic" data-a="rename" title="Rename">✏️</button><button class="ic" data-a="delp" title="Delete project">🗑</button></span>`}</div>
+  <div class="status" ${ro?'':'data-a="status" title="Click to edit status"'}>${esc(p.status)}</div>
   <div class="bar"><i style="width:${pc}%"></i></div><div class="pct">${d}/${n} done · ${pc}%</div>
-  <ul>${p.tasks.map(taskHTML).join('')}</ul>${n&&d===n?'<div class="pct">✅ All tasks done — see Archive</div>':''}<button class="add" data-a="add">＋ Add task</button></div>`}
+  ${ro?`<ul>${p.tasks.map(t=>`<li class="done"><span class="txt">✅ ${esc(t.text)}</span></li>`).join('')}</ul>`:`<ul>${p.tasks.map(taskHTML).join('')}</ul><button class="add" data-a="add">＋ Add task</button>`}</div>`}
 function render(){
   const pin=S.categories.filter(c=>c.pinned),rest=S.categories.filter(c=>!c.pinned);
-  const sec=c=>`<h2>${esc(c.name)}</h2><div class="grid">${c.projects.map(cardHTML).join('')||'<p class="pct">No projects</p>'}</div>`;
+  const sec=c=>`<h2>${esc(c.name)}</h2><div class="grid">${c.projects.filter(p=>!allDone(p)).map(p=>cardHTML(p)).join('')||'<p class="pct">No active projects</p>'}</div>`;
   const na=S.categories.reduce((a,c)=>a+c.projects.reduce((b,p)=>b+p.tasks.filter(t=>t.done).length,0),0);
   $('#tabArchive').textContent=`🗄 Archive (${na})`;$('#tabActive').classList.toggle('on',view==='active');$('#tabArchive').classList.toggle('on',view==='archive');
   if(view==='archive'){$('#pinned').innerHTML='';$('#cats').innerHTML='<h2>🗄 Archive / History</h2>'+archHTML();return}
@@ -131,6 +138,7 @@ document.addEventListener('click',e=>{
     if(a==='del'){t.done=true;t.completedAt=new Date().toISOString();t.archivedBy='delete';save();msg('Archived — find it in the Archive tab')}
     return}
   if(card){const{c,p}=proj(card.dataset.p);
+    if(a==='viewcard'){openArch.has(p.id)?openArch.delete(p.id):openArch.add(p.id);render();return}
     if(a==='add')editor(card,taskFields(),v=>{if(v.text.trim())p.tasks.push({id:uid(),text:v.text.trim(),done:false,notes:v.notes,due:v.due||null})});
     if(a==='status')editor(card,[{k:'status',v:p.status,ph:'Status'}],v=>p.status=v.status);
     if(a==='rename')editor(card,[{k:'name',v:p.name,ph:'Project name'}],v=>{if(v.name.trim())p.name=v.name.trim()});

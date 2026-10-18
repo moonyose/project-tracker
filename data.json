@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-18",
-  "rev": 1,
+  "rev": 2,
   "categories": [
     {
       "id": "top-priority",
@@ -368,7 +368,8 @@
               "done": true,
               "notes": "Austin said he has this set (Oct 14).",
               "due": null,
-              "completedAt": "2026-10-14T11:27:54-04:00"
+              "completedAt": "2026-10-18T09:26:00-04:00",
+              "doneRev": 2
             }
           ]
         },
@@ -394,9 +395,11 @@
             {
               "id": "t20",
               "text": "Dentist appointment Sat Oct 17, 11:45 AM",
-              "done": false,
+              "done": true,
               "notes": "",
-              "due": "2026-10-17"
+              "due": "2026-10-17",
+              "completedAt": "2026-10-18T09:26:00-04:00",
+              "doneRev": 2
             }
           ]
         },
