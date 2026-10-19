@@ -389,21 +389,47 @@
               "text": "Skeleton: no joint may connect to more than two others. The ankle is currently drawn with three bones (knee, ball, toe).",
               "done": false,
               "notes": "Austin (Oct 18, testing 1.0.2): while moving the right ankle, it was drawn connected to three points, but an ankle can only connect to two joints. Cause: SkeletonBones.leg in StrideLab/Playback/SkeletonRenderer.swift draws knee-ankle, ankle-ball AND ankle-toe. Fix: make every limb a chain. The foot runs ankle -> ball -> toe (ankle-toe only when there is no ball), in the player overlay (OverlayCanvas), the video exporter (SkeletonRenderer) and Android. There is no law for this in LAWS.bend yet: add one (every joint of a limb has at most two bones) with its proof in PROOF.bend, plus Swift and Kotlin tests. bend is not installed on the runner, so say so in the PR. Austin will run `bend PROOF.bend` on his Mac.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "SkeletonBones.leg drew knee-ankle, ankle-ball and ankle-toe, so the ankle had three bones once a ball was placed. Legs are now chains: ankle -> ball -> toe, or ankle -> toe when there is no ball. The fix covers the iOS overlay and video exporter and Android, whose overlay uses the same core renderer. Added LAW 57 (a leg joint has at most two bones) and LAW 58 (the toe stays on the leg) in a new Bones.bend, proved in PROOF.bend, plus Swift and Kotlin tests.",
+                "hash": "f677b615ba5c",
+                "at": "2026-10-19T04:25+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/17",
+                "verified": "./Tools/verify.sh: ALL CHECKS PASSED. xcodebuild build (scheme StrideLab, iPhone 17 Pro simulator, Xcode 26.6): BUILD SUCCEEDED. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL, new ExportTest check ran. Not run: bend PROOF.bend, because the bend CLI is not installed on the runner. A reviewer subagent checked the Bend code against existing patterns and foun",
+                "next_step": "Run `bend PROOF.bend` on your Mac (expect 'All terms check.'). On the phone, open an analysed clip, place or move the right ball of the foot at touchdown, and check the ankle has only two bones (knee and ball) and the toe hangs off the ball."
+              }
             },
             {
               "id": "t56",
               "text": "Clip-type gate: a clip can't be played until its type (start / straightaway / curve) is confirmed. Full-screen choice with big buttons and nothing else on screen.",
               "done": false,
               "notes": "Austin (Oct 18): 'I don't want the user to be able to play their clip until they've selected if the clip is a start, straightaway, or curve. Make the buttons much bigger and don't include any other UI elements other than this choice.' Text along the lines of: 'Looks like this clip contains a start. Is that correct? Select below to confirm for final analysis.' (fill in what was detected). Three large buttons: Start / Straightaway / Curve, with the detected one first or highlighted. No playback, scrubbing, tips or other controls until one is chosen. Keep a way back out (LAW 49: every state has a button off it). Shipped demo clips are exempt as today. Update or add laws in Kinds.bend/LAWS.bend if the gate changes a rule.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Clip-type gate on iOS and Android: an unconfirmed athlete clip opens on a full-screen choice only ('Looks like this clip contains a <kind>. Is that correct? Select below to confirm for final analysis.'), three 88pt Start / Straightaway / Curve buttons with the detected kind first and highlighted, and Back. No video, scrubbing, tips, nav bar or menu until picked; shipped demos exempt. Old KindQuestionCard removed. Kinds.bend playable + LAWS 57-58 with proofs. Tests, README and DESIGN updated.",
+                "hash": "12f34c4eb895",
+                "at": "2026-10-19T04:25+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/18",
+                "verified": "xcodebuild build (StrideLab, iPhone 17 Pro sim, iOS 26.5) succeeded; ./Tools/verify.sh ALL CHECKS PASSED; android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (KindUiTest 12/12 incl. new gate checks); simulator screenshot of the gate inspected (not committed: writes under .claude/ were refused); reviewer subagent findings fixed. NOT run: bend PROOF.bend (bend CLI not insta",
+                "next_step": "On your phone: open a new clip. You should see only Back, the 'Looks like this clip contains ...' sentence and three big buttons (detected one on top in orange). Tap Back and you should return to the library. Reopen, tap the highlighted button, and the clip should analyze and play normally. Reopen once more and there should be no question. A shipped demo should play with no gate. Also run `bend PR"
+              }
             },
             {
               "id": "t57",
               "text": "Long clips with several starts / straightaways / curves: show each detected segment and have the user confirm the type for each one.",
               "done": false,
               "notes": "Austin (Oct 18): 'If the clip is long and contains multiple starts/straightaways/curves, you should indicate to the user what was detected and have them confirm for each clip.' Builds on the clip-type gate (do them together if that's simpler). First find out whether the engine can split one recording into segments of different kinds. If it can't yet, build the smallest real version: detect the segments, list them with their times and detected type, let the user confirm or change each, and analyze each as its own kind. If that's too big for one run, open a draft PR with what's done and say exactly what's left.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "blocked",
+                "summary": "Not implemented this run (budget went to making t56 solid on both platforms). Finding: the engine cannot split one recording into segments of different kinds yet. Auto-cut (StartSegmenter / Split.bend) only cuts out starts; RunSpotter only reports the times runners crossed the frame, without a kind and without segments. Side effect of t56 (PR #18): pieces auto-cut from a long recording are already separate clips, so each is now gated and its type confirmed when opened (covers starts, but straightaway/curve segments aren't listed). Smallest real version still needed, on iOS and Android: (1) a s",
+                "hash": "9c8f530b3707",
+                "at": "2026-10-19T04:25+00:00",
+                "verified": "Investigation only: read StartSegmenter, RunSpotter, Split.bend and AnalysisKindDetector. No code changes.",
+                "next_step": "Schedule t57 as its own run on top of PR #18 (merge #18 first). Expect a multi-file change across Split/ and android/ plus a new Bend twin."
+              }
             }
           ]
         },
