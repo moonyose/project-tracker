@@ -567,9 +567,11 @@
             {
               "id": "t34",
               "text": "Adjust wind balance (wind is making flying too hard)",
-              "done": false,
+              "done": true,
               "notes": "",
-              "due": null
+              "due": null,
+              "completedAt": "2026-10-19T13:26:21.009Z",
+              "updatedAt": "2026-10-19T13:26:21.009Z"
             }
           ]
         },
