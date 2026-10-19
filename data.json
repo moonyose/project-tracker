@@ -268,6 +268,34 @@
               "done": false,
               "notes": "Mirror the merged iOS PR #5 in android/: detect one hand down / one raised during the set hold (confident wrists only) and show the 'Looks like a 3-point start' warning.",
               "due": null
+            },
+            {
+              "id": "t51",
+              "text": "Fix tracking when the runner's front foot isn't the one closest to the camera; the app currently struggles with that.",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t52",
+              "text": "Cut the text on the clip-type prompt (start / straightaway stride / curve stride); there's far too much of it.",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t53",
+              "text": "Fix skeleton correction with background runners: joints keep detecting and undetecting, forcing repeated manual re-placement, and joints get detected on the runner behind the subject. After the user corrects the skeleton, the clip must be re-analyzed (currently it isn't).",
+              "done": false,
+              "notes": "",
+              "due": null
+            },
+            {
+              "id": "t54",
+              "text": "Add a disclaimer that the best tracking needs no other runners in the background.",
+              "done": false,
+              "notes": "",
+              "due": null
             }
           ]
         },
