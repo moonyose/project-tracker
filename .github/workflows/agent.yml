@@ -76,6 +76,13 @@ jobs:
           done
           echo "missing=$missing" >> "$GITHUB_OUTPUT"
 
+      - name: Java 17 for Android (Gradle) builds
+        if: steps.select.outputs.has_work == 'true'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
       - name: Install Claude Code
         if: steps.select.outputs.has_work == 'true'
         run: npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 && claude --version
