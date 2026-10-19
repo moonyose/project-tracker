@@ -1,10 +1,10 @@
 name: Claude works the to-do list
 
-# Every ~4 hours from 8am to 8pm Eastern, plus a manual "Run workflow" button.
+# Every 15 minutes, plus a manual "Run workflow" button.
 # If nothing new is on the list, the run stops before calling Claude, so it costs nothing.
 on:
   schedule:
-    - cron: "17 0,12,16,20 * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 concurrency:
