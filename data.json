@@ -474,11 +474,12 @@
             {
               "id": "t64",
               "text": "Fix TestFlight CI signing: Apple account hit its certificate limit, so master builds now fail",
-              "done": false,
+              "done": true,
               "notes": "TestFlight build run 39259643183 on master (PR #20 merge, Oct 19 ~9:23 AM ET) failed at archive: 'Your account has reached the maximum number of certificates... choose a certificate to revoke' and 'No profiles for com.austinmunoz.stridelab were found'. The 8:37 AM ET build had succeeded, so CI is likely minting a new cert each run. Fix: revoke unused development certificates in the Apple Developer account (team N8RA297MHC) and make CI reuse one stored signing cert instead of creating new ones. Ask Austin before revoking any certificate.",
               "due": null,
               "createdAt": "2026-10-19T15:50:00Z",
-              "updatedAt": "2026-10-19T15:50:00Z"
+              "updatedAt": "2026-10-19T16:23:11.814Z",
+              "completedAt": "2026-10-19T16:23:11.814Z"
             }
           ]
         },
