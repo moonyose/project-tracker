@@ -380,6 +380,27 @@
                 "verified": "Tools/verify.sh: ALL CHECKS PASSED. xcodebuild for the iOS Simulator: no errors. Android Gradle checks: BUILD SUCCESSFUL. bend CLI is not available on the runner. No screenshot taken.",
                 "next_step": "On your phone, open the recorder, show the filming tips and switch the Filming menu: each type should mention no other runners in the background."
               }
+            },
+            {
+              "id": "t55",
+              "text": "Skeleton: no joint may connect to more than two others. The ankle is currently drawn with three bones (knee, ball, toe).",
+              "done": false,
+              "notes": "Austin (Oct 18, testing 1.0.2): while moving the right ankle, it was drawn connected to three points, but an ankle can only connect to two joints. Cause: SkeletonBones.leg in StrideLab/Playback/SkeletonRenderer.swift draws knee-ankle, ankle-ball AND ankle-toe. Fix: make every limb a chain. The foot runs ankle -> ball -> toe (ankle-toe only when there is no ball), in the player overlay (OverlayCanvas), the video exporter (SkeletonRenderer) and Android. There is no law for this in LAWS.bend yet: add one (every joint of a limb has at most two bones) with its proof in PROOF.bend, plus Swift and Kotlin tests. bend is not installed on the runner, so say so in the PR. Austin will run `bend PROOF.bend` on his Mac.",
+              "due": null
+            },
+            {
+              "id": "t56",
+              "text": "Clip-type gate: a clip can't be played until its type (start / straightaway / curve) is confirmed. Full-screen choice with big buttons and nothing else on screen.",
+              "done": false,
+              "notes": "Austin (Oct 18): 'I don't want the user to be able to play their clip until they've selected if the clip is a start, straightaway, or curve. Make the buttons much bigger and don't include any other UI elements other than this choice.' Text along the lines of: 'Looks like this clip contains a start. Is that correct? Select below to confirm for final analysis.' (fill in what was detected). Three large buttons: Start / Straightaway / Curve, with the detected one first or highlighted. No playback, scrubbing, tips or other controls until one is chosen. Keep a way back out (LAW 49: every state has a button off it). Shipped demo clips are exempt as today. Update or add laws in Kinds.bend/LAWS.bend if the gate changes a rule.",
+              "due": null
+            },
+            {
+              "id": "t57",
+              "text": "Long clips with several starts / straightaways / curves: show each detected segment and have the user confirm the type for each one.",
+              "done": false,
+              "notes": "Austin (Oct 18): 'If the clip is long and contains multiple starts/straightaways/curves, you should indicate to the user what was detected and have them confirm for each clip.' Builds on the clip-type gate (do them together if that's simpler). First find out whether the engine can split one recording into segments of different kinds. If it can't yet, build the smallest real version: detect the segments, list them with their times and detected type, let the user confirm or change each, and analyze each as its own kind. If that's too big for one run, open a draft PR with what's done and say exactly what's left.",
+              "due": null
             }
           ]
         },
