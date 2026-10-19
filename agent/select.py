@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pick the to-dos a scheduled Claude run should look at. Spends nothing.
 
-A task is eligible when it is not done, its project is mapped and enabled in
+A task is eligible when it is not done, it (and its card) has no owner "austin", its project is mapped and enabled in
 agent/config.json, and Claude hasn't already handled this exact wording of it
 (task.agent.hash matches the current text+notes). Editing a task's text or
 notes after Claude has looked at it makes it eligible again.
@@ -76,10 +76,12 @@ def main():
         for c in data["categories"]:
             for p in c["projects"]:
                 pc = cfg["projects"].get(p["id"])
+                if p.get("owner") == "austin":  # whole card is Austin-only
+                    continue
                 if not pc or not pc.get("enabled") or not pc.get("repos"):
                     continue
                 for t in p["tasks"]:
-                    if t.get("done") or t.get("id") in skip_ids or is_self_test(t) or is_not_code(t):
+                    if t.get("done") or t.get("owner") == "austin" or t.get("id") in skip_ids or is_self_test(t) or is_not_code(t):
                         continue
                     h = task_hash(t)
                     a = t.get("agent") or {}

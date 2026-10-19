@@ -609,6 +609,24 @@
           ]
         },
         {
+          "id": "flying-machine-survival-working-title",
+          "name": "Flying Machine Survival (working title)",
+          "status": "new game; initial design",
+          "tasks": [
+            {
+              "id": "t63",
+              "text": "Create prompt for the initial game design (Austin handles this)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-19T11:40:00-04:00",
+              "transcript": "There's a new, I'm making a new Roblox game, it's called Flying Machine Survival, or something like that, just as a starting point. the first to-do is gonna be just like, wait for you know, create prompt to, to create initial design for the game. And, like, I don't want Claude to do anything just yet. I, I'm, I, I will handle this, this first part.",
+              "updatedAt": "2026-10-19T11:40:00-04:00"
+            }
+          ]
+        },
+        {
           "id": "plunder-seas-sea-of-thieves-style",
           "name": "Plunder Seas (Sea of Thieves style)",
           "status": "",

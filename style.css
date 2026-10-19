@@ -18,6 +18,7 @@ ul{list-style:none;margin:0;padding:0}li{border-top:1px solid var(--bd);padding:
 .row{display:flex;gap:8px;align-items:start}.row input[type=checkbox]{margin-top:4px;accent-color:var(--ok);width:17px;height:17px}
 .txt{flex:1;word-break:break-word}.done .txt{text-decoration:line-through;color:var(--mut)}
 .due{font-size:.72rem;background:color-mix(in srgb,var(--warn) 25%,transparent);border-radius:6px;padding:1px 6px;margin-left:4px;white-space:nowrap}
+.due.own{background:color-mix(in srgb,var(--acc) 18%,transparent)}
 .notes{font-size:.8rem;color:var(--mut);margin:2px 0 0 25px;white-space:pre-wrap}
 .ic{border:none;background:none;padding:2px 4px;opacity:.55;font-size:.85rem}.ic:hover{opacity:1}
 .edit{display:flex;flex-direction:column;gap:6px;margin-top:6px}.fld{display:flex;gap:4px}

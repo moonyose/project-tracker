@@ -29,6 +29,10 @@ access to only this repo and **Contents: Read and write**; it is stored only in 
 - Structure: `categories[] → projects[] (a card) → tasks[]`. Open work = tasks with `done` false/missing (archived
   tasks are simply `done: true`). Projects in `agent/config.json` with `enabled: false` and `skip_task_ids` are off-limits
   for the scheduled agent.
+- **Austin-only (agent hold):** a task with `"owner": "austin"` is human-only; Austin handles it himself. AI agents
+  (Claude Code, the scheduled agent, any other bot) must **skip it**: don't work on it, don't open PRs for it, don't
+  mark it done or edit it. The same applies to **every task on a card** whose project has `"owner": "austin"`. The
+  UI shows these with a 👤 Austin only badge. Only Austin removes the field.
 - `text` is the task; `notes` is context/status; `transcript` (optional) is Austin's full verbatim request — read it
   for detail. `subtasks[]` are steps; open ones have `done` false. `agent` is written by `agent/apply_results.py`.
 - To mark a task (or sub-task) done: set `"done": true`, `"completedAt"` and **`"updatedAt"` to the current ISO

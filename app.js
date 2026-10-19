@@ -107,7 +107,7 @@ function keepNewer(fresh,old){if(!old)return fresh;
   for(const c of old.categories||[])for(const p of c.projects||[]){const fp=projIn(fresh,p.id)?.p;if(!fp)continue;
     if(ts(p.updatedAt)>ts(fp.updatedAt)){fp.name=p.name;fp.status=p.status;fp.updatedAt=p.updatedAt}
     for(const t of p.tasks||[]){const f=findIn(fresh,t.id);if(!f)continue;
-      if(ts(t.updatedAt)>ts(f.t.updatedAt)){const keep={agent:f.t.agent,transcript:f.t.transcript};Object.keys(f.t).forEach(k=>delete f.t[k]);Object.assign(f.t,clone(t),keep);if(!keep.agent)delete f.t.agent;if(keep.transcript==null)delete f.t.transcript}
+      if(ts(t.updatedAt)>ts(f.t.updatedAt)){const keep={agent:f.t.agent,transcript:f.t.transcript,owner:f.t.owner??t.owner};Object.keys(f.t).forEach(k=>delete f.t[k]);Object.assign(f.t,clone(t),keep);if(!keep.agent)delete f.t.agent;if(keep.transcript==null)delete f.t.transcript;if(keep.owner==null)delete f.t.owner}
       for(const s of t.subtasks||[]){const fs=f.t.subtasks?.find(x=>x.id===s.id);if(fs&&ts(s.updatedAt)>ts(fs.updatedAt))Object.assign(fs,clone(s))}}}
   return fresh}
 async function fetchServer(){
@@ -174,13 +174,15 @@ const fmt=d=>d?new Date(d).toLocaleDateString(undefined,{year:'numeric',month:'s
 const attHTML=t=>(t.attachments||[]).length?`<div class="atts">${t.attachments.map((x,i)=>`<span class="chip"><a href="${esc(x.url)}" target="_blank" rel="noopener" ${String(x.url).startsWith('data:')?`download="${esc(x.name)}"`:''}>📎 ${esc(x.name)}</a><button class="ic" data-a="unatt" data-i="${i}" title="Remove attachment">✕</button></span>`).join('')}</div>`:'';
 // Optional full verbatim transcript, collapsed under the task behind a "More" toggle.
 const trHTML=t=>t.transcript?`<details class="tr"><summary>More</summary><div class="trx">${esc(t.transcript)}</div></details>`:'';
+// owner:"austin" (on a task or a whole card) = human-only; AI agents must not work on it.
+const ownHTML=o=>o==='austin'?'<span class="due own" title="Austin handles this; AI agents skip it">👤 Austin only</span>':'';
 // Checkable sub-steps of a task (e.g. t35). Each one is saved to data.json like a task.
 const subHTML=t=>(t.subtasks||[]).length?`<ul class="subs">${t.subtasks.map(s=>`<li class="${s.done?'done':''}" data-s="${esc(s.id)}"><label class="row"><input type="checkbox" ${s.done?'checked':''} data-a="sub"><span class="txt">${esc(s.text)}</span></label></li>`).join('')}</ul>`:'';
 function taskHTML(t){
   if(t.done)return'';
   const ns=(t.subtasks||[]).length,ds=(t.subtasks||[]).filter(s=>s.done).length;
   return`<li data-t="${t.id}"><div class="row"><input type="checkbox" data-a="toggle">
-  <span class="txt">${esc(t.text)}${t.due?`<span class="due">📅 ${esc(t.due)}</span>`:''}${ns?`<span class="due sc">${ds}/${ns} steps</span>`:''}</span>
+  <span class="txt">${esc(t.text)}${ownHTML(t.owner)}${t.due?`<span class="due">📅 ${esc(t.due)}</span>`:''}${ns?`<span class="due sc">${ds}/${ns} steps</span>`:''}</span>
   <button class="ic" data-a="att" title="Attach file or link">📎</button><button class="ic" data-a="edit" title="Edit">✏️</button><button class="ic" data-a="del" title="Archive (delete)">🗑</button></div>
   ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${subHTML(t)}${trHTML(t)}${attHTML(t)}${agentHTML(t.agent)}</li>`}
 // What the scheduled Claude run did with this task (written to data.json by agent/apply_results.py).
@@ -198,16 +200,16 @@ function archHTML(){
   return`<div class="card" data-p="${p.id}"><div class="ph"><h3>${esc(p.name)}</h3><span class="pct">${esc(c.name)}${full?' · 📦 card archived':''}</span></div>
   ${full?`<button class="add" data-a="viewcard">${openArch.has(p.id)?'Hide archived card':'🗂 View archived card'}</button>${openArch.has(p.id)?`<div class="archcard">${cardHTML(p,true)}</div>`:''}`:''}
   <ul>${ts.map(t=>`<li class="done" data-t="${t.id}"><div class="row"><input type="checkbox" checked data-a="toggle" title="Un-archive (mark not done)">
-  <span class="txt">${esc(t.text)}${t.wasOpen?'<span class="due" title="Was not done when deleted">⚠ was open</span>':''}<div class="meta">✅ ${fmt(t.completedAt)}${t.recovered?' · ♻ recovered':''}</div></span>
+  <span class="txt">${esc(t.text)}${ownHTML(t.owner)}${t.wasOpen?'<span class="due" title="Was not done when deleted">⚠ was open</span>':''}<div class="meta">✅ ${fmt(t.completedAt)}${t.recovered?' · ♻ recovered':''}</div></span>
   <button class="ic" data-a="unarch" title="Un-archive">↩</button><button class="ic" data-a="att" title="Attach file or link">📎</button><button class="ic" data-a="purge" title="Delete permanently">🗑</button></div>
   ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${trHTML(t)}${attHTML(t)}</li>`).join('')}</ul></div>`}).join('')}
 function cardHTML(p,ro){
   const n=p.tasks.length,d=p.tasks.filter(t=>t.done).length,pc=n?Math.round(d/n*100):0;
-  return`<div class="card" data-p="${p.id}"><div class="ph"><h3>${esc(p.name)}</h3>
+  return`<div class="card" data-p="${p.id}"><div class="ph"><h3>${esc(p.name)}${ownHTML(p.owner)}</h3>
   ${ro?'':`<span><button class="ic" data-a="rename" title="Rename">✏️</button><button class="ic" data-a="delp" title="Delete project">🗑</button></span>`}</div>
   <div class="status" ${ro?'':'data-a="status" title="Click to edit status"'}>${esc(p.status)}</div>
   <div class="bar"><i style="width:${pc}%"></i></div><div class="pct">${d}/${n} done · ${pc}%</div>
-  ${ro?`<ul>${p.tasks.map(t=>`<li class="done"><span class="txt">✅ ${esc(t.text)}</span>${trHTML(t)}</li>`).join('')}</ul>`:`<ul>${p.tasks.map(taskHTML).join('')}</ul><button class="add" data-a="add">＋ Add task</button>`}</div>`}
+  ${ro?`<ul>${p.tasks.map(t=>`<li class="done"><span class="txt">✅ ${esc(t.text)}${ownHTML(t.owner)}</span>${trHTML(t)}</li>`).join('')}</ul>`:`<ul>${p.tasks.map(taskHTML).join('')}</ul><button class="add" data-a="add">＋ Add task</button>`}</div>`}
 function render(){
   needRender=false;
   const pin=S.categories.filter(c=>c.pinned),rest=S.categories.filter(c=>!c.pinned);
