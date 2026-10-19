@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-19",
-  "rev": 2,
+  "rev": 3,
   "categories": [
     {
       "id": "top-priority",
@@ -110,7 +110,10 @@
                 {
                   "id": "t35-6",
                   "text": "Website and privacy policy live at collinsparkenterprises.com",
-                  "done": false
+                  "done": true,
+                  "completedAt": "2026-10-19T00:04:00-04:00",
+                  "notes": "live at https://collinsparkenterprises.com with privacy pages /privacy/lanesync/, /privacy/stridelab/, /privacy/trolley-tracker/, and /terms/.",
+                  "doneRev": 3
                 },
                 {
                   "id": "t35-7",
