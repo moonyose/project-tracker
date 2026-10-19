@@ -145,7 +145,7 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "live on App Store; accepted Oct 16 (~7 PM ET)",
+          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18",
           "tasks": [
             {
               "id": "t6",
@@ -587,7 +587,7 @@
               "id": "t15",
               "text": "Stress test the Raven eval",
               "done": false,
-              "notes": "",
+              "notes": "Oct 18 ~7:12 PM ET: @Robertiscoding invited GitHub user moonyose (via austin.a.munoz@gmail.com) to collaborate on Robertiscoding/ravenbot; invite expires in 7 days (~Oct 25). Accept at https://github.com/Robertiscoding/ravenbot/invitations",
               "due": null
             }
           ]
