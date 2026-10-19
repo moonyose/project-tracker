@@ -83,6 +83,13 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      - name: Roblox tools (Rojo, StyLua, Selene, Lune, Luau)
+        if: steps.select.outputs.has_work == 'true' && (contains(steps.select.outputs.repos, 'CrashMode') || contains(steps.select.outputs.repos, 'FlyingMachines') || contains(steps.select.outputs.repos, 'PlunderSeas') || contains(steps.select.outputs.repos, 'ZombieRaiders'))
+        run: |
+          for t in rojo stylua selene lune luau; do brew install -q "$t" >/dev/null 2>&1 || echo "::warning::could not install $t"; done
+          for t in rojo stylua selene lune; do "$t" --version 2>/dev/null || true; done
+          command -v luau || true
+
       - name: Install Claude Code
         if: steps.select.outputs.has_work == 'true'
         run: npm install -g @anthropic-ai/claude-code >/dev/null 2>&1 && claude --version

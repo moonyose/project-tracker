@@ -58,32 +58,64 @@
       ]
     },
     "crash-mode": {
-      "repos": [],
+      "repos": [
+        "moonyose/CrashMode"
+      ],
       "platform": "roblox",
       "priority": 5,
-      "enabled": false,
-      "notes": "Skip for now: Austin has work in progress and is testing it himself. Also not on GitHub yet."
+      "enabled": true,
+      "verify": [
+        "rojo build default.project.json -o /tmp/<Game>.rbxl (must succeed)",
+        "stylua --check on the files you changed (and selene src if a selene.toml exists)",
+        "Any tests in tests/ that cover what you changed and run outside Studio (luau or lune), e.g. CrashMode: `luau tests/RoadProfileTest.luau`, `sh tests/driving/run.sh` (exit 1 = a known provisional gate; 2 = real failure). Compare against a run on origin/main before your change.",
+        "Studio isn't available on the runner: put an exact playtest checklist for Austin in the PR."
+      ],
+      "notes": "Roblox game (Rojo project). Read CLAUDE.md, README.md and CONTRACT_V10.md (latest contract) before changing gameplay; src/shared/Config.luau holds tunables. Everything is built from Parts at runtime, so the code is the game: CrashMode.rbxl is only a backup and must not be edited. Vehicle physics and crash detection live in src/server/Services (CarService, DamageService, VehicleDamage) and src/shared/CarDrive.luau; client driving in src/client/CarClient.client.luau. For timing bugs, find the actual cause (e.g. physics ownership, Touched vs. raycast/overlap checks, heartbeat ordering, network ownership lag) and explain it in the PR."
     },
     "flying-machines-paper-airplane-builder": {
-      "repos": [],
+      "repos": [
+        "moonyose/FlyingMachines"
+      ],
       "platform": "roblox",
       "priority": 5,
       "enabled": false,
-      "notes": "Not on GitHub yet."
+      "notes": "On GitHub since Oct 19 (Rojo project; read CLAUDE.md first). Off until Austin turns it on.",
+      "verify": [
+        "rojo build default.project.json -o /tmp/<Game>.rbxl (must succeed)",
+        "stylua --check on the files you changed (and selene src if a selene.toml exists)",
+        "Any tests in tests/ that cover what you changed and run outside Studio (luau or lune), e.g. CrashMode: `luau tests/RoadProfileTest.luau`, `sh tests/driving/run.sh` (exit 1 = a known provisional gate; 2 = real failure). Compare against a run on origin/main before your change.",
+        "Studio isn't available on the runner: put an exact playtest checklist for Austin in the PR."
+      ]
     },
     "plunder-seas-sea-of-thieves-style": {
-      "repos": [],
+      "repos": [
+        "moonyose/PlunderSeas"
+      ],
       "platform": "roblox",
       "priority": 6,
       "enabled": false,
-      "notes": "Not on GitHub yet."
+      "notes": "On GitHub since Oct 19 (Rojo project; read CLAUDE.md first). Off until Austin turns it on.",
+      "verify": [
+        "rojo build default.project.json -o /tmp/<Game>.rbxl (must succeed)",
+        "stylua --check on the files you changed (and selene src if a selene.toml exists)",
+        "Any tests in tests/ that cover what you changed and run outside Studio (luau or lune), e.g. CrashMode: `luau tests/RoadProfileTest.luau`, `sh tests/driving/run.sh` (exit 1 = a known provisional gate; 2 = real failure). Compare against a run on origin/main before your change.",
+        "Studio isn't available on the runner: put an exact playtest checklist for Austin in the PR."
+      ]
     },
     "zombie-raiders-arc-raiders-with-zombies": {
-      "repos": [],
+      "repos": [
+        "moonyose/ZombieRaiders"
+      ],
       "platform": "roblox",
       "priority": 6,
       "enabled": false,
-      "notes": "Not on GitHub yet."
+      "notes": "On GitHub since Oct 19 (Rojo project; read CLAUDE.md first). Off until Austin turns it on.",
+      "verify": [
+        "rojo build default.project.json -o /tmp/<Game>.rbxl (must succeed)",
+        "stylua --check on the files you changed (and selene src if a selene.toml exists)",
+        "Any tests in tests/ that cover what you changed and run outside Studio (luau or lune), e.g. CrashMode: `luau tests/RoadProfileTest.luau`, `sh tests/driving/run.sh` (exit 1 = a known provisional gate; 2 = real failure). Compare against a run on origin/main before your change.",
+        "Studio isn't available on the runner: put an exact playtest checklist for Austin in the PR."
+      ]
     },
     "raven-eval": {
       "repos": [

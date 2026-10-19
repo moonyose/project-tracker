@@ -60,7 +60,16 @@
       "Bash(cd *)",
       "Bash(echo *)",
       "Bash(pwd)",
-      "Bash(which *)"
+      "Bash(which *)",
+      "Bash(rojo *)",
+      "Bash(stylua *)",
+      "Bash(selene *)",
+      "Bash(lune *)",
+      "Bash(luau *)",
+      "Bash(sh tests/*)",
+      "Bash(sh ./tests/*)",
+      "Bash(bash tests/*)",
+      "Bash(./tests/*)"
     ],
     "deny": [
       "Bash(git push --force*)",
