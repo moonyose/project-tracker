@@ -269,7 +269,7 @@
             {
               "id": "t47",
               "text": "Android: port \"save the skeleton video with or without tips\" from iOS (StrideLab PR #1)",
-              "done": false,
+              "done": true,
               "notes": "Mirror the merged iOS PR #1 in android/: second save option with tip cards drawn on the video; plain save unchanged.",
               "due": null,
               "agent": {
@@ -280,7 +280,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/10",
                 "verified": "cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug all pass, including the ported Swift checks in ExportTest (tip holds; caption upright at the top of the frame in a dark card, portrait and landscape). A reviewer subagent found no defects. Not run: iOS xcodebuild and verify.sh (optional, the change only touches android/); bend PROOF.bend (bend CLI not on the runner). No r",
                 "next_step": "On an Android phone: open an analyzed clip, tap ... > 'Save video with skeleton and tips', then open the video from Movies/StrideLab. A dark card with the moment (in colour) above the tip (cream) should appear at the top for about 2 s at each coaching moment. Then confirm the plain 'Save video with skeleton' has no text on it."
-              }
+              },
+              "completedAt": "2026-10-19T13:25:29.258Z",
+              "updatedAt": "2026-10-19T13:25:29.259Z"
             },
             {
               "id": "t48",
