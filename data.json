@@ -461,6 +461,15 @@
               "createdAt": "2026-10-19T11:13:00-04:00",
               "transcript": "So, I have a user who is, who has a clip where, again, the, the front foot is the farther one away, and for some reason the app did not detect his launch phase well enough to, like, measure the triple extension or measure his launch angle. It's strange because I see the joints. The joints all appear correct. but for whatever reason, it's, it's not showing, it didn't, it didn't measure those things. So. Yeah, and I think it has to do with the fact that his, his front leg was further away from the camera again. So, yeah, we need to make sure that that doesn't affect anything in the detection of the whole clip.",
               "updatedAt": "2026-10-19T11:13:00-04:00"
+            },
+            {
+              "id": "t64",
+              "text": "Fix TestFlight CI signing: Apple account hit its certificate limit, so master builds now fail",
+              "done": false,
+              "notes": "TestFlight build run 39259643183 on master (PR #20 merge, Oct 19 ~9:23 AM ET) failed at archive: 'Your account has reached the maximum number of certificates... choose a certificate to revoke' and 'No profiles for com.austinmunoz.stridelab were found'. The 8:37 AM ET build had succeeded, so CI is likely minting a new cert each run. Fix: revoke unused development certificates in the Apple Developer account (team N8RA297MHC) and make CI reuse one stored signing cert instead of creating new ones. Ask Austin before revoking any certificate.",
+              "due": null,
+              "createdAt": "2026-10-19T15:50:00Z",
+              "updatedAt": "2026-10-19T15:50:00Z"
             }
           ]
         },
