@@ -469,7 +469,16 @@
               "due": null,
               "createdAt": "2026-10-19T11:13:00-04:00",
               "transcript": "So, I have a user who is, who has a clip where, again, the, the front foot is the farther one away, and for some reason the app did not detect his launch phase well enough to, like, measure the triple extension or measure his launch angle. It's strange because I see the joints. The joints all appear correct. but for whatever reason, it's, it's not showing, it didn't, it didn't measure those things. So. Yeah, and I think it has to do with the fact that his, his front leg was further away from the camera again. So, yeah, we need to make sure that that doesn't affect anything in the detection of the whole clip.",
-              "updatedAt": "2026-10-19T11:13:00-04:00"
+              "updatedAt": "2026-10-19T11:13:00-04:00",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Draft PR #25 (iOS + Android). Root cause found by simulation: when the front foot is the far one, Vision often puts both legs' labels on the near (rear) leg. PR #14 kept those frames out of the set measurement, but the triple-extension read did not, so the launch was measured on the rear leg swinging through (hip 147 vs 181, knee 123 vs 172, launch line 22 vs 44). The hip and knee peaks now skip frames flagged by StartAnalyzer.legsDoubled, with the same Kotlin change and a new test on both platforms in both running directions. It is a draft because the exact 'no launch tip at all, with correct",
+                "hash": "dd94714c7bd7",
+                "at": "2026-10-19T18:41+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/25",
+                "verified": "./Tools/verify.sh ALL CHECKS PASSED (new farFrontFootLaunchTest passes both directions); xcodebuild build scheme StrideLab for generic iOS Simulator (Xcode 26.6) succeeded; android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug BUILD SUCCESSFUL; bend CLI not installed, but no Bend-twinned rule changed; a reviewer subagent found no defects.",
+                "next_step": "On the phone, re-analyze the far-front-foot clip. Check that the Launch band and Launch tip show extension and launch-line numbers, and that coach mode stops with the far front leg straight behind. If there's still no launch tip, note the warning shown ('No start detected' or none) and share the clip so the remaining case can be fixed. Then mark PR #25 ready and merge."
+              }
             },
             {
               "id": "t64",
@@ -487,7 +496,16 @@
               "done": false,
               "text": "Long clips with several starts / straightaways / curves, part 2 (screen): show what was detected in a long recording and have the user confirm each piece's type before it's analysed.",
               "notes": "Austin asked (Oct 18): if a clip is long and contains multiple starts/straightaways/curves, indicate what was detected and have the user confirm for each clip. Part 1 (StrideLab PR #22, merged) added the engine: SegmentLabeler splits a recording into labelled pieces. PART 2, this task, iOS and Android: (1) After import/recording, if SegmentLabeler finds more than one piece, show the full-screen confirm flow built for the clip-type gate (t56: big Start / Straightaway / Curve buttons, no other UI), once per piece, with text like 'Piece 2 of 3 (0:12 to 0:19) looks like a straightaway. Is that correct? Select below to confirm for final analysis.' and a thumbnail or short looping preview of that piece. (2) Save each confirmed piece as its own clip with its confirmed type, so every piece goes through the existing gate and analysis; a single-piece recording behaves exactly as today. (3) Respect LAWS.bend (gate_until_chosen, chosen_plays): nothing plays until its type is confirmed. Add tests for the multi-piece flow on both platforms, run the iOS and Android checks.",
-              "updatedAt": "2026-10-19T16:43:25.021Z"
+              "updatedAt": "2026-10-19T16:43:25.021Z",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "When SegmentLabeler finds more than one piece in a recording, the clip-type gate's full screen (Start / Straightaway / Curve, with a still frame and 'Piece N of M (m:ss to m:ss) looks like ...') is shown once per piece. Each confirmed piece is then cut as its own clip with its kind chosen, so its gate is already answered and nothing plays before confirmation. A single-piece recording behaves as before. Done on iOS and Android, with tests on both.",
+                "hash": "e32ee1dc7020",
+                "at": "2026-10-19T18:41+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/24",
+                "verified": "Tools/verify.sh ALL CHECKS PASSED (new piece-confirm checks included). xcodebuild simulator build (generic iOS Simulator) succeeded. Android: ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed. A reviewer subagent ran and its findings were fixed. Not done: bend PROOF.bend (CLI not installed; no .bend changed), no screenshot of the new screen (the simulator scan was cut short und",
+                "next_step": "On the phone, record one clip with a start, a straight pass and a curve run with pauses between them. Check that 'Piece 1 of 3 ...' appears with a still and three buttons, then answer each piece. Check the library then has one clip per piece, each named for its kind, that open straight into analysis. Also check that a short single-start clip behaves as before."
+              }
             },
             {
               "id": "t67",
