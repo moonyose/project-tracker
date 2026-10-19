@@ -1,6 +1,6 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "rev": 2,
   "categories": [
     {
@@ -129,7 +129,15 @@
               "text": "Build Android version",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "needs_austin",
+                "summary": "Building LaneSync for Android from scratch is a whole new app and needs decisions first: native Kotlin or cross-platform, and whether it has to sync timing with the iOS app. That is too big and open-ended for one unattended run, so nothing was started.",
+                "hash": "2268753da46f",
+                "at": "2026-10-19T02:21+00:00",
+                "verified": "Nothing run; no code changed.",
+                "next_step": "Pick the approach (e.g. a Kotlin + Compose port in android/, like StrideLab) and split this into concrete steps, such as 'scaffold android/ and port the timing core with tests'. Then add those as to-dos."
+              }
             }
           ]
         },
@@ -239,35 +247,79 @@
               "text": "Build Android version",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "needs_austin",
+                "summary": "StrideLab's Android port already exists in android/, and this run opened PRs for the four specific iOS features still missing (#9 clip kind, #10 save with tips, #11 3-point start, #12 share full report). \"Build Android version\" is too broad to act on by itself, so I left it alone.",
+                "hash": "2268753da46f",
+                "at": "2026-10-19T02:21+00:00",
+                "verified": "No code changed for this task. The related PRs #9 to #12 each pass ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug.",
+                "next_step": "Review and merge PRs #9 to #12. Then either close this to-do or replace it with the specific Android gaps that are left (e.g. Play Store listing, testing on a device)."
+              }
             },
             {
               "id": "t47",
               "text": "Android: port \"save the skeleton video with or without tips\" from iOS (StrideLab PR #1)",
               "done": false,
               "notes": "Mirror the merged iOS PR #1 in android/: second save option with tip cards drawn on the video; plain save unchanged.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Ported iOS PR #1 to Android: a second save option, 'Save video with skeleton and tips' (', guides and tips' with beginner coaching on), in both the player's menu and the library's long-press menu. It captions each coaching moment's tip in a dark card across the top of the video for 2 s after the moment. SkeletonTipPlan and the caption layout are in :core and drawn by SkeletonCanvasPainter. The plain save's frame logic is unchanged.",
+                "hash": "7badc35bf5fd",
+                "at": "2026-10-19T02:21+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/10",
+                "verified": "cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug all pass, including the ported Swift checks in ExportTest (tip holds; caption upright at the top of the frame in a dark card, portrait and landscape). A reviewer subagent found no defects. Not run: iOS xcodebuild and verify.sh (optional, the change only touches android/); bend PROOF.bend (bend CLI not on the runner). No r",
+                "next_step": "On an Android phone: open an analyzed clip, tap ... > 'Save video with skeleton and tips', then open the video from Movies/StrideLab. A dark card with the moment (in colour) above the tip (cream) should appear at the top for about 2 s at each coaching moment. Then confirm the plain 'Save video with skeleton' has no text on it."
+              }
             },
             {
               "id": "t48",
               "text": "Android: port \"always ask what a clip is\" and full re-analysis when a clip's type changes, from iOS (StrideLab PR #2)",
               "done": false,
               "notes": "Mirror the merged iOS PR #2 in android/: ask start/stride/curve on every clip with the detector's guess as a hint; switching kind re-runs start detection with a visible re-analyzing step.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Ported iOS PR #2 to android/. Every unanswered clip is now asked 'Is this a start, a stride or a curve?', with the detector's guess shown as a hint and all three kinds as answers. Confirming the guess saves it as the athlete's choice, and 'Let StrideLab tell' is removed. A clip the athlete calls a start is segmented again as one (StartAnalyzer assumeStart / relaxedSet; measurementVersion 31). Changing kind shows a 'Re-analyzing as ...' step for at least 1.2 s. KindUiTest mirrors the new Swift tests.",
+                "hash": "d575a8f37aa7",
+                "at": "2026-10-19T02:21+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/9",
+                "verified": "Passed: ./gradlew :core:test (including the Swift golden tip fingerprint), :app:testDebugUnitTest and :app:assembleDebug. A reviewer subagent found no defects. Not run: the iOS xcodebuild build, Tools/verify.sh and bend PROOF.bend, since this change only touches android/. Not checked visually: no emulator screenshot.",
+                "next_step": "On an Android phone, import a stride clip. It should ask 'Is this a start, a stride or a curve?' with a 'Looks like a stride (straight) \u00b7 NN% sure' hint and three buttons. Answer Stride, then reopen the clip: it should not ask again. Switch it to Start in the kind sheet: a 'Re-analyzing as a start' step should show briefly, then launch and drive phase bands."
+              }
             },
             {
               "id": "t49",
               "text": "Android: port \"share the full report as one tall picture\" from iOS (StrideLab PR #3)",
               "done": false,
               "notes": "Mirror the merged iOS PR #3 in android/: Share scorecard vs Share full report; whole report rendered as one tall image with every section expanded.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Ported iOS PR #3 to Android. The report's share icon is now a menu (Share scorecard / Share full report) and the hero has a Share full report button with a spinner. The full report is composed off screen at 390 dp with every disclosure and step row open and no buttons, then recorded into one tall bitmap (3x, capped at 16,000 px). It opens in a scrollable Full report share sheet. A reviewer found two capture bugs (a hang when the scale is exactly 1x, and the Picture being re-recorded while another thread played it); both are fixed.",
+                "hash": "04bc3548dacd",
+                "at": "2026-10-19T02:21+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/12",
+                "verified": "cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passes, including 5 new FullReportLayoutTest cases. iOS xcodebuild and Tools/verify.sh not run because only android/ changed. bend CLI not installed. Not run on an emulator or device, so the rendered picture itself is unverified.",
+                "next_step": "On an Android phone, open a clip's Full report, tap the share icon, then Share full report. Check the tall picture includes the still, the open 'More measurements' and 'How these targets were set' sections, every step's numbers and the StrideLab mark at the bottom, with no buttons. Then share it and check it is sharp and nothing is cut off."
+              }
             },
             {
               "id": "t50",
               "text": "Android: port the 3-point start caveat from iOS (StrideLab PR #5)",
               "done": false,
               "notes": "Mirror the merged iOS PR #5 in android/: detect one hand down / one raised during the set hold (confident wrists only) and show the 'Looks like a 3-point start' warning.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Ported iOS PR #5 (ff46498) to android/core: SetPosition.threePointStance, StartAnalyzer.threePointStance (median wrist heights, confidence >= 0.5, one wrist < 0.25 and the other > 0.5 leg lengths), StepAnalyzer.threePointWarning ('Looks like a 3-point start', same wording), and the matching PhasesTest.threePointTest.",
+                "hash": "7b161a3d296f",
+                "at": "2026-10-19T02:21+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/11",
+                "verified": "cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (PhasesTest 0 failures, new section ran; debug APK built). Reviewer subagent found no defects against the Swift diff. Not run: iOS xcodebuild and Tools/verify.sh (no Swift or Bend changed), bend PROOF.bend (bend CLI not installed on the runner).",
+                "next_step": "On an Android phone, analyze a 3-point block start and check that the 'Looks like a 3-point start' warning appears; check that a normal 4-point start does not show it."
+              }
             },
             {
               "id": "t51",
