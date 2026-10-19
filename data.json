@@ -339,7 +339,7 @@
             {
               "id": "t51",
               "text": "Fix tracking when the runner's front foot isn't the one closest to the camera; the app currently struggles with that.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -350,7 +350,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/15",
                 "verified": "Tools/verify.sh ALL CHECKS PASSED (incl. new farFrontFootTest); xcodebuild StrideLab for generic iOS Simulator BUILD SUCCEEDED; android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (PhasesTest 0 failures, APK built); reviewer subagent found no defects. Not run: bend PROOF.bend (the runner's allow-list refused the bend command; no .bend files changed). Only checked on a syn",
                 "next_step": "On a phone, analyse a side-on block start where the athlete's back leg is nearer the camera. At set the tip should give the real front knee (~90) and back knee (~130), not the back knee twice, and step 1 should be the first step out of the blocks. Also run `bend PROOF.bend` on the Mac."
-              }
+              },
+              "completedAt": "2026-10-19T13:25:35.225Z",
+              "updatedAt": "2026-10-19T13:25:35.225Z"
             },
             {
               "id": "t52",
