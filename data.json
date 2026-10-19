@@ -429,7 +429,7 @@
             {
               "id": "t56",
               "text": "Clip-type gate: a clip can't be played until its type (start / straightaway / curve) is confirmed. Full-screen choice with big buttons and nothing else on screen.",
-              "done": false,
+              "done": true,
               "notes": "Austin (Oct 18): 'I don't want the user to be able to play their clip until they've selected if the clip is a start, straightaway, or curve. Make the buttons much bigger and don't include any other UI elements other than this choice.' Text along the lines of: 'Looks like this clip contains a start. Is that correct? Select below to confirm for final analysis.' (fill in what was detected). Three large buttons: Start / Straightaway / Curve, with the detected one first or highlighted. No playback, scrubbing, tips or other controls until one is chosen. Keep a way back out (LAW 49: every state has a button off it). Shipped demo clips are exempt as today. Update or add laws in Kinds.bend/LAWS.bend if the gate changes a rule.",
               "due": null,
               "agent": {
@@ -440,7 +440,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/18",
                 "verified": "xcodebuild build (StrideLab, iPhone 17 Pro sim, iOS 26.5) succeeded; ./Tools/verify.sh ALL CHECKS PASSED; android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (KindUiTest 12/12 incl. new gate checks); simulator screenshot of the gate inspected (not committed: writes under .claude/ were refused); reviewer subagent findings fixed. NOT run: bend PROOF.bend (bend CLI not insta",
                 "next_step": "On your phone: open a new clip. You should see only Back, the 'Looks like this clip contains ...' sentence and three big buttons (detected one on top in orange). Tap Back and you should return to the library. Reopen, tap the highlighted button, and the clip should analyze and play normally. Reopen once more and there should be no question. A shipped demo should play with no gate. Also run `bend PR"
-              }
+              },
+              "completedAt": "2026-10-19T13:26:02.213Z",
+              "updatedAt": "2026-10-19T13:26:02.213Z"
             },
             {
               "id": "t57",
