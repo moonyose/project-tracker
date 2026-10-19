@@ -510,23 +510,29 @@
             {
               "id": "t9",
               "text": "Restart ad campaign to test new version",
-              "done": false,
+              "done": true,
               "notes": "",
-              "due": null
+              "due": null,
+              "completedAt": "2026-10-19T13:26:13.878Z",
+              "updatedAt": "2026-10-19T13:26:13.878Z"
             },
             {
               "id": "t10",
               "text": "Test new version myself (including on mobile)",
-              "done": false,
+              "done": true,
               "notes": "",
-              "due": null
+              "due": null,
+              "completedAt": "2026-10-19T13:26:14.439Z",
+              "updatedAt": "2026-10-19T13:26:14.439Z"
             },
             {
               "id": "t33",
               "text": "Fix steering sensitivity",
-              "done": false,
+              "done": true,
               "notes": "",
-              "due": null
+              "due": null,
+              "completedAt": "2026-10-19T13:26:14.964Z",
+              "updatedAt": "2026-10-19T13:26:14.964Z"
             },
             {
               "id": "t46",
