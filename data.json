@@ -322,28 +322,64 @@
               "text": "Fix tracking when the runner's front foot isn't the one closest to the camera; the app currently struggles with that.",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Block-start set position: when the front-block foot is the far leg, Vision often draws both legs on the near (rear) leg or loses the far ankle. measureSet then picked the front leg off coinciding ankles, measured the rear knee as the front knee, and put the front block at the rear foot (so the front foot's block contact could count as step 1). Frames where every visible knee/ankle pair is within 0.12 leg lengths (StartAnalyzer.legsDoubled) are now ignored for leg readings and the front-block position; the knees vote when the far ankle is missing. Same change and test on iOS and Android. Only t",
+                "hash": "03f2208505db",
+                "at": "2026-10-19T02:55+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/15",
+                "verified": "Tools/verify.sh ALL CHECKS PASSED (incl. new farFrontFootTest); xcodebuild StrideLab for generic iOS Simulator BUILD SUCCEEDED; android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (PhasesTest 0 failures, APK built); reviewer subagent found no defects. Not run: bend PROOF.bend (the runner's allow-list refused the bend command; no .bend files changed). Only checked on a syn",
+                "next_step": "On a phone, analyse a side-on block start where the athlete's back leg is nearer the camera. At set the tip should give the real front knee (~90) and back knee (~130), not the back knee twice, and step 1 should be the first step out of the blocks. Also run `bend PROOF.bend` on the Mac."
+              }
             },
             {
               "id": "t52",
               "text": "Cut the text on the clip-type prompt (start / straightaway stride / curve stride); there's far too much of it.",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Cut the text on the 'start, stride or curve' prompt on iOS and Android (shared PR with t54). Removed the two evidence bullets (still under More options) and the line 'Coaching waits for your answer.' The question is now 'Is it a start, stride or curve?' and the hint is now 'Looks like a stride \u00b7 82%'.",
+                "hash": "837668f36e31",
+                "at": "2026-10-19T02:55+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/14",
+                "verified": "Tools/verify.sh: ALL CHECKS PASSED. xcodebuild for the iOS Simulator (Xcode 26.6): no errors. Gradle :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL. bend CLI is not on the runner, so PROOF.bend was not run (no Bend-twinned code changed). A reviewer subagent read the diff and its findings are fixed. No screenshot taken.",
+                "next_step": "On your phone, record or import a clip and check that the prompt shows only the question, a one-line hint, the three buttons and 'More options\u2026'."
+              }
             },
             {
               "id": "t53",
               "text": "Fix skeleton correction with background runners: joints keep detecting and undetecting, forcing repeated manual re-placement, and joints get detected on the runner behind the subject. After the user corrects the skeleton, the clip must be re-analyzed (currently it isn't).",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Two root causes, fixed on iOS and Android. (1) A joint correction that landed close to the tracked body counted as a 'nudge' and never re-analyzed the clip: no video re-crop, only a residual laid over the same detections. Now every placed or moved joint starts the bounded re-crop from the marks, beginning from the athlete as originally selected (from the cached detections). A clip whose re-crop failed isn't retried on every nudge. (2) After a correction, a followed joint accepted any detection near the athlete's hips, which let a runner just behind steal knees and elbows on alternating frames ",
+                "hash": "1c0bc01e0599",
+                "at": "2026-10-19T02:55+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/16",
+                "verified": "./Tools/verify.sh exited 0, including the new backgroundRunnerFlickerTest. xcodebuild build for scheme StrideLab on the iPhone 17 Pro simulator (iOS 26.5) finished with no errors. android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed. bend PROOF.bend not run: the bend CLI isn't installed on the runner, and no Bend-twinned rule changed. A reviewer subagent's findings were fi",
+                "next_step": "On your phone: open a clip with a second runner behind the athlete, tap the pencil and drag the wrong joint onto the athlete. Check that 'Refining\u2026' appears and clears, then scrub forward and confirm the joint stays on the athlete and doesn't flick to the runner behind or disappear."
+              }
             },
             {
               "id": "t54",
               "text": "Add a disclaimer that the best tracking needs no other runners in the background.",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Added 'No other runners in the background' to the record screen's how-to-film tips for every filming type, replacing 'One athlete at a time' (a start reads 'no other runners in view'). Also added it to the library's 'For the best analysis' list. Done on iOS and Android, in the same PR as t52.",
+                "hash": "a83da7943792",
+                "at": "2026-10-19T02:55+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/14",
+                "verified": "Tools/verify.sh: ALL CHECKS PASSED. xcodebuild for the iOS Simulator: no errors. Android Gradle checks: BUILD SUCCESSFUL. bend CLI is not available on the runner. No screenshot taken.",
+                "next_step": "On your phone, open the recorder, show the filming tips and switch the Filming menu: each type should mention no other runners in the background."
+              }
             }
           ]
         },
