@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-19",
-  "rev": 5,
+  "rev": 6,
   "categories": [
     {
       "id": "top-priority",
@@ -145,7 +145,7 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18",
+          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319",
           "tasks": [
             {
               "id": "t6",
@@ -791,7 +791,7 @@
         {
           "id": "jonathan-edwards-homes-llc",
           "name": "Jonathan Edwards Homes LLC",
-          "status": "Mercury APPROVED Oct 16 (~2:30 PM ET, checking \u2022\u20224171, savings \u2022\u20222915)",
+          "status": "Mercury APPROVED Oct 16 (~2:30 PM ET, checking \u2022\u20224171, savings \u2022\u20222915); Mercury IO credit card set up Oct 19 (~9:07 AM ET)",
           "tasks": [
             {
               "id": "t30",
@@ -844,6 +844,15 @@
               "done": false,
               "notes": "Verify Mercury balance; wait for ACH hold if any; then proceed to close Chase (t25).",
               "due": null
+            },
+            {
+              "id": "t59",
+              "text": "Set up Mercury IO credit card for Jonathan Edwards Homes LLC",
+              "done": true,
+              "notes": "Done Oct 19 ~9:07 AM ET: Mercury confirmed IO card set up. Daily repayment (checking primary, savings backup); limit matches deposits 1:1 up to $5K/day; upgrades to monthly repayments once total deposits surpass $15K. Virtual card usable now; physical card in mail. 1.5% cashback, no annual fee.",
+              "due": null,
+              "completedAt": "2026-10-19T09:26:46-04:00",
+              "updatedAt": "2026-10-19T09:26:46-04:00"
             }
           ]
         }
