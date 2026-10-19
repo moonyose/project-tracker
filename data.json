@@ -166,7 +166,7 @@
             {
               "id": "t36",
               "text": "When a clip is uploaded or recorded, explicitly ask the user whether it's a start, a stride/mid-run clip, or a curve. Auto-detection can be used as a hint, but always ask.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -177,12 +177,14 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/2",
                 "verified": "xcodebuild build OK (iPhone 17 simulator); Tools/verify.sh exit 0, ALL CHECKS PASSED, including new asking tests; bend CLI not on the runner, so PROOF.bend was not run (no Bend rule changed); no screenshot because the shared simulator wouldn't launch the app reliably",
                 "next_step": "Install the PR build, record or import a clip and open it. Check that it asks start, stride or curve before any tips, even when the guess is confident."
-              }
+              },
+              "completedAt": "2026-10-19T13:11:42.560Z",
+              "updatedAt": "2026-10-19T13:11:42.560Z"
             },
             {
               "id": "t37",
               "text": "Share a full report: export the entire scrollable results screen, not just the current Instagram-story image.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -193,12 +195,14 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/3",
                 "verified": "xcodebuild build OK (iPhone 17 Pro sim, iOS 26.5); Tools/verify.sh ALL CHECKS PASSED (exit 0); simulator stride demo produced a full 809x16000 report image with all sections and steps expanded; reviewer findings fixed. bend PROOF.bend not run (the bend command was refused by the runner's allow-list; no .bend or analysis code changed). No screenshot committed (sandbox blocks writes to .claude/).",
                 "next_step": "Install the PR build, open a clip's report, tap the share icon then 'Share full report', scroll the preview to the wordmark at the bottom, and save it to Photos to check it's sharp when zoomed."
-              }
+              },
+              "completedAt": "2026-10-19T13:11:46.092Z",
+              "updatedAt": "2026-10-19T13:11:46.092Z"
             },
             {
               "id": "t38",
               "text": "When exporting or sharing the skeleton-overlay video, include the tips, or offer the option to export with or without tips.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -209,7 +213,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/1",
                 "verified": "xcodebuild build OK (iPhone 17 Pro sim, iOS 26.5). Tools/verify.sh exit 0, ALL CHECKS PASSED, including 2 new export-tips tests. Reviewer pass found no defects; one test check tightened. bend CLI not installed on the runner, so PROOF.bend was not run (no .bend files changed). No screenshot or real-video render: the save is hidden for demo clips.",
                 "next_step": "Install the PR build, open an analysed clip, tap ... > Save video with skeleton and tips, and play the result in Photos. Tips should show at the top at each coaching moment. The plain save should have no text."
-              }
+              },
+              "completedAt": "2026-10-19T13:11:47.539Z",
+              "updatedAt": "2026-10-19T13:11:47.539Z"
             },
             {
               "id": "t39",
@@ -230,7 +236,7 @@
             {
               "id": "t40",
               "text": "Changing a clip's type (e.g. stride to start) must trigger a full re-analysis and re-segmentation, with a visible re-analysis step. Bug: switching stride to start currently just relabels it. It doesn't detect the set position or launch, still shows stride/drive phases, and only adds start tips.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -241,12 +247,14 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/2",
                 "verified": "xcodebuild build OK (iPhone 17 simulator); Tools/verify.sh exit 0, with new tests: a stride clip analysed as a start gets launch and drive phases, a detected start is unchanged, and start to stride leaves no start phases; bend CLI not on the runner; checked on synthetic clips only, not real footage",
                 "next_step": "On your phone, open a mid-run clip, change it from Stride to Start, and check you see the re-analysis step and then launch and drive phases instead of stride or drive only."
-              }
+              },
+              "completedAt": "2026-10-19T13:12:34.655Z",
+              "updatedAt": "2026-10-19T13:12:34.655Z"
             },
             {
               "id": "t44",
               "text": "Build Android version",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -254,7 +262,9 @@
                 "summary": "Austin: skip for now.",
                 "hash": "2268753da46f",
                 "at": "2026-10-19T02:23+00:00"
-              }
+              },
+              "completedAt": "2026-10-19T13:10:48.985Z",
+              "updatedAt": "2026-10-19T13:10:48.985Z"
             },
             {
               "id": "t47",
