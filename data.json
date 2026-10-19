@@ -375,7 +375,7 @@
             {
               "id": "t53",
               "text": "Fix skeleton correction with background runners: joints keep detecting and undetecting, forcing repeated manual re-placement, and joints get detected on the runner behind the subject. After the user corrects the skeleton, the clip must be re-analyzed (currently it isn't).",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -386,7 +386,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/16",
                 "verified": "./Tools/verify.sh exited 0, including the new backgroundRunnerFlickerTest. xcodebuild build for scheme StrideLab on the iPhone 17 Pro simulator (iOS 26.5) finished with no errors. android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed. bend PROOF.bend not run: the bend CLI isn't installed on the runner, and no Bend-twinned rule changed. A reviewer subagent's findings were fi",
                 "next_step": "On your phone: open a clip with a second runner behind the athlete, tap the pencil and drag the wrong joint onto the athlete. Check that 'Refining\u2026' appears and clears, then scrub forward and confirm the joint stays on the athlete and doesn't flick to the runner behind or disappear."
-              }
+              },
+              "completedAt": "2026-10-19T13:25:51.592Z",
+              "updatedAt": "2026-10-19T13:25:51.592Z"
             },
             {
               "id": "t54",
