@@ -21,7 +21,7 @@
         "bend PROOF.bend if the bend CLI is available (prints 'All terms check.'); if not, say so in the PR",
         "For changes under android/: cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug (JDK 17 is set as JAVA_HOME; ANDROID_HOME comes from the runner). All must pass."
       ],
-      "notes": "Read README.md, DESIGN.md and LAWS.bend before changing analysis code. Swift mirrors Bend files (Kinds.bend, Tips.bend, ...): if you change a rule that has a Bend twin, change both and run the matching Tools/*_differential.sh. The Android port lives in android/ (Kotlin + Compose); android/README.md and android/ARCHITECTURE.md give the Swift-to-Kotlin rules. The iOS app is the spec: when porting an iOS change, read the merged iOS PR's diff (git -C <repo> show <merge-commit>) and mirror its behavior, tests and copy in Kotlin."
+      "notes": "Read README.md, DESIGN.md and LAWS.bend before changing analysis code. Swift mirrors Bend files (Kinds.bend, Tips.bend, ...): if you change a rule that has a Bend twin, change both and run the matching Tools/*_differential.sh. The Android port lives in android/ (Kotlin + Compose); android/README.md and android/ARCHITECTURE.md give the Swift-to-Kotlin rules. The iOS app is the spec: when porting an iOS change, read the merged iOS PR's diff (git -C <repo> show <merge-commit>) and mirror its behavior, tests and copy in Kotlin. BOTH PLATFORMS: every StrideLab fix or feature must be made in the iOS app AND in the Android port (android/) in the same PR, unless the task names one platform. Run the iOS checks and the Android Gradle checks; say in the PR what was done on each."
     },
     "lanesync-sprint-timing": {
       "repos": [
@@ -93,5 +93,11 @@
       "priority": 7,
       "enabled": false
     }
-  }
+  },
+  "skip_task_ids": [
+    "t43",
+    "t44",
+    "t45"
+  ],
+  "_skip_task_ids_note": "Austin: skip for now. Tasks listed here are never picked, whatever data.json says. Remove an id to re-enable it."
 }

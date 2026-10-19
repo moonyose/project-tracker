@@ -41,6 +41,12 @@ at the same time.
 
 ## Make the change
 
+- **Both platforms.** If the repo also has an Android port (an `android/`
+  folder) and the behavior you're changing exists there, make the same
+  change in Kotlin in the same PR, unless the task names one platform. The
+  iOS app is the spec. Run the iOS checks and the Android Gradle checks, and
+  say in the PR what was done on each.
+
 - Keep the change the smallest one that fully does what the task says. Don't
   add unrelated refactors or style churn.
 - Match the codebase's existing patterns, naming and UI style.

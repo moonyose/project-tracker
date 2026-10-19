@@ -62,6 +62,7 @@ def main():
     ledger = load("agent/ledger.json", {"spent_usd": 0, "runs": []})
     now = dt.datetime.now(dt.timezone.utc)
 
+    skip_ids = set(cfg.get("skip_task_ids", []))
     budget = cfg["budget"]
     left = round(budget["total_usd"] - ledger.get("spent_usd", 0), 2)
     reason = ""
@@ -78,7 +79,7 @@ def main():
                 if not pc or not pc.get("enabled") or not pc.get("repos"):
                     continue
                 for t in p["tasks"]:
-                    if t.get("done") or is_self_test(t) or is_not_code(t):
+                    if t.get("done") or t.get("id") in skip_ids or is_self_test(t) or is_not_code(t):
                         continue
                     h = task_hash(t)
                     a = t.get("agent") or {}
