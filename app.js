@@ -34,12 +34,14 @@ function applyServerReopens(base,S){
   let n=0;
   for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks){const b=st[t.id];if(!b)continue;
     // Server marked done in a newer rev (doneRev): done state wins over the browser copy
-    if(b.done){if(+(b.doneRev||0)>locRev&&!t.done){t.done=true;t.completedAt=b.completedAt;n++}else if(+(b.doneRev||0)>locRev)t.completedAt=b.completedAt;continue}
+    if(b.done){if(+(b.doneRev||0)>locRev&&!t.done){t.done=true;t.completedAt=b.completedAt;n++}else if(+(b.doneRev||0)>locRev)t.completedAt=b.completedAt;
+      if(+(b.doneRev||0)>locRev&&b.transcript!=null)t.transcript=b.transcript;continue}
     // Server open state wins: reopen + take server text/notes/attachments
-    if(t.done||t.text!==b.text||(b.notes!=null&&t.notes!==b.notes))n++;
+    if(t.done||t.text!==b.text||(b.notes!=null&&t.notes!==b.notes)||(b.transcript!=null&&t.transcript!==b.transcript))n++;
     t.done=false;delete t.completedAt;delete t.wasOpen;delete t.archivedBy;delete t.recovered;
     t.text=b.text;if(b.notes!=null)t.notes=b.notes;if(b.due!==undefined)t.due=b.due;
-    if(b.attachments)t.attachments=structuredClone(b.attachments)}
+    if(b.attachments)t.attachments=structuredClone(b.attachments);
+    if(b.transcript!=null)t.transcript=b.transcript}
   S.rev=srvRev;return n}
 async function load(){
   try{server=await (await fetch('data.json?'+Date.now())).json()}catch(e){server={categories:[]};msg('Could not load data.json')}
@@ -52,6 +54,8 @@ async function load(){
   for(const c of S.categories)for(const p of c.projects)for(const t of p.tasks){const b=st[t.id];
     if(t.done&&!t.completedAt)t.completedAt=b?.completedAt||new Date().toISOString();
     if(b?.attachments&&!t.attachments)t.attachments=b.attachments;
+    // transcript isn't editable in the UI, so the server copy always wins (reaches cached browsers too)
+    if(b?.transcript!=null)t.transcript=b.transcript;
     if(b?.agent)t.agent=b.agent;else delete t.agent}
   if(local||got.length||reopened)localStorage.setItem(KEY,JSON.stringify(S));
   if(got.length)setTimeout(()=>msg(`Recovered ${got.length} deleted task(s) into the Archive`),50);
@@ -69,12 +73,14 @@ const mic=()=>`<button type="button" class="ic mic" title="Dictate" ${SR?'':'dis
 let view='active';
 const fmt=d=>d?new Date(d).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}):'date unknown';
 const attHTML=t=>(t.attachments||[]).length?`<div class="atts">${t.attachments.map((x,i)=>`<span class="chip"><a href="${esc(x.url)}" target="_blank" rel="noopener" ${x.url.startsWith('data:')?`download="${esc(x.name)}"`:''}>📎 ${esc(x.name)}</a><button class="ic" data-a="unatt" data-i="${i}" title="Remove attachment">✕</button></span>`).join('')}</div>`:'';
+// Optional full verbatim transcript, collapsed under the task behind a "More" toggle.
+const trHTML=t=>t.transcript?`<details class="tr"><summary>More</summary><div class="trx">${esc(t.transcript)}</div></details>`:'';
 function taskHTML(t){
   if(t.done)return'';
   return`<li class="${t.done?'done':''}" data-t="${t.id}"><div class="row"><input type="checkbox" ${t.done?'checked':''} data-a="toggle">
   <span class="txt">${esc(t.text)}${t.due?`<span class="due">📅 ${esc(t.due)}</span>`:''}</span>
   <button class="ic" data-a="att" title="Attach file or link">📎</button><button class="ic" data-a="edit" title="Edit">✏️</button><button class="ic" data-a="del" title="Archive (delete)">🗑</button></div>
-  ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${attHTML(t)}${agentHTML(t.agent)}</li>`}
+  ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${trHTML(t)}${attHTML(t)}${agentHTML(t.agent)}</li>`}
 // What the scheduled Claude run did with this task (written to data.json by agent/apply_results.py).
 const AG={pr_opened:['🤖','PR ready to review','ok'],needs_austin:['🙋','Needs you','warn'],blocked:['⛔','Blocked','bad'],
   failed:['⚠️','Claude couldn’t finish','bad'],retry:['⏳','Claude will retry next run','mut'],done_no_change:['🤖','Checked — nothing to change','mut']};
@@ -93,14 +99,14 @@ function archHTML(){
   <ul>${ts.map(t=>`<li class="done" data-t="${t.id}"><div class="row"><input type="checkbox" checked data-a="toggle" title="Un-archive (mark not done)">
   <span class="txt">${esc(t.text)}${t.wasOpen?'<span class="due" title="Was not done when deleted">⚠ was open</span>':''}<div class="meta">✅ ${fmt(t.completedAt)}${t.recovered?' · ♻ recovered':''}</div></span>
   <button class="ic" data-a="unarch" title="Un-archive">↩</button><button class="ic" data-a="att" title="Attach file or link">📎</button><button class="ic" data-a="purge" title="Delete permanently">🗑</button></div>
-  ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${attHTML(t)}</li>`).join('')}</ul></div>`}).join('')}
+  ${t.notes?`<div class="notes">${esc(t.notes)}</div>`:''}${trHTML(t)}${attHTML(t)}</li>`).join('')}</ul></div>`}).join('')}
 function cardHTML(p,ro){
   const n=p.tasks.length,d=p.tasks.filter(t=>t.done).length,pc=n?Math.round(d/n*100):0;
   return`<div class="card" data-p="${p.id}"><div class="ph"><h3>${esc(p.name)}</h3>
   ${ro?'':`<span><button class="ic" data-a="rename" title="Rename">✏️</button><button class="ic" data-a="delp" title="Delete project">🗑</button></span>`}</div>
   <div class="status" ${ro?'':'data-a="status" title="Click to edit status"'}>${esc(p.status)}</div>
   <div class="bar"><i style="width:${pc}%"></i></div><div class="pct">${d}/${n} done · ${pc}%</div>
-  ${ro?`<ul>${p.tasks.map(t=>`<li class="done"><span class="txt">✅ ${esc(t.text)}</span></li>`).join('')}</ul>`:`<ul>${p.tasks.map(taskHTML).join('')}</ul><button class="add" data-a="add">＋ Add task</button>`}</div>`}
+  ${ro?`<ul>${p.tasks.map(t=>`<li class="done"><span class="txt">✅ ${esc(t.text)}</span>${trHTML(t)}</li>`).join('')}</ul>`:`<ul>${p.tasks.map(taskHTML).join('')}</ul><button class="add" data-a="add">＋ Add task</button>`}</div>`}
 function render(){
   const pin=S.categories.filter(c=>c.pinned),rest=S.categories.filter(c=>!c.pinned);
   const sec=c=>`<h2>${esc(c.name)}</h2><div class="grid">${c.projects.filter(p=>!allDone(p)).map(p=>cardHTML(p)).join('')||'<p class="pct">No active projects</p>'}</div>`;

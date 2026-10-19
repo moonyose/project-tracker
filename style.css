@@ -28,3 +28,5 @@ ul{list-style:none;margin:0;padding:0}li{border-top:1px solid var(--bd);padding:
 .done .meta{text-decoration:none}.atts{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 0 25px}.chip{font-size:.75rem;border:1px solid var(--bd);border-radius:12px;padding:1px 4px 1px 8px;display:inline-flex;align-items:center}.chip a{color:var(--acc);text-decoration:none}
 .agent{margin:4px 0 0 25px;font-size:.78rem;border-left:3px solid var(--mut);padding:3px 8px;border-radius:0 6px 6px 0;background:color-mix(in srgb,var(--mut) 8%,transparent);display:flex;flex-direction:column;gap:2px}
 .agent.ok{border-color:var(--ok)}.agent.warn{border-color:var(--warn)}.agent.bad{border-color:#ef4444}.agent a{color:var(--acc)}.agent span{color:var(--mut)}.agent .nx{color:var(--fg)}
+.tr{margin:2px 0 0 25px;font-size:.8rem}.tr summary{cursor:pointer;color:var(--acc);font-size:.75rem;width:max-content}.tr summary:hover{text-decoration:underline}
+.trx{white-space:pre-wrap;word-break:break-word;color:var(--mut);margin-top:4px;padding:4px 8px;border-left:3px solid var(--bd);border-radius:0 6px 6px 0;background:color-mix(in srgb,var(--mut) 8%,transparent)}

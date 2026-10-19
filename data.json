@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-19",
-  "rev": 4,
+  "rev": 5,
   "categories": [
     {
       "id": "top-priority",
@@ -504,6 +504,15 @@
               "done": false,
               "notes": "Crash Mode engagement ideas (vehicle crash/destruction game; best avg session time, goal: more playtime and return visits):\n1. Daily login streak: escalating rewards (cash, crates, a day-7 exclusive car or paint), with a streak-freeze item so one missed day doesn't reset it.\n2. Daily/weekly destruction challenges: e.g. \"Cause $50k damage in one run\", \"Flip 10 times\", \"Crash at 150+ mph\", each paying currency/XP; 3 daily + 1 weekly.\n3. Leaderboards: global and friends boards for biggest single crash, total damage, longest airtime, most flips; daily/weekly resets, top players get a badge or podium spot in the lobby.\n4. Vehicle unlock and upgrade tree: progress from beaters to trucks, buses, monster trucks, rocket cars; upgrades for speed, mass, and crumple/explosion effects, with a visible next-unlock bar.\n5. Limited-time events and rotating maps: weekend 2x-damage, Halloween pumpkin-smash map, Mega Ramp week, meteor-shower mode; event-only cosmetics to drive return visits.\n6. Party/squad crash modes: queue with friends, chain-reaction pileups, team demolition derby, last-car-standing rounds, with a friend-join bonus and a private-server option.\n7. Slow-motion replay and share: auto-capture the best crash with a slow-mo cam and a \"Best Crash\" card to screenshot, plus a lobby highlight board of the server's top crash.\n8. Collectibles and achievements: hidden collectibles on each map, badges for milestones (first 1M damage, all cars), a garage trophy wall.\n9. UGC and customization: paints, decals, wheels, horns, crash-trail effects; sell or promote UGC accessories themed on the game, and possibly let players build and share ramp/obstacle courses.\n10. Server-wide goals and quick sessions: a community damage meter that triggers a server-wide reward (meteor storm, 2x cash) when filled, and timed 3-minute crash rounds that end on a 'one more run' rewards screen.",
               "due": null
+            },
+            {
+              "id": "t58",
+              "text": "Fix collision detection delay: car bounces off objects before crash triggers",
+              "done": false,
+              "notes": "Observed: broadside hit on a bus bounced first, then crashed; happened multiple times. Everything else working well.",
+              "due": null,
+              "createdAt": "2026-10-19T08:41:00-04:00",
+              "transcript": "Can we add a to-do to crash a car to fix collision detection? Because right now for example, I hit a bus broadside, and my car bounced off of it first, and then crashed. and that's happened a couple of times where, like, I hit something and I bounce off of it, and, and then it crashes. Like, there's, there's a slight delay in, in collision detection. But everything else is working really well."
             }
           ]
         },
