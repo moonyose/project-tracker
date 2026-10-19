@@ -515,7 +515,16 @@
               "due": null,
               "createdAt": "2026-10-19T13:34:00-04:00",
               "transcript": "right now it, it's exporting the video with the tips correctly so that's great, but I want that video to include the pauses that appear for the tips. So, like, each tip should have, like, a three to four second pause where it shows the tip above, just like it is right now and also shows the like, the limb, you know, that's being highlighted. yeah, so that would be really good. And it should not export in, in full speed. It should export like at 50% at most, and maybe even 25% would be best. or at least ask the user the speed at which they want to export it.",
-              "updatedAt": "2026-10-19T13:34:00-04:00"
+              "updatedAt": "2026-10-19T13:34:00-04:00",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Save video with skeleton and tips now asks for a speed (50% or 25%). The export plays in slow motion at that speed and holds each tip for 3.5 s with the caption and the player's limb highlight. Tips videos have no sound. Done on iOS and Android, with tests on both.",
+                "hash": "c849286fcc2e",
+                "at": "2026-10-19T19:17+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/26",
+                "verified": "./Tools/verify.sh ALL CHECKS PASSED, including new timeline and highlight checks. xcodebuild simulator build (iPhone 17 Pro, iOS 26.5) succeeded. Android gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed, including new ExportTest checks. A reviewer subagent ran; its findings were fixed and the checks re-run. Not run: bend PROOF.bend (no bend CLI on the runner; no .bend rule change",
+                "next_step": "On iPhone, open an analysed clip, tap the ... menu, then Save video with skeleton and tips, then Slow motion, 50%. In Photos, check that the clip plays at half speed and freezes about 3.5 s at each tip with the caption and the limb lit."
+              }
             }
           ]
         },
@@ -605,7 +614,13 @@
               "text": "Brainstorm and pick new engagement ideas",
               "done": false,
               "notes": "Crash Mode engagement ideas (vehicle crash/destruction game; best avg session time, goal: more playtime and return visits):\n1. Daily login streak: escalating rewards (cash, crates, a day-7 exclusive car or paint), with a streak-freeze item so one missed day doesn't reset it.\n2. Daily/weekly destruction challenges: e.g. \"Cause $50k damage in one run\", \"Flip 10 times\", \"Crash at 150+ mph\", each paying currency/XP; 3 daily + 1 weekly.\n3. Leaderboards: global and friends boards for biggest single crash, total damage, longest airtime, most flips; daily/weekly resets, top players get a badge or podium spot in the lobby.\n4. Vehicle unlock and upgrade tree: progress from beaters to trucks, buses, monster trucks, rocket cars; upgrades for speed, mass, and crumple/explosion effects, with a visible next-unlock bar.\n5. Limited-time events and rotating maps: weekend 2x-damage, Halloween pumpkin-smash map, Mega Ramp week, meteor-shower mode; event-only cosmetics to drive return visits.\n6. Party/squad crash modes: queue with friends, chain-reaction pileups, team demolition derby, last-car-standing rounds, with a friend-join bonus and a private-server option.\n7. Slow-motion replay and share: auto-capture the best crash with a slow-mo cam and a \"Best Crash\" card to screenshot, plus a lobby highlight board of the server's top crash.\n8. Collectibles and achievements: hidden collectibles on each map, badges for milestones (first 1M damage, all cars), a garage trophy wall.\n9. UGC and customization: paints, decals, wheels, horns, crash-trail effects; sell or promote UGC accessories themed on the game, and possibly let players build and share ramp/obstacle courses.\n10. Server-wide goals and quick sessions: a community damage meter that triggers a server-wide reward (meteor storm, 2x cash) when filled, and timed 3-minute crash rounds that end on a 'one more run' rewards screen.",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "skipped_not_code",
+                "summary": "Brainstorming and picking engagement ideas is a product judgment call, not a code change.",
+                "hash": "2df2ead992f8",
+                "at": "2026-10-19T19:17+00:00"
+              }
             },
             {
               "id": "t58",
@@ -615,7 +630,16 @@
               "due": null,
               "createdAt": "2026-10-19T08:41:00-04:00",
               "transcript": "Right now for example, I hit a bus broadside, and my car bounced off of it first, and then crashed. and that's happened a couple of times where, like, I hit something and I bounce off of it, and, and then it crashes. Like, there's, there's a slight delay in, in collision detection. But everything else is working really well.",
-              "updatedAt": "2026-10-19T09:37:00-04:00"
+              "updatedAt": "2026-10-19T09:37:00-04:00",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Root cause: the phone owns and simulates the hero car, and Touched fires after the physics step already applied the contact rebound. localImpact turned off the drive constraints, so the car flew back off the object for a network round trip until the server took ownership, rewound it to the pre-contact pose (reconcilePose) and replayed the hit (bounce, then crash). Fix in CarClient: on a contact impact, set side-to-side velocity and spin to zero and keep the car held at the contact until the server's release reaches the phone (0.75 s cap). The PR also flags a possible second path: a shallow sid",
+                "hash": "32f34d435aa1",
+                "at": "2026-10-19T19:17+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/1",
+                "verified": "rojo build OK; stylua --check OK (no selene.toml); luau -O0 -g2 compiles; tests/driving/run.sh overall PASS; graze_test 161/0; reviewer subagent found no defects. Not playtested in Studio (not available on the runner).",
+                "next_step": "On your phone: start a Crash run, drive full speed into the side of a bus 3-4 times, and check the car crumples against the bus straight away with no bounce first. In Studio, if it still bounces, check the player's CarImpactCause attribute; if it reads 'graze -> sustained' it's the graze path, which is a separate tuning call."
+              }
             }
           ]
         },
