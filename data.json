@@ -574,6 +574,16 @@
               "due": null,
               "completedAt": "2026-10-19T13:26:21.009Z",
               "updatedAt": "2026-10-19T13:26:21.009Z"
+            },
+            {
+              "id": "t60",
+              "text": "Playtest the new quests",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-19T09:27:00-04:00",
+              "updatedAt": "2026-10-19T09:27:00-04:00",
+              "transcript": "Okay, yep, seems to be working. So let's on the flying machines game, can you add a to-do to playtest the new quests?"
             }
           ]
         },
