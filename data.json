@@ -560,9 +560,11 @@
             {
               "id": "t11",
               "text": "Playtest difficulty after latest fixes",
-              "done": false,
+              "done": true,
               "notes": "",
-              "due": null
+              "due": null,
+              "completedAt": "2026-10-19T13:26:23.899Z",
+              "updatedAt": "2026-10-19T13:26:23.899Z"
             },
             {
               "id": "t34",
