@@ -488,6 +488,16 @@
               "text": "Long clips with several starts / straightaways / curves, part 2 (screen): show what was detected in a long recording and have the user confirm each piece's type before it's analysed.",
               "notes": "Austin asked (Oct 18): if a clip is long and contains multiple starts/straightaways/curves, indicate what was detected and have the user confirm for each clip. Part 1 (StrideLab PR #22, merged) added the engine: SegmentLabeler splits a recording into labelled pieces. PART 2, this task, iOS and Android: (1) After import/recording, if SegmentLabeler finds more than one piece, show the full-screen confirm flow built for the clip-type gate (t56: big Start / Straightaway / Curve buttons, no other UI), once per piece, with text like 'Piece 2 of 3 (0:12 to 0:19) looks like a straightaway. Is that correct? Select below to confirm for final analysis.' and a thumbnail or short looping preview of that piece. (2) Save each confirmed piece as its own clip with its confirmed type, so every piece goes through the existing gate and analysis; a single-piece recording behaves exactly as today. (3) Respect LAWS.bend (gate_until_chosen, chosen_plays): nothing plays until its type is confirmed. Add tests for the multi-piece flow on both platforms, run the iOS and Android checks.",
               "updatedAt": "2026-10-19T16:43:25.021Z"
+            },
+            {
+              "id": "t67",
+              "text": "Exported tips video: hold 3-4 s on each tip (tip text + highlighted limb) and export in slow motion (25-50%, or ask the user for speed)",
+              "done": false,
+              "notes": "Related to t38 (export skeleton video with tips). Tips export already works; this adds the in-app tip pauses and slow-motion speed to the exported video.",
+              "due": null,
+              "createdAt": "2026-10-19T13:34:00-04:00",
+              "transcript": "right now it, it's exporting the video with the tips correctly so that's great, but I want that video to include the pauses that appear for the tips. So, like, each tip should have, like, a three to four second pause where it shows the tip above, just like it is right now and also shows the like, the limb, you know, that's being highlighted. yeah, so that would be really good. And it should not export in, in full speed. It should export like at 50% at most, and maybe even 25% would be best. or at least ask the user the speed at which they want to export it.",
+              "updatedAt": "2026-10-19T13:34:00-04:00"
             }
           ]
         },
