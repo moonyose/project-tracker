@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-19",
-  "rev": 3,
+  "rev": 4,
   "categories": [
     {
       "id": "top-priority",
@@ -586,9 +586,11 @@
             {
               "id": "t15",
               "text": "Stress test the Raven eval",
-              "done": false,
-              "notes": "Oct 18 ~7:12 PM ET: @Robertiscoding invited GitHub user moonyose (via austin.a.munoz@gmail.com) to collaborate on Robertiscoding/ravenbot; invite expires in 7 days (~Oct 25). Accept at https://github.com/Robertiscoding/ravenbot/invitations",
-              "due": null
+              "done": true,
+              "notes": "Accepted invite",
+              "due": null,
+              "completedAt": "2026-10-19T08:35:00-04:00",
+              "doneRev": 4
             }
           ]
         },
