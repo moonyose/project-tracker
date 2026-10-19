@@ -469,7 +469,7 @@
             {
               "id": "t45",
               "text": "Build Android version",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -477,7 +477,9 @@
                 "summary": "Austin: skip for now.",
                 "hash": "2268753da46f",
                 "at": "2026-10-19T02:23+00:00"
-              }
+              },
+              "completedAt": "2026-10-19T15:03:35.217Z",
+              "updatedAt": "2026-10-19T15:03:35.217Z"
             }
           ]
         },
