@@ -131,12 +131,10 @@
               "notes": "",
               "due": null,
               "agent": {
-                "status": "needs_austin",
-                "summary": "Building LaneSync for Android from scratch is a whole new app and needs decisions first: native Kotlin or cross-platform, and whether it has to sync timing with the iOS app. That is too big and open-ended for one unattended run, so nothing was started.",
+                "status": "skipped",
+                "summary": "Austin: skip for now.",
                 "hash": "2268753da46f",
-                "at": "2026-10-19T02:21+00:00",
-                "verified": "Nothing run; no code changed.",
-                "next_step": "Pick the approach (e.g. a Kotlin + Compose port in android/, like StrideLab) and split this into concrete steps, such as 'scaffold android/ and port the timing core with tests'. Then add those as to-dos."
+                "at": "2026-10-19T02:23+00:00"
               }
             }
           ]
@@ -249,12 +247,10 @@
               "notes": "",
               "due": null,
               "agent": {
-                "status": "needs_austin",
-                "summary": "StrideLab's Android port already exists in android/, and this run opened PRs for the four specific iOS features still missing (#9 clip kind, #10 save with tips, #11 3-point start, #12 share full report). \"Build Android version\" is too broad to act on by itself, so I left it alone.",
+                "status": "skipped",
+                "summary": "Austin: skip for now.",
                 "hash": "2268753da46f",
-                "at": "2026-10-19T02:21+00:00",
-                "verified": "No code changed for this task. The related PRs #9 to #12 each pass ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug.",
-                "next_step": "Review and merge PRs #9 to #12. Then either close this to-do or replace it with the specific Android gaps that are left (e.g. Play Store listing, testing on a device)."
+                "at": "2026-10-19T02:23+00:00"
               }
             },
             {
@@ -368,7 +364,13 @@
               "text": "Build Android version",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "skipped",
+                "summary": "Austin: skip for now.",
+                "hash": "2268753da46f",
+                "at": "2026-10-19T02:23+00:00"
+              }
             }
           ]
         },
