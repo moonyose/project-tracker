@@ -357,7 +357,7 @@
             {
               "id": "t52",
               "text": "Cut the text on the clip-type prompt (start / straightaway stride / curve stride); there's far too much of it.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -368,7 +368,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/14",
                 "verified": "Tools/verify.sh: ALL CHECKS PASSED. xcodebuild for the iOS Simulator (Xcode 26.6): no errors. Gradle :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL. bend CLI is not on the runner, so PROOF.bend was not run (no Bend-twinned code changed). A reviewer subagent read the diff and its findings are fixed. No screenshot taken.",
                 "next_step": "On your phone, record or import a clip and check that the prompt shows only the question, a one-line hint, the three buttons and 'More options\u2026'."
-              }
+              },
+              "completedAt": "2026-10-19T13:25:38.497Z",
+              "updatedAt": "2026-10-19T13:25:38.497Z"
             },
             {
               "id": "t53",
