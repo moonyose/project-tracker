@@ -584,6 +584,16 @@
               "due": null,
               "createdAt": "2026-10-19T09:27:00-04:00",
               "updatedAt": "2026-10-19T09:37:00-04:00"
+            },
+            {
+              "id": "t61",
+              "text": "Fix visual clipping: sign/pad faces sit flush with posts so wooden posts poke through; offset them slightly",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-19T10:52:00-04:00",
+              "transcript": "Right now, there's, there are like lots of signs, or like, there's the landing pad, and there's sort of like textures or whatever, and it seems like the posts, there's like, the visible part is being obscured behind like, some of the solid parts of the object. So, for example, there are a bunch of signs that have posts, and I see the posts, like the wooden posts, and they're like sticking out from the sign. so we need to like, make it so that the signs and that kind of thing are like slightly raised. Or, you know, so that they don't lie completely flush with the wooden posts or whatever.",
+              "updatedAt": "2026-10-19T10:52:00-04:00"
             }
           ]
         },
