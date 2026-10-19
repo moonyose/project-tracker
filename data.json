@@ -287,7 +287,7 @@
             {
               "id": "t48",
               "text": "Android: port \"always ask what a clip is\" and full re-analysis when a clip's type changes, from iOS (StrideLab PR #2)",
-              "done": false,
+              "done": true,
               "notes": "Mirror the merged iOS PR #2 in android/: ask start/stride/curve on every clip with the detector's guess as a hint; switching kind re-runs start detection with a visible re-analyzing step.",
               "due": null,
               "agent": {
@@ -298,12 +298,14 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/9",
                 "verified": "Passed: ./gradlew :core:test (including the Swift golden tip fingerprint), :app:testDebugUnitTest and :app:assembleDebug. A reviewer subagent found no defects. Not run: the iOS xcodebuild build, Tools/verify.sh and bend PROOF.bend, since this change only touches android/. Not checked visually: no emulator screenshot.",
                 "next_step": "On an Android phone, import a stride clip. It should ask 'Is this a start, a stride or a curve?' with a 'Looks like a stride (straight) \u00b7 NN% sure' hint and three buttons. Answer Stride, then reopen the clip: it should not ask again. Switch it to Start in the kind sheet: a 'Re-analyzing as a start' step should show briefly, then launch and drive phase bands."
-              }
+              },
+              "completedAt": "2026-10-19T13:25:29.983Z",
+              "updatedAt": "2026-10-19T13:25:29.983Z"
             },
             {
               "id": "t49",
               "text": "Android: port \"share the full report as one tall picture\" from iOS (StrideLab PR #3)",
-              "done": false,
+              "done": true,
               "notes": "Mirror the merged iOS PR #3 in android/: Share scorecard vs Share full report; whole report rendered as one tall image with every section expanded.",
               "due": null,
               "agent": {
@@ -314,7 +316,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/12",
                 "verified": "cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passes, including 5 new FullReportLayoutTest cases. iOS xcodebuild and Tools/verify.sh not run because only android/ changed. bend CLI not installed. Not run on an emulator or device, so the rendered picture itself is unverified.",
                 "next_step": "On an Android phone, open a clip's Full report, tap the share icon, then Share full report. Check the tall picture includes the still, the open 'More measurements' and 'How these targets were set' sections, every step's numbers and the StrideLab mark at the bottom, with no buttons. Then share it and check it is sharp and nothing is cut off."
-              }
+              },
+              "completedAt": "2026-10-19T13:25:30.811Z",
+              "updatedAt": "2026-10-19T13:25:30.811Z"
             },
             {
               "id": "t50",
