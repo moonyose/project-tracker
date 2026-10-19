@@ -411,7 +411,7 @@
             {
               "id": "t55",
               "text": "Skeleton: no joint may connect to more than two others. The ankle is currently drawn with three bones (knee, ball, toe).",
-              "done": false,
+              "done": true,
               "notes": "Austin (Oct 18, testing 1.0.2): while moving the right ankle, it was drawn connected to three points, but an ankle can only connect to two joints. Cause: SkeletonBones.leg in StrideLab/Playback/SkeletonRenderer.swift draws knee-ankle, ankle-ball AND ankle-toe. Fix: make every limb a chain. The foot runs ankle -> ball -> toe (ankle-toe only when there is no ball), in the player overlay (OverlayCanvas), the video exporter (SkeletonRenderer) and Android. There is no law for this in LAWS.bend yet: add one (every joint of a limb has at most two bones) with its proof in PROOF.bend, plus Swift and Kotlin tests. bend is not installed on the runner, so say so in the PR. Austin will run `bend PROOF.bend` on his Mac.",
               "due": null,
               "agent": {
@@ -422,7 +422,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/17",
                 "verified": "./Tools/verify.sh: ALL CHECKS PASSED. xcodebuild build (scheme StrideLab, iPhone 17 Pro simulator, Xcode 26.6): BUILD SUCCEEDED. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL, new ExportTest check ran. Not run: bend PROOF.bend, because the bend CLI is not installed on the runner. A reviewer subagent checked the Bend code against existing patterns and foun",
                 "next_step": "Run `bend PROOF.bend` on your Mac (expect 'All terms check.'). On the phone, open an analysed clip, place or move the right ball of the foot at touchdown, and check the ankle has only two bones (knee and ball) and the toe hangs off the ball."
-              }
+              },
+              "completedAt": "2026-10-19T13:25:57.913Z",
+              "updatedAt": "2026-10-19T13:25:57.913Z"
             },
             {
               "id": "t56",
