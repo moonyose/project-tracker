@@ -1,8 +1,16 @@
 name: Claude works the to-do list
 
-# Every 15 minutes, plus a manual "Run workflow" button.
-# If nothing new is on the list, the run stops before calling Claude, so it costs nothing.
+# Runs as soon as the to-do list (data.json) or the bot's settings change on
+# main, which is every add or edit on the site. Also every 15 minutes as a
+# backup (GitHub often starts scheduled runs late), plus a manual button.
+# If nothing new is on the list, the run stops before calling Claude, so it
+# costs nothing. That includes the run set off by the bot's own write-back.
 on:
+  push:
+    branches: [main]
+    paths:
+      - data.json
+      - agent/config.json
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
