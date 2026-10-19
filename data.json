@@ -474,11 +474,12 @@
             {
               "id": "t64",
               "text": "Fix TestFlight CI signing: Apple account hit its certificate limit, so master builds now fail",
-              "done": false,
-              "notes": "TestFlight build run 39259643183 on master (PR #20 merge, Oct 19 ~9:23 AM ET) failed at archive: 'Your account has reached the maximum number of certificates... choose a certificate to revoke' and 'No profiles for com.austinmunoz.stridelab were found'. The 8:37 AM ET build had succeeded, so CI is likely minting a new cert each run. Austin revoked the unused development certificates on Oct 19 (team N8RA297MHC). Remaining: make CI reuse one stored signing certificate instead of creating a new one each run, then re-run the TestFlight build.",
+              "done": true,
+              "notes": "TestFlight build run 39259643183 on master (PR #20 merge, Oct 19 ~9:23 AM ET) failed at archive: 'Your account has reached the maximum number of certificates... choose a certificate to revoke' and 'No profiles for com.austinmunoz.stridelab were found'. The 8:37 AM ET build had succeeded, so CI is likely minting a new cert each run. Austin revoked the unused development certificates on Oct 19 (team N8RA297MHC). Remaining: make CI reuse one stored signing certificate instead of creating a new one each run, then re-run the TestFlight build. Done by Austin.",
               "due": null,
               "createdAt": "2026-10-19T15:50:00Z",
-              "updatedAt": "2026-10-19T12:22:00-04:00"
+              "updatedAt": "2026-10-19T12:31:00-04:00",
+              "completedAt": "2026-10-19T12:31:00-04:00"
             }
           ]
         },
@@ -926,6 +927,23 @@
               "due": null,
               "completedAt": "2026-10-19T09:26:46-04:00",
               "updatedAt": "2026-10-19T09:26:46-04:00"
+            }
+          ]
+        },
+        {
+          "id": "immigration-client-todo-app",
+          "name": "Client to-do app (wife's immigration clients)",
+          "status": "prototype in progress",
+          "tasks": [
+            {
+              "id": "t65",
+              "text": "Build a client to-do app for my wife's immigration clients: guided checklist link, drafted emails, phone numbers + call scripts",
+              "done": false,
+              "notes": "Prototype in progress by To-Do Bot (example data only); publishing to GitHub Pages; adding dictation + call-notes parsing.",
+              "due": null,
+              "createdAt": "2026-10-19T12:31:00-04:00",
+              "transcript": "my wife is an immigration attorney, and she has clients that have to do certain things on their own, and a lot, like they have to gather documents and stuff, or they have to request information from I don't know where. a lot of them end up not doing the stuff, or doing it very last minute, and then my wife is not able to do her job well, or like, she's very stressed. So, I want to create an app, basically like a website for her, where she can say, she can tell her client, hey Hey you need this, this, this, this, and this. here's a link, and this, this website, or this app, or whatever, is going to walk you through all of the necessary things that you need to do, and it will even draft emails for you. Like, if something needs to be requested by email, it can do that for you. If something needs to be requested by phone, it's gonna give you the phone number and, and tell you the script of what you need to say.\n\nI want my wife to be able to like dictate into this app, like what is needed. and maybe like, I don't know if it's possible to like collect notes from her calls or something. that I don't know, but you know, I want her to be able to dictate this, just like I'm doing with you right now. and just very quickly say, yeah, this person needs this, this, this, this, and this, and that's it.\n\nit should work just like my current to-do list app where as they check it off, you know, it disappears and if it's not checked off, then they get like an email or a text every 24 hours reminding them to do something.",
+              "updatedAt": "2026-10-19T12:34:00-04:00"
             }
           ]
         }
