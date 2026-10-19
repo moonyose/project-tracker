@@ -7,7 +7,19 @@
 <button id="addProject">＋ Project</button>
 <button id="export">⬇ Export</button>
 <label class="btn">⬆ Import<input type="file" id="import" accept=".json,application/json" hidden></label>
-<button id="reset" class="danger">↺ Reset to latest from server</button>
-</div><div id="msg" role="status"></div></header>
+<button id="reset" class="danger" title="Reload data.json from GitHub (offers to discard changes not yet saved)">↺ Reload from server</button>
+<button id="ghBtn" title="Connect this browser to GitHub so changes are saved to data.json">🔗 Connect GitHub</button>
+<button id="sync" class="sync" data-state="" title="">…</button>
+</div>
+<div id="ghPanel" class="panel hidden">
+<b>Connect GitHub</b>
+<p>Changes are saved by committing <code>data.json</code> to <code>moonyose/project-tracker</code>. Paste a fine-grained personal access token
+(<a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">create one</a>): Repository access → Only select repositories → <b>moonyose/project-tracker</b>; Permissions → Repository → <b>Contents: Read and write</b>.
+The token is stored only in this browser (localStorage) and is sent only to api.github.com.</p>
+<div class="fld"><input id="ghTok" type="password" placeholder="github_pat_…" autocomplete="off" spellcheck="false"><button id="ghSave">Save &amp; test</button></div>
+<div class="fld"><button id="ghOff" class="danger">Disconnect</button><button id="ghClose">Close</button></div>
+<div id="ghState" class="pct"></div>
+</div>
+<div id="msg" role="status"></div></header>
 <main><section id="pinned"></section><div id="cats"></div></main>
 <script src="app.js"></script></body></html>

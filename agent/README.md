@@ -15,7 +15,7 @@ Results show on each task in the tracker:
 - ⚠️ Couldn't finish
 
 To have Claude look at a task again, edit its text or notes in data.json (for example, from a Claude chat).
-Edits made only in the browser stay on that device for now, so the scheduled run can't see them.
+Edits made in the browser are committed to data.json once it is connected to GitHub (see ../README.md).
 
 ## Controls
 - **Budget**: `agent/config.json` → `budget.total_usd` (lifetime cap), `per_run_usd`
