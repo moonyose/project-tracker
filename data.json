@@ -450,7 +450,16 @@
               "done": false,
               "notes": "Austin asked (Oct 18) for long clips to show each detected segment and have the user confirm each one's type. Last run's finding: auto-cut (StartSegmenter / Split.bend) only cuts out starts, and RunSpotter only finds when runners crossed the frame, with no kind and no segments. PART 1, this task: the engine only, on iOS and Android. (1) A segmenter that splits a recording into pieces and labels each start / straightaway / curve, for example by running AnalysisKindDetector on each RunSpotter pass window alongside the start pieces. (2) Its Bend twin, a law that pieces are in order, don't overlap and each has one kind, and a differential check like Tools/kinds_differential.sh. (3) Tests on synthetic long clips (start, then a straightaway pass, then a curve pass). No UI yet. Part 2 (the confirm-each-segment screen and saving each piece as its own clip, through the clip-type gate) will be a separate to-do once this is merged. Previous attempt: Not implemented this run (budget went to making t56 solid on both platforms). Finding: the engine cannot split one recording into segments of different kinds yet. Auto-cut (StartSegmenter / Split.bend) only cuts out starts; RunSpotter only reports the times runners crossed the frame, without a kind ",
               "due": null,
-              "updatedAt": "2026-10-19T13:26:05.036Z"
+              "updatedAt": "2026-10-19T13:26:05.036Z",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Engine only, on iOS and Android. New SegmentLabeler splits a long recording into pieces and labels each start / straightaway / curve. Auto-cut's start pieces stay starts, unchanged. Each RunSpotter run that isn't a start's own drive is padded, fitted between the start pieces and labelled by AnalysisKindDetector on poses the caller supplies for that window: the scan's 10 poses/s were measured too sparse to tell a bend. Hand-marked runs stay runs. Bend twin Segments.bend has LAWS 61-62 (pieces in order, never overlapping, one kind each; pieces handed over in order are never dropped, moved or rel",
+                "hash": "5be1f39ee943",
+                "at": "2026-10-19T15:57+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/22",
+                "verified": "./Tools/verify.sh: ALL CHECKS PASSED. The synthetic 45 s clip came back as exactly start / straightaway / curve, each rep inside its piece. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL, with identical output to Swift. xcodebuild StrideLab for the iPhone 17 Pro simulator (iOS 26.5): BUILD SUCCEEDED. A reviewer subagent ran; its 3 minor findings are fixed ",
+                "next_step": "On the Mac, run `bend PROOF.bend` (expect 'All terms check.') and `./Tools/segments_differential.sh` (expect it to end '...computes Segments.bend's lab on every case') before merging. After merge, on the phone: a long clip with two starts still cuts into Start 1 / Start 2, and a strides-only clip still says 'Someone ran through at ...'. Then queue part 2: the confirm-each-segment screen and saving"
+              }
             },
             {
               "id": "t62",
