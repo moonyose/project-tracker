@@ -129,7 +129,13 @@
               "text": "Build Android version",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "skipped",
+                "summary": "Austin: skip for now.",
+                "hash": "2268753da46f",
+                "at": "2026-10-19T01:46+00:00"
+              }
             }
           ]
         },
@@ -239,7 +245,13 @@
               "text": "Build Android version",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "skipped",
+                "summary": "Austin: skip for now.",
+                "hash": "2268753da46f",
+                "at": "2026-10-19T01:46+00:00"
+              }
             },
             {
               "id": "t47",
@@ -288,7 +300,13 @@
               "text": "Build Android version",
               "done": false,
               "notes": "",
-              "due": null
+              "due": null,
+              "agent": {
+                "status": "skipped",
+                "summary": "Austin: skip for now.",
+                "hash": "2268753da46f",
+                "at": "2026-10-19T01:46+00:00"
+              }
             }
           ]
         },
