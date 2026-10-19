@@ -393,7 +393,7 @@
             {
               "id": "t54",
               "text": "Add a disclaimer that the best tracking needs no other runners in the background.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -404,7 +404,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/14",
                 "verified": "Tools/verify.sh: ALL CHECKS PASSED. xcodebuild for the iOS Simulator: no errors. Android Gradle checks: BUILD SUCCESSFUL. bend CLI is not available on the runner. No screenshot taken.",
                 "next_step": "On your phone, open the recorder, show the filming tips and switch the Filming menu: each type should mention no other runners in the background."
-              }
+              },
+              "completedAt": "2026-10-19T13:25:54.559Z",
+              "updatedAt": "2026-10-19T13:25:54.559Z"
             },
             {
               "id": "t55",
