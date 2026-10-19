@@ -548,7 +548,8 @@
               "notes": "Observed: broadside hit on a bus bounced first, then crashed; happened multiple times. Everything else working well.",
               "due": null,
               "createdAt": "2026-10-19T08:41:00-04:00",
-              "transcript": "Can we add a to-do to crash a car to fix collision detection? Because right now for example, I hit a bus broadside, and my car bounced off of it first, and then crashed. and that's happened a couple of times where, like, I hit something and I bounce off of it, and, and then it crashes. Like, there's, there's a slight delay in, in collision detection. But everything else is working really well."
+              "transcript": "Right now for example, I hit a bus broadside, and my car bounced off of it first, and then crashed. and that's happened a couple of times where, like, I hit something and I bounce off of it, and, and then it crashes. Like, there's, there's a slight delay in, in collision detection. But everything else is working really well.",
+              "updatedAt": "2026-10-19T09:37:00-04:00"
             }
           ]
         },
@@ -582,8 +583,7 @@
               "notes": "",
               "due": null,
               "createdAt": "2026-10-19T09:27:00-04:00",
-              "updatedAt": "2026-10-19T09:27:00-04:00",
-              "transcript": "Okay, yep, seems to be working. So let's on the flying machines game, can you add a to-do to playtest the new quests?"
+              "updatedAt": "2026-10-19T09:37:00-04:00"
             }
           ]
         },
