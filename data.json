@@ -197,6 +197,34 @@
               "done": false,
               "notes": "",
               "due": null
+            },
+            {
+              "id": "t47",
+              "text": "Android: port \"save the skeleton video with or without tips\" from iOS (StrideLab PR #1)",
+              "done": false,
+              "notes": "Mirror the merged iOS PR #1 in android/: second save option with tip cards drawn on the video; plain save unchanged.",
+              "due": null
+            },
+            {
+              "id": "t48",
+              "text": "Android: port \"always ask what a clip is\" and full re-analysis when a clip's type changes, from iOS (StrideLab PR #2)",
+              "done": false,
+              "notes": "Mirror the merged iOS PR #2 in android/: ask start/stride/curve on every clip with the detector's guess as a hint; switching kind re-runs start detection with a visible re-analyzing step.",
+              "due": null
+            },
+            {
+              "id": "t49",
+              "text": "Android: port \"share the full report as one tall picture\" from iOS (StrideLab PR #3)",
+              "done": false,
+              "notes": "Mirror the merged iOS PR #3 in android/: Share scorecard vs Share full report; whole report rendered as one tall image with every section expanded.",
+              "due": null
+            },
+            {
+              "id": "t50",
+              "text": "Android: port the 3-point start caveat from iOS (StrideLab PR #5)",
+              "done": false,
+              "notes": "Mirror the merged iOS PR #5 in android/: detect one hand down / one raised during the set hold (confident wrists only) and show the 'Looks like a 3-point start' warning.",
+              "due": null
             }
           ]
         },

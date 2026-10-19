@@ -18,9 +18,10 @@
       "verify": [
         "xcodebuild build for an iOS Simulator (scheme StrideLab)",
         "./Tools/verify.sh (engine checks; must exit 0)",
-        "bend PROOF.bend if the bend CLI is available (prints 'All terms check.'); if not, say so in the PR"
+        "bend PROOF.bend if the bend CLI is available (prints 'All terms check.'); if not, say so in the PR",
+        "For changes under android/: cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug (JDK 17 is set as JAVA_HOME; ANDROID_HOME comes from the runner). All must pass."
       ],
-      "notes": "Read README.md, DESIGN.md and LAWS.bend before changing analysis code. Swift mirrors Bend files (Kinds.bend, Tips.bend, ...): if you change a rule that has a Bend twin, change both and run the matching Tools/*_differential.sh."
+      "notes": "Read README.md, DESIGN.md and LAWS.bend before changing analysis code. Swift mirrors Bend files (Kinds.bend, Tips.bend, ...): if you change a rule that has a Bend twin, change both and run the matching Tools/*_differential.sh. The Android port lives in android/ (Kotlin + Compose); android/README.md and android/ARCHITECTURE.md give the Swift-to-Kotlin rules. The iOS app is the spec: when porting an iOS change, read the merged iOS PR's diff (git -C <repo> show <merge-commit>) and mirror its behavior, tests and copy in Kotlin."
     },
     "lanesync-sprint-timing": {
       "repos": [
