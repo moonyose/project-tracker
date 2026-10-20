@@ -774,11 +774,11 @@
             {
               "id": "t78",
               "text": "(Priority: do first) Make rivals appear automatically: after e.g. 3 stars on the first two courses, show a 'New rival approaching' Smash Bros-style head-to-head screen with the rival's silhouette; one attempt to beat them and win their level-appropriate car (or a cool upgrade if there aren't enough car models)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T10:29:00-04:00",
-              "updatedAt": "2026-10-20T10:29:00-04:00",
+              "updatedAt": "2026-10-20T14:52:27.168Z",
               "transcript": "on the engagement stuff, like, I have one really good idea for engagement and I, and I want this to be implemented right away, which is that there's the rivals section of the game, right? I want that to be, I want that to automatically appear. Like, after the person does, let's say, two, after they achieve You know, three stars on, on the first two courses, for example. I want it to appear a screen where it's like, oh a new rival is approaching, or a new rival has appeared. And, and just like in Super Smash Bros, where it shows like the head-to-head screen, and it shows like the silhouette of the other guy, I would love that for this game too. And if you beat the person, you know, you get, you get that single attempt or whatever. I don't know. Well, like, you get the attempt right then to beat them and, and win their car, you know? and then you get to keep their car. So, I think that that would be a really cool feature. or at least maybe you, maybe if, I don't know how many cars we have available. I would love for you to, to be able to keep the car, and the car should be like, you know, decent for, for the person's level at that point. But if you can't keep the car because there aren't enough car models or whatever, then they should at least give you like an upgrade or like a cool visual upgrade or something. so yeah, like that, that, that I think will keep people kind of engaged, and it, it brings out that that part of the game, you know? Cause like right now it's sort of hidden, you have to look for it.",
               "agent": {
                 "status": "pr_opened",
@@ -788,7 +788,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/6",
                 "verified": "rojo build OK; stylua --check src tests clean (no selene.toml); luau tests/RivalApproachTest.luau passes (new); RoadProfileTest ALL OK, UpgradeKitTest passed, tests/driving/run.sh overall PASS; reviewer subagent found no defects. Not verified: Studio playtest of the screen and the one-shot race (no Studio on the runner), luau-analyze (not permitted), screenshot.",
                 "next_step": "Playtest in Studio with the checklist in the PR. On your phone: with a profile under 3 stars, earn the 3rd star on the first two courses, check that NEW RIVAL APPROACHING appears after the results, tap RACE!, win, and check that the Pocket Rocket is in your garage. Also decide whether the car should only be winnable during the approach attempt (right now any first defeat wins it)."
-              }
+              },
+              "completedAt": "2026-10-20T14:52:27.168Z"
             }
           ]
         },
