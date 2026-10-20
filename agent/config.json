@@ -124,6 +124,20 @@
       "platform": "code",
       "priority": 7,
       "enabled": false
+    },
+    "flying-machine-survival-working-title": {
+      "repos": [
+        "moonyose/flying-machines-survival"
+      ],
+      "platform": "roblox",
+      "priority": 5,
+      "enabled": true,
+      "verify": [
+        "tools/check.sh must pass (all plain-luau specs via tools/run_specs.sh, selene src, rojo build). Add or extend a *.spec.luau for any pure logic you change.",
+        "stylua on the files you edited",
+        "Studio isn't available on the runner: put an exact playtest checklist for Austin in the PR."
+      ],
+      "notes": "Roblox game (Rojo project). Read AGENTS.md, then docs/SURVIVAL_CONTRACT.md (design, interfaces, file ownership map), and docs/VOICE.md before writing any player-facing words (re-read a few scenes in src/shared/Tutorial/Script.luau first). Follow AGENTS.md's code and server rules (server-authoritative, bounded cost, attach reliability, solo play whole). Overrides for the bot: there is no Studio, Rojo server or Studio lock on the GitHub runner, so skip every Studio/MCP/port/.studio_lock step; to-dos come from the tracker, so don't claim or tick lines in docs/TODO.md; branch and PR as usual (never push main). The shared contract files under src/shared/Expedition may change only when the to-do needs it, and then update Expedition.spec.luau. docs/PLAYTEST_2026-10-19.md has the latest playtest findings, often the context for a to-do. Place files are generated: never commit them."
     }
   },
   "skip_task_ids": [

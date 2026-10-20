@@ -69,7 +69,11 @@
       "Bash(sh tests/*)",
       "Bash(sh ./tests/*)",
       "Bash(bash tests/*)",
-      "Bash(./tests/*)"
+      "Bash(./tests/*)",
+      "Bash(tools/*)",
+      "Bash(./tools/*)",
+      "Bash(bash tools/*)",
+      "Bash(cd * && tools/*)"
     ],
     "deny": [
       "Bash(git push --force*)",
