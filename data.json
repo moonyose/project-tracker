@@ -222,7 +222,7 @@
             {
               "id": "t39",
               "text": "Detect a 3-point vs 4-point start, or let the user specify which. If it looks like a 3-point start, show a caveat that the analysis is designed for 4-point starts.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "agent": {
@@ -233,7 +233,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/5",
                 "verified": "The xcodebuild simulator build succeeded (iPhone 17). ./Tools/verify.sh exits 0 (ALL CHECKS PASSED), including a new threePointTest: a synthetic 4-point start gets no flag, the same clip with one wrist raised gets the flag and the warning, plus unit cases. bend PROOF.bend was not run because the bend CLI isn't on the runner; no Bend files changed. Not tested on a real 3-point clip.",
                 "next_step": "On your phone, analyze a side-on 3-point start and check the 'Looks like a 3-point start' warning appears. Then analyze a normal 4-point start and check it doesn't."
-              }
+              },
+              "completedAt": "2026-10-20T13:37:04.033Z",
+              "updatedAt": "2026-10-20T13:37:04.033Z"
             },
             {
               "id": "t40",
