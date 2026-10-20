@@ -578,11 +578,11 @@
             {
               "id": "t81",
               "text": "Fix skeleton end joints: ball of the foot connects only to the ankle, wrist only to the elbow (no stray lines going nowhere)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T11:03:00-04:00",
-              "updatedAt": "2026-10-20T11:03:00-04:00",
+              "updatedAt": "2026-10-20T15:31:03.737Z",
               "transcript": "the ball of the foot should always only have one other, it should only be attached to one joint. Cause right now, I see like the ball of the foot, and then there's like a line sticking out from it that goes nowhere. So make sure that the ball of the foot is always only attached to the ankle, and that's it. same thing for like the wrist. The wrist should only be attached to the elbow, and that's it.",
               "agent": {
                 "status": "pr_opened",
@@ -592,7 +592,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/28",
                 "verified": "./Tools/verify.sh: ALL CHECKS PASSED. xcodebuild build (scheme StrideLab, iPhone 17 Pro sim, iOS 26.5): BUILD SUCCEEDED. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: no test failures, debug APK built. Reviewer subagent found no defects. Not run: bend PROOF.bend (bend CLI not installed on the runner). No screenshot taken (reaching a paused frame needs UI taps).",
                 "next_step": "Run `bend PROOF.bend` on the Mac (expect 'All terms check.'). Then on the phone: pause an analysed clip on a planted frame and check each leg ends at the ankle dot with no line past it. Place the ball of the foot by hand and check one line joins the ankle to the ball and nothing goes past it. Check each arm ends at the wrist dot."
-              }
+              },
+              "completedAt": "2026-10-20T15:31:03.737Z"
             },
             {
               "id": "t82",
