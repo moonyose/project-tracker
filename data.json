@@ -823,12 +823,12 @@
             {
               "id": "t61",
               "text": "Fix visual clipping: sign/pad faces sit flush with posts so wooden posts poke through; offset them slightly",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-19T10:52:00-04:00",
               "transcript": "Right now, there's, there are like lots of signs, or like, there's the landing pad, and there's sort of like textures or whatever, and it seems like the posts, there's like, the visible part is being obscured behind like, some of the solid parts of the object. So, for example, there are a bunch of signs that have posts, and I see the posts, like the wooden posts, and they're like sticking out from the sign. so we need to like, make it so that the signs and that kind of thing are like slightly raised. Or, you know, so that they don't lie completely flush with the wooden posts or whatever.",
-              "updatedAt": "2026-10-19T10:52:00-04:00",
+              "updatedAt": "2026-10-20T14:51:11.240Z",
               "agent": {
                 "status": "pr_opened",
                 "summary": "Signs were built with posts/legs centered on the board and thicker than it, so posts poked out through the lettered faces (and on the finish arch / door frame ran flush through the sign, z-fighting). Fixed six spots: Flight School sign posts moved behind the board; launch pad countdown board thickened past its post; distance-mark signs thickened; FINISH arch posts and DoorFrame jambs stop under the sign; Mission Board legs moved behind the cork.",
@@ -837,7 +837,8 @@
                 "pr_url": "https://github.com/moonyose/FlyingMachines/pull/1",
                 "verified": "rojo build default.project.json succeeds; stylua --check src/server clean; selene src 0 errors/0 warnings; reviewer subagent checked the geometry math. No tests/ dir or spec covering server World geometry, so no tests to run. Not visually checked (no Studio on runner).",
                 "next_step": "Sync with rojo serve and playtest: check the hangar Flight School board, both faces of a launch pad READY? board, the Mission Board front, a FINISH arch, distance marks, and the FRONT DOOR header. No posts should show through the text and nothing should flicker."
-              }
+              },
+              "completedAt": "2026-10-20T14:51:11.240Z"
             }
           ]
         },
