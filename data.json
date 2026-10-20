@@ -14,10 +14,11 @@
           "tasks": [
             {
               "id": "t1",
-              "text": "Finish PhD application",
+              "text": "Finish PhD Project application",
               "done": false,
-              "notes": "",
-              "due": null
+              "notes": "https://secureapp.phdproject.org/Application/Get",
+              "due": "2026-11-30",
+              "updatedAt": "2026-10-20T13:35:48.135Z"
             }
           ],
           "updatedAt": "2026-10-20T13:35:28.231Z"
