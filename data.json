@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 17,
+  "rev": 18,
   "categories": [
     {
       "id": "top-priority",
@@ -652,6 +652,16 @@
                 "verified": "Nothing re-run this run; PR #30 was already verified and merged (xcodebuild sim build OK, Tools/verify.sh passed, Android gradle checks passed).",
                 "next_step": "Re-run the TestFlight build workflow for master (39aaeb0) in GitHub Actions. Then save a low-launch block-start clip 'with tips' and check for the connector line plus the dashed 45\u00b0 target line with '33\u00b0' and '45\u00b0'."
               }
+            },
+            {
+              "id": "t88",
+              "text": "Make the Share button obvious in the clip view: move it out of the three-dot menu and into the main buttons at the top right",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T16:26:00-04:00",
+              "updatedAt": "2026-10-20T16:26:00-04:00",
+              "transcript": "have a much more obvious share button in the clip UI. Right now it's buried in the three-dot menu, but it should be one of the main buttons on the top-right."
             }
           ]
         },
