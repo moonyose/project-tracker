@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 15,
+  "rev": 16,
   "categories": [
     {
       "id": "top-priority",
@@ -941,6 +941,16 @@
                 "next_step": "Sync with rojo serve and playtest: check the hangar Flight School board, both faces of a launch pad READY? board, the Mission Board front, a FINISH arch, distance marks, and the FRONT DOOR header. No posts should show through the text and nothing should flicker."
               },
               "completedAt": "2026-10-20T14:51:11.240Z"
+            },
+            {
+              "id": "t86",
+              "text": "Add sound effects for flight, the motor, and the other small actions, using real sounds from the Roblox Toolbox (skip this if the Toolbox can't be reached)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T13:30:00-04:00",
+              "updatedAt": "2026-10-20T13:30:00-04:00",
+              "transcript": "Something I just thought of for the Flying Machines survival game, and also the Flying Machines, machine game, the regular one, is sound effects. We need, like, airplane sound effects and balloon sound effects and pumping and, like, all these little sound effects for all the different little things like for the motor or whatever. And, remember that the Opus 5.5 agents should feel okay going into the Roblox toolbox to do this. If they can't access the Roblox toolbox, then don't, don't do anything with sound effects."
             }
           ]
         },
@@ -1000,6 +1010,16 @@
               "createdAt": "2026-10-20T09:57:00-04:00",
               "updatedAt": "2026-10-20T09:57:00-04:00",
               "transcript": "when I did respawn on the build pad, my character just kept falling through the island and falling through, down beneath the map, so we need to make sure that they're spawning correctly. That's very important."
+            },
+            {
+              "id": "t87",
+              "text": "Add sound effects for the airplane, balloon inflating and leaking, pumping, the hand-crank motor, and the other small actions, using real sounds from the Roblox Toolbox (skip this if the Toolbox can't be reached)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T13:30:00-04:00",
+              "updatedAt": "2026-10-20T13:30:00-04:00",
+              "transcript": "Something I just thought of for the Flying Machines survival game, and also the Flying Machines, machine game, the regular one, is sound effects. We need, like, airplane sound effects and balloon sound effects and pumping and, like, all these little sound effects for all the different little things like for the motor or whatever. And, remember that the Opus 5.5 agents should feel okay going into the Roblox toolbox to do this. If they can't access the Roblox toolbox, then don't, don't do anything with sound effects."
             }
           ]
         },
