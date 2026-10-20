@@ -734,11 +734,11 @@
             {
               "id": "t76",
               "text": "Make headlights brighter and reach farther down the road on night missions",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T10:29:00-04:00",
-              "updatedAt": "2026-10-20T10:29:00-04:00",
+              "updatedAt": "2026-10-20T14:52:16.531Z",
               "transcript": "the headlights, I, they, they did, they were on, but they weren't very powerful. and even to illuminate the road more. and like further. it needs to be, yeah, more helpful.",
               "agent": {
                 "status": "pr_opened",
@@ -748,7 +748,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/4",
                 "verified": "rojo build default.project.json succeeds; stylua --check on HeadlightKit.luau passes; no selene.toml; no tests in tests/ cover HeadlightKit (driving/road/upgrade harnesses unaffected, not run). Reviewer subagent ran on the first version; its wall bleed-through finding was fixed and the fix was not re-reviewed. Studio playtest not possible on runner; checklist in PR.",
                 "next_step": "Play a night mission (NeonNight or Blackout): road should be clearly brighter and lit ~100 studs ahead. Facing a nearby wall, nothing should glow behind it. Smashing both headlights turns all beams off."
-              }
+              },
+              "completedAt": "2026-10-20T14:52:16.531Z"
             },
             {
               "id": "t77",
