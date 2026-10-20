@@ -512,12 +512,12 @@
             {
               "id": "t67",
               "text": "Exported tips video: hold 3-4 s on each tip (tip text + highlighted limb) and export in slow motion (25-50%, or ask the user for speed)",
-              "done": false,
+              "done": true,
               "notes": "Related to t38 (export skeleton video with tips). Tips export already works; this adds the in-app tip pauses and slow-motion speed to the exported video.",
               "due": null,
               "createdAt": "2026-10-19T13:34:00-04:00",
               "transcript": "right now it, it's exporting the video with the tips correctly so that's great, but I want that video to include the pauses that appear for the tips. So, like, each tip should have, like, a three to four second pause where it shows the tip above, just like it is right now and also shows the like, the limb, you know, that's being highlighted. yeah, so that would be really good. And it should not export in, in full speed. It should export like at 50% at most, and maybe even 25% would be best. or at least ask the user the speed at which they want to export it.",
-              "updatedAt": "2026-10-19T13:34:00-04:00",
+              "updatedAt": "2026-10-20T13:36:40.394Z",
               "agent": {
                 "status": "pr_opened",
                 "summary": "Save video with skeleton and tips now asks for a speed (50% or 25%). The export plays in slow motion at that speed and holds each tip for 3.5 s with the caption and the player's limb highlight. Tips videos have no sound. Done on iOS and Android, with tests on both.",
@@ -526,7 +526,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/26",
                 "verified": "./Tools/verify.sh ALL CHECKS PASSED, including new timeline and highlight checks. xcodebuild simulator build (iPhone 17 Pro, iOS 26.5) succeeded. Android gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed, including new ExportTest checks. A reviewer subagent ran; its findings were fixed and the checks re-run. Not run: bend PROOF.bend (no bend CLI on the runner; no .bend rule change",
                 "next_step": "On iPhone, open an analysed clip, tap the ... menu, then Save video with skeleton and tips, then Slow motion, 50%. In Photos, check that the clip plays at half speed and freezes about 3.5 s at each tip with the caption and the limb lit."
-              }
+              },
+              "completedAt": "2026-10-20T13:36:40.394Z"
             },
             {
               "id": "t70",
