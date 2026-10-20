@@ -661,7 +661,16 @@
               "due": null,
               "createdAt": "2026-10-20T16:26:00-04:00",
               "updatedAt": "2026-10-20T16:26:00-04:00",
-              "transcript": "have a much more obvious share button in the clip UI. Right now it's buried in the three-dot menu, but it should be one of the main buttons on the top-right."
+              "transcript": "have a much more obvious share button in the clip UI. Right now it's buried in the three-dot menu, but it should be one of the main buttons on the top-right.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Share is now its own button (square-and-arrow icon) in the clip view's top-right buttons, next to the three-dot More menu, on iOS and Android. It holds Share scorecard, Share this frame and the two skeleton-video saves, which are no longer in More. Android's nav bar is now a row so the title doesn't run under the four buttons.",
+                "hash": "8e2d7841edcb",
+                "at": "2026-10-20T21:02+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/32",
+                "verified": "Passed: xcodebuild build for iPhone 17 Pro sim (iOS 26.5) succeeded; ./Tools/verify.sh ALL CHECKS PASSED; Android :core:test :app:testDebugUnitTest :app:assembleDebug all passed (first run had one AnalysisEngineTest timeout under CPU contention, clean rerun passed); reviewer subagent found no defects. Not checked: bend PROOF.bend not run (bend CLI not installed, no Bend-twinned code changed); no s",
+                "next_step": "On your phone, open an analysed clip, tap the new Share icon at top right (next to the three dots), then try Share scorecard and Share this frame. Check those items are gone from the three-dot menu and the title still fits on a narrow phone."
+              }
             },
             {
               "id": "t89",
