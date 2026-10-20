@@ -9,7 +9,7 @@
       "projects": [
         {
           "id": "phd-application",
-          "name": "PhD application",
+          "name": "PhD Project application",
           "status": "",
           "tasks": [
             {
@@ -19,7 +19,8 @@
               "notes": "",
               "due": null
             }
-          ]
+          ],
+          "updatedAt": "2026-10-20T13:35:28.231Z"
         }
       ],
       "pinned": true
