@@ -1009,9 +1009,11 @@
             {
               "id": "t26",
               "text": "Tell Emma to deposit checks into the Mercury account",
-              "done": false,
+              "done": true,
               "notes": "Austin texted Emma the new routing/account details Oct 16 ~2:55 PM ET; waiting for her confirmation.",
-              "due": null
+              "due": null,
+              "completedAt": "2026-10-20T13:44:13.394Z",
+              "updatedAt": "2026-10-20T13:44:13.394Z"
             },
             {
               "id": "t32",
