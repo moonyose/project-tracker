@@ -25,12 +25,13 @@ SELF_TEST = re.compile(r"\bmyself\b|^\s*(play[- ]?test|test|try|play with)\b", r
 
 
 # The bot only does coding work (app and Roblox game improvements). Social media,
-# ads, marketing, outreach and account/admin tasks are skipped outright.
+# ads, outreach and account/admin tasks are skipped outright, judged only by what the
+# task asks for (its first words), so "Add the logo ... for marketing" still counts as
+# code. The orchestrator makes the final code/not-code call on everything else.
 NOT_CODE = re.compile(
     r"^\s*(post|make (\w+ )?(video )?ads?|run ads|restart (the )?ad|message|email|text|call|reply|dm|"
     r"follow up|reach out|set up .*\baccount|pay|fund|move money|close .*\baccount|tell |ask |"
-    r"schedule|book |recruit|read )\b"
-    r"|instagram post|social media|ad campaign|marketing|influencer|outreach",
+    r"schedule|book |recruit|read )\b",
     re.I,
 )
 

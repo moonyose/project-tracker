@@ -78,8 +78,8 @@
       ],
       "platform": "roblox",
       "priority": 5,
-      "enabled": false,
-      "notes": "On GitHub since Oct 19 (Rojo project; read CLAUDE.md first). Off until Austin turns it on.",
+      "enabled": true,
+      "notes": "Roblox game (Rojo project). Read CLAUDE.md, then docs/DESIGN.md and whichever docs/ file covers the area you touch (WORLD.md and LANDMARKS.md for the world and props). The world, props, signs, pads and courses are built by code in src/server/World (WorldBuilder, Props, LandmarkProps, LaunchPad, Hub, CourseBuilder) and src/server/Tutorial; fix visuals there. 'Flying Machines.rbxl' is only a backup and must not be edited. Spec tests are *.spec.luau files next to the code (excluded from the Rojo build); run the ones covering your change if a runner exists in the repo. This is the ORIGINAL Flying Machines; Flying Machines Survival is a separate repo and not part of this project.",
       "verify": [
         "rojo build default.project.json -o /tmp/<Game>.rbxl (must succeed)",
         "stylua --check on the files you changed (and selene src if a selene.toml exists)",
