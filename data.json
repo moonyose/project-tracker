@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 11,
+  "rev": 12,
   "categories": [
     {
       "id": "top-priority",
@@ -555,6 +555,26 @@
                 "next_step": "On your phone: save a video with skeleton and check the icon and STRIDELAB badge sits top right for the whole clip, walk-up included. Save again with tips on and check each tip card sits under the badge. Share the scorecard in Story and Square and check the icon and wordmark are top right."
               },
               "completedAt": "2026-10-20T14:51:05.535Z"
+            },
+            {
+              "id": "t80",
+              "text": "Watermark missing on exported clips (skeleton + tips export): add the StrideLab logo/app icon watermark",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T11:03:00-04:00",
+              "updatedAt": "2026-10-20T11:03:00-04:00",
+              "transcript": "I did not see the watermark on the on the exported clip. I tried exporting a clip with the skeleton in the tips, and there was no watermark there. It definitely needs one."
+            },
+            {
+              "id": "t81",
+              "text": "Fix skeleton end joints: ball of the foot connects only to the ankle, wrist only to the elbow (no stray lines going nowhere)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T11:03:00-04:00",
+              "updatedAt": "2026-10-20T11:03:00-04:00",
+              "transcript": "the ball of the foot should always only have one other, it should only be attached to one joint. Cause right now, I see like the ball of the foot, and then there's like a line sticking out from it that goes nowhere. So make sure that the ball of the foot is always only attached to the ankle, and that's it. same thing for like the wrist. The wrist should only be attached to the elbow, and that's it."
             }
           ]
         },
