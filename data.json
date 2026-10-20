@@ -466,12 +466,12 @@
             {
               "id": "t62",
               "text": "Launch phase not detected when front foot is farther from camera: no triple extension or launch angle despite correct joints",
-              "done": false,
+              "done": true,
               "notes": "Related to t51 (front foot not closest to camera). Whole-clip detection must not depend on which leg is nearer the camera.",
               "due": null,
               "createdAt": "2026-10-19T11:13:00-04:00",
               "transcript": "So, I have a user who is, who has a clip where, again, the, the front foot is the farther one away, and for some reason the app did not detect his launch phase well enough to, like, measure the triple extension or measure his launch angle. It's strange because I see the joints. The joints all appear correct. but for whatever reason, it's, it's not showing, it didn't, it didn't measure those things. So. Yeah, and I think it has to do with the fact that his, his front leg was further away from the camera again. So, yeah, we need to make sure that that doesn't affect anything in the detection of the whole clip.",
-              "updatedAt": "2026-10-19T11:13:00-04:00",
+              "updatedAt": "2026-10-20T13:36:50.209Z",
               "agent": {
                 "status": "pr_opened",
                 "summary": "Draft PR #25 (iOS + Android). Root cause found by simulation: when the front foot is the far one, Vision often puts both legs' labels on the near (rear) leg. PR #14 kept those frames out of the set measurement, but the triple-extension read did not, so the launch was measured on the rear leg swinging through (hip 147 vs 181, knee 123 vs 172, launch line 22 vs 44). The hip and knee peaks now skip frames flagged by StartAnalyzer.legsDoubled, with the same Kotlin change and a new test on both platforms in both running directions. It is a draft because the exact 'no launch tip at all, with correct",
@@ -480,7 +480,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/25",
                 "verified": "./Tools/verify.sh ALL CHECKS PASSED (new farFrontFootLaunchTest passes both directions); xcodebuild build scheme StrideLab for generic iOS Simulator (Xcode 26.6) succeeded; android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug BUILD SUCCESSFUL; bend CLI not installed, but no Bend-twinned rule changed; a reviewer subagent found no defects.",
                 "next_step": "On the phone, re-analyze the far-front-foot clip. Check that the Launch band and Launch tip show extension and launch-line numbers, and that coach mode stops with the far front leg straight behind. If there's still no launch tip, note the warning shown ('No start detected' or none) and share the clip so the remaining case can be fixed. Then mark PR #25 ready and merge."
-              }
+              },
+              "completedAt": "2026-10-20T13:36:50.209Z"
             },
             {
               "id": "t64",
