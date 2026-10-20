@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 22,
+  "rev": 23,
   "categories": [
     {
       "id": "top-priority",
@@ -732,6 +732,16 @@
               "createdAt": "2026-10-20T19:53:00-04:00",
               "updatedAt": "2026-10-20T19:53:00-04:00",
               "transcript": "The other thing is that I need to be able to dismiss a clip, okay? Like, you know, delete or whatever, because sometimes you know, it's someone else doing a start that I don't want, or it's somebody who happens to be walking along the track or running in the track behind me or whatever, so I need to be able to dismiss. certain things."
+            },
+            {
+              "id": "t93",
+              "text": "Show a quick looping fast-forward preview (GIF-style) of each segmented clip while labeling it Start/Straightaway/Curve, so standing-around or setup clips are easy to spot and dismiss",
+              "done": false,
+              "notes": "Goes with t90 (fixed button positions) and t91 (dismiss clips).",
+              "due": null,
+              "createdAt": "2026-10-20T19:56:00-04:00",
+              "updatedAt": "2026-10-20T19:56:00-04:00",
+              "transcript": "it would be better if I could actually see like a little preview of the clip before, because right now it's like, it's showing clips where I'm like standing around or like I'm setting up, and I'm not actually doing a start, and then the actual start clip shows up later. So, it would be good if I could show like a very quick, like fast forward version, you know, like a repeating fast forward version of the clip on the screen, so that way I can see if I need to dismiss it. It's like, is this a start, straight or a curve, or whatever, it's like, like repeating, almost like a GIF or whatever."
             }
           ]
         },
