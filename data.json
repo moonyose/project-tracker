@@ -979,7 +979,16 @@
               "due": null,
               "createdAt": "2026-10-20T09:57:00-04:00",
               "updatedAt": "2026-10-20T09:57:00-04:00",
-              "transcript": "the controls for the first plane are not quite right. like, it's not clear what to do. So, we need to make it much more obvious, cause the, the, like, instructions for how to fly and how to, how to raise your, your altitude how to steer, how to turn on the engine, they're all off to the right in this little text box that has a bunch of information in it. It's not very clear. So, you know, when the player gets in the plane, first thing they should be told is like okay, this thing, the skiff The skip's altitude is controlled by its balloons. Like, press T to inflate them and, and rise up, and let go of T to when you let go of T, air will leak out of the balloons and your altitude will go down. But the, the, the air should exit more slowly. Like, I see the bar filling and, and, like, it should fill up quickly, but it should, it should empty more slowly. Just like you would with an actual air pump and like a little leaky balloon. so, yeah, like, it needs to leak slow, like, the altitude should, I mean, I suppose the altitude should go, maybe Maybe we should add a button to deliberately let air out of the balloon? I don't know. nah, no, no, let's like how should I say this? Yeah, you know, I think it's fine, actually. I think, I think this, the way that the air in the balloons works fine, but it just needs to be more clear. Like, it needs to be explained better to the user. like, T inflates the balloons and raises you up. Letting go of T, you know, immediately starts, the balloons start leaking and your altitude, you start losing altitude, okay? then the engine, then you explain the engine. You say oh, you know, you're gonna, you have to toggle it on and off. Blah blah blah, or like, hold shift to crank the engine, whatever"
+              "transcript": "the controls for the first plane are not quite right. like, it's not clear what to do. So, we need to make it much more obvious, cause the, the, like, instructions for how to fly and how to, how to raise your, your altitude how to steer, how to turn on the engine, they're all off to the right in this little text box that has a bunch of information in it. It's not very clear. So, you know, when the player gets in the plane, first thing they should be told is like okay, this thing, the skiff The skip's altitude is controlled by its balloons. Like, press T to inflate them and, and rise up, and let go of T to when you let go of T, air will leak out of the balloons and your altitude will go down. But the, the, the air should exit more slowly. Like, I see the bar filling and, and, like, it should fill up quickly, but it should, it should empty more slowly. Just like you would with an actual air pump and like a little leaky balloon. so, yeah, like, it needs to leak slow, like, the altitude should, I mean, I suppose the altitude should go, maybe Maybe we should add a button to deliberately let air out of the balloon? I don't know. nah, no, no, let's like how should I say this? Yeah, you know, I think it's fine, actually. I think, I think this, the way that the air in the balloons works fine, but it just needs to be more clear. Like, it needs to be explained better to the user. like, T inflates the balloons and raises you up. Letting go of T, you know, immediately starts, the balloons start leaking and your altitude, you start losing altitude, okay? then the engine, then you explain the engine. You say oh, you know, you're gonna, you have to toggle it on and off. Blah blah blah, or like, hold shift to crank the engine, whatever",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "The first time a player flies the Skiff, Wanda's card walks them through its controls one step at a time and waits for each action: hold T to rise, let go to sink (the balloons leak), hold Shift to crank, let go to rest the arm (stamina), A/D to turn. The side CONTROLS card is hidden and other radio lines wait while it runs. Once finished it's saved per player, and the card then starts collapsed. Same PR as t72.",
+                "hash": "50e5eea525c3",
+                "at": "2026-10-20T17:35+00:00",
+                "pr_url": "https://github.com/moonyose/flying-machines-survival/pull/3",
+                "verified": "tools/check.sh passes (64 specs, selene clean, rojo build ok). New FlightLesson.spec covers the plan per gear, each step waiting for its action, the minimum read time and the seen-key format. Dialogue.validate checks the new lines. A reviewer subagent read the diff and its findings were fixed (a turn step that could hang, the card not collapsing in later sessions, a side-card flicker). Not run in ",
+                "next_step": "With a fresh profile, launch the Skiff. Wanda's card should step through hold T, let go of T, hold Shift, let go of Shift, A/D, with no side CONTROLS card during it. Afterwards the card should show collapsed as 'Controls (H)', and the walkthrough should not repeat after rejoining."
+              }
             },
             {
               "id": "t72",
@@ -989,7 +998,16 @@
               "due": null,
               "createdAt": "2026-10-20T09:57:00-04:00",
               "updatedAt": "2026-10-20T09:57:00-04:00",
-              "transcript": "cause I think this is a hand crank engine in the first one. and yeah, you should have like a little stamina bar or something that that controls your speed a little bit. Or like, you might not be able to always do it. Like if you, if you run out of stamina, that's it."
+              "transcript": "cause I think this is a hand crank engine in the first one. and yeah, you should have like a little stamina bar or something that that controls your speed a little bit. Or like, you might not be able to always do it. Like if you, if you run out of stamina, that's it.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "The survival Crank Propeller now pushes only while Shift is held and uses up stamina: about 8 s at full push, a fade to 45% as the arm tires, then 'out of puff' at empty (no push until it rests back to 30%). Resting refills it fully in 6 s. The HUD shows a STAMINA bar (amber when tired, red when out of puff), and the CONTROLS card, callout, part text and docs are updated. Shared with t71 in the same PR.",
+                "hash": "1f9862755387",
+                "at": "2026-10-20T17:35+00:00",
+                "pr_url": "https://github.com/moonyose/flying-machines-survival/pull/3",
+                "verified": "tools/check.sh passes (64 specs, selene clean, rojo build ok). EngineMath.spec and ControlsInfo.spec extended for the hand crank. stylua run on edited files. A reviewer subagent read the diff and its findings were fixed. Not playtested: no Studio on the runner, so the feel and the Tuft Hollow crossing on one arm's stamina are unmeasured.",
+                "next_step": "Studio or phone: launch the Skiff and hold Shift (GO on touch). The STAMINA bar drains, turns amber and the Skiff slows after about 8 s, and at about 12 s it shows red 'out of puff' and stops pushing. Let go and it refills. Then confirm Tuft Hollow is still reachable by cranking in bursts."
+              }
             },
             {
               "id": "t73",
@@ -999,7 +1017,16 @@
               "due": null,
               "createdAt": "2026-10-20T09:57:00-04:00",
               "updatedAt": "2026-10-20T09:57:00-04:00",
-              "transcript": "there was a point where like I hit, I ran, I crashed into an island, like the bottom part of an island, and one of my balloons popped, so I couldn't get any lift. Like I couldn't get high enough. Like At that, the, the player should always have an option to, like, reset and go back to their original point, and like, you know, they still lose half their cargo or whatever, just like just like you know, just like normal. But right now you have to, like, wait until your plane slowly sinks into the clouds, which is not great. It's just frustrating, because you know you're going down already."
+              "transcript": "there was a point where like I hit, I ran, I crashed into an island, like the bottom part of an island, and one of my balloons popped, so I couldn't get any lift. Like I couldn't get high enough. Like At that, the, the player should always have an option to, like, reset and go back to their original point, and like, you know, they still lose half their cargo or whatever, just like just like you know, just like normal. But right now you have to, like, wait until your plane slowly sinks into the clouds, which is not great. It's just frustrating, because you know you're going down already.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Added an in-flight RESET: hold the new RESET row on the flight panel, Backspace, or gamepad LB for 1 s. The server only accepts it from a living pilot in their own machine, then charges what a cloud fall charges: each cargo stack keeps half, overflow goes to a crate by the Unload Bay, the machine is lost, and the pilot is sent home. Pure rule RecallLogic.canReset has a spec. No shared contract files changed.",
+                "hash": "1b87f7ebae73",
+                "at": "2026-10-20T17:35+00:00",
+                "pr_url": "https://github.com/moonyose/flying-machines-survival/pull/2",
+                "verified": "tools/check.sh passes (63 specs, selene 0 errors, rojo build ok); stylua on edited files; reviewer subagent found 3 issues and all are fixed. Not run in Studio (not on the runner); a playtest checklist is in the PR.",
+                "next_step": "On the phone: launch the Skiff, take off, press and hold the RESET row in the top-left panel for 1 s. You should be at the hangar with half your cargo and no Skiff out. Also check the taller panel doesn't overlap the touch flight buttons."
+              }
             },
             {
               "id": "t74",
@@ -1009,7 +1036,16 @@
               "due": null,
               "createdAt": "2026-10-20T09:57:00-04:00",
               "updatedAt": "2026-10-20T09:57:00-04:00",
-              "transcript": "when I did respawn on the build pad, my character just kept falling through the island and falling through, down beneath the map, so we need to make sure that they're spawning correctly. That's very important."
+              "transcript": "when I did respawn on the build pad, my character just kept falling through the island and falling through, down beneath the map, so we need to make sure that they're spawning correctly. That's very important.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Root cause (from reading the code, not reproduced in Studio): in survival, Missions/Pilot was only loaded the first time something needed it, by a rescue or a machine stow. When it loaded, it snapshotted the character's part settings; if the pilot was still seated, that snapshot caught the machine's FlightRider collision group, which does not collide with floors or terrain. Every later return to the build pad (Pilot.reset) put that group back, so the character fell through the hangar floor and the island, got rescued, and fell again. Fix: HangarSpawn loads Pilot at boot, snapshots turn the rid",
+                "hash": "ee64867556a7",
+                "at": "2026-10-20T17:35+00:00",
+                "pr_url": "https://github.com/moonyose/flying-machines-survival/pull/1",
+                "verified": "tools/check.sh passes: 64 specs (new PilotDefaults spec has 6 passing), selene 0 errors and 0 warnings, rojo build ok. stylua run on all edited files. A reviewer subagent found no defects. Not run in Studio (none on the runner), so the fix is unconfirmed in play; a plain Reset Character respawn may be a separate issue (step 3 of the checklist covers it).",
+                "next_step": "Playtest: (1) fly the Skiff into the clouds and check you stay standing on the build pad; (2) walk off the island on foot into the clouds and check you don't fall through the pad (the old loop); (3) Reset Character while falling and while in the hangar and check you stay on the floor after respawning."
+              }
             },
             {
               "id": "t87",
