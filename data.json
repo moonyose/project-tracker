@@ -565,7 +565,15 @@
               "createdAt": "2026-10-20T11:03:00-04:00",
               "updatedAt": "2026-10-20T15:07:22.241Z",
               "transcript": "I did not see the watermark on the on the exported clip. I tried exporting a clip with the skeleton in the tips, and there was no watermark there. It definitely needs one.",
-              "completedAt": "2026-10-20T15:07:22.241Z"
+              "completedAt": "2026-10-20T15:07:22.241Z",
+              "agent": {
+                "status": "done_no_change",
+                "summary": "Already done on master. The watermark was added by PR #27 (t70, 'Brand exported videos and scorecards with the app icon and wordmark'). It merged at 14:54 UTC, only 9 minutes before this to-do was filed (15:03 UTC), so the clip Austin exported almost certainly came from a build made before #27. On master, SkeletonVideoExporter draws the StrideLab badge (app icon plus STRIDE/LAB wordmark on a small glass card, top right) on every frame of every saved video: skeleton-only, with tips, and on held tip frames. Tip captions move below the badge when they would overlap it. No code change was needed, ",
+                "hash": "b7b70bb33676",
+                "at": "2026-10-20T15:25+00:00",
+                "verified": "Checked on current master (48aa16d) in a clean worktree. ./Tools/verify.sh printed ALL CHECKS PASSED, including the badge tests in Tools/tests_export.swift. xcodebuild build for scheme StrideLab on iPhone 17 Pro, iOS 26.5 simulator (Xcode 26.6) passed with warnings only. The built app's Assets.car contains the BrandIcon image the exporter loads. Read the code path: Job.draw in StrideLab/Playback/S",
+                "next_step": "Install the TestFlight build made after PR #27 merged (2026-10-20 14:54 UTC or later). Open an analyzed clip, save a video with the skeleton and tips on, and open it in Photos. The app icon and STRIDELAB badge should sit in the top-right corner on every frame, with each tip card below it. If it's still missing on that build, reopen this to-do and say which build number you used."
+              }
             },
             {
               "id": "t81",
@@ -575,7 +583,16 @@
               "due": null,
               "createdAt": "2026-10-20T11:03:00-04:00",
               "updatedAt": "2026-10-20T11:03:00-04:00",
-              "transcript": "the ball of the foot should always only have one other, it should only be attached to one joint. Cause right now, I see like the ball of the foot, and then there's like a line sticking out from it that goes nowhere. So make sure that the ball of the foot is always only attached to the ankle, and that's it. same thing for like the wrist. The wrist should only be attached to the elbow, and that's it."
+              "transcript": "the ball of the foot should always only have one other, it should only be attached to one joint. Cause right now, I see like the ball of the foot, and then there's like a line sticking out from it that goes nowhere. So make sure that the ball of the foot is always only attached to the ankle, and that's it. same thing for like the wrist. The wrist should only be attached to the elbow, and that's it.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "The skeleton's leg drew one more bone to the toe (ball -> toe, or ankle -> toe with no ball). The toe has no dot, so the line ran off to nothing. The leg now ends ankle -> ball when a ball is placed, else at the ankle, and the toe is never a bone. The arms already ended elbow -> wrist; tests now pin that and check that every bone ends on a dot. The tip highlights for triple extension and contact time now light ankle -> ball only. Bend: LAW 58 changed to 'no bone runs to the toe' and new LAW 63 'the ball's one bone is to the ankle'. Same change on iOS and Android. Behavior change: with no place",
+                "hash": "4237494a6ba4",
+                "at": "2026-10-20T15:25+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/28",
+                "verified": "./Tools/verify.sh: ALL CHECKS PASSED. xcodebuild build (scheme StrideLab, iPhone 17 Pro sim, iOS 26.5): BUILD SUCCEEDED. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: no test failures, debug APK built. Reviewer subagent found no defects. Not run: bend PROOF.bend (bend CLI not installed on the runner). No screenshot taken (reaching a paused frame needs UI taps).",
+                "next_step": "Run `bend PROOF.bend` on the Mac (expect 'All terms check.'). Then on the phone: pause an analysed clip on a planted frame and check each leg ends at the ankle dot with no line past it. Place the ball of the foot by hand and check one line joins the ankle to the ball and nothing goes past it. Check each arm ends at the wrist dot."
+              }
             },
             {
               "id": "t82",
