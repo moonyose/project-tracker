@@ -559,12 +559,13 @@
             {
               "id": "t80",
               "text": "Watermark missing on exported clips (skeleton + tips export): add the StrideLab logo/app icon watermark",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T11:03:00-04:00",
-              "updatedAt": "2026-10-20T11:03:00-04:00",
-              "transcript": "I did not see the watermark on the on the exported clip. I tried exporting a clip with the skeleton in the tips, and there was no watermark there. It definitely needs one."
+              "updatedAt": "2026-10-20T15:07:22.241Z",
+              "transcript": "I did not see the watermark on the on the exported clip. I tried exporting a clip with the skeleton in the tips, and there was no watermark there. It definitely needs one.",
+              "completedAt": "2026-10-20T15:07:22.241Z"
             },
             {
               "id": "t81",
