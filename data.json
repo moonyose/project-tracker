@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 21,
+  "rev": 22,
   "categories": [
     {
       "id": "top-priority",
@@ -141,6 +141,22 @@
                 "hash": "2268753da46f",
                 "at": "2026-10-19T02:23+00:00"
               }
+            },
+            {
+              "id": "t92",
+              "text": "Fix lost sessions when the watch connects after ending without it: the late watch start times arrive but 'don't match' the clock sync, so the whole session goes unrecorded (important: lost a full session)",
+              "done": false,
+              "notes": "Screenshot attached (Finish line phone, Oct 20 ~6:50 PM). Banner: 'Start times from the watch don't match. 4 start times arrived from the Apple Watch. The watch's clock syncs for them don't line up, so they can't be timed. Nothing was reviewed.' with a 'Delete them...' button. Below it, 'Clips from your last watch session' was still 'Waiting for the watch's start times' with 'Discard these clips...', while Step 3 showed 'Apple Watch connected'. Expected: watch start times that arrive late still match the session's clips and get timed (re-sync the clock if needed), and nothing is lost. Don't delete the 4 pending start times or clips if they're still on the device; they may be recoverable.",
+              "due": null,
+              "createdAt": "2026-10-20T19:54:00-04:00",
+              "updatedAt": "2026-10-20T19:54:00-04:00",
+              "transcript": "Today I ended the session with, on my phone. I said, like, end without the watch or whatever. And then the watch then connected to the phone later, like a moment later, and then it's, it, it said the times were sent, but then I got an error saying that, you know, the times couldn't be synced or something like that, and so nothing ended up being recorded, which is really annoying cause I did a whole session.",
+              "attachments": [
+                {
+                  "name": "Screenshot of the watch sync error",
+                  "url": "attachments/t92-watch-sync-error.png"
+                }
+              ]
             }
           ]
         },
