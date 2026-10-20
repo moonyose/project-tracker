@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 16,
+  "rev": 17,
   "categories": [
     {
       "id": "top-priority",
@@ -619,10 +619,10 @@
               "id": "t84",
               "text": "Smart tip placement in exported videos: put tips in open space (e.g., bottom center, or between the runner's head and the watermark) so they never cover any part of the runner",
               "done": false,
-              "notes": "",
+              "notes": "PR #30 merged Oct 20 ~1:05 PM ET, but the TestFlight build for master (39aaeb0) failed twice (~1:20 and ~1:36 PM ET) because no GitHub macOS runner picked up the job (capacity). Not on TestFlight yet; re-run the TestFlight build workflow.",
               "due": null,
               "createdAt": "2026-10-20T12:10:00-04:00",
-              "updatedAt": "2026-10-20T12:10:00-04:00",
+              "updatedAt": "2026-10-20T15:22:00-04:00",
               "transcript": "when we export the video, can we place, can we smartly place the tips so that they don't lie on top of the runner at any point? So like, in the clip I'm using there's plenty of space to put the tips at the bottom of the screen in the center and they would not be obscuring any part, any body part of the runner. there might be clips where I film and there's room above my head, between my head and the, you know, the StrideLab watermark.",
               "agent": {
                 "status": "pr_opened",
@@ -638,10 +638,10 @@
               "id": "t85",
               "text": "Include the in-app tip connector lines and angle guide lines in exported clips (e.g., 33\u00b0 dotted line plus the gray 45\u00b0 target line on a low launch)",
               "done": false,
-              "notes": "",
+              "notes": "PR #30 merged Oct 20 ~1:05 PM ET, but the TestFlight build for master (39aaeb0) failed twice (~1:20 and ~1:36 PM ET) because no GitHub macOS runner picked up the job (capacity). Not on TestFlight yet; re-run the TestFlight build workflow.",
               "due": null,
               "createdAt": "2026-10-20T12:10:00-04:00",
-              "updatedAt": "2026-10-20T12:10:00-04:00",
+              "updatedAt": "2026-10-20T15:22:00-04:00",
               "transcript": "when I'm, when I'm looking at the tips in the app, It draws a line from the tip to the, to the body part. and like sometimes it draws lines, like vertical lines measuring the angles. I would like to keep those in the exported clip as well. So like, for example, when someone does a launch and their, their body angle is too low, like it's 33 degrees even though it's supposed to be 45. In the app it shows this 33 degree dotted line, and it shows the, the gray line of where you're supposed to be, 45 degrees. I want that to be included in the clips.",
               "agent": {
                 "status": "pr_opened",
