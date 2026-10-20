@@ -686,7 +686,16 @@
                   "name": "Screenshot of the shared scorecard",
                   "url": "attachments/t89-scorecard-cutoff.png"
                 }
-              ]
+              ],
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Root cause: the Post scorecard put the 4 stat tiles in one row, 72 pt each, leaving 52 pt for a one-line label (e.g. STEP 1 SHIN FROM THE GROUND is about 200 pt) and for '0.19 s' plus its icon, so the text was cut off with '...'. Post now uses the Story's 2x2 grid (155 pt tiles). Labels wrap to 2 lines and shrink to 80% if still too long. The Post photo band is shorter (31% of the card, was 40%) so everything fits. The date is now full-brightness cream with a dark shade over the top of the photo. Same change in the Android port (Compose BasicText auto-size for labels). Layout tests extended on",
+                "hash": "d261ce7a02c2",
+                "at": "2026-10-20T21:36+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/33",
+                "verified": "xcodebuild simulator build (StrideLab scheme, iPhone 17 Pro iOS 26.5) succeeded; ./Tools/verify.sh ALL CHECKS PASSED (exit 0); android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed. A reviewer subagent's 2 findings were fixed and all checks re-run. Not run: bend PROOF.bend (no bend CLI on the runner; no Bend-twinned rule changed). No screenshot: the scorecard sheet couldn't",
+                "next_step": "On a TestFlight build, open the Block Start (Collegiate) clip, open the scorecard, choose Post, and check that all four tiles show their full names (may wrap to 2 lines), that 0.19 s shows in full, and that the date is readable over the sky. Check Story still looks right, and repeat on Android."
+              }
             }
           ]
         },
