@@ -754,11 +754,11 @@
             {
               "id": "t77",
               "text": "Add an average-speed bonus to scoring (bonus above a target average speed, small penalty or no bonus below it), so slow-then-boost runs don't score well",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T10:29:00-04:00",
-              "updatedAt": "2026-10-20T10:29:00-04:00",
+              "updatedAt": "2026-10-20T14:52:20.880Z",
               "transcript": "another thing that I would think would be a cool game mechanic would be like to have an average speed bonus. So like if you're above a certain average speed while doing the The run or during the course, you get a bonus, and if you go below a speed, then you get like a little bit of a penalty. or at least you just don't get the bonus. so I think that that would be cool, especially on the trickier maps where there's lots of turns and stuff and lots of traffic. You can finish the map easily if you just go very slow and then boost at the end. But, you know, your average speed should should impact your score.",
               "agent": {
                 "status": "pr_opened",
@@ -768,7 +768,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/5",
                 "verified": "rojo build OK; stylua --check clean on changed files (no selene.toml); new luau tests/PaceTest.luau passes (flat-out run x1.10-1.14, boosted x1.25, slow-then-boost x0.82-0.83 on the 1800-3200 run-ups); graze_test 161/0; RoadProfileTest ALL OK; tests/driving/run.sh overall PASS with parity. Reviewer subagent findings fixed. Not playtested in Studio; luau-compile -O0 local-limit check could not run ",
                 "next_step": "Playtest: drive a full-throttle run and confirm the results line shows 'AVG ~120 +1x%'; retry crawling then boosting at the end and confirm a negative pace % and a lower total; graze a car and confirm both graze and pace parts show; an early wall crash or timeout should show no AVG part; Ski Jump unchanged."
-              }
+              },
+              "completedAt": "2026-10-20T14:52:20.880Z"
             },
             {
               "id": "t78",
