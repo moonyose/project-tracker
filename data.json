@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 12,
+  "rev": 13,
   "categories": [
     {
       "id": "top-priority",
@@ -576,6 +576,16 @@
               "createdAt": "2026-10-20T11:03:00-04:00",
               "updatedAt": "2026-10-20T11:03:00-04:00",
               "transcript": "the ball of the foot should always only have one other, it should only be attached to one joint. Cause right now, I see like the ball of the foot, and then there's like a line sticking out from it that goes nowhere. So make sure that the ball of the foot is always only attached to the ankle, and that's it. same thing for like the wrist. The wrist should only be attached to the elbow, and that's it."
+            },
+            {
+              "id": "t82",
+              "text": "Move the export watermark toward the center (e.g., top center, with tips moved below) so it survives a vertical phone crop for Instagram",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T11:18:00-04:00",
+              "updatedAt": "2026-10-20T11:18:00-04:00",
+              "transcript": "Can we move the watermark to be like well, I suppose top right is correct, but like, if someone were to crop it to be like phone size to post on Instagram or something, I would like for it to be, I would like for it to appear on the phone crop version. Right now, they could crop it out very easily. Like, they would be kind of forced to crop it out, I think. So I want it to appear like more towards the center, I suppose. Or maybe we just put it right at the top center and then move the tips below or something."
             }
           ]
         },
