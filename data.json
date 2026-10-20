@@ -603,7 +603,16 @@
               "due": null,
               "createdAt": "2026-10-20T11:18:00-04:00",
               "updatedAt": "2026-10-20T11:18:00-04:00",
-              "transcript": "Can we move the watermark to be like well, I suppose top right is correct, but like, if someone were to crop it to be like phone size to post on Instagram or something, I would like for it to be, I would like for it to appear on the phone crop version. Right now, they could crop it out very easily. Like, they would be kind of forced to crop it out, I think. So I want it to appear like more towards the center, I suppose. Or maybe we just put it right at the top center and then move the tips below or something."
+              "transcript": "Can we move the watermark to be like well, I suppose top right is correct, but like, if someone were to crop it to be like phone size to post on Instagram or something, I would like for it to be, I would like for it to appear on the phone crop version. Right now, they could crop it out very easily. Like, they would be kind of forced to crop it out, I think. So I want it to appear like more towards the center, I suppose. Or maybe we just put it right at the top center and then move the tips below or something.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "The export StrideLab badge is now centred at the top of saved videos, so a vertical 9:16 crop keeps it. Tip captions always sit just below it. Done on iOS and Android, with tests that pin the badge inside a centred 9:16 crop.",
+                "hash": "d901ebbd610b",
+                "at": "2026-10-20T15:38+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/29",
+                "verified": "./Tools/verify.sh ALL CHECKS PASSED; xcodebuild build (StrideLab, iPhone 17 Pro sim, iOS 26.5) 0 errors; gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed; bend PROOF.bend not run (no bend CLI on the runner; no Bend-twinned rule touched); no screenshot (export needs an analysed clip and Pro); independent review found no defects.",
+                "next_step": "On the phone, save a landscape clip's skeleton video with and without tips. Check that the badge is centred at the top, that tip cards sit just under it, and that the badge survives a 9:16 crop in Photos or Instagram."
+              }
             }
           ]
         },
