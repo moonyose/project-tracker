@@ -625,13 +625,13 @@
               "updatedAt": "2026-10-20T15:22:00-04:00",
               "transcript": "when we export the video, can we place, can we smartly place the tips so that they don't lie on top of the runner at any point? So like, in the clip I'm using there's plenty of space to put the tips at the bottom of the screen in the center and they would not be obscuring any part, any body part of the runner. there might be clips where I film and there's room above my head, between my head and the, you know, the StrideLab watermark.",
               "agent": {
-                "status": "needs_austin",
-                "summary": "The code is done: smart tip placement merged in PR #30 on Oct 20. The only step left is getting it onto TestFlight. The bot doesn't trigger release builds, so no new code work was done this run.",
-                "hash": "05d8db8c1025",
-                "at": "2026-10-20T19:25+00:00",
+                "status": "skipped_not_code",
+                "summary": "Code merged in PR #30 and shipped in TestFlight 1.0.2; what's left is Austin testing on device, not coding work.",
+                "hash": "4730cbe15461",
+                "at": "2026-10-20T21:37+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/30",
-                "verified": "Nothing re-run this run; PR #30 was already verified and merged (xcodebuild sim build OK, Tools/verify.sh passed, Android gradle checks passed).",
-                "next_step": "Re-run the TestFlight build workflow for master (39aaeb0) in GitHub Actions. Once it's on TestFlight, save a clip 'with tips' and check that the tip card never covers the runner."
+                "verified": "Nothing run; no code work needed.",
+                "next_step": "On TestFlight, save a clip 'with tips' and check the tip card never covers the runner."
               }
             },
             {
@@ -644,13 +644,13 @@
               "updatedAt": "2026-10-20T15:22:00-04:00",
               "transcript": "when I'm, when I'm looking at the tips in the app, It draws a line from the tip to the, to the body part. and like sometimes it draws lines, like vertical lines measuring the angles. I would like to keep those in the exported clip as well. So like, for example, when someone does a launch and their, their body angle is too low, like it's 33 degrees even though it's supposed to be 45. In the app it shows this 33 degree dotted line, and it shows the, the gray line of where you're supposed to be, 45 degrees. I want that to be included in the clips.",
               "agent": {
-                "status": "needs_austin",
-                "summary": "The code is done: connector lines and angle guide lines in exported clips merged in PR #30 on Oct 20. The only step left is getting it onto TestFlight. The bot doesn't trigger release builds, so no new code work was done this run.",
-                "hash": "0e80ff1b8339",
-                "at": "2026-10-20T19:25+00:00",
+                "status": "skipped_not_code",
+                "summary": "Code merged in PR #30 and shipped in TestFlight 1.0.2; what's left is Austin testing on device, not coding work.",
+                "hash": "6986f606a631",
+                "at": "2026-10-20T21:37+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/30",
-                "verified": "Nothing re-run this run; PR #30 was already verified and merged (xcodebuild sim build OK, Tools/verify.sh passed, Android gradle checks passed).",
-                "next_step": "Re-run the TestFlight build workflow for master (39aaeb0) in GitHub Actions. Then save a low-launch block-start clip 'with tips' and check for the connector line plus the dashed 45\u00b0 target line with '33\u00b0' and '45\u00b0'."
+                "verified": "Nothing run; no code work needed.",
+                "next_step": "On TestFlight, save a low-launch block-start clip 'with tips' and check for the connector line plus the dashed 45\u00b0 target line with '33\u00b0' and '45\u00b0'."
               }
             },
             {
