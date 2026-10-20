@@ -717,7 +717,16 @@
               "due": null,
               "createdAt": "2026-10-20T10:29:00-04:00",
               "updatedAt": "2026-10-20T10:29:00-04:00",
-              "transcript": "the visual upgrades look really bad. Like, they look terrible. They look like cylinders and rectangles and, like, flat lines, like, that just got stuck onto the nice-looking car. So, any visual upgrades should be, you know, you, should use 3D assets and stuff from the Roblox toolbox that are available in there. Don't just, like, make, you know, random 3D things and slap them on. I think there was, like, a racing stripe thing that it tried to add, but it literally just looked like two completely flat White boards that sat on top of the car like skis. It looks terrible. So that's number one, got to fix that. It just looks super sloppy. Or if you can't find enough stuff, if the agents can't find enough stuff in the Roblox toolbox, then just don't even bother doing it."
+              "transcript": "the visual upgrades look really bad. Like, they look terrible. They look like cylinders and rectangles and, like, flat lines, like, that just got stuck onto the nice-looking car. So, any visual upgrades should be, you know, you, should use 3D assets and stuff from the Roblox toolbox that are available in there. Don't just, like, make, you know, random 3D things and slap them on. I think there was, like, a racing stripe thing that it tried to add, but it literally just looked like two completely flat White boards that sat on top of the car like skis. It looks terrible. So that's number one, got to fix that. It just looks super sloppy. Or if you can't find enough stuff, if the agents can't find enough stuff in the Roblox toolbox, then just don't even bother doing it.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "The Roblox Toolbox can't be browsed or checked from the runner, and inventing asset IDs isn't safe, so I took the task's fallback and removed the visual upgrades. This exactly undoes the t69 UpgradeKit feature: the shared module, client renderer, test, CosUpgradeKit loadout attribute and 'NEXT LOOK' tile line. Performance upgrades, prices and saves are unchanged. The looks were never saved, so there's nothing to refund. It doesn't affect PR #6's upgrade-tier prize, and that PR should merge without a conflict.",
+                "hash": "b73b58235a92",
+                "at": "2026-10-20T14:44+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/7",
+                "verified": "rojo build succeeded; stylua --check passed on the edited files (no selene.toml); luau tests/RoadProfileTest.luau ALL OK; git grep finds no leftover references; reviewer subagent found no defects. Not run: tests/driving (no driving code changed) and a Studio playtest (not available on the runner).",
+                "next_step": "On your phone, open a level with an upgraded car and check it has no extra boxes, boards or wing. Open Career > Upgrades and check there's no 'NEXT LOOK' line, then buy a tier and confirm coins and stats still work."
+              }
             },
             {
               "id": "t76",
@@ -727,7 +736,16 @@
               "due": null,
               "createdAt": "2026-10-20T10:29:00-04:00",
               "updatedAt": "2026-10-20T10:29:00-04:00",
-              "transcript": "the headlights, I, they, they did, they were on, but they weren't very powerful. and even to illuminate the road more. and like further. it needs to be, yeah, more helpful."
+              "transcript": "the headlights, I, they, they did, they were on, but they weren't very powerful. and even to illuminate the road more. and like further. it needs to be, yeah, more helpful.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "HeadlightKit: doubled headlight brightness (6->12), cone 55->60 deg, RANGE set to Roblox's 60-stud cap (old 70 was silently clamped). Added a centred far SpotLight on an Attachment 45 studs ahead of the nose, so the road is lit to ~105 studs. A raycast 5x per second pulls it back short of walls and turns it off under 12 studs. It goes dark once both headlights are smashed.",
+                "hash": "edf3414c4ecd",
+                "at": "2026-10-20T14:44+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/4",
+                "verified": "rojo build default.project.json succeeds; stylua --check on HeadlightKit.luau passes; no selene.toml; no tests in tests/ cover HeadlightKit (driving/road/upgrade harnesses unaffected, not run). Reviewer subagent ran on the first version; its wall bleed-through finding was fixed and the fix was not re-reviewed. Studio playtest not possible on runner; checklist in PR.",
+                "next_step": "Play a night mission (NeonNight or Blackout): road should be clearly brighter and lit ~100 studs ahead. Facing a nearby wall, nothing should glow behind it. Smashing both headlights turns all beams off."
+              }
             },
             {
               "id": "t77",
@@ -737,7 +755,16 @@
               "due": null,
               "createdAt": "2026-10-20T10:29:00-04:00",
               "updatedAt": "2026-10-20T10:29:00-04:00",
-              "transcript": "another thing that I would think would be a cool game mechanic would be like to have an average speed bonus. So like if you're above a certain average speed while doing the The run or during the course, you get a bonus, and if you go below a speed, then you get like a little bit of a penalty. or at least you just don't get the bonus. so I think that that would be cool, especially on the trickier maps where there's lots of turns and stuff and lots of traffic. You can finish the map easily if you just go very slow and then boost at the end. But, you know, your average speed should should impact your score."
+              "transcript": "another thing that I would think would be a cool game mechanic would be like to have an average speed bonus. So like if you're above a certain average speed while doing the The run or during the course, you get a bonus, and if you go below a speed, then you get like a little bit of a penalty. or at least you just don't get the bonus. so I think that that would be cool, especially on the trickier maps where there's lots of turns and stuff and lots of traffic. You can finish the map easily if you just go very slow and then boost at the end. But, you know, your average speed should should impact your score.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Added an average-speed (pace) multiplier to run scoring. Average speed is studs driven from GO to the junction impact divided by the time taken. Above 100 studs/s it gives a bonus rising to +25% at 140. From 80 to 100 it is x1. Below 80 it gives a small penalty, down to -20% at 40. It is multiplied with the graze/clean-run multiplier in DamageService, so the live counter, results, medals and leaderboards all see the same number. Not applied in Ski Jump, early crashes or timeouts. The results card line now shows e.g. 'AVG 118 +11%'. Tunables are in Config.Pace.",
+                "hash": "a3f4a8896d66",
+                "at": "2026-10-20T14:44+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/5",
+                "verified": "rojo build OK; stylua --check clean on changed files (no selene.toml); new luau tests/PaceTest.luau passes (flat-out run x1.10-1.14, boosted x1.25, slow-then-boost x0.82-0.83 on the 1800-3200 run-ups); graze_test 161/0; RoadProfileTest ALL OK; tests/driving/run.sh overall PASS with parity. Reviewer subagent findings fixed. Not playtested in Studio; luau-compile -O0 local-limit check could not run ",
+                "next_step": "Playtest: drive a full-throttle run and confirm the results line shows 'AVG ~120 +1x%'; retry crawling then boosting at the end and confirm a negative pace % and a lower total; graze a car and confirm both graze and pace parts show; an early wall crash or timeout should show no AVG part; Ski Jump unchanged."
+              }
             },
             {
               "id": "t78",
@@ -747,7 +774,16 @@
               "due": null,
               "createdAt": "2026-10-20T10:29:00-04:00",
               "updatedAt": "2026-10-20T10:29:00-04:00",
-              "transcript": "on the engagement stuff, like, I have one really good idea for engagement and I, and I want this to be implemented right away, which is that there's the rivals section of the game, right? I want that to be, I want that to automatically appear. Like, after the person does, let's say, two, after they achieve You know, three stars on, on the first two courses, for example. I want it to appear a screen where it's like, oh a new rival is approaching, or a new rival has appeared. And, and just like in Super Smash Bros, where it shows like the head-to-head screen, and it shows like the silhouette of the other guy, I would love that for this game too. And if you beat the person, you know, you get, you get that single attempt or whatever. I don't know. Well, like, you get the attempt right then to beat them and, and win their car, you know? and then you get to keep their car. So, I think that that would be a really cool feature. or at least maybe you, maybe if, I don't know how many cars we have available. I would love for you to, to be able to keep the car, and the car should be like, you know, decent for, for the person's level at that point. But if you can't keep the car because there aren't enough car models or whatever, then they should at least give you like an upgrade or like a cool visual upgrade or something. so yeah, like that, that, that I think will keep people kind of engaged, and it, it brings out that that part of the game, you know? Cause like right now it's sort of hidden, you have to look for it."
+              "transcript": "on the engagement stuff, like, I have one really good idea for engagement and I, and I want this to be implemented right away, which is that there's the rivals section of the game, right? I want that to be, I want that to automatically appear. Like, after the person does, let's say, two, after they achieve You know, three stars on, on the first two courses, for example. I want it to appear a screen where it's like, oh a new rival is approaching, or a new rival has appeared. And, and just like in Super Smash Bros, where it shows like the head-to-head screen, and it shows like the silhouette of the other guy, I would love that for this game too. And if you beat the person, you know, you get, you get that single attempt or whatever. I don't know. Well, like, you get the attempt right then to beat them and, and win their car, you know? and then you get to keep their car. So, I think that that would be a really cool feature. or at least maybe you, maybe if, I don't know how many cars we have available. I would love for you to, to be able to keep the car, and the car should be like, you know, decent for, for the person's level at that point. But if you can't keep the car because there aren't enough car models or whatever, then they should at least give you like an upgrade or like a cool visual upgrade or something. so yeah, like that, that, that I think will keep people kind of engaged, and it, it brings out that that part of the game, you know? Cause like right now it's sort of hidden, you have to look for it.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Rivals now come to the player on their own. After a run, the next unlocked rival who has never been raced triggers a Smash-style 'NEW RIVAL APPROACHING!' screen: your car vs the rival's car as a black silhouette with ??? for the name, an intro taunt, the one-shot rules and the prize. Rival 1 needs 3 stars, and each later rival needs at least one more star (4, 5, 6, 8, ...). RACE! starts one Impact Race with no retry and no rematch button; NOT NOW hides it until the next run. The first time you beat a rival you win a level-appropriate garage car matched to them (Pocket Rocket for rival 1 up to ",
+                "hash": "aee243d5b71a",
+                "at": "2026-10-20T14:44+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/6",
+                "verified": "rojo build OK; stylua --check src tests clean (no selene.toml); luau tests/RivalApproachTest.luau passes (new); RoadProfileTest ALL OK, UpgradeKitTest passed, tests/driving/run.sh overall PASS; reviewer subagent found no defects. Not verified: Studio playtest of the screen and the one-shot race (no Studio on the runner), luau-analyze (not permitted), screenshot.",
+                "next_step": "Playtest in Studio with the checklist in the PR. On your phone: with a profile under 3 stars, earn the 3rd star on the first two courses, check that NEW RIVAL APPROACHING appears after the results, tap RACE!, win, and check that the Pocket Rocket is in your garage. Also decide whether the car should only be winnable during the approach attempt (right now any first defeat wins it)."
+              }
             }
           ]
         },
