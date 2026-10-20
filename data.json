@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 19,
+  "rev": 20,
   "categories": [
     {
       "id": "top-priority",
@@ -667,11 +667,17 @@
               "id": "t89",
               "text": "Fix metric names getting cut off on the scorecard when it's shared as a post",
               "done": false,
-              "notes": "",
+              "notes": "Screenshot attached (Block Start, Collegiate scorecard, Oct 20). All four metric tiles cut off their labels (\"LAUNCH...\", \"FRONT K...\", \"STEP 1 C...\", \"STEP 1 S...\"), and the Step 1 tile also cuts off its value (\"0.19...\"). Also, the date at the top left is hard to read against the bright sky.",
               "due": null,
               "createdAt": "2026-10-20T16:28:00-04:00",
-              "updatedAt": "2026-10-20T16:28:00-04:00",
-              "transcript": "when I share the scorecard as a post, the text that shows the name of the metric is being cut off for a lot of the metrics on the card."
+              "updatedAt": "2026-10-20T16:29:00-04:00",
+              "transcript": "when I share the scorecard as a post, the text that shows the name of the metric is being cut off for a lot of the metrics on the card.",
+              "attachments": [
+                {
+                  "name": "Screenshot of the shared scorecard",
+                  "url": "attachments/t89-scorecard-cutoff.png"
+                }
+              ]
             }
           ]
         },
