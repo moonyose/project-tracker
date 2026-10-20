@@ -327,7 +327,7 @@
             {
               "id": "t50",
               "text": "Android: port the 3-point start caveat from iOS (StrideLab PR #5)",
-              "done": false,
+              "done": true,
               "notes": "Mirror the merged iOS PR #5 in android/: detect one hand down / one raised during the set hold (confident wrists only) and show the 'Looks like a 3-point start' warning.",
               "due": null,
               "agent": {
@@ -338,7 +338,9 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/11",
                 "verified": "cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (PhasesTest 0 failures, new section ran; debug APK built). Reviewer subagent found no defects against the Swift diff. Not run: iOS xcodebuild and Tools/verify.sh (no Swift or Bend changed), bend PROOF.bend (bend CLI not installed on the runner).",
                 "next_step": "On an Android phone, analyze a 3-point block start and check that the 'Looks like a 3-point start' warning appears; check that a normal 4-point start does not show it."
-              }
+              },
+              "completedAt": "2026-10-20T13:37:06.311Z",
+              "updatedAt": "2026-10-20T13:37:06.311Z"
             },
             {
               "id": "t51",
