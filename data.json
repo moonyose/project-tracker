@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 10,
+  "rev": 11,
   "categories": [
     {
       "id": "top-priority",
@@ -923,6 +923,24 @@
               "due": null,
               "completedAt": "2026-10-19T08:35:00-04:00",
               "doneRev": 4
+            }
+          ]
+        },
+        {
+          "id": "raven",
+          "name": "Raven",
+          "status": "",
+          "owner": "austin",
+          "tasks": [
+            {
+              "id": "t79",
+              "text": "Build an options data scraper for Raven and send the script to Rob to integrate",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-20T10:42:00-04:00",
+              "updatedAt": "2026-10-20T10:42:00-04:00"
             }
           ]
         },
