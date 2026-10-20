@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 9,
+  "rev": 10,
   "categories": [
     {
       "id": "top-priority",
@@ -699,6 +699,46 @@
                 "verified": "rojo build OK; stylua --check src tests clean (no selene.toml); new luau tests/UpgradeKitTest.luau passes; RoadProfileTest ALL OK; tests/driving/run.sh harness PASS. Two reviewer passes; all findings fixed. Not verified: in-Studio rendering (no Studio on the runner), so there is no screenshot.",
                 "next_step": "Sync with Rojo and playtest: buy Engine T1 and Handling T1 and check the chrome exhaust and spinning rims; buy Boost T2 and check flame pops while boosting plus a bang on release; buy Handling T3/T6 and check the body kit and the wing replacing the stock spoiler; crash into traffic and confirm crashes still score and handling feels the same."
               }
+            },
+            {
+              "id": "t75",
+              "text": "Redo car visual upgrades using real 3D assets from the Roblox Toolbox (current ones look like flat boards and primitive shapes stuck on the car); if agents can't find enough good assets, drop visual upgrades",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T10:29:00-04:00",
+              "updatedAt": "2026-10-20T10:29:00-04:00",
+              "transcript": "the visual upgrades look really bad. Like, they look terrible. They look like cylinders and rectangles and, like, flat lines, like, that just got stuck onto the nice-looking car. So, any visual upgrades should be, you know, you, should use 3D assets and stuff from the Roblox toolbox that are available in there. Don't just, like, make, you know, random 3D things and slap them on. I think there was, like, a racing stripe thing that it tried to add, but it literally just looked like two completely flat White boards that sat on top of the car like skis. It looks terrible. So that's number one, got to fix that. It just looks super sloppy. Or if you can't find enough stuff, if the agents can't find enough stuff in the Roblox toolbox, then just don't even bother doing it."
+            },
+            {
+              "id": "t76",
+              "text": "Make headlights brighter and reach farther down the road on night missions",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T10:29:00-04:00",
+              "updatedAt": "2026-10-20T10:29:00-04:00",
+              "transcript": "the headlights, I, they, they did, they were on, but they weren't very powerful. and even to illuminate the road more. and like further. it needs to be, yeah, more helpful."
+            },
+            {
+              "id": "t77",
+              "text": "Add an average-speed bonus to scoring (bonus above a target average speed, small penalty or no bonus below it), so slow-then-boost runs don't score well",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T10:29:00-04:00",
+              "updatedAt": "2026-10-20T10:29:00-04:00",
+              "transcript": "another thing that I would think would be a cool game mechanic would be like to have an average speed bonus. So like if you're above a certain average speed while doing the The run or during the course, you get a bonus, and if you go below a speed, then you get like a little bit of a penalty. or at least you just don't get the bonus. so I think that that would be cool, especially on the trickier maps where there's lots of turns and stuff and lots of traffic. You can finish the map easily if you just go very slow and then boost at the end. But, you know, your average speed should should impact your score."
+            },
+            {
+              "id": "t78",
+              "text": "(Priority: do first) Make rivals appear automatically: after e.g. 3 stars on the first two courses, show a 'New rival approaching' Smash Bros-style head-to-head screen with the rival's silhouette; one attempt to beat them and win their level-appropriate car (or a cool upgrade if there aren't enough car models)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T10:29:00-04:00",
+              "updatedAt": "2026-10-20T10:29:00-04:00",
+              "transcript": "on the engagement stuff, like, I have one really good idea for engagement and I, and I want this to be implemented right away, which is that there's the rivals section of the game, right? I want that to be, I want that to automatically appear. Like, after the person does, let's say, two, after they achieve You know, three stars on, on the first two courses, for example. I want it to appear a screen where it's like, oh a new rival is approaching, or a new rival has appeared. And, and just like in Super Smash Bros, where it shows like the head-to-head screen, and it shows like the silhouette of the other guy, I would love that for this game too. And if you beat the person, you know, you get, you get that single attempt or whatever. I don't know. Well, like, you get the attempt right then to beat them and, and win their car, you know? and then you get to keep their car. So, I think that that would be a really cool feature. or at least maybe you, maybe if, I don't know how many cars we have available. I would love for you to, to be able to keep the car, and the car should be like, you know, decent for, for the person's level at that point. But if you can't keep the car because there aren't enough car models or whatever, then they should at least give you like an upgrade or like a cool visual upgrade or something. so yeah, like that, that, that I think will keep people kind of engaged, and it, it brings out that that part of the game, you know? Cause like right now it's sort of hidden, you have to look for it."
             }
           ]
         },
