@@ -623,7 +623,16 @@
               "due": null,
               "createdAt": "2026-10-20T12:10:00-04:00",
               "updatedAt": "2026-10-20T12:10:00-04:00",
-              "transcript": "when we export the video, can we place, can we smartly place the tips so that they don't lie on top of the runner at any point? So like, in the clip I'm using there's plenty of space to put the tips at the bottom of the screen in the center and they would not be obscuring any part, any body part of the runner. there might be clips where I film and there's room above my head, between my head and the, you know, the StrideLab watermark."
+              "transcript": "when we export the video, can we place, can we smartly place the tips so that they don't lie on top of the runner at any point? So like, in the clip I'm using there's plenty of space to put the tips at the bottom of the screen in the center and they would not be obscuring any part, any body part of the runner. there might be clips where I film and there's room above my head, between my head and the, you know, the StrideLab watermark.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Exported 'with tips' videos now place each tip card in open space clear of the runner: top centre under the badge when clear (between the badge and the runner's head), else bottom centre, a corner, or the first clear spot. It keeps clear of the runner's box over the whole time the caption is up, never covers the badge, and never leaves the frame. Done on iOS and Android in the same PR as t85.",
+                "hash": "e3dd6951fb0f",
+                "at": "2026-10-20T16:41+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/30",
+                "verified": "xcodebuild simulator build (iPhone 17 Pro, Xcode 26.6) OK; ./Tools/verify.sh ALL CHECKS PASSED, with new placement tests (6000 random runner boxes, plus every paused stop on the test clip clear of the runner); Android :core:test :app:testDebugUnitTest :app:assembleDebug all passed, with mirrored tests. bend CLI not on the runner (no Bend rule changed). No end-to-end export or screenshot: saving ne",
+                "next_step": "On a phone, save a clip 'with tips' and check in Photos that at every pause the tip card sits in open space (top centre or bottom centre) and never covers the runner; repeat on Android."
+              }
             },
             {
               "id": "t85",
@@ -633,7 +642,16 @@
               "due": null,
               "createdAt": "2026-10-20T12:10:00-04:00",
               "updatedAt": "2026-10-20T12:10:00-04:00",
-              "transcript": "when I'm, when I'm looking at the tips in the app, It draws a line from the tip to the, to the body part. and like sometimes it draws lines, like vertical lines measuring the angles. I would like to keep those in the exported clip as well. So like, for example, when someone does a launch and their, their body angle is too low, like it's 33 degrees even though it's supposed to be 45. In the app it shows this 33 degree dotted line, and it shows the, the gray line of where you're supposed to be, 45 degrees. I want that to be included in the clips."
+              "transcript": "when I'm, when I'm looking at the tips in the app, It draws a line from the tip to the, to the body part. and like sometimes it draws lines, like vertical lines measuring the angles. I would like to keep those in the exported clip as well. So like, for example, when someone does a launch and their, their body angle is too low, like it's 33 degrees even though it's supposed to be 45. In the app it shows this 33 degree dotted line, and it shows the, the gray line of where you're supposed to be, 45 degrees. I want that to be included in the clips.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "On each paused tip frame, exported 'with tips' videos now draw the in-app connector (leader) line from the tip card to the joint. With Beginner coaching off, they also draw the player's target line: the dashed line plus arc, the measured number (e.g. 33\u00b0) in the tip colour and the goal (e.g. 45\u00b0) in grey, copied from OverlayCanvas.drawGuide. With Beginner coaching on, the existing beginner guide stays, as in the player. Done on iOS and Android in the same PR as t84.",
+                "hash": "867eb3ed86c5",
+                "at": "2026-10-20T16:41+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/30",
+                "verified": "xcodebuild simulator build OK; ./Tools/verify.sh ALL CHECKS PASSED, with new leader and target-line pixel tests and a check that the export's line equals the player's TargetLine; Android gradle core/app tests and assembleDebug passed, with mirrored tests. The synthetic clip has no single-number shin or launch tip, so 33\u00b0/45\u00b0 is tested with a constructed line. bend CLI unavailable.",
+                "next_step": "Save a block-start clip with a low-launch tip 'with tips' (Beginner coaching off) and check that the launch pause shows the connector line to the joint and the dashed 45\u00b0 target line with the '33\u00b0' and '45\u00b0' numbers; repeat on Android."
+              }
             }
           ]
         },
