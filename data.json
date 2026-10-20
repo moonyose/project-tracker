@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 18,
+  "rev": 19,
   "categories": [
     {
       "id": "top-priority",
@@ -662,6 +662,16 @@
               "createdAt": "2026-10-20T16:26:00-04:00",
               "updatedAt": "2026-10-20T16:26:00-04:00",
               "transcript": "have a much more obvious share button in the clip UI. Right now it's buried in the three-dot menu, but it should be one of the main buttons on the top-right."
+            },
+            {
+              "id": "t89",
+              "text": "Fix metric names getting cut off on the scorecard when it's shared as a post",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T16:28:00-04:00",
+              "updatedAt": "2026-10-20T16:28:00-04:00",
+              "transcript": "when I share the scorecard as a post, the text that shows the name of the metric is being cut off for a lot of the metrics on the card."
             }
           ]
         },
