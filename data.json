@@ -675,11 +675,11 @@
             {
               "id": "t68",
               "text": "Add headlights to the player's car for night missions",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T09:28:00-04:00",
-              "updatedAt": "2026-10-20T09:28:00-04:00",
+              "updatedAt": "2026-10-20T14:51:17.601Z",
               "transcript": "I want to add headlights for the player's car during the night missions, okay? Cause the visibility is really low.",
               "agent": {
                 "status": "pr_opened",
@@ -689,7 +689,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/2",
                 "verified": "rojo build succeeds; stylua --check is clean on both changed files; luau tests/RoadProfileTest.luau passes (ALL OK); sh tests/driving/run.sh passes with luau/lune parity. The reviewer subagent found no blocking defects, and its one note (smashed headlights) was fixed. Not playtested in Studio because Studio isn't available on the runner.",
                 "next_step": "Play Neon Night and check that two warm-white beams light the road ahead of the car. Smash the nose and check that the broken side's beam goes out. Play a day level and check that there are no beams."
-              }
+              },
+              "completedAt": "2026-10-20T14:51:17.601Z"
             },
             {
               "id": "t69",
