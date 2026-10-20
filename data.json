@@ -670,7 +670,16 @@
               "due": null,
               "createdAt": "2026-10-20T09:28:00-04:00",
               "updatedAt": "2026-10-20T09:28:00-04:00",
-              "transcript": "I want to add headlights for the player's car during the night missions, okay? Cause the visibility is really low."
+              "transcript": "I want to add headlights for the player's car during the night missions, okay? Cause the visibility is really low.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Added a HeadlightKit module that puts two forward SpotLights on the car and turns them on only when the arena's published ClockTime is night (>= 19.5 or <= 5.5): Neon Night, Blackout and random night levels. A beam goes dark when its headlight is smashed. The only CarService change is a small hook in spawn. Physics, mass and handling are unchanged, and Config.luau was not touched to avoid conflicts with t69.",
+                "hash": "8a612e007dd5",
+                "at": "2026-10-20T13:45+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/2",
+                "verified": "rojo build succeeds; stylua --check is clean on both changed files; luau tests/RoadProfileTest.luau passes (ALL OK); sh tests/driving/run.sh passes with luau/lune parity. The reviewer subagent found no blocking defects, and its one note (smashed headlights) was fixed. Not playtested in Studio because Studio isn't available on the runner.",
+                "next_step": "Play Neon Night and check that two warm-white beams light the road ahead of the car. Smash the nose and check that the broken side's beam goes out. Play a day level and check that there are no beams."
+              }
             },
             {
               "id": "t69",
@@ -680,7 +689,16 @@
               "due": null,
               "createdAt": "2026-10-20T09:28:00-04:00",
               "updatedAt": "2026-10-20T09:28:00-04:00",
-              "transcript": "the other thing that could be cool is if some of the upgrades for the cars could be visible, like visual upgrades I think that that would be really, that could make things a little bit more fun in terms of the progression. The visual upgrades can include things like body kits, or like flames coming out of the back, or like new rims, things like that. Paint, paint jobs, like decals."
+              "transcript": "the other thing that could be cool is if some of the upgrades for the cars could be visible, like visual upgrades I think that that would be really, that could make things a little bit more fun in terms of the progression. The visual upgrades can include things like body kits, or like flames coming out of the back, or like new rims, things like that. Paint, paint jobs, like decals.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Existing performance-upgrade tiers now add visible parts to the car. Engine adds an exhaust, then a quad exhaust, then a hood scoop. Handling adds rims, then a body kit, then a rear wing, then gold rims. Boost Tank T2 adds exhaust afterfire. Crashbreaker T3 adds a ram bar. Cash Multiplier T2 adds racing stripes. 10 total tiers add race-number decals. The Upgrades tab shows the next look per upgrade. Paint jobs already existed in the STYLE tab. Parts are client-only, anchored, massless and non-colliding/non-queryable, and live outside the car model, so physics and crash detection are unchanged.",
+                "hash": "d85e63bc465a",
+                "at": "2026-10-20T13:45+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/3",
+                "verified": "rojo build OK; stylua --check src tests clean (no selene.toml); new luau tests/UpgradeKitTest.luau passes; RoadProfileTest ALL OK; tests/driving/run.sh harness PASS. Two reviewer passes; all findings fixed. Not verified: in-Studio rendering (no Studio on the runner), so there is no screenshot.",
+                "next_step": "Sync with Rojo and playtest: buy Engine T1 and Handling T1 and check the chrome exhaust and spinning rims; buy Boost T2 and check flame pops while boosting plus a bang on release; buy Handling T3/T6 and check the body kit and the wing replacing the stock spoiler; crash into traffic and confirm crashes still score and handling feels the same."
+              }
             }
           ]
         },
