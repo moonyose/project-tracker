@@ -695,11 +695,11 @@
             {
               "id": "t69",
               "text": "Make some car upgrades visible (body kits, exhaust flames, rims, paint jobs, decals) to make progression more fun",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T09:28:00-04:00",
-              "updatedAt": "2026-10-20T09:28:00-04:00",
+              "updatedAt": "2026-10-20T14:51:19.650Z",
               "transcript": "the other thing that could be cool is if some of the upgrades for the cars could be visible, like visual upgrades I think that that would be really, that could make things a little bit more fun in terms of the progression. The visual upgrades can include things like body kits, or like flames coming out of the back, or like new rims, things like that. Paint, paint jobs, like decals.",
               "agent": {
                 "status": "pr_opened",
@@ -709,7 +709,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/3",
                 "verified": "rojo build OK; stylua --check src tests clean (no selene.toml); new luau tests/UpgradeKitTest.luau passes; RoadProfileTest ALL OK; tests/driving/run.sh harness PASS. Two reviewer passes; all findings fixed. Not verified: in-Studio rendering (no Studio on the runner), so there is no screenshot.",
                 "next_step": "Sync with Rojo and playtest: buy Engine T1 and Handling T1 and check the chrome exhaust and spinning rims; buy Boost T2 and check flame pops while boosting plus a bang on release; buy Handling T3/T6 and check the body kit and the wing replacing the stock spoiler; crash into traffic and confirm crashes still score and handling feels the same."
-              }
+              },
+              "completedAt": "2026-10-20T14:51:19.650Z"
             },
             {
               "id": "t75",
