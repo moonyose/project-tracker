@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 13,
+  "rev": 14,
   "categories": [
     {
       "id": "top-priority",
@@ -1255,6 +1255,62 @@
               "createdAt": "2026-10-19T12:31:00-04:00",
               "transcript": "my wife is an immigration attorney, and she has clients that have to do certain things on their own, and a lot, like they have to gather documents and stuff, or they have to request information from I don't know where. a lot of them end up not doing the stuff, or doing it very last minute, and then my wife is not able to do her job well, or like, she's very stressed. So, I want to create an app, basically like a website for her, where she can say, she can tell her client, hey Hey you need this, this, this, this, and this. here's a link, and this, this website, or this app, or whatever, is going to walk you through all of the necessary things that you need to do, and it will even draft emails for you. Like, if something needs to be requested by email, it can do that for you. If something needs to be requested by phone, it's gonna give you the phone number and, and tell you the script of what you need to say.\n\nI want my wife to be able to like dictate into this app, like what is needed. and maybe like, I don't know if it's possible to like collect notes from her calls or something. that I don't know, but you know, I want her to be able to dictate this, just like I'm doing with you right now. and just very quickly say, yeah, this person needs this, this, this, this, and this, and that's it.\n\nit should work just like my current to-do list app where as they check it off, you know, it disappears and if it's not checked off, then they get like an email or a text every 24 hours reminding them to do something.",
               "updatedAt": "2026-10-19T12:34:00-04:00"
+            }
+          ]
+        },
+        {
+          "id": "miami-beach-resident-parking",
+          "name": "Miami Beach resident parking",
+          "status": "",
+          "owner": "austin",
+          "tasks": [
+            {
+              "id": "t83",
+              "text": "Apply for Miami Beach resident parking with the new license plate",
+              "done": false,
+              "notes": "Sources: https://www.miamibeachfl.gov/city-hall/parking/residents-only/residential-parking-zones/ ; https://www.miamibeachfl.gov/city-hall/parking/residents-only/resident-parking-discounts/ ; application form https://www.miamibeachfl.gov/wp-content/uploads/2025/06/ResidentialParkingForm-2025.pdf ; portal https://parking.miamibeachfl.gov/portal. Fee: the official pages don't list a fee for the residential permit or the resident program (the form mentions paying for renewals in the Parking Portal); ask at 305-673-7505 or ResidentialParkingPermits@miamibeachfl.gov. Plate change: the plate plus a windshield decal (driver-side bottom corner) is the permit, checked by license plate readers; the form says to tell the Parking Dept about any plate or vehicle change ASAP. North Beach has a separate free Registered Resident Parking pilot (miamibeachfl.gov/city-hall/parking/residents-only/nobe-rrpp/).",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-20T11:30:00-04:00",
+              "updatedAt": "2026-10-20T11:30:00-04:00",
+              "subtasks": [
+                {
+                  "id": "t83-1",
+                  "text": "Check whether your Miami Beach address is in a Residential Parking Zone (zone map/PDFs on the Residential Parking Zone Permit page); if it isn't, apply for the citywide Residential Parking Program (resident discounts) instead",
+                  "done": false,
+                  "updatedAt": "2026-10-20T11:30:00-04:00"
+                },
+                {
+                  "id": "t83-2",
+                  "text": "Florida driver's license issued to you at your Miami Beach address",
+                  "done": false,
+                  "updatedAt": "2026-10-20T11:30:00-04:00"
+                },
+                {
+                  "id": "t83-3",
+                  "text": "Florida vehicle registration for the new plate, in your name at your Miami Beach address",
+                  "done": false,
+                  "updatedAt": "2026-10-20T11:30:00-04:00"
+                },
+                {
+                  "id": "t83-4",
+                  "text": "One proof of residency with your name and address, dated within the last 30 days: utility bill (FPL, gas, cable), cell phone bill, mortgage statement, latest property tax statement, or a fully executed lease longer than 6 months",
+                  "done": false,
+                  "updatedAt": "2026-10-20T11:30:00-04:00"
+                },
+                {
+                  "id": "t83-5",
+                  "text": "Fill out the Residential Parking Application (Form 83039) with the new tag/plate: https://www.miamibeachfl.gov/wp-content/uploads/2025/06/ResidentialParkingForm-2025.pdf",
+                  "done": false,
+                  "updatedAt": "2026-10-20T11:30:00-04:00"
+                },
+                {
+                  "id": "t83-6",
+                  "text": "Submit the application at https://parking.miamibeachfl.gov/portal (or in person: Customer Service Center, 1755 Meridian Ave, Suite 100, Mon-Fri 8:30 AM-6 PM, closed 12-1 PM daily)",
+                  "done": false,
+                  "updatedAt": "2026-10-20T11:30:00-04:00"
+                }
+              ]
             }
           ]
         }
