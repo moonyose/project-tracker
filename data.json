@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 7,
+  "rev": 8,
   "categories": [
     {
       "id": "top-priority",
@@ -525,6 +525,16 @@
                 "verified": "./Tools/verify.sh ALL CHECKS PASSED, including new timeline and highlight checks. xcodebuild simulator build (iPhone 17 Pro, iOS 26.5) succeeded. Android gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed, including new ExportTest checks. A reviewer subagent ran; its findings were fixed and the checks re-run. Not run: bend PROOF.bend (no bend CLI on the runner; no .bend rule change",
                 "next_step": "On iPhone, open an analysed clip, tap the ... menu, then Save video with skeleton and tips, then Slow motion, 50%. In Photos, check that the clip plays at half speed and freezes about 3.5 s at each tip with the caption and the limb lit."
               }
+            },
+            {
+              "id": "t70",
+              "text": "Add the StrideLab logo and app icon to all exported videos and scorecards (e.g., top right or center) for marketing",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T09:33:00-04:00",
+              "updatedAt": "2026-10-20T09:33:00-04:00",
+              "transcript": "on any exported videos or, like, scorecards or anything like that, please have the StrideLab, like, logo and app icon appear somewhere on it, like on the top right or, like, somewhere in the center. You know, it's, it's marketing for us, right? So, I wanna make sure that that is included in the in everything that gets exported."
             }
           ]
         },
