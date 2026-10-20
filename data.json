@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-20",
-  "rev": 20,
+  "rev": 21,
   "categories": [
     {
       "id": "top-priority",
@@ -696,6 +696,26 @@
                 "verified": "xcodebuild simulator build (StrideLab scheme, iPhone 17 Pro iOS 26.5) succeeded; ./Tools/verify.sh ALL CHECKS PASSED (exit 0); android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed. A reviewer subagent's 2 findings were fixed and all checks re-run. Not run: bend PROOF.bend (no bend CLI on the runner; no Bend-twinned rule changed). No screenshot: the scorecard sheet couldn't",
                 "next_step": "On a TestFlight build, open the Block Start (Collegiate) clip, open the scorecard, choose Post, and check that all four tiles show their full names (may wrap to 2 lines), that 0.19 s shows in full, and that the date is readable over the sky. Check Story still looks right, and repeat on Android."
               }
+            },
+            {
+              "id": "t90",
+              "text": "Keep the Start, Straightaway, and Curve buttons in fixed positions when labeling segmented clips from a long upload (highlight the suggested one, without reordering)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T19:53:00-04:00",
+              "updatedAt": "2026-10-20T19:53:00-04:00",
+              "transcript": "when I upload a long clip and it's, it did a really good job of segmenting it and asking me, okay, each clip was it a start, was it a straightaway, was it a curve, and it highlights the one that it thinks it is. That's great, but, first of all, I want the start, straightaway, and curve buttons to appear in the same positions every time, because right now they're jumping around based on which one was selected and that's confusing."
+            },
+            {
+              "id": "t91",
+              "text": "Let users dismiss or delete individual segmented clips from a long upload (e.g., someone else's start or a person walking or running in the background)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-20T19:53:00-04:00",
+              "updatedAt": "2026-10-20T19:53:00-04:00",
+              "transcript": "The other thing is that I need to be able to dismiss a clip, okay? Like, you know, delete or whatever, because sometimes you know, it's someone else doing a start that I don't want, or it's somebody who happens to be walking along the track or running in the track behind me or whatever, so I need to be able to dismiss. certain things."
             }
           ]
         },
