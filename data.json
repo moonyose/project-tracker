@@ -1249,11 +1249,11 @@
             {
               "id": "t74",
               "text": "Fix respawn on the build pad: the character falls through the island and below the map (important)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T09:57:00-04:00",
-              "updatedAt": "2026-10-20T09:57:00-04:00",
+              "updatedAt": "2026-10-21T13:08:18.065Z",
               "transcript": "when I did respawn on the build pad, my character just kept falling through the island and falling through, down beneath the map, so we need to make sure that they're spawning correctly. That's very important.",
               "agent": {
                 "status": "pr_opened",
@@ -1263,7 +1263,8 @@
                 "pr_url": "https://github.com/moonyose/flying-machines-survival/pull/1",
                 "verified": "tools/check.sh passes: 64 specs (new PilotDefaults spec has 6 passing), selene 0 errors and 0 warnings, rojo build ok. stylua run on all edited files. A reviewer subagent found no defects. Not run in Studio (none on the runner), so the fix is unconfirmed in play; a plain Reset Character respawn may be a separate issue (step 3 of the checklist covers it).",
                 "next_step": "Playtest: (1) fly the Skiff into the clouds and check you stay standing on the build pad; (2) walk off the island on foot into the clouds and check you don't fall through the pad (the old loop); (3) Reset Character while falling and while in the hangar and check you stay on the floor after respawning."
-              }
+              },
+              "completedAt": "2026-10-21T13:08:18.065Z"
             },
             {
               "id": "t87",
