@@ -182,7 +182,7 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319",
+          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual",
           "tasks": [
             {
               "id": "t6",
