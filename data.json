@@ -1229,11 +1229,11 @@
             {
               "id": "t73",
               "text": "Add a reset option to return to your starting point when you're going down (e.g., popped balloon), still losing half your cargo like a normal crash",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T09:57:00-04:00",
-              "updatedAt": "2026-10-20T09:57:00-04:00",
+              "updatedAt": "2026-10-21T13:08:16.139Z",
               "transcript": "there was a point where like I hit, I ran, I crashed into an island, like the bottom part of an island, and one of my balloons popped, so I couldn't get any lift. Like I couldn't get high enough. Like At that, the, the player should always have an option to, like, reset and go back to their original point, and like, you know, they still lose half their cargo or whatever, just like just like you know, just like normal. But right now you have to, like, wait until your plane slowly sinks into the clouds, which is not great. It's just frustrating, because you know you're going down already.",
               "agent": {
                 "status": "pr_opened",
@@ -1243,7 +1243,8 @@
                 "pr_url": "https://github.com/moonyose/flying-machines-survival/pull/2",
                 "verified": "tools/check.sh passes (63 specs, selene 0 errors, rojo build ok); stylua on edited files; reviewer subagent found 3 issues and all are fixed. Not run in Studio (not on the runner); a playtest checklist is in the PR.",
                 "next_step": "On the phone: launch the Skiff, take off, press and hold the RESET row in the top-left panel for 1 s. You should be at the hangar with half your cargo and no Skiff out. Also check the taller panel doesn't overlap the touch flight buttons."
-              }
+              },
+              "completedAt": "2026-10-21T13:08:16.139Z"
             },
             {
               "id": "t74",
