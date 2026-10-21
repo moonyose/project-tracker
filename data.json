@@ -728,11 +728,11 @@
             {
               "id": "t90",
               "text": "Keep the Start, Straightaway, and Curve buttons in fixed positions when labeling segmented clips from a long upload (highlight the suggested one, without reordering)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T19:53:00-04:00",
-              "updatedAt": "2026-10-20T19:53:00-04:00",
+              "updatedAt": "2026-10-21T13:06:17.948Z",
               "transcript": "when I upload a long clip and it's, it did a really good job of segmenting it and asking me, okay, each clip was it a start, was it a straightaway, was it a curve, and it highlights the one that it thinks it is. That's great, but, first of all, I want the start, straightaway, and curve buttons to appear in the same positions every time, because right now they're jumping around based on which one was selected and that's confusing.",
               "agent": {
                 "status": "pr_opened",
@@ -742,7 +742,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/34",
                 "verified": "Tools/verify.sh ALL CHECKS PASSED (new fixed-order tests); xcodebuild StrideLab simulator build succeeded; gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed; bend CLI not on runner (no .bend changed); reviewer subagent found no defects. No screenshot: needs a multi-rep long recording.",
                 "next_step": "Import a long multi-rep video; on each 'Piece N of M' screen confirm buttons read Start, Straightaway, Curve top to bottom with the suggested one filled."
-              }
+              },
+              "completedAt": "2026-10-21T13:06:17.948Z"
             },
             {
               "id": "t91",
