@@ -779,11 +779,11 @@
             {
               "id": "t93",
               "text": "Show a quick looping fast-forward preview (GIF-style) of each segmented clip while labeling it Start/Straightaway/Curve, so standing-around or setup clips are easy to spot and dismiss",
-              "done": false,
+              "done": true,
               "notes": "Goes with t90 (fixed button positions) and t91 (dismiss clips).",
               "due": null,
               "createdAt": "2026-10-20T19:56:00-04:00",
-              "updatedAt": "2026-10-20T19:56:00-04:00",
+              "updatedAt": "2026-10-21T17:14:25.228Z",
               "transcript": "it would be better if I could actually see like a little preview of the clip before, because right now it's like, it's showing clips where I'm like standing around or like I'm setting up, and I'm not actually doing a start, and then the actual start clip shows up later. So, it would be good if I could show like a very quick, like fast forward version, you know, like a repeating fast forward version of the clip on the screen, so that way I can see if I need to dismiss it. It's like, is this a start, straight or a curve, or whatever, it's like, like repeating, almost like a GIF or whatever.",
               "agent": {
                 "status": "pr_opened",
@@ -793,7 +793,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/35",
                 "verified": "Tools/verify.sh ALL CHECKS PASSED, including the new preview checks. xcodebuild simulator build (iPhone 17 Pro, iOS 26.5) succeeded. Android :core:test :app:testDebugUnitTest :app:assembleDebug passed. bend PROOF.bend not run because the bend CLI isn't on the runner; no .bend file changed. A reviewer subagent's findings were fixed and all checks re-run. No screenshot: the pieces screen needs a rea",
                 "next_step": "On your phone, open a long recording with a start, a straight run and a curve run. On each 'Piece N of M' screen, check that the picture loops quickly through the piece with a 'N\u00d7' badge, so standing-around pieces look nearly frozen."
-              }
+              },
+              "completedAt": "2026-10-21T17:14:25.228Z"
             }
           ]
         },
