@@ -1,6 +1,6 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "rev": 23,
   "categories": [
     {
@@ -721,7 +721,16 @@
               "due": null,
               "createdAt": "2026-10-20T19:53:00-04:00",
               "updatedAt": "2026-10-20T19:53:00-04:00",
-              "transcript": "when I upload a long clip and it's, it did a really good job of segmenting it and asking me, okay, each clip was it a start, was it a straightaway, was it a curve, and it highlights the one that it thinks it is. That's great, but, first of all, I want the start, straightaway, and curve buttons to appear in the same positions every time, because right now they're jumping around based on which one was selected and that's confusing."
+              "transcript": "when I upload a long clip and it's, it did a really good job of segmenting it and asking me, okay, each clip was it a start, was it a straightaway, was it a curve, and it highlights the one that it thinks it is. That's great, but, first of all, I want the start, straightaway, and curve buttons to appear in the same positions every time, because right now they're jumping around based on which one was selected and that's confusing.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "On the long-upload piece-by-piece screen, the Start/Straightaway/Curve buttons now stay in fixed order with the suggested kind highlighted in place (iOS + Android). Shared PR with t91.",
+                "hash": "8d70bc5b5dfd",
+                "at": "2026-10-21T00:13+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/34",
+                "verified": "Tools/verify.sh ALL CHECKS PASSED (new fixed-order tests); xcodebuild StrideLab simulator build succeeded; gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed; bend CLI not on runner (no .bend changed); reviewer subagent found no defects. No screenshot: needs a multi-rep long recording.",
+                "next_step": "Import a long multi-rep video; on each 'Piece N of M' screen confirm buttons read Start, Straightaway, Curve top to bottom with the suggested one filled."
+              }
             },
             {
               "id": "t91",
@@ -731,7 +740,16 @@
               "due": null,
               "createdAt": "2026-10-20T19:53:00-04:00",
               "updatedAt": "2026-10-20T19:53:00-04:00",
-              "transcript": "The other thing is that I need to be able to dismiss a clip, okay? Like, you know, delete or whatever, because sometimes you know, it's someone else doing a start that I don't want, or it's somebody who happens to be walking along the track or running in the track behind me or whatever, so I need to be able to dismiss. certain things."
+              "transcript": "The other thing is that I need to be able to dismiss a clip, okay? Like, you know, delete or whatever, because sometimes you know, it's someone else doing a start that I don't want, or it's somebody who happens to be walking along the track or running in the track behind me or whatever, so I need to be able to dismiss. certain things.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Each piece of a long upload can be dismissed ('Not me \u2013 dismiss this clip'); dismissed pieces are never cut or analysed, Back undoes it, dismissing all leaves with nothing cut (iOS + Android). Shared PR with t90.",
+                "hash": "cd52f8980ac7",
+                "at": "2026-10-21T00:13+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/34",
+                "verified": "Tools/verify.sh ALL CHECKS PASSED (new dismiss tests); xcodebuild StrideLab simulator build succeeded; gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed (SegmentsTest dismiss checks); bend CLI not on runner (no .bend changed); reviewer subagent found no defects (Android a11y hint added). No screenshot: needs a multi-rep long recording.",
+                "next_step": "Import a long multi-rep video, tap 'Not me \u2013 dismiss this clip' on one piece, confirm the rest, and check only the confirmed pieces appear as new clips."
+              }
             },
             {
               "id": "t93",
