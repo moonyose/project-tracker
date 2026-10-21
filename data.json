@@ -156,7 +156,16 @@
                   "name": "Screenshot of the watch sync error",
                   "url": "attachments/t92-watch-sync-error.png"
                 }
-              ]
+              ],
+              "agent": {
+                "status": "pr_opened",
+                "summary": "The phone's clock stops while it sleeps, so after 'End without the watch' one start fired after filming stopped made the whole late session fail to match. Late start times now match (starts after filming are noted, not fatal), the phone re-syncs with the watch when filming begins, and held start times are never deleted and get re-checked each launch. Not tested on real devices.",
+                "hash": "0f66b8c2a35b",
+                "at": "2026-10-21T00:42+00:00",
+                "pr_url": "https://github.com/moonyose/LaneSync/pull/3",
+                "verified": "xcodebuild build (scheme LaneSync, iPhone 17 Pro iOS 26.5 simulator, Xcode 26.6) succeeds; it also builds the watch app. A scratch harness copying match() passed all 7 cases. Under the old logic, the 'start fired after filming, phone slept' case returns the 'don't line up' banner, which reproduces the bug. Two reviewer passes, findings fixed. Not reproduced on real devices: the simulator has no ca",
+                "next_step": "Install on the finish iPhone and the watch, open LaneSync, and see whether the Oct 20 held start times now show 'Re-cut clips and review'. If they do, check the times look right before saving. Then run a short session: film 2 runs, tap End without the watch > Keep the clips, lock the phone for about 5 minutes, fire 1 more start on the watch and press END SESSION. Unlock with the watch nearby and c"
+              }
             }
           ]
         },
@@ -759,7 +768,16 @@
               "due": null,
               "createdAt": "2026-10-20T19:56:00-04:00",
               "updatedAt": "2026-10-20T19:56:00-04:00",
-              "transcript": "it would be better if I could actually see like a little preview of the clip before, because right now it's like, it's showing clips where I'm like standing around or like I'm setting up, and I'm not actually doing a start, and then the actual start clip shows up later. So, it would be good if I could show like a very quick, like fast forward version, you know, like a repeating fast forward version of the clip on the screen, so that way I can see if I need to dismiss it. It's like, is this a start, straight or a curve, or whatever, it's like, like repeating, almost like a GIF or whatever."
+              "transcript": "it would be better if I could actually see like a little preview of the clip before, because right now it's like, it's showing clips where I'm like standing around or like I'm setting up, and I'm not actually doing a start, and then the actual start clip shows up later. So, it would be good if I could show like a very quick, like fast forward version, you know, like a repeating fast forward version of the clip on the screen, so that way I can see if I need to dismiss it. It's like, is this a start, straight or a curve, or whatever, it's like, like repeating, almost like a GIF or whatever.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Each piece on the Start/Straightaway/Curve labelling screen now shows a looping fast-forward flipbook (12 stills, 0.12 s each, with an 'N\u00d7' speed badge that is correct for slow-mo) instead of a single still. Done on iOS and Android. It uses stills only, so LAWS 59-60 still hold. Reduce Motion falls back to the single still. Pure helpers previewTimes/previewSpeed have tests on both platforms.",
+                "hash": "fe5ef70e2566",
+                "at": "2026-10-21T00:42+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/35",
+                "verified": "Tools/verify.sh ALL CHECKS PASSED, including the new preview checks. xcodebuild simulator build (iPhone 17 Pro, iOS 26.5) succeeded. Android :core:test :app:testDebugUnitTest :app:assembleDebug passed. bend PROOF.bend not run because the bend CLI isn't on the runner; no .bend file changed. A reviewer subagent's findings were fixed and all checks re-run. No screenshot: the pieces screen needs a rea",
+                "next_step": "On your phone, open a long recording with a start, a straight run and a curve run. On each 'Piece N of M' screen, check that the picture loops quickly through the piece with a 'N\u00d7' badge, so standing-around pieces look nearly frozen."
+              }
             }
           ]
         },
