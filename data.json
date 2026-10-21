@@ -748,11 +748,11 @@
             {
               "id": "t91",
               "text": "Let users dismiss or delete individual segmented clips from a long upload (e.g., someone else's start or a person walking or running in the background)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T19:53:00-04:00",
-              "updatedAt": "2026-10-20T19:53:00-04:00",
+              "updatedAt": "2026-10-21T13:06:21.236Z",
               "transcript": "The other thing is that I need to be able to dismiss a clip, okay? Like, you know, delete or whatever, because sometimes you know, it's someone else doing a start that I don't want, or it's somebody who happens to be walking along the track or running in the track behind me or whatever, so I need to be able to dismiss. certain things.",
               "agent": {
                 "status": "pr_opened",
@@ -762,7 +762,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/34",
                 "verified": "Tools/verify.sh ALL CHECKS PASSED (new dismiss tests); xcodebuild StrideLab simulator build succeeded; gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed (SegmentsTest dismiss checks); bend CLI not on runner (no .bend changed); reviewer subagent found no defects (Android a11y hint added). No screenshot: needs a multi-rep long recording.",
                 "next_step": "Import a long multi-rep video, tap 'Not me \u2013 dismiss this clip' on one piece, confirm the rest, and check only the confirmed pieces appear as new clips."
-              }
+              },
+              "completedAt": "2026-10-21T13:06:21.236Z"
             },
             {
               "id": "t93",
