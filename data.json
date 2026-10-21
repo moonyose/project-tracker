@@ -1145,7 +1145,16 @@
                   "name": "Screenshot of the daily-challenge popup over the Rival Defeated screen",
                   "url": "attachments/t100-rival-defeated-popup.png"
                 }
-              ]
+              ],
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Root cause: Onboarding.client.luau showed the daily-challenge guide hand (DisplayOrder 40) 0.7s after Career appeared, without checking whether the RivalsUI result screen (DisplayOrder 12) was covering Career. Career guides now wait while RivalsOpen/SkiJumpOpen/VersusOpen is set and show once the screen closes. A hand cut short by such a screen doesn't count against the session limit.",
+                "hash": "ca69d61d3be1",
+                "at": "2026-10-21T13:20+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/13",
+                "verified": "rojo build succeeded; stylua --check passed (no selene.toml); reviewer subagent's one finding was fixed. No tests in tests/ cover this client UI script. Not playtested (no Studio on the runner).",
+                "next_step": "In Studio, with today's Daily unplayed: win a rival race. RIVAL DEFEATED! should have no 'PLAY TODAY'S CHALLENGE!' hand over it. Close it, and the hand should then point at the Daily card in Career."
+              }
             }
           ]
         },
