@@ -1209,11 +1209,11 @@
             {
               "id": "t72",
               "text": "Skiff hand-crank engine: hold Shift to crank, with a stamina bar that limits speed and runs out",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T09:57:00-04:00",
-              "updatedAt": "2026-10-20T09:57:00-04:00",
+              "updatedAt": "2026-10-21T13:08:13.532Z",
               "transcript": "cause I think this is a hand crank engine in the first one. and yeah, you should have like a little stamina bar or something that that controls your speed a little bit. Or like, you might not be able to always do it. Like if you, if you run out of stamina, that's it.",
               "agent": {
                 "status": "pr_opened",
@@ -1223,7 +1223,8 @@
                 "pr_url": "https://github.com/moonyose/flying-machines-survival/pull/3",
                 "verified": "tools/check.sh passes (64 specs, selene clean, rojo build ok). EngineMath.spec and ControlsInfo.spec extended for the hand crank. stylua run on edited files. A reviewer subagent read the diff and its findings were fixed. Not playtested: no Studio on the runner, so the feel and the Tuft Hollow crossing on one arm's stamina are unmeasured.",
                 "next_step": "Studio or phone: launch the Skiff and hold Shift (GO on touch). The STAMINA bar drains, turns amber and the Skiff slows after about 8 s, and at about 12 s it shows red 'out of puff' and stops pushing. Let go and it refills. Then confirm Tuft Hollow is still reachable by cranking in bursts."
-              }
+              },
+              "completedAt": "2026-10-21T13:08:13.532Z"
             },
             {
               "id": "t73",
