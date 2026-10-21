@@ -1027,7 +1027,16 @@
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
               "updatedAt": "2026-10-21T08:58:00-04:00",
-              "transcript": "number one is like the vented louvers, louvers, they are like facing the wrong direction. They're facing left and right, but they should be facing front and back on the car."
+              "transcript": "number one is like the vented louvers, louvers, they are like facing the wrong direction. They're facing left and right, but they should be facing front and back on the car.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Hood louvres kept the source model's baked rotation (that model faced +X), so the slats ran lengthwise. The row now uses the mesh's own orientation, so the slats run across the hood. WidthFrac went from 0.34 to 0.66 to keep the size and Offset Y from -0.2 to -0.12. Shared PR with t96.",
+                "hash": "e2ac1371991c",
+                "at": "2026-10-21T13:16+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/11",
+                "verified": "rojo build ok; stylua --check clean (no selene.toml); PartsTest 4248/0 failed; PartsProgressionTest 71/0 failed; new rotation checked numerically; reviewer subagent found no defects. Not seen in Studio.",
+                "next_step": "Garage > STYLE > HOOD > Vented Louvres on the Sport Sedan: the slats should run across the hood, with the vents facing front/back. If they point backwards, set Rot = {0,180,0} on the row."
+              }
             },
             {
               "id": "t95",
@@ -1037,7 +1046,15 @@
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
               "updatedAt": "2026-10-21T08:58:00-04:00",
-              "transcript": "in the, in the style section I want to be able to do a full 360 on the car, no matter what. Like, when I'm viewing it, and I want to be able to zoom in at will, cause right now it just lets me drag from left to right, and it only gives me like a partial, partial view of the whole car. Like I should get full 360 control to, and zoom and everything."
+              "transcript": "in the, in the style section I want to be able to do a full 360 on the car, no matter what. Like, when I'm viewing it, and I want to be able to zoom in at will, cause right now it just lets me drag from left to right, and it only gives me like a partial, partial view of the whole car. Like I should get full 360 control to, and zoom and everything.",
+              "agent": {
+                "status": "failed",
+                "summary": "The worker for the style camera orbit/zoom (combined with t97) was still running when the run ended, so no result was recorded. Check moonyose/CrashMode for an open PR from this run.",
+                "hash": "4c4fda4e3f16",
+                "at": "2026-10-21T13:16+00:00",
+                "verified": "Nothing confirmed by the orchestrator.",
+                "next_step": "Look for a PR on CrashMode; if there isn't one, re-queue this task."
+              }
             },
             {
               "id": "t96",
@@ -1047,7 +1064,16 @@
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
               "updatedAt": "2026-10-21T08:58:00-04:00",
-              "transcript": "the, the street aero kit and the bolt-on over fenders are not fully or properly attached to some of the vehicles, so I think we're gonna need to refine that a little bit. Like, especially the bolt-on over fenders, I see space between the top of the over fender and the actual body of the car, so like, I can see the wheel. I can see the tire between the two things."
+              "transcript": "the, the street aero kit and the bolt-on over fenders are not fully or properly attached to some of the vehicles, so I think we're gonna need to refine that a little bit. Like, especially the bolt-on over fenders, I see space between the top of the over fender and the actual body of the car, so like, I can see the wheel. I can see the tire between the two things.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "VehicleKit scales design wheels (WheelScale/RearWheelScale/axle moves) separately from the body (Stretch/Lift), but PartsBuild sized the overfender and skirt boxes from the tyre only, so on the Hot Rod, Muscle Coupe and lowered or lifted designs the flare ended below the body arch and the tyre showed. Each tyre now records its body arch (KitArchOffset/KitArchRadius). Fenders and skirt ends cover the tyre and the arch together, and a flare's inner edge reaches into the body when the tyre sticks out past it. Cars whose arch matches the tyre get the same boxes as before. Shared PR with t94.",
+                "hash": "8e9714d29ef2",
+                "at": "2026-10-21T13:16+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/11",
+                "verified": "rojo build ok; stylua --check clean (no selene.toml); PartsTest 4248/0 failed; PartsProgressionTest 71/0 failed (neither covers anchor geometry, which needs Roblox instances); reviewer subagent checked the arch maths against DZ.shape. Not seen in Studio.",
+                "next_step": "Garage > Hot Rod, then Muscle Coupe and Sport Sedan > STYLE > BODY KIT > Bolt-On Overfenders and Street Aero Kit: no tyre should show above or beside the flares, and the skirts should reach both wheel openings."
+              }
             },
             {
               "id": "t97",
@@ -1057,7 +1083,15 @@
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
               "updatedAt": "2026-10-21T08:58:00-04:00",
-              "transcript": "I think it'd be nice also to add like a ... Like a random, like a randomized option in the, in the upgrade, or in the style section. That way you don't have to go through necessarily and pick everything. You could just be like, oh, here's like a, here's a random selection of, of the different, you know styled options, and here's what your car could look like, and you could, you know, choose to select to buy all or just buy some, I don't know."
+              "transcript": "I think it'd be nice also to add like a ... Like a random, like a randomized option in the, in the upgrade, or in the style section. That way you don't have to go through necessarily and pick everything. You could just be like, oh, here's like a, here's a random selection of, of the different, you know styled options, and here's what your car could look like, and you could, you know, choose to select to buy all or just buy some, I don't know.",
+              "agent": {
+                "status": "failed",
+                "summary": "The worker for the style Randomize option (combined with t95) was still running when the run ended, so no result was recorded. Check moonyose/CrashMode for an open PR from this run.",
+                "hash": "b0c060b86a1d",
+                "at": "2026-10-21T13:16+00:00",
+                "verified": "Nothing confirmed by the orchestrator.",
+                "next_step": "Look for a PR on CrashMode; if there isn't one, re-queue this task."
+              }
             },
             {
               "id": "t98",
@@ -1067,7 +1101,16 @@
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
               "updatedAt": "2026-10-21T08:58:00-04:00",
-              "transcript": "for Boost Flame, can we make the Boost Flame a little bit more realistic? Like, let's have the agents look in the toolbox for that, for something that's better."
+              "transcript": "for Boost Flame, can we make the Boost Flame a little bit more realistic? Like, let's have the agents look in the toolbox for that, for something that's better.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "The boost flame emitters had no texture, so they showed Roblox's default sparkle dots. They now use the greyscale Toolbox fire texture 98445807872963, which was already in Config.Assets.Images.Fire as Studio-validated but unused, plus random rotation and spin for flicker. Cosmetic boost colours still tint it. If the ID is missing or 0, it falls back to Roblox's built-in fire_main.dds.",
+                "hash": "d353743f8238",
+                "at": "2026-10-21T13:16+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/9",
+                "verified": "rojo build passes; stylua --check passes on both changed files; no selene.toml; no tests in tests/ cover client particle FX; nothing in src or tests loops over Config.Assets.Images; reviewer subagent found no defects. Not checked: the asset ID live (the runner can't reach the Roblox API), and how it looks in game (no Studio).",
+                "next_step": "Playtest in Studio: hold boost and check the flames look like fire tongues, not dots, with no asset load warning in Output; then equip a coloured BOOST FLAME cosmetic and check it tints the flame."
+              }
             },
             {
               "id": "t99",
@@ -1077,7 +1120,16 @@
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
               "updatedAt": "2026-10-21T08:58:00-04:00",
-              "transcript": "The neon, I would like for it to look a little bit more realistic. I don't know if we can do like emissive Materials here, but that would be cool."
+              "transcript": "The neon, I would like for it to look a little bit more realistic. I don't know if we can do like emissive Materials here, but that would be cool.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "The Neon underglow cosmetic was a flat glowing slab. It is now four thin emissive LED tubes (pale Neon core inside a translucent Neon diffuser) around the underbody, plus a downward SurfaceLight that casts a coloured pool on the road. The shop preview matches. True emissive textures (SurfaceAppearance) would need MeshParts and uploaded assets, so they weren't used; the PR explains this. Headlights and NeonNight signs are untouched.",
+                "hash": "53700d119ebb",
+                "at": "2026-10-21T13:16+00:00",
+                "pr_url": "https://github.com/moonyose/CrashMode/pull/10",
+                "verified": "rojo build passes. stylua --check passes on both changed files. No selene.toml, and no tests in tests/ cover client visuals. A reviewer subagent found wheel clipping and preview tubes too thin to see; both fixed. Not seen in Studio (not on the runner).",
+                "next_step": "Equip Cyan Glow, drive at night (NeonNight): there should be a coloured light pool on the road and thin glowing tubes under the sills, none cutting through a wheel; the shop preview should show the tubes, not a slab."
+              }
             },
             {
               "id": "t100",
