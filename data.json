@@ -170,12 +170,12 @@
             {
               "id": "t110",
               "text": "Add App Store Connect API secrets (ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8) to the LaneSync GitHub repo so TestFlight CI works",
-              "done": false,
-              "notes": "PR #4 (TestFlight on every merge to main, like StrideLab) merged Oct 21 ~11:12 AM ET. The build run skipped upload because the secrets are missing, and the TestFlight distribution run failed twice (couldn't load ASC_KEY_P8). Use the same three values as the StrideLab repo. Also bump the version past 1.0.1 if 1.0.1 is already approved, or Apple will reject uploads.",
+              "done": true,
+              "notes": "PR #4 (TestFlight on every merge to main, like StrideLab) merged Oct 21 ~11:12 AM ET. The build run skipped upload because the secrets are missing, and the TestFlight distribution run failed twice (couldn't load ASC_KEY_P8). Use the same three values as the StrideLab repo. Also bump the version past 1.0.1 if 1.0.1 is already approved, or Apple will reject uploads. Done Oct 21: secrets added ~12:18 PM ET, PR #5 bumped the version to 1.0.2, the build and TestFlight distribution succeeded, and LaneSync 1.0.2 (202610211648) reached TestFlight ~12:54 PM ET. PR #6 (ci/app-store-submit) merged and was building ~1:16 PM ET.",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T11:25:00-04:00",
-              "updatedAt": "2026-10-21T11:25:00-04:00"
+              "updatedAt": "2026-10-21T13:20:00-04:00"
             }
           ]
         },
