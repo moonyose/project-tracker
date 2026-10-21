@@ -682,11 +682,11 @@
             {
               "id": "t88",
               "text": "Make the Share button obvious in the clip view: move it out of the three-dot menu and into the main buttons at the top right",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T16:26:00-04:00",
-              "updatedAt": "2026-10-20T16:26:00-04:00",
+              "updatedAt": "2026-10-21T13:04:05.220Z",
               "transcript": "have a much more obvious share button in the clip UI. Right now it's buried in the three-dot menu, but it should be one of the main buttons on the top-right.",
               "agent": {
                 "status": "pr_opened",
@@ -696,7 +696,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/32",
                 "verified": "Passed: xcodebuild build for iPhone 17 Pro sim (iOS 26.5) succeeded; ./Tools/verify.sh ALL CHECKS PASSED; Android :core:test :app:testDebugUnitTest :app:assembleDebug all passed (first run had one AnalysisEngineTest timeout under CPU contention, clean rerun passed); reviewer subagent found no defects. Not checked: bend PROOF.bend not run (bend CLI not installed, no Bend-twinned code changed); no s",
                 "next_step": "On your phone, open an analysed clip, tap the new Share icon at top right (next to the three dots), then try Share scorecard and Share this frame. Check those items are gone from the three-dot menu and the title still fits on a narrow phone."
-              }
+              },
+              "completedAt": "2026-10-21T13:04:05.220Z"
             },
             {
               "id": "t89",
