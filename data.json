@@ -823,7 +823,13 @@
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T10:30:00-04:00",
-              "updatedAt": "2026-10-21T10:31:00-04:00"
+              "updatedAt": "2026-10-21T10:31:00-04:00",
+              "agent": {
+                "status": "skipped_not_code",
+                "summary": "Waiting on a reply from Misha about legal approval. This is outreach, not a code change.",
+                "hash": "b862ff3465b3",
+                "at": "2026-10-21T14:36+00:00"
+              }
             }
           ]
         },
