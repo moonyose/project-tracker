@@ -702,11 +702,11 @@
             {
               "id": "t89",
               "text": "Fix metric names getting cut off on the scorecard when it's shared as a post",
-              "done": false,
+              "done": true,
               "notes": "Screenshot attached (Block Start, Collegiate scorecard, Oct 20). All four metric tiles cut off their labels (\"LAUNCH...\", \"FRONT K...\", \"STEP 1 C...\", \"STEP 1 S...\"), and the Step 1 tile also cuts off its value (\"0.19...\"). Also, the date at the top left is hard to read against the bright sky.",
               "due": null,
               "createdAt": "2026-10-20T16:28:00-04:00",
-              "updatedAt": "2026-10-20T16:29:00-04:00",
+              "updatedAt": "2026-10-21T13:06:15.291Z",
               "transcript": "when I share the scorecard as a post, the text that shows the name of the metric is being cut off for a lot of the metrics on the card.",
               "attachments": [
                 {
@@ -722,7 +722,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/33",
                 "verified": "xcodebuild simulator build (StrideLab scheme, iPhone 17 Pro iOS 26.5) succeeded; ./Tools/verify.sh ALL CHECKS PASSED (exit 0); android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed. A reviewer subagent's 2 findings were fixed and all checks re-run. Not run: bend PROOF.bend (no bend CLI on the runner; no Bend-twinned rule changed). No screenshot: the scorecard sheet couldn't",
                 "next_step": "On a TestFlight build, open the Block Start (Collegiate) clip, open the scorecard, choose Post, and check that all four tiles show their full names (may wrap to 2 lines), that 0.19 s shows in full, and that the date is readable over the sky. Check Story still looks right, and repeat on Android."
-              }
+              },
+              "completedAt": "2026-10-21T13:06:15.291Z"
             },
             {
               "id": "t90",
