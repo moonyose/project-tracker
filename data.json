@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-21",
-  "rev": 26,
+  "rev": 27,
   "categories": [
     {
       "id": "top-priority",
@@ -794,9 +794,11 @@
             {
               "id": "t7",
               "text": "Follow up with Miami Beach legal (~Oct 21)",
-              "done": false,
-              "notes": "",
-              "due": "2026-10-21"
+              "done": true,
+              "notes": "Followed up Oct 21 ~10:30 AM ET by replying to Misha (Mikhail Ryabov, Transportation Manager, MikhailRyabov@miamibeachfl.gov) in the 'Fixing the Trolley App' thread from austin.a.munoz@gmail.com, asking whether legal has reviewed the Swiftly real-time data access. Austin never contacted legal directly; Misha is waiting on them.",
+              "due": "2026-10-21",
+              "completedAt": "2026-10-21T10:30:00-04:00",
+              "updatedAt": "2026-10-21T10:30:00-04:00"
             },
             {
               "id": "t45",
@@ -812,6 +814,15 @@
               },
               "completedAt": "2026-10-19T15:03:35.217Z",
               "updatedAt": "2026-10-19T15:03:35.217Z"
+            },
+            {
+              "id": "t109",
+              "text": "Waiting on Misha's reply about legal approval for Swiftly real-time trolley data",
+              "done": false,
+              "notes": "Followed up Oct 21; if no reply, follow up again around Nov 4.",
+              "due": null,
+              "createdAt": "2026-10-21T10:30:00-04:00",
+              "updatedAt": "2026-10-21T10:30:00-04:00"
             }
           ]
         },
