@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-21",
-  "rev": 24,
+  "rev": 25,
   "categories": [
     {
       "id": "top-priority",
@@ -1344,6 +1344,94 @@
                 "verified": "Nothing was built or changed. I only confirmed that the runner can't reach the Toolbox API.",
                 "next_step": "Pick the audio in Studio's Toolbox (Audio tab) for: airplane engine loop, balloon inflate, balloon leak/hiss, hand pump stroke, hand-crank motor loop, plus small action sounds (attach, detach, pickup, button click). Paste the asset IDs into the task notes and re-queue it, and the bot will wire them in. Or allow network access to apis.roblox.com for the runner so the bot can search the Toolbox itse"
               }
+            },
+            {
+              "id": "t101",
+              "text": "First quest: tell the player to pick up both reeds and corks (cork comes from the first island's trees; the later cork-shooter quest never says how to get cork)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-21T09:38:00-04:00",
+              "updatedAt": "2026-10-21T09:38:00-04:00",
+              "transcript": "in the quest, it's like, oh, you need to get reads. From this island, and then later it's like, okay, you need to make a corkshooter and shoot some corks but it doesn't tell you how to get cork. And it doesn't tell you that you should have picked them up from the trees on the first island. So that's, I want to put that in that first quest, basically, like pick up reeds and corks."
+            },
+            {
+              "id": "t102",
+              "text": "Connect crafting benches and reloading to whatever machine you're flying at all times while it's on the island (no need to park next to them)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-21T09:38:00-04:00",
+              "updatedAt": "2026-10-21T09:38:00-04:00",
+              "transcript": "Then when you reload your airplane, you should not have to like get your airplane right next to the thing. Like, all your crafting benches and everything should be connected to whatever machine you're flying. At all times, no matter where it is, as long as it's like on the island, right?"
+            },
+            {
+              "id": "t103",
+              "text": "Add an in-flight button to reset or fast-travel back to the takeoff point, or home",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-21T09:38:00-04:00",
+              "updatedAt": "2026-10-21T09:38:00-04:00",
+              "transcript": "I also did not see the reset button. Like, I want a button where when I'm flying, I can choose to like fast travel back to where I took off from. Or like reset to where I took off from. Or maybe like if I'm flying back home, then maybe it should give me the option to fast travel home. While I'm flying."
+            },
+            {
+              "id": "t104",
+              "text": "Buff the cork shooter: make it a turret, or give it a much faster fire rate and big ammo (~100 rounds per cork), keeping low damage as a starter gun",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-21T09:38:00-04:00",
+              "updatedAt": "2026-10-21T09:38:00-04:00",
+              "transcript": "the weapon systems, so the corkshooter is kind of fun, right? But it doesn't aim well and because it's like you can basically only shoot where your plane is pointed, and it only shoots like once every now and then. It's a terrible gun. I know it's supposed to be an intro gun, so you know, it's like a starter level gun, but it needs to be better than what it is right now. So I think either making it a turret or making it so that it fires way faster and like the ammo capacity is way higher. Like, if I put four or six corks in there, it should give me like a ridiculous number of bullets. Like, each cork should give you 100 bullets. And it just is a machine gun. You know, something like that. Or like, pop, pop, pop, pop, pop. You know, like, multiple rounds a second. And the reason why it's a starter gun is because it doesn't do much damage. And maybe it's not that accurate or whatever. But like, I just want a little bit more control."
+            },
+            {
+              "id": "t105",
+              "text": "Rolling pin: hold it in the hand and swing it, instead of it sitting on the shoulder",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-21T09:38:00-04:00",
+              "updatedAt": "2026-10-21T09:38:00-04:00",
+              "transcript": "Oh, but the rolling pin, for example, the rolling pin still looks very funny. It's like on my shoulder. While I'm carrying it, it should be something that I hold in my hand and it swings and I bop people in the head with it or whatever."
+            },
+            {
+              "id": "t106",
+              "text": "Make the objective guide ribbon one smooth ribbon like the original Flying Machines game, not rectangles (fallback: a line of arrows)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-21T09:38:00-04:00",
+              "updatedAt": "2026-10-21T09:38:00-04:00",
+              "transcript": "Also, the ribbon thing that guides me towards my next objective right now is like a bunch of rectangles. Can you make it like a smooth ribbon? The original flying machine game had it well. So yeah, if you can't do that, then just you can do like a line of arrows or something. But right now, I like the ribbon. The ribbon is cool."
+            },
+            {
+              "id": "t107",
+              "text": "Rewrite stilted, AI-sounding dialogue to match the original Flying Machines style (use that game's dialogue as reference without changing it; watch sentence breaks and commas)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-21T09:38:00-04:00",
+              "updatedAt": "2026-10-21T09:38:00-04:00",
+              "transcript": "And then some of the dialogue feels a little bit stilted. Feels like AI written a little bit. The original flying machines game had a great dialogue style. So I'd really like to capture that. And I mean, you can refer to that folder if you need to, that game. Don't change it, but you know, you can look at the dialogue from there. And keep the same style. Like right now, the style is not horrible. You know, it's still like kind of funny and whimsical, but it just, there are certain lines that feel like very AI written. It's more like the breaks in the sentences and the commas, you know?"
+            },
+            {
+              "id": "t108",
+              "text": "Add a button to deliberately let air out of the balloons so light, high-lift vehicles don't get stuck in the air",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "owner": "austin",
+              "createdAt": "2026-10-21T09:38:00-04:00",
+              "updatedAt": "2026-10-21T09:38:00-04:00",
+              "transcript": "I do want to add a button that allows a player to let air out of their balloons deliberately. Because right now if you have a lot of lift and your vehicle is light, you can get stuck in the air and have to wait forever to come down. So I do want to add that."
             }
           ]
         },
