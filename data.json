@@ -643,11 +643,11 @@
             {
               "id": "t84",
               "text": "Smart tip placement in exported videos: put tips in open space (e.g., bottom center, or between the runner's head and the watermark) so they never cover any part of the runner",
-              "done": false,
+              "done": true,
               "notes": "PR #30 merged Oct 20 ~1:05 PM ET. The first GitHub-hosted builds failed (no macOS runner), but it shipped in TestFlight build 1.0.2 (202610201934, ~3:36 PM ET) built on Austin's Mac; the later master build after PR #31 also succeeded (~4:52 PM ET). Ready to test on TestFlight.",
               "due": null,
               "createdAt": "2026-10-20T12:10:00-04:00",
-              "updatedAt": "2026-10-20T15:22:00-04:00",
+              "updatedAt": "2026-10-21T13:03:55.742Z",
               "transcript": "when we export the video, can we place, can we smartly place the tips so that they don't lie on top of the runner at any point? So like, in the clip I'm using there's plenty of space to put the tips at the bottom of the screen in the center and they would not be obscuring any part, any body part of the runner. there might be clips where I film and there's room above my head, between my head and the, you know, the StrideLab watermark.",
               "agent": {
                 "status": "skipped_not_code",
@@ -657,7 +657,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/30",
                 "verified": "Nothing run; no code work needed.",
                 "next_step": "On TestFlight, save a clip 'with tips' and check the tip card never covers the runner."
-              }
+              },
+              "completedAt": "2026-10-21T13:03:55.742Z"
             },
             {
               "id": "t85",
