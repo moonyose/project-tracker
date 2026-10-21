@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-21",
-  "rev": 27,
+  "rev": 28,
   "categories": [
     {
       "id": "top-priority",
@@ -821,8 +821,9 @@
               "done": false,
               "notes": "Followed up Oct 21; if no reply, follow up again around Nov 4.",
               "due": null,
+              "owner": "austin",
               "createdAt": "2026-10-21T10:30:00-04:00",
-              "updatedAt": "2026-10-21T10:30:00-04:00"
+              "updatedAt": "2026-10-21T10:31:00-04:00"
             }
           ]
         },
