@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-21",
-  "rev": 23,
+  "rev": 24,
   "categories": [
     {
       "id": "top-priority",
@@ -1013,6 +1013,82 @@
                 "next_step": "Playtest in Studio with the checklist in the PR. On your phone: with a profile under 3 stars, earn the 3rd star on the first two courses, check that NEW RIVAL APPROACHING appears after the results, tap RACE!, win, and check that the Pocket Rocket is in your garage. Also decide whether the car should only be winnable during the approach attempt (right now any first defeat wins it)."
               },
               "completedAt": "2026-10-20T14:52:27.168Z"
+            },
+            {
+              "id": "t94",
+              "text": "Fix the vented louvers: they face left/right but should face front/back on the car",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "transcript": "number one is like the vented louvers, louvers, they are like facing the wrong direction. They're facing left and right, but they should be facing front and back on the car."
+            },
+            {
+              "id": "t95",
+              "text": "Style section camera: full 360-degree orbit around the car and zoom in/out at will (currently only a partial left-right drag)",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "transcript": "in the, in the style section I want to be able to do a full 360 on the car, no matter what. Like, when I'm viewing it, and I want to be able to zoom in at will, cause right now it just lets me drag from left to right, and it only gives me like a partial, partial view of the whole car. Like I should get full 360 control to, and zoom and everything."
+            },
+            {
+              "id": "t96",
+              "text": "Make the street aero kit and bolt-on over fenders fit flush on every vehicle (gap above the over fender shows the tire)",
+              "done": false,
+              "notes": "Only on some vehicles; check each car.",
+              "due": null,
+              "createdAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "transcript": "the, the street aero kit and the bolt-on over fenders are not fully or properly attached to some of the vehicles, so I think we're gonna need to refine that a little bit. Like, especially the bolt-on over fenders, I see space between the top of the over fender and the actual body of the car, so like, I can see the wheel. I can see the tire between the two things."
+            },
+            {
+              "id": "t97",
+              "text": "Add a Randomize option to the style section that rolls a random set of style options, with buy-all or buy-some",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "transcript": "I think it'd be nice also to add like a ... Like a random, like a randomized option in the, in the upgrade, or in the style section. That way you don't have to go through necessarily and pick everything. You could just be like, oh, here's like a, here's a random selection of, of the different, you know styled options, and here's what your car could look like, and you could, you know, choose to select to buy all or just buy some, I don't know."
+            },
+            {
+              "id": "t98",
+              "text": "Make the Boost Flame more realistic using a better asset from the Roblox Toolbox",
+              "done": false,
+              "notes": "Austin's standing rule (t75): visual upgrades must use real Roblox Toolbox assets, not homemade primitives. If no good Toolbox asset exists, skip this task.",
+              "due": null,
+              "createdAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "transcript": "for Boost Flame, can we make the Boost Flame a little bit more realistic? Like, let's have the agents look in the toolbox for that, for something that's better."
+            },
+            {
+              "id": "t99",
+              "text": "Make the neon look more realistic, ideally with emissive materials",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "transcript": "The neon, I would like for it to look a little bit more realistic. I don't know if we can do like emissive Materials here, but that would be cool."
+            },
+            {
+              "id": "t100",
+              "text": "Fix UI bug: the 'Play today's challenge' popup appears on top of the Rival Defeated screen",
+              "done": false,
+              "notes": "Screenshot attached (photo of the Studio playtest, Oct 21): the 'RIVAL DEFEATED!' screen (Impact Race, Rival #10 'The Driveway Menace') with a 'PLAY TODAY'S CHALLENGE! / New every day - come back tomorrow' button and pointing-hand tutorial prompt overlapping the reward lines (+$6,500, +520 XP, first defeat bonus) on the left side. The daily-challenge prompt should wait until the rival screen is closed.",
+              "due": null,
+              "createdAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "transcript": "I also had a visual error on the UI, which is that when I, when the rival was defeated, it, it was prompting me to play today's daily challenge, but I was still on the, like, rival defeated screen. So, I had this, like, square popping up in the middle of the rival, rival defeated UI. It said, like, play today's challenge.",
+              "attachments": [
+                {
+                  "name": "Screenshot of the daily-challenge popup over the Rival Defeated screen",
+                  "url": "attachments/t100-rival-defeated-popup.png"
+                }
+              ]
             }
           ]
         },
