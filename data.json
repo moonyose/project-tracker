@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-22",
-  "rev": 30,
+  "rev": 31,
   "categories": [
     {
       "id": "top-priority",
@@ -1465,6 +1465,23 @@
               "createdAt": "2026-10-21T09:38:00-04:00",
               "updatedAt": "2026-10-21T09:38:00-04:00",
               "transcript": "I do want to add a button that allows a player to let air out of their balloons deliberately. Because right now if you have a lot of lift and your vehicle is light, you can get stuck in the air and have to wait forever to come down. So I do want to add that."
+            }
+          ]
+        },
+        {
+          "id": "flying-machines-race",
+          "name": "Flying Machines Race (competitive build mode)",
+          "status": "new game; working title",
+          "tasks": [
+            {
+              "id": "t111",
+              "text": "Design and build a competitive Flying Machines spin-off: every player gets the same random parts, builds for about a minute, then all race through an obstacle course that favors different builds (balloons for altitude, wings for speed)",
+              "done": false,
+              "notes": "Austin's standing Roblox rules: visual assets and sound effects must come from the Roblox Toolbox (no homemade primitive shapes); if the Toolbox can't be reached, skip that visual or sound work. May reuse the building system from the original Flying Machines game, but must not change that game.",
+              "due": null,
+              "createdAt": "2026-10-22T16:41:00-04:00",
+              "updatedAt": "2026-10-22T16:41:00-04:00",
+              "transcript": "right now we have the flying machines game, we have the flying machines survival game. I wanna make a- another version of the flying machines game, but instead of ha- having like a story or anything like that, I just want there to be like the parts, like I want the building system to be more or less the same, but I want it to be a competition. So like as soon as you spawn in other players, you and all the other players each get the same set of randomly selected parts that are sufficient to build a plane, you know? and maybe with like a little extra. And there's not necessarily one right answer. On what to build, but anyway, you all take a little bit of time and make your, you make your machine, and then after, after, I don't know, a minute or whatever, then you each get to fly, then you all fly the plane through an obstacle course at the same time, and you have to make it. And maybe certain obstacles are better suited to other to different parts. So, like, certain ones might be better for balloons. Like, if you need altitude control, you want balloons more. If you need speed more, then okay, you need wings or whatever. So, this would be the idea."
             }
           ]
         },
