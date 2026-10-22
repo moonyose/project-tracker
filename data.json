@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-10-21",
-  "rev": 29,
+  "updated": "2026-10-22",
+  "rev": 30,
   "categories": [
     {
       "id": "top-priority",
@@ -33,7 +33,7 @@
         {
           "id": "lanesync-sprint-timing",
           "name": "LaneSync (sprint timing)",
-          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16 (~1:37 PM ET, eligible for distribution; release it in App Store Connect if set to manual)",
+          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~8:06 PM ET, eligible for distribution; release it in App Store Connect if set to manual",
           "tasks": [
             {
               "id": "t2",
@@ -72,9 +72,10 @@
               "id": "t5",
               "text": "Post on Reddit",
               "done": true,
-              "notes": "Posted r/Sprinting as u/Current-Special on 2026-10-14 ~13:58 ET; title offered free month. Reply ~3:24 PM ET from u/Acceptable_Joke460: \"Am gonna make this but better and completely free lol\". Reply ~5:54 PM ET from u/speedcoach970: \"No android app?\" \u2014 handled: Austin replied; Android app in progress.",
+              "notes": "Posted r/Sprinting as u/Current-Special on 2026-10-14 ~13:58 ET; title offered free month. Reply ~3:24 PM ET from u/Acceptable_Joke460: \"Am gonna make this but better and completely free lol\". Reply ~5:54 PM ET from u/speedcoach970: \"No android app?\" \u2014 handled: Austin replied; Android app in progress. Oct 22 ~4:11 AM ET: new reply from u/M_Akrami asking 'Is there any way to use it with a Garmin instead of an Apple Watch?' Not answered yet.",
               "due": null,
-              "completedAt": "2026-10-14T15:23:29-04:00"
+              "completedAt": "2026-10-14T15:23:29-04:00",
+              "updatedAt": "2026-10-22T07:25:00-04:00"
             },
             {
               "id": "t35",
@@ -177,7 +178,8 @@
               "createdAt": "2026-10-21T11:25:00-04:00",
               "updatedAt": "2026-10-21T13:20:00-04:00"
             }
-          ]
+          ],
+          "updatedAt": "2026-10-22T07:25:00-04:00"
         },
         {
           "id": "stridelab-sprint-form-analysis",
@@ -1764,10 +1766,10 @@
               "id": "t59",
               "text": "Set up Mercury IO credit card for Jonathan Edwards Homes LLC",
               "done": true,
-              "notes": "Done Oct 19 ~9:07 AM ET: Mercury confirmed IO card set up. Daily repayment (checking primary, savings backup); limit matches deposits 1:1 up to $5K/day; upgrades to monthly repayments once total deposits surpass $15K. Virtual card usable now; physical card in mail. 1.5% cashback, no annual fee.",
+              "notes": "Done Oct 19 ~9:07 AM ET: Mercury confirmed IO card set up. Daily repayment (checking primary, savings backup); limit matches deposits 1:1 up to $5K/day; upgrades to monthly repayments once total deposits surpass $15K. Virtual card usable now; physical card in mail. 1.5% cashback, no annual fee. Oct 21 ~8:35 PM ET: Mercury emailed austin.munoz@collinsparkenterprises.com that an IO physical card shipped (USPS) to 2100 Park Ave Apt 304, daily spending limit $2,500; the email doesn't name which company's card it is.",
               "due": null,
               "completedAt": "2026-10-19T09:26:46-04:00",
-              "updatedAt": "2026-10-19T09:26:46-04:00"
+              "updatedAt": "2026-10-22T07:25:00-04:00"
             }
           ]
         },
