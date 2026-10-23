@@ -1533,7 +1533,16 @@
               "done": false,
               "due": null,
               "updatedAt": "2026-10-23T14:52:02.047Z",
-              "notes": "Majority (or everyone, if 2 players) within the results screen's time starts a rematch with the same seed for kit and course; otherwise back to lobby. Show the vote count live. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+              "notes": "Majority (or everyone, if 2 players) within the results screen's time starts a rematch with the same seed for kit and course; otherwise back to lobby. Show the vote count live. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player).",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Rematch vote on the results screen. A strict majority of the racers still present (1/1 solo, 2/2, 2/3, 3/4...) passes it: the results timer drops to 3 s and the match goes straight to Deal with the same seed, so the same kit and course. Otherwise it goes back to the Lobby. The live vote count is in the snapshot and on a REMATCH button under the podium. Server-authoritative via the Race/Rematch intent, with 8 new MatchState specs. RACE_DESIGN.md is updated with step 7 and a module-contract row. No art slots were needed.",
+                "hash": "cf030d5af63e",
+                "at": "2026-10-23T20:25+00:00",
+                "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/3",
+                "verified": "tools/check.sh passes (specs 47 run, 0 failing; selene 0 errors; rojo build ok). MatchState.spec: 25 passed, 8 of them new rematch specs. stylua on the edited files. Reviewer subagent found no defects. Studio playtest not run: no Studio on the runner.",
+                "next_step": "In Studio after a Rojo sync: solo, finish a race and tap REMATCH on the podium. The timer drops to 3 s and you get the same kit list and the same course. Then a 2-player local server: the vote shows 1/2 live, and the rematch starts only when both have voted."
+              }
             },
             {
               "id": "t114",
@@ -1541,7 +1550,16 @@
               "done": false,
               "due": null,
               "updatedAt": "2026-10-23T14:52:02.047Z",
-              "notes": "Pool built by KitDealer from the seed, sized so every player can still end up with a flyable set (guarantee seat/lift-or-buoyancy/thrust per player, e.g. by reserving them). Short pick timer with auto-pick; everyone sees the pool and each other's picks live. Solo: deal as today. A Config switch chooses Dealt vs Draft. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+              "notes": "Pool built by KitDealer from the seed, sized so every player can still end up with a flyable set (guarantee seat/lift-or-buoyancy/thrust per player, e.g. by reserving them). Short pick timer with auto-pick; everyone sees the pool and each other's picks live. Solo: deal as today. A Config switch chooses Dealt vs Draft. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player).",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Snake draft before the build minute. Config.KitMode switches between Draft (default) and Dealt; solo is always dealt. KitDealer.pool builds a seeded shared pool with a seat, 2 lift/buoyancy and a thrust part per player. Pure Race/Draft runs the snake order and refuses any pick that would leave a player unable to finish with those essentials. MatchDraft runs a 5 s pick clock with server auto-pick. MatchState goes Deal -> Draft -> Build. DraftPanel shows everyone the pool, whose turn it is and each other's picks live. Each racer builds with the base parts plus their own picks. Two sound art slot",
+                "hash": "6f331cf5ec44",
+                "at": "2026-10-23T20:25+00:00",
+                "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/5",
+                "verified": "tools/check.sh passes: 48 specs with 0 failing (new Draft.spec with 12 tests covering 1000 simulated 2-8 player drafts; 3 new MatchState specs), selene 0 errors/warnings, rojo build ok. stylua run on edited files. A reviewer subagent's 3 real findings were fixed. Not run in Studio (unavailable on the runner).",
+                "next_step": "In Studio, run Test > Clients and Servers with 2 players: both see the same pool and pick order; on your turn only legal parts are outlined and the 5 s clock auto-picks on timeout; picks show live on both screens and the order snakes; after the last pick each builder lists only the base parts plus that player's picks. Then check solo still deals the normal kit, and that one player leaving mid-draf"
+              }
             },
             {
               "id": "t115",
@@ -1549,7 +1567,16 @@
               "done": false,
               "due": null,
               "updatedAt": "2026-10-23T14:52:02.047Z",
-              "notes": "Spectator camera that follows the leader or a chosen racer (tap to cycle); a Cheer button with a cooldown; cheers add a small, capped, short boost to the last-placed racer only, server-validated and rate-limited. Show who cheered. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+              "notes": "Spectator camera that follows the leader or a chosen racer (tap to cycle); a Cheer button with a cooldown; cheers add a small, capped, short boost to the last-placed racer only, server-validated and rate-limited. Show who cheered. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player).",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Spectate and cheer for the race. Racers who have finished, or crashed and are waiting to respawn, get a spectator camera that follows the leader; tapping 'Watching ...' cycles through the racers still flying. A CHEER button has a 6 s cooldown. The server picks the last-placed racer who hasn't finished and checks the cheer with the pure, spec'd Cheer.try: never for yourself, no boosts in a time trial, refused while the target respawns. A boost is 1.5 s per cheer, never more than 3 s left, at 18 studs/s^2, and the boosted pilot's client applies it. Everyone sees a feed of who cheered for whom. S",
+                "hash": "e311634ae47d",
+                "at": "2026-10-23T20:25+00:00",
+                "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/4",
+                "verified": "tools/check.sh passes: 48 specs with 0 failing, including the new Cheer.spec.luau (15 cases); selene 0 errors and 0 warnings; rojo build ok. stylua run on every edited file. A reviewer subagent found 3 real issues, all fixed and rechecked. Not played in Studio (none on the runner), so the boost size and the spectator camera are untested in play.",
+                "next_step": "Run a 2-player local server in Studio (or phone plus a second device): finish or crash on one, check the camera follows the other racer, tap CHEER, and confirm the feed line shows, the last-place racer speeds up briefly, and the button counts down 6 s. Full checklist is in the PR."
+              }
             },
             {
               "id": "t116",
