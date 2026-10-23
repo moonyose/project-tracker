@@ -1408,13 +1408,14 @@
             {
               "id": "t103",
               "text": "Add an in-flight button to reset or fast-travel back to the takeoff point, or home",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T09:38:00-04:00",
-              "updatedAt": "2026-10-21T09:38:00-04:00",
-              "transcript": "I also did not see the reset button. Like, I want a button where when I'm flying, I can choose to like fast travel back to where I took off from. Or like reset to where I took off from. Or maybe like if I'm flying back home, then maybe it should give me the option to fast travel home. While I'm flying."
+              "updatedAt": "2026-10-23T14:36:56.344Z",
+              "transcript": "I also did not see the reset button. Like, I want a button where when I'm flying, I can choose to like fast travel back to where I took off from. Or like reset to where I took off from. Or maybe like if I'm flying back home, then maybe it should give me the option to fast travel home. While I'm flying.",
+              "completedAt": "2026-10-23T14:36:56.344Z"
             },
             {
               "id": "t104",
