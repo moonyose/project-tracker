@@ -976,11 +976,11 @@
             {
               "id": "t75",
               "text": "Redo car visual upgrades using real 3D assets from the Roblox Toolbox (current ones look like flat boards and primitive shapes stuck on the car); if agents can't find enough good assets, drop visual upgrades",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T10:29:00-04:00",
-              "updatedAt": "2026-10-20T10:29:00-04:00",
+              "updatedAt": "2026-10-23T14:37:18.257Z",
               "transcript": "the visual upgrades look really bad. Like, they look terrible. They look like cylinders and rectangles and, like, flat lines, like, that just got stuck onto the nice-looking car. So, any visual upgrades should be, you know, you, should use 3D assets and stuff from the Roblox toolbox that are available in there. Don't just, like, make, you know, random 3D things and slap them on. I think there was, like, a racing stripe thing that it tried to add, but it literally just looked like two completely flat White boards that sat on top of the car like skis. It looks terrible. So that's number one, got to fix that. It just looks super sloppy. Or if you can't find enough stuff, if the agents can't find enough stuff in the Roblox toolbox, then just don't even bother doing it.",
               "agent": {
                 "status": "pr_opened",
@@ -990,7 +990,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/7",
                 "verified": "rojo build succeeded; stylua --check passed on the edited files (no selene.toml); luau tests/RoadProfileTest.luau ALL OK; git grep finds no leftover references; reviewer subagent found no defects. Not run: tests/driving (no driving code changed) and a Studio playtest (not available on the runner).",
                 "next_step": "On your phone, open a level with an upgraded car and check it has no extra boxes, boards or wing. Open Career > Upgrades and check there's no 'NEXT LOOK' line, then buy a tier and confirm coins and stats still work."
-              }
+              },
+              "completedAt": "2026-10-23T14:37:18.257Z"
             },
             {
               "id": "t76",
