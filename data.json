@@ -1396,13 +1396,14 @@
             {
               "id": "t102",
               "text": "Connect crafting benches and reloading to whatever machine you're flying at all times while it's on the island (no need to park next to them)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T09:38:00-04:00",
-              "updatedAt": "2026-10-21T09:38:00-04:00",
-              "transcript": "Then when you reload your airplane, you should not have to like get your airplane right next to the thing. Like, all your crafting benches and everything should be connected to whatever machine you're flying. At all times, no matter where it is, as long as it's like on the island, right?"
+              "updatedAt": "2026-10-23T14:36:51.841Z",
+              "transcript": "Then when you reload your airplane, you should not have to like get your airplane right next to the thing. Like, all your crafting benches and everything should be connected to whatever machine you're flying. At all times, no matter where it is, as long as it's like on the island, right?",
+              "completedAt": "2026-10-23T14:36:51.841Z"
             },
             {
               "id": "t103",
