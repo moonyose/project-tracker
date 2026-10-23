@@ -1455,13 +1455,14 @@
             {
               "id": "t107",
               "text": "Rewrite stilted, AI-sounding dialogue to match the original Flying Machines style (use that game's dialogue as reference without changing it; watch sentence breaks and commas)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T09:38:00-04:00",
-              "updatedAt": "2026-10-21T09:38:00-04:00",
-              "transcript": "And then some of the dialogue feels a little bit stilted. Feels like AI written a little bit. The original flying machines game had a great dialogue style. So I'd really like to capture that. And I mean, you can refer to that folder if you need to, that game. Don't change it, but you know, you can look at the dialogue from there. And keep the same style. Like right now, the style is not horrible. You know, it's still like kind of funny and whimsical, but it just, there are certain lines that feel like very AI written. It's more like the breaks in the sentences and the commas, you know?"
+              "updatedAt": "2026-10-23T14:37:09.633Z",
+              "transcript": "And then some of the dialogue feels a little bit stilted. Feels like AI written a little bit. The original flying machines game had a great dialogue style. So I'd really like to capture that. And I mean, you can refer to that folder if you need to, that game. Don't change it, but you know, you can look at the dialogue from there. And keep the same style. Like right now, the style is not horrible. You know, it's still like kind of funny and whimsical, but it just, there are certain lines that feel like very AI written. It's more like the breaks in the sentences and the commas, you know?",
+              "completedAt": "2026-10-23T14:37:09.633Z"
             },
             {
               "id": "t108",
