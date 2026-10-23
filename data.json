@@ -1246,11 +1246,11 @@
             {
               "id": "t86",
               "text": "Add sound effects for flight, the motor, and the other small actions, using real sounds from the Roblox Toolbox (skip this if the Toolbox can't be reached)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T13:30:00-04:00",
-              "updatedAt": "2026-10-20T13:30:00-04:00",
+              "updatedAt": "2026-10-23T14:36:40.440Z",
               "transcript": "Something I just thought of for the Flying Machines survival game, and also the Flying Machines, machine game, the regular one, is sound effects. We need, like, airplane sound effects and balloon sound effects and pumping and, like, all these little sound effects for all the different little things like for the motor or whatever. And, remember that the Opus 5.5 agents should feel okay going into the Roblox toolbox to do this. If they can't access the Roblox toolbox, then don't, don't do anything with sound effects.",
               "agent": {
                 "status": "needs_austin",
@@ -1259,7 +1259,8 @@
                 "at": "2026-10-20T17:37+00:00",
                 "verified": "Probed the Roblox Toolbox API (apis.roblox.com/toolbox-service/v1/marketplace/10?keyword=airplane): the runner sandbox denied the request. No code changed, no branch pushed, no worktree created.",
                 "next_step": "Either (a) open Studio's Toolbox > Audio, pick sounds for flight wind, the motor (looping), rubber-band wind/creak/snap, launch, crash, splash and UI clicks, and paste the asset IDs into this task's notes so the next run can wire them in; or (b) allow outbound access to apis.roblox.com on the runner so the bot can search the Toolbox itself."
-              }
+              },
+              "completedAt": "2026-10-23T14:36:40.440Z"
             }
           ]
         },
