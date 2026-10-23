@@ -1467,13 +1467,14 @@
             {
               "id": "t108",
               "text": "Add a button to deliberately let air out of the balloons so light, high-lift vehicles don't get stuck in the air",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T09:38:00-04:00",
-              "updatedAt": "2026-10-21T09:38:00-04:00",
-              "transcript": "I do want to add a button that allows a player to let air out of their balloons deliberately. Because right now if you have a lot of lift and your vehicle is light, you can get stuck in the air and have to wait forever to come down. So I do want to add that."
+              "updatedAt": "2026-10-23T14:37:11.988Z",
+              "transcript": "I do want to add a button that allows a player to let air out of their balloons deliberately. Because right now if you have a lot of lift and your vehicle is light, you can get stuck in the air and have to wait forever to come down. So I do want to add that.",
+              "completedAt": "2026-10-23T14:37:11.988Z"
             }
           ]
         },
