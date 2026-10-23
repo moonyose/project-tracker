@@ -1501,11 +1501,13 @@
               "updatedAt": "2026-10-23T14:49:16.103Z",
               "transcript": "right now we have the flying machines game, we have the flying machines survival game. I wanna make a- another version of the flying machines game, but instead of ha- having like a story or anything like that, I just want there to be like the parts, like I want the building system to be more or less the same, but I want it to be a competition. So like as soon as you spawn in other players, you and all the other players each get the same set of randomly selected parts that are sufficient to build a plane, you know? and maybe with like a little extra. And there's not necessarily one right answer. On what to build, but anyway, you all take a little bit of time and make your, you make your machine, and then after, after, I don't know, a minute or whatever, then you each get to fly, then you all fly the plane through an obstacle course at the same time, and you have to make it. And maybe certain obstacles are better suited to other to different parts. So, like, certain ones might be better for balloons. Like, if you need altitude control, you want balloons more. If you need speed more, then okay, you need wings or whatever. So, this would be the idea.",
               "agent": {
-                "status": "retry",
-                "summary": "The run ended before this task finished (time or budget cap). Will try once more next run.",
+                "status": "pr_opened",
+                "summary": "Phase 1 match flow in PR #2. Adds Race Types (Kit + CourseHandle, copied exactly from the design doc), Config and KitDealer (seeded, same kit for everyone, every kit can build a flying machine, fallback blueprint for each lean). Adds a pure match state machine (Lobby > Deal > Build 60s > Launch > Race > Results), standings, and MatchService for the world side: shared-hangar build pads with live drafts, a builder limited to the kit with Ready, machines anchored on the start slots for the 3-2-1, crash/fall respawn at the last gate, cleanup on leave and at match end, solo time trial. Also a basic",
                 "hash": "eddbbc5937bd",
-                "attempts": 1,
-                "at": "2026-10-23T15:01+00:00"
+                "at": "2026-10-23T15:22+00:00",
+                "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/2",
+                "verified": "tools/check.sh: 46 specs, 0 failing (new: KitDealer.spec over 5000 seeds, MatchState.spec with 17 tests including standings); selene 0 errors / 0 warnings; rojo build ok; stylua on every touched file. A reviewer subagent found 5 runtime issues and all are fixed. Not run in Roblox: Studio isn't on the runner, so MatchService, pads, stub course, builder edits and HUD are untested at runtime, and the",
+                "next_step": "In Studio, follow the PR's playtest checklist. Solo: Play, lobby counts down from 20, kit shows, you build on pad 1 with only kit parts, press READY, 3-2-1, fly the 3 stub gates, see the time-trial podium, back to the lobby. Then a 2-player local server: same kit on both, each sees the other's pad, both must be Ready, positions and podium order, leaving mid-race."
               }
             },
             {
@@ -1516,11 +1518,13 @@
               "updatedAt": "2026-10-23T14:49:16.103Z",
               "notes": "Repo moonyose/FlyingMachinesRace. Follow docs/RACE_DESIGN.md: you own src/server/Race/Course*.luau and src/shared/Race/CourseLayout.luau and implement Course.build(seed, origin) -> CourseHandle exactly as the interface there (gateCount, startSlots >= 8, respawnFor, distanceToGate, gatePassed fired only in order, destroy). Forks where each route's gates count as the same checkpoint index; obstacles (wind gusts, narrow gaps, moving blockers, low ceilings) as gameplay volumes. Austin's standing Roblox rules: visual assets and sound effects must come from the Roblox Toolbox (no homemade primitive shapes); the Toolbox can't be reached from the runner, so leave ArtSlot-tagged plain or invisible gameplay objects and list every ArtKind in docs/ART_SLOTS.md as the design doc describes. Specs for the layout math (gate order, route equivalence, respawn points, distance). The Match-flow to-do (t111) is built in parallel against the same interface; if src/shared/Race/Types.luau doesn't exist on main yet, create it with exactly the design doc's types.",
               "agent": {
-                "status": "retry",
-                "summary": "The run ended before this task finished (time or budget cap). Will try once more next run.",
+                "status": "pr_opened",
+                "summary": "Course.build(seed, origin) -> CourseHandle per docs/RACE_DESIGN.md. 8-10 checkpoint gates fire in order only. Two forks: high rings with an updraft for balloons, an open fast lane for wings and rockets, and a ground road with low ceilings and narrow gaps for wheels; every route option counts as the same checkpoint index. Moving blockers and pulsing crosswinds on the main line. The pure layout math is in CourseLayout with a 14-test spec over 400 seeds. Every piece is tagged ArtSlot and every ArtKind is listed in docs/ART_SLOTS.md. Types.luau is created exactly as the design doc says. Still to d",
                 "hash": "9790303f89d6",
-                "attempts": 1,
-                "at": "2026-10-23T15:01+00:00"
+                "at": "2026-10-23T15:22+00:00",
+                "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/1",
+                "verified": "tools/check.sh passes: 45 specs, 0 failing (new CourseLayout.spec.luau 14/14); selene 0 errors; rojo build ok. stylua --check is clean on the edited files. A reviewer subagent read the diff and its one real finding is fixed: a gatePassed handler calling destroy() could leave a wind force on a player. Not run in Studio (not on the runner).",
+                "next_step": "In Studio, Play, then in the server command bar build a course with Course.build(1, CFrame.new(0,0,3000)) and print gatePassed. Fly through the gates by different routes and confirm they print in order, once each, and that skipping a gate does not count. Then call H.destroy() and confirm everything is removed. The exact checklist is in the PR."
               }
             },
             {
