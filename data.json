@@ -1076,11 +1076,11 @@
             {
               "id": "t95",
               "text": "Style section camera: full 360-degree orbit around the car and zoom in/out at will (currently only a partial left-right drag)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
-              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-23T14:37:21.326Z",
               "transcript": "in the, in the style section I want to be able to do a full 360 on the car, no matter what. Like, when I'm viewing it, and I want to be able to zoom in at will, cause right now it just lets me drag from left to right, and it only gives me like a partial, partial view of the whole car. Like I should get full 360 control to, and zoom and everything.",
               "agent": {
                 "status": "failed",
@@ -1089,16 +1089,17 @@
                 "at": "2026-10-21T13:16+00:00",
                 "verified": "Nothing confirmed by the orchestrator.",
                 "next_step": "Look for a PR on CrashMode; if there isn't one, re-queue this task."
-              }
+              },
+              "completedAt": "2026-10-23T14:37:21.326Z"
             },
             {
               "id": "t96",
               "text": "Make the street aero kit and bolt-on over fenders fit flush on every vehicle (gap above the over fender shows the tire)",
-              "done": false,
+              "done": true,
               "notes": "Only on some vehicles; check each car.",
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
-              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-23T14:37:23.450Z",
               "transcript": "the, the street aero kit and the bolt-on over fenders are not fully or properly attached to some of the vehicles, so I think we're gonna need to refine that a little bit. Like, especially the bolt-on over fenders, I see space between the top of the over fender and the actual body of the car, so like, I can see the wheel. I can see the tire between the two things.",
               "agent": {
                 "status": "pr_opened",
@@ -1108,7 +1109,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/11",
                 "verified": "rojo build ok; stylua --check clean (no selene.toml); PartsTest 4248/0 failed; PartsProgressionTest 71/0 failed (neither covers anchor geometry, which needs Roblox instances); reviewer subagent checked the arch maths against DZ.shape. Not seen in Studio.",
                 "next_step": "Garage > Hot Rod, then Muscle Coupe and Sport Sedan > STYLE > BODY KIT > Bolt-On Overfenders and Street Aero Kit: no tyre should show above or beside the flares, and the skirts should reach both wheel openings."
-              }
+              },
+              "completedAt": "2026-10-23T14:37:23.450Z"
             },
             {
               "id": "t97",
