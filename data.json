@@ -1056,11 +1056,11 @@
             {
               "id": "t94",
               "text": "Fix the vented louvers: they face left/right but should face front/back on the car",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
-              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-23T14:37:19.323Z",
               "transcript": "number one is like the vented louvers, louvers, they are like facing the wrong direction. They're facing left and right, but they should be facing front and back on the car.",
               "agent": {
                 "status": "pr_opened",
@@ -1070,7 +1070,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/11",
                 "verified": "rojo build ok; stylua --check clean (no selene.toml); PartsTest 4248/0 failed; PartsProgressionTest 71/0 failed; new rotation checked numerically; reviewer subagent found no defects. Not seen in Studio.",
                 "next_step": "Garage > STYLE > HOOD > Vented Louvres on the Sport Sedan: the slats should run across the hood, with the vents facing front/back. If they point backwards, set Rot = {0,180,0} on the row."
-              }
+              },
+              "completedAt": "2026-10-23T14:37:19.323Z"
             },
             {
               "id": "t95",
