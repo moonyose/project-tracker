@@ -1384,13 +1384,14 @@
             {
               "id": "t101",
               "text": "First quest: tell the player to pick up both reeds and corks (cork comes from the first island's trees; the later cork-shooter quest never says how to get cork)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T09:38:00-04:00",
-              "updatedAt": "2026-10-21T09:38:00-04:00",
-              "transcript": "in the quest, it's like, oh, you need to get reads. From this island, and then later it's like, okay, you need to make a corkshooter and shoot some corks but it doesn't tell you how to get cork. And it doesn't tell you that you should have picked them up from the trees on the first island. So that's, I want to put that in that first quest, basically, like pick up reeds and corks."
+              "updatedAt": "2026-10-23T14:36:49.044Z",
+              "transcript": "in the quest, it's like, oh, you need to get reads. From this island, and then later it's like, okay, you need to make a corkshooter and shoot some corks but it doesn't tell you how to get cork. And it doesn't tell you that you should have picked them up from the trees on the first island. So that's, I want to put that in that first quest, basically, like pick up reeds and corks.",
+              "completedAt": "2026-10-23T14:36:49.044Z"
             },
             {
               "id": "t102",
