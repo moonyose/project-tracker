@@ -1154,11 +1154,11 @@
             {
               "id": "t99",
               "text": "Make the neon look more realistic, ideally with emissive materials",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
-              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-23T14:37:27.123Z",
               "transcript": "The neon, I would like for it to look a little bit more realistic. I don't know if we can do like emissive Materials here, but that would be cool.",
               "agent": {
                 "status": "pr_opened",
@@ -1168,16 +1168,17 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/10",
                 "verified": "rojo build passes. stylua --check passes on both changed files. No selene.toml, and no tests in tests/ cover client visuals. A reviewer subagent found wheel clipping and preview tubes too thin to see; both fixed. Not seen in Studio (not on the runner).",
                 "next_step": "Equip Cyan Glow, drive at night (NeonNight): there should be a coloured light pool on the road and thin glowing tubes under the sills, none cutting through a wheel; the shop preview should show the tubes, not a slab."
-              }
+              },
+              "completedAt": "2026-10-23T14:37:27.123Z"
             },
             {
               "id": "t100",
               "text": "Fix UI bug: the 'Play today's challenge' popup appears on top of the Rival Defeated screen",
-              "done": false,
+              "done": true,
               "notes": "Screenshot attached (photo of the Studio playtest, Oct 21): the 'RIVAL DEFEATED!' screen (Impact Race, Rival #10 'The Driveway Menace') with a 'PLAY TODAY'S CHALLENGE! / New every day - come back tomorrow' button and pointing-hand tutorial prompt overlapping the reward lines (+$6,500, +520 XP, first defeat bonus) on the left side. The daily-challenge prompt should wait until the rival screen is closed.",
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
-              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-23T14:37:28.385Z",
               "transcript": "I also had a visual error on the UI, which is that when I, when the rival was defeated, it, it was prompting me to play today's daily challenge, but I was still on the, like, rival defeated screen. So, I had this, like, square popping up in the middle of the rival, rival defeated UI. It said, like, play today's challenge.",
               "attachments": [
                 {
@@ -1193,7 +1194,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/13",
                 "verified": "rojo build succeeded; stylua --check passed (no selene.toml); reviewer subagent's one finding was fixed. No tests in tests/ cover this client UI script. Not playtested (no Studio on the runner).",
                 "next_step": "In Studio, with today's Daily unplayed: win a rival race. RIVAL DEFEATED! should have no 'PLAY TODAY'S CHALLENGE!' hand over it. Close it, and the hand should then point at the Daily card in Career."
-              }
+              },
+              "completedAt": "2026-10-23T14:37:28.385Z"
             }
           ]
         },
