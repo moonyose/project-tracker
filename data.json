@@ -1443,13 +1443,14 @@
             {
               "id": "t106",
               "text": "Make the objective guide ribbon one smooth ribbon like the original Flying Machines game, not rectangles (fallback: a line of arrows)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T09:38:00-04:00",
-              "updatedAt": "2026-10-21T09:38:00-04:00",
-              "transcript": "Also, the ribbon thing that guides me towards my next objective right now is like a bunch of rectangles. Can you make it like a smooth ribbon? The original flying machine game had it well. So yeah, if you can't do that, then just you can do like a line of arrows or something. But right now, I like the ribbon. The ribbon is cool."
+              "updatedAt": "2026-10-23T14:37:07.120Z",
+              "transcript": "Also, the ribbon thing that guides me towards my next objective right now is like a bunch of rectangles. Can you make it like a smooth ribbon? The original flying machine game had it well. So yeah, if you can't do that, then just you can do like a line of arrows or something. But right now, I like the ribbon. The ribbon is cool.",
+              "completedAt": "2026-10-23T14:37:07.120Z"
             },
             {
               "id": "t107",
