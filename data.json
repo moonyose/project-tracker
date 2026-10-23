@@ -1508,6 +1508,62 @@
               "due": null,
               "updatedAt": "2026-10-23T14:49:16.103Z",
               "notes": "Repo moonyose/FlyingMachinesRace. Follow docs/RACE_DESIGN.md: you own src/server/Race/Course*.luau and src/shared/Race/CourseLayout.luau and implement Course.build(seed, origin) -> CourseHandle exactly as the interface there (gateCount, startSlots >= 8, respawnFor, distanceToGate, gatePassed fired only in order, destroy). Forks where each route's gates count as the same checkpoint index; obstacles (wind gusts, narrow gaps, moving blockers, low ceilings) as gameplay volumes. Austin's standing Roblox rules: visual assets and sound effects must come from the Roblox Toolbox (no homemade primitive shapes); the Toolbox can't be reached from the runner, so leave ArtSlot-tagged plain or invisible gameplay objects and list every ArtKind in docs/ART_SLOTS.md as the design doc describes. Specs for the layout math (gate order, route equivalence, respawn points, distance). The Match-flow to-do (t111) is built in parallel against the same interface; if src/shared/Race/Types.luau doesn't exist on main yet, create it with exactly the design doc's types."
+            },
+            {
+              "id": "t113",
+              "text": "Race rematch: after the podium, a Rematch vote replays the same kit and course so everyone can try a better build right away",
+              "done": false,
+              "due": null,
+              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "notes": "Majority (or everyone, if 2 players) within the results screen's time starts a rematch with the same seed for kit and course; otherwise back to lobby. Show the vote count live. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+            },
+            {
+              "id": "t114",
+              "text": "Race snake draft: instead of one dealt kit, players take turns picking parts from a shared pool (a quick snake draft) before the build minute",
+              "done": false,
+              "due": null,
+              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "notes": "Pool built by KitDealer from the seed, sized so every player can still end up with a flyable set (guarantee seat/lift-or-buoyancy/thrust per player, e.g. by reserving them). Short pick timer with auto-pick; everyone sees the pool and each other's picks live. Solo: deal as today. A Config switch chooses Dealt vs Draft. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+            },
+            {
+              "id": "t115",
+              "text": "Race spectate and cheer: finished or crashed players watch the race, and cheers give a small speed boost to whoever is in last place",
+              "done": false,
+              "due": null,
+              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "notes": "Spectator camera that follows the leader or a chosen racer (tap to cycle); a Cheer button with a cooldown; cheers add a small, capped, short boost to the last-placed racer only, server-validated and rate-limited. Show who cheered. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+            },
+            {
+              "id": "t116",
+              "text": "Race votes: before each match, players vote on the next course and a modifier (low gravity, windy, mirror, no wings)",
+              "done": false,
+              "due": null,
+              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "notes": "Vote screen in the lobby countdown, two or three random choices each; ties broken by seed. Implement the four modifiers cleanly (gravity, wind field, mirrored course layout, wing parts removed from the kit with flyability still guaranteed). Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+            },
+            {
+              "id": "t117",
+              "text": "Race ghosts: race your own best time or a friend's on each course as a see-through ghost",
+              "done": false,
+              "due": null,
+              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "notes": "Record the machine path (sampled transforms + blueprint) on finish; save per player per course seed with DataStore, best only; show the best ghost of yourself or a friend in the server; solo time trials always show your ghost. Keep stored data small and bounded. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+            },
+            {
+              "id": "t118",
+              "text": "Race pickups: Mario Kart-style items along the course (balloon-pop dart, glue blob, gust fan, rewind shield) to keep races close",
+              "done": false,
+              "due": null,
+              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "notes": "Item boxes on the course; better items for players further back; one item held at a time; server-side effects with clear counters (shield blocks one hit). Keep it fun, not punishing: short effects, no one-shot eliminations. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
+            },
+            {
+              "id": "t119",
+              "text": "Race duos: teams of two, where one builds and the other pilots (or one pilots and one shoots)",
+              "done": false,
+              "due": null,
+              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "notes": "Team mode toggle in the lobby; pairing (friends first, then random); builder/pilot roles swap each round; combined team standings. Reuse the original game's gun parts only if the role is 'gunner'. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player)."
             }
           ]
         },
