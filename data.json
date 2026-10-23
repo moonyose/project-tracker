@@ -1365,11 +1365,11 @@
             {
               "id": "t87",
               "text": "Add sound effects for the airplane, balloon inflating and leaking, pumping, the hand-crank motor, and the other small actions, using real sounds from the Roblox Toolbox (skip this if the Toolbox can't be reached)",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-20T13:30:00-04:00",
-              "updatedAt": "2026-10-20T13:30:00-04:00",
+              "updatedAt": "2026-10-23T14:36:42.305Z",
               "transcript": "Something I just thought of for the Flying Machines survival game, and also the Flying Machines, machine game, the regular one, is sound effects. We need, like, airplane sound effects and balloon sound effects and pumping and, like, all these little sound effects for all the different little things like for the motor or whatever. And, remember that the Opus 5.5 agents should feel okay going into the Roblox toolbox to do this. If they can't access the Roblox toolbox, then don't, don't do anything with sound effects.",
               "agent": {
                 "status": "blocked",
@@ -1378,7 +1378,8 @@
                 "at": "2026-10-20T17:37+00:00",
                 "verified": "Nothing was built or changed. I only confirmed that the runner can't reach the Toolbox API.",
                 "next_step": "Pick the audio in Studio's Toolbox (Audio tab) for: airplane engine loop, balloon inflate, balloon leak/hiss, hand pump stroke, hand-crank motor loop, plus small action sounds (attach, detach, pickup, button click). Paste the asset IDs into the task notes and re-queue it, and the bot will wire them in. Or allow network access to apis.roblox.com for the runner so the bot can search the Toolbox itse"
-              }
+              },
+              "completedAt": "2026-10-23T14:36:42.305Z"
             },
             {
               "id": "t101",
