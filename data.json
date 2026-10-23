@@ -1431,13 +1431,14 @@
             {
               "id": "t105",
               "text": "Rolling pin: hold it in the hand and swing it, instead of it sitting on the shoulder",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T09:38:00-04:00",
-              "updatedAt": "2026-10-21T09:38:00-04:00",
-              "transcript": "Oh, but the rolling pin, for example, the rolling pin still looks very funny. It's like on my shoulder. While I'm carrying it, it should be something that I hold in my hand and it swings and I bop people in the head with it or whatever."
+              "updatedAt": "2026-10-23T14:37:04.622Z",
+              "transcript": "Oh, but the rolling pin, for example, the rolling pin still looks very funny. It's like on my shoulder. While I'm carrying it, it should be something that I hold in my hand and it swings and I bop people in the head with it or whatever.",
+              "completedAt": "2026-10-23T14:37:04.622Z"
             },
             {
               "id": "t106",
