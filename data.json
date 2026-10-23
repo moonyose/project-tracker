@@ -1115,11 +1115,11 @@
             {
               "id": "t97",
               "text": "Add a Randomize option to the style section that rolls a random set of style options, with buy-all or buy-some",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
-              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-23T14:37:24.890Z",
               "transcript": "I think it'd be nice also to add like a ... Like a random, like a randomized option in the, in the upgrade, or in the style section. That way you don't have to go through necessarily and pick everything. You could just be like, oh, here's like a, here's a random selection of, of the different, you know styled options, and here's what your car could look like, and you could, you know, choose to select to buy all or just buy some, I don't know.",
               "agent": {
                 "status": "failed",
@@ -1128,16 +1128,17 @@
                 "at": "2026-10-21T13:16+00:00",
                 "verified": "Nothing confirmed by the orchestrator.",
                 "next_step": "Look for a PR on CrashMode; if there isn't one, re-queue this task."
-              }
+              },
+              "completedAt": "2026-10-23T14:37:24.890Z"
             },
             {
               "id": "t98",
               "text": "Make the Boost Flame more realistic using a better asset from the Roblox Toolbox",
-              "done": false,
+              "done": true,
               "notes": "Austin's standing rule (t75): visual upgrades must use real Roblox Toolbox assets, not homemade primitives. If no good Toolbox asset exists, skip this task.",
               "due": null,
               "createdAt": "2026-10-21T08:58:00-04:00",
-              "updatedAt": "2026-10-21T08:58:00-04:00",
+              "updatedAt": "2026-10-23T14:37:26.185Z",
               "transcript": "for Boost Flame, can we make the Boost Flame a little bit more realistic? Like, let's have the agents look in the toolbox for that, for something that's better.",
               "agent": {
                 "status": "pr_opened",
@@ -1147,7 +1148,8 @@
                 "pr_url": "https://github.com/moonyose/CrashMode/pull/9",
                 "verified": "rojo build passes; stylua --check passes on both changed files; no selene.toml; no tests in tests/ cover client particle FX; nothing in src or tests loops over Config.Assets.Images; reviewer subagent found no defects. Not checked: the asset ID live (the runner can't reach the Roblox API), and how it looks in game (no Studio).",
                 "next_step": "Playtest in Studio: hold boost and check the flames look like fire tongues, not dots, with no asset load warning in Output; then equip a coloured BOOST FLAME cosmetic and check it tints the flame."
-              }
+              },
+              "completedAt": "2026-10-23T14:37:26.185Z"
             },
             {
               "id": "t99",
