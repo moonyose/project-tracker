@@ -51,7 +51,7 @@
             {
               "id": "t3",
               "text": "Post on Instagram",
-              "done": false,
+              "done": true,
               "notes": "lanesyncapp Meta/Instagram setup Oct 13\u201314; Meta for Developers account registered Oct 14 (welcome email to amunoz919); Meta app 'LaneSync' switched to live mode Oct 14",
               "due": null,
               "agent": {
@@ -59,7 +59,9 @@
                 "summary": "Not a coding task; the bot skips these.",
                 "hash": "ff9a08bab177",
                 "at": "2026-10-18T13:33+00:00"
-              }
+              },
+              "completedAt": "2026-10-27T12:33:35.333Z",
+              "updatedAt": "2026-10-27T12:33:35.333Z"
             },
             {
               "id": "t4",
