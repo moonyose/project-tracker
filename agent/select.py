@@ -65,15 +65,24 @@ def main():
 
     skip_ids = set(cfg.get("skip_task_ids", []))
     budget = cfg["budget"]
+    after = cfg.get("after_credits") or {}
     left = round(budget["total_usd"] - ledger.get("spent_usd", 0), 2)
     reason = ""
     queue = []
 
-    if now.date() > dt.date.fromisoformat(budget["stop_after"]):
-        reason = f"past stop date {budget['stop_after']}"
-    elif left < 2:
-        reason = f"budget used up (${ledger.get('spent_usd', 0):.2f} of ${budget['total_usd']})"
+    # API credits first; once they're gone (stop date passed, backstop budget used, or Anthropic said the
+    # balance is too low: ledger.api_exhausted), switch to Austin's Claude subscription if configured.
+    api_ok = (now.date() <= dt.date.fromisoformat(budget["stop_after"]) and left >= 2
+              and not ledger.get("api_exhausted"))
+    if api_ok:
+        auth, model, per_run = "api", cfg["model"], min(budget["per_run_usd"], left)
+    elif after.get("use") == "subscription":
+        auth, model, per_run = "subscription", after.get("model", cfg["model"]), after.get("per_run_usd", 20)
     else:
+        auth, model, per_run = "none", cfg["model"], 0
+        reason = "API credits used up and no subscription fallback configured"
+
+    if auth != "none":
         for c in data["categories"]:
             for p in c["projects"]:
                 pc = cfg["projects"].get(p["id"])
@@ -109,10 +118,10 @@ def main():
         if not queue:
             reason = "nothing new on the list"
 
-    per_run = min(budget["per_run_usd"], left)
     out = {
         "generated_at": now.isoformat(timespec="seconds"),
-        "model": cfg["model"],
+        "model": model,
+        "auth": auth,
         "max_parallel_workers": cfg.get("max_parallel_workers", 3),
         "run_budget_usd": per_run,
         "tasks": queue,
@@ -122,7 +131,7 @@ def main():
         json.dump(out, f, indent=2)
 
     repos = sorted({r for q in queue for r in q["repos"]})
-    print(f"{len(queue)} task(s) queued; budget left ${left:.2f}; run cap ${per_run:.2f}"
+    print(f"{len(queue)} task(s) queued; auth {auth}; API budget left ${left:.2f}; run cap ${per_run:.2f}"
           + (f"; skipping: {reason}" if reason else ""))
     for q in queue:
         print(f"  - [{q['project']}] {q['text'][:90]}")
@@ -134,7 +143,9 @@ def main():
             f.write(f"repos={' '.join(repos)}\n")
             f.write(f"budget_left={left}\n")
             f.write(f"run_budget={per_run}\n")
-            f.write(f"model={cfg['model']}\n")
+            f.write(f"model={model}\n")
+            f.write(f"auth={auth}\n")
+            f.write(f"fallback_model={after.get('fallback_model', '')}\n")
             f.write(f"reason={reason}\n")
     return 0
 

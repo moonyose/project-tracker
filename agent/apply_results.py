@@ -98,9 +98,17 @@ def main(queue_path, results_dir, claude_out=None):
     if os.path.exists(lp):
         with open(lp) as f:
             ledger = json.load(f)
-    ledger["spent_usd"] = round(ledger.get("spent_usd", 0) + cost, 4)
+    # API runs spend the prepaid credit; subscription runs don't, so their (notional) cost is kept apart.
+    auth_used = os.environ.get("AUTH_USED", "api")
+    if auth_used == "subscription":
+        ledger["subscription_notional_usd"] = round(ledger.get("subscription_notional_usd", 0) + cost, 4)
+    else:
+        ledger["spent_usd"] = round(ledger.get("spent_usd", 0) + cost, 4)
+    if os.environ.get("API_EXHAUSTED") == "1" and not ledger.get("api_exhausted"):
+        ledger["api_exhausted"] = True
+        ledger["api_exhausted_at"] = now
     ledger["runs"].append({
-        "at": now, "cost_usd": round(cost, 4), "turns": turns, "session": session,
+        "at": now, "cost_usd": round(cost, 4), "auth": auth_used, "turns": turns, "session": session,
         "tasks": len(queue["tasks"]), "run_id": os.environ.get("GITHUB_RUN_ID"),
     })
     ledger["runs"] = ledger["runs"][-200:]
