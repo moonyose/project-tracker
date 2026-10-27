@@ -33,7 +33,7 @@
         {
           "id": "lanesync-sprint-timing",
           "name": "LaneSync (sprint timing)",
-          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~8:06 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:46 AM ET (a later main TestFlight run at ~9:19 AM ET failed on an upload timeout); a rerun succeeded and 1.0.3 (202610271359) hit TestFlight Oct 27 ~10:05 AM ET; Apple Ads' Emerging team (Sarishti Arora) emailed Oct 27 ~9:58 AM ET offering help growing Apple Ads, optional sales outreach; GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1",
+          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~8:06 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:46 AM ET (a later main TestFlight run at ~9:19 AM ET failed on an upload timeout); a rerun succeeded and 1.0.3 (202610271359) hit TestFlight Oct 27 ~10:05 AM ET; Apple Ads' Emerging team (Sarishti Arora) emailed Oct 27 ~9:58 AM ET offering help growing Apple Ads, optional sales outreach; Oct 27 ~11:40 AM ET App Store Connect flagged build 202610271359 with ITMS-90863 (links @rpath/ConnectIQ.framework, the Garmin SDK, which isn't present on macOS, so Apple-silicon Mac availability is affected; delivery still succeeded, fix in next build or untick Mac availability); GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1",
           "tasks": [
             {
               "id": "t2",
@@ -207,7 +207,7 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:47 AM ET (an earlier ~8:37 AM ET run failed because 1.0.2 was already approved); GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1",
+          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:47 AM ET (an earlier ~8:37 AM ET run failed because 1.0.2 was already approved); 1.0.3 (202610271631) hit TestFlight Oct 27 ~12:37 PM ET; Oct 27 ~12:01 PM ET Apple emailed that three Development certificates on the team were revoked (revoker shown as 'null null', likely an API key/CI run), so local Xcode dev profiles may need regenerating; GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1",
           "tasks": [
             {
               "id": "t6",
