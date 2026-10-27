@@ -1,11 +1,11 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-26",
-  "rev": 32,
+  "rev": 33,
   "categories": [
     {
       "id": "top-priority",
-      "name": "⭐ Top priority",
+      "name": "\u2b50 Top priority",
       "projects": [
         {
           "id": "phd-application",
@@ -28,7 +28,7 @@
     },
     {
       "id": "iphone-apps",
-      "name": "📱 iPhone apps",
+      "name": "\ud83d\udcf1 iPhone apps",
       "projects": [
         {
           "id": "lanesync-sprint-timing",
@@ -39,7 +39,7 @@
               "id": "t2",
               "text": "Make video ads",
               "done": false,
-              "notes": "Apple Ads account live with $100 promo credit as of Oct 12. Meta Ads: 3 LaneSync ads approved Oct 14 ~4:57 PM ET (email to amunoz919) — Full workout Reel, 30s finishes, 15s finish — scheduled/running. Oct 15: App Store Connect API access approved (~11:58 AM ET; generate keys in Users and Access); Apple Ads invites sent to amunoz919+ads@gmail.com and austin.munoz@collinsparkenterprises.com (~12:02–12:10 PM ET) for API/user access setup. Meta Marketing API onboarding email for app 'Product Marketing Tracker' (South Beach Skate Company business) ~1:48 PM ET Oct 15.",
+              "notes": "Apple Ads account live with $100 promo credit as of Oct 12. Meta Ads: 3 LaneSync ads approved Oct 14 ~4:57 PM ET (email to amunoz919) \u2014 Full workout Reel, 30s finishes, 15s finish \u2014 scheduled/running. Oct 15: App Store Connect API access approved (~11:58 AM ET; generate keys in Users and Access); Apple Ads invites sent to amunoz919+ads@gmail.com and austin.munoz@collinsparkenterprises.com (~12:02\u201312:10 PM ET) for API/user access setup. Meta Marketing API onboarding email for app 'Product Marketing Tracker' (South Beach Skate Company business) ~1:48 PM ET Oct 15.",
               "due": null,
               "agent": {
                 "status": "skipped_not_code",
@@ -52,7 +52,7 @@
               "id": "t3",
               "text": "Post on Instagram",
               "done": false,
-              "notes": "lanesyncapp Meta/Instagram setup Oct 13–14; Meta for Developers account registered Oct 14 (welcome email to amunoz919); Meta app 'LaneSync' switched to live mode Oct 14",
+              "notes": "lanesyncapp Meta/Instagram setup Oct 13\u201314; Meta for Developers account registered Oct 14 (welcome email to amunoz919); Meta app 'LaneSync' switched to live mode Oct 14",
               "due": null,
               "agent": {
                 "status": "skipped_not_code",
@@ -72,7 +72,7 @@
               "id": "t5",
               "text": "Post on Reddit",
               "done": true,
-              "notes": "Posted r/Sprinting as u/Current-Special on 2026-10-14 ~13:58 ET; title offered free month. Reply ~3:24 PM ET from u/Acceptable_Joke460: \"Am gonna make this but better and completely free lol\". Reply ~5:54 PM ET from u/speedcoach970: \"No android app?\" — handled: Austin replied; Android app in progress. Oct 22 ~4:11 AM ET: new reply from u/M_Akrami asking 'Is there any way to use it with a Garmin instead of an Apple Watch?' Not answered yet. Oct 22 ~3:18 PM ET: Austin posted a new r/Sprinting technique post 'Best cues for landing your feet under your hips out of the start?'; u/its_KAMARA asked ~3:45 PM ET 'Where/when is it available to try out?', and Austin shared the StrideLab 50% promo code (LAB50YEAR), which u/Minimum-Feature-1639 thanked him for ~4:07 PM ET. Garmin question from u/M_Akrami: Austin replied 'Not at the moment' and said he'd look into Garmin's OS; Oct 24 ~6:25 PM ET u/M_Akrami answered 'Would seal the deal for me' (Garmin support would win at least this user). Oct 23 ~9:12 AM ET: u/its_KAMARA replied with StrideLab feedback suggesting ankle stiffness cues, noting the foot joint doesn't show in the video so the pose model may not be capturing it; not answered yet. Oct 26 ~6:56 PM ET: u/ArtuAkguner replied on the r/Sprinting 'block start' thread thanking Austin for running their clip through StrideLab and calling the feedback (triple extension, quick second step) incredibly helpful; positive testimonial, no question asked.",
+              "notes": "Posted r/Sprinting as u/Current-Special on 2026-10-14 ~13:58 ET; title offered free month. Reply ~3:24 PM ET from u/Acceptable_Joke460: \"Am gonna make this but better and completely free lol\". Reply ~5:54 PM ET from u/speedcoach970: \"No android app?\" \u2014 handled: Austin replied; Android app in progress. Oct 22 ~4:11 AM ET: new reply from u/M_Akrami asking 'Is there any way to use it with a Garmin instead of an Apple Watch?' Not answered yet. Oct 22 ~3:18 PM ET: Austin posted a new r/Sprinting technique post 'Best cues for landing your feet under your hips out of the start?'; u/its_KAMARA asked ~3:45 PM ET 'Where/when is it available to try out?', and Austin shared the StrideLab 50% promo code (LAB50YEAR), which u/Minimum-Feature-1639 thanked him for ~4:07 PM ET. Garmin question from u/M_Akrami: Austin replied 'Not at the moment' and said he'd look into Garmin's OS; Oct 24 ~6:25 PM ET u/M_Akrami answered 'Would seal the deal for me' (Garmin support would win at least this user). Oct 23 ~9:12 AM ET: u/its_KAMARA replied with StrideLab feedback suggesting ankle stiffness cues, noting the foot joint doesn't show in the video so the pose model may not be capturing it; not answered yet. Oct 26 ~6:56 PM ET: u/ArtuAkguner replied on the r/Sprinting 'block start' thread thanking Austin for running their clip through StrideLab and calling the feedback (triple extension, quick second step) incredibly helpful; positive testimonial, no question asked.",
               "due": null,
               "completedAt": "2026-10-14T15:23:29-04:00",
               "updatedAt": "2026-10-22T17:20:00-04:00"
@@ -185,13 +185,13 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18–19; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual",
+          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual",
           "tasks": [
             {
               "id": "t6",
               "text": "Follow up with App Review if no response soon",
               "done": true,
-              "notes": "Closed Oct 16 ~7 PM ET — StrideLab accepted into the App Store; no further App Review follow-up needed.",
+              "notes": "Closed Oct 16 ~7 PM ET \u2014 StrideLab accepted into the App Store; no further App Review follow-up needed.",
               "due": null,
               "completedAt": "2026-10-16T19:05:12-04:00"
             },
@@ -199,7 +199,7 @@
               "id": "t27",
               "text": "Accept updated Apple Developer Program License Agreement",
               "done": true,
-              "notes": "Signed Oct 14, 2026 — Apple confirmation to amunoz919; Team AUSTIN ANDRES MUNOZ (N8RA297MHC)",
+              "notes": "Signed Oct 14, 2026 \u2014 Apple confirmation to amunoz919; Team AUSTIN ANDRES MUNOZ (N8RA297MHC)",
               "due": null,
               "completedAt": "2026-10-14T13:18:00-04:00"
             },
@@ -339,7 +339,7 @@
                 "at": "2026-10-19T02:21+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/9",
                 "verified": "Passed: ./gradlew :core:test (including the Swift golden tip fingerprint), :app:testDebugUnitTest and :app:assembleDebug. A reviewer subagent found no defects. Not run: the iOS xcodebuild build, Tools/verify.sh and bend PROOF.bend, since this change only touches android/. Not checked visually: no emulator screenshot.",
-                "next_step": "On an Android phone, import a stride clip. It should ask 'Is this a start, a stride or a curve?' with a 'Looks like a stride (straight) · NN% sure' hint and three buttons. Answer Stride, then reopen the clip: it should not ask again. Switch it to Start in the kind sheet: a 'Re-analyzing as a start' step should show briefly, then launch and drive phase bands."
+                "next_step": "On an Android phone, import a stride clip. It should ask 'Is this a start, a stride or a curve?' with a 'Looks like a stride (straight) \u00b7 NN% sure' hint and three buttons. Answer Stride, then reopen the clip: it should not ask again. Switch it to Start in the kind sheet: a 'Re-analyzing as a start' step should show briefly, then launch and drive phase bands."
               },
               "completedAt": "2026-10-19T13:25:29.983Z",
               "updatedAt": "2026-10-19T13:25:29.983Z"
@@ -406,12 +406,12 @@
               "due": null,
               "agent": {
                 "status": "pr_opened",
-                "summary": "Cut the text on the 'start, stride or curve' prompt on iOS and Android (shared PR with t54). Removed the two evidence bullets (still under More options) and the line 'Coaching waits for your answer.' The question is now 'Is it a start, stride or curve?' and the hint is now 'Looks like a stride · 82%'.",
+                "summary": "Cut the text on the 'start, stride or curve' prompt on iOS and Android (shared PR with t54). Removed the two evidence bullets (still under More options) and the line 'Coaching waits for your answer.' The question is now 'Is it a start, stride or curve?' and the hint is now 'Looks like a stride \u00b7 82%'.",
                 "hash": "837668f36e31",
                 "at": "2026-10-19T02:55+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/14",
                 "verified": "Tools/verify.sh: ALL CHECKS PASSED. xcodebuild for the iOS Simulator (Xcode 26.6): no errors. Gradle :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL. bend CLI is not on the runner, so PROOF.bend was not run (no Bend-twinned code changed). A reviewer subagent read the diff and its findings are fixed. No screenshot taken.",
-                "next_step": "On your phone, record or import a clip and check that the prompt shows only the question, a one-line hint, the three buttons and 'More options…'."
+                "next_step": "On your phone, record or import a clip and check that the prompt shows only the question, a one-line hint, the three buttons and 'More options\u2026'."
               },
               "completedAt": "2026-10-19T13:25:38.497Z",
               "updatedAt": "2026-10-19T13:25:38.497Z"
@@ -429,7 +429,7 @@
                 "at": "2026-10-19T02:55+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/16",
                 "verified": "./Tools/verify.sh exited 0, including the new backgroundRunnerFlickerTest. xcodebuild build for scheme StrideLab on the iPhone 17 Pro simulator (iOS 26.5) finished with no errors. android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed. bend PROOF.bend not run: the bend CLI isn't installed on the runner, and no Bend-twinned rule changed. A reviewer subagent's findings were fi",
-                "next_step": "On your phone: open a clip with a second runner behind the athlete, tap the pencil and drag the wrong joint onto the athlete. Check that 'Refining…' appears and clears, then scrub forward and confirm the joint stays on the athlete and doesn't flick to the runner behind or disappear."
+                "next_step": "On your phone: open a clip with a second runner behind the athlete, tap the pencil and drag the wrong joint onto the athlete. Check that 'Refining\u2026' appears and clears, then scrub forward and confirm the joint stays on the athlete and doesn't flick to the runner behind or disappear."
               },
               "completedAt": "2026-10-19T13:25:51.592Z",
               "updatedAt": "2026-10-19T13:25:51.592Z"
@@ -675,7 +675,7 @@
             },
             {
               "id": "t85",
-              "text": "Include the in-app tip connector lines and angle guide lines in exported clips (e.g., 33° dotted line plus the gray 45° target line on a low launch)",
+              "text": "Include the in-app tip connector lines and angle guide lines in exported clips (e.g., 33\u00b0 dotted line plus the gray 45\u00b0 target line on a low launch)",
               "done": true,
               "notes": "PR #30 merged Oct 20 ~1:05 PM ET. The first GitHub-hosted builds failed (no macOS runner), but it shipped in TestFlight build 1.0.2 (202610201934, ~3:36 PM ET) built on Austin's Mac; the later master build after PR #31 also succeeded (~4:52 PM ET). Ready to test on TestFlight.",
               "due": null,
@@ -689,7 +689,7 @@
                 "at": "2026-10-20T21:37+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/30",
                 "verified": "Nothing run; no code work needed.",
-                "next_step": "On TestFlight, save a low-launch block-start clip 'with tips' and check for the connector line plus the dashed 45° target line with '33°' and '45°'."
+                "next_step": "On TestFlight, save a low-launch block-start clip 'with tips' and check for the connector line plus the dashed 45\u00b0 target line with '33\u00b0' and '45\u00b0'."
               },
               "completedAt": "2026-10-21T17:14:21.681Z"
             },
@@ -770,12 +770,12 @@
               "transcript": "The other thing is that I need to be able to dismiss a clip, okay? Like, you know, delete or whatever, because sometimes you know, it's someone else doing a start that I don't want, or it's somebody who happens to be walking along the track or running in the track behind me or whatever, so I need to be able to dismiss. certain things.",
               "agent": {
                 "status": "pr_opened",
-                "summary": "Each piece of a long upload can be dismissed ('Not me – dismiss this clip'); dismissed pieces are never cut or analysed, Back undoes it, dismissing all leaves with nothing cut (iOS + Android). Shared PR with t90.",
+                "summary": "Each piece of a long upload can be dismissed ('Not me \u2013 dismiss this clip'); dismissed pieces are never cut or analysed, Back undoes it, dismissing all leaves with nothing cut (iOS + Android). Shared PR with t90.",
                 "hash": "cd52f8980ac7",
                 "at": "2026-10-21T00:13+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/34",
                 "verified": "Tools/verify.sh ALL CHECKS PASSED (new dismiss tests); xcodebuild StrideLab simulator build succeeded; gradle :core:test :app:testDebugUnitTest :app:assembleDebug passed (SegmentsTest dismiss checks); bend CLI not on runner (no .bend changed); reviewer subagent found no defects (Android a11y hint added). No screenshot: needs a multi-rep long recording.",
-                "next_step": "Import a long multi-rep video, tap 'Not me – dismiss this clip' on one piece, confirm the rest, and check only the confirmed pieces appear as new clips."
+                "next_step": "Import a long multi-rep video, tap 'Not me \u2013 dismiss this clip' on one piece, confirm the rest, and check only the confirmed pieces appear as new clips."
               },
               "completedAt": "2026-10-21T13:06:21.236Z"
             },
@@ -790,14 +790,24 @@
               "transcript": "it would be better if I could actually see like a little preview of the clip before, because right now it's like, it's showing clips where I'm like standing around or like I'm setting up, and I'm not actually doing a start, and then the actual start clip shows up later. So, it would be good if I could show like a very quick, like fast forward version, you know, like a repeating fast forward version of the clip on the screen, so that way I can see if I need to dismiss it. It's like, is this a start, straight or a curve, or whatever, it's like, like repeating, almost like a GIF or whatever.",
               "agent": {
                 "status": "pr_opened",
-                "summary": "Each piece on the Start/Straightaway/Curve labelling screen now shows a looping fast-forward flipbook (12 stills, 0.12 s each, with an 'N×' speed badge that is correct for slow-mo) instead of a single still. Done on iOS and Android. It uses stills only, so LAWS 59-60 still hold. Reduce Motion falls back to the single still. Pure helpers previewTimes/previewSpeed have tests on both platforms.",
+                "summary": "Each piece on the Start/Straightaway/Curve labelling screen now shows a looping fast-forward flipbook (12 stills, 0.12 s each, with an 'N\u00d7' speed badge that is correct for slow-mo) instead of a single still. Done on iOS and Android. It uses stills only, so LAWS 59-60 still hold. Reduce Motion falls back to the single still. Pure helpers previewTimes/previewSpeed have tests on both platforms.",
                 "hash": "fe5ef70e2566",
                 "at": "2026-10-21T00:42+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/35",
                 "verified": "Tools/verify.sh ALL CHECKS PASSED, including the new preview checks. xcodebuild simulator build (iPhone 17 Pro, iOS 26.5) succeeded. Android :core:test :app:testDebugUnitTest :app:assembleDebug passed. bend PROOF.bend not run because the bend CLI isn't on the runner; no .bend file changed. A reviewer subagent's findings were fixed and all checks re-run. No screenshot: the pieces screen needs a rea",
-                "next_step": "On your phone, open a long recording with a start, a straight run and a curve run. On each 'Piece N of M' screen, check that the picture loops quickly through the piece with a 'N×' badge, so standing-around pieces look nearly frozen."
+                "next_step": "On your phone, open a long recording with a start, a straight run and a curve run. On each 'Piece N of M' screen, check that the picture loops quickly through the piece with a 'N\u00d7' badge, so standing-around pieces look nearly frozen."
               },
               "completedAt": "2026-10-21T17:14:25.228Z"
+            },
+            {
+              "id": "t121",
+              "text": "Fix ground contact detection: straightaway runs detect multiple contacts per step and trigger a barrage of tips (many wrong); refine it and check curve runs too.",
+              "done": false,
+              "notes": "",
+              "due": null,
+              "createdAt": "2026-10-26T23:09:00-04:00",
+              "updatedAt": "2026-10-26T23:09:00-04:00",
+              "transcript": "The ground contact detection on straightaways is broken. It is detecting multiple ground contacts with every step and offering a barrage of tips (half of which are wrong) as a result. Please refine the ground contact detection. The problem will probably also exist on the curve runs as well, so check there too."
             }
           ]
         },
@@ -876,7 +886,7 @@
                 "at": "2026-10-26T19:58+00:00",
                 "pr_url": "https://github.com/moonyose/ChordFlow/pull/1",
                 "verified": "xcodebuild test on iPhone 17 Pro (iOS 26.5) with Xcode 26.6: TEST SUCCEEDED (full existing suite plus the new ChordMovementTests). App launched in the simulator with the explorer open and rendering. The reviewer subagent's findings (3 wrong interval descriptions, iv not flagged as borrowed, double-flat roots in Db major) are fixed and covered by tests. The screenshot wasn't committed because the r",
-                "next_step": "On your phone: open ChordFlow, tap 'Explore chords', then tap G7 in C major. 'C — Coming home' should be first and 'Am — Deceptive twist' close behind. Then switch the key to Minor and check the minor-key feels."
+                "next_step": "On your phone: open ChordFlow, tap 'Explore chords', then tap G7 in C major. 'C \u2014 Coming home' should be first and 'Am \u2014 Deceptive twist' close behind. Then switch the key to Minor and check the minor-key feels."
               }
             }
           ]
@@ -885,7 +895,7 @@
     },
     {
       "id": "roblox-games",
-      "name": "🎮 Roblox games",
+      "name": "\ud83c\udfae Roblox games",
       "projects": [
         {
           "id": "crash-mode",
@@ -1677,7 +1687,7 @@
     },
     {
       "id": "work",
-      "name": "💼 Work",
+      "name": "\ud83d\udcbc Work",
       "projects": [
         {
           "id": "raven-eval",
@@ -1723,7 +1733,7 @@
     },
     {
       "id": "reading-book-club",
-      "name": "📚 Reading (book club)",
+      "name": "\ud83d\udcda Reading (book club)",
       "projects": [
         {
           "id": "book-club",
@@ -1762,7 +1772,7 @@
     },
     {
       "id": "personal",
-      "name": "🏠 Personal",
+      "name": "\ud83c\udfe0 Personal",
       "projects": [
         {
           "id": "embroidered-sweaters",
@@ -1819,7 +1829,7 @@
               "id": "t28",
               "text": "Gather Mercury docs (Articles, EIN letter, owner IDs, address)",
               "done": true,
-              "notes": "Done Oct 16: Articles of Organization and EIN letter emailed to austin.a.munoz@gmail.com + collinsparkenterprises.com (~12:04–12:08 PM ET); Operating Agreement signed via Dropbox Sign (~12:25 PM ET), signed copy emailed ~12:27 PM ET. Oct 14 ~3:41 PM ET: Northwest uploaded Initial Resolution for Collins Park Enterprises LLC (email to austin.a.munoz@gmail.com) — download with Articles. Oct 14, 2026: Northwest Registered Agent says the state approved Collins Park Enterprises LLC; formation documents (Articles) and an Operating Agreement template are in the Northwest account (emails to austin.a.munoz@gmail.com). Next: download Articles, complete/sign Operating Agreement, get EIN (IRS online, free), then apply. Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc — CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0–2 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "notes": "Done Oct 16: Articles of Organization and EIN letter emailed to austin.a.munoz@gmail.com + collinsparkenterprises.com (~12:04\u201312:08 PM ET); Operating Agreement signed via Dropbox Sign (~12:25 PM ET), signed copy emailed ~12:27 PM ET. Oct 14 ~3:41 PM ET: Northwest uploaded Initial Resolution for Collins Park Enterprises LLC (email to austin.a.munoz@gmail.com) \u2014 download with Articles. Oct 14, 2026: Northwest Registered Agent says the state approved Collins Park Enterprises LLC; formation documents (Articles) and an Operating Agreement template are in the Northwest account (emails to austin.a.munoz@gmail.com). Next: download Articles, complete/sign Operating Agreement, get EIN (IRS online, free), then apply. Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
               "due": null,
               "completedAt": "2026-10-16T13:25:39-04:00"
             },
@@ -1827,7 +1837,7 @@
               "id": "t21",
               "text": "Open Mercury bank account",
               "done": true,
-              "notes": "Done Oct 16: 'Welcome to Mercury, Collins Park Enterprises' approval ~12:41 PM ET; passkey added ~12:30 PM ET; checking ••4738. Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc — CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0–2 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
+              "notes": "Done Oct 16: 'Welcome to Mercury, Collins Park Enterprises' approval ~12:41 PM ET; passkey added ~12:30 PM ET; checking \u2022\u20224738. Mercury (FL LLC) needs: (1) state-filed Articles of Organization; (2) IRS-issued EIN doc \u2014 CP575, 147c, or IRS-returned SS-4 (not blank app) or EIN confirmation screenshot; (3) government photo ID for every 25%+ owner and at least one person with operating control (DL/passport/etc.); (4) legal name, industry/description, physical operating address (residential OK; no registered-agent/PO Box/UPS Store), source of funds, U.S. ops details; beneficial-owner home addresses (no PO boxes). Apply at mercury.com. Typical decision 0\u20132 business days; check spam; follow up after 7 business days if silent. Optional: link Chase via Plaid to expedite. Sources: Mercury Eligibility, Gathering your documents, After you submit (Oct 2026).",
               "due": null,
               "completedAt": "2026-10-16T13:25:39-04:00"
             },
@@ -1835,14 +1845,14 @@
               "id": "t22",
               "text": "Fund it with $500",
               "done": false,
-              "notes": "Oct 16 ~12:49 PM ET: Mercury confirms $1,000 transfer from Ally Checking ••6931 on its way to Collins Park Mercury checking ••4738 (more than the $500 target). Confirm it posts (ACH typically 1–3 business days) before relying on the account. After Mercury account is approved: fund Collins Park Enterprises Mercury account with $500 (ACH from personal/other bank, wire, or Mercury deposit methods). Confirm $500 posts before relying on the account.",
+              "notes": "Oct 16 ~12:49 PM ET: Mercury confirms $1,000 transfer from Ally Checking \u2022\u20226931 on its way to Collins Park Mercury checking \u2022\u20224738 (more than the $500 target). Confirm it posts (ACH typically 1\u20133 business days) before relying on the account. After Mercury account is approved: fund Collins Park Enterprises Mercury account with $500 (ACH from personal/other bank, wire, or Mercury deposit methods). Confirm $500 posts before relying on the account.",
               "due": null
             },
             {
               "id": "t29",
               "text": "Apply at mercury.com for Collins Park Enterprises LLC",
               "done": true,
-              "notes": "Done Oct 16: applied ~12:30 PM ET (email verified, Ally linked via Plaid to expedite). Submit after docs ready. Typical review 0–2 business days. Optional Plaid link to expedite.",
+              "notes": "Done Oct 16: applied ~12:30 PM ET (email verified, Ally linked via Plaid to expedite). Submit after docs ready. Typical review 0\u20132 business days. Optional Plaid link to expedite.",
               "due": null,
               "completedAt": "2026-10-16T13:25:39-04:00"
             },
@@ -1857,7 +1867,7 @@
             },
             {
               "id": "t42",
-              "text": "Get EIN (IRS online, free) — needed for Mercury",
+              "text": "Get EIN (IRS online, free) \u2014 needed for Mercury",
               "done": true,
               "notes": "EIN letter emailed Oct 16. Recovered Oct 18 from the tracker.md mirror (was never in data.json).",
               "due": null,
@@ -1869,7 +1879,7 @@
         {
           "id": "jonathan-edwards-homes-llc",
           "name": "Jonathan Edwards Homes LLC",
-          "status": "Mercury APPROVED Oct 16 (~2:30 PM ET, checking ••4171, savings ••2915); Mercury IO credit card set up Oct 19 (~9:07 AM ET)",
+          "status": "Mercury APPROVED Oct 16 (~2:30 PM ET, checking \u2022\u20224171, savings \u2022\u20222915); Mercury IO credit card set up Oct 19 (~9:07 AM ET)",
           "tasks": [
             {
               "id": "t30",
@@ -1891,7 +1901,7 @@
               "id": "t23",
               "text": "Open Mercury bank account",
               "done": true,
-              "notes": "Done Oct 16: Mercury APPROVED ~2:30 PM ET; checking ••4171, savings ••2915.",
+              "notes": "Done Oct 16: Mercury APPROVED ~2:30 PM ET; checking \u2022\u20224171, savings \u2022\u20222915.",
               "due": null,
               "completedAt": "2026-10-16T15:13:28-04:00"
             },
@@ -1899,14 +1909,14 @@
               "id": "t24",
               "text": "Move money from Chase to Mercury",
               "done": false,
-              "notes": "Chase ••9371 linked via Plaid; $2,499 ACH pull submitted Oct 16 ~2:45 PM ET, arriving Oct 19–20 (first pull capped under $2,500). Move the rest after Emma confirms; keep the Chase minimum balance until then.",
+              "notes": "Chase \u2022\u20229371 linked via Plaid; $2,499 ACH pull submitted Oct 16 ~2:45 PM ET, arriving Oct 19\u201320 (first pull capped under $2,500). Move the rest after Emma confirms; keep the Chase minimum balance until then.",
               "due": null
             },
             {
               "id": "t25",
               "text": "Close Chase account",
               "done": false,
-              "notes": "Only after Chase→Mercury transfer has fully cleared and balance is confirmed in Mercury. Then close the Chase account; do not close early.",
+              "notes": "Only after Chase\u2192Mercury transfer has fully cleared and balance is confirmed in Mercury. Then close the Chase account; do not close early.",
               "due": null
             },
             {
@@ -1920,7 +1930,7 @@
             },
             {
               "id": "t32",
-              "text": "Confirm Chase→Mercury transfer cleared before closing Chase",
+              "text": "Confirm Chase\u2192Mercury transfer cleared before closing Chase",
               "done": false,
               "notes": "Verify Mercury balance; wait for ACH hold if any; then proceed to close Chase (t25).",
               "due": null
