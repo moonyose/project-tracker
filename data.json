@@ -840,6 +840,14 @@
                 "next_step": "On your Mac, run ./Tools/contact_check.sh against TestClips. On the phone, open a side-on straightaway clip that used to show a barrage of tips and step through with Next contact: you should see one contact per step, alternating L/R, with one foot and one shin tip per stop. Repeat with a side-on curve clip and a block start to check nothing regressed."
               },
               "completedAt": "2026-10-27T12:36:15.283Z"
+            },
+            {
+              "id": "t123",
+              "done": false,
+              "due": null,
+              "updatedAt": "2026-10-27T12:57:04.592Z",
+              "text": "Ground contacts, part 2: each real step is still detected about three times on the SAME foot (too early as the foot comes down, correctly at touchdown, and again at push-off). Keep only the real touchdown.",
+              "notes": "Austin, Oct 27, after testing 1.0.3 (which includes PR #37's left/right label-swap fix): it still detects roughly three ground contacts per real step, all on the same foot, each with its own tips: (1) EARLY: while the foot is still coming down and has not touched the ground, a contact is detected and tips are shown; (2) CORRECT: a moment later, at the actual touchdown, a contact is detected at about the right time; (3) LATE: as the runner pushes off that same foot (it is about to leave the ground), another contact is detected on the same foot, with a landing tip such as the shin angle being wrong. So the problem is false positives. Find the actual cause in GroundContactDetector / ContactRefiner / StepAnalyzer and CueEngine (e.g. a descending swing foot read as a stance, one stance split into several, or tips attached to the wrong frames) using Austin's attached screenshots/clip, then make it one contact per foot-strike: the contact begins at true touchdown (foot at the ground and its downward motion stopped), a foot can't land again until it has left the ground and swung through, and landing tips are only read at the true touchdown frame. Turn Austin's clip/screenshots into a regression test if possible (the fixture or its pose track), alongside PR #37's synthetic tests; the test must fail on the current code. iOS and Android together, same as always."
             }
           ]
         },

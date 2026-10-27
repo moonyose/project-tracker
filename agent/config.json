@@ -161,7 +161,8 @@
     "t116",
     "t117",
     "t118",
-    "t119"
+    "t119",
+    "t123"
   ],
   "_skip_task_ids_note": "Austin: skip for now. Tasks listed here are never picked, whatever data.json says. Remove an id to re-enable it. Race ideas in _held_until_phase1 wait until t111 and t112 are merged.",
   "_held_until_phase1": [
@@ -169,5 +170,8 @@
     "t117",
     "t118",
     "t119"
+  ],
+  "_held_for_screenshots": [
+    "t123"
   ]
 }
