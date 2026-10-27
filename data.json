@@ -1593,9 +1593,9 @@
             {
               "id": "t113",
               "text": "Race rematch: after the podium, a Rematch vote replays the same kit and course so everyone can try a better build right away",
-              "done": false,
+              "done": true,
               "due": null,
-              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "updatedAt": "2026-10-27T12:39:09.286Z",
               "notes": "Majority (or everyone, if 2 players) within the results screen's time starts a rematch with the same seed for kit and course; otherwise back to lobby. Show the vote count live. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player).",
               "agent": {
                 "status": "pr_opened",
@@ -1605,7 +1605,8 @@
                 "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/3",
                 "verified": "tools/check.sh passes (specs 47 run, 0 failing; selene 0 errors; rojo build ok). MatchState.spec: 25 passed, 8 of them new rematch specs. stylua on the edited files. Reviewer subagent found no defects. Studio playtest not run: no Studio on the runner.",
                 "next_step": "In Studio after a Rojo sync: solo, finish a race and tap REMATCH on the podium. The timer drops to 3 s and you get the same kit list and the same course. Then a 2-player local server: the vote shows 1/2 live, and the rematch starts only when both have voted."
-              }
+              },
+              "completedAt": "2026-10-27T12:39:09.286Z"
             },
             {
               "id": "t114",
