@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-10-26",
-  "rev": 33,
+  "rev": 34,
   "categories": [
     {
       "id": "top-priority",
@@ -178,6 +178,16 @@
               "owner": "austin",
               "createdAt": "2026-10-21T11:25:00-04:00",
               "updatedAt": "2026-10-21T13:20:00-04:00"
+            },
+            {
+              "id": "t122",
+              "text": "Look into Garmin watch compatibility for LaneSync.",
+              "done": false,
+              "notes": "Reddit user u/M_Akrami asked about Garmin support on the r/Sprinting LaneSync post and said it 'would seal the deal' for them.",
+              "due": null,
+              "createdAt": "2026-10-26T23:48:00-04:00",
+              "updatedAt": "2026-10-26T23:48:00-04:00",
+              "transcript": "look into garmin watch compatibility for LaneSync"
             }
           ],
           "updatedAt": "2026-10-22T07:25:00-04:00"
