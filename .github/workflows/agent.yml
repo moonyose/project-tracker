@@ -135,7 +135,8 @@ jobs:
           said() { grep -qiE "$1" "$RUNNER_TEMP/claude.json" "$RUNNER_TEMP/claude.err" 2>/dev/null; }
           use_subscription() {
             unset ANTHROPIC_API_KEY
-            export CLAUDE_CODE_OAUTH_TOKEN="$OAUTH_TOKEN"
+            # strip line breaks/spaces a Terminal copy can leave in the token
+            export CLAUDE_CODE_OAUTH_TOKEN="$(printf '%s' "$OAUTH_TOKEN" | tr -d '[:space:]')"
             echo subscription > "$RUNNER_TEMP/auth_used"
             run_claude "$MODEL"
             # Opus isn't on every Claude plan: fall back once if the plan refuses it.
