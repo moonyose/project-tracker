@@ -1,6 +1,6 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "rev": 34,
   "categories": [
     {
@@ -817,7 +817,16 @@
               "due": null,
               "createdAt": "2026-10-26T23:09:00-04:00",
               "updatedAt": "2026-10-26T23:09:00-04:00",
-              "transcript": "The ground contact detection on straightaways is broken. It is detecting multiple ground contacts with every step and offering a barrage of tips (half of which are wrong) as a result. Please refine the ground contact detection. The problem will probably also exist on the curve runs as well, so check there too."
+              "transcript": "The ground contact detection on straightaways is broken. It is detecting multiple ground contacts with every step and offering a barrage of tips (half of which are wrong) as a result. Please refine the ground contact detection. The problem will probably also exist on the curve runs as well, so check there too.",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Root cause: the contact detector finds stances for each ankle separately. Side-on, the pose model puts both ankle labels on the planted foot while the swing foot passes, or swaps the legs' labels mid-stance, so one step became two contacts a few hundredths of a second apart, each with its own foot and shin tip. New GroundContactDetector.oneFootDown (iOS Swift and Android Kotlin) treats a left and a right running-length stance that overlap or touch in time, with planted ankles within 0.25 leg lengths, as one contact. Half-stances too short to count are held until that check, so a contact split ",
+                "hash": "18de716b8d3e",
+                "at": "2026-10-27T04:08+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/37",
+                "verified": "./Tools/verify.sh: ALL CHECKS PASSED (new one-contact-per-step check: 90 synthetic side-on straight and curve clips at 30/60/240 fps with the ankle-label errors). xcodebuild build, scheme StrideLab, iPhone 17 Pro simulator, Xcode 26.6: BUILD SUCCEEDED. android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: passed, and ContactsTest fails when the fix is disabled. Not run: bend PROO",
+                "next_step": "On your Mac, run ./Tools/contact_check.sh against TestClips. On the phone, open a side-on straightaway clip that used to show a barrage of tips and step through with Next contact: you should see one contact per step, alternating L/R, with one foot and one shin tip per stop. Repeat with a side-on curve clip and a block start to check nothing regressed."
+              }
             }
           ]
         },
