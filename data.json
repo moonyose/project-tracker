@@ -1575,9 +1575,9 @@
             {
               "id": "t112",
               "text": "Flying Machines Race course: an obstacle course built by code with checkpoint gates and routes that favour different builds (high rings for balloons, a fast straight for wings and rockets, a ground road for wheels)",
-              "done": false,
+              "done": true,
               "due": null,
-              "updatedAt": "2026-10-23T14:49:16.103Z",
+              "updatedAt": "2026-10-27T12:39:06.676Z",
               "notes": "Repo moonyose/FlyingMachinesRace. Follow docs/RACE_DESIGN.md: you own src/server/Race/Course*.luau and src/shared/Race/CourseLayout.luau and implement Course.build(seed, origin) -> CourseHandle exactly as the interface there (gateCount, startSlots >= 8, respawnFor, distanceToGate, gatePassed fired only in order, destroy). Forks where each route's gates count as the same checkpoint index; obstacles (wind gusts, narrow gaps, moving blockers, low ceilings) as gameplay volumes. Austin's standing Roblox rules: visual assets and sound effects must come from the Roblox Toolbox (no homemade primitive shapes); the Toolbox can't be reached from the runner, so leave ArtSlot-tagged plain or invisible gameplay objects and list every ArtKind in docs/ART_SLOTS.md as the design doc describes. Specs for the layout math (gate order, route equivalence, respawn points, distance). The Match-flow to-do (t111) is built in parallel against the same interface; if src/shared/Race/Types.luau doesn't exist on main yet, create it with exactly the design doc's types.",
               "agent": {
                 "status": "pr_opened",
@@ -1587,7 +1587,8 @@
                 "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/1",
                 "verified": "tools/check.sh passes: 45 specs, 0 failing (new CourseLayout.spec.luau 14/14); selene 0 errors; rojo build ok. stylua --check is clean on the edited files. A reviewer subagent read the diff and its one real finding is fixed: a gatePassed handler calling destroy() could leave a wind force on a player. Not run in Studio (not on the runner).",
                 "next_step": "In Studio, Play, then in the server command bar build a course with Course.build(1, CFrame.new(0,0,3000)) and print gatePassed. Fly through the gates by different routes and confirm they print in order, once each, and that skipping a gate does not count. Then call H.destroy() and confirm everything is removed. The exact checklist is in the PR."
-              }
+              },
+              "completedAt": "2026-10-27T12:39:06.676Z"
             },
             {
               "id": "t113",
