@@ -33,7 +33,7 @@
         {
           "id": "lanesync-sprint-timing",
           "name": "LaneSync (sprint timing)",
-          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~8:06 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:46 AM ET (a later main TestFlight run at ~9:19 AM ET failed on an upload timeout); GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1",
+          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~8:06 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:46 AM ET (a later main TestFlight run at ~9:19 AM ET failed on an upload timeout); a rerun succeeded and 1.0.3 (202610271359) hit TestFlight Oct 27 ~10:05 AM ET; Apple Ads' Emerging team (Sarishti Arora) emailed Oct 27 ~9:58 AM ET offering help growing Apple Ads, optional sales outreach; GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1",
           "tasks": [
             {
               "id": "t2",
