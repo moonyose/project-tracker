@@ -1611,9 +1611,9 @@
             {
               "id": "t114",
               "text": "Race snake draft: instead of one dealt kit, players take turns picking parts from a shared pool (a quick snake draft) before the build minute",
-              "done": false,
+              "done": true,
               "due": null,
-              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "updatedAt": "2026-10-27T12:39:10.257Z",
               "notes": "Pool built by KitDealer from the seed, sized so every player can still end up with a flyable set (guarantee seat/lift-or-buoyancy/thrust per player, e.g. by reserving them). Short pick timer with auto-pick; everyone sees the pool and each other's picks live. Solo: deal as today. A Config switch chooses Dealt vs Draft. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player).",
               "agent": {
                 "status": "pr_opened",
@@ -1623,14 +1623,15 @@
                 "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/5",
                 "verified": "tools/check.sh passes: 48 specs with 0 failing (new Draft.spec with 12 tests covering 1000 simulated 2-8 player drafts; 3 new MatchState specs), selene 0 errors/warnings, rojo build ok. stylua run on edited files. A reviewer subagent's 3 real findings were fixed. Not run in Studio (unavailable on the runner).",
                 "next_step": "In Studio, run Test > Clients and Servers with 2 players: both see the same pool and pick order; on your turn only legal parts are outlined and the 5 s clock auto-picks on timeout; picks show live on both screens and the order snakes; after the last pick each builder lists only the base parts plus that player's picks. Then check solo still deals the normal kit, and that one player leaving mid-draf"
-              }
+              },
+              "completedAt": "2026-10-27T12:39:10.257Z"
             },
             {
               "id": "t115",
               "text": "Race spectate and cheer: finished or crashed players watch the race, and cheers give a small speed boost to whoever is in last place",
-              "done": false,
+              "done": true,
               "due": null,
-              "updatedAt": "2026-10-23T14:52:02.047Z",
+              "updatedAt": "2026-10-27T12:39:11.036Z",
               "notes": "Spectator camera that follows the leader or a chosen racer (tap to cycle); a Cheer button with a cooldown; cheers add a small, capped, short boost to the last-placed racer only, server-validated and rate-limited. Show who cheered. Repo moonyose/FlyingMachinesRace; builds on the Phase 1 match flow (t111) and course (t112). Read CLAUDE.md and docs/RACE_DESIGN.md first and extend the design doc's module contract with any new files you own. Austin's standing Roblox rules: visual assets and sound effects come from the Roblox Toolbox (no homemade primitive shapes); the runner can't reach it, so leave ArtSlot placeholders and list them in docs/ART_SLOTS.md. Server-authoritative; specs for pure logic; playtest checklist in the PR (solo and 2-player).",
               "agent": {
                 "status": "pr_opened",
@@ -1640,7 +1641,8 @@
                 "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/4",
                 "verified": "tools/check.sh passes: 48 specs with 0 failing, including the new Cheer.spec.luau (15 cases); selene 0 errors and 0 warnings; rojo build ok. stylua run on every edited file. A reviewer subagent found 3 real issues, all fixed and rechecked. Not played in Studio (none on the runner), so the boost size and the spectator camera are untested in play.",
                 "next_step": "Run a 2-player local server in Studio (or phone plus a second device): finish or crash on one, check the camera follows the other racer, tap CHEER, and confirm the feed line shows, the last-place racer speeds up briefly, and the button counts down 6 s. Full checklist is in the PR."
-              }
+              },
+              "completedAt": "2026-10-27T12:39:11.036Z"
             },
             {
               "id": "t116",
