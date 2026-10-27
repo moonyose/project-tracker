@@ -1555,11 +1555,11 @@
             {
               "id": "t111",
               "text": "Design and build a competitive Flying Machines spin-off: every player gets the same random parts, builds for about a minute, then all race through an obstacle course that favors different builds (balloons for altitude, wings for speed)",
-              "done": false,
+              "done": true,
               "notes": "Austin's standing Roblox rules: visual assets and sound effects must come from the Roblox Toolbox (no homemade primitive shapes); if the Toolbox can't be reached, skip that visual or sound work. May reuse the building system from the original Flying Machines game, but must not change that game.\n\nPHASE 1, MATCH FLOW (this task): repo moonyose/FlyingMachinesRace, seeded Oct 23 from the original game. Follow docs/RACE_DESIGN.md and its module contract. Build: src/shared/Race/Types.luau (the Kit and CourseHandle interfaces exactly as in the design doc, first commit), Config, KitDealer (same seeded kit for all players; always flyable; fallback blueprint; specs over thousands of seeds), the server match state machine Lobby -> Deal -> Build (60 s, shared hangar with a pad per player, builder limited to the kit, Ready button) -> Launch -> Race -> Results -> Lobby, standings, cleanup on leave, solo = time trial, and a basic HUD (phase timer, kit list, race position, results podium). Code against the CourseHandle interface; the Course to-do builds the course in parallel, so use a tiny stub course (start slots + 3 gates in a line) until it lands. Switch off the original's missions, quests, tutorial and open world at startup rather than deleting them yet.",
               "due": null,
               "createdAt": "2026-10-22T16:41:00-04:00",
-              "updatedAt": "2026-10-23T14:49:16.103Z",
+              "updatedAt": "2026-10-27T12:39:04.990Z",
               "transcript": "right now we have the flying machines game, we have the flying machines survival game. I wanna make a- another version of the flying machines game, but instead of ha- having like a story or anything like that, I just want there to be like the parts, like I want the building system to be more or less the same, but I want it to be a competition. So like as soon as you spawn in other players, you and all the other players each get the same set of randomly selected parts that are sufficient to build a plane, you know? and maybe with like a little extra. And there's not necessarily one right answer. On what to build, but anyway, you all take a little bit of time and make your, you make your machine, and then after, after, I don't know, a minute or whatever, then you each get to fly, then you all fly the plane through an obstacle course at the same time, and you have to make it. And maybe certain obstacles are better suited to other to different parts. So, like, certain ones might be better for balloons. Like, if you need altitude control, you want balloons more. If you need speed more, then okay, you need wings or whatever. So, this would be the idea.",
               "agent": {
                 "status": "pr_opened",
@@ -1569,7 +1569,8 @@
                 "pr_url": "https://github.com/moonyose/FlyingMachinesRace/pull/2",
                 "verified": "tools/check.sh: 46 specs, 0 failing (new: KitDealer.spec over 5000 seeds, MatchState.spec with 17 tests including standings); selene 0 errors / 0 warnings; rojo build ok; stylua on every touched file. A reviewer subagent found 5 runtime issues and all are fixed. Not run in Roblox: Studio isn't on the runner, so MatchService, pads, stub course, builder edits and HUD are untested at runtime, and the",
                 "next_step": "In Studio, follow the PR's playtest checklist. Solo: Play, lobby counts down from 20, kit shows, you build on pad 1 with only kit parts, press READY, 3-2-1, fly the 3 stub gates, see the time-trial podium, back to the lobby. Then a 2-player local server: same kit on both, each sees the other's pad, both must be Ready, positions and podium order, leaving mid-race."
-              }
+              },
+              "completedAt": "2026-10-27T12:39:04.990Z"
             },
             {
               "id": "t112",
