@@ -274,6 +274,15 @@
    "session": "526929d9-36e3-45ca-868b-ba071924a3ed",
    "tasks": 1,
    "run_id": "40549701243"
+  },
+  {
+   "at": "2026-10-28T01:31+00:00",
+   "cost_usd": 0.0,
+   "auth": "api",
+   "turns": null,
+   "session": null,
+   "tasks": 1,
+   "run_id": "40615303084"
   }
  ]
 }
