@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-10-27",
-  "rev": 36,
+  "updated": "2026-10-28T01:28:45.350Z",
+  "rev": 37,
   "categories": [
     {
       "id": "top-priority",
@@ -863,6 +863,16 @@
                 "verified": "./Tools/verify.sh passes. New tests run PR #37's clips slowed 4x and 8x and need one contact per foot-strike within 15 ms of touchdown; they fail on the old code. A test that normal-speed clips are never read as slowed also passes. xcodebuild StrideLab builds (iPhone 17 Pro sim). Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passes. bend was not run: the CLI isn't on the r",
                 "next_step": "Was this clip recorded in Slo-mo? Reopen it with the PR build: you should see the 'Slow motion found' note, one contact per step starting on the landing frame, and no contact at push-off. Also check that a normal 30 fps clip hasn't changed. If the clip is not Slo-mo, this PR doesn't fix it; the next step would be the same-foot guard in GroundContactDetector, as its own to-do."
               }
+            },
+            {
+              "id": "t125",
+              "text": "Auto-detect straightaway runs in long clips (like starts) so the desired runner's clips can be selected, and make runner detection work even on low-frame-rate footage.",
+              "done": false,
+              "notes": "Austin had to trim a long clip manually, then the selected clips didn't detect him (possibly filmed at too low a frame rate).",
+              "due": null,
+              "createdAt": "2026-10-27T21:28:45-04:00",
+              "updatedAt": "2026-10-28T01:28:45.350Z",
+              "transcript": "We need to add a to-do to the stride lab app to, first of all, auto-detect straightaway runs. just like we do with starts, like, we need to be able to select the clips that are of the, of the desired runner. because I just had to do it manually on a long clip, which takes a while. And then also, like, when I selected the clips, it didn't detect me. Probably because probably because maybe I filmed it in too slow, low of a frame rate. But even so, it should still be able to get something, you know?"
             }
           ],
           "updatedAt": "2026-10-27T09:30:00-04:00"
