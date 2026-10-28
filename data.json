@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-10-28T01:30:46.229Z",
-  "rev": 38,
+  "updated": "2026-10-28T01:31:07.594Z",
+  "rev": 39,
   "categories": [
     {
       "id": "top-priority",
@@ -871,8 +871,9 @@
               "notes": "Austin had to trim a long clip manually, then the selected clips didn't detect him (possibly filmed at too low a frame rate).",
               "due": null,
               "createdAt": "2026-10-27T21:28:45-04:00",
-              "updatedAt": "2026-10-28T01:28:45.350Z",
-              "transcript": "We need to add a to-do to the stride lab app to, first of all, auto-detect straightaway runs. just like we do with starts, like, we need to be able to select the clips that are of the, of the desired runner. because I just had to do it manually on a long clip, which takes a while. And then also, like, when I selected the clips, it didn't detect me. Probably because probably because maybe I filmed it in too slow, low of a frame rate. But even so, it should still be able to get something, you know?"
+              "updatedAt": "2026-10-28T01:31:07.594Z",
+              "transcript": "We need to add a to-do to the stride lab app to, first of all, auto-detect straightaway runs. just like we do with starts, like, we need to be able to select the clips that are of the, of the desired runner. because I just had to do it manually on a long clip, which takes a while. And then also, like, when I selected the clips, it didn't detect me. Probably because probably because maybe I filmed it in too slow, low of a frame rate. But even so, it should still be able to get something, you know?",
+              "owner": "austin"
             },
             {
               "id": "t126",
@@ -881,8 +882,9 @@
               "notes": "",
               "due": null,
               "createdAt": "2026-10-27T21:30:46-04:00",
-              "updatedAt": "2026-10-28T01:30:46.229Z",
-              "transcript": "Let's also add like a, a parentheses on straightaways and curves, like on the buttons, that it's in beta. So like when the, when the user is analyzing a straightaway or like choosing to analyze a straightaway, put in parentheses there, beta, because it's it's not working right now."
+              "updatedAt": "2026-10-28T01:31:07.594Z",
+              "transcript": "Let's also add like a, a parentheses on straightaways and curves, like on the buttons, that it's in beta. So like when the, when the user is analyzing a straightaway or like choosing to analyze a straightaway, put in parentheses there, beta, because it's it's not working right now.",
+              "owner": "austin"
             }
           ],
           "updatedAt": "2026-10-27T09:30:00-04:00"
