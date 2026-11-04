@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-11-04T14:39:50Z",
-  "rev": 43,
+  "updated": "2026-11-04T16:20:00Z",
+  "rev": 44,
   "categories": [
     {
       "id": "top-priority",
@@ -98,7 +98,7 @@
                   "id": "t35-2",
                   "text": "Fix and resubmit D-U-N-S: D&B DENIED the request (case DFC-711199) Nov 4 ~9:15 AM ET. Check the business name, physical address (2100 Park Ave Apt 304, Miami Beach FL 33139), phone, email, owner, line of business and SIC code; add the website collinsparkenterprises.com; or call D&B at 855-444-3091 (9:30 AM to 6 PM ET weekdays)",
                   "done": true,
-                  "notes": "Nov 4, 2026 ~9:39 AM ET: resubmitted as new free D&B case DFC-727524 (denied case DFC-711199 was missing documents). Uploaded the IRS EIN letter (CP575G) and the Florida Articles of Organization, added website and SIC 7372. Declined the $229 expedite. Status: Pending - Product Terms Acceptance; delivery up to 30 business days (~mid-Dec).",
+                  "notes": "Nov 4, 2026 ~9:39 AM ET: resubmitted as new free D&B case DFC-727524 (denied case DFC-711199 was missing documents). Uploaded the IRS EIN letter (CP575G) and the Florida Articles of Organization, added website and SIC 7372. Declined the $229 expedite. Status: Pending - Product Terms Acceptance; delivery up to 30 business days (~mid-Dec). Nov 4 ~9:39 AM ET: D&B iResearch confirmed receipt (iResearch case #11232345) and is reviewing; no action needed unless they email from research@iresearch.dnb.com or partner TruePic asking for more info.",
                   "updatedAt": "2026-11-04T14:39:50Z"
                 },
                 {
@@ -930,13 +930,13 @@
             },
             {
               "id": "t109",
-              "text": "Waiting on Misha's reply about legal approval for Swiftly real-time trolley data",
+              "text": "Waiting on the City Manager's approval for Swiftly real-time trolley data (via Misha's director)",
               "done": false,
-              "notes": "Followed up Oct 21; if no reply, follow up again around Nov 4. Oct 21 ~10:33 AM ET: Misha's auto-reply says he's out of the office until Oct 22, so expect a reply after that. Oct 26 ~2:19 PM ET: Austin emailed Commissioner Suarez asking for a nudge to City Hall legal. Oct 26 ~2:30 PM ET: Suarez replied and cc'd City Attorney Ricardo Dopico (RicardoDopico@miamibeachfl.gov), who can connect Austin to the right person. Austin also emailed Dopico separately. Oct 26 ~4:11 PM ET: Dopico replied-all (cc Misha) that he got Austin's email and is finding who in his office handles Transportation's request. Oct 26 ~4:59 PM ET: Dopico asked Misha whether he sent the request to someone directly, since the City Attorney's intake tracker shows no item for it. Next: watch for Misha's answer; if the request was never formally submitted, Misha may need to file it through the City Attorney's intake.",
+              "notes": "Followed up Oct 21; if no reply, follow up again around Nov 4. Oct 21 ~10:33 AM ET: Misha's auto-reply says he's out of the office until Oct 22, so expect a reply after that. Oct 26 ~2:19 PM ET: Austin emailed Commissioner Suarez asking for a nudge to City Hall legal. Oct 26 ~2:30 PM ET: Suarez replied and cc'd City Attorney Ricardo Dopico (RicardoDopico@miamibeachfl.gov), who can connect Austin to the right person. Austin also emailed Dopico separately. Oct 26 ~4:11 PM ET: Dopico replied-all (cc Misha) that he got Austin's email and is finding who in his office handles Transportation's request. Oct 26 ~4:59 PM ET: Dopico asked Misha whether he sent the request to someone directly, since the City Attorney's intake tracker shows no item for it. Next: watch for Misha's answer; if the request was never formally submitted, Misha may need to file it through the City Attorney's intake. Nov 4 ~9:32 AM ET: Austin followed up with Misha asking about legal progress. Nov 4 ~9:54 AM ET: Misha replied that he met with legal and the IT director; the City has no policy for sharing APIs, so it needs City Manager approval. Misha briefed his director, who will speak to the City Manager, and Misha will report the outcome. Next: wait for Misha; if nothing in ~2 weeks (around Nov 18), check in again and offer a short write-up of how the data would be used.",
               "due": null,
               "owner": "austin",
               "createdAt": "2026-10-21T10:30:00-04:00",
-              "updatedAt": "2026-10-26T17:25:00-04:00",
+              "updatedAt": "2026-11-04T11:20:00-05:00",
               "agent": {
                 "status": "skipped_not_code",
                 "summary": "Waiting on a reply from Misha about legal approval. This is outreach, not a code change.",
