@@ -1895,9 +1895,9 @@
           "tasks": [
             {
               "id": "t16",
-              "text": "Plato reading: Gorgias, Part 1 (Week 10, ~30 pp)",
+              "text": "Plato reading: Gorgias, Part 2 (Week 11, ~30 pp)",
               "done": false,
-              "notes": "Then Week 11: Gorgias, Part 2",
+              "notes": "Then Week 12: Minos + Republic, Book 1",
               "due": null,
               "attachments": [
                 {
@@ -1908,9 +1908,9 @@
             },
             {
               "id": "t17",
-              "text": "Torah reading: Chayei Sarah",
+              "text": "Torah reading: Toldot",
               "done": false,
-              "notes": "Last read Vayera",
+              "notes": "Last read Chayei Sarah",
               "due": null,
               "attachments": [
                 {
