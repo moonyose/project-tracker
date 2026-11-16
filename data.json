@@ -1,6 +1,6 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-11-06T20:17:34Z",
+  "updated": "2026-11-16",
   "rev": 45,
   "categories": [
     {
@@ -15,10 +15,11 @@
             {
               "id": "t1",
               "text": "Finish PhD Project application",
-              "done": false,
+              "done": true,
               "notes": "https://secureapp.phdproject.org/Application/Get\nNov 3 ~4:11 PM ET: Mom (Sandra Vera-Mu\u00f1oz, sveramun@nd.edu) reminded you of the Nov 30 deadline for the 2027 PhD Project Annual Conference (Mar 18-19, 2027, Rosemont IL) and offered to recommend you; reply to her if you want her recommendation.\nNov 4 ~11:37 AM ET you sent her your essays (the last piece left). Nov 4 ~6:17 PM ET she replied that she likes them (your own voice, thoughtful) and attached a marked-up draft, 'PhD Project Essays_comments.docx', with margin comments; she asked whether you submit the answers as one Word doc or paste each into the application. Next: review her comments, finalize, and submit before Nov 30.",
               "due": "2026-11-30",
-              "updatedAt": "2026-11-03T22:17:55.000Z"
+              "updatedAt": "2026-11-16T14:04:45.464Z",
+              "completedAt": "2026-11-16T14:04:45.464Z"
             }
           ],
           "updatedAt": "2026-11-03T22:17:55.000Z"
