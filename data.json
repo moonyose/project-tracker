@@ -42,6 +42,16 @@
               "owner": "austin",
               "transcript": "Can you draft an email to Sasha Espinola (sasha.espinola@miami.edu) asking her to where I should send my official transcripts? Parchment offers the option of \"University of Miami - Graduate School\", but I want to confirm if that's the correct place. I am applying for the Finance PhD program",
               "updatedAt": "2026-11-17T15:46:31.000Z"
+            },
+            {
+              "id": "t4",
+              "text": "Register for and take the GMAT (target Sat Nov 28)",
+              "done": false,
+              "notes": "UM Finance PhD committee (via Prof. Andrade, Nov 17 12:44 PM ET) recommends taking the GMAT or GRE. Register ASAP for a Sat Nov 28 test date.",
+              "due": "2026-11-28",
+              "owner": "austin",
+              "transcript": "Okay, can you add a to-do to register for and take the GMAT? I'm probably gonna need to take it on let's see. Is Saturday the 28th or, oh Oh, actually Friday the 27th. No, let's do. Saturday the 28th could be good.",
+              "updatedAt": "2026-11-17T18:36:00.000Z"
             }
           ],
           "updatedAt": "2026-11-17T15:46:31.000Z"
