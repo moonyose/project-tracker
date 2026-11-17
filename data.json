@@ -25,15 +25,16 @@
             {
               "id": "t2",
               "text": "Email Prof. Sandro Andrade (sandrade@bus.miami.edu) about how to handle the recommendations section",
-              "done": false,
-              "notes": "He said you could skip recommendation letters; ask whether to attach a document or a short letter from him confirming it. Draft prepared Nov 17.",
+              "done": true,
+              "notes": "He said you could skip recommendation letters; ask whether to attach a document or a short letter from him confirming it. Draft prepared Nov 17.\nSent Nov 17 ~10:20 AM ET (reply in Aug thread). Waiting on his answer; draft the signed note if he wants it.",
               "due": "2026-12-01",
               "owner": "austin",
               "transcript": "Can you add a to-do to apply for Miami's Finance PhD by December 1st? It's super high-priority. I'll need to email professor Sandro Andrade as well to get his guidance on what I should do about the recommendations section. He had told me that I could skip these bc I have sufficient work/educational experience. I basically want to ask him if I should just attach some document(s) to the application explaining what he told me. Perhaps we could write a letter for him that basically says something like \"I, Professor Andrade, hereby grant permission to Austin to not submit recommendation letters, etc.\"",
-              "updatedAt": "2026-11-17T14:41:04.000Z"
+              "updatedAt": "2026-11-17T15:20:09.000Z",
+              "completedAt": "2026-11-17T15:20:09.000Z"
             }
           ],
-          "updatedAt": "2026-11-17T14:41:04.000Z"
+          "updatedAt": "2026-11-17T15:20:09.000Z"
         },
         {
           "id": "phd-application",
