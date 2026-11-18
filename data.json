@@ -1882,13 +1882,13 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "done_no_change",
-                "summary": "An open PR for this task already exists: moonyose/StrideLab#50 \"One-tap 'Re-analyze as\u2026' in the player's More menu\" (branch claude/t127-reanalyze-as, opened 2026-11-18 01:22 UTC, open, not a draft). It touches the same six files (iOS KindLogic/AnalysisPlayerView/tests_kindui plus the Android KindLogic/AnalysisPlayerScreen/KindUiTest). This run built the same feature independently on the same branch name. The push was rejected as non-fast-forward, so nothing was force-pushed and no duplicate PR was opened. What this run's version did: KindFlow.reanalyses(for:) in Swift and Kotlin lists every ot",
+                "status": "pr_opened",
+                "summary": "Root cause: a recording made with the record screen on Starts is saved as a chosen start, so auto-cut never looks for passes and the 'No starts found' review only offered analyzing it as a start or marking runs by hand. Added one-tap 'Re-analyze as Straightaway' / 'Re-analyze as Curve' on the split review (short recordings are analyzed whole as that kind, long ones are re-scanned as a run so the pass picker appears), plus a 'Re-analyze as\u2026' option in the player's More menu. Done on iOS and Android.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T06:45+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "On this run's own (unpushed) version, not on PR #50: ./Tools/verify.sh exit 0, ALL CHECKS PASSED, new re-analyze checks included. xcodebuild build for generic iOS Simulator (Xcode 26.5 SDK) succeeded. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (KindUiTest 12/12). bend CLI is not installed, and no .bend file changed. The reviewer subagent found no defects. PR #50'",
-                "next_step": "Review and merge PR #50 (check its GitHub PR checks). On the phone: open a clip that was analyzed as a start, tap \u2026 then Re-analyze as\u2026 then Straightaway, and confirm the 'Re-analyzing' panel appears and the chip then reads Straightaway/Stride."
+                "at": "2026-11-18T07:28+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/60",
+                "verified": "iOS simulator build succeeded (iPhone 17 Pro); ./Tools/verify.sh ALL CHECKS PASSED, including the new re-analyze tests; Android :core:test :app:testDebugUnitTest :app:assembleDebug BUILD SUCCESSFUL (KindUiTest 12/12). bend PROOF.bend not run because the bend CLI is not on the runner (no Bend rule changed). No screenshot: the split review needs a real video with a person in it. Pushed as claude/t12",
+                "next_step": "On iPhone: record straightaway passes with the record screen left on Starts, then on the review tap 'Re-analyze as Straightaway' and confirm it is analyzed or offered as straightaway passes. Also try \u22ef > Re-analyze as\u2026 > Curve on an analyzed clip."
               }
             },
             {
@@ -1903,12 +1903,12 @@
               "owner": "austin",
               "agent": {
                 "status": "pr_opened",
-                "summary": "iOS: two large buttons side by side at the top right of the clip view replace the small toolbar pencil. One is a Skeleton toggle (stick figure with a red no-symbol), the other is Edit (figure with a pencil, opens the same frame menu). Skeleton off hides the bones, joint circles, dashed lines, lit ring, target line and guides, leaving the runner and the tips. The setting is saved and also applies to Save video (with or without tips), Share this frame and the scorecard photo. Android was not changed because the task names iOS.",
+                "summary": "iOS and Android: added two large buttons to the clip view's top-right corner: a skeleton toggle (running figure with a red no-entry sign) and Edit (figure with a pencil). Edit replaces the small top-bar pencil and opens the correction menu just below itself. With the skeleton hidden, nothing is drawn on the body (bones, joints, dashed lines and circles, guides, target line); only the runner and the tips remain. The setting is saved (stridelab.showSkeleton, on by default). Videos saved from the clip view and 'Share this frame' follow it; tip captions, leaders and the badge stay. The Library's '",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T06:45+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/58",
-                "verified": "xcodebuild simulator build (iPhone 17 Pro, Xcode 26.6) succeeded. ./Tools/verify.sh printed ALL CHECKS PASSED, including a new exportSkeletonOffTest. bend PROOF.bend was not run because the CLI isn't installed. Checked portrait and landscape layout on the simulator with a demo clip. The toggle is hidden on demos, so the side-by-side screenshot came from a throwaway build that wasn't committed. The",
-                "next_step": "On your phone, open one of your own clips and tap Skeleton: the bones, circles and dashed lines should go, leaving the runner and the tips. Then use Share > 'Save video with tips, without skeleton' and check the video in Photos. Tap Edit and check the frame menu opens under the buttons. Note: the remote branch claude/t128-skeleton-toggle already existed, so this was pushed as claude/t128-skeleton-"
+                "at": "2026-11-18T07:28+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/59",
+                "verified": "iOS: xcodebuild simulator build (iPhone 17 Pro, iOS 26.5) had no errors; ./Tools/verify.sh printed ALL CHECKS PASSED, including the new exportSkeletonHiddenTest. A reviewer subagent's two findings on the iOS diff were fixed and mirrored on Android. Android: ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug reported BUILD SUCCESSFUL, and the new SkeletonToggleTest ran 2 tests with 0 fa",
+                "next_step": "On iPhone and Android, open one of your own analysed clips. Tap the no-entry button: the skeleton, dots and dashed lines go and the tips stay. Then Share > 'Save video with tips, no skeleton' and check the saved video has captions but no skeleton. Tap the pencil button: the correction menu opens below it. Before merging, update PR #59's description to say Android is included (commit 108e6fd)."
               }
             },
             {
