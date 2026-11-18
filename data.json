@@ -1882,13 +1882,13 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "pr_opened",
-                "summary": "Added a one-tap \"Re-analyze as\u2026\" option to the clip view's existing More menu on iOS (a submenu: Straightaway / Curve / Start) and Android (flat rows like \"Re-analyze as a straightaway\"). Each row re-analyzes the clip as that kind through the same applyKind path as the What's-in-this-clip sheet, so the Pro check, re-analysis panel, saved choice and kept marks all match. Demos are excluded, and so are rows that would do nothing. The toolbar and header are untouched to avoid conflicts with t128.",
+                "status": "needs_austin",
+                "summary": "Not opening a PR: two PRs for this exact to-do are already open in moonyose/StrideLab, both from earlier runs today. #53 (claude/t127-reanalyze-as-menu) and #50 (claude/t127-reanalyze-as) each add a one-tap 'Re-analyze as\u2026' to the clip view's More menu on iOS (submenu) and Android (flat rows). Both go through the existing applyKind path and add tests in Tools/tests_kindui.swift and KindUiTest.kt. #53's body reports xcodebuild, verify.sh (ALL CHECKS PASSED) and the Gradle checks passing. Root cause, as found again here: with the record screen left on 'Start', RecordView.keep saves every take as",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T01:47+00:00",
+                "at": "2026-11-18T02:20+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/53",
-                "verified": "xcodebuild build (StrideLab, iPhone 17 Pro sim iOS 26.5): no errors. ./Tools/verify.sh: ALL CHECKS PASSED, with a new Re-analyze-as check. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: passed, with a new KindUiTest check. bend PROOF.bend: not run, the runner's allow-list refused it; no Bend files changed. No screenshot or hand tap-through, because the option only shows on",
-                "next_step": "On your phone, open a clip analyzed as a start, tap \u2026 (More) > Re-analyze as\u2026 > Straightaway. Check that it shows 'Re-analyzing as\u2026' and comes back with stride coaching."
+                "verified": "For my own unpushed copy, only a code review by the reviewer subagent was completed. My xcodebuild, verify.sh and Gradle runs were still in progress when I stopped, so I have no results from them. The checks for #53 are as reported in its own PR body. The bend CLI isn't installed on the runner, and no .bend file changed.",
+                "next_step": "Austin: merge one of #53 or #50 and close the other. They are duplicates. #53 is the newer one and lists its checks. Then on your phone: open a clip analyzed as a start, tap \u2026 > Re-analyze as\u2026 > Straightaway, and confirm 'Re-analyzing as a stride' shows and the clip comes back with stride coaching."
               }
             },
             {
@@ -1902,13 +1902,13 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "pr_opened",
-                "summary": "Clip view now has two large buttons side by side at the top right. The skeleton switch (running figure with a red no-symbol) hides the bones, joint dots, lit limb and rings, pulse ring, and dotted target and guide lines, keeping the runner and the tip bubble. It is persisted, and saved videos, library saves and 'Share this frame' follow it. Edit (running figure with a pencil) opens the frame-edit menu under it and replaces the small nav-bar pencil. The skeleton always shows while placing or moving joints. On demos only the rings and lines hide, because the figure is the runner. Mirrored in the",
+                "status": "needs_austin",
+                "summary": "I didn't open a PR because two open PRs for this to-do already exist from earlier runs today: #51 (claude/t128-skeleton-toggle) and #52 (claude/t128-skeleton-switch-edit). Both do the same thing on iOS and Android: two big buttons at the top right of the video, a skeleton switch (stick figure with a red no-symbol) and Edit (figure with a pencil) that replaces the small pencil in the nav bar. Turning the skeleton off hides the bones, joint rings, dotted target lines, beginner guides and the tip pulse ring, and keeps the runner and the tips. Saved videos follow the switch. I built a third versio",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T01:47+00:00",
+                "at": "2026-11-18T02:20+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/52",
-                "verified": "Passed: xcodebuild for the iPhone 17 Pro sim (BUILD SUCCEEDED); ./Tools/verify.sh (ALL CHECKS PASSED, with a new exportSkeletonOffTest); Android :core:test :app:testDebugUnitTest :app:assembleDebug (BUILD SUCCESSFUL, with a matching Kotlin test). Checked in the simulator on the Model Start demo with the switch on and off. bend PROOF.bend not run: bend CLI not installed (no Bend-twinned rule change",
-                "next_step": "On iPhone, open one of your own analyzed clips. Tap the crossed-out runner at the top right: the skeleton and dotted lines should disappear and the tips should stay. Then Share > 'Save video' and confirm the video in Photos has no skeleton. Tap the pencil-runner button: the edit menu should open under it."
+                "verified": "My own version of the same change, which was not pushed: the iOS xcodebuild Simulator build (iPhone 17, scheme StrideLab) succeeded, ./Tools/verify.sh printed ALL CHECKS PASSED, and the Android Gradle checks (:core:test :app:testDebugUnitTest :app:assembleDebug) built successfully. The bend CLI isn't on the runner, so I didn't run PROOF.bend; no Bend-twinned rule was touched. I did not re-run #51 ",
+                "next_step": "Pick one of #51 or #52 and close the other. Then, on the phone, open an analyzed clip, tap the skeleton button (top right) and check that only the runner and the tip bubbles stay. Save a video from Share and check it has no skeleton. Tap Edit and check the correction menu opens under it."
               }
             },
             {
