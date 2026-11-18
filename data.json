@@ -1885,12 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: one-tap \"Re-analyze as\u2026\" is on master on iOS and Android, from PR #50 and PR #67, both merged Nov 18. You closed the later duplicate (#70) as superseded, so no new PR was opened.",
+                "summary": "Already shipped on master, on iOS and Android. PR #50 (moonyose/claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu. PR #67 (reanalyze-skeleton-toggle-beta, merged Nov 18, now origin/master cc7b90d) extended it to long recordings ('Re-analyze as straightaways' on the Split Starts and pass-picker screens) and to the results/finish view. Code: StrideLab/Playback/AnalysisPlayerView.swift (KindFlow.reanalyzeOptions menu section), KindLogic.swift, KindViews.swift (ReanalyzeCard), Split/SplitStartsView.swift (SplitModel",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T23:56+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read the code on master (cc7b90d). iOS has the player More-menu rows (KindFlow.reanalyzeOptions in AnalysisPlayerView.swift) and the ReanalyzeCard on the recording/pass screens (SplitStartsView.swift, PassPickerView.swift). Android has the same in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. No build was run because nothing changed.",
-                "next_step": "Mark this to-do done once the master build is on your phone. To check: open a straightaway clip that was recorded as Starts and tap More, then Re-analyze as straightaways. If it still misses something, edit the to-do to say what."
+                "at": "2026-11-18T23:58+00:00",
+                "verified": "Read origin/master (cc7b90d): the merge commits for #50 and #67 and the menu code in AnalysisPlayerView.swift lines 646-655. Grepped the iOS and Android sources for reanalyzeOptions and reanalyze. No build was run because nothing changed; the PR checks on #50 and #67 already ran the iOS and Android checks.",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone with the current TestFlight build: open a clip that was analyzed as Starts, tap the More (...) menu in the player, tap 'Re-analyze as a straightaway', and check that the 'Re-analyzing as a straightaway' step shows and the results switch to straightaway analysis. For a long recording, open the Starts split screen and use the 'Re-analyze as stra"
               }
             },
             {
@@ -1905,12 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #51 (merged today) added the skeleton on/off switch (stick figure with a red no-symbol, also applies to the saved video and shared frame) and a bigger Edit button beside it, on iOS and Android. PR #67 merged on top and kept both. No new PR needed.",
+                "summary": "Already done and merged. PR #51 (branch claude/t128-skeleton-toggle, merged 2026-11-18 15:35 UTC) added the skeleton on/off switch (stick figure with a red no-symbol) and a bigger Edit button (runner with a pencil). They sit side by side at the top right of the clip view, on iOS and Android, and the switch also applies to Save video and Share this frame. PR #67 merged on top and kept #51's versions. On current master I confirmed: iOS AnalysisPlayerView has hideSkeleton/skeletonHidden gating the overlay, guides, leader and still export, and the share labels; SkeletonVideoExporter takes a skelet",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T23:56+00:00",
+                "at": "2026-11-18T23:58+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Checked current master (cc7b90d): the hideSkeleton switch and Edit button are in AnalysisPlayerView.swift and in Android PlayerStage.kt/PlayerState.kt, and export follows the switch on both. Nothing was rebuilt this run because nothing changed.",
-                "next_step": "On your phone, open a clip, tap the stick-figure-with-red-circle button at the top right, and check that only the runner and tips show. Save the video and check it matches. Then tap the big Edit button beside it."
+                "verified": "Read the code on origin/master (cc7b90d) for both platforms. #51's own checks passed: xcodebuild simulator build, ./Tools/verify.sh ALL CHECKS PASSED, and the Android gradle checks. bend was not installed. I re-ran nothing because nothing changed.",
+                "next_step": "On the phone, open one of your own clips. Tap the stick-figure button at the top right: the skeleton, dotted lines and circles should disappear, leaving the runner and the tips. Then Share > Save video should save without the skeleton. Mark t128 done in the tracker, since it seems to have been re-queued after #51 merged."
               }
             },
             {
