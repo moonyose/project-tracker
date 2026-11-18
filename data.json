@@ -1885,12 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: \"Re-analyze as...\" is on master on iOS and Android. PR #50 added it to the player's More menu, and PR #67 (merged Nov 18) added it to the review screen, pass picker and finish card. #67 also fixed the saved scan being reused for the wrong kind, which is why your straightaways were only looked through for starts.",
+                "summary": "Already shipped: one-tap \"Re-analyze as\u2026\" is on master on iOS and Android, from PR #50 and PR #67, both merged Nov 18. You closed the later duplicate (#70) as superseded, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T23:55+00:00",
+                "at": "2026-11-18T23:56+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Confirmed that master (cc7b90d) has the merged PRs #50 and #67 and the Re-analyze as code in Swift and Kotlin, with tests in tests_kindui.swift, tests_passes.swift, KindUiTest and PassesTest. No new build was run because nothing was changed.",
-                "next_step": "Install the current master build. Open the Nov 17 straightaway clip that was analyzed as starts, tap Re-analyze as straightaways (on the review screen or in the player's More menu), and check that passes are found."
+                "verified": "Read the code on master (cc7b90d). iOS has the player More-menu rows (KindFlow.reanalyzeOptions in AnalysisPlayerView.swift) and the ReanalyzeCard on the recording/pass screens (SplitStartsView.swift, PassPickerView.swift). Android has the same in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. No build was run because nothing changed.",
+                "next_step": "Mark this to-do done once the master build is on your phone. To check: open a straightaway clip that was recorded as Starts and tap More, then Re-analyze as straightaways. If it still misses something, edit the to-do to say what."
               }
             },
             {
@@ -1905,12 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (claude/t128-skeleton-toggle, commit 580413f) merged 2026-11-18 15:35 UTC: a skeleton on/off switch (stick figure with red no-symbol) and a bigger Edit button side by side at the top right of the clip view. When the switch is on, the skeleton, guides, target lines, joint ring and tip leader are hidden, leaving only the runner and the tips. The setting is saved (stridelab.hideSkeleton), and the saved skeleton video and shared frame follow it. It was also built in the Android port. PR #67 (cc7b90d) later merged on top and kept #51's switch and Edit button. hideSkeleton is",
+                "summary": "Already done: PR #51 (merged today) added the skeleton on/off switch (stick figure with a red no-symbol, also applies to the saved video and shared frame) and a bigger Edit button beside it, on iOS and Android. PR #67 merged on top and kept both. No new PR needed.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T23:55+00:00",
+                "at": "2026-11-18T23:56+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Checked git history and gh pr view 51 (MERGED), and grepped for hideSkeleton on current master (iOS and Android). No build was run, because no code changed.",
-                "next_step": "On your phone, open a clip. At the top right, tap the stick-figure switch: the skeleton, dotted lines and circles should disappear, leaving the runner and the tips. Save the skeleton video and check it has no skeleton either. Tap the big Edit button and the mark menu should open. If something about #51 isn't right, edit the to-do to say what."
+                "verified": "Checked current master (cc7b90d): the hideSkeleton switch and Edit button are in AnalysisPlayerView.swift and in Android PlayerStage.kt/PlayerState.kt, and export follows the switch on both. Nothing was rebuilt this run because nothing changed.",
+                "next_step": "On your phone, open a clip, tap the stick-figure-with-red-circle button at the top right, and check that only the runner and tips show. Save the video and check it matches. Then tap the big Edit button beside it."
               }
             },
             {
