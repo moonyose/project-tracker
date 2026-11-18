@@ -1882,12 +1882,13 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "needs_austin",
-                "summary": "Not opening another PR: moonyose/StrideLab already has FIVE open PRs for t127 from earlier scheduled runs (#50 claude/t127-reanalyze-as, #53 claude/t127-reanalyze-as-menu, #55 claude/t127-reanalyze-suggestion, #60 claude/t127-reanalyze-as-run, #62 claude/t127-reanalyze-one-tap). The task keeps being re-queued because none has been merged or marked done. This run re-implemented it (KindFlow.reanalyzeOptions + a 'Re-analyze as\u2026' submenu in the player's More menu calling the existing applyKind flow, flat rows on Android, tests in tests_kindui.swift / KindUiTest.kt). That matches #50's approach an",
+                "status": "pr_opened",
+                "summary": "Clips recorded with the record screen on 'Starts' are saved as a user-chosen start, so the kind question is skipped and the clip is coached as a start. The player now shows 'Analyzed as a start, but this looks like a straightaway.' with a one-tap 'Re-analyze as a straightaway' and 'Keep start' when the chosen kind and a confident detection disagree, and the More menu has a 'Re-analyze as\u2026' entry. iOS and Android both.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T10:33+00:00",
-                "verified": "This run's local implementation: ./Tools/verify.sh ALL CHECKS PASSED (5 new re-analyze-as checks); xcodebuild build StrideLab for the iPhone 17 Pro Max (iOS 26.5) simulator, no errors; android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (KindUiTest 12/12, debug APK built); the bend CLI isn't installed on the runner, so PROOF.bend wasn't run (no Bend rule changed). The rev",
-                "next_step": "Pick one of PRs #50/#53/#55/#60/#62 (e.g. #50, a minimal More-menu submenu, or #55 if you want a wrong-kind suggestion too), merge it, close the others, and mark t127 done in the tracker so it stops being re-queued. Phone check after merging: open a clip filmed on Starts, tap More (\u2026) > Re-analyze as\u2026 > Stride (straight), and confirm 'Re-analyzing as a stride' appears and the coaching shows accele"
+                "at": "2026-11-18T11:44+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/63",
+                "verified": "./Tools/verify.sh ALL CHECKS PASSED (new suggestion tests); xcodebuild build (iPhone 17 Pro sim) no errors; android :core:test :app:testDebugUnitTest :app:assembleDebug BUILD SUCCESSFUL; reviewer found no defects. bend CLI not on runner (no .bend files changed). No screenshot: no debug launch option sets up a mismatched clip.",
+                "next_step": "On the phone: film a straightaway with the record screen on Starts (or open the Nov 17 clip), open it, check the 'looks like a straightaway' banner, and tap 'Re-analyze as a straightaway'. Also try More (\u2026) \u2192 Re-analyze as\u2026 on any clip."
               }
             },
             {
@@ -1901,12 +1902,13 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "needs_austin",
-                "summary": "Built and verified the feature again (iOS + Android), but did NOT open a PR: moonyose/StrideLab already has 9 open PRs for this same task from earlier scheduled runs (#51, #52, #54, #56, #57, #58, #59, #61; #61 is iOS-only) plus 10 claude/t128-* branches. Each run re-implements t128 because the tracker never marks it as in review, so another duplicate PR would only add noise. This run's version (local commit on branch claude/t128-skeleton-toggle in the runner's clone, not pushed): two 60x54 buttons side by side in the top-right of the clip view, a skeleton switch (figure.stand + red nosign; re",
+                "status": "pr_opened",
+                "summary": "Clip view adds two 54pt buttons side by side at the top right on iOS and Android: a skeleton switch (running figure with a red no-symbol) and Edit (figure with a pencil), which replaces the small nav-bar pencil. With the skeleton off, only the runner and tip bubbles show, and the player's video save and 'Share this frame' follow the switch. Demos have no switch.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T10:33+00:00",
-                "verified": "iOS: xcodebuild build (scheme StrideLab, iPhone 17 Pro sim, iOS 26.5) BUILD SUCCEEDED. ./Tools/verify.sh printed ALL CHECKS PASSED, including a new test for the preference. Simulator screenshots of the demo clip with the switch on and off looked right. Android: ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug BUILD SUCCESSFUL. bend CLI not on the runner; no Bend rules changed. A revi",
-                "next_step": "Pick one of the open t128 PRs (#51, #52, #54, #56, #57, #58, #59, #61), test it on your phone (open a real clip, tap Hide and Show, then Share > Save video with the switch off), merge it, and close the rest. Then mark t128 done or in review in the tracker so the scheduled run stops picking it up again."
+                "at": "2026-11-18T11:44+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/64",
+                "verified": "xcodebuild build (iPhone 17 Pro sim, iOS 26.5) BUILD SUCCEEDED; ./Tools/verify.sh ALL CHECKS PASSED; android :core:test :app:testDebugUnitTest :app:assembleDebug BUILD SUCCESSFUL; Edit button seen on a demo clip in the simulator; reviewer's one defect (menu overlapping buttons) fixed. Not seen: the switch on real footage (none on runner). bend CLI not on runner (no Bend-twinned rule changed). Olde",
+                "next_step": "On your phone, open one of your own clips: tap the red no-symbol button (skeleton, dots, rings and dashed lines vanish, tips stay); with it off, Share > 'Save video with tips' and check Photos has captions but no skeleton; tap the pencil button and the frame menu opens just below the buttons."
               }
             },
             {
