@@ -733,7 +733,16 @@
    "session": "62c2903c-9c1a-4f79-84b1-4bb6e51d79df",
    "tasks": 2,
    "run_id": "44404908246"
+  },
+  {
+   "at": "2026-11-18T21:50+00:00",
+   "cost_usd": 0.6705,
+   "auth": "subscription",
+   "turns": 1,
+   "session": "b8e68bf1-da34-4889-9e5f-3a17fd796d58",
+   "tasks": 2,
+   "run_id": "44405232322"
   }
  ],
- "subscription_notional_usd": 220.656
+ "subscription_notional_usd": 221.3265
 }
