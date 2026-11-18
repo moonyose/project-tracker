@@ -1882,13 +1882,11 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "needs_austin",
-                "summary": "t127 already has two open PRs from earlier runs today: #53 (https://github.com/moonyose/StrideLab/pull/53, ready for review, menu-only one-tap 'Re-analyze as\u2026' on iOS and Android) and #55 (https://github.com/moonyose/StrideLab/pull/55, draft, the same menu plus a 'This looks like a straightaway, re-analyze' suggestion chip). This run built the same menu-only change again before it found them, so it pushed nothing and opened no PR, to avoid a third duplicate. The duplicate work did pass ./Tools/verify.sh and the iOS simulator build, which suggests the menu approach in #53 is sound. Austin needs",
+                "status": "retry",
+                "summary": "The run ended before this task finished (time or budget cap). Will try once more next run.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T04:48+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/53",
-                "verified": "On this run's duplicate (local only, never pushed): ./Tools/verify.sh printed ALL CHECKS PASSED, including the new re-analyze-option checks. xcodebuild build for the StrideLab scheme on the iPhone 17 Pro simulator (iOS 26.5): BUILD SUCCEEDED. Android Gradle failed the first time on a Gradle cache lock held by the parallel t128 worker. The retry hadn't finished when the run ended. The bend CLI is n",
-                "next_step": "Choose between PR #53 (a 'Re-analyze as\u2026' entry in the More menu) and PR #55 (the same menu plus a suggestion chip when the detector disagrees with the chosen kind), and close the other. To check on your phone: open a straightaway clip that was recorded as Starts, tap More (\u2026), then Re-analyze as\u2026, then Straightaway. It should show 'Re-analyzing as a stride' and come back as a straightaway."
+                "attempts": 1,
+                "at": "2026-11-18T04:59+00:00"
               }
             },
             {
@@ -1902,12 +1900,11 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "needs_austin",
-                "summary": "Built the feature again (iOS + Android) and it passes every check, but did not open a PR: four open PRs for t128 already exist from earlier runs today (#51 claude/t128-skeleton-toggle, #52 claude/t128-skeleton-switch-edit, #54 claude/t128-skeleton-edit-buttons, #56 claude/t128-skeleton-toggle-edit). A fifth would be a duplicate. Remote branch names collided too, and I didn't force-push branches I didn't create. Nothing was pushed from this run. This run's version, unpushed: two 52pt glass buttons at the top right of the clip view. Skeleton switch: stick figure with a red no-symbol. Edit: stick",
+                "status": "retry",
+                "summary": "The run ended before this task finished (time or budget cap). Will try once more next run.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T04:48+00:00",
-                "verified": "Verified on this run's unpushed copy: iOS xcodebuild build on the iPhone 17 Pro (iOS 26.5) simulator with Xcode 26.6: BUILD SUCCEEDED. ./Tools/verify.sh: ALL CHECKS PASSED, including a new 'the skeleton is shown until turned off' check. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL, with the same pref test added to GuidesTest. bend CLI not installed on th",
-                "next_step": "Austin: four duplicate t128 PRs are open (#51, #52, #54, #56). Pick one to review and merge, close the others, and mark t128 done in the tracker so the scheduled run stops picking it up again. To check the one you keep on a phone: open an analysed clip of your own; at the top right there should be two big round buttons. Tap the stick-figure-with-red-circle button: the skeleton, rings and dotted li"
+                "attempts": 1,
+                "at": "2026-11-18T04:59+00:00"
               }
             },
             {
