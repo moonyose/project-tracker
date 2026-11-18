@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so this run changed nothing. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18 15:35 UTC) added a one-tap 'Re-analyze as a straightaway / start / curve (Beta)' item to the player's More menu on iOS (AnalysisPlayerView.swift, KindLogic.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 (merge cc7b90d) added Re-analyze buttons on the recording review, pass picker and finish card. It also made a recording filmed as starts get looked through for passes again once it is r",
+                "summary": "Already shipped on master today, on iOS and Android. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' rows to the player's More menu, and PR #67 (reanalyze-skeleton-toggle-beta, merged Nov 18) added a 'Re-analyze as straightaways / curves / starts' card on a long recording's review (SplitStartsView / SplitStartsScreen, PassPickerView / PassPickerScreen) plus a 'Filmed something else?' card on a finished clip (ResultsViews on both platforms). The likeliest mix-up comes first: Starts goes to Straightaways first. No new branch or PR was opened, so nothing would d",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T22:51+00:00",
-                "verified": "Checked on origin/master cc7b90d: the reanalyze code is in the menus on both platforms (iOS AnalysisPlayerView.swift:649 and ResultsViews.swift:962; Android AnalysisPlayerScreen.kt:526 and ResultsViews.kt:1286). gh shows PR #50 as MERGED. I did not re-run the build, verify.sh or Gradle: this run's sandbox denied running ./Tools/verify.sh, and there was no change to verify.",
-                "next_step": "On the phone, with a build that includes PR #50 and #67: open a clip analyzed as Starts, tap More (...), tap 'Re-analyze as a straightaway' and check that it re-runs as a straightaway. Then close this to-do."
+                "at": "2026-11-18T22:53+00:00",
+                "verified": "Read origin/HEAD (cc7b90d): KindFlow.reanalyzeOptions, reanalyzeChoices and the titles are in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt. The menu rows are in AnalysisPlayerView.swift and AnalysisPlayerScreen.kt, the recording-review card is in SplitStartsView.swift:1420 and SplitStartsScreen.kt:383, and tests are in Tools/tests_kindui.swift and KindUiTest.kt. I ",
+                "next_step": "On the next TestFlight build: record a straightaway with Starts still picked. On the recording review, tap 'Re-analyze as straightaways' and confirm the runs are found. Then open a finished clip analysed as a start, tap More > 'Re-analyze as a straightaway', and confirm it comes back as a stride analysis. If that works, mark t127 done."
               }
             },
             {
@@ -1904,12 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #51 (https://github.com/moonyose/StrideLab/pull/51, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button', merged 2026-11-18 15:35 UTC) added it, and PR #67 merged it with the t127 work. iOS: AnalysisPlayerView.skeletonButtons puts two 54pt buttons side by side at the top right. One is the toggle, figure.stand with a red circle.slash and a red ring when the skeleton is hidden. The other is Edit, a runner figure with a pencil that opens the frame's edit menu. The toggle is stored in CoachingPrefs.hideSkeletonKey. Hiding it drops the skeleton, ",
+                "summary": "Already shipped. PR #51 (https://github.com/moonyose/StrideLab/pull/51, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button') merged 2026-11-18, and merge #67 kept it. On master the clip view has two 54 pt buttons side by side at the top right. One is the skeleton switch: a stick figure with a red circle.slash, stored in UserDefaults 'stridelab.hideSkeleton', which hides the skeleton and guides in the player and in saved videos and stills. The other is Edit: a runner with a pencil, which opens the edit menu. Android has the same switch (CoachGuides.kt, PlayerState.kt,",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T22:51+00:00",
+                "at": "2026-11-18T22:53+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read current origin/HEAD. The iOS code is in StrideLab/Playback/AnalysisPlayerView.swift (lines 1175-1220, the 1292 skeletonHidden check, and the 572-600 export labels) and StrideLab/Playback/CoachGuides.swift. The Android code is in android/app/.../ui/player/PlayerState.kt, PlayerStage.kt and AnalysisPlayerScreen.kt. gh shows PR #51 as MERGED. I ran no builds because nothing changed.",
-                "next_step": "On the current TestFlight build, open a real clip. Tap the crossed-out figure at the top right and check that the skeleton and dotted lines disappear but the tips stay. Then Share > Save video and check the saved video has no skeleton. Tap the pencil-figure button next to it and check that the edit menu opens. If this is done, mark t128 complete in the tracker."
+                "verified": "Read the code on origin/master (cc7b90d). The two buttons are in AnalysisPlayerView.swift skeletonButtons (around line 1181). The export path checks CoachingPrefs.hidesSkeleton() in ResultsViews.swift and AnalysisPlayerView.swift. Android files reference the same setting. Confirmed PR #51 is MERGED with gh. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build that includes #51/#67: open a clip and tap the stick-figure button (top right) to hide the skeleton, then save the video and check the export shows only the runner and the tips. Then tap the Edit button beside it and check the edit menu opens. If this to-do was meant to change the existing design, edit the task to say what should be different."
               }
             },
             {
