@@ -1883,11 +1883,12 @@
               "owner": "austin",
               "agent": {
                 "status": "needs_austin",
-                "summary": "I didn't open a PR: five open PRs for t127 already exist from earlier runs (#50, #53, #55, #60, #62), and a sixth would add to the pile. I rebuilt the feature independently to check the approach. It adds a 'Re-analyze as\u2026' submenu to the clip screen's More menu (flat items on Android) that lists the other kinds, puts the detector's guess first as 'Straightaway (looks like one)', and re-analyzes in one tap through the existing applyKind. The iOS simulator build, ./Tools/verify.sh (ALL CHECKS PASSED) and the Android Gradle checks all passed. Nothing was pushed: the push was rejected because clau",
+                "summary": "No new PR opened: five open PRs for t127 already exist from earlier runs today (#50, #53, #55 draft, #60, #62), so a sixth would be a duplicate. This run built the same feature again: a 'Re-analyze as\u2026' submenu in the player's More menu on iOS, and matching menu rows on Android, both using the existing applyKind path. It passed ./Tools/verify.sh (ALL CHECKS PASSED), the iOS simulator build, and the Android Gradle checks. Both branch names this run tried (claude/t127-reanalyze-as, claude/t127-reanalyze-as-menu) already belong to #50 and #53, so nothing was pushed. The tracker seems to be re-run",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T09:09+00:00",
-                "verified": "Simulator build of StrideLab on iPhone 17 with Xcode 26.6 succeeded. ./Tools/verify.sh printed ALL CHECKS PASSED, including the new Re-analyze-as checks. Android :core:test, :app:testDebugUnitTest and :app:assembleDebug passed (KindUiTest 12/12). bend PROOF.bend was not run because the bend CLI check was denied on the runner; no .bend files changed. A reviewer subagent found no defects.",
-                "next_step": "Pick one of PRs #50, #53, #55, #60 and #62 to merge and close the others. #55 also adds a wrong-kind suggestion, which may help most with the Nov 17 case. Then remove t127 from the queue so later runs stop opening new PRs for it."
+                "at": "2026-11-18T09:41+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "[\"./Tools/verify.sh: ALL CHECKS PASSED (including the new 'Re-analyze as\u2026' checks)\", 'xcodebuild -scheme StrideLab build, iPhone 17 Pro simulator (iOS 26.5): succeeded', 'android: ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed (KindUiTest had 0 failures; the first try hit a Gradle cache lock held by the concurrent t128 build)', \"bend PROOF.bend: not run, because the bend CLI",
+                "next_step": "Pick one of the open t127 PRs (#50 is the smallest at 77 lines; #53 is 95 lines; #60 and #62 are larger; #55 is a draft with a wrong-kind suggestion) and close the others. Then mark t127 as having a PR in the tracker so it stops being re-run. Do the same for t128's PRs. Phone check for the one you keep: record straightaways with Filming set to Start, open the clip, tap More > Re-analyze as\u2026 > Stra"
               }
             },
             {
@@ -1902,12 +1903,11 @@
               "owner": "austin",
               "agent": {
                 "status": "needs_austin",
-                "summary": "PR #51 (https://github.com/moonyose/StrideLab/pull/51), opened earlier today by another run, already does this task on iOS and Android, so I did not open a second PR. I had already built an alternative before I found it and pushed it as branch claude/t128-skeleton-switch (no PR). It has the same saved switch, also applied to export, and the same two buttons side by side at the top right. The differences: the Edit button (figure with a pencil) goes straight into skeleton editing on the current frame and the small toolbar pencil stays; the tip leader line stays visible with the switch off; the s",
+                "summary": "Implemented and verified the skeleton on/off switch plus a bigger Edit button on the clip view, on iOS and Android, but did not open a PR: moonyose/StrideLab already has 8 open PRs for this same task from earlier runs (#51, #52, #54, #56, #57, #58, #59, #61). A 9th would only add to the pile. This run's work is pushed as branch claude/t128-skeleton-toggle-run10 (commit 61a79c3). It adds a persisted switch (stridelab.showSkeleton) and a ClipOverlayButtons pair at the right of the top row on both platforms. The switch is a runner with a red no-symbol; Edit is a runner with a pencil and opens the",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T09:09+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "On branch claude/t128-skeleton-switch: xcodebuild for the iPhone 17 Pro simulator (iOS 26.5) built with no errors, including after the last edit. Android :core:test :app:testDebugUnitTest :app:assembleDebug passed on the final commit. ./Tools/verify.sh did not finish in time (the first run hit its time limit while the other worker was building at the same time); the change touches no engine logic.",
-                "next_step": "Choose one: review and merge PR #51, or close it and open a PR from claude/t128-skeleton-switch if you prefer Edit going straight into skeleton editing with the small pencil kept. Then on your phone, open one of your clips, tap the red no-symbol figure (the skeleton, dashed guides and rings go, the tips stay), save a video with tips, and check it has no skeleton."
+                "at": "2026-11-18T09:41+00:00",
+                "verified": "['iOS: xcodebuild build, scheme StrideLab, iPhone 17 Pro simulator (iOS 26.5), Xcode 26.6: succeeded, no errors', './Tools/verify.sh: ALL CHECKS PASSED (includes new pref test: skeleton shown until switched off)', 'Android: ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL (GuidesTest extended with the same pref check)', 'Simulator screenshots of the demo clip with t",
+                "next_step": "Pick one t128 PR to keep and close the rest (#51, #52, #54, #56, #57, #58, #59, #61). If you want this run's version (iOS + Android, demos handled), open a PR from claude/t128-skeleton-toggle-run10. Then check it on your phone: open one of your own clips, tap the red-crossed runner tile at the top right and check that only the runner and the tip bubble remain, then Share > Save video without skele"
               }
             },
             {
