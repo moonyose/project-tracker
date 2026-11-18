@@ -1883,12 +1883,12 @@
               "owner": "austin",
               "agent": {
                 "status": "pr_opened",
-                "summary": "Root cause: a recording made with the record screen on Starts is saved as a chosen start, so auto-cut never looks for passes and the 'No starts found' review only offered analyzing it as a start or marking runs by hand. Added one-tap 'Re-analyze as Straightaway' / 'Re-analyze as Curve' on the split review (short recordings are analyzed whole as that kind, long ones are re-scanned as a run so the pass picker appears), plus a 'Re-analyze as\u2026' option in the player's More menu. Done on iOS and Android.",
+                "summary": "Cause: a take filmed with the record screen's Filming chip on Start is saved with Start as the athlete's own choice, so it is never asked about and could only be fixed via the 'What's in this clip' sheet. Added, on iOS and Android: (1) a banner over the clip ('Analyzed as a start, but this looks like a straightaway.') with a one-tap 'Re-analyze as a straightaway' button, shown only when the kind came from the record screen and the detector confidently disagrees; it is gone once a kind is picked on the clip or the banner is closed (remembered per clip in user defaults, clip format unchanged); (",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T07:28+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/60",
-                "verified": "iOS simulator build succeeded (iPhone 17 Pro); ./Tools/verify.sh ALL CHECKS PASSED, including the new re-analyze tests; Android :core:test :app:testDebugUnitTest :app:assembleDebug BUILD SUCCESSFUL (KindUiTest 12/12). bend PROOF.bend not run because the bend CLI is not on the runner (no Bend rule changed). No screenshot: the split review needs a real video with a person in it. Pushed as claude/t12",
-                "next_step": "On iPhone: record straightaway passes with the record screen left on Starts, then on the review tap 'Re-analyze as Straightaway' and confirm it is analyzed or offered as straightaway passes. Also try \u22ef > Re-analyze as\u2026 > Curve on an analyzed clip."
+                "at": "2026-11-18T08:24+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/62",
+                "verified": "iOS xcodebuild (generic iOS Simulator, scheme StrideLab): BUILD SUCCEEDED. ./Tools/verify.sh: ALL CHECKS PASSED (4 new kind-UI checks). Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL (new KindUiTest checks). bend CLI not installed, so PROOF.bend not run (no Bend-twinned rule changed). Reviewer subagent finding (banner nagging after a deliberate pick) fixed",
+                "next_step": "On a phone: set Filming to Start, film strides on the straight, open the clip. The banner should say it looks like a straightaway. Tap 'Re-analyze as a straightaway' and check it re-analyzes as a stride and the banner goes away. Then try More > Re-analyze as\u2026 > Start."
               }
             },
             {
@@ -1903,12 +1903,12 @@
               "owner": "austin",
               "agent": {
                 "status": "pr_opened",
-                "summary": "iOS and Android: added two large buttons to the clip view's top-right corner: a skeleton toggle (running figure with a red no-entry sign) and Edit (figure with a pencil). Edit replaces the small top-bar pencil and opens the correction menu just below itself. With the skeleton hidden, nothing is drawn on the body (bones, joints, dashed lines and circles, guides, target line); only the runner and the tips remain. The setting is saved (stridelab.showSkeleton, on by default). Videos saved from the clip view and 'Share this frame' follow it; tip captions, leaders and the badge stay. The Library's '",
+                "summary": "iOS: two 52pt buttons at the top right of the clip view, side by side. One is a skeleton on/off toggle (stick figure with a red no-symbol). The other is Edit (stick figure with a pencil); it opens the press-and-hold edit menu and replaces the small toolbar pencil. With the toggle off, the skeleton, joint circles, beginner guides and tip leader lines and rings are hidden; the tips and the runner stay. The skeleton comes back while placing joints by hand, and demos keep their figure. The setting is saved and also applies to the skeleton video save and to share-this-frame. Android was not changed",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T07:28+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/59",
-                "verified": "iOS: xcodebuild simulator build (iPhone 17 Pro, iOS 26.5) had no errors; ./Tools/verify.sh printed ALL CHECKS PASSED, including the new exportSkeletonHiddenTest. A reviewer subagent's two findings on the iOS diff were fixed and mirrored on Android. Android: ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug reported BUILD SUCCESSFUL, and the new SkeletonToggleTest ran 2 tests with 0 fa",
-                "next_step": "On iPhone and Android, open one of your own analysed clips. Tap the no-entry button: the skeleton, dots and dashed lines go and the tips stay. Then Share > 'Save video with tips, no skeleton' and check the saved video has captions but no skeleton. Tap the pencil button: the correction menu opens below it. Before merging, update PR #59's description to say Android is included (commit 108e6fd)."
+                "at": "2026-11-18T08:24+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/61",
+                "verified": "xcodebuild build of scheme StrideLab for the iPhone 17 Pro (iOS 26.5) simulator succeeded. ./Tools/verify.sh exited 0 with ALL CHECKS PASSED, including a new check that the skeleton shows by default. Launched the demo in the simulator and took a screenshot: the buttons show at the top right. The screenshot is not committed because writing under .claude/ was refused. Taps were not driven in the sim",
+                "next_step": "Pick one of the duplicate t128 PRs (#51, #52, #54, #56-#59, #61) and close the rest. To check #61 on a phone: open a clip, tap the crossed-out figure at the top right, and the skeleton, circles and dotted lines should disappear while the tips stay. Then go to Share > Save video with tips; the saved video should have no skeleton. Note: #61 is iOS-only, but project notes ask for Android too. If you "
               }
             },
             {
