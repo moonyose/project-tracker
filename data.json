@@ -1882,13 +1882,12 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "pr_opened",
-                "summary": "Added a one-tap \"Re-analyze as\u2026\" (Straightaway / Curve / Start) on the look-for-starts screen, which looks through the recording again as the new kind, and in the clip player's More menu. Same change on iOS and Android.",
+                "status": "needs_austin",
+                "summary": "Not opening another PR: seven open PRs already implement this to-do (#50, #53, #55, #60, #62, #63, #65), apparently one per scheduled run, because the task stays open until one is merged. This run built the same feature again (a 'Re-analyze as\u2026' submenu in the player's More menu with Straightaway/Curve/Start, one tap each, through the existing applyKind path, mirrored on Android). It passed ./Tools/verify.sh (ALL CHECKS PASSED), the xcodebuild simulator build and the Android Gradle checks. It was not pushed, so there would be no eighth duplicate.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T12:34+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/65",
-                "verified": "iOS xcodebuild build OK (iPhone 17 Pro sim, iOS 26.5) on the final code. Tools/verify.sh and the Android Gradle checks were started but had not finished when the run's budget ran out, so neither is claimed; the PR checks workflow runs both. bend CLI not on the runner (no .bend change). A reviewer subagent read the diff; its one finding (Android cancelling the new split screen) was fixed. No screen",
-                "next_step": "Wait for the PR checks to go green. Then on your phone: leave the recorder on Starts, film a straightaway, tap Re-analyze as\u2026 > Straightaway on the look-for-starts screen, and check that it goes to the passes or a straightaway analysis."
+                "at": "2026-11-18T13:08+00:00",
+                "verified": "This run's local copy (not pushed): ./Tools/verify.sh exited 0 with ALL CHECKS PASSED, including a new Re-analyze-as test. xcodebuild -scheme StrideLab built for the iPhone 17 Pro simulator (iOS 26.5) with no errors. The build ran before a one-line filter tweak, which verify.sh then compiled and passed. cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug passed. bend CLI i",
+                "next_step": "Pick one of the open t127 PRs (for example #50, the simplest: a submenu in the player's More menu, or #55/#63 if you want the app to also suggest when the chosen kind looks wrong). Merge it, close the others, and mark t127 done so the scheduled run stops re-opening it. Phone check after merging: open a clip recorded on Starts, tap the ... menu, tap Re-analyze as\u2026 then Straightaway, and confirm it "
               }
             },
             {
@@ -1902,12 +1901,13 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "needs_austin",
-                "summary": "Built the skeleton on/off switch and a bigger Edit button (top right of the clip view, also applies to export) on iOS and Android, but didn't open a PR: StrideLab already has 5 open PRs for this to-do (#56, #57, #58, #59, #61) from earlier runs. This run's version is on branch claude/t128-skeleton-toggle-run12.",
+                "status": "pr_opened",
+                "summary": "Added two big buttons side by side at the top right of the clip view on iOS and Android. The skeleton toggle (stick figure with a red no-symbol circle) hides the skeleton, joints, rings, target lines, guides and the tip's dotted leader, leaving the runner and the tip bubbles; it is remembered and also applies to saved videos (player and library) and Share this frame. The Edit button (stick figure with a pencil) replaces the small nav-bar pencil. Joint correction always shows the skeleton, and demos keep their drawn athlete. NOTE: t128 already had 9 other open PRs from earlier runs (#51, #52, #",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T12:34+00:00",
-                "verified": "xcodebuild build (scheme StrideLab, generic iOS Simulator) OK; android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug OK; new preference tests on both platforms; reviewer's 3 findings fixed. Tools/verify.sh did not finish (timed out), so no result; bend CLI not on runner (no Bend rules changed).",
-                "next_step": "Pick one of PRs #56, #57, #58, #59, #61 (or open one from branch claude/t128-skeleton-toggle-run12), close the rest, and mark t128 done or link the PR in the tracker so it stops being re-run."
+                "at": "2026-11-18T13:08+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/66",
+                "verified": "Passed: the iOS xcodebuild simulator build (Xcode 26.6, iPhone 17 Pro iOS 26.5) with no errors; ./Tools/verify.sh (ALL CHECKS PASSED); and the Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug, which produced the debug APK. Two earlier Gradle runs timed out on a cache lock held by the other worker's build; the third passed. bend PROOF.bend was not run because the bend CLI isn'",
+                "next_step": "On a phone, open an analyzed clip you filmed. Tap the red no-symbol button: the skeleton and dotted lines should vanish while the tips stay. Save a video from Share: it should show no skeleton. Tap the pencil button: the correction menu should open under it. Then pick one of the t128 PRs to merge and close the others."
               }
             },
             {
