@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the clip player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions in KindLogic.swift, Tools/tests_kindui.swift) and Android (AnalysisPlayerScreen.kt, KindLogic.kt, KindUiTest.kt). PR #67 (merge cc7b90d, now master HEAD) added 'Re-analyze as' buttons to the long recording's review, the pass picker and the finish card on both platforms. It also made a recording first scanned as starts get scanned again for",
+                "summary": "Already done on master, on iOS and Android. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' rows to the clip player's More menu. PR #67 (reanalyze-skeleton-toggle-beta, merged Nov 18) added a 'Re-analyze as ...' card on the results view and a 'Re-analyze as straightaways' card on the pass picker / split starts screen for long recordings. iOS: KindFlow.reanalyzeOptions/reanalyzeTitle/reanalyzeChoices in StrideLab/Playback/KindLogic.swift, used in AnalysisPlayerView.swift, ResultsViews.swift and Split/PassPickerView.swift. Android: the same in android/core/.../",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T23:51+00:00",
-                "verified": "Read origin/master at cc7b90d: git log, the commit stats for 1a499a2 and 82900ed, and grep for reanalyzeOptions, ReanalyzeCard and 'Re-analyze as' in StrideLab/ and android/. Both platforms have the feature. No code changed, so I did not run a build or the checks.",
-                "next_step": "On a TestFlight build from master: open a clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway'. Check that the re-analysis step shows and the result comes back as a straightaway. If something is still missing or wrong, edit the task and say what."
+                "at": "2026-11-18T23:53+00:00",
+                "verified": "Read origin/master at cc7b90d. git show --stat for merges fe99a5f (#50) and cc7b90d (#67) shows the feature in Swift and Kotlin with tests (Tools/tests_kindui.swift, KindUiTest.kt, tests_passes.swift, PassesTest.kt). Grep confirmed the menu rows and cards are wired into the iOS and Android player and pass-picker screens. Builds and checks were not re-run because nothing changed; the PR checks on #",
+                "next_step": "On the TestFlight build from master: open a clip that was analyzed as a start, tap More in the player, tap 'Re-analyze as a straightaway', and check that the results now show straightaway analysis. If this works, tick t127 off the list."
               }
             },
             {
@@ -1904,11 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f) added two large glass buttons side by side at the top right of the clip view. The first is a skeleton on/off switch: a stick figure with a red no-symbol, saved as the stridelab.hideSkeleton preference. When it is on, the skeleton, guides, target lines, joint ring and tip leader are hidden, leaving only the runner and the tips, and the saved skeleton video and shared frame follow the switch. The second is a bigger Edit button: a runner with a pencil that opens the mark menu. Both were mirrored in the Android ",
+                "summary": "Already shipped. PR #51 (claude/t128-skeleton-toggle, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button') merged to master at 2026-11-18T15:35Z on iOS and Android, and PR #67 kept it when it merged. On master, AnalysisPlayerView.skeletonButtons puts two 54 pt buttons side by side at the top right: a skeleton toggle (figure.stand with a red circle.slash, which hides the skeleton, guides and dots so only tips and the runner show; it is stored in CoachingPrefs.hideSkeletonKey, and export reads it through CoachingPrefs.hidesSkeleton(), so 'Save video with tips' follows ",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T23:51+00:00",
-                "verified": "Read origin/master at cc7b90d. AnalysisPlayerView.swift's skeletonButtons has the figure.stand + red circle.slash toggle and the figure.run + pencil Edit button, both at bigButton size. The export path in SkeletonVideoExporter honors the toggle. Android PlayerStage.kt has model.hideSkeleton with the same toggle. I ran no builds this time because the code didn't change. PR #51 was verified when it ",
-                "next_step": "On your phone, open any analyzed (non-demo) clip. Tap the stick-figure-with-red-slash button at the top right and confirm the skeleton and lines disappear but the tips stay. Export or share and confirm the video has no skeleton either. Tap the runner-with-pencil button and confirm the edit menu opens. If you wanted something different from what #51 shipped (icon style, size, placement), edit the t"
+                "at": "2026-11-18T23:53+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read the code on origin/master (cc7b90d): StrideLab/Playback/AnalysisPlayerView.swift lines 1175-1220 and 1289-1294, ResultsViews.swift line 1040 (export defaults to !CoachingPrefs.hidesSkeleton()), and the export menu labels around lines 578-598. Confirmed with gh that PR #51 is MERGED and changed both the iOS and android/ files. Builds were not re-run because nothing changed.",
+                "next_step": "On the latest TestFlight build, open a recorded clip. At the top right, tap the stick figure with the red slash: the skeleton, lines and circles should disappear while the tips stay. Then use More > Save video with tips and check that the saved video has no skeleton. Tap the figure-with-pencil button to open Edit. If this matches what you wanted, tick off t128. If the icons or placement need chang"
               }
             },
             {
