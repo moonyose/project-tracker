@@ -1883,12 +1883,12 @@
               "owner": "austin",
               "agent": {
                 "status": "pr_opened",
-                "summary": "Draft PR #55. When a clip's kind was chosen (e.g. the record screen left on Starts) but the detector clearly saw another kind, the player shows a one-tap 'This looks like a straightaway. Re-analyze as a straightaway' chip under the kind chip. The More menu also gets one-tap 'Re-analyze as...' items. Done on iOS and Android, with tests on both. It overlaps PR #53 (menu-only, opened by another run on a branch this worker did not create, so it was left alone). Austin should pick one.",
+                "summary": "Adds a one-tap 'Re-analyze as\u2026' option to the clip screen's More menu on iOS and Android. A take recorded with the record screen left on Starts is saved as a chosen start, so the kind question never appears; the fix used to be More > What's in this clip > pick > Analyze as. The new option lists the other kinds and re-analyzes through the existing applyKind path (Pro check, re-analysis step, choice saved). It is hidden on the shipped demos. PR #50 (branch claude/t127-reanalyze-as) was already open for this task from an earlier run today, with the same design. This run built the same change inde",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-18T03:04+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/55",
-                "verified": "./Tools/verify.sh: ALL CHECKS PASSED, new test included. That run was before two small review follow-ups (an extra guard, Android menu wording), which were not re-run. NOT verified: the xcodebuild simulator build and the Android Gradle checks were stopped before they finished; PR CI runs both. bend PROOF.bend not run: CLI availability unknown, no Bend files changed.",
-                "next_step": "Check that PR CI is green on #55, then on the phone: record a straightaway with the record screen on Starts, open it, tap 'Re-analyze as a straightaway' under the kind chip, and confirm it comes back as a straightaway. Close whichever of #53 / #55 you don't want."
+                "at": "2026-11-18T03:47+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "All of these ran on this run's equivalent local commit 35e3865, not on PR #50's commit 1a499a2 itself. iOS xcodebuild build, scheme StrideLab, iPhone 17 Pro simulator iOS 26.5, Xcode 26.6: BUILD SUCCEEDED. ./Tools/verify.sh: ALL CHECKS PASSED, including the new re-analyze-as check. Android ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL on the second try; the first",
+                "next_step": "On a phone: set the record screen to Start, film a few straightaway strides, open the clip, tap More (top right) > Re-analyze as a straightaway, and check that you see 'Re-analyzing as a stride', then straightaway coaching, and the chip reads Stride. Then merge PR #50."
               }
             },
             {
@@ -1903,12 +1903,12 @@
               "owner": "austin",
               "agent": {
                 "status": "pr_opened",
-                "summary": "Added two large buttons side by side at the top right of the clip view on iOS and Android. 'Skeleton' (a stick figure with a red no-symbol) hides the bones, joint dots, tip rings, pulse ring, dashed target line and beginner guides; the tips and their leader lines stay, and the setting is remembered. 'Edit' (a stick figure with a pencil) replaces the small nav-bar pencil and opens the frame menu under the button. The skeleton comes back while a joint is being placed by hand, and a demo keeps its runner. Saved videos follow the switch through SkeletonExportPlan.layers, and the menu labels and sa",
+                "summary": "Added two big buttons at the top right of the clip view, on iOS and Android: a skeleton on/off toggle (stick figure with a red no-symbol) and a bigger Edit button (figure with a pencil) that replaces the small nav-bar pencil. With the skeleton off, the bones, dots, rings, dotted lines and tip leader lines are hidden and only the runner and the tip bubbles show. The setting also applies to videos saved and frames shared from the player.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-18T03:04+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/54",
-                "verified": "iOS xcodebuild simulator build succeeded. Android :core:test :app:testDebugUnitTest :app:assembleDebug passed (with --no-daemon). New skeleton-switch tests were added on both platforms. A reviewer subagent found no defects; two of its notes were fixed (landscape layout, pulse ring). Checked in the simulator on a demo: the buttons render correctly. ./Tools/verify.sh: the first run collided with an ",
-                "next_step": "Check that the PR's CI checks are green (including verify.sh). Then on your phone, open one of your own clips, tap Skeleton and confirm only the video and the tips remain. Save a video with tips with the skeleton off and check the saved video has no skeleton. Tap Edit and confirm the frame menu opens under it. Also check the top bar on a small phone in portrait."
+                "at": "2026-11-18T03:47+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/56",
+                "verified": "xcodebuild build OK (iPhone 17 Pro sim, iOS 26.5); Tools/verify.sh ALL CHECKS PASSED; Android :core:test :app:testDebugUnitTest :app:assembleDebug passed (first run hit a Gradle cache lock held by the other worker, the rerun passed); bend CLI not on the runner (no Bend rules changed); a reviewer found one bug (Android share-frame) and it was fixed. Simulator run of the demo clip shows the new Edit",
+                "next_step": "Install the PR build, open one of your own clips, tap the red no-symbol button and check that only the runner and tips remain. Then save a 'video with tips' and check the skeleton isn't in it."
               }
             },
             {
