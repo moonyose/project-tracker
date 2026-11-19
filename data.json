@@ -1885,11 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: one-tap \"Re-analyze as\u2026\" is on master in iOS and Android (PR #50, merged Nov 18, in the player's More menu; PR #67, merged Nov 18, for a recording filmed as the wrong kind, on the Split starts and Pass picker screens and in the results card). No new PR, because you have already closed several duplicates (#53, #55, #60, #62, #63, #65, #70).",
+                "summary": "Already shipped. PR #50 (One-tap \"Re-analyze as...\" in the player's More menu, merged 2026-11-18) and PR #67 (Curve marked Beta, and Re-analyze as... for a recording filmed as the wrong kind, merged 2026-11-18) are both on master (HEAD cc7b90d). iOS: KindFlow.reanalyzeTitle / reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift, the player menu in ResultsViews.swift, and SplitModel.reanalyze(as:store:) in Split/SplitStartsView.swift and PassPickerView.swift, tested in Tools/tests_kindui.swift. Android mirrors it: core playback/KindLogic.kt, ui/player/ResultsViews.kt and KindViews.kt, ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T02:27+00:00",
-                "verified": "Checked that master (cc7b90d) has KindFlow.reanalyzeOptions/reanalyzeChoices wired into AnalysisPlayerView, ResultsViews, SplitStartsView and PassPickerView on iOS, and into AnalysisPlayerScreen, ResultsViews, SplitStartsScreen and PassPickerScreen on Android. ./Tools/verify.sh on master: ALL CHECKS PASSED, including the 'Re-analyze as another kind' checks. No code changed, so I did not run xcodeb",
-                "next_step": "On the current TestFlight build, open a clip analyzed as a start, tap More > Re-analyze as a straightaway, and check that it re-analyzes. If that works, mark t127 done. If something is still missing, edit the to-do to say what."
+                "at": "2026-11-19T02:28+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Checked that master (cc7b90d) contains the re-analyze-as code and tests on iOS and Android, and that PRs #50 and #67 show as MERGED on GitHub. Nothing was changed, so I did not rebuild or rerun the tests.",
+                "next_step": "On the phone, open a clip that was analyzed as a Start, tap More in the player, and tap \"Re-analyze as a straightaway\". The clip should be analyzed again as a straightaway. If that works, check this to-do off. If it misses a case (for example the long-recording or pass-picker flow), edit the to-do to say which one."
               }
             },
             {
@@ -1904,12 +1905,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #51 (merged Nov 18) put the skeleton on/off switch (stick figure with a red no-symbol) and a bigger pencil Edit button side by side at the top right of the clip view, on iOS and Android. Saved videos follow the switch. No new PR needed.",
+                "summary": "Already implemented and merged on master. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f) added it, and PR #67 (merge cc7b90d, 'Merge master (#50, #51) and keep their skeleton switch and player menu') kept it. iOS: AnalysisPlayerView.skeletonButtons puts two 54pt buttons side by side at the top right. The first is the skeleton toggle (figure.stand with a red circle.slash, persisted as CoachingPrefs.hideSkeletonKey; demos keep their skeleton). The second is Edit (figure.run with a pencil; opens the mark menu). Export reads CoachingPrefs.hidesSkeleton() in ResultsViews.swift:1040, so",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T02:27+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read current master (cc7b90d): checked the iOS switch, the Edit button, the saved setting and the export code, checked the Android files that use the same setting, and ran gh pr view 51 (state MERGED). I didn't rebuild or re-run the checks because nothing changed, and #51 passed the PR checks before it merged.",
-                "next_step": "On the phone, open any analyzed clip. At the top right, tap the stick figure with the red slash: the skeleton, dotted lines and circles should go, leaving only the tips and the runner. Then save the video from the menu and confirm the saved copy has no skeleton either. Tap the pencil button next to it to open the Edit menu. If anything is off, edit the to-do to say what is wrong."
+                "at": "2026-11-19T02:28+00:00",
+                "verified": "Read the current master code: the iOS toggle, Edit button and export path, and the Android toggle, state and export path. I didn't rebuild, because nothing changed.",
+                "next_step": "On a TestFlight build, open an analyzed clip. Tap the stick-figure button with the red no-symbol at the top right: the skeleton, dotted lines and circles should hide, leaving only the tips and the runner. Then use More > Save video with tips and check the exported video has no skeleton. Tap the skeleton-and-pencil button beside it to open Edit. If any of that is wrong, edit the to-do with what's o"
               }
             },
             {
