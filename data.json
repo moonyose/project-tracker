@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, iOS and Android. PR #50 (merged 2026-11-18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More (...) menu (KindFlow.reanalyzeOptions, the likeliest mix-up listed first; not shown on shipped demos). PR #67 then fixed the root cause of the Nov 17 report: a long recording filmed with Starts picked reused its saved scan for starts and never looked for passes, so the only fix was manual marking. Each saved scan now records what kind it looked for (PassFlow.cacheFits), and 'Re-analyze as straightaways / c",
+                "summary": "Already shipped on master, so there is nothing new to build. PR #50 (branch claude/t127-reanalyze-as, merged as fe99a5f) and PR #67 (reanalyze-skeleton-toggle-beta, merged as cc7b90d on 2026-11-18) added one-tap 'Re-analyze as ...' on both iOS and Android. It appears in three places: rows in the player's More menu (KindFlow.reanalyzeOptions in StrideLab/Playback/KindLogic.swift, shown in AnalysisPlayerView), a ReanalyzeCard on the long-recording review (SplitStartsView / PassPickerView, SplitModel.reanalyze(as:)), and a visible 'Re-analyzing as ...' step while it runs (ReanalysisStage). The me",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T19:40+00:00",
-                "verified": "Read the code on origin/master (6540a2d): StrideLab/Playback/AnalysisPlayerView.swift (More menu re-analyze section), KindLogic.swift (reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle), Split/SplitStartsView.swift and PassPickerView.swift (ReanalyzeCard), and android KindLogic.kt and KindUiTest.kt. Checked with gh that PRs #50 and #67 are merged. No build was run because nothing changed.",
-                "next_step": "On a phone running a build from 1.0.4 or later: open a clip analyzed as a start, tap ... (More), then 'Re-analyze as a straightaway'. Check that it re-analyzes as a straightaway. For a long recording filmed with Starts picked, check that the review screen shows 'Re-analyze as straightaways'. If the build you saw on Nov 17 came before these merges, update TestFlight. If it still falls short, edit t"
+                "at": "2026-11-19T19:42+00:00",
+                "verified": "Only read the code and git history on origin/master (6540a2d, version 1.0.4). I found the feature on both platforms and the merged commits that added it. I did not run builds or checks because nothing changed. Those merges went through the repo's PR checks.",
+                "next_step": "Check it on your phone with a TestFlight build from 1.0.4 or later: open a clip that was analyzed as a start, tap the player's More (...) menu, tap 'Re-analyze as straightaway', and confirm that the 'Re-analyzing as ...' step appears and the results come back as a straightaway. If you meant something different (for example, the option shown right on the results screen instead of in the More menu),"
               }
             },
             {
@@ -1904,12 +1904,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. Commit 580413f ('Clip view: skeleton on/off switch (applies to export) and a bigger Edit button') was merged into master via PR #51 (https://github.com/moonyose/StrideLab/pull/51) and is in current origin/master (6540a2d). It adds two 54pt glass buttons side by side at the top right of the clip view: a skeleton switch (figure.stand with a red circle.slash) that hides the skeleton, guides, target lines, joint ring and tip leader, leaving only the runner and tips; it is persisted as stridelab.hideSkeleton and the saved skeleton video, tips video and shared frame follow it. Next ",
+                "summary": "Already done on master. Commit 580413f ('Clip view: skeleton on/off switch (applies to export) and a bigger Edit button', 2026-11-18) adds two 54 pt buttons side by side at the top right of the clip view. The first is a skeleton switch (stick figure with a red no-symbol circle). When it's on, the skeleton, guide lines, joint rings and tip leader are hidden, leaving only the runner and the tips. The setting is saved (stridelab.hideSkeleton), and the saved skeleton video and the shared frame follow it. The second is a bigger Edit button (runner with a pencil) that opens the mark menu. The same c",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T19:40+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read the code on origin/master: AnalysisPlayerView.swift skeletonButtons (lines ~1175-1220), skeletonHidden gating, export menu labels honoring hideSkeleton, and SkeletonVideoExporter render(skeleton:). Android has the same behavior (model.hideSkeleton/skeletonHidden in PlayerStage/PlayerState, export label). I ran no builds because nothing changed.",
-                "next_step": "Austin: on a TestFlight build that includes PR #51, open a clip. Tap the stick-figure-with-red-slash button at the top right and check that the skeleton, dotted lines and circles disappear while the tips stay. Then Share > Save video and check the saved video has no skeleton. If the icons or sizes should be different, edit the to-do and say what to change."
+                "at": "2026-11-19T19:42+00:00",
+                "verified": "Checked that origin/master contains 580413f. Read the code: skeletonButtons and skeletonHidden in StrideLab/Playback/AnalysisPlayerView.swift, the export path in SkeletonVideoExporter.swift, and the Android PlayerStage.kt / PlayerState.kt / SkeletonVideoExporter.kt. I made no code change, so I ran no build.",
+                "next_step": "On the phone, open an analyzed clip. At the top right, tap the stick figure with the red slash: the skeleton and dotted lines should disappear, leaving the tips. Save the video and check that it has no skeleton. Tap the runner-with-pencil button and check that the edit menu opens. If this isn't what you wanted, edit the to-do to say what should be different. Otherwise mark it done."
               }
             },
             {
