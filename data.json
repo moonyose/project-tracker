@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master for iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' to the clip's More menu, and PR #67 (merged Nov 18) added the same choices to the results card, pass picker and long Starts-recording review, and makes a recording scanned as starts get rescanned for passes.",
+                "summary": "Already done and merged on both platforms on Nov 18. PR #50 (https://github.com/moonyose/StrideLab/pull/50) added a one-tap \"Re-analyze as a straightaway / start / curve\" to the player's More menu. PR #67 (https://github.com/moonyose/StrideLab/pull/67) added \"Re-analyze as straightaways\" for a recording filmed as the wrong kind, which is the Nov 17 case. It appears on the start-splitting screen (SplitStartsView, SplitModel.reanalyze(as:)), on the pass picker, and on the results card. Each tap saves the new kind as the athlete's choice and runs the analysis again. The same features are in the A",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:03+00:00",
-                "verified": "Read git history and source on origin/master (3e1a2d3): merge commits fe99a5f (#50) and cc7b90d (#67) contain the feature with tests (Tools/tests_kindui.swift, android KindUiTest.kt), and the code paths are still in place. I ran no build because nothing changed.",
-                "next_step": "On your phone (TestFlight build from after Nov 18): record a straightaway with the record screen left on Starts. On the review screen, or in the open clip under More, tap 'Re-analyze as a straightaway' and check it re-runs as a straightaway without any manual steps. If it still doesn't work for you, edit the task to say which screen is missing the option."
+                "at": "2026-11-19T22:06+00:00",
+                "verified": "Read origin/master (3e1a2d3). The re-analyze entry points are in StrideLab/Playback/AnalysisPlayerView.swift, StrideLab/Playback/ResultsViews.swift, StrideLab/Split/SplitStartsView.swift and StrideLab/Split/PassPickerView.swift, with the matching Kotlin under android/. gh shows PRs #50 and #67 as MERGED on 2026-11-18. I did not rebuild or re-run verify.sh or Gradle, because there was no code chang",
+                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with Starts selected on the record screen. On the starts screen, tap \"Re-analyze as straightaways\" and check that it finds the runs as straightaways. Also open any analyzed clip, go to More, then Re-analyze as..., and check it switches kinds in one tap. If the Nov 17 problem still happens on that build, add a note to the to-do sayin"
               }
             },
             {
