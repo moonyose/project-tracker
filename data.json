@@ -1934,11 +1934,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (merged Nov 18) added one-tap 'Re-analyze as...' to the player's More menu, and PR #67 (merged Nov 18) added a 'Filmed something else?' re-analyze card to the Starts split screen and the pass picker, which is exactly the Nov 17 case (filmed straightaways while the record screen said Starts). The Android port has the same entry points: AnalysisPlayerScreen.kt (reanalyzeOptions menu), SplitStartsScreen.kt and PassPickerScreen.kt (ReanalyzeCard), and ResultsViews.kt (finish-card choices). Seven later t127 PRs (#53, #55, #60, #62, #63, #65, #70) were close",
+                "summary": "Already implemented and merged on master. iOS: PR #50 (branch claude/t127-reanalyze-as, commits 1a499a2 and c3f1d42), merged together with #51 in PR #67. One-tap 'Re-analyze as ...' is in the player's More menu, on the finished-clip card, and on a long recording's review ('Re-analyze as straightaways', PassPickerView / SplitStartsView). Logic is KindFlow.reanalyzeOptions / reanalyzeChoices / reanalyzeTitle / reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift. Android has the same: KindLogic.kt reanalyzeOptions, ReanalyzeCard in SplitStartsScreen.kt and PassPickerScreen.kt, finish-ca",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:16+00:00",
-                "verified": "Checked origin/master at 3e1a2d3. #50 and #67 are merged (gh pr list). grep confirms re-analyze entry points in iOS (AnalysisPlayerView.swift, SplitStartsView.swift, PassPickerView.swift, ResultsViews.swift) and Android (AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt, ResultsViews.kt). No code changed, so I did not build.",
-                "next_step": "Mark t127 done. If it still feels like manual work on the phone, record a straightaway with Starts selected. On the split-starts screen, check for the 'Filmed something else?' card and tap 'Re-analyze as straightaways'. Or open an analysed clip, go to More, then Re-analyze as. If you're missing a specific spot, add it to the task notes so the next run targets it."
+                "at": "2026-11-19T21:18+00:00",
+                "verified": "Read the code on origin/master (3e1a2d3) and the git log. Confirmed the feature exists in both the iOS and Android sources. No new build was run because nothing changed.",
+                "next_step": "If this to-do is still open, check it on the current TestFlight build. Record a straightaway with Filming set to Start. On the recording review, tap 'Re-analyze as straightaways'. Or open a finished clip and use More > Re-analyze as a straightaway. If either path still misses, edit the task with what went wrong."
               }
             },
             {
