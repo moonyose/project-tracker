@@ -1933,11 +1933,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already built and merged on both iOS and Android: PR #50 (one-tap \"Re-analyze as...\" in the player's More menu) and PR #67 (\"Re-analyze as straightaways/starts\" on the recording's review screen, the pass picker and the finish card, for a recording filmed with the wrong type picked). Both merged Nov 18, so I opened no new PR.",
+                "summary": "Already done on master. PR #50 (one-tap 'Re-analyze as\u2026' in the player's More menu, iOS + Android) and PR #67 (re-analyze a long recording as another kind from the starts review / pass picker, curve marked Beta) are merged. Austin closed the later duplicate #70 on Nov 18 as superseded by #50/#51/#67. Master has KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle, ReanalyzeCard in SplitStartsView and PassPickerView, and SplitStartsModel.reanalyze(as:store:) on iOS, with matching Kotlin in android/ (KindLogic.kt, AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt, KindUiTes",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:11+00:00",
-                "verified": "Read master at 6540a2d. Re-analyze is in SplitStartsView (review screen ReanalyzeCard), PassPickerView, ResultsViews and the AnalysisPlayerView More menu, with Kotlin twins in SplitStartsScreen, PassPickerScreen, ResultsViews and AnalysisPlayerScreen, plus tests (tests_kindui.swift, KindUiTest.kt, PassesTest.kt). ./Tools/verify.sh on master: ALL CHECKS PASSED. No code changed, so I didn't run xcod",
-                "next_step": "On a TestFlight build with PRs #50/#67 (1.0.4): record with Starts selected but film a straightaway. On the review screen, tap \"Re-analyze as straightaways\" and check that it finds the passes. If it still fails for you, edit the task to say which screen is missing the option, and mark it done if not."
+                "at": "2026-11-19T21:13+00:00",
+                "verified": "Read master's code (6540a2d) on both platforms and the PR history (#50 and #67 merged; #55, #60 and #70 closed as duplicates). No build was run because nothing changed.",
+                "next_step": "Mark t127 done in the tracker. If the Nov 17 case still fails on a TestFlight build with #67 in it (1.0.4), edit the task to say exactly which screen didn't offer 'Re-analyze as\u2026'."
               }
             },
             {
