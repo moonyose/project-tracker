@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on iOS and Android in PRs #50 and #67, both merged 2026-11-18, the day after the Nov 17 incident, so Austin's build then did not have it. In the clip player on both platforms: (1) the More (...) menu has its own section of one-tap rows such as 'Re-analyze as a straightaway' (iOS AnalysisPlayerView.swift ~L646-655; Android AnalysisPlayerScreen.kt ~L526-530). (2) The end-of-run Finish card shows 'Analyzed as a start. Filmed something else?' with a button for each other kind (iOS ResultsViews.swift FinishCard ~L931-970, wired at AnalysisPlayerView.swift L1053; Android ResultsViews",
+                "summary": "Already shipped. PR #50 (claude/t127-reanalyze-as, commit 1a499a2) added a one-tap \"Re-analyze as ...\" to the player's More menu, and PR #67 (merged Nov 18, cc7b90d) extended it on iOS and Android. On origin/master today: iOS AnalysisPlayerView.swift:649 lists KindFlow.reanalyzeOptions (every kind except the current one, likeliest mix-up first, hidden on demos) with titles like 'Re-analyze as a straightaway'. ResultsViews.swift, SplitStartsView.swift and PassPickerView.swift have it too. Android has the same in AnalysisPlayerScreen.kt:526 (model.applyKind), ResultsViews.kt, SplitStartsScreen.k",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T08:58+00:00",
-                "verified": "Read the code on origin/HEAD: both platforms have the player menu rows and the Finish card buttons wired to applyKind, and both have test coverage. Merge dates checked in git log (cc7b90d #67 and fe99a5f #50, 2026-11-18). No builds were run because nothing changed.",
-                "next_step": "Install the latest TestFlight build (any build after Nov 18). Open a clip that was analyzed as Starts, tap the More (...) menu in the player and tap 'Re-analyze as a straightaway'. Or play the clip to the end and use the button on the Finish card. Check that it re-analyzes as a straightaway."
+                "at": "2026-11-19T09:00+00:00",
+                "verified": "Read origin/master (cc7b90d) and checked that the menu code and tests are there on both platforms. Did not rebuild or rerun the tests, because the merged PRs already went through those checks and this run made no change.",
+                "next_step": "If it still feels like manual work on the phone, open a Starts clip, tap More (the ... menu) in the player, then tap 'Re-analyze as a straightaway'. If that row is missing or doesn't work on his build, update to the latest build, or re-file the task and say what's wrong."
               }
             },
             {
@@ -1904,12 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #51 (claude/t128-skeleton-toggle, commit 580413f) added two 54 pt buttons side by side at the top right of the clip view. One is a skeleton on/off toggle (stick figure with a red no-symbol); when it is off, the skeleton, guides, target lines, joint ring and tip leader are hidden and only the runner and the tips remain. The setting is kept as the stridelab.hideSkeleton preference, and saved skeleton videos and shared frames follow it. The other is a bigger Edit button (figure with a pencil) that replaces the small toolbar pencil. PR #67 (commit c3f1d42, mer",
+                "summary": "Already done on master (origin/master at cc7b90d), on both iOS and Android. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f) added it, and PR #67 refined it. The clip view has two large 54pt buttons side by side at the top right. The first is a skeleton on/off switch: a stick figure (figure.stand) with a red circle.slash over it. It is saved as stridelab.hideSkeleton and hides the skeleton, dotted lines and circles, leaving only the tips and the runner. Demo clips don't show the switch. Saving a video follows the switch (the menu reads 'Save video with tips' when the skeleton is off",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T08:58+00:00",
+                "at": "2026-11-19T09:00+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read git log on origin/HEAD and found merged PRs #51 and #67. Read the commit stats for 580413f and c3f1d42. Ran git grep on origin/HEAD and found hideSkeleton in StrideLab/Playback/AnalysisPlayerView.swift (toggle button, export labels, overlay gating) and in android PlayerState.kt. Did not rebuild or rerun checks because nothing was changed.",
-                "next_step": "On the phone: open any analyzed clip, tap the stick-figure-with-red-circle button at the top right and check that the skeleton, dotted lines and circles disappear while the tips stay. Then use More > Save video with tips and check that the saved video has no skeleton. Tap Edit beside it and check that the mark menu opens. If all of that works, close t128 as done. If not, edit t128 with what's wron"
+                "verified": "Read the current master code: AnalysisPlayerView.swift skeletonButtons (lines 1175-1220), the hideSkeleton export labels and the SkeletonVideoExporter skeleton parameter, plus the Android equivalents. No build was run because there was no code change.",
+                "next_step": "On your phone, open any analyzed clip that isn't a demo. Tap the red-slashed stick-figure button at the top right: the skeleton, dotted lines and circles should go away, leaving the tips and the runner. Then go to More > Save video with tips and check that the saved video has no skeleton either. Tap the pencil button beside it to open the Edit menu. If that's all fine, close the to-do; if somethin"
               }
             },
             {
