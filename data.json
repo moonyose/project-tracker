@@ -1934,12 +1934,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 added one-tap 'Re-analyze as a straightaway / curve' rows to the player's More menu on iOS and Android. PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways/starts' for a whole recording filmed as the wrong kind (split/pass-picker screens and results card), again on both platforms. Current master (3e1a2d3) contains all of it, so no new PR was opened.",
+                "summary": "Already done on master: one-tap \"Re-analyze as\u2026\" shipped in PR #50 (the player's More menu and the results card) and PR #67 (a long recording looked through as the wrong kind gets \"Re-analyze as straightaways/curves\"), on both iOS and Android, merged Nov 18. Seven duplicate PRs for this to-do (#53, #55, #60, #62, #63, #65, #70) were already closed. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:28+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read master at 3e1a2d3. KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle exist in Swift (Playback/KindLogic.swift) and Kotlin (core/.../playback/KindLogic.kt). They are wired into AnalysisPlayerView/ResultsViews/SplitStartsView/PassPickerView on iOS and into AnalysisPlayerScreen/ResultsViews/SplitStartsScreen/PassPickerScreen on Android, and covered by KindUiTest.k",
-                "next_step": "On your phone: set Filming to Start, record some straightaway strides, open the clip and tap ... > 'Re-analyze as a straightaway'. If the one-tap option isn't there, the TestFlight build probably predates PR #67. If it's there but still feels like too much work, say which screen you expected it on, then re-queue the task."
+                "at": "2026-11-19T21:30+00:00",
+                "verified": "Read origin/master (3e1a2d3). iOS: KindFlow.reanalyzeOptions/reanalyzeChoices are used in AnalysisPlayerView.swift (More menu), ResultsViews.swift (\"Analyzed as a start. Filmed something else?\" card), SplitStartsView.swift and PassPickerView.swift (recording review). Android: the same in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. Both have tests in Tool",
+                "next_step": "Mark t127 done. To confirm on your phone with the current TestFlight build: record a straightaway with the record screen left on Starts, open the clip, tap More (or the \"Filmed something else?\" card) and tap \"Re-analyze as a straightaway\". If that doesn't work in some flow, edit the to-do to say which screen."
               }
             },
             {
