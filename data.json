@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. One-tap 'Re-analyze as ...' landed on master on Nov 18 in PR #50 (claude/t127-reanalyze-as, merge fe99a5f: More menu in the clip player, iOS + Android, tests in Tools/tests_kindui.swift and KindUiTest.kt). PR #67 (merge cc7b90d) extended it to the review, the pass picker and the finish card for long recordings ('Re-analyze as straightaways'), and made the scan cache record what it looked for so a recording first scanned as starts is scanned again for passes. Current master has it in StrideLab/Playback/AnalysisPlayerView.swift (More menu, ~line 649), Split/PassPickerView.swift,",
+                "summary": "Already shipped on master for iOS and Android. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. PR #67 (merged 2026-11-18) added a 'Re-analyze as ...' card to the results view, the starts review / 'No starts found' screen and the 'Pick your passes' grid, so a recording filmed on Starts can be looked through again as straightaways in one tap (scan cache dropped on re-analysis). The same is in the Android port (KindLogic.kt, KindViews.kt, StartScanSession.kt, ScanCache.kt) with tests in KindUiTest.kt and Tools/test",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T01:35+00:00",
-                "verified": "Read git history and current master: commits 1a499a2/fe99a5f (PR #50) and c3f1d42/cc7b90d (PR #67) contain the feature on iOS and Android. Grepped master and confirmed the More-menu entry (KindFlow.reanalyzeOptions / reanalyzeTitle) and the recording-level ReanalyzeCard are still wired up after the #67 merge. No build was run because nothing changed.",
-                "next_step": "Mark t127 done in the tracker. To confirm on the phone: open a clip that was analysed as a start, tap More (...) in the player, tap 'Re-analyze as a straightaway', and check that the result is now a straightaway. For a long recording, open it from the library and use the 'Re-analyze as straightaways' card. Note: t128 (skeleton toggle + Edit button) also looks already merged (PR #51 / #67)."
+                "at": "2026-11-19T01:37+00:00",
+                "verified": "Read master at cc7b90d: ReanalyzeCard is used in ResultsViews.swift, SplitStartsView.swift and PassPickerView.swift; KindFlow.reanalyzeOptions in AnalysisPlayerView's More menu; Android mirrors them with tests. Checked PR #50/#67 state (MERGED) and the closed duplicates with gh. No build was run because no code changed.",
+                "next_step": "On the phone (latest TestFlight): set the record screen to Start, film a few straightaway passes, open the clip, then tap 'Re-analyze as straightaways' on the starts review (or ... > 'Re-analyze as a straightaway' in the player). You should get the pass picker or straightaway coaching. If that works, mark t127 done. If something is still missing, edit the task to say exactly which screen."
               }
             },
             {
@@ -1904,11 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f) added the skeleton on/off switch and the bigger Edit button on iOS and Android, and merge #67 (cc7b90d, now origin/master) kept #51's versions. On master today, the top right of the clip view has two 54 pt buttons side by side. The switch is a stick figure with a red no-symbol (figure.stand + circle.slash). Turning it on hides the skeleton, guides, target lines, lit joint ring and tip leaders, leaving only the runner and the tips. Edit is a runner with a pencil. The setting is saved (stridelab.hideSkeleton). The saved",
+                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle) was merged on 2026-11-18 and PR #67 kept its code when it merged. Current master has two big buttons side by side at the top right of the clip view on iOS (AnalysisPlayerView.skeletonButtons) and on Android (PlayerStage). The first is a skeleton on/off switch: a stick figure with a red circle.slash, saved in stridelab.hideSkeleton. The second is a bigger Edit button: a runner with a pencil. With the switch on, the skeleton, dotted guides and joint circles are hidden and only the runner and tips show. The switch also applies to Save v",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T01:35+00:00",
-                "verified": "Read the code on origin/master (cc7b90d): AnalysisPlayerView.swift skeletonButtons/skeletonHidden, ResultsViews.swift SkeletonVideoSave.start, SkeletonVideoExporter.swift skeleton flag, and the matching Android files. Nothing changed, so no build or checks were run.",
-                "next_step": "On a TestFlight build from current master, open an analyzed clip. Tap the crossed-out stick figure at the top right: the skeleton and lines disappear and the tips stay. Then use More > Save video and check that the saved video in Photos has no skeleton. If that already works, mark t128 done."
+                "at": "2026-11-19T01:37+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read the code on origin/master (cc7b90d). iOS: the hideSkeleton AppStorage, the skeletonButtons view, and the export and still paths that drop the skeleton when it is hidden. Android: the PlayerState.hideSkeleton pref, the PlayerStage button, and the AnalysisPlayerScreen export labels. PR #51 shows as MERGED. I did not rebuild, because there was nothing new to build.",
+                "next_step": "On your phone, open one of your own clips (not a demo). Tap the stick-figure button with the red no-symbol at the top right: the skeleton, dotted lines and circles should go away and the tips should stay. Then use Share > Save video and check the saved video has no skeleton. If you wanted something different from what #51 shipped, edit the task to say what."
               }
             },
             {
