@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #50 (merged Nov 18) added one-tap 'Re-analyze as ...' to the player's More menu, and PR #67 (merged Nov 18) added a 'Re-analyze as straightaways/curves/starts' card to the Starts review and pass picker for a recording filmed with the wrong type picked. That card covers the Nov 17 case. Both are on iOS (SplitStartsView.swift, PassPickerView.swift, AnalysisPlayerView.swift, KindLogic.swift) and Android (SplitStartsScreen.kt, PassPickerScreen.kt, KindLogic.kt, with KindUiTest coverage). PRs #53, #55, #60, #62, #63, #65 and #70 were closed duplicates. No new PR opened.",
+                "summary": "This is already in the app on iOS and Android, so there is no new PR. PRs #50 and #67 (both merged Nov 18) added one-tap 'Re-analyze as\u2026' options to the clip's More menu, a 'Filmed something else?' card on the results, and the same choices on a long recording's review screens.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:59+00:00",
-                "verified": "Read origin/HEAD source on both platforms: SplitStartsView review shows ReanalyzeCard -> model.reanalyze(as:) (re-tags the clip's kind and re-scans). The player More menu lists KindFlow.reanalyzeOptions. Android mirrors both. No builds run because nothing changed.",
-                "next_step": "On the current TestFlight build: leave the record screen on Starts, film a straightaway, open the review and tap 'Re-analyze as straightaways' near the bottom. It should look through the clip again for passes. If that works, mark t127 done in the tracker so it stops being picked up again."
+                "at": "2026-11-19T22:01+00:00",
+                "verified": "Read origin/master at 3e1a2d3. The iOS uses are StrideLab/Playback/AnalysisPlayerView.swift:651, ResultsViews.swift:967, Split/SplitStartsView.swift:1420 and Split/PassPickerView.swift:55. Logic is in Playback/KindLogic.swift and tested in Tools/tests_kindui.swift. Android mirrors these. gh shows PRs #50 and #67 MERGED. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build that includes PRs #50 and #67: record a straightaway with the record screen left on Start and open the clip. Tap More (...), then 'Re-analyze as a straightaway', and check that the chip shows Stride and the tips are straightaway tips. If this still falls short, edit the task to say what is missing (for example, where the option should appear) and it will be re-attempted."
               }
             },
             {
