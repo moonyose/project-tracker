@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added the one-tap 'Re-analyze as ...' items to the player's More menu on iOS and Android, and PR #67 (merged Nov 18) added it to the results views, the Split starts screen and the pass picker ('Filmed something else?' card). Current master (94d6bf0, after #78's menu cleanup) still has every entry point: iOS AnalysisPlayerView.swift:653, ResultsViews.swift:971, SplitStartsView.swift:1420, PassPickerView.swift:55. Android AnalysisPlayerScreen.kt:529, ResultsViews.kt:1291, SplitStartsScreen.kt:384, PassPick",
+                "summary": "Already shipped on master for iOS and Android: one-tap \"Re-analyze as a straightaway / a curve / a start\" rows in the player's More menu (commit 1a499a2, Nov 18), plus a \"Filmed something else?\" card on the results and \"Re-analyze as straightaways/starts\" on a long recording's review (commit c3f1d42, Nov 18). Both came after Austin's Nov 17 note, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:37+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) and found the Re-analyze-as entry points and their tests on iOS and Android. I didn't rebuild or re-run the checks because nothing changed; PR #50 and #67 passed PR checks when they merged.",
-                "next_step": "Mark t127 done. To confirm on your phone, open a clip that was analyzed as a start (TestFlight build from after Nov 18), tap More, then 'Re-analyze as a straightaway'. The clip should re-analyze as a straightaway with no manual edits."
+                "at": "2026-11-19T23:45+00:00",
+                "verified": "Read the code on origin/master (94d6bf0). iOS: AnalysisPlayerView.swift More menu (KindFlow.reanalyzeOptions), ResultsViews.swift reanalyze card, SplitStartsView.swift and PassPickerView.swift recording review. Android: AnalysisPlayerScreen.kt menu, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt. The More menu is still there after today's PR #78; it is only hidden while a clip is still",
+                "next_step": "On a TestFlight build from Nov 18 or later: open a clip that was analyzed as a start, wait for the analysis to finish, tap More (top right), then tap \"Re-analyze as a straightaway\". The clip should re-analyze as a straightaway. If that row is missing or doesn't work, edit the to-do and describe what you saw."
               }
             },
             {
