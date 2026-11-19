@@ -1934,11 +1934,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added the one-tap \"Re-analyze as ...\" option, and PR #67 (merged 2026-11-18) extended it. iOS: the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions), the results kind card (ResultsViews, reanalyzeChoices), and long recordings (SplitStartsView / PassPickerView: \"Re-analyze as straightaways\"). The likeliest mix-up comes first, so a clip analyzed as a start offers straightaway first. Android: the same logic is in core KindLogic.kt and the same UI is in AnalysisPlayerScreen, ResultsViews, KindViews, Split",
+                "summary": "Already shipped on both platforms. PR #50 (merged Nov 18) added one-tap 'Re-analyze as...' to the player's More menu, and PR #67 (merged Nov 18) added a 'Filmed something else?' re-analyze card to the Starts split screen and the pass picker, which is exactly the Nov 17 case (filmed straightaways while the record screen said Starts). The Android port has the same entry points: AnalysisPlayerScreen.kt (reanalyzeOptions menu), SplitStartsScreen.kt and PassPickerScreen.kt (ReanalyzeCard), and ResultsViews.kt (finish-card choices). Seven later t127 PRs (#53, #55, #60, #62, #63, #65, #70) were close",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:14+00:00",
-                "verified": "Checked master at 3e1a2d3. Both merges are in its history (git log -S finds commits 1a499a2 and c3f1d42), and the feature is wired into the iOS and Android UI files listed above. No build was run because nothing changed.",
-                "next_step": "On your phone, open a clip that was analyzed as Starts, tap the More (...) menu in the player, and tap \"Re-analyze as a straightaway\". Check that it re-runs and shows straightaway results. If something about the shipped version still misses what you wanted, edit the to-do and say what's wrong."
+                "at": "2026-11-19T21:16+00:00",
+                "verified": "Checked origin/master at 3e1a2d3. #50 and #67 are merged (gh pr list). grep confirms re-analyze entry points in iOS (AnalysisPlayerView.swift, SplitStartsView.swift, PassPickerView.swift, ResultsViews.swift) and Android (AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt, ResultsViews.kt). No code changed, so I did not build.",
+                "next_step": "Mark t127 done. If it still feels like manual work on the phone, record a straightaway with Starts selected. On the split-starts screen, check for the 'Filmed something else?' card and tap 'Re-analyze as straightaways'. Or open an analysed clip, go to More, then Re-analyze as. If you're missing a specific spot, add it to the task notes so the next run targets it."
               }
             },
             {
