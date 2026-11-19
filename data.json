@@ -1934,11 +1934,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master: one-tap \"Re-analyze as\u2026\" shipped in PR #50 (the player's More menu and the results card) and PR #67 (a long recording looked through as the wrong kind gets \"Re-analyze as straightaways/curves\"), on both iOS and Android, merged Nov 18. Seven duplicate PRs for this to-do (#53, #55, #60, #62, #63, #65, #70) were already closed. No new PR opened.",
+                "summary": "Already implemented and merged. PR #50 (merged 2026-11-18, 'One-tap \"Re-analyze as\u2026\" in the player's More menu', https://github.com/moonyose/StrideLab/pull/50) and PR #67 (merged 2026-11-18, 'Curve marked Beta, and Re-analyze as\u2026 for a recording filmed as the wrong kind', https://github.com/moonyose/StrideLab/pull/67) added one-tap Re-analyze as\u2026 to the player's More menu, the results/finish card, the pass picker and the split-starts screen, for iOS and the Android port (KindLogic.reanalyzeChoices/reanalyzeOptions, ReanalyzeCard, ReanalysisStage; Android KindLogic.kt, KindViews.kt, PassPickerS",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:30+00:00",
-                "verified": "Read origin/master (3e1a2d3). iOS: KindFlow.reanalyzeOptions/reanalyzeChoices are used in AnalysisPlayerView.swift (More menu), ResultsViews.swift (\"Analyzed as a start. Filmed something else?\" card), SplitStartsView.swift and PassPickerView.swift (recording review). Android: the same in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. Both have tests in Tool",
-                "next_step": "Mark t127 done. To confirm on your phone with the current TestFlight build: record a straightaway with the record screen left on Starts, open the clip, tap More (or the \"Filmed something else?\" card) and tap \"Re-analyze as a straightaway\". If that doesn't work in some flow, edit the to-do to say which screen."
+                "at": "2026-11-19T21:31+00:00",
+                "verified": "Checked origin/master (3e1a2d3): the reanalyze code is in both the iOS and Android sources, and gh shows PR #50 and PR #67 as MERGED. I did not rebuild, because nothing changed.",
+                "next_step": "On the phone with the latest TestFlight build, open a straightaway clip that was analyzed as a start, tap More (\u2026) > 'Re-analyze as a straightaway' and check that it re-runs as a straightaway. If that works, mark t127 done."
               }
             },
             {
