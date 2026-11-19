@@ -1885,11 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms, so no new PR. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added one-tap \"Re-analyze as ...\" to the player's More menu. PR #67 (merged 2026-11-18) added \"Re-analyze as straightaways/starts\" for a recording filmed as the wrong kind and marked curve as Beta. origin/master (cc7b90d) has it on iOS (AnalysisPlayerView.swift ~L649, ResultsViews.swift ~L960, SplitStartsView.swift, PassPickerView.swift, KindFlow.reanalyzeOptions/Choices/Title in KindLogic.swift) and on Android (AnalysisPlayerScreen.kt ~L526, ResultsViews.kt, SplitStartsScreen.kt, PassPickerSc",
+                "summary": "Already shipped on master for iOS and Android. PR #50 added a one-tap \"Re-analyze as...\" to the player's More menu. PR #67 added \"Re-analyze as straightaways / curves / starts\" for long recordings filmed with the wrong kind and fixed the cause: the saved scan was reused even after the kind changed. Both merged Nov 18, so no new PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T01:42+00:00",
-                "verified": "Checked the code and PR history on origin/master: both merged PRs and the call sites listed in the summary are present. I made no code change, so I did not run xcodebuild, verify.sh, bend or Gradle this time.",
-                "next_step": "Mark t127 done on the list. If the shipped version still falls short, reword the task to say what is missing. To confirm on your phone: open a clip that was analyzed as Starts, tap the More (...) menu in the player and tap \"Re-analyze as a straightaway\". It should re-analyze with no manual steps."
+                "at": "2026-11-19T01:44+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Checked that PRs #50 and #67 are merged (gh pr view) and that origin/master (cc7b90d) has the Re-analyze code in Swift (KindLogic.swift, AnalysisPlayerView.swift, SplitStartsView.swift) and Kotlin (KindLogic.kt, AnalysisPlayerScreen.kt, SplitStartsScreen.kt). Changed no code and ran no builds or tests this run.",
+                "next_step": "On a build from current master, film a few straightaways with Starts still selected. On the review screen, tap \"Re-analyze as straightaways\" and check that passes are found. Then open a single clip, tap More > Re-analyze as..., and check that it re-runs as the new kind. If that works, close this to-do."
               }
             },
             {
@@ -1904,12 +1905,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #51 (https://github.com/moonyose/StrideLab/pull/51, merged 2026-11-18) added the clip view's skeleton on/off switch (stick figure with red no-symbol; hides skeleton, guides/dotted target lines, joint rings and tip leader, leaving the runner and tips; persisted as stridelab.hideSkeleton and followed by the saved skeleton video and shared frame) and a larger Edit button (skeleton with pencil) side by side at the top right, on both iOS and Android. PR #67 (merge cc7b90d) later kept that switch and button. No new branch or PR opened.",
+                "summary": "This is already on master: PR #51 (branch claude/t128-skeleton-toggle) and PR #67 added two big buttons side by side at the top right of the clip view, on iOS and Android. One is a skeleton on/off toggle (a stick figure with a red no-symbol circle through it) and the other is Edit (a runner with a pencil). Turning the skeleton off hides the skeleton and its guides, and the saved video follows the same setting.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T01:42+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Checked that origin/master (cc7b90d) contains the work: skeletonHidden / hideSkeleton in StrideLab/Playback/AnalysisPlayerView.swift (toggle and Edit buttons around lines 1176-1220), the skeleton: parameter in SkeletonVideoExporter.swift, and the Kotlin mirror in android/.../ui/player (PlayerState.kt, PlayerStage.kt, ResultsViews.kt, AnalysisPlayerScreen.kt). Did not rebuild, since nothing changed",
-                "next_step": "On the phone, open an analyzed clip. Tap the stick-figure-with-red-circle button at the top right: the skeleton, dotted lines and circles should go away while the runner and tips stay. Save the video with tips and check the export has no skeleton. Tap the larger Edit button next to it and check the mark menu opens. If anything is missing, edit the task to say what and it will be re-run."
+                "at": "2026-11-19T01:44+00:00",
+                "verified": "Read the code on origin/master (cc7b90d) only. Nothing was built or run because nothing changed. iOS: AnalysisPlayerView.swift has skeletonButtons, 54pt buttons using figure.stand with circle.slash, and figure.run with pencil. The hideSkeleton preference also drives the Save video labels and the exporter (ResultsViews.swift CoachingPrefs.hidesSkeleton). Android: PlayerStage.kt SkeletonButtons, Pla",
+                "next_step": "On the latest TestFlight build, open a real clip and tap the crossed-out figure at the top right. The skeleton and guides should go away and only the runner and tips should stay. Then use Share > Save video and check that the saved video has no skeleton. If it doesn't behave this way, edit the to-do to say what's wrong."
               }
             },
             {
