@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already built and merged, on iOS and Android. PRs #50 and #67 (both merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' options to the player's More menu and the finish card, and to the review screen of a long recording, so nothing needed changing.",
+                "summary": "This was already on master (commit c3f1d42, Nov 18), so no PR was needed. iOS and Android both have one-tap 'Re-analyze as\u2026' options in the player's More menu, on the finish card, on a long recording's review screen and in the pass picker.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:27+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Checked origin/master (90cfea7): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift, wired in AnalysisPlayerView.swift (More menu), ResultsViews.swift (finish card), Split/PassPickerView.swift (recording review), with Kotlin equivalents under android/. gh shows PRs #50 and #67 both MERGED. No build was run because no code changed.",
-                "next_step": "On the current TestFlight build, record a straightaway with Filming left on Start. Open the clip, tap More, then 'Re-analyze as a straightaway', and check that the straightaway analysis appears. For a long recording, the pass review should offer 'Re-analyze as straightaways'. If that doesn't match what you saw on Nov 17, the build you used may predate the Nov 18 merges."
+                "at": "2026-11-19T22:33+00:00",
+                "verified": "./Tools/verify.sh on current master: ALL CHECKS PASSED, including 'a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways'. No xcodebuild or Gradle run, because no code was changed.",
+                "next_step": "On the phone (TestFlight build that includes c3f1d42): record a few straightaways with Filming set to Start. On the review screen tap 'Re-analyze as straightaways' and check that the runs come up as straightaways. Also open a finished clip, go to More (...) and tap 'Re-analyze as a straightaway'. If this still misses what happened on Nov 17, edit the to-do with the exact screen where only manual f"
               }
             },
             {
