@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "One-tap \"Re-analyze as...\" is already on master on iOS and Android, so no PR was needed. Commit 1a499a2 (Nov 18) added it to the player's More menu, e.g. \"Re-analyze as a straightaway\" on a clip analyzed as a start. Commit c3f1d42 (Nov 18) added it to the finish card, the long-recording review (SplitStartsView) and the pass picker (\"Re-analyze as straightaways\"). It also made the scan cache record what it looked for, so a recording scanned for starts gets scanned again for runs. The Kotlin side is in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. Both a",
+                "summary": "Already shipped on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added the one-tap \"Re-analyze as ...\" items to the player's More menu, and PR #67 (reanalyze-skeleton-toggle-beta, merged Nov 18) extended it. On master today: a finished clip has \"Re-analyze as a straightaway / a curve (Beta) / a start\" in the More menu (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions) and a \"Filmed something else?\" button row on the results (ResultsViews.swift, KindFlow.reanalyzeChoices). A long recording's review has \"Re-analyze as straightaways / curves / starts\" (SplitStartsView",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:52+00:00",
-                "verified": "Found the feature in the code on both platforms with git log -S and grep on a fresh worktree of origin/master (3e1a2d3). ./Tools/verify.sh printed ALL CHECKS PASSED. No code changed, so the xcodebuild, bend and Gradle checks were not run.",
-                "next_step": "On the latest TestFlight build: set Filming to Start, record a few straightaway strides, and open the clip. Open the More (...) menu and tap \"Re-analyze as a straightaway\". The clip should be analyzed again and labeled Stride, your choice. For a long recording, the review screen has a \"Re-analyze as straightaways\" card. If this still doesn't match what you wanted, edit the task to say what's missi"
+                "at": "2026-11-19T21:54+00:00",
+                "verified": "Read the code on origin/master (3e1a2d3): the git log shows merge fe99a5f (#50) and commit 1a499a2, and grep found the call sites in both the iOS and Android UIs, plus tests in Tools/tests_kindui.swift and android/core/.../KindUiTest.kt. I did not run a build because nothing changed.",
+                "next_step": "Check that the latest TestFlight build has it: open a clip recorded while Starts was selected, tap More, then tap \"Re-analyze as a straightaway\". It should re-analyze as a stride and stay that way when you open the clip again. If this misses what you meant (for example, you want it on the library list or at record time), edit the task to say where."
               }
             },
             {
