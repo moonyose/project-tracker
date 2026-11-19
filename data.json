@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (\"One-tap 'Re-analyze as\u2026' in the player's More menu\", merged 2026-11-18, branch claude/t127-reanalyze-as) and PR #67 (\"Curve marked Beta, and Re-analyze as\u2026 for a recording filmed as the wrong kind\", merged 2026-11-18) added one-tap Re-analyze as\u2026 to the iOS player menu, the results card, the pass picker and the split-starts screen. The Android port has the same, in AnalysisPlayerScreen, ResultsViews, PassPickerScreen, SplitStartsScreen and core KindLogic.kt, with KindUiTest coverage. Starts lists Straightaway first.",
+                "summary": "Already shipped on iOS and Android. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu. PR #67 (merged 2026-11-18) added Re-analyze as... to the review, the pass picker, the finish card and the start-split screen ('Re-analyze as straightaways'). A recording first scanned as starts is now scanned again for passes. Austin closed seven later duplicate t127 PRs (#53, #55, #60, #62, #63, #65, #70), so no new PR was opened. This task should be marked done in the tracker.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:36+00:00",
-                "verified": "Checked that PRs #50 and #67 are MERGED (gh pr view). On origin/master (3e1a2d3) the reanalyzeOptions, reanalyzeChoices and reanalyzeTitle helpers are used in the UI on iOS (StrideLab/Playback/AnalysisPlayerView.swift, ResultsViews.swift, Split/SplitStartsView.swift, PassPickerView.swift) and Android (ui/player/AnalysisPlayerScreen.kt, ResultsViews.kt, ui/split/*). No builds were run because nothi",
-                "next_step": "On a TestFlight build that includes PRs #50 and #67: record a straightaway with the record screen left on Starts, open the clip, tap the More (...) menu and tap 'Re-analyze as a straightaway'. Check that it re-analyzes as a straightaway. If that build already has these PRs and this still falls short, edit the task to say what's missing, for example where the button should appear."
+                "at": "2026-11-19T21:38+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Checked by reading the code, nothing was built. On origin/master (3e1a2d3) the code is there: KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift, SplitModel.reanalyze(as:store:) in StrideLab/Split/SplitStartsView.swift, the ReanalyzeCard in PassPickerView.swift and the finish card in ResultsViews.swift. The Android twins are in android/core Kin",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone: record with Starts selected, film a straightaway, then use the 'Re-analyze as straightaways' card on the split screen, or More > 'Re-analyze as a straightaway' in the clip view."
               }
             },
             {
