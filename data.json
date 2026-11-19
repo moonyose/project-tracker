@@ -1884,13 +1884,12 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "done_no_change",
-                "summary": "Already shipped on master for iOS and Android. PR #50 (merged 2026-11-18 15:35 UTC) added a one-tap 'Re-analyze as ...' to the player's More menu. PR #67 (merged 2026-11-18 15:49 UTC) added 'Re-analyze as straightaways/starts' for whole recordings filmed as the wrong kind, in the Split Starts and Pass Picker screens, with curve marked Beta. The Kotlin twins are in KindLogic.kt, AnalysisPlayerScreen.kt, KindViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt, with tests in KindUiTest.kt and PassesTest.kt. No new PR was opened.",
+                "status": "needs_austin",
+                "summary": "Already shipped, so no new PR. One-tap \"Re-analyze as\u2026\" is on master on both platforms. PR #50 (claude/t127-reanalyze-as) added it to the player's More menu for a single clip. PR #67 (merged 2026-11-18) added it for a whole recording filmed as the wrong kind, e.g. \"Re-analyze as straightaways\" on the split/starts and pass-picker screens, which is the Nov 17 case. iOS: KindFlow.reanalyzeOptions/reanalyzeChoices in StrideLab/Playback/KindLogic.swift, used by AnalysisPlayerView, ResultsViews, SplitStartsView and PassPickerView. Android: the same in android/core/.../playback/KindLogic.kt, used by ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T07:58+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "./Tools/verify.sh on current master (cc7b90d) printed ALL CHECKS PASSED. gh confirms PRs #50 and #67 are MERGED. Nothing was rebuilt with xcodebuild or Gradle because nothing changed. Both PRs passed the repo's PR checks.",
-                "next_step": "On the phone, once the latest TestFlight build is installed: open a straightaway clip that was analyzed as a start, tap More in the player, then tap 'Re-analyze as a straightaway'. Check that the results switch to straightaway. For a long recording made with Start selected, open it and tap 'Re-analyze as straightaways'. Check that it is searched for passes again. If this still misses what you want"
+                "at": "2026-11-19T08:04+00:00",
+                "verified": "./Tools/verify.sh on origin/master (cc7b90d): ALL CHECKS PASSED, including the 'Re-analyze as another kind' and reanalyzeOptions checks. Not run, because nothing changed: xcodebuild, bend PROOF.bend, Android Gradle.",
+                "next_step": "If the installed build predates PR #67, install a current build. Then open a recording you filmed while the record screen was set to Starts, and tap \"Re-analyze as straightaways\". Or on a single clip, use the player's More (...) menu and tap \"Re-analyze as a straightaway\". If it still doesn't do what you wanted, say what's missing in the task notes and mark it done or not done in the tracker."
               }
             },
             {
@@ -1904,12 +1903,12 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (claude/t128-skeleton-toggle) merged the clip-view skeleton on/off switch and a bigger Edit button, and PR #67 (merge cc7b90d, current master) kept them. On iOS, AnalysisPlayerView.skeletonButtons puts two 54 pt buttons side by side at the top right: figure.stand with a red circle.slash over it for the toggle, and figure.run with a pencil for Edit. The toggle is stored as CoachingPrefs.hideSkeletonKey and passed to SkeletonVideoExporter(skeleton:), which leaves off the skeleton, guides and target lines but keeps the tips. The export menu then reads 'Save video with tips",
+                "status": "needs_austin",
+                "summary": "Already done on master, so no new PR. PR #51 (commit 580413f, branch claude/t128-skeleton-toggle) added the skeleton on/off switch (stick figure with red no-symbol; hides skeleton, guides, target lines, joint ring and tip leader, leaving only the runner and tips; persisted as stridelab.hideSkeleton; saved video and shared frame follow it) and a bigger Edit button beside it at the top right, on iOS and Android. Merge #67 (cc7b90d, current origin/master) kept #51's versions. The remote also holds about 15 stale claude/t128-* branches (run8 to run14, -v2, -b, ...), so this task keeps being re-dis",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T07:58+00:00",
-                "verified": "Read current origin/master (cc7b90d): the iOS toggle and Edit buttons in AnalysisPlayerView.swift (lines 1175-1220), the export skeleton flag in SkeletonVideoExporter.swift, and the Android equivalents in PlayerStage.kt, PlayerState.kt and SkeletonVideoExporter.kt. No code changed, so no build was run.",
-                "next_step": "Mark t128 done. To confirm on the phone: open any analyzed (non-demo) clip, tap the stick-figure button with the red circle at the top right (the skeleton, dotted lines and circles go away; the tips and the runner stay), then use More > Save video with tips and check that the saved video has no skeleton. If something about it still isn't right, edit the task with what's different and it will be re"
+                "at": "2026-11-19T08:04+00:00",
+                "verified": "Checked origin/master (cc7b90d): hideSkeleton toggle is present in StrideLab/Playback/AnalysisPlayerView.swift and CoachGuides.swift, and in android PlayerState.kt, PlayerStage.kt, AnalysisPlayerScreen.kt and core CoachGuides.kt, export labels included. No code changed, so no build was run.",
+                "next_step": "Mark t128 done in the tracker so it stops being dispatched. If something about the shipped toggle or Edit button is wrong, edit the task to say what. Optionally delete the stale claude/t128-* remote branches."
               }
             },
             {
