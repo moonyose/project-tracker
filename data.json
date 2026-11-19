@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master for iOS and Android: one-tap \"Re-analyze as a straightaway / a curve / a start\" rows in the player's More menu (commit 1a499a2, Nov 18), plus a \"Filmed something else?\" card on the results and \"Re-analyze as straightaways/starts\" on a long recording's review (commit c3f1d42, Nov 18). Both came after Austin's Nov 17 note, so no new PR was opened.",
+                "summary": "Already shipped on master, iOS and Android. PR #50 (merged 2026-11-18) added 'Re-analyze as...' to the player's More menu. PR #67 (merged 2026-11-18) fixed the Nov 17 root cause: the saved scan of a recording was reused whatever kind it was looked through for, so a straightaway session filmed on Starts never had passes searched for. Each saved look now records its kind (ScanCache.load(chosen:) / PassFlow.cacheFits). #67 also added one-tap 'Re-analyze as straightaways / curves / starts' cards on the starts review, the 'No starts found' screen, the pass picker and the finish card. Android has th",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:45+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). iOS: AnalysisPlayerView.swift More menu (KindFlow.reanalyzeOptions), ResultsViews.swift reanalyze card, SplitStartsView.swift and PassPickerView.swift recording review. Android: AnalysisPlayerScreen.kt menu, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt. The More menu is still there after today's PR #78; it is only hidden while a clip is still",
-                "next_step": "On a TestFlight build from Nov 18 or later: open a clip that was analyzed as a start, wait for the analysis to finish, tap More (top right), then tap \"Re-analyze as a straightaway\". The clip should re-analyze as a straightaway. If that row is missing or doesn't work, edit the to-do and describe what you saw."
+                "at": "2026-11-19T23:46+00:00",
+                "verified": "Read current master (94d6bf0). Found the re-analyze entry points: iOS AnalysisPlayerView.swift:653, ResultsViews.swift:942, SplitStartsView.swift:1363/1420 and PassPickerView.swift:54. Android has the same in PassPickerScreen.kt, SplitModel.kt, KindLogic.kt and ResultsViews.kt. Confirmed with gh that #50 and #67 are merged. Didn't rebuild, because no code changed.",
+                "next_step": "On your phone with the current TestFlight build: leave the record screen on Start and film two straightaway passes. On the starts review or 'No starts found' screen, tap 'Re-analyze as straightaways'. You should get 'Pick your passes' with no manual marking. If that works, mark t127 done in the tracker."
               }
             },
             {
