@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #50 (claude/t127-reanalyze-as, merged as fe99a5f) added one-tap \"Re-analyze as ...\" and PR #67 (cc7b90d) merged it with the skeleton toggle/Beta work. iOS: player More menu rows (AnalysisPlayerView.swift:649, KindFlow.reanalyzeOptions, start -> straightaway first), a 'Filmed something else?' card on results (ResultsViews.swift:960), and 'Re-analyze as straightaways/starts/curves' on a long recording's review (SplitStartsView.swift:1420, PassPickerView.swift:55). Android mirrors all three (AnalysisPlayerScreen.kt:526, ResultsViews.kt:1282, SplitStartsScreen.kt:384,",
+                "summary": "Already done: the one-tap \"Re-analyze as a straightaway / curve / start\" option was merged in PR #50 (clip player More menu and results card), and PR #67 added \"Re-analyze as straightaways\" on the split and pass picker screens. Both are on iOS and Android.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T14:01+00:00",
-                "verified": "Read origin/master (cc7b90d): git log shows PR #50 for t127 merged; grep confirms the Re-analyze code paths and tests on both platforms. No build run since nothing changed.",
-                "next_step": "On the phone (latest TestFlight): open a clip analyzed as a start, tap the ... (More) menu in the player, tap 'Re-analyze as a straightaway', and check it re-analyzes with stride coaching. If that's working, close t127 in the tracker."
+                "at": "2026-11-19T14:03+00:00",
+                "verified": "Confirmed PRs #50 and #67 are merged and found the code on master (cc7b90d) for iOS and Android (Android tests in KindUiTest.kt). No rebuild because nothing changed.",
+                "next_step": "Install a build that includes #50 and #67, open a straightaway clip recorded as Starts, tap More (\u2026) \u2192 \"Re-analyze as a straightaway\"."
               }
             },
             {
@@ -1904,12 +1904,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (https://github.com/moonyose/StrideLab/pull/51, merged 2026-11-18) added the clip-view skeleton on/off switch (figure.stand with a red circle.slash) and a bigger Edit button (figure.run with a pencil), side by side at the top right at 54 pt. Hiding the skeleton also turns off the dotted guide lines and circles but keeps the tips. Export follows the switch ('Save video with tips' and stills with no skeleton). Android has the same switch in PlayerState.hideSkeleton and PlayerStage. PR #67 (merge cc7b90d) kept these when it merged. No new branch or PR opened.",
+                "summary": "Already done: PR #51 (merged, kept by #67) added two large buttons at the top right of the clip view: a skeleton on/off switch (stick figure with red no-symbol) that hides the skeleton, dotted lines and circles and also applies to saved videos and shared frames, and a bigger Edit button (runner with pencil). Both are on iOS and Android.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T14:01+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read origin/master (cc7b90d). The switch and Edit button are in AnalysisPlayerView.swift (skeletonButtons, skeletonHidden). The export menu labels and still capture read hideSkeleton. The Android port has the same pieces in PlayerState.kt, PlayerStage.kt and AnalysisPlayerScreen.kt. No builds were run because nothing changed.",
-                "next_step": "On the current TestFlight build, open an analyzed clip. Tap the stick-figure-with-red-slash button at top right: the skeleton, dotted lines and circles go away and the tips stay. Then More > Save video with tips and check that the saved video has no skeleton. Tap the larger Edit button next to it and check that the edit menu opens. If this misses what you wanted, edit the task to say what's differ"
+                "at": "2026-11-19T14:03+00:00",
+                "verified": "Read git history and the code on master (cc7b90d) for iOS and Android (PlayerStage.kt, ResultsViews.kt, CoachGuides.kt). No rebuild because nothing changed.",
+                "next_step": "Open an analyzed clip, tap the stick-figure switch and check only the runner and tips remain, then save the video and check the export has no skeleton. If something's missing, edit the task to say what."
               }
             },
             {
