@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This was already done: PR #50 (merged Nov 18) and its follow-up PR #67 added a one-tap 'Re-analyze as\u2026' on iOS and Android, and it's still on master. You'll find it in the player's More menu, on the results finish card, and as a 'Re-analyze as straightaways' card for a whole recording (the Nov 17 case), so no new PR was opened.",
+                "summary": "Already done and merged on master on both platforms: PR #50 (branch claude/t127-reanalyze-as) and PR #67. iOS: one-tap 'Re-analyze as a straightaway/curve' rows in the player's More menu (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions; a take left on Starts lists straightaway first), a 'Re-analyze as straightaways' card while a long recording is searched (SplitStartsView/PassPickerView), and 'Filmed something else?' buttons on the results screen (ResultsViews.swift). Android has the same in KindLogic.kt, AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt and ResultsViews.k",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:31+00:00",
-                "verified": "Read the current master source on both platforms. All three entry points are present. Nothing changed, so no build or test was run.",
-                "next_step": "On your phone, with the latest TestFlight build: open a clip recorded as Starts that is really straightaways. Tap 'Re-analyze as straightaways' on the recording's card, or More > 'Re-analyze as a straightaway' in the player. It should re-run as straightaways with no manual edits. If something is still wrong, edit the task to say what's missing and it will be re-queued."
+                "at": "2026-11-19T23:33+00:00",
+                "verified": "Not built or tested, since no code changed. Read the current master source on both platforms and the git history (merges #50 and #67).",
+                "next_step": "On a current TestFlight build, open a clip analyzed as a start, tap More, then 'Re-analyze as a straightaway'. It should re-run and come back as a stride. If the Nov 17 problem was on a build from before #50, it's already fixed; if it happens on a current build, edit the task with the screen where you got stuck."
               }
             },
             {
