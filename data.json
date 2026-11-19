@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, no new PR opened. One-tap 'Re-analyze as...' was merged in PR #50 (branch claude/t127-reanalyze-as) and PR #67, with #51 alongside. On 2026-11-18 Austin closed #70 without merging and said #50, #51 and #67 cover this task. On current master (94d6bf0) both platforms have: (1) the player's More menu with 'Re-analyze as <kind>' items (iOS AnalysisPlayerView.swift KindFlow.reanalyzeOptions; Android AnalysisPlayerScreen.kt), (2) the 'Analyzed as X. Filmed something else?' card on the results/finish screen (iOS ResultsViews.swift; Android ResultsViews.kt and KindViews.kt),",
+                "summary": "Already shipped on master, so I opened no PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as ...' rows to the player's More menu (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions; Android AnalysisPlayerScreen.kt). PR #67 (merged Nov 18) added the same one-tap choice for a whole recording filmed as the wrong kind (SplitStartsView / PassPickerView ReanalyzeCard; Android SplitStartsScreen / PassPickerScreen) and to the results finish card. Both are still on current master (94d6bf0). PR #78 only hides the More menu while analysis is still running. Seven later duplicate t127 PRs (#53, #55, ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:26+00:00",
-                "verified": "Read the code on current master (grep for reanalyze in StrideLab/ and android/), the git log (#50, #67 merged) and the closing comment on PR #70. Ran no build or tests because nothing changed.",
-                "next_step": "Mark t127 done. To check on a phone: on the record screen leave Starts selected and film a straightaway, then on the result tap 'Re-analyze as straightaways' (or More > 'Re-analyze as a straightaway' in the player) and confirm it re-analyzes in one tap. If it still falls short on the phone, edit the task to say which screen or step is missing."
+                "at": "2026-11-19T23:27+00:00",
+                "verified": "Read the code on origin/master 94d6bf0. iOS: AnalysisPlayerView.swift lines 650-659 (More menu Re-analyze rows), ResultsViews.swift onReanalyze, SplitStartsView.swift reanalyze(as:) and ReanalyzeCard. Android: AnalysisPlayerScreen.kt line 529, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt, with KindUiTest coverage. Checked the merge state with gh pr list. Ran no builds because nothing",
+                "next_step": "Mark t127 done in the tracker so it stops being re-queued. To confirm on the phone: open a clip that was analyzed as a start, tap More (top right, after analysis finishes), tap 'Re-analyze as a straightaway', and check that it re-analyzes as a straightaway. If something specific still feels manual, add a note to the task saying where."
               }
             },
             {
