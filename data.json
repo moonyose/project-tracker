@@ -1885,12 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: one-tap \"Re-analyze as\u2026\" is on master for iOS and Android (PR #50 merged Nov 18, extended in #67). You closed the later duplicate #70 as superseded, so no new PR was opened. Please mark this to-do done.",
+                "summary": "Already done: PRs #50 and #67 (merged Nov 18) added a one-tap \"Re-analyze as\u2026\" option on iOS and Android. It's in the player's More menu, on the results card, and in the pass picker for long recordings.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T06:42+00:00",
+                "at": "2026-11-19T06:44+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked master (cc7b90d): Re-analyze code is present on iOS (ResultsViews.swift onReanalyze, SplitStartsView/PassPickerView ReanalyzeCard, KindFlow.reanalyzeChoices) and Android (KindLogic.kt, ResultsViews.kt, SplitModel.kt, PassPickerScreen.kt, with KindUiTest/PassesTest). Confirmed with gh that #50 and #67 are merged and #70 was closed as superseded. No code changed, so I did not rebuild or reru",
-                "next_step": "On the latest TestFlight build, open a clip recorded as Starts, tap More > Re-analyze as > Straightaway, and check it re-analyzes. If something still falls short, edit the to-do to say what."
+                "verified": "Checked that the code is on origin/master (cc7b90d): KindFlow.reanalyzeOptions/reanalyzeTitle/reanalyzeChoices exist in Swift and Kotlin, and gh shows #50 and #67 as MERGED. No builds were re-run because nothing changed.",
+                "next_step": "On your phone, open a clip analyzed as Starts, tap More, then tap 'Re-analyze as a straightaway' and confirm the results come back as a straightaway. If you're happy with it, tick t127 off."
               }
             },
             {
@@ -1905,12 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, so no new PR. PR #51 (merged 2026-11-18) added the skeleton on/off button and the bigger Edit button side by side at the top right of the clip view, on iOS and Android, and export follows the switch. PR #67 kept them when it merged.",
+                "summary": "Already done: PR #51 (merged Nov 18) added the two larger buttons at the top right of the clip view on iOS and Android. One is a skeleton on/off toggle (stick figure with a red no-symbol) that also applies to export, and the other is an Edit button (figure with a pencil).",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T06:42+00:00",
+                "at": "2026-11-19T06:44+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read origin/master (cc7b90d), no build run. iOS: AnalysisPlayerView.skeletonButtons has two 54 pt buttons: figure.stand with a red circle.slash (Hide/Show skeleton, hidden on demos) and figure.run with a pencil (Edit this frame). With the skeleton off, the skeleton, guides and tip lines are not drawn but tips stay. ResultsViews export passes skeleton: !CoachingPrefs.hidesSkeleton() to SkeletonVide",
-                "next_step": "Open a clip on the current TestFlight build. Tap the stick figure with the red circle: only the runner and the tips should show. Export the clip and check the skeleton is left out. Tap the figure-with-pencil button to open Edit. If the icons or sizes aren't what you wanted, edit this to-do to say what should change."
+                "verified": "Read the code on origin/master (cc7b90d) and checked PR #51 and #67 are merged via gh. No new build was run because nothing changed; both PRs passed the repo's PR checks before merging.",
+                "next_step": "If it isn't on your phone yet, install the latest TestFlight build. Open a clip, tap the stick figure with the red circle at the top right: the skeleton and lines should go and the tips stay. Then save the video and check the export has no skeleton. If the icons or size aren't what you wanted, edit the to-do and say what to change."
               }
             },
             {
