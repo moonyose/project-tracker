@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master (iOS and Android). PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged 2026-11-18) added one-tap 'Re-analyze as ...' rows to the player's More menu. PR #67 (https://github.com/moonyose/StrideLab/pull/67, merged 2026-11-18) added 'Re-analyze as straightaways / curves / starts' to the long-recording review screen (including when no starts were found), the pass picker and the finish card. It also fixed the root cause of the Nov 17 problem: the saved scan (ScanCache) was reused for whatever kind was picked; it now records what it looked for (lookedFor / PassFlow",
+                "summary": "Already shipped on master, so no new PR. PR #50 (claude/t127-reanalyze-as) added a one-tap 'Re-analyze as a straightaway / start / curve (Beta)' row to the player's More menu for a single clip (StrideLab/Playback/AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift). PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways/starts' for a whole recording (SplitStartsView.swift reanalyze(as:store:), PassPickerView.swift). Both have Android twins (KindLogic.kt, ResultsViews.kt, KindViews.kt, SplitModel.kt, PassPickerScreen.kt, StartScanSession.kt) and tests (T",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T03:16+00:00",
-                "verified": "Checked origin/master at cc7b90d: grepped the iOS (KindLogic.swift reanalyzeOptions/reanalyzeChoices, AnalysisPlayerView.swift menu, SplitStartsView.swift reanalyze(as:store:), PassPickerView.swift, ResultsViews.swift) and Android sources and read the merged PR #50/#67 descriptions via gh. Did not re-run builds since nothing changed.",
-                "next_step": "On the phone (TestFlight build from master): open a long recording that was analyzed as Starts but is really straightaways. Tap 'Re-analyze as straightaways' on its review screen, or use More > 'Re-analyze as a straightaway' on a single clip. Confirm passes are found. If that works, mark t127 done."
+                "at": "2026-11-19T03:19+00:00",
+                "verified": "Read the code on origin/master (cc7b90d) and found the feature wired in on both iOS and Android, and checked with gh that PRs #50 and #67 are merged. Did not re-run xcodebuild, Tools/verify.sh or Gradle: the runner's permissions refused running ./Tools/verify.sh in this session, and with no code change there was nothing new to build.",
+                "next_step": "Mark t127 done on the list. To confirm on the phone: open a clip that was analyzed as Starts, tap the More (...) menu in the player, tap 'Re-analyze as a straightaway', and check the results switch to straightaway metrics. For a long recording, open its pass picker and use 'Re-analyze as straightaways'."
               }
             },
             {
@@ -1904,11 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (moonyose/claude/t128-skeleton-toggle, commit 580413f, merged 2026-11-18) added the clip view's skeleton on/off switch and a bigger Edit button on both iOS and Android. PR #67 (cc7b90d) kept that version when it merged. On current master: AnalysisPlayerView.swift `skeletonButtons` puts two 54 pt buttons side by side at the top right. The first is the switch: a figure.stand icon with a red circle.slash through it, stored as @AppStorage hideSkeleton. The second is Edit: a figure.run icon with a pencil, which opens the same frame menu as press-and-hold. The save-video menu",
+                "summary": "Already implemented and merged on master. PR #51 (moonyose/StrideLab, branch claude/t128-skeleton-toggle, commit 580413f, merged 2026-11-18) added two 54 pt buttons side by side at the top right of the clip view on iOS and Android: a skeleton switch (stick figure with a red no-symbol) that hides the skeleton, guides, target lines, joint ring and tip leader, leaving only the runner and tips, persisted as stridelab.hideSkeleton and applied to the saved video and shared frame (SkeletonVideoExporter skeleton: param on both platforms); and a larger Edit button (runner with pencil) that replaced the",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T03:16+00:00",
-                "verified": "Read the code on origin/master at cc7b90d: the git log showing PR #51 merged, the iOS toggle and Edit button in AnalysisPlayerView.swift around lines 1181-1220, the export menu labels tied to hideSkeleton around line 578-598, and Android's hideSkeleton in PlayerStage.kt line 432+ and the exporter's skeleton flag in AppPorts.kt. No builds were run because nothing changed.",
-                "next_step": "On the phone (current TestFlight build): open an analyzed clip that is not a demo. Tap the stick-figure button with the red no-symbol at the top right: the skeleton, dotted lines and circles disappear and only the runner and tips stay. Then use Save video: the exported video should have no skeleton. Tap the larger figure-with-pencil button beside it to open the Edit menu. If any of this falls shor"
+                "at": "2026-11-19T03:19+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read current master (cc7b90d): hideSkeleton preference and button present in StrideLab/Playback/AnalysisPlayerView.swift and CoachGuides.swift; export path honors it in SkeletonVideoExporter.swift; Android mirror present in PlayerState.kt, PlayerStage.kt, AnalysisPlayerScreen.kt, CoachGuides.kt and platform/export/SkeletonVideoExporter.kt. No build run because no code changed.",
+                "next_step": "Mark t128 done. On the latest TestFlight build, open a clip, tap the stick-figure button at the top right, and check that only the runner and tips stay visible. Then save the video and check the export has no skeleton either. If something about it is still wrong, edit the task to say what, and it will be picked up again."
               }
             },
             {
