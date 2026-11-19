@@ -1885,12 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PRs #50 and #67 (merged Nov 18) added a one-tap \"Re-analyze as\u2026\" option on iOS and Android. It's in the player's More menu, on the results card, and in the pass picker for long recordings.",
+                "summary": "Already shipped on master. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as ...\" to the player's More menu, and PR #67 (merged 2026-11-18) extended it to whole recordings filmed as the wrong kind (pass picker / split starts screens show \"Re-analyze as straightaways\"), with curve marked Beta. Both iOS (AnalysisPlayerView, ResultsViews, PassPickerView, SplitStartsView, KindLogic) and Android (AnalysisPlayerScreen, ResultsViews, PassPickerScreen, SplitStartsScreen, KindLogic) have it, with tests in Tools/tests_kindui.swift and KindUiTest.kt. No new PR opened, to avoid duplicate work.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T06:44+00:00",
+                "at": "2026-11-19T06:46+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked that the code is on origin/master (cc7b90d): KindFlow.reanalyzeOptions/reanalyzeTitle/reanalyzeChoices exist in Swift and Kotlin, and gh shows #50 and #67 as MERGED. No builds were re-run because nothing changed.",
-                "next_step": "On your phone, open a clip analyzed as Starts, tap More, then tap 'Re-analyze as a straightaway' and confirm the results come back as a straightaway. If you're happy with it, tick t127 off."
+                "verified": "Confirmed via gh that PRs #50 and #67 are MERGED, and grepped origin/master (cc7b90d) for the reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle call sites in both the iOS and Android UI. No build was run because nothing was changed.",
+                "next_step": "On the latest TestFlight build: open a clip analyzed as Starts, tap More (...) in the player, pick \"Re-analyze as a straightaway\", and check that the results come back as a straightaway. For a recording filmed with Start picked, the pass picker should offer \"Re-analyze as straightaways\". If this works, tick the to-do off."
               }
             },
             {
@@ -1905,12 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #51 (merged Nov 18) added the two larger buttons at the top right of the clip view on iOS and Android. One is a skeleton on/off toggle (stick figure with a red no-symbol) that also applies to export, and the other is an Edit button (figure with a pencil).",
+                "summary": "Already done on master. PR #51 (moonyose/StrideLab, branch claude/t128-skeleton-toggle) merged this exact to-do, and PR #67 (cc7b90d, current master) kept it. iOS AnalysisPlayerView.skeletonButtons has two 54 pt buttons side by side at the top right: a figure.stand with a red circle.slash as the skeleton switch, and a runner with a pencil as Edit. The switch is saved under stridelab.hideSkeleton, and with it on the clip view hides the skeleton, guides, the lit-joint circle and the tip leader. SkeletonVideoExporter's skeleton: parameter carries the switch into Save video and Share this frame. A",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T06:44+00:00",
+                "at": "2026-11-19T06:46+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read the code on origin/master (cc7b90d) and checked PR #51 and #67 are merged via gh. No new build was run because nothing changed; both PRs passed the repo's PR checks before merging.",
-                "next_step": "If it isn't on your phone yet, install the latest TestFlight build. Open a clip, tap the stick figure with the red circle at the top right: the skeleton and lines should go and the tips stay. Then save the video and check the export has no skeleton. If the icons or size aren't what you wanted, edit the to-do and say what to change."
+                "verified": "Read the current master code. iOS: AnalysisPlayerView.swift lines 1175-1220 and 1289-1294, the export labels at lines 578 and 598, and SkeletonVideoExporter's skeleton flag. Android: PlayerStage.kt line 434, PlayerState.kt lines 126 and 323, AnalysisPlayerScreen.kt line 477. Confirmed PR #51 is merged (169f9a0) and kept by #67. I didn't rebuild, because nothing changed. The PR #51 body reports a p",
+                "next_step": "On a TestFlight build, open one of your own clips (not a demo). At the top right, tap the stick figure with the red no-symbol: the skeleton, dotted guides and circles should disappear, and the tips should stay. Then use Share > Save video and check the saved video has no skeleton. Tap the runner-with-pencil button and check the Edit menu opens. If this all works, tick t128 off the list."
               }
             },
             {
