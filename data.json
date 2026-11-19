@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / start / curve' to the player's More menu and the finished screen, and PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways / starts' on the recording's split review and pass picker, for a recording filmed with the wrong record-screen setting (Austin's Nov 17 case). Both are on iOS (SplitStartsView.reanalyze(as:), PassPickerView, ResultsViews, AnalysisPlayerView) and Android (SplitModel/SplitStartsScreen/PassPickerScreen/AnalysisPlayerScreen), with tests in Tools/tests_kindui.swift and andr",
+                "summary": "Already shipped. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added one-tap \"Re-analyze as a straightaway / start / curve\" rows to the player's More menu (KindFlow.reanalyzeOptions; likeliest mix-up first, so a take left on Starts offers straightaway first). PR #67 then added \"Re-analyze as\" buttons on the recording review, pass picker and finish card, and re-scans a recording for passes when it is switched from starts to straightaways. Both are on master for iOS (AnalysisPlayerView.swift, PassPickerView.swift, SplitStartsView.swift, ResultsViews.swift) and Android (AnalysisPlayerScree",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:53+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read current origin/master (90cfea7): the re-analyze code paths are present and wired in the iOS and Android UI. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build from 2026-11-18 or later: set the record screen to Starts, film a straightaway, then on the review screen tap 'Re-analyze as straightaways' and check that it finds passes. If it still falls short, edit the task to say what is missing."
+                "at": "2026-11-19T22:55+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read current master (90cfea7): the menu rows and recording-screen buttons are present on both platforms. Checked with gh that PR #50 is merged. Did not rebuild, since nothing changed.",
+                "next_step": "On a TestFlight build from master: open a clip analyzed as a start, tap More, tap \"Re-analyze as a straightaway\" and check that it shows \"Re-analyzing as a straightaway\" and then stride results. If that works, tick t127 off the list."
               }
             },
             {
