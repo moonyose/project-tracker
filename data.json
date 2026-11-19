@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master for iOS and Android (commits 1a499a2 and c3f1d42, Nov 18), so no PR. One-tap 'Re-analyze as \u2026' options are in the player's More menu, on the results screen and in a long recording's review.",
+                "summary": "Already shipped on both platforms. PR #50 (https://github.com/moonyose/StrideLab/pull/50, 'One-tap \"Re-analyze as\u2026\" in the player's More menu') was merged 2026-11-18. It added KindFlow.reanalyzeOptions plus a More-menu item per other kind in iOS AnalysisPlayerView, the same in Android AnalysisPlayerScreen.kt and KindLogic.kt, and tests (Tools/tests_kindui.swift, KindUiTest.kt). The split and pass-picker flows also offer a 'Re-analyze as' card (ReanalyzeCard / reanalyzeChoices, with straightaways listed first for a Starts recording). Current master (90cfea7) still has all of this, so no new PR ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:01+00:00",
-                "verified": "Read the master code (origin/master 90cfea7): found the feature wired in on iOS and Android, with tests in Tools/tests_kindui.swift and android KindUiTest.kt. Nothing was changed, so I didn't rebuild or rerun the checks.",
-                "next_step": "On the phone (latest TestFlight): open a clip analyzed as a Start, tap More (...) and check that 'Re-analyze as a straightaway' is there and switches the clip to straightaway analysis in one tap. If Austin wanted it somewhere else, for example right on the record screen or the library card, he should edit the task to say where."
+                "at": "2026-11-19T23:03+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Checked git history on origin/master: merge fe99a5f (PR #50, state MERGED). Grep confirms reanalyzeOptions/reanalyzeChoices and their tests exist in iOS (StrideLab/Playback/KindLogic.swift, AnalysisPlayerView.swift:651) and Android (core/.../playback/KindLogic.kt, ui/split/PassPickerScreen.kt, KindUiTest.kt). No builds were run because nothing changed.",
+                "next_step": "On a TestFlight build that includes PR #50, open a clip that was analyzed as Starts, tap More, then 'Re-analyze as straightaway', and confirm it re-runs as a straightaway. If it already works, mark t127 done. If it falls short, edit the task to say what's still missing."
               }
             },
             {
