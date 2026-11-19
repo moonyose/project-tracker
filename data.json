@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, iOS and Android. PR #50 (merged 2026-11-18) added 'Re-analyze as...' to the player's More menu. PR #67 (merged 2026-11-18) fixed the Nov 17 root cause: the saved scan of a recording was reused whatever kind it was looked through for, so a straightaway session filmed on Starts never had passes searched for. Each saved look now records its kind (ScanCache.load(chosen:) / PassFlow.cacheFits). #67 also added one-tap 'Re-analyze as straightaways / curves / starts' cards on the starts review, the 'No starts found' screen, the pass picker and the finish card. Android has th",
+                "summary": "Already on master for iOS and Android, so there was nothing to change and no PR. Commit c3f1d42 (Nov 18) added 'Re-analyze as ...' buttons to a long recording's review and pass picker and to the finished-clip card. It also makes the app look through a recording again for passes when it is re-analyzed as straightaways. Commit 1a499a2 (Nov 18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. In AnalysisPlayerView.swift and AnalysisPlayerScreen.kt each row goes through applyKind (paywall check, re-analysis step, choice saved on the clip). The",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:46+00:00",
-                "verified": "Read current master (94d6bf0). Found the re-analyze entry points: iOS AnalysisPlayerView.swift:653, ResultsViews.swift:942, SplitStartsView.swift:1363/1420 and PassPickerView.swift:54. Android has the same in PassPickerScreen.kt, SplitModel.kt, KindLogic.kt and ResultsViews.kt. Confirmed with gh that #50 and #67 are merged. Didn't rebuild, because no code changed.",
-                "next_step": "On your phone with the current TestFlight build: leave the record screen on Start and film two straightaway passes. On the starts review or 'No starts found' screen, tap 'Re-analyze as straightaways'. You should get 'Pick your passes' with no manual marking. If that works, mark t127 done in the tracker."
+                "at": "2026-11-19T23:52+00:00",
+                "verified": "Worktree from origin/master (94d6bf0). Read the code paths and the two commits. ./Tools/verify.sh prints ALL CHECKS PASSED, including the 'Re-analyze as ...' checks (choices, order, titles, prompts, a recording looked through again as straightaways). Not run because nothing changed: xcodebuild, Gradle, bend PROOF.bend.",
+                "next_step": "On a TestFlight build with commit 1a499a2 or later: film a few straightaways with the record screen left on Starts. If it is a long recording, the review screen shows 'Looked through for starts. Filmed something else?'; tap 'Re-analyze as straightaways'. On a single clip, open it, tap More (...) and tap 'Re-analyze as a straightaway'. It should re-analyze as a stride with no manual marking. If it "
               }
             },
             {
