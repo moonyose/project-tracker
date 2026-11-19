@@ -1885,12 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on iOS and Android. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap \"Re-analyze as...\" to the player's More menu, plus Kotlin twins and tests. PR #67 (merged 2026-11-18) fixed the root cause of the Nov 17 case: the saved scan of a long recording didn't record which kind it looked for, so a straightaway session filmed with Starts still picked kept reusing the starts look. Saved scans now record lookedFor (PassFlow.cacheFits). PR #67 also added \"Re-analyze as straightaways / curves / starts\" on the recording review screen (including when no st",
+                "summary": "Already shipped on master for iOS and Android. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as ...' rows to the player's More menu. PR #67 (merged 2026-11-18) added 'Re-analyze as' buttons to the recording review, the pass picker and the finish card, plus a scan cache keyed by kind, so a recording first scanned as starts gets scanned for passes when you switch it to straightaways. Seven later duplicate PRs (#53, #55, #60, #62, #63, #65, #70) were closed without merging. No new PR opened. Please tick this task off so it stops being picked up.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T12:26+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked master (cc7b90d): reanalyze paths exist in AnalysisPlayerView.swift (More menu), ResultsViews.swift (finish card), SplitStartsView.swift and PassPickerView.swift (recording review and pass picker), KindLogic.swift, and in the matching Kotlin files under android/. Confirmed with gh that PRs #50 and #67 are merged. No builds or checks were re-run, since nothing changed.",
-                "next_step": "On a phone with the current TestFlight build: record a straightaway session with the record screen left on Starts. On the review screen, tap \"Re-analyze as straightaways\" and check that passes are found. For a single clip, open it in the player, then More > Re-analyze as... > a different kind, and check the result relabels and re-measures."
+                "at": "2026-11-19T12:29+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Checked that origin/master (cc7b90d) has the 'Re-analyze as' code in StrideLab/Playback/KindLogic.swift, KindViews.swift, ResultsViews.swift, Split/SplitStartsView.swift and PassPickerView.swift, and the Kotlin versions in android/core and android/app. Confirmed with gh that #50 and #67 are merged. Nothing was built or tested this run because no code changed.",
+                "next_step": "On the phone, open a clip that was analysed as Starts, tap More, then tap 'Re-analyze as a straightaway'. It should re-run the analysis as a straightaway. For a long recording, the review and pass-picker screens should show 'Re-analyze as straightaways'. If that works, mark t127 done in the tracker."
               }
             },
             {
@@ -1905,12 +1905,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (https://github.com/moonyose/StrideLab/pull/51, branch claude/t128-skeleton-toggle, merged 2026-11-18) added the clip view's skeleton on/off switch (stick figure with a red no-symbol; hides the skeleton, guides, target lines, joint ring and tip leader, leaving the runner and tips; persisted as stridelab.hideSkeleton; the saved skeleton video and shared frame follow it) and a bigger Edit button (runner with a pencil) beside it at the top right, on iOS and Android. PR #67 (merged, cc7b90d) kept #51's versions. Current master still has the switch (AnalysisPlayerView.swift ",
+                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f, 'Clip view: skeleton on/off switch (applies to export) and a bigger Edit button') merged into master, and the later merge of #67 (82900ed) explicitly kept #51's skeleton switch and big Edit button. Current master (cc7b90d) has it on both platforms: iOS AnalysisPlayerView.swift `skeletonButtons` puts two 54 pt buttons side by side at the top right: a skeleton toggle (figure.stand with a red circle.slash, red ring when hidden, hidden for demos) and Edit (figure.run with a pencil, opens the frame edit menu). Export reads",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T12:26+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Checked git log on origin/master (cc7b90d): commit 580413f from PR #51 is merged and the hideSkeleton switch and export plumbing are in the current iOS and Android sources. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build from master, open a clip. Tap the stick-figure switch at the top right: the skeleton should disappear and the tips should stay. Save the video and check it has no skeleton. Then tap the big Edit button beside it to open the mark menu. If any of that is wrong, edit the task to say what, and it can be redone."
+                "at": "2026-11-19T12:29+00:00",
+                "verified": "Read current origin/master source: iOS StrideLab/Playback/AnalysisPlayerView.swift lines 1175-1220, StrideLab/Playback/ResultsViews.swift line 1040; Android ui/player/PlayerStage.kt lines 420-457, ui/player/ResultsViews.kt lines 1374-1380. Checked git log showing #51 merged and kept by #67. I did not rebuild or re-run checks because nothing changed.",
+                "next_step": "On a TestFlight build, open an analyzed (non-demo) clip. Two large buttons sit at the top right. Tap the stick figure with the red no-symbol: the skeleton, dotted lines and circles should disappear and only the tips and the runner stay. Export the video and check it also has no skeleton. Tap the figure-with-pencil button to open Edit. If you wanted something different from this (other icons, or a "
               }
             },
             {
