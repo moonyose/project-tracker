@@ -1885,12 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged 2026-11-18, branch claude/t127-reanalyze-as) added a one-tap \"Re-analyze as ...\" section to the player's More menu, on iOS and Android. PR #67 (merged 2026-11-18) added Re-analyze buttons to the recording review, the pass picker and the finish card, plus a scan cache keyed by kind so a recording first scanned as Starts gets scanned again for passes once it is marked as Straightaways. On master: iOS has KindFlow.reanalyzeOptions/reanalyzeTitle in StrideLab/Playback/KindLogic.swift, the menu in",
+                "summary": "Already shipped. On Nov 18, PR #50 added a one-tap \"Re-analyze as a straightaway / curve\" to the player's More menu and the finish card. PR #67 added \"Re-analyze as straightaways / starts\" for whole recordings on the pass picker and the start splitter. Both are on master for iOS and Android, so no new PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T01:07+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked that the feature is on origin/master (cc7b90d) by reading the code and the merged PR history, on iOS and Android. I did not rebuild or rerun the checks because nothing changed. The PR checks ran when #50 and #67 were merged.",
-                "next_step": "Mark t127 done in the tracker. To confirm on your phone with the latest TestFlight build: open a straightaway clip that was analysed as a start, tap More (...), choose 'Re-analyze as a straightaway', and check that the results switch to straightaway metrics."
+                "at": "2026-11-19T01:09+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Read the code on origin/master (cc7b90d). iOS: KindFlow.reanalyzeOptions/reanalyzeTitle, used by the AnalysisPlayerView More menu and the ResultsViews finish card. ReanalyzeCard with reanalyzeRecordingTitle in PassPickerView and SplitStartsView. Tools/tests_kindui.swift has a test for a start filmed by mistake being one tap from a straightaway. Android: KindFlow.reanalyzeOptions plus AnalysisPlaye",
+                "next_step": "Install the latest TestFlight build (it includes PR #50 and #67). Open a straightaway clip that was recorded on Starts, tap More (...) and then \"Re-analyze as a straightaway\". If that still misses what you wanted, edit this to-do to say what's still manual."
               }
             },
             {
@@ -1905,12 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #51 (moonyose/StrideLab, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button', merged 2026-11-18) added it, and PR #67 kept it when it merged. iOS: AnalysisPlayerView.skeletonButtons has two 54 pt buttons side by side at the top right. The first is a stick figure with a red circle.slash that hides or shows the skeleton. The second is a figure with a pencil that opens Edit. The export reads CoachingPrefs.hidesSkeleton (ResultsViews.swift:1040). Android: PlayerStage.kt:434-447 has the same two buttons, and model.hideSkeleton drives the export'",
+                "summary": "Already done. This to-do shipped in PR #51 (branch claude/t128-skeleton-toggle, merged 2026-11-18) and was kept when PR #67 merged it with other work. origin/master (cc7b90d) has, at the top right of the clip view (AnalysisPlayerView.swift skeletonButtons), two 54 pt buttons side by side: a skeleton switch (figure.stand with a red circle.slash) and Edit (figure.run with a pencil). The exporter takes the switch's value as its skeleton: parameter (iOS SkeletonVideoExporter.swift; Android ResultsViews.kt skeletonOn). No new branch or PR was opened, so there are no duplicate changes.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T01:07+00:00",
+                "at": "2026-11-19T01:09+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read the code on origin/master (cc7b90d) on both platforms and confirmed PR #51 is MERGED with gh. No build was run because nothing changed.",
-                "next_step": "On your phone, open a clip. Tap the stick-figure button with the red circle (top right) and check that the skeleton, dotted lines and circles go away while the tips stay. Then export and check that the saved video has no skeleton either. Tap the Edit button next to it and check that it opens the edit menu. If any of that is wrong, edit the task to say what's missing."
+                "verified": "Read the code on origin/master and confirmed with gh that PR #51 is MERGED. Didn't rebuild, since nothing changed.",
+                "next_step": "Mark t128 done in the tracker. To check on your phone: open a clip, tap the stick-figure-with-red-slash button at the top right and confirm the skeleton, dotted lines and circles go away while the tips stay. Then export and confirm the video has no skeleton either. Tap the figure-with-pencil button and confirm the edit menu opens. If any of that isn't what you wanted, edit the to-do with what's wr"
               }
             },
             {
