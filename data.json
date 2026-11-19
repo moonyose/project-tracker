@@ -1885,11 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. One-tap \"Re-analyze as ...\" is already on the default branch for iOS and Android: commit 1a499a2 (PR #50, branch claude/t127-reanalyze-as) added it to the player's More menu, and c3f1d42 (merged in PR #67) extended it to the review screen, pass picker and finish card. It also rescans recordings first scanned as starts for passes once they are re-analyzed as straightaways. Tests are in Tools/tests_kindui.swift, Tools/tests_passes.swift and android/core KindUiTest/PassesTest. No new PR, because it would duplicate merged work.",
+                "summary": "Already done. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More (...) menu on iOS and Android (KindFlow.reanalyzeOptions/reanalyzeTitle, tests in Tools/tests_kindui.swift and KindUiTest.kt). PR #67 merged it with t128 into master (cc7b90d), adding re-analyze cards on the split/pass-picker screens for long recordings too. Nothing left to change, so no new PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T05:50+00:00",
-                "verified": "./Tools/verify.sh on origin/master (cc7b90d) printed ALL CHECKS PASSED, including the re-analyze-as kind UI checks. No xcodebuild, Gradle or bend run, since nothing was changed.",
-                "next_step": "On the phone, open a clip that was analyzed as a start, tap More (...), then tap \"Re-analyze as a straightaway\". It should show \"Re-analyzing as a straightaway\" and come back with stride results. If this was still a problem on Nov 17, check that the phone has a build that includes PR #50 or #67. If the build has them and it still fails, edit the task to say where the option is missing."
+                "at": "2026-11-19T05:52+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Confirmed on origin/master (cc7b90d): the iOS AnalysisPlayerView More menu has KindFlow.reanalyzeOptions rows. SplitStartsView and PassPickerView have ReanalyzeCard. The Android port has the same rows in PlayerStage/AnalysisPlayerScreen, SplitStartsScreen and PassPickerScreen. Build and tests were not re-run because no code changed. PR #50 reports xcodebuild, Tools/verify.sh and the Gradle checks ",
+                "next_step": "On your phone: set Filming to Start, record a few straightaway strides, open the clip, tap ... (More) and then 'Re-analyze as a straightaway'. Check that straightaway coaching appears. If that works, mark t127 done in the tracker."
               }
             },
             {
@@ -1904,11 +1905,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. origin/master has this feature on both platforms: PR #51 (claude/t128-skeleton-toggle, commit 580413f) and PR #67 (cc7b90d). On iOS, AnalysisPlayerView.skeletonButtons puts two 54pt buttons side by side at the top right. The first is a skeleton switch (figure.stand with a red circle.slash) stored in the stridelab.hideSkeleton preference. The second is a bigger Edit button (figure.run with a pencil) that opens the frame-mark menu. Turning the skeleton off hides the skeleton overlay and guides and leaves the tips. The save/export menu reads the same flag and shows 'Save video wi",
+                "summary": "Already shipped. PR #51 (commit 580413f, 'Clip view: skeleton on/off switch (applies to export) and a bigger Edit button') is merged into master and was kept through the PR #67 merge (82900ed, which explicitly kept #51's skeleton switch and Edit button). Current master has it on both platforms. iOS: the hideSkeleton toggle (persisted as stridelab.hideSkeleton) and the big Edit button are in AnalysisPlayerView.swift around line 1186, and the export follows the toggle ('Save video with tips'). Android: PlayerStage.kt:434, PlayerState.kt:126/323, and the same export wording in AnalysisPlayerScree",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T05:50+00:00",
-                "verified": "Code inspection only, on origin/HEAD at cc7b90d. I didn't rebuild because nothing changed and those PRs passed the PR checks when merged.",
-                "next_step": "If something is still wrong in the shipped version (icon look, size, placement, or export still drawing the skeleton), edit the task to say what. Phone check: open a non-demo clip, tap the stick-figure/red-slash button at the top right, and the skeleton and dotted lines should disappear while the tips stay. Then save the video and confirm the export has no skeleton."
+                "at": "2026-11-19T05:52+00:00",
+                "verified": "Read master at cc7b90d. The hideSkeleton toggle, the Edit button and the export behavior are present in the iOS and Android code. Nothing was built or run, because nothing changed.",
+                "next_step": "On your phone, open a clip. At the top right, tap the stick-figure button with the red no-symbol. The skeleton, dotted lines and circles should go away, leaving only the runner and the tips. Save the video from the menu: it should be labeled 'Save video with tips' and the saved video should have no skeleton. Tap the larger Edit button beside it: the mark menu should open. If something about the sh"
               }
             },
             {
