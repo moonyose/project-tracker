@@ -1885,12 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #50 (merged 2026-11-18) added one-tap \"Re-analyze as ...\" items to the player's More menu on iOS and Android; PR #67 (merged 2026-11-18) added \"Re-analyze as starts/straightaways\" buttons on the recording review, pass picker and finish card, plus a kind-keyed scan cache so a recording first looked through as starts is looked through for passes again once re-analyzed as straightaways. Both platforms have the UI wiring and tests (Tools/tests_kindui.swift, android KindUiTest.kt). No new PR opened.",
+                "summary": "Already shipped on master, so I made no new change. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as ...\" to the clip player's More menu. PR #67 (merged 2026-11-18) fixed the root cause of the Nov 17 problem on iOS and Android: the saved scan of a long recording didn't store which kind it had looked for, so a straightaway session recorded as Starts was only ever searched for starts. It also added \"Re-analyze as straightaways / curves / starts\" buttons to the recording review screen (including when no starts were found), the pass picker and the finish card. Android has the same code (K",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T08:53+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "On origin/master (cc7b90d): ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' and 'a recording reanalyzed as straightaways is looked through for passes again' checks. Confirmed by grep that the iOS AnalysisPlayerView/ResultsViews/PassPickerView/SplitStartsView and the Android AnalysisPlayerScreen/ResultsViews/PassPickerScreen/SplitStartsScreen use KindFlow.rea",
-                "next_step": "On a TestFlight build from master or later: record with Start selected while running a straightaway, open the clip, tap More > 'Re-analyze as a straightaway', and check that the results come back as a straightaway. For a long recording, check that the pass picker or review shows 'Re-analyze as straightaways'. If that works, mark t127 done in the tracker."
+                "at": "2026-11-19T08:54+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Checked that origin/master contains commit 1a499a2 (PR #50) and merge cc7b90d (PR #67), both merged according to gh, and that the Android sources include the re-analyze code. I didn't rebuild or rerun any checks because nothing changed; those PRs ran their own checks.",
+                "next_step": "On a TestFlight build that includes PR #67: record a straightaway with the record screen left on Starts. On the review screen (or the 'no starts found' screen), tap 'Re-analyze as straightaways' and confirm passes are found. For a single clip, open it, then More > 'Re-analyze as a straightaway'. If this still doesn't work for you, add a note to the task saying where it fails."
               }
             },
             {
@@ -1905,12 +1905,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #51 (moonyose/StrideLab, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button') merged 2026-11-18, and #67 merged it alongside the t127 re-analyze work. On origin/HEAD (cc7b90d) the clip view has two 54pt buttons side by side at the top right. The first is the skeleton switch: a stick figure with a red no-symbol (circle.slash) through it and a red ring when the skeleton is off. It hides the skeleton, guides and circles and keeps the tips and the runner, and the setting (CoachingPrefs.hideSkeletonKey) also controls Save video. The s",
+                "summary": "Already shipped. PR #51 (moonyose/StrideLab, branch claude/t128-skeleton-toggle, commit 580413f) added the clip view's skeleton on/off switch (stick figure with a red no-symbol; hides skeleton, guides, target lines, joint ring and tip leader, leaving only runner and tips; persisted as stridelab.hideSkeleton; saved skeleton video and shared frame follow it) and a bigger Edit button (runner with a pencil) side by side at the top right, on iOS and in the Android port. It was merged and kept through the PR #67 merge (cc7b90d, current master). No new PR opened.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T08:53+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read origin/HEAD: StrideLab/Playback/AnalysisPlayerView.swift skeletonButtons (lines ~1175-1220), skeletonHidden, the Save video labels; ResultsViews.swift export defaults skeleton to !CoachingPrefs.hidesSkeleton(); android/app/.../ui/player/PlayerStage.kt SkeletonButtons and PlayerState.hideSkeleton. gh pr view 51 shows state MERGED. No build was run because no code changed.",
-                "next_step": "On the current TestFlight build, open a non-demo clip. Tap the stick-figure-with-red-slash button at the top right: the skeleton, dotted lines and circles go away and the tips stay. Then use Save video and check the exported video has no skeleton. Tap the pencil-figure button beside it to open Edit. If this build already looks like that, close t128."
+                "at": "2026-11-19T08:54+00:00",
+                "verified": "Read current origin/master: StrideLab/Playback/AnalysisPlayerView.swift (hideSkeleton AppStorage, toggle button ~line 1186, export labels 'Save video with tips'), CoachGuides.swift hideSkeletonKey; Android PlayerStage.kt (toggle ~line 434), PlayerState.kt hideSkeleton pref, AnalysisPlayerScreen.kt export labels, core CoachGuides.kt. No build run because nothing changed.",
+                "next_step": "On the phone: open any analyzed clip, tap the stick-figure-with-red-circle button at the top right to confirm only the runner and tips remain, then More > Save video with tips and check the export has no skeleton. Tap the big Edit button beside it to confirm the mark menu opens. If the merged version misses something, edit the task to say what, and it will be re-run."
               }
             },
             {
