@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as ...' rows to the player's More menu on iOS and Android (KindFlow.reanalyzeOptions; the likeliest mistake, Starts -> straightaway, is listed first). Later merges added the same one-tap option elsewhere: a ReanalyzeCard on the Split Starts screen ('Re-analyze as straightaways' for a long recording left on Starts, which is the Nov 17 case), on the pass picker, and on the results/finish card. Each one applies a .kind pick, so it counts as the athlete's choice (LAW 41) and is re-analyzed. All of these a",
+                "summary": "Already done on master for iOS and Android (commits 1a499a2 and c3f1d42, Nov 18), so no PR. One-tap 'Re-analyze as \u2026' options are in the player's More menu, on the results screen and in a long recording's review.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:59+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code at origin/master 90cfea7. iOS: KindLogic.swift reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle; AnalysisPlayerView.swift; SplitStartsView.swift reanalyze(as:) plus ReanalyzeCard; PassPickerView.swift; ResultsViews.swift. Android: KindLogic.kt, AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt, ResultsViews.kt, with KindUiTest.kt tests. gh says PR #50 is MERGE",
-                "next_step": "On a TestFlight build that includes PR #50: record a straightaway with Starts still selected. On the Split Starts screen, tap 'Re-analyze as straightaways' and check it finds the passes. Or open any analyzed clip, go to More, tap 'Re-analyze as a straightaway', and check the clip comes back analyzed as a straightaway. If something still doesn't work in that flow, edit the task with what you saw."
+                "at": "2026-11-19T23:01+00:00",
+                "verified": "Read the master code (origin/master 90cfea7): found the feature wired in on iOS and Android, with tests in Tools/tests_kindui.swift and android KindUiTest.kt. Nothing was changed, so I didn't rebuild or rerun the checks.",
+                "next_step": "On the phone (latest TestFlight): open a clip analyzed as a Start, tap More (...) and check that 'Re-analyze as a straightaway' is there and switches the clip to straightaway analysis in one tap. If Austin wanted it somewhere else, for example right on the record screen or the library card, he should edit the task to say where."
               }
             },
             {
