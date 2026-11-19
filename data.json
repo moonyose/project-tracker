@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: one-tap \"Re-analyze as\u2026\" is on master for iOS and Android (PR #50, then extended in your PR #67 merged Nov 18). It appears in the player's More menu, on the results screen, and on a long recording's review (\"Re-analyze as straightaways\"). The later duplicate PRs (#63, #65, #70) were closed, so no new PR was opened.",
+                "summary": "Already done: \"Re-analyze as\u2026\" shipped on iOS and Android in PR #50 (one-tap rows in the clip player's More menu) and PR #67 (a Re-analyze card on the results, pass picker and long-recording starts screens). No new PR, so as not to add an eighth duplicate (#53, #55, #60, #62, #63, #65 and #70 were already closed).",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T10:37+00:00",
-                "verified": "Checked origin/master (cc7b90d): iOS KindFlow.reanalyzeOptions/reanalyzeChoices are used in AnalysisPlayerView, ResultsViews, SplitStartsView and PassPickerView, and Tools/tests_kindui.swift covers them. The Kotlin twins are used in AnalysisPlayerScreen, ResultsViews, SplitStartsScreen and PassPickerScreen, with KindUiTest coverage. No code changed, so builds and checks were not re-run.",
-                "next_step": "On the current TestFlight build, open a straightaway clip that was analyzed as a start. Tap More > \"Re-analyze as a straightaway\" and check that it comes back as a straightaway. If that works, tick this to-do off so the bot stops retrying it."
+                "at": "2026-11-19T10:39+00:00",
+                "verified": "Read current master (cc7b90d). iOS: AnalysisPlayerView.swift line 649 (More menu uses KindFlow.reanalyzeOptions), line 1053 (results card), and SplitStartsView/PassPickerView ReanalyzeCard. Android: AnalysisPlayerScreen.kt line 526, SplitStartsScreen.kt line 383, PassPickerScreen.kt. Tests already in Tools/tests_kindui.swift and KindUiTest.kt. No builds run because nothing changed.",
+                "next_step": "On a TestFlight build at or after PR #67: open a clip analyzed as a start, tap More, then 'Re-analyze as a straightaway'. Check that it re-analyzes and the kind sticks. Then close t127 on the to-do list so it stops being re-queued."
               }
             },
             {
@@ -1903,12 +1903,13 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "needs_austin",
-                "summary": "Already done: no new PR opened. The skeleton on/off toggle and the bigger Edit button are already on StrideLab master for iOS and Android. They came in with PR #51 (branch claude/t128-skeleton-toggle, merged) and PR #67 (merged 2026-11-18). iOS: AnalysisPlayerView.skeletonButtons has two 54pt buttons side by side at the top right. One is figure.stand with a red circle.slash; it turns off the skeleton, dotted guide lines and circles and leaves the tips. The other is figure.run with a pencil and opens the Edit menu. The setting is saved under CoachingPrefs.hideSkeletonKey, and the exporter reads",
+                "status": "done_no_change",
+                "summary": "Already shipped: PR #51 (merged 2026-11-18) added the big skeleton on/off button (stick figure with a red no-symbol) and the bigger Edit button (runner with a pencil) side by side at the top right of the clip view, on iOS and Android. The setting also strips the skeleton from exported stills and videos. PR #67 kept both buttons when it merged. Nothing new was opened.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T10:37+00:00",
-                "verified": "Read origin/master (cc7b90d): git log shows #51 and #67 merged. Checked the iOS and Android code for the toggle, the icons, the Edit button and the export setting. I made no code changes, so I ran no builds.",
-                "next_step": "Mark t128 done in the project tracker so it stops being picked up again. If the shipped version misses something (for example, you want the buttons bigger or placed differently), edit the to-do to say what is wrong. To check on your phone: open any recorded clip (not a demo). Tap the stick-figure button with the red no-symbol at the top right; the skeleton should disappear and the tips stay. Then "
+                "at": "2026-11-19T10:39+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read current master (cc7b90d). iOS: AnalysisPlayerView.skeletonButtons has two 54pt buttons, figure.stand with a red circle.slash, and figure.run with a pencil. skeletonHidden hides the overlay and guide lines and passes a nil frame to still export. CoachingPrefs.hideSkeletonKey is read for video export. Android: PlayerStage.kt, PlayerState.skeletonHidden and AnalysisPlayerScreen export mirror it.",
+                "next_step": "On a TestFlight build, open one of your own clips (not a demo). Tap the stick-figure button at the top right: the skeleton, lines and circles go away and the tips stay. Save the video and check the export has no skeleton. Tap the pencil button next to it to open Edit. If you wanted something different (for example a different place or size), edit the to-do to say what."
               }
             },
             {
