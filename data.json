@@ -1885,12 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on iOS and Android: PR #50 added one-tap \"Re-analyze as\u2026\" to the player's More menu, and PR #67 added it to the pass picker and starts screen (both merged Nov 18). No new PR needed.",
+                "summary": "Already done on master, on iOS and Android. PR #50 (merged 2026-11-18) added a one-tap 'Re-analyze as...' option to the player's More menu. PR #67 (merged 2026-11-18) fixed the root cause of the Nov 17 case: the saved scan of a long recording didn't record which kind it was looking for, so a straightaway session filmed with Start selected was never searched for passes. Each saved scan now records its kind. PR #67 also put 'Re-analyze as straightaways / curves / starts' buttons on the review screen (including when no starts were found), the pass picker and the finish card. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T14:17+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked origin/HEAD history and code: gh pr view 50 and 67 are both MERGED. grep confirms the re-analyze paths exist in the Swift app and the Kotlin port. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build from master: open a clip recorded as Starts that is really a straightaway, tap More > \"Re-analyze as a straightaway\" and confirm it re-runs as a straightaway. If that works, close t127. If something is still missing, edit the task to say exactly what."
+                "at": "2026-11-19T14:19+00:00",
+                "verified": "Confirmed on origin/master (cc7b90d) that both PRs show as merged on GitHub, and that the re-analyze code is in StrideLab/Playback (AnalysisPlayerView, KindLogic, KindViews, ResultsViews) and in the Android port (ui/player/AnalysisPlayerScreen, KindViews, ResultsViews; core playback/KindLogic). No build was run, since nothing changed.",
+                "next_step": "On your phone with the latest TestFlight build: open a straightaway clip that was analyzed as Starts, tap More > Re-analyze as > Straightaways, and check that it finds the passes. If it still misses, edit the task to describe what you saw."
               }
             },
             {
@@ -1905,12 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on iOS and Android in PR #51 (merged Nov 18): the clip view has a skeleton on/off switch at the top right that also applies to exports, with a bigger Edit button beside it. No new PR needed.",
+                "summary": "Already shipped. PR #51 (claude/t128-skeleton-toggle) merged 2026-11-18 and was kept by PR #67. It added the skeleton on/off switch (figure icon, red ring when off) and a bigger Edit button (figure + pencil) side by side on the clip view, on iOS and Android. It also applies the switch to the saved video and still image (iOS ResultsViews.swift reads CoachingPrefs.hidesSkeleton(); Android ResultsViews.kt does the same), so the export shows only tips and the runner. Nine duplicate t128 PRs (#52, #54, #56-#59, #61, #64, #66, #68, #69) were opened and closed. This task should be marked done in the ",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T14:17+00:00",
+                "at": "2026-11-19T14:19+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read the git history and grepped origin/master (cc7b90d): the toggle, the Edit button and the export plumbing are all there on iOS and Android. I did not rebuild, because there was no code change.",
-                "next_step": "On the phone, open any analyzed clip and tap the stick-figure-with-red-circle button at the top right. Check that the skeleton, dotted lines and circles disappear and only the runner and tips stay. Then Save video with tips and confirm the export has no skeleton. If this to-do was meant to change something about the shipped version (icon look, size, position), edit the task to say what."
+                "verified": "Read origin/master (cc7b90d): hideSkeleton pref + toggle in AnalysisPlayerView.swift and PlayerStage.kt; export paths honor it on both platforms. No new build run because nothing changed.",
+                "next_step": "Mark t128 done in the tracker. On the phone, open a clip, tap the stick-figure button and check that the skeleton, lines and circles go away. Then use More > Save video with tips and check that the saved video shows only tips and the runner."
               }
             },
             {
