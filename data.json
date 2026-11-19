@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already built: PR #50, merged Nov 18, added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu and the results card on both iOS and Android, so no new PR was needed.",
+                "summary": "Already shipped on master, no new PR opened. One-tap 'Re-analyze as...' was merged in PR #50 (branch claude/t127-reanalyze-as) and PR #67, with #51 alongside. On 2026-11-18 Austin closed #70 without merging and said #50, #51 and #67 cover this task. On current master (94d6bf0) both platforms have: (1) the player's More menu with 'Re-analyze as <kind>' items (iOS AnalysisPlayerView.swift KindFlow.reanalyzeOptions; Android AnalysisPlayerScreen.kt), (2) the 'Analyzed as X. Filmed something else?' card on the results/finish screen (iOS ResultsViews.swift; Android ResultsViews.kt and KindViews.kt),",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:23+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current origin/master code on both platforms and confirmed the re-analyze entry points are present and wired up (iOS AnalysisPlayerView More menu lines ~650-659; Android app UI files listed in the summary). Confirmed PR #50 is MERGED via gh. No build was run because no code was changed.",
-                "next_step": "On a TestFlight build that includes PR #50, open a clip recorded with Starts selected that is really a straightaway. Tap More (the ... button, top right, shown once analysis finishes), then 'Re-analyze as a straightaway', and check that it re-runs as a stride. For a long recording, the split screen should offer 'Re-analyze as straightaways'. If this task is still open because something in that flo"
+                "at": "2026-11-19T23:26+00:00",
+                "verified": "Read the code on current master (grep for reanalyze in StrideLab/ and android/), the git log (#50, #67 merged) and the closing comment on PR #70. Ran no build or tests because nothing changed.",
+                "next_step": "Mark t127 done. To check on a phone: on the record screen leave Starts selected and film a straightaway, then on the result tap 'Re-analyze as straightaways' (or More > 'Re-analyze as a straightaway' in the player) and confirm it re-analyzes in one tap. If it still falls short on the phone, edit the task to say which screen or step is missing."
               }
             },
             {
