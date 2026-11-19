@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu. PR #67 (merged 2026-11-18) fixed the root cause of the Nov 17 problem: a long recording's saved scan (ScanCache) didn't record which kind it looked for, so a straightaway session filmed with Starts picked was never searched for passes. It also added 'Re-analyze as straightaways / curves / starts' buttons on the recording review screen (including when no starts are found), the pass picker and the finish card. Both PRs cover iOS and Android, ",
+                "summary": "Already shipped on master: one-tap \"Re-analyze as ...\" landed in PR #50 (single clips, player More menu) and PR #67 (whole recordings filmed with the wrong kind picked, e.g. Starts instead of Straightaways, which get looked through for passes again). Both iOS (KindLogic/KindViews/AnalysisPlayerView/SplitStartsView/PassPickerView) and Android (KindLogic.kt, KindViews.kt, AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt) have it, with tests on each. Later duplicate PRs (#63, #65, #70) were closed. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T05:35+00:00",
-                "verified": "Checked that origin/master (cc7b90d) has KindFlow.reanalyzeOptions/reanalyzeTitle and the ReanalyzeCard in Swift (AnalysisPlayerView.swift, PassPickerView.swift, KindLogic.swift) and Kotlin (AnalysisPlayerScreen.kt, PassPickerScreen.kt, SplitStartsScreen.kt, KindLogic.kt), with tests on both. I didn't rebuild or re-run the checks, because no code changed.",
-                "next_step": "Close t127 in the tracker so it isn't picked up again. To confirm on the phone: record a straightaway clip with Starts still selected, open it, then tap 'Re-analyze as straightaways' on the review screen (or More > 'Re-analyze as a straightaway' in the player). The clip should be looked through again and show the straightaway passes."
+                "at": "2026-11-19T05:39+00:00",
+                "verified": "./Tools/verify.sh on current master (cc7b90d): ALL CHECKS PASSED, including the 'Re-analyze as another kind' checks (buttons 'Re-analyze as straightaways' / 'Re-analyze as a curve (Beta)', and a recording reanalyzed as straightaways is looked through for passes again). No build run because nothing changed.",
+                "next_step": "Mark t127 done in the tracker. To check on a phone with the latest TestFlight build: open a recording that was analyzed as Starts, tap 'Re-analyze as straightaways' (or More > Re-analyze as a straightaway on a single clip), and confirm the runs come back as straightaways."
               }
             },
             {
@@ -1904,11 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle, merge 169f9a0) added this exact feature, and the follow-up merge 82900ed / PR #67 kept it. On master, iOS AnalysisPlayerView.skeletonButtons and Android PlayerStage.SkeletonButtons put two 54 pt/dp buttons side by side at the top right of the clip view. The first is the skeleton switch (figure.stand with a red circle.slash) and the second is Edit (a figure with a pencil). Hiding the skeleton removes the skeleton, the dotted guide lines and the callout circles, and keeps the tips and the runner (skeletonHidden on both platforms). It i",
+                "summary": "Already shipped. PR #51 (https://github.com/moonyose/StrideLab/pull/51, branch claude/t128-skeleton-toggle) merged on 2026-11-18, and #67 (cc7b90d, current master) kept it. On the clip view there are two 54 pt buttons side by side at the top right. The first is a skeleton switch: a stick figure with a red circle.slash through it, saved as the stridelab.hideSkeleton preference. Turning it on hides the skeleton, guides, dotted lines and joint rings so only the runner and the tips show, and the saved video and shared frame follow it. The second is a bigger Edit button: a runner with a pencil that",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T05:35+00:00",
-                "verified": "Code read only: checked AnalysisPlayerView.swift (skeletonButtons, skeletonHidden, export labels), CoachGuides.swift (CoachingPrefs.hidesSkeleton), the ResultsViews export call, and the Android twins (PlayerStage.kt, PlayerState.kt, ResultsViews.kt, CoachGuides.kt). Nothing was built because nothing changed.",
-                "next_step": "Mark t128 done. To confirm on the phone, open any analyzed clip. Tap the stick-figure button with the red slash at the top right: the skeleton, dotted lines and circles disappear and the tips stay. Open More and save the video: it should say 'Save video with tips' and the saved video should have no skeleton. Tap the Edit button beside it: the frame edit menu opens."
+                "at": "2026-11-19T05:39+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read the code on origin/master (cc7b90d): StrideLab/Playback/AnalysisPlayerView.swift skeletonButtons (lines 1181-1220), hideSkeleton used for the export labels and in overlay gating (line 1293), CoachingPrefs.hideSkeletonKey; Android has hideSkeleton in PlayerState.kt:126/323, the toggle in PlayerStage.kt:434 and the export labels in AnalysisPlayerScreen.kt:477-489. gh shows PR #51 as MERGED. No ",
+                "next_step": "On a TestFlight build with an analyzed clip: open the clip, tap the stick-figure-with-red-slash button at the top right, and check that only the runner and tips remain. Save the skeleton video and check that it has no skeleton either. Tap the larger runner-with-pencil button beside it and check that the Edit menu opens. If these work, close t128 in the tracker."
               }
             },
             {
