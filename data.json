@@ -1885,11 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented and merged on master: PR #50 (claude/t127-reanalyze-as, 'Add one-tap Re-analyze as... to the player's More menu') and PR #67 ('Curve marked Beta, and Re-analyze as... for a recording filmed as the wrong kind', merged 2026-11-18). Master (cc7b90d) has it on iOS (AnalysisPlayerView More menu via KindFlow.reanalyzeOptions, ResultsViews finish card, SplitStartsView/PassPickerView ReanalyzeCard -> SplitModel.reanalyze(as:)) and on Android (KindLogic.kt, SplitModel.kt, PassPickerScreen.kt, ResultsViews.kt, AnalysisPlayerScreen.kt, with tests in KindUiTest/PassesTest). Later dupli",
+                "summary": "Already done: one-tap \"Re-analyze as\u2026\" is on master for iOS and Android. The player menu came in #50. #67 added the buttons on a recording's review screen, the pass picker and the finish card, and a recording is now looked through again for the new kind. No new PR, since you closed the duplicates (#63, #65, #70).",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T11:38+00:00",
-                "verified": "Checked git log on origin/master (merge commits for #50 and #67), grepped iOS and Android sources for the reanalyze paths, and listed the repo's PRs with gh. I did not rebuild, because nothing changed.",
-                "next_step": "Mark t127 done on the tracker so it stops being re-dispatched. On the phone: open a clip recorded as Starts, tap More > 'Re-analyze as straightaway' (or use the Re-analyze card on the starts/pass picker screen), and check that it re-runs as straightaways. If it still falls short, edit the task to say what is missing."
+                "at": "2026-11-19T11:40+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Checked that master (cc7b90d) has KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle and uses them in the iOS views (AnalysisPlayerView, ResultsViews, SplitStartsView, PassPickerView) and in the Kotlin views (AnalysisPlayerScreen, ResultsViews, SplitStartsScreen, PassPickerScreen). The tests are in Tools/tests_kindui.swift, tests_passes.swift, KindUiTest.kt and PassesTest.kt. I did not re-r",
+                "next_step": "On your phone, open a recording filmed with Start picked and tap \"Re-analyze as straightaways\" on the review screen, or use the player's More menu > Re-analyze as\u2026 Check that it shows the Pick your passes grid. If it works, tick this off."
               }
             },
             {
@@ -1903,12 +1904,13 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "done_no_change",
-                "summary": "Already implemented and merged on master on both platforms. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f) added a skeleton on/off switch on the clip view: a stick figure with a red no-symbol. It hides the skeleton, guides and rings and leaves only the runner and tips. It is saved as the stridelab.hideSkeleton preference and also applies to the saved video and the shared frame. The same PR added a bigger 54 pt Edit button (runner with a pencil) beside the switch at the top right, plus the Android port. PR #67 (cc7b90d) kept #51's versions when it merged. Nothing left to change, so",
+                "status": "needs_austin",
+                "summary": "Already done: this to-do was shipped by PR #51 (merged 2026-11-18, branch claude/t128-skeleton-toggle) and kept/refined in PR #67 (master cc7b90d). No new PR opened, nothing pushed.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T11:38+00:00",
-                "verified": "Read the code on origin/master (cc7b90d). iOS: StrideLab/Playback/AnalysisPlayerView.swift skeletonButtons (figure.stand + circle.slash in red, runner + pencil Edit button, both 54 pt, side by side), with SkeletonVideoExporter following hideSkeleton. Android: PlayerState.hideSkeleton, the switch in PlayerStage.kt, export labels in AnalysisPlayerScreen.kt. Did not rebuild, since there was no change",
-                "next_step": "Mark t128 done. On your phone: open a clip, tap the stick-figure-with-red-slash button at the top right and check that the skeleton disappears and only the runner and tips stay. Then use More > Save video and check the export has no skeleton either. If you wanted something different from what #51 shipped (for example a skeleton pictogram instead of the runner on the Edit button), edit the task to "
+                "at": "2026-11-19T11:40+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read current master: iOS AnalysisPlayerView.skeletonButtons has two 54pt buttons side by side at top right: a skeleton switch (figure.stand with red circle.slash, persisted as CoachingPrefs.hideSkeletonKey) that hides skeleton, guides and circles and leaves the runner, and an Edit button (figure.run + pencil) that opens the edit menu. Export reads the same pref (ResultsViews.swift:1040 -> Skeleton",
+                "next_step": "Mark t128 done in the tracker. To confirm on the phone: open a clip, tap the stick-figure button with the red no-symbol at top right and check that only the runner (plus tips) is left, then More > Save video and check the saved video has no skeleton. If something is still wrong in the shipped version, edit the to-do to say what."
               }
             },
             {
