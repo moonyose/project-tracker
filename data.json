@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #50 (claude/t127-reanalyze-as, commit 1a499a2, Nov 18) added a one-tap \"Re-analyze as a straightaway / curve / start\" option to the player's More menu on both iOS and Android, and it is merged into master. Nothing new to change.",
+                "summary": "Already on master for iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as\u2026' to the player's More menu, and PR #67 (merged Nov 18) fixed your Nov 17 case: a saved Starts scan is no longer reused for straightaways, and 'Re-analyze as straightaways / curves / starts' buttons now appear on the recording review screen, pass picker and finish card. Seven later t127 PRs (#53, #55, #60, #62, #63, #65, #70) were closed unmerged, so the to-do likely just stayed open.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:55+00:00",
-                "verified": "Checked that commit 1a499a2 is on origin/master through merge fe99a5f (PR #50). It changes AnalysisPlayerView.swift, KindLogic.swift and tests_kindui.swift on iOS, plus AnalysisPlayerScreen.kt, KindLogic.kt and KindUiTest.kt on Android. No builds or tests were re-run this time because the run's permissions blocked ./Tools/verify.sh, and there was no new code to check.",
-                "next_step": "On your phone, open a clip that was analyzed as Starts, tap More (...), then tap \"Re-analyze as a straightaway\". It should re-analyze and keep the new type. If that menu item is missing, the installed build is older than PR #50. If the option isn't what you wanted, edit the task to say what's still missing."
+                "at": "2026-11-19T21:57+00:00",
+                "verified": "Read the code on origin/master (3e1a2d3) and the merged PRs #50 and #67 with gh. I made no code change, so I ran no builds or checks.",
+                "next_step": "Mark t127 done. To confirm on your phone, record a straightaway with Starts picked. Then either (a) on the recording review screen, tap 'Re-analyze as straightaways' and check that passes are found, or (b) open an analyzed clip, tap More, then 'Re-analyze as a straightaway'. If something still falls short, edit the task to say exactly what, so the next run has a clear target."
               }
             },
             {
