@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, on iOS and Android. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged Nov 18) added one-tap 'Re-analyze as a straightaway / start / curve' rows to the player's More menu. PR #67 (https://github.com/moonyose/StrideLab/pull/67, merged) added 'Re-analyze as straightaways / ...' to the review of a long recording (pass picker and split-starts screens). On iOS this is KindFlow.reanalyzeOptions/reanalyzeChoices in StrideLab/Playback/KindLogic.swift, used in AnalysisPlayerView.swift, PassPickerView.swift and SplitStartsView.swift. Android has the same in KindLogic.k",
+                "summary": "Already done: \"Re-analyze as\u2026\" shipped on iOS and Android in PRs #50 and #67 (both merged Nov 18). It's in the clip's More menu and on the long-recording review screen, and a recording first scanned as Starts gets re-scanned for passes when you switch it to straightaways.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T19:00+00:00",
-                "verified": "Read origin/master at 6540a2d: the feature code is there on both platforms and gh shows PRs #50 and #67 as MERGED. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build at or after 1.0.4: open a clip analyzed as a start, tap More (...), tap 'Re-analyze as a straightaway', and check it re-analyzes as a stride. For a long recording made on Starts, check the review screen offers 'Re-analyze as straightaways'. If the Nov 17 problem still happens on that build, re-open t127 and say which screen it was on."
+                "at": "2026-11-19T19:03+00:00",
+                "verified": "Read current master (6540a2d) and found the feature on both platforms; gh confirms PRs #50 and #67 are merged. No build run because no code changed.",
+                "next_step": "On a TestFlight build 1.0.4 or later, open a clip analyzed as a Start, tap More, then 'Re-analyze as a straightaway'. Or record with the record screen left on Starts and use 'Re-analyze as straightaways' on the review screen."
               }
             },
             {
@@ -1904,11 +1904,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master (PR #51 'Clip view: skeleton on/off switch (applies to export) and a bigger Edit button', commit 580413f, carried forward in PR #67 / cc7b90d). iOS: AnalysisPlayerView.skeletonButtons puts two 54pt buttons side by side at the top right: a figure.stand + red circle.slash skeleton toggle (stored as CoachingPrefs.hideSkeletonKey) and a figure.run + pencil Edit button. With the toggle off, the skeleton, guide lines and joint circles are hidden and the tips stay. SkeletonVideoSave.start reads CoachingPrefs.hidesSkeleton() and passes skeleton:false to SkeletonVideoExporter,",
+                "summary": "Already done: PR #51 (merged Nov 18) added the skeleton on/off toggle (stick figure with a red no-symbol) and a bigger Edit button (figure with a pencil), side by side at the top right of the clip view, on iOS and Android. Saved videos follow the toggle.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T19:00+00:00",
-                "verified": "Read current origin/master (6540a2d). Confirmed the toggle and Edit button UI in AnalysisPlayerView.swift lines 1175-1220, that export honors the toggle (ResultsViews.swift line 1040, SkeletonVideoExporter skeleton param) and the matching Android code. No build run because no code changed.",
-                "next_step": "On a TestFlight build at 1.0.4 or later, open a clip. Tap the stick figure with the red slash at the top right: the skeleton, dotted lines and circles should go away and the tips should stay. Then use More > Save video (with tips) and check the saved video has no skeleton. If something here is wrong or missing, edit the to-do to say what."
+                "at": "2026-11-19T19:03+00:00",
+                "verified": "Read current master (6540a2d): the toggle hides the skeleton, guides and circles, the export follows it, and Android has the same toggle; gh confirms PR #51 is merged. No build run because no code changed.",
+                "next_step": "On a TestFlight build 1.0.4 or later, open a clip and tap the red no-symbol button at the top right: the skeleton should disappear and the tips should stay. Then Share > Save video and check the saved video has no skeleton. If you want a different icon, size or position, edit the to-do."
               }
             },
             {
