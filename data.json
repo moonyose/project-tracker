@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android, so there is no new PR. PRs #50 and #67 (both merged Nov 18) added one-tap 'Re-analyze as\u2026' options to the clip's More menu, a 'Filmed something else?' card on the results, and the same choices on a long recording's review screens.",
+                "summary": "Already on master for iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' to the clip's More menu, and PR #67 (merged Nov 18) added the same choices to the results card, pass picker and long Starts-recording review, and makes a recording scanned as starts get rescanned for passes.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:01+00:00",
-                "verified": "Read origin/master at 3e1a2d3. The iOS uses are StrideLab/Playback/AnalysisPlayerView.swift:651, ResultsViews.swift:967, Split/SplitStartsView.swift:1420 and Split/PassPickerView.swift:55. Logic is in Playback/KindLogic.swift and tested in Tools/tests_kindui.swift. Android mirrors these. gh shows PRs #50 and #67 MERGED. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build that includes PRs #50 and #67: record a straightaway with the record screen left on Start and open the clip. Tap More (...), then 'Re-analyze as a straightaway', and check that the chip shows Stride and the tips are straightaway tips. If this still falls short, edit the task to say what is missing (for example, where the option should appear) and it will be re-attempted."
+                "at": "2026-11-19T22:03+00:00",
+                "verified": "Read git history and source on origin/master (3e1a2d3): merge commits fe99a5f (#50) and cc7b90d (#67) contain the feature with tests (Tools/tests_kindui.swift, android KindUiTest.kt), and the code paths are still in place. I ran no build because nothing changed.",
+                "next_step": "On your phone (TestFlight build from after Nov 18): record a straightaway with the record screen left on Starts. On the review screen, or in the open clip under More, tap 'Re-analyze as a straightaway' and check it re-runs as a straightaway without any manual steps. If it still doesn't work for you, edit the task to say which screen is missing the option."
               }
             },
             {
