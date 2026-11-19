@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master: PR #50 (one-tap \"Re-analyze as...\" in the player's More menu) and PR #67 (Re-analyze as... for a recording filmed as the wrong kind, on the start review, pass picker, finish card and library, with the scan cache re-looking for passes once a recording is said to be straightaways) were both merged Nov 18, on iOS and Android.",
+                "summary": "Already shipped on master, so no new PR. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as ...' rows to the player's More menu on iOS and Android (KindFlow.reanalyzeOptions; the likeliest mistake, Starts -> straightaway, is listed first). Later merges added the same one-tap option elsewhere: a ReanalyzeCard on the Split Starts screen ('Re-analyze as straightaways' for a long recording left on Starts, which is the Nov 17 case), on the pass picker, and on the results/finish card. Each one applies a .kind pick, so it counts as the athlete's choice (LAW 41) and is re-analyzed. All of these a",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:57+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read origin/master (90cfea7): KindFlow.reanalyze* in StrideLab/Playback/KindLogic.swift, SplitModel.reanalyze(as:store:) in StrideLab/Split/SplitStartsView.swift, ReanalyzeCard in SplitStartsView and PassPickerView, the player More menu entries, and the Kotlin twins (KindLogic.kt, SplitModel.kt, SplitStartsScreen.kt, PassPickerScreen.kt, AnalysisPlayerScreen.kt) with tests in Tools/tests_kindui.sw",
-                "next_step": "On a TestFlight build that includes PR #67: set Filming to Start, record a few straightaways, then tap \"Re-analyze as straightaways\" on the review screen and check that the runs are found. If that still doesn't fix it, edit the task to say which screen is missing the option."
+                "at": "2026-11-19T22:59+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the code at origin/master 90cfea7. iOS: KindLogic.swift reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle; AnalysisPlayerView.swift; SplitStartsView.swift reanalyze(as:) plus ReanalyzeCard; PassPickerView.swift; ResultsViews.swift. Android: KindLogic.kt, AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt, ResultsViews.kt, with KindUiTest.kt tests. gh says PR #50 is MERGE",
+                "next_step": "On a TestFlight build that includes PR #50: record a straightaway with Starts still selected. On the Split Starts screen, tap 'Re-analyze as straightaways' and check it finds the passes. Or open any analyzed clip, go to More, tap 'Re-analyze as a straightaway', and check the clip comes back analyzed as a straightaway. If something still doesn't work in that flow, edit the task with what you saw."
               }
             },
             {
