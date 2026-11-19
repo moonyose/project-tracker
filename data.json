@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master for iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as\u2026' to the player's More menu, and PR #67 (merged Nov 18) fixed your Nov 17 case: a saved Starts scan is no longer reused for straightaways, and 'Re-analyze as straightaways / curves / starts' buttons now appear on the recording review screen, pass picker and finish card. Seven later t127 PRs (#53, #55, #60, #62, #63, #65, #70) were closed unmerged, so the to-do likely just stayed open.",
+                "summary": "Already done on master. PR #50 (merged Nov 18) added one-tap 'Re-analyze as ...' to the player's More menu, and PR #67 (merged Nov 18) added a 'Re-analyze as straightaways/curves/starts' card to the Starts review and pass picker for a recording filmed with the wrong type picked. That card covers the Nov 17 case. Both are on iOS (SplitStartsView.swift, PassPickerView.swift, AnalysisPlayerView.swift, KindLogic.swift) and Android (SplitStartsScreen.kt, PassPickerScreen.kt, KindLogic.kt, with KindUiTest coverage). PRs #53, #55, #60, #62, #63, #65 and #70 were closed duplicates. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:57+00:00",
-                "verified": "Read the code on origin/master (3e1a2d3) and the merged PRs #50 and #67 with gh. I made no code change, so I ran no builds or checks.",
-                "next_step": "Mark t127 done. To confirm on your phone, record a straightaway with Starts picked. Then either (a) on the recording review screen, tap 'Re-analyze as straightaways' and check that passes are found, or (b) open an analyzed clip, tap More, then 'Re-analyze as a straightaway'. If something still falls short, edit the task to say exactly what, so the next run has a clear target."
+                "at": "2026-11-19T21:59+00:00",
+                "verified": "Read origin/HEAD source on both platforms: SplitStartsView review shows ReanalyzeCard -> model.reanalyze(as:) (re-tags the clip's kind and re-scans). The player More menu lists KindFlow.reanalyzeOptions. Android mirrors both. No builds run because nothing changed.",
+                "next_step": "On the current TestFlight build: leave the record screen on Starts, film a straightaway, open the review and tap 'Re-analyze as straightaways' near the bottom. It should look through the clip again for passes. If that works, mark t127 done in the tracker so it stops being picked up again."
               }
             },
             {
