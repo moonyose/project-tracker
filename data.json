@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (\"One-tap 'Re-analyze as\u2026' in the player's More menu\", branch claude/t127-reanalyze-as) was merged into master on 2026-11-18 on both iOS and Android. Current master also has the follow-up: a 'Filmed something else?' card on the results with 'Re-analyze as a straightaway / curve' buttons, and 'Re-analyze as straightaways' on a long recording's review (SplitStartsView / PassPickerView; Android SplitStartsScreen / PassPickerScreen). No new PR was opened.",
+                "summary": "Already done: PR #50 (merged Nov 18, kept by PR #67) added a one-tap 'Re-analyze as\u2026' on iOS and Android, in the player's More (...) menu, on the results card ('Analyzed as a start. Filmed something else?'), and on the split and pass-picker screens. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:37+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked the code on origin/master (90cfea7). iOS: AnalysisPlayerView.swift:648-657 has the More menu section built from KindFlow.reanalyzeOptions. ResultsViews.swift:942 has the results card, connected at AnalysisPlayerView.swift:1076. SplitStartsView.swift:1420 has the recording card. Android: AnalysisPlayerScreen.kt:527-531, ResultsViews.kt:1290, SplitStartsScreen.kt:383, PassPickerScreen.kt:161",
-                "next_step": "On a TestFlight build that includes PR #50: on the record screen set Filming to Start, film some straightaways, and open the clip. Tap the More (...) menu, then 'Re-analyze as a straightaway'. Check that it shows 'Re-analyzing as a stride' and that the badge then reads Stride, your choice. If the build still feels like a manual fix, edit the to-do to say exactly which screen is missing the option."
+                "at": "2026-11-19T22:38+00:00",
+                "verified": "Read the current origin/master code and git history: commits 1a499a2 and c3f1d42, merges fe99a5f (#50) and cc7b90d (#67). Builds and tests were not re-run because nothing changed.",
+                "next_step": "On a TestFlight build at or after PR #67: open a clip that was analyzed as a start, tap the More (...) menu in the player, and tap 'Re-analyze as a straightaway'. It should re-analyze as a straightaway. If something about it still feels like manual work, edit this to-do to say what, and it will be picked up again."
               }
             },
             {
