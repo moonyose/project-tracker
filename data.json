@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master for iOS and Android, so there was nothing to change and no PR. Commit c3f1d42 (Nov 18) added 'Re-analyze as ...' buttons to a long recording's review and pass picker and to the finished-clip card. It also makes the app look through a recording again for passes when it is re-analyzed as straightaways. Commit 1a499a2 (Nov 18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. In AnalysisPlayerView.swift and AnalysisPlayerScreen.kt each row goes through applyKind (paywall check, re-analysis step, choice saved on the clip). The",
+                "summary": "Already in the app on iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway' and 'Re-analyze as a curve (Beta)' to the player's More menu, with the straightaway option first. PR #67 added 'Re-analyze as straightaways/starts' buttons to the recording review, the pass picker and the finish card. Both are still on current master.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:52+00:00",
-                "verified": "Worktree from origin/master (94d6bf0). Read the code paths and the two commits. ./Tools/verify.sh prints ALL CHECKS PASSED, including the 'Re-analyze as ...' checks (choices, order, titles, prompts, a recording looked through again as straightaways). Not run because nothing changed: xcodebuild, Gradle, bend PROOF.bend.",
-                "next_step": "On a TestFlight build with commit 1a499a2 or later: film a few straightaways with the record screen left on Starts. If it is a long recording, the review screen shows 'Looked through for starts. Filmed something else?'; tap 'Re-analyze as straightaways'. On a single clip, open it, tap More (...) and tap 'Re-analyze as a straightaway'. It should re-analyze as a stride with no manual marking. If it "
+                "at": "2026-11-19T23:54+00:00",
+                "verified": "Read the current master code. The iOS More menu (AnalysisPlayerView.swift ~L650) and the Android menu (AnalysisPlayerScreen.kt ~L529) both still show the Re-analyze rows. No build was run because nothing changed.",
+                "next_step": "On the phone, open a clip recorded on Starts that was really a straightaway. Tap More (top right, once analysis finishes), then tap 'Re-analyze as a straightaway'. It should re-run as a straightaway without any manual marking. For a long recording, the review/pass picker screen also shows 'Re-analyze as straightaways'. If that's not on your build, update TestFlight. If it's there but still misses "
               }
             },
             {
