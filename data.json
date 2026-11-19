@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (moonyose/StrideLab, merged 2026-11-18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / a curve' rows to the player's More menu on iOS and Android, ordered likeliest-mistake first (a start offers straightaway first). Later merges (#67) added the same one-tap choice in more places: a 'Re-analyze as ...' card on the results and on long-recording pass picker / split screens ('Re-analyze as straightaways'). The library long-press menu also has 'Analyze as...'. All of this is on current master (90cfea7) for both platforms (KindFlow.reanalyzeOpt",
+                "summary": "Already shipped on master (90cfea7) for both iOS and Android, so I opened no PR. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. Its likeliest mix-up (Starts to Straightaway) is listed first. master also has a 'Analyzed as a start. Filmed something else?' card with one-tap buttons on the finished clip (ResultsViews), and a 'Re-analyze as straightaways' card on a long recording's review (SplitStartsView / PassPickerView). Android has the same three in AnalysisPlayerScreen.kt, ResultsViews.kt",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:17+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "On master 90cfea7: ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as ...' checks (a start filmed by mistake is one tap from a straightaway; recording buttons 'Re-analyze as straightaways'). Code search confirmed the entry points in AnalysisPlayerView, ResultsViews, PassPickerView, SplitStartsView and ClipLibraryView, plus their Android counterparts (AnalysisPlayerScreen, Re",
-                "next_step": "On a TestFlight build from master: set Filming to Start, record a few straightaway strides, open the clip, tap ... (More), then tap 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and then straightaway coaching. If this flow still misses your Nov 17 case (for example a long multi-rep recording), edit the to-do to say which screen, and that becomes a new task."
+                "at": "2026-11-19T22:19+00:00",
+                "verified": "I read the code on origin/master (90cfea7) and checked it with git grep and gh pr list. I did not rebuild or rerun verify.sh or Gradle because nothing changed.",
+                "next_step": "On a TestFlight build: open a clip analysed as a start, tap More (or scroll to 'Filmed something else?' under the results), tap 'Re-analyze as a straightaway', and confirm it re-analyses without any manual marking. If this to-do is still open only because it wasn't checked off, mark t127 done. If something is still missing after Nov 17, edit the task to say what."
               }
             },
             {
