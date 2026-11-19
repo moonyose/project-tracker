@@ -1885,11 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master before this run. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added a one-tap 'Re-analyze as\u2026' to the player's More menu, and PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways/starts' for a whole recording filmed as the wrong kind (the Nov 17 case: filmed with Starts selected, actually straightaways). Both are on iOS (KindLogic.swift KindFlow.reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle, KindViews.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift) and Android (KindLogic.kt, KindViews.kt, ResultsViews.kt, SplitStartsS",
+                "summary": "Already done on master. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18, commit 1a499a2) added the one-tap \"Re-analyze as ...\" option on iOS and Android. Where it shows: the player's More menu (KindFlow.reanalyzeOptions; a clip analyzed as a start offers 'Re-analyze as a straightaway' first, plus curve (Beta)), the Split Starts review screen (a ReanalyzeCard with 'Re-analyze as straightaways' that is always shown, even when starts were found), the pass picker, and the results card. Android mirrors it in AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt and ResultsViews.kt,",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T19:18+00:00",
-                "verified": "Checked git history (git log -S reanalyzeChoices -> c3f1d42), gh pr view 50 and 67 (both MERGED 2026-11-18), and grepped both the iOS and Android sources for the feature and its tests. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build from master, record a few straightaways with Filming set to Start. On the cut screen, tap 'Re-analyze as straightaways' and check that the runs come out as straightaways. Then open one clip, go to More (\u2022\u2022\u2022), tap 'Re-analyze as a start', and check that it re-analyzes. If that works, mark t127 done; it looks like a duplicate of the task PR #50 already closed."
+                "at": "2026-11-19T19:20+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the code on origin/master (6540a2d) and confirmed the Re-analyze-as options are wired into the iOS and Android UIs listed above, with tests in Tools/tests_kindui.swift and android KindUiTest.kt. No builds were run because nothing changed.",
+                "next_step": "On a 1.0.4 TestFlight build, record a straightaway with the record screen left on Starts. On the Split Starts review screen, tap 'Re-analyze as straightaways' (or open a clip, then More > 'Re-analyze as a straightaway'). Check that it re-runs as a straightaway. If it still went wrong for you, edit the task to say which screen and what you saw."
               }
             },
             {
@@ -1904,12 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle, merged 2026-11-18) added the skeleton on/off switch (figure.stand with a red circle.slash) and a bigger Edit button (figure.run with a pencil) side by side at the top right of the clip view. Both are 54pt. Hiding the skeleton also removes it from saved videos ('Save video' / 'Save video with tips'), and demos keep their skeleton. PR #67 kept this when it merged with the t127 work. The Android port has the same toggle and export behavior (PlayerState.hideSkeleton / skeletonHidden, AnalysisPlayerScreen save labels, SkeletonVideoExporte",
+                "summary": "Already shipped. PR #51 for this same to-do (branch claude/t128-skeleton-toggle, commit 580413f) was merged on 2026-11-18. On iOS and Android, the clip view has two 54 pt buttons side by side at the top right. One is the skeleton switch: a stick figure with a red no-symbol, saved as the stridelab.hideSkeleton preference. When it is on, the skeleton, guides, target lines, joint ring and tip leader are hidden, leaving only the runner and the tips. The other is a larger Edit button: a runner with a pencil that opens the frame menu. The saved skeleton video and the shared frame follow the switch, ",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T19:18+00:00",
+                "at": "2026-11-19T19:20+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read current origin/HEAD (6540a2d). iOS: AnalysisPlayerView.swift skeletonButtons (lines 1175-1220), skeletonHidden, and export labels tied to hideSkeleton (lines 572-603). Android: hideSkeleton/skeletonHidden in ui/player and the export path. gh shows PR #51 MERGED. No build was run because no code changed.",
-                "next_step": "On the phone (TestFlight 1.0.4 or later), open any clip you recorded. At the top right, tap the stick-figure button with the red slash: the skeleton, dotted lines and circles go away and the tips stay. Then Share > Save video and check the saved video has no skeleton. If this isn't what you meant, edit the to-do to say what is still missing."
+                "verified": "Checked that PR #51 shows MERGED (gh pr view 51). Read current master: AnalysisPlayerView.swift skeletonButtons (lines 1181-1220), the hideSkeleton-aware save menu (lines 570-603), and the Android twins in PlayerStage.kt, PlayerState.kt and AnalysisPlayerScreen.kt. I did not rebuild or re-run checks, because nothing changed. The PR checks ran when #51 was merged.",
+                "next_step": "On the phone: open any recorded clip (not a demo). Tap the stick-figure button with the red slash at the top right. The skeleton and dotted lines should disappear, leaving the runner and the tips. Then Share > 'Save video with tips' should save a video without the skeleton. If something about the merged version is wrong (icon, size, placement), edit the to-do to say what should change and it will "
               }
             },
             {
