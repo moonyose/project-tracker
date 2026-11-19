@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master (90cfea7) for both iOS and Android, so I opened no PR. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. Its likeliest mix-up (Starts to Straightaway) is listed first. master also has a 'Analyzed as a start. Filmed something else?' card with one-tap buttons on the finished clip (ResultsViews), and a 'Re-analyze as straightaways' card on a long recording's review (SplitStartsView / PassPickerView). Android has the same three in AnalysisPlayerScreen.kt, ResultsViews.kt",
+                "summary": "Already shipped on master, so no new PR. PR #50 (merged 2026-11-18, 'One-tap \"Re-analyze as...\" in the player's More menu', branch claude/t127-reanalyze-as) and PR #67 (merged 2026-11-18, 'Curve marked Beta, and Re-analyze as... for a recording filmed as the wrong kind') added it. iOS: the player's More menu has one-tap 'Re-analyze as a straightaway / curve / start' rows (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions), and the finished-analysis card and the long-recording review (PassPickerView / SplitStartsView, 'Re-analyze as straightaways') offer the same. A take left on Starts gets S",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:19+00:00",
-                "verified": "I read the code on origin/master (90cfea7) and checked it with git grep and gh pr list. I did not rebuild or rerun verify.sh or Gradle because nothing changed.",
-                "next_step": "On a TestFlight build: open a clip analysed as a start, tap More (or scroll to 'Filmed something else?' under the results), tap 'Re-analyze as a straightaway', and confirm it re-analyses without any manual marking. If this to-do is still open only because it wasn't checked off, mark t127 done. If something is still missing after Nov 17, edit the task to say what."
+                "at": "2026-11-19T22:21+00:00",
+                "verified": "Read the code on origin/master (90cfea7): the Re-analyze as... entry points and their tests are on both platforms. gh pr view showed #50 and #67 as MERGED. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build from 2026-11-18 or later: open a clip analyzed as a start, tap the More (...) menu, tap 'Re-analyze as a straightaway', and check that it re-analyzes and shows straightaway coaching. For a long recording filmed on Starts, the review screen shows 'Re-analyze as straightaways'. If this task was meant to cover something else, edit it to say what is still missing."
               }
             },
             {
