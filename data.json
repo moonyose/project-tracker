@@ -1885,12 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so I made no new change. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as ...\" to the clip player's More menu. PR #67 (merged 2026-11-18) fixed the root cause of the Nov 17 problem on iOS and Android: the saved scan of a long recording didn't store which kind it had looked for, so a straightaway session recorded as Starts was only ever searched for starts. It also added \"Re-analyze as straightaways / curves / starts\" buttons to the recording review screen (including when no starts were found), the pass picker and the finish card. Android has the same code (K",
+                "summary": "Already shipped on master, on iOS and Android. PR #50 (claude/t127-reanalyze-as, merged Nov 18, the day after the Nov 17 note) added one-tap 'Re-analyze as a straightaway / a start / a curve (Beta)' rows to the clip player's More menu, starting with the most likely mix-up. PR #67 (reanalyze-skeleton-toggle-beta) added 'Analyzed as a start. Filmed something else?' with one button per other type on the results screen, plus 'Re-analyze as straightaways/starts' on the Split Starts and Pass Picker screens for recordings. Each tap counts as the athlete's choice (LAW 41) and runs the visible re-analy",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T08:54+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Checked that origin/master contains commit 1a499a2 (PR #50) and merge cc7b90d (PR #67), both merged according to gh, and that the Android sources include the re-analyze code. I didn't rebuild or rerun any checks because nothing changed; those PRs ran their own checks.",
-                "next_step": "On a TestFlight build that includes PR #67: record a straightaway with the record screen left on Starts. On the review screen (or the 'no starts found' screen), tap 'Re-analyze as straightaways' and confirm passes are found. For a single clip, open it, then More > 'Re-analyze as a straightaway'. If this still doesn't work for you, add a note to the task saying where it fails."
+                "at": "2026-11-19T08:56+00:00",
+                "verified": "Read the code on origin/master (cc7b90d). iOS: KindFlow.reanalyzeOptions in StrideLab/Playback/KindLogic.swift is wired into AnalysisPlayerView.swift:646-655, and reanalyzeChoices is wired into ResultsViews.swift, SplitStartsView.swift and PassPickerView.swift. Android: the same features are in KindLogic.kt, AnalysisPlayerScreen.kt:526-530, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScree",
+                "next_step": "On a TestFlight build from Nov 18 or later, open a straightaway clip that was analyzed as Starts. Tap More (...) in the player and pick 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a straightaway' and then straightaway results. If the Nov 17 problem was on an older build, update and try again. If it's still missing on a new build, say where you expected the option and I'll reope"
               }
             },
             {
@@ -1905,11 +1904,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (moonyose/StrideLab, branch claude/t128-skeleton-toggle, commit 580413f) added the clip view's skeleton on/off switch (stick figure with a red no-symbol; hides skeleton, guides, target lines, joint ring and tip leader, leaving only runner and tips; persisted as stridelab.hideSkeleton; saved skeleton video and shared frame follow it) and a bigger Edit button (runner with a pencil) side by side at the top right, on iOS and in the Android port. It was merged and kept through the PR #67 merge (cc7b90d, current master). No new PR opened.",
+                "summary": "Already shipped. PR #51 (claude/t128-skeleton-toggle, commit 580413f) and PR #67 (merge cc7b90d) are on master. The clip view has two large 54pt buttons side by side at the top right: a skeleton on/off switch (stick figure with a red circle.slash; it hides the skeleton and its drawings, keeps tips and the runner, and the setting is saved as stridelab.hideSkeleton) and an Edit button (figure with a pencil) that opens the frame edit menu. Saved videos follow the switch: the Share menu reads 'Save video' / 'Save video with tips' when the skeleton is off. Android has the same switch (PlayerStage.k",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T08:54+00:00",
-                "verified": "Read current origin/master: StrideLab/Playback/AnalysisPlayerView.swift (hideSkeleton AppStorage, toggle button ~line 1186, export labels 'Save video with tips'), CoachGuides.swift hideSkeletonKey; Android PlayerStage.kt (toggle ~line 434), PlayerState.kt hideSkeleton pref, AnalysisPlayerScreen.kt export labels, core CoachGuides.kt. No build run because nothing changed.",
-                "next_step": "On the phone: open any analyzed clip, tap the stick-figure-with-red-circle button at the top right to confirm only the runner and tips remain, then More > Save video with tips and check the export has no skeleton. Tap the big Edit button beside it to confirm the mark menu opens. If the merged version misses something, edit the task to say what, and it will be re-run."
+                "at": "2026-11-19T08:56+00:00",
+                "verified": "Read origin/HEAD code only: StrideLab/Playback/AnalysisPlayerView.swift skeletonButtons (lines 1175-1220), skeletonHidden, and the export labels (lines 572-603). Android: PlayerStage.kt:434, PlayerState.kt:126/323, AnalysisPlayerScreen.kt:477-489. Git log shows merges #51 and #67. No build was run because nothing changed.",
+                "next_step": "On the current TestFlight build, open an analysed clip. Tap the crossed-out figure at the top right and check that the skeleton, lines and circles go away while the tips stay. Then Share > Save video and confirm the saved file has no skeleton. If this misses what you wanted, edit the to-do to say what is different."
               }
             },
             {
