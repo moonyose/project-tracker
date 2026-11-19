@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (branch claude/t127-reanalyze-as, merge fe99a5f) and PR #67 (merge cc7b90d, commit c3f1d42) added one-tap 'Re-analyze as...' on both platforms. iOS: the player's More menu (KindFlow.reanalyzeOptions in AnalysisPlayerView.swift), the finish card in ResultsViews.swift, and a ReanalyzeCard ('Re-analyze as straightaways') on the look-for-starts screen (SplitStartsView.swift) and pass picker (PassPickerView.swift). These go through SplitModel.reanalyze(as:store:) and show a 'Re-analyzing as...' step. Android has the same in AnalysisPlayerScreen.kt, Re",
+                "summary": "Already done: PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' options to the player's More menu on iOS and Android, and they're still on the current main branch. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:10+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). Every entry point above is still wired up after PR #78, which only hid the More button while analysis is running. Nothing was changed, so no build or check was run.",
-                "next_step": "Check the next TestFlight build on your phone. Record a straightaway with the record screen left on Starts. On the look-for-starts screen, tap 'Re-analyze as straightaways'. Or open a finished clip and use More > 'Re-analyze as a straightaway'. If this already works and still feels like manual work, say which screen falls short and re-open the to-do with that detail, or close it."
+                "at": "2026-11-19T23:12+00:00",
+                "verified": "Read the code on origin/HEAD: StrideLab/Playback/AnalysisPlayerView.swift (More menu section), KindLogic.swift reanalyzeOptions/reanalyzeChoices, Android AnalysisPlayerScreen.kt and ResultsViews.kt mirror it, and tests exist in Tools/tests_kindui.swift and android KindUiTest.kt. No rebuild run, since nothing changed.",
+                "next_step": "On the phone: record a straightaway with the record screen left on Starts, open the clip, tap More (top right) and choose 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a straightaway' and then the stride results. If Austin wants it more visible than the More menu (for example a banner on the results), that's a new to-do."
               }
             },
             {
