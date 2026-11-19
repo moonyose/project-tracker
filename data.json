@@ -1885,12 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented and merged on master before this run. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as ...\" to the player's More menu. PR #67 (merged 2026-11-18) extended it to whole recordings filmed as the wrong kind (pass picker / split starts: \"Re-analyze as straightaways\") and marked Curve as Beta. Both are on iOS (KindLogic.swift, KindViews.swift, ResultsViews.swift, AnalysisPlayerView.swift, PassPickerView.swift, SplitStartsView.swift) and Android (KindLogic.kt, KindViews.kt, ResultsViews.kt, PlayerState.kt, PassPickerScreen.kt, SplitModel.kt, StartScanSession.kt), with tes",
+                "summary": "Already done: one-tap \"Re-analyze as\u2026\" is on master for iOS and Android (PR #50, then extended in your PR #67 merged Nov 18). It appears in the player's More menu, on the results screen, and on a long recording's review (\"Re-analyze as straightaways\"). The later duplicate PRs (#63, #65, #70) were closed, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T10:34+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Checked that origin/master (cc7b90d) contains the merged PRs #50 and #67 (gh pr view shows both MERGED) and that the Re-analyze-as code and tests are present on both platforms. I did not rebuild or rerun the checks because nothing changed. Those PRs went through the repo's PR checks when they were merged.",
-                "next_step": "On the phone, once the TestFlight build from master is installed: open a clip recorded as Starts, tap the More (...) menu in the player, pick \"Re-analyze as a straightaway\", and check that it re-runs and shows straightaway results. For a long recording, the pass picker should offer \"Re-analyze as straightaways\". If that works, tick t127 off."
+                "at": "2026-11-19T10:37+00:00",
+                "verified": "Checked origin/master (cc7b90d): iOS KindFlow.reanalyzeOptions/reanalyzeChoices are used in AnalysisPlayerView, ResultsViews, SplitStartsView and PassPickerView, and Tools/tests_kindui.swift covers them. The Kotlin twins are used in AnalysisPlayerScreen, ResultsViews, SplitStartsScreen and PassPickerScreen, with KindUiTest coverage. No code changed, so builds and checks were not re-run.",
+                "next_step": "On the current TestFlight build, open a straightaway clip that was analyzed as a start. Tap More > \"Re-analyze as a straightaway\" and check that it comes back as a straightaway. If that works, tick this to-do off so the bot stops retrying it."
               }
             },
             {
@@ -1904,13 +1903,12 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle) was merged to master on 2026-11-18, and #67 kept it when it merged. On the clip view's top right there are now two 54 pt buttons side by side: a skeleton switch (stick figure with a red no-symbol) that hides the skeleton, guides, target lines, joint rings and the tip leader line, leaving only the runner and the tips, and a bigger Edit button (runner with a pencil) that opens the mark menu. The switch is saved as a preference (stridelab.hideSkeleton), and the saved video and shared frame follow it. Demos and placing joints by hand alw",
+                "status": "needs_austin",
+                "summary": "Already done: no new PR opened. The skeleton on/off toggle and the bigger Edit button are already on StrideLab master for iOS and Android. They came in with PR #51 (branch claude/t128-skeleton-toggle, merged) and PR #67 (merged 2026-11-18). iOS: AnalysisPlayerView.skeletonButtons has two 54pt buttons side by side at the top right. One is figure.stand with a red circle.slash; it turns off the skeleton, dotted guide lines and circles and leaves the tips. The other is figure.run with a pencil and opens the Edit menu. The setting is saved under CoachingPrefs.hideSkeletonKey, and the exporter reads",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T10:34+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read the code on origin/master (cc7b90d): the iOS skeletonButtons in AnalysisPlayerView.swift and the Android SkeletonButtons in PlayerStage.kt both exist, and export uses the switch on both platforms (skeletonHidden / hidesSkeleton). Confirmed with gh that PR #51 is MERGED. No builds were re-run because nothing changed.",
-                "next_step": "In the TestFlight build, open a clip and tap the stick-figure button at the top right. The skeleton and dotted lines go away and the tips stay. Save the skeleton video and check that it has no skeleton either. Then tap the runner-with-pencil button and check that the Edit menu opens. Close this to-do if it all looks right."
+                "at": "2026-11-19T10:37+00:00",
+                "verified": "Read origin/master (cc7b90d): git log shows #51 and #67 merged. Checked the iOS and Android code for the toggle, the icons, the Edit button and the export setting. I made no code changes, so I ran no builds.",
+                "next_step": "Mark t128 done in the project tracker so it stops being picked up again. If the shipped version misses something (for example, you want the buttons bigger or placed differently), edit the to-do to say what is wrong. To check on your phone: open any recorded clip (not a demo). Tap the stick-figure button with the red no-symbol at the top right; the skeleton should disappear and the tips stay. Then "
               }
             },
             {
