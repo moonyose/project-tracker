@@ -1885,12 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented and merged on master on both platforms. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged 2026-11-18) added a one-tap \"Re-analyze as...\" to the player's More menu (iOS AnalysisPlayerView/KindLogic + Android AnalysisPlayerScreen/KindLogic, with tests in Tools/tests_kindui.swift and KindUiTest.kt). PR #67 (https://github.com/moonyose/StrideLab/pull/67, merged 2026-11-18) extended it to whole recordings filmed as the wrong kind (\"Re-analyze as straightaways\" / \"as starts\" in SplitStartsView and PassPickerView) and marked curve as Beta. No new branch or PR opened.",
+                "summary": "Already shipped on master on both platforms. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the clip player's More menu (iOS KindFlow.reanalyzeOptions/reanalyzeTitle in StrideLab/Playback/KindLogic.swift and AnalysisPlayerView.swift; Android KindLogic.kt and AnalysisPlayerScreen.kt, with tests in Tools/tests_kindui.swift and KindUiTest.kt). PR #67 (merged) added 'Re-analyze as ...' for a whole recording filmed as the wrong kind (split/pass picker). Six later t127 PRs (#53, #55, #60, #62, #63, #65, #70) were closed unmerged, so this run opened no new",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T03:25+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Confirmed via gh that PRs #50 and #67 are MERGED and that master (cc7b90d) contains reanalyze(as:) in StrideLab/Split/SplitStartsView.swift, StrideLab/Playback/ResultsViews.swift, StrideLab/Split/PassPickerView.swift, and Android KindFlow.reanalyzeTitle/reanalyzeRecordingTitle with tests. No builds were re-run because nothing changed.",
-                "next_step": "On the phone (build containing PR #67): open a clip recorded as Starts, tap More in the player, choose \"Re-analyze as a straightaway\", and confirm the results switch to straightaway analysis. If that works, mark t127 done; if something is still missing, edit the task with what you saw."
+                "at": "2026-11-19T03:26+00:00",
+                "verified": "Checked origin/master (cc7b90d): git log shows merge fe99a5f of PR #50 (claude/t127-reanalyze-as), and git grep finds the Re-analyze-as code on iOS and Android. gh pr list shows #50 and #67 merged. No build was run because nothing changed.",
+                "next_step": "On the phone, open a clip analyzed as Starts, tap More (...) in the player, then 'Re-analyze as a straightaway'. The re-analysis step should run and the results should come back as a straightaway. If that works, close t127. If something is still missing, edit the task to say what, since several attempts have already been closed."
               }
             },
             {
@@ -1905,11 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f) added the clip view's skeleton on/off switch and a bigger Edit button, and PR #67 (cc7b90d) kept them when it merged. iOS: AnalysisPlayerView.skeletonButtons puts two 54 pt buttons side by side at the top right. The switch is a figure.stand icon with a red circle.slash through it. Edit is a figure.run icon with a pencil. hideSkeleton is passed to SkeletonVideoExporter(skeleton:) through ResultsViews, so the export matches. Android has the same thing in PlayerStage.kt (model.hideSkeleton) and in its SkeletonV",
+                "summary": "Already done on master. PR #51 (branch claude/t128-skeleton-toggle, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button') was merged 2026-11-18, and PR #67 kept that version when it merged after it. On iOS, AnalysisPlayerView.skeletonButtons shows two 54 pt buttons side by side at the top right. The first is the skeleton switch: a figure.stand icon with a red circle.slash over it. The second is Edit: a figure icon with a pencil, and it opens the frame edit menu. The setting is saved under CoachingPrefs.hideSkeletonKey ('stridelab.hideSkeleton'). When it is on, the bon",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T03:25+00:00",
-                "verified": "Read the code on origin/master (cc7b90d): StrideLab/Playback/AnalysisPlayerView.swift lines 1175-1220, the skeleton parameter in SkeletonVideoExporter.swift and ResultsViews.swift:1040, and on Android PlayerStage.kt:432-438 and the skeleton parameter in platform/export/SkeletonVideoExporter.kt. No build was run because nothing changed.",
-                "next_step": "On the phone (current TestFlight build): open an analysed clip that isn't a demo. Tap the stick-figure button with the red slash at the top right. The skeleton, dotted lines and circles should go away, leaving the runner and the tips. Then export the clip and check the video has no skeleton either. Tap the skeleton-with-pencil button next to it to open the Edit menu. If this to-do was re-added bec"
+                "at": "2026-11-19T03:26+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read the code on origin/master (cc7b90d): AnalysisPlayerView.swift lines 1175-1220 and 1292, CoachGuides.swift hideSkeletonKey, and the Android PlayerStage.kt, PlayerState.kt and AnalysisPlayerScreen.kt. gh pr view 51 and gh pr view 67 both show MERGED. No build was run because nothing was changed.",
+                "next_step": "On a TestFlight build from master, open any analyzed (non-demo) clip. Tap the stick-figure button with the red no-symbol at the top right: the skeleton, dotted lines and circles go away and only the runner and tips stay. Save the video from the menu: it should say 'Save video with tips' and the saved video should have no skeleton. Tap the figure-with-pencil button next to it: the edit menu opens. "
               }
             },
             {
