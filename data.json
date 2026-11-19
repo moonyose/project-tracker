@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #50 (one-tap 'Re-analyze as...' in the player's More menu) and PR #67 (re-analyze a whole recording filmed as the wrong kind: saved scans now remember the kind they looked for, plus 'Re-analyze as straightaways / curves / starts' buttons on the starts review, 'No starts found', the pass picker and the finish card) were merged into master on 2026-11-18 and cover iOS and Android. Austin closed the later duplicate PRs #55, #60 and #70 because #50, #51 and #67 already cover this task. No new PR opened.",
+                "summary": "Already shipped: PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu, and PR #67 added a 'Filmed something else?' card with the same buttons under the results, on both iOS and Android. It is all still on master, so there was nothing new to change.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:40+00:00",
-                "verified": "Checked current origin/master (90cfea7). iOS has ReanalyzeCard in Playback/KindViews.swift, wired into PassPickerView, SplitStartsView (SplitModel.reanalyze(as:store:)) and the player's ResultsViews/AnalysisPlayerView. Android has the same in the KindLogic/KindViews/PassPickerScreen/SplitStartsScreen/SplitModel/AnalysisPlayerScreen ports, with KindUiTest and PassesTest. Confirmed with gh: #50 and ",
-                "next_step": "Mark t127 done in the tracker. To confirm on a phone: leave the record screen on Start, film about 30 s of straightaway runs, then tap 'Re-analyze as straightaways' on the starts review or 'No starts found' screen. 'Pick your passes' should show the runs."
+                "at": "2026-11-19T22:42+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read through the code on origin/master (90cfea7). KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle exist in Swift and Kotlin and are wired into AnalysisPlayerView.swift:651, ResultsViews.swift:967, SplitStartsView.swift:1420, PassPickerView.swift:55 and the Android AnalysisPlayerScreen/ResultsViews/SplitStartsScreen/PassPickerScreen. Tests are in Tools/tests_kindui.swift and KindUiTest.kt",
+                "next_step": "On your phone: set Filming to Start, record a few straightaway strides, open the clip, then tap ... (More) > 'Re-analyze as a straightaway' (or use the 'Filmed something else?' card under the results). The chip should then read Stride. If this still feels like manual work, edit the task to say which screen or step is missing."
               }
             },
             {
