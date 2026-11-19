@@ -1885,11 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift) and Android (AnalysisPlayerScreen.kt, core KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 (merged) then added the same option to the results view (ResultsViews.swift/.kt), the split-starts screen and the pass picker, so a long recording can be re-analyzed as straightaways too. A new PR would only duplicate that work",
+                "summary": "Already shipped. 'Re-analyze as ...' is on master for iOS and Android: PR #50 (moonyose/StrideLab, branch claude/t127-reanalyze-as, merged Nov 18) added the one-tap rows to the player's More menu, and PR #67 (reanalyze-skeleton-toggle-beta, merged Nov 18, now origin/master cc7b90d) extended it to the pass picker, the starts review and finish card. It also made the scan cache remember what it looked for, so a recording scanned as Starts is scanned again for passes when re-analyzed as Straightaways. Nothing was left to change, so no branch was pushed and no PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T02:19+00:00",
-                "verified": "Read the code on origin/master (cc7b90d): the 'Re-analyze as' menu and results-view rows are present and wired to KindFlow on both iOS and Android. I did not run a build or tests because nothing changed.",
-                "next_step": "On your phone, open a clip that was analyzed as Starts, tap the More (...) menu in the player, and tap 'Re-analyze as a straightaway'. The clip should re-analyze as straightaways with no manual editing. If that already works, close t127. If something still feels manual, say which screen and I'll take another pass."
+                "at": "2026-11-19T02:21+00:00",
+                "verified": "Read master: iOS KindFlow.reanalyzeOptions/reanalyzeTitle/reanalyzeChoices (StrideLab/Playback/KindLogic.swift), the More-menu rows (AnalysisPlayerView.swift:649), PassPickerView/SplitStartsView ReanalyzeCard and SplitModel.reanalyze(as:store:). Android mirrors are in KindLogic.kt, AnalysisPlayerScreen.kt:526, PassPickerScreen.kt, SplitStartsScreen.kt and SplitModel.kt, with tests in Tools/tests_k",
+                "next_step": "On a TestFlight build that includes PR #67, open a clip that was recorded as Starts, tap More (...), then tap 'Re-analyze as a straightaway'. Or, on a long Starts recording, tap 'Re-analyze as straightaways' on the review screen. It should show 'Re-analyzing as a stride' and then the straightaway results. If that works, mark t127 done in the tracker."
               }
             },
             {
@@ -1903,12 +1903,12 @@
               "transcript": "There is a new Roblox game I'm working on. It's called Tierra Viva, Tierra Viva, if you prefer. And right now I have this whole storyline and, like different quest lines and blah blah blah. It's, like, really fancy. I want to kind of get rid of that. Maybe not get rid of it, just put it on hold. And first and foremost, I want to make it, like, a really good dungeon crawler. Okay, so I want the dungeons to be very good, with, like, really good enemies and booby traps. Like, that's a huge thing, and also the loot. Like, I want the loot system and everything to be very satisfying. so, let's hold off on all the dialogue and everything. And then, yeah, we'll go from there.",
               "owner": "austin",
               "agent": {
-                "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (moonyose/StrideLab, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button') merged 2026-11-18, then carried through PR #67 to master (cc7b90d). On master the clip view has two large (54pt) buttons side by side at the top right: a skeleton switch (figure.stand with a red circle.slash; off leaves only the tips and the runner, and hides the skeleton, guide lines and circles) and Edit (a figure with a pencil). The switch is saved as CoachingPrefs.hideSkeletonKey. Saved videos and stills read it (ResultsViews.swift:1040 `!CoachingPrefs.hidesSkeleton(",
+                "status": "needs_austin",
+                "summary": "Already done on master, so no new PR. PR #51 (claude/t128-skeleton-toggle) merged 2026-11-18 and was kept by PR #67's merge (cc7b90d). The clip view has two 54 pt buttons side by side at the top right. One is a skeleton switch: a stick figure with a red circle.slash through it, saved as stridelab.hideSkeleton. When it is on, the skeleton, guides, target lines, joint ring and tip leader are hidden, leaving the runner and the tips, and the saved video and shared frame follow it. The other is Edit: a runner with a pencil. Both are in iOS (StrideLab/Playback/AnalysisPlayerView.swift skeletonButton",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T02:19+00:00",
-                "verified": "Read the current origin/HEAD code: AnalysisPlayerView.swift skeletonButtons (lines 1181-1220), the skeletonHidden gating (line 1292), the export/still paths, and the Android twins. Checked with gh that PR #51 is MERGED. No build was run, because no code changed.",
-                "next_step": "On the latest TestFlight build, open a clip. Tap the stick-figure button with the red no-symbol at the top right and check that only the runner and tips remain. Then use More > Save video and check that the saved video has no skeleton. If the icons or size still aren't what you want, edit the task with the exact change."
+                "at": "2026-11-19T02:21+00:00",
+                "verified": "Checked the code only, no build run. Found the merged PR #51 with gh pr list and read its diff stats with git show 580413f. Read the current master skeletonButtons code in AnalysisPlayerView.swift and grepped the Android port for hideSkeleton. Both platforms have the toggle, the export plumbing and the Edit button.",
+                "next_step": "Please mark t128 done in the tracker so it stops being picked up again. If something about the merged version is still wrong, edit the to-do to say exactly what: for example the icon look, the button size or position, or something the export still draws. To check it on your phone: open any non-demo clip in the latest TestFlight build, tap the stick-figure button with the red slash at the top right"
               }
             },
             {
