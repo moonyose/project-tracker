@@ -1885,12 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as ...\" to the player's More menu, and PR #67 (merged 2026-11-18) extended it to whole recordings filmed as the wrong kind (pass picker / split starts screens show \"Re-analyze as straightaways\"), with curve marked Beta. Both iOS (AnalysisPlayerView, ResultsViews, PassPickerView, SplitStartsView, KindLogic) and Android (AnalysisPlayerScreen, ResultsViews, PassPickerScreen, SplitStartsScreen, KindLogic) have it, with tests in Tools/tests_kindui.swift and KindUiTest.kt. No new PR opened, to avoid duplicate work.",
+                "summary": "Already shipped on master for iOS and Android. PR #50 added one-tap \"Re-analyze as ...\" to the player's More menu. PR #67 (merged 2026-11-18) added \"Re-analyze as straightaways / curves / starts\" to the recording review screen (including \"No starts found\"), the pass picker and the finish card. It also fixed the root cause: ScanCache now records which kind it looked for, so a recording saved as Starts is looked through again for passes. Later duplicate PRs (#60-#65, #70) were closed at Austin's request as superseded. No new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T06:46+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Confirmed via gh that PRs #50 and #67 are MERGED, and grepped origin/master (cc7b90d) for the reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle call sites in both the iOS and Android UI. No build was run because nothing was changed.",
-                "next_step": "On the latest TestFlight build: open a clip analyzed as Starts, tap More (...) in the player, pick \"Re-analyze as a straightaway\", and check that the results come back as a straightaway. For a recording filmed with Start picked, the pass picker should offer \"Re-analyze as straightaways\". If this works, tick the to-do off."
+                "at": "2026-11-19T06:48+00:00",
+                "verified": "Confirmed on origin/master (cc7b90d) that the Re-analyze code and tests exist in Swift (KindLogic.swift, KindViews.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift, Tools/tests_kindui.swift, tests_passes.swift) and Kotlin (KindLogic.kt, KindViews.kt, ResultsViews.kt, SplitModel.kt, PassPickerScreen.kt, KindUiTest.kt, PassesTest.kt). Read the merge history and the closing comm",
+                "next_step": "Mark t127 done in the tracker so it isn't picked up again. To check on your phone: record a straightaway with the record screen on Starts, open the clip, tap \"Re-analyze as straightaways\" on the review screen, and confirm the Pick your passes grid appears."
               }
             },
             {
@@ -1905,12 +1904,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #51 (moonyose/StrideLab, branch claude/t128-skeleton-toggle) merged this exact to-do, and PR #67 (cc7b90d, current master) kept it. iOS AnalysisPlayerView.skeletonButtons has two 54 pt buttons side by side at the top right: a figure.stand with a red circle.slash as the skeleton switch, and a runner with a pencil as Edit. The switch is saved under stridelab.hideSkeleton, and with it on the clip view hides the skeleton, guides, the lit-joint circle and the tip leader. SkeletonVideoExporter's skeleton: parameter carries the switch into Save video and Share this frame. A",
+                "summary": "Already shipped on master: PR #51 (branch claude/t128-skeleton-toggle, merged 2026-11-18) added the skeleton on/off switch and the bigger Edit button, and PR #67 merged on top and kept them. iOS: AnalysisPlayerView.skeletonButtons puts two 54 pt buttons side by side at the top right. The switch is figure.stand with a red circle.slash through it. Edit is figure.run with a pencil. When the switch is off, the skeleton, guides and target lines come off the video and only the tips and the runner show. It is not offered on demo clips or while placing joints. The setting is saved as CoachingPrefs.hid",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T06:46+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read the current master code. iOS: AnalysisPlayerView.swift lines 1175-1220 and 1289-1294, the export labels at lines 578 and 598, and SkeletonVideoExporter's skeleton flag. Android: PlayerStage.kt line 434, PlayerState.kt lines 126 and 323, AnalysisPlayerScreen.kt line 477. Confirmed PR #51 is merged (169f9a0) and kept by #67. I didn't rebuild, because nothing changed. The PR #51 body reports a p",
-                "next_step": "On a TestFlight build, open one of your own clips (not a demo). At the top right, tap the stick figure with the red no-symbol: the skeleton, dotted guides and circles should disappear, and the tips should stay. Then use Share > Save video and check the saved video has no skeleton. Tap the runner-with-pencil button and check the Edit menu opens. If this all works, tick t128 off the list."
+                "at": "2026-11-19T06:48+00:00",
+                "verified": "Checked by reading the code on origin/master (cc7b90d): git log shows #51 'Clip view: skeleton on/off switch (applies to export) and a bigger Edit button' merged and #67 keeping it. I grepped the iOS and Android code paths named above. No build was run because nothing changed; #51 and #67 passed the repo's PR checks when they merged.",
+                "next_step": "Austin: on the TestFlight build, open a clip. Tap the stick-figure-with-red-slash button at the top right and the skeleton and dotted guides should disappear, leaving the tips. Then use More > Save video with tips and check the saved video has no skeleton. If the icons or size aren't what you wanted, edit this to-do with the exact change and mark t128 done."
               }
             },
             {
