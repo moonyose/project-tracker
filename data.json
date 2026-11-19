@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done and merged on both platforms on Nov 18. PR #50 (https://github.com/moonyose/StrideLab/pull/50) added a one-tap \"Re-analyze as a straightaway / start / curve\" to the player's More menu. PR #67 (https://github.com/moonyose/StrideLab/pull/67) added \"Re-analyze as straightaways\" for a recording filmed as the wrong kind, which is the Nov 17 case. It appears on the start-splitting screen (SplitStartsView, SplitModel.reanalyze(as:)), on the pass picker, and on the results card. Each tap saves the new kind as the athlete's choice and runs the analysis again. The same features are in the A",
+                "summary": "Already shipped on master, on iOS and Android. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player menu. On iOS that is KindFlow.reanalyzeOptions plus AnalysisPlayerView. On Android it is KindLogic.kt plus AnalysisPlayerScreen.kt. Straightaway comes first for a take left on Starts. A 'Filmed something else?' card with 'Re-analyze as straightaways' also appears on the results screen, the split-starts screen and the pass picker (ReanalyzeCard, SplitModel.reanalyze on both platforms). PR #67 then merged the rest. Tes",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:06+00:00",
-                "verified": "Read origin/master (3e1a2d3). The re-analyze entry points are in StrideLab/Playback/AnalysisPlayerView.swift, StrideLab/Playback/ResultsViews.swift, StrideLab/Split/SplitStartsView.swift and StrideLab/Split/PassPickerView.swift, with the matching Kotlin under android/. gh shows PRs #50 and #67 as MERGED on 2026-11-18. I did not rebuild or re-run verify.sh or Gradle, because there was no code chang",
-                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with Starts selected on the record screen. On the starts screen, tap \"Re-analyze as straightaways\" and check that it finds the runs as straightaways. Also open any analyzed clip, go to More, then Re-analyze as..., and check it switches kinds in one tap. If the Nov 17 problem still happens on that build, add a note to the to-do sayin"
+                "at": "2026-11-19T22:07+00:00",
+                "verified": "Read master at 90cfea7. Confirmed with git log and grep that the merged reanalyze code and its tests are in both the iOS and Android sources. Found no open t127 PR. Did not rebuild, because nothing changed.",
+                "next_step": "On the latest TestFlight build, record a straightaway with the record screen still on Starts. Open the clip, tap the player menu, choose 'Re-analyze as a straightaway' and check that the straightaway tips appear. If that works, tick t127 off the list. There are also 8 stale origin/claude/t127-* branches you may want to delete."
               }
             },
             {
