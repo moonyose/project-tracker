@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu, and PR #67 added a 'Filmed something else?' card with the same buttons under the results, on both iOS and Android. It is all still on master, so there was nothing new to change.",
+                "summary": "Already shipped on master on both platforms. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu (KindFlow.reanalyzeOptions; iOS AnalysisPlayerView, Android AnalysisPlayerScreen). PR #67 (merged Nov 18) added a 'Looked through for starts. Filmed something else?' card with 'Re-analyze as straightaways / curves' buttons on a long recording's starts review and on the pass picker (iOS SplitStartsView/PassPickerView, Android SplitStartsScreen/PassPickerScreen), plus SplitModel.reanalyze and tests in Tools/tests",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T22:42+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read through the code on origin/master (90cfea7). KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle exist in Swift and Kotlin and are wired into AnalysisPlayerView.swift:651, ResultsViews.swift:967, SplitStartsView.swift:1420, PassPickerView.swift:55 and the Android AnalysisPlayerScreen/ResultsViews/SplitStartsScreen/PassPickerScreen. Tests are in Tools/tests_kindui.swift and KindUiTest.kt",
-                "next_step": "On your phone: set Filming to Start, record a few straightaway strides, open the clip, then tap ... (More) > 'Re-analyze as a straightaway' (or use the 'Filmed something else?' card under the results). The chip should then read Stride. If this still feels like manual work, edit the task to say which screen or step is missing."
+                "at": "2026-11-19T22:44+00:00",
+                "verified": "Read the current master (90cfea7). Found the merged commits fe99a5f (#50) and cc7b90d (#67) and the code paths on iOS and Android. No builds were run because nothing changed.",
+                "next_step": "On a build with #50 and #67 (any TestFlight build from Nov 18 or later): record a straightaway with Starts selected. On the starts review, tap 'Re-analyze as straightaways' and check that the runs come up. Then open any analyzed clip, open More, tap 'Re-analyze as a straightaway' and check that it re-analyzes. If that still doesn't match what you want, edit the to-do to say what's missing."
               }
             },
             {
