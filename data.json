@@ -1885,12 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, on both platforms. PR #50 (One-tap \"Re-analyze as\u2026\" in the player's More menu, merged 2026-11-18) and PR #67 (Curve marked Beta, and Re-analyze as\u2026 for a recording filmed as the wrong kind, merged 2026-11-18) are both in origin/master (cc7b90d). iOS: KindFlow.reanalyzeChoices/reanalyzeTitle/reanalyzeOptions in StrideLab/Playback/KindLogic.swift, used in AnalysisPlayerView, ResultsViews, KindViews, SplitStartsView and PassPickerView. Android: the same in android/core/.../playback/KindLogic.kt and the player and split screens. Tests: Tools/tests_kindui.swift (kui_reanalyz",
+                "summary": "Already shipped on master. PR #50 (merged 2026-11-18) added one-tap \"Re-analyze as ...\" items to the player's More menu on iOS and Android; PR #67 (merged 2026-11-18) added \"Re-analyze as starts/straightaways\" buttons on the recording review, pass picker and finish card, plus a kind-keyed scan cache so a recording first looked through as starts is looked through for passes again once re-analyzed as straightaways. Both platforms have the UI wiring and tests (Tools/tests_kindui.swift, android KindUiTest.kt). No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T08:46+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read the code on origin/master and confirmed both merged PRs with gh pr view. I could not run verify.sh, xcodebuild, gradle or gh pr checks again in this run because the runner's permission mode refused those commands. The checks in .github/workflows/pr-checks.yml ran on those PRs before they were merged.",
-                "next_step": "On a TestFlight build from current master: record a straightaway with the record screen left on Starts, open the clip, tap More (or the 'Analyzed as a start. Filmed something else?' card), choose 'Re-analyze as a straightaway' (or 'Re-analyze as straightaways' for a recording) and check it comes back as straightaway passes. If that works, close t127."
+                "at": "2026-11-19T08:53+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "On origin/master (cc7b90d): ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' and 'a recording reanalyzed as straightaways is looked through for passes again' checks. Confirmed by grep that the iOS AnalysisPlayerView/ResultsViews/PassPickerView/SplitStartsView and the Android AnalysisPlayerScreen/ResultsViews/PassPickerScreen/SplitStartsScreen use KindFlow.rea",
+                "next_step": "On a TestFlight build from master or later: record with Start selected while running a straightaway, open the clip, tap More > 'Re-analyze as a straightaway', and check that the results come back as a straightaway. For a long recording, check that the pass picker or review shows 'Re-analyze as straightaways'. If that works, mark t127 done in the tracker."
               }
             },
             {
@@ -1905,11 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #51 (branch claude/t128-skeleton-toggle, merge 169f9a0) added this exact feature, and PR #67 (cc7b90d, current master HEAD) kept it. iOS (StrideLab/Playback/AnalysisPlayerView.swift, skeletonButtons): two 54 pt buttons side by side at the top right. One is the skeleton toggle, a stick figure with a red circle.slash and a red ring when on. It is stored as CoachingPrefs.hideSkeletonKey, and skeletonHidden drops the skeleton, lines and circles but keeps the tips. The other is Edit, a runner with a pencil, which opens the same menu as press-and-hold. Export follows th",
+                "summary": "Already shipped on both platforms. PR #51 (moonyose/StrideLab, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button') merged 2026-11-18, and #67 merged it alongside the t127 re-analyze work. On origin/HEAD (cc7b90d) the clip view has two 54pt buttons side by side at the top right. The first is the skeleton switch: a stick figure with a red no-symbol (circle.slash) through it and a red ring when the skeleton is off. It hides the skeleton, guides and circles and keeps the tips and the runner, and the setting (CoachingPrefs.hideSkeletonKey) also controls Save video. The s",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T08:46+00:00",
-                "verified": "Code inspection of origin/master at cc7b90d on both platforms: git log, the iOS and Android button code, and the export plumbing. Nothing was built because nothing changed.",
-                "next_step": "On a TestFlight build, open a recorded (non-demo) clip. Tap the stick-figure button with the red no-symbol at the top right: the skeleton, lines and circles should disappear and the tips should stay. Then save the video and check that the export has no skeleton. Tap the runner-with-pencil button beside it and check that the Edit menu opens. If the icons or size aren't what you wanted, edit the to-"
+                "at": "2026-11-19T08:53+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read origin/HEAD: StrideLab/Playback/AnalysisPlayerView.swift skeletonButtons (lines ~1175-1220), skeletonHidden, the Save video labels; ResultsViews.swift export defaults skeleton to !CoachingPrefs.hidesSkeleton(); android/app/.../ui/player/PlayerStage.kt SkeletonButtons and PlayerState.hideSkeleton. gh pr view 51 shows state MERGED. No build was run because no code changed.",
+                "next_step": "On the current TestFlight build, open a non-demo clip. Tap the stick-figure-with-red-slash button at the top right: the skeleton, dotted lines and circles go away and the tips stay. Then use Save video and check the exported video has no skeleton. Tap the pencil-figure button beside it to open Edit. If this build already looks like that, close t128."
               }
             },
             {
