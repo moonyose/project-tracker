@@ -1885,12 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done. One-tap \"Re-analyze as ...\" shipped on iOS and Android in PR #50 (merged 2026-11-18), and PR #67 (merged 2026-11-18) built on it. On a clip recorded as Starts, the player's More (...) menu shows \"Re-analyze as a straightaway\" first, then \"Re-analyze as a curve\". The Results and Split screens also offer re-analyze choices. Nothing new to change, so no PR opened.",
+                "summary": "Already shipped on master, so no new PR. One-tap \"Re-analyze as ...\" came in with PR #50 (commit 1a499a2, player More menu) and was extended in PR #67 (commit c3f1d42, merged as cc7b90d). It is on both iOS and Android. It appears in the player's More menu, on the results/finish card (\"Analyzed as a start. Filmed something else?\" with a button for each other kind), and on the pass picker and split-starts screens (\"Re-analyze as straightaways\"). A recording first scanned as starts is scanned again for passes when it is re-analyzed as straightaways. Tests cover it in Tools/tests_kindui.swift, Too",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T07:48+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked current origin/HEAD (cc7b90d, which includes #50 and #67). The iOS code is there: KindFlow.reanalyzeOptions/reanalyzeTitle in StrideLab/Playback/KindLogic.swift, used in the AnalysisPlayerView More menu. The Android code is there too: KindLogic.kt, AnalysisPlayerScreen.kt and KindUiTest.kt. Build and checks were not re-run because nothing changed. #50 reports an xcodebuild build, verify.sh",
-                "next_step": "On your phone: set Filming to Start, record a few straightaway strides, open the clip, tap ... (More), then tap \"Re-analyze as a straightaway\". Confirm you get straightaway coaching and the badge reads Stride. If that's done, mark t127 complete. If it still feels manual, say what's missing (for example, a button on the clip view instead of the menu)."
+                "at": "2026-11-19T07:49+00:00",
+                "verified": "Read master (cc7b90d). The reanalyze options and cards are wired in AnalysisPlayerView.swift, ResultsViews.swift, PassPickerView.swift and SplitStartsView.swift, and in the Android AnalysisPlayerScreen.kt, ResultsViews.kt and KindViews.kt. No code changed, so I did not rebuild or re-run the checks this run. The PR checks ran when #50 and #67 merged.",
+                "next_step": "On the latest TestFlight build: record with Starts selected but film a straightaway. Open the clip, tap More, then 'Re-analyze as a straightaway' (or 'Re-analyze as straightaways' on the pass/starts screen). Confirm it re-runs as straightaways. If it works, tick t127 off the list."
               }
             },
             {
@@ -1905,11 +1904,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f) is merged into master, and PR #67 (cc7b90d, current master HEAD) kept it. On iOS and Android the clip view has two 54 pt buttons side by side at the top right. The first is a skeleton switch: a stick figure with a red no-symbol, saved as the stridelab.hideSkeleton preference. When it is on, the skeleton, guides, target lines, joint ring and tip leader are hidden, leaving only the runner and the tips. The saved skeleton video and the shared frame follow the switch. The second is a bigger Edit button that replaces the s",
+                "summary": "Already shipped. PR #51 (moonyose/StrideLab, merged 2026-11-18, branch claude/t128-skeleton-toggle) added the clip-view skeleton on/off switch (stick figure with a red circle-slash; hides skeleton, guides and joint circles, leaving tips and runner, and the choice carries into Save video) plus a larger Edit button (running figure with a pencil) side by side at the top right, on iOS and Android. PR #67 (merged after) kept that version. Current master has both 54 pt buttons in AnalysisPlayerView.skeletonButtons and the Android twin in PlayerStage.kt; export reads the same stridelab.hideSkeleton p",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T07:48+00:00",
-                "verified": "Read the code on origin/master (cc7b90d). On iOS, AnalysisPlayerView.swift has the hideSkeleton AppStorage at line 79, the toggle and Edit buttons at about lines 1186-1220 (bigButton = 54), and skeletonHidden gating the overlay, the guides, the still export and the callout leader. On Android, PlayerState.skeletonHidden, PlayerStage.kt, PlayerTips.kt, AnalysisPlayerScreen.kt and ResultsViews.kt pas",
-                "next_step": "Note: the Edit button's icon is a plain pencil, not the skeleton-with-pencil from your notes. If you want that changed, re-queue with that detail. Otherwise mark t128 done. To confirm on the phone: open a clip and tap the stick-figure switch at the top right. The skeleton and lines should disappear and the tips should stay. Then save the skeleton video and check that it has no skeleton. If the ico"
+                "at": "2026-11-19T07:49+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
+                "verified": "Read current origin/master: AnalysisPlayerView.swift skeletonButtons (toggle + Edit, bigButton = 54), export menu labels switch to 'Save video with tips' when hidden; Android PlayerStage.kt/PlayerState.kt/ResultsViews.kt mirror it with the shared hideSkeleton pref. No build was run because there was no code change.",
+                "next_step": "On the current TestFlight build, open a clip. At the top right there should be two big buttons. Tap the stick-figure/red-slash one: the skeleton, dotted lines and circles should disappear, leaving the tips and the runner. Then use More > Save video: the exported video should have no skeleton. If anything is missing or looks wrong, edit the task and say what to change."
               }
             },
             {
