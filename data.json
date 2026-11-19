@@ -1885,11 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This task is already on master on both platforms, so nothing new was opened. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2) added one-tap 'Re-analyze as a straightaway / curve / start' items to the player's More menu on iOS and Android. It reuses the existing applyKind path (paywall, re-analysis stage, choice saved on the clip) and has tests in Tools/tests_kindui.swift and android KindUiTest.kt. PR #67 (commit c3f1d42, merged as cc7b90d) then added the same option to the split/recording review, the pass picker and the finish card. It also made the scan cache remember which kind it lo",
+                "summary": "Already shipped on master. PR #50 (claude/t127-reanalyze-as, merged) added one-tap 'Re-analyze as a straightaway / a curve' rows to the player's More menu on iOS and Android, using the same applyKind path as the 'What's in this clip' sheet, with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 (merged 2026-11-18) extended it to long recordings ('Re-analyze as straightaways' in SplitStartsView / SplitModel) and marked curve as Beta. Nothing left to implement, so no new branch or PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T00:59+00:00",
-                "verified": "Read the git history and code on origin/master (cc7b90d). KindFlow.reanalyzeOptions/reanalyzeTitle are in StrideLab/Playback/KindLogic.swift and used in AnalysisPlayerView.swift (More menu). SplitStartsView.swift has reanalyze(as:store:) and a ReanalyzeCard. The Android equivalents are in core playback/KindLogic.kt, ui/player/AnalysisPlayerScreen.kt and ui/split/SplitStartsScreen.kt + SplitModel.k",
-                "next_step": "Check it on your phone with the current TestFlight build. Record straightaways with the record screen still on Starts. On the review screen, tap 'Re-analyze as straightaways' and confirm the passes are found. Then open a clip in the player, go to More, tap 'Re-analyze as a straightaway' and confirm it re-measures. If that works, close t127."
+                "at": "2026-11-19T01:01+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Checked origin/master (cc7b90d): KindFlow.reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle exist in StrideLab/Playback/KindLogic.swift and KindViews.swift, SplitStartsView.reanalyze(as:store:), and the Kotlin mirrors in KindViews.kt, SplitModel.kt and StartScanSession.kt, with KindUiTest.reanalyzeAsTest. No builds were run because nothing changed. Both PRs passed CI before they were merged.",
+                "next_step": "On your phone (TestFlight build from #67 or later): set Filming to Start, record a few straightaway strides, open the clip, tap the More (...) button, then tap 'Re-analyze as a straightaway'. You should see straightaway coaching and the Stride chip. If that works, close t127."
               }
             },
             {
@@ -1904,12 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #51 (claude/t128-skeleton-toggle, merged 2026-11-18) added this, and PR #67 kept it when it merged later. On iOS (AnalysisPlayerView.skeletonButtons) and Android (PlayerStage.kt) the clip view has two large 54pt buttons side by side at the top right. The first is a skeleton switch: a stick figure with a red circle.slash. It hides the skeleton, guides and dots so only the runner and the tips show. Its setting is stored as stridelab.hideSkeleton. The second is an Edit button: a figure with a pencil that opens the frame edit menu. Video export reads the same setting ",
+                "summary": "Already shipped. PR #51 (claude/t128-skeleton-toggle, 'Clip view: skeleton on/off switch (also for export) and a bigger Edit button') merged 2026-11-18, and #67 merged after it and kept that switch and Edit button. Current master has: two 54 pt buttons side by side at the top right of the clip view; the toggle icon is a stick figure (figure.stand) with a red circle.slash over it; the Edit icon is a figure with a pencil and opens the edit menu; the setting is persisted (stridelab.hideSkeleton) and hides the skeleton, guides and callout lines while leaving tips and the runner; export passes skel",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T00:59+00:00",
+                "at": "2026-11-19T01:01+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Checked the source on origin/master (cc7b90d) for iOS and Android: both buttons, the setting, and how live view, still export and video export use it. Confirmed with gh that PR #51 is merged. No build was run this time because no code changed.",
-                "next_step": "On the latest TestFlight build, open an analyzed clip. Tap the stick figure with the red circle at the top right: the skeleton, dots and lines should disappear while the tips stay. Then use Share > Save video and check that the saved video has no skeleton. Tap the pencil button next to it to open the edit menu. If you wanted different icons or placement, edit the to-do and say what to change."
+                "verified": "Checked the code on origin/master (cc7b90d) against the task, on iOS (AnalysisPlayerView.skeletonButtons, SkeletonVideoExporter skeleton flag) and Android (PlayerStage, PlayerState, SkeletonVideoExporter.kt). Confirmed with gh that PR #51 and #67 are merged. No build was run because nothing changed.",
+                "next_step": "Mark t128 done in the tracker. To confirm on the phone: open any analyzed clip that isn't a demo, tap the stick-figure button with the red slash (top right), and check that the skeleton, dotted lines and circles go away while the tips stay. Then use More > Save video with tips and check that the saved video has no skeleton. Tap the figure-with-pencil button next to it to open Edit."
               }
             },
             {
