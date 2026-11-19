@@ -1885,12 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: one-tap \"Re-analyze as\u2026\" was merged yesterday (Nov 18) on iOS and Android in PR #50 (player's More menu) and PR #67 (Re-analyze buttons on the recording review, pass picker and finish card, plus a kind-keyed scan cache so a recording scanned as starts is re-scanned for passes when switched to straightaways). No new PR opened.",
+                "summary": "Already shipped on master. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as a straightaway / curve / start\" to the clip player's More menu (KindFlow.reanalyzeOptions). PR #67 (merged 2026-11-18) added \"Re-analyze as starts / straightaways\" for a long recording on the split/pass screens. Both are in the iOS app and the Android port (android/.../KindLogic.kt, AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. Nothing new to build.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T10:06+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Checked origin/master (cc7b90d): KindFlow.reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift, the menu rows in AnalysisPlayerView.swift, ReanalyzeCard in PassPickerView.swift, and the Kotlin twins under android/app (AnalysisPlayerScreen.kt, PassPickerScreen.kt, SplitModel.kt). No build run because nothing changed.",
-                "next_step": "Install the latest TestFlight build (from the #67 merge). Open a clip recorded as Starts, tap More, choose \"Re-analyze as straightaways\", and check that it re-analyzes. If something still feels manual, edit this to-do to say which step."
+                "at": "2026-11-19T10:08+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read origin/master (cc7b90d): the feature code and its tests are on both platforms. gh shows PRs #50 and #67 as MERGED. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build from after Nov 18: open a straightaway clip that was analyzed as a start, tap More (...) in the player, tap \"Re-analyze as a straightaway\", and check that it re-analyzes with stride coaching. If that row is missing, tell me what you see and I'll reopen this."
               }
             },
             {
@@ -1905,12 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #51 (merged Nov 18) added the skeleton on/off switch (stick figure with red no-symbol, also applies to saved video and shared frame) and the bigger Edit button side by side at the top right, on iOS and Android. PR #67 kept it when it merged.",
+                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle, commit 580413f) added the clip-view skeleton on/off switch (stick figure with a red no-symbol; it hides the skeleton, guides, target lines, joint ring and tip leader, leaving only the runner and tips) and a bigger Edit button beside it at the top right. It persists as stridelab.hideSkeleton, and the saved skeleton video and shared frame follow it. It is mirrored in the Android port. PR #67 (cc7b90d, current master) kept #51's version. I checked that master still has it on iOS (AnalysisPlayerView.swift hideSkeleton/skeletonHidden, the",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T10:06+00:00",
+                "at": "2026-11-19T10:08+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Checked that PR #51 is merged and that the hideSkeleton switch is still on master in AnalysisPlayerView/CoachGuides (iOS) and PlayerState/PlayerStage/AnalysisPlayerScreen (Android). Nothing new was built this run. PR #51 itself reported xcodebuild OK, Tools/verify.sh passing and the Android Gradle checks passing. bend was not available.",
-                "next_step": "On your phone, open one of your own clips, tap the stick-figure button to hide the skeleton, then Share > Save video and check that the saved video has no skeleton. If that works, tick this off."
+                "verified": "Code inspection of origin/master at cc7b90d only. No build was run because nothing changed.",
+                "next_step": "On your phone, open an analyzed clip. Tap the stick-figure-with-red-circle button at the top right and check that the skeleton, dotted lines and circles disappear while the tips stay. Then save the video or share a frame and check that the export has no skeleton either. Tap the larger Edit button next to it and check that the mark menu opens. If this is fine, close t128 on the list."
               }
             },
             {
