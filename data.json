@@ -1885,11 +1885,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (one-tap 'Re-analyze as ...' in the player's More menu) and PR #67 ('Reanalyze as another kind ...') are merged, on iOS and Android. The recording-level flow is covered too: the starts review / 'No starts found' (SplitStartsView / SplitStartsScreen) and the 'Pick your passes' grid (PassPickerView / PassPickerScreen) show a ReanalyzeCard with 'Re-analyze as straightaways / curves'. The results view has an 'Analyzed as a start. Filmed something else?' card. The saved scan is keyed on the chosen kind (PassFlow.cacheKey / cacheFits), so a recording f",
+                "summary": "Already shipped. One-tap \"Re-analyze as ...\" was merged to master in PR #50 (claude/t127-reanalyze-as, 2026-11-18) and refined in PR #67 (merge cc7b90d). iOS: player More menu lists KindFlow.reanalyzeOptions (StrideLab/Playback/AnalysisPlayerView.swift ~L649), also in ResultsViews, KindViews, SplitStartsView and PassPickerView. Android: same menu in ui/player/AnalysisPlayerScreen.kt ~L526, with KindLogic.kt and KindUiTest coverage. Later duplicate PRs #55, #60 and #70 for this task were closed without merging, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T01:26+00:00",
-                "verified": "Read master at cc7b90d: the git log shows #50, #51 and #67 merged, and gh shows #70 closed with the 'superseded' comment. Grepped the iOS and Android UI call sites of KindFlow.reanalyzeOptions/reanalyzeChoices and read the tests that cover them. No code was changed, so I ran no build.",
-                "next_step": "Mark t127 done in the tracker. To confirm on the phone: record two straightaway passes with the record screen left on Start. On the starts review or 'No starts found', tap 'Re-analyze as straightaways' and check that 'Pick your passes' appears."
+                "at": "2026-11-19T01:28+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Checked the code on origin/master (cc7b90d): the Re-analyze-as menu is wired into the player on iOS and Android, and Tools/tests_kindui.swift and KindUiTest.kt cover it (a start filmed by mistake is one tap from straightaway or curve, the current kind is never offered, no option on shipped demos). No build was run because nothing changed.",
+                "next_step": "If this item is still open on the tracker, mark it done. To check on the phone: open a clip that was analyzed as a start, tap More (...) in the player, then tap \"Re-analyze as a straightaway\" and confirm the results come back as straightaway runs. If something is still missing, edit the task to say what, because the feature as described is already merged."
               }
             },
             {
@@ -1904,12 +1905,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (claude/t128-skeleton-toggle) was merged 2026-11-18 and its changes were kept when PR #67 merged into master (cc7b90d). On master, the clip view shows two larger buttons (54pt) side by side at the top right. The first is a skeleton switch: a stick figure with a red circle.slash over it. When it is on, the skeleton, the guides, the lit limb, the target lines and the tip leaders are hidden, and the video, the runner and the tips stay. The second is Edit: a running figure with a pencil. The switch is saved as stridelab.hideSkeleton. SkeletonVideoSave.start reads it, so sav",
+                "summary": "Already shipped. PR #51 (branch claude/t128-skeleton-toggle, merged 2026-11-18) added the skeleton on/off switch (stick figure with red no-symbol), which also applies to export, and a bigger Edit button (running figure with pencil) beside it at the top right. Both are 54 pt/dp, on iOS and Android. PR #67 merged on top and kept them. The current master has both: AnalysisPlayerView.swift skeletonButtons / skeletonHidden, SkeletonVideoExporter skeleton: parameter, the 'Save video with tips' wording when the skeleton is hidden, and android PlayerStage.kt SkeletonButtons plus PlayerState.hideSkelet",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T01:26+00:00",
+                "at": "2026-11-19T01:28+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/51",
-                "verified": "Read the current master code and found the feature in place: AnalysisPlayerView.swift skeletonButtons (around line 1181) and skeletonHidden (around line 1292), the hideSkeletonKey preference in CoachGuides.swift, the skeleton parameter in ResultsViews.swift and SkeletonVideoExporter.swift, and the matching Android files. I changed no code, so I ran no build or tests in this run. The PR #51 and #67",
-                "next_step": "On a TestFlight build from current master: open a recorded clip. Tap the stick-figure button with the red slash at the top right. The skeleton, the dotted lines and the circles should disappear, leaving the runner and the tips. Tap the figure-with-pencil button beside it and the edit menu should open. With the skeleton off, use More > Save video (or Save video with tips) and check that the saved v"
+                "verified": "Read the code on origin/master (cc7b90d): the iOS toggle and Edit button are at AnalysisPlayerView.swift:1175-1220, export gets skeleton: false via SkeletonVideoExporter.swift:63-112, and the Android twin is at PlayerStage.kt:420-457. gh shows PR #51 and PR #67 as MERGED. I did not rebuild, because nothing changed.",
+                "next_step": "On the phone, in the latest TestFlight build: open any non-demo clip and tap the stick-figure button with the red no-symbol at the top right. The skeleton, dotted lines and circles should go away, leaving the runner and the tips. Then save the video from More and check that the export has no skeleton either. Tap the running-figure-with-pencil button beside it to open Edit. If anything there still "
               }
             },
             {
