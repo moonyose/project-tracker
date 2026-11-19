@@ -1885,12 +1885,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented and merged on master for iOS and Android. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged 2026-11-18) added a one-tap \"Re-analyze as...\" item to the player's More menu (KindLogic.swift/AnalysisPlayerView.swift and the Kotlin twins KindLogic.kt/AnalysisPlayerScreen.kt, with tests). PR #67 (https://github.com/moonyose/StrideLab/pull/67, merged 2026-11-18) extended it to whole recordings filmed with the wrong kind picked: 'Re-analyze as straightaways' looks through the recording for passes again (Split/PassPicker screens on both platforms). No new PR opened, to a",
+                "summary": "This is already in the app on iPhone and Android (merged in PRs #50 and #67): \"Re-analyze as\u2026\" is in the player's More menu and in a recording's starts list. No new PR was opened so there isn't a duplicate (#55, #60 and #70 were earlier duplicates and were closed).",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T03:46+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "./Tools/verify.sh on current master (cc7b90d): ALL CHECKS PASSED, including the 'Re-analyze as another kind' checks (start filmed by mistake is one tap from straightaway; recording reanalyzed as straightaways is re-split into passes). No xcodebuild or Gradle run, since nothing changed; both PRs went through the PR checks workflow before merge.",
-                "next_step": "Install the latest TestFlight build. Open a clip analyzed as a start, tap More > 'Re-analyze as a straightaway', and confirm it re-analyzes with straightaway metrics. For a full recording filmed on Starts, confirm 'Re-analyze as straightaways' is offered and splits it into passes. Then mark t127 done."
+                "at": "2026-11-19T03:48+00:00",
+                "verified": "Checked the master git history for the merges of #50 and #67, and checked that the re-analyze code and its tests exist in both the iOS and Android sources. Nothing was rebuilt because nothing changed.",
+                "next_step": "On your phone, open a clip recorded as Starts, tap More (or open the recording's starts list), then 'Re-analyze as straightaways'. If the results come back as straightaways, close this to-do."
               }
             },
             {
@@ -1905,11 +1904,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #51 (commit 580413f, 'Clip view: skeleton on/off switch (applies to export) and a bigger Edit button') was merged into master, and merge #67 (cc7b90d, current origin/master) kept it. Both are on iOS and Android. The clip view has two large buttons side by side at the top right: a skeleton switch (stick figure with a red no-symbol), saved as the setting stridelab.hideSkeleton, which hides the skeleton, guides, target lines, joint ring and tip leaders so only the runner and tips show; and a larger Edit button that opens the mark menu. The saved skeleton video and the shared f",
+                "summary": "This is already in the app on iPhone and Android (merged in PR #51 and kept in #67). Two big buttons sit side by side at the top right of the clip view: a crossed-out stick figure that hides the skeleton, dotted lines and circles (exports follow it too), and a skeleton-with-pencil Edit button. No new PR was opened.",
                 "hash": "7b6d660cb7ef",
-                "at": "2026-11-19T03:46+00:00",
-                "verified": "Checked by reading the code on origin/master (cc7b90d): AnalysisPlayerView.swift (hideSkeleton AppStorage, skeletonButtons, skeletonHidden), ResultsViews.swift SkeletonVideoSave.start, SkeletonVideoExporter.swift, and the Android PlayerStage.kt and SkeletonVideoExporter.kt. Nothing was built or run, because there is no new change to verify.",
-                "next_step": "On the phone (latest TestFlight): open a clip, tap the stick-figure-with-red-slash button at the top right, and check that only the runner and tips remain. Then use More > Save video and check that the saved video also has no skeleton. Tap the larger Edit button beside it to open the mark menu. If something still looks wrong, edit the to-do to say what is wrong."
+                "at": "2026-11-19T03:48+00:00",
+                "verified": "Read the current master code for the two buttons, the export wording and the exporter's skeleton setting, and the matching Android player files. Nothing was rebuilt because nothing changed.",
+                "next_step": "On a TestFlight build, open a clip and tap the crossed-out stick figure: only the tips and the runner should stay. Then export a video and check that it has no skeleton, and tap the pencil button to open Edit. If it isn't what you wanted, edit this to-do and say what's different."
               }
             },
             {
