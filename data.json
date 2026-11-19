@@ -1934,11 +1934,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented and merged on master. iOS: PR #50 (branch claude/t127-reanalyze-as, commits 1a499a2 and c3f1d42), merged together with #51 in PR #67. One-tap 'Re-analyze as ...' is in the player's More menu, on the finished-clip card, and on a long recording's review ('Re-analyze as straightaways', PassPickerView / SplitStartsView). Logic is KindFlow.reanalyzeOptions / reanalyzeChoices / reanalyzeTitle / reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift. Android has the same: KindLogic.kt reanalyzeOptions, ReanalyzeCard in SplitStartsScreen.kt and PassPickerScreen.kt, finish-ca",
+                "summary": "Already done on master, so no PR. Commit c3f1d42 ('Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta', Nov 18, now on master at 3e1a2d3) added one-tap 'Re-analyze as ...' on iOS and Android. It appears on a long recording's review screen (SplitStartsView, shown whether or not any starts were found, e.g. 'Re-analyze as straightaways'), on the pass picker, on the finish card of an analyzed clip (ResultsViews) and in the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions, straightaway listed first for a clip analyzed as a start). The library ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:18+00:00",
-                "verified": "Read the code on origin/master (3e1a2d3) and the git log. Confirmed the feature exists in both the iOS and Android sources. No new build was run because nothing changed.",
-                "next_step": "If this to-do is still open, check it on the current TestFlight build. Record a straightaway with Filming set to Start. On the recording review, tap 'Re-analyze as straightaways'. Or open a finished clip and use More > Re-analyze as a straightaway. If either path still misses, edit the task with what went wrong."
+                "at": "2026-11-19T21:19+00:00",
+                "verified": "Read the code on origin/master. Confirmed the feature is in master's history (git log -S reanalyzeRecordingTitle points to c3f1d42) and on both platforms. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build that includes c3f1d42: leave the record screen on Starts, film a straightaway and open the recording. On the review screen, tap 'Re-analyze as straightaways' and check that it finds the runs. Or open a finished clip, go to More, then 'Re-analyze as a straightaway'. If the Nov 17 clip was made on an older build, this is what was missing then. If it still falls short, edit the "
               }
             },
             {
