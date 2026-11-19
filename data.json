@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (\"One-tap 'Re-analyze as\u2026' in the player's More menu\", branch claude/t127-reanalyze-as) was merged to master on 2026-11-18, and #67 built on it. On current master (90cfea7), iOS has one-tap 'Re-analyze as a straightaway / start / curve (Beta)' in the player's More menu (AnalysisPlayerView.swift:651), on the results card (ResultsViews.swift:971), and 'Re-analyze as straightaways\u2026' on a long recording's review (SplitStartsView.swift:1421, PassPickerView.swift:56). For a start, the straightaway option comes first. Android mirrors all of these (AnalysisPlayerScreen.kt:527, ",
+                "summary": "Already shipped. PR #50 (\"One-tap Re-analyze as... in the player's More menu\", branch claude/t127-reanalyze-as) was merged into master on 2026-11-18 for iOS and Android. It adds one row per other kind (for example \"Re-analyze as a straightaway\" on a start) to the player's More menu, using the same applyKind path, Pro paywall and saved choice (LAWS 41/46). Current master (90cfea7) also has Re-analyze cards in the split-starts screen, the pass picker and the results finish card, on both platforms (KindFlow.reanalyzeOptions/reanalyzeChoices in Swift and Kotlin). There was nothing left to change, ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:06+00:00",
+                "at": "2026-11-19T23:08+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code on current origin/master. Confirmed with gh that PR #50 is MERGED and grepped that the Re-analyze entry points are still wired up on iOS and Android after the #77 analysis-screen cleanup. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later, record a straightaway with Starts still selected and open the clip. Tap More (\u2026), then 'Re-analyze as a straightaway', and confirm it re-analyzes as a stride. For a long recording, its review screen should show 'Re-analyze as straightaways'. If this doesn't match what you saw on Nov 17, your build was likely older than the merge. Mark t127 done, or edit "
+                "verified": "Read the PR #50 body and file list with gh, and confirmed it shows MERGED at 2026-11-18T15:35Z. Grepped current origin/master and found the re-analyze code in StrideLab/Playback/AnalysisPlayerView.swift, KindLogic.swift, ResultsViews.swift, Split/SplitStartsView.swift, Split/PassPickerView.swift and the matching android/ files plus KindUiTest.kt. No builds were rerun, because no code changed.",
+                "next_step": "Mark t127 done in the tracker. Phone check from PR #50: set Filming to Start, record straightaway strides, open the clip, tap ... (More), then tap Re-analyze as a straightaway. You should see 'Re-analyzing as a stride', then stride coaching, and the chip and library badge should read Stride."
               }
             },
             {
