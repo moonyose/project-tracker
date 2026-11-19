@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android. PRs #50 and #67, both merged Nov 18, added a one-tap \"Re-analyze as\u2026\" in the player's More menu, on the results card and on the long-recording review (e.g. \"Re-analyze as straightaways\"). Nothing left to change, so no new PR.",
+                "summary": "Already shipped. This to-do was done by PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18: one-tap 'Re-analyze as a straightaway / a curve / a start' in the player's More menu) and extended by PR #67 (merged 2026-11-18: 'Re-analyze as starts/straightaways/curves' on the split review, the pass picker and the finish card, with the scan cache rescanning a recording for passes after it is relabelled). Both are on iOS and Android and on master now (3e1a2d3). The library row's context menu also has 'Analyze as...'. No new PR opened, to avoid a duplicate.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T21:39+00:00",
+                "at": "2026-11-19T21:45+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code on origin/master (3e1a2d3) and found the Re-analyze-as paths on iOS and Android. Confirmed with gh that PRs #50 and #67 are merged. Did not rebuild, because nothing changed.",
-                "next_step": "On a TestFlight build from master: record a straightaway with Start still picked. When the recording review opens, tap 'Re-analyze as straightaways' (or on a finished clip, More menu > 'Re-analyze as a straightaway'). Check that it re-analyzes as stride. If it still falls short, edit the task to say exactly where."
+                "verified": "Read master: KindFlow.reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle and ReanalyzeCard exist in Swift and Kotlin and are wired into AnalysisPlayerView/AnalysisPlayerScreen, ResultsViews, SplitStartsView/SplitStartsScreen and PassPickerView/PassPickerScreen. ./Tools/verify.sh on master printed ALL CHECKS PASSED, including the 'Re-analyze as ...' tests. No xcodebuild or Gradle run because n",
+                "next_step": "On the current TestFlight build (anything after 2026-11-18), record straightaways with the record screen left on Starts. On the review screen or in the clip's More (...) menu, tap 'Re-analyze as straightaways' / 'Re-analyze as a straightaway' and check it re-analyzes as a stride in one tap. If that still doesn't cover what you meant, edit the to-do and say which screen is missing it."
               }
             },
             {
