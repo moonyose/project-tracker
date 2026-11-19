@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already in the app on iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway' and 'Re-analyze as a curve (Beta)' to the player's More menu, with the straightaway option first. PR #67 added 'Re-analyze as straightaways/starts' buttons to the recording review, the pass picker and the finish card. Both are still on current master.",
+                "summary": "This is already on master: one-tap 'Re-analyze as\u2026' was merged on Nov 18 in PR #50, on both iOS and Android. It appears in the player's More menu, on the end-of-clip results card, and as a 'Re-analyze recording as\u2026' card on the split and run-picker screens for recordings with several runs.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-19T23:54+00:00",
-                "verified": "Read the current master code. The iOS More menu (AnalysisPlayerView.swift ~L650) and the Android menu (AnalysisPlayerScreen.kt ~L529) both still show the Re-analyze rows. No build was run because nothing changed.",
-                "next_step": "On the phone, open a clip recorded on Starts that was really a straightaway. Tap More (top right, once analysis finishes), then tap 'Re-analyze as a straightaway'. It should re-run as a straightaway without any manual marking. For a long recording, the review/pass picker screen also shows 'Re-analyze as straightaways'. If that's not on your build, update TestFlight. If it's there but still misses "
+                "at": "2026-11-19T23:56+00:00",
+                "verified": "Read the code on origin/master only: searched for the re-analyze entry points on iOS (AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift) and Android (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt) and checked the git history of #50, #67 and #78. Nothing was built because nothing changed.",
+                "next_step": "On the current TestFlight build, open a clip that was analyzed as a start, tap More (top right), then tap 'Re-analyze as a straightaway' and check that it runs again as a straightaway. If a screen still makes you fix it by hand, edit the task to say which one."
               }
             },
             {
