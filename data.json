@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #67 (merged Nov 18) added one-tap \"Re-analyze as starts / straightaways / curves\" on iOS and Android, so there is nothing new to build.",
+                "summary": "Already done: PR #50 (merged Nov 18) added a one-tap 'Re-analyze as\u2026' option to the player's More menu on iOS and Android, and PR #67 added it to the results, split-starts and pass-picker screens. It's all still on master, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T06:01+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read the code on origin/master (94d6bf0), which includes commit c3f1d42 from PR #67. iOS has KindFlow.reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift, a ReanalyzeCard on the recording review and pass picker (SplitStartsView.swift, PassPickerView.swift, which calls SplitModel.reanalyze), and 'Re-analyze as ...' rows in the player's More menu (AnalysisPl",
-                "next_step": "On your phone, open the Nov 17 straightaway recording that was analyzed as starts (or record a new one with Filming set to Start). On the review screen, tap \"Re-analyze as straightaways\" and check that it finds the runs. If you had something different in mind, edit the to-do to say what is still missing."
+                "at": "2026-11-20T06:03+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the merged PR #50 and grepped current origin/master for the re-analyze entry points on both platforms. I didn't rebuild, because nothing changed and PR #50 already passed the xcodebuild build, verify.sh and the Gradle checks.",
+                "next_step": "Mark t127 done if it works on your phone. Set the record screen to Start and film some straightaway strides. Open the clip, tap ... (More), then tap 'Re-analyze as a straightaway'. The chip should change to Stride and you should get straightaway coaching. If an entry point is still missing (for example on the recording/split screen), edit the task to say where."
               }
             },
             {
