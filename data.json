@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added one-tap \"Re-analyze as a straightaway / a curve (Beta) / a start\" rows to the player's More menu on iOS and Android, with the likeliest mix-up (start <-> straightaway) first. PR #67 (merged the same day) added the same buttons to the results screen (\"Analyzed as a start. Filmed something else?\") and to a long recording's review and pass picker (\"Re-analyze as straightaways\"). Both are on current master (94d6bf0): iOS AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.s",
+                "summary": "Already shipped on master for iOS and Android. PR #50 (merged, commit 1a499a2, Nov 18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. They go through the existing applyKind path: paywall, visible re-analysis stage, and the choice is saved on the clip. PR #67 (merged) added 'Re-analyze as starts/straightaways/curves' buttons to the review of a long recording (SplitStartsView / PassPickerView, plus SplitStartsScreen / PassPickerScreen on Android) and a card on the results screen. Tests on both platforms: Tools/tests_kindui.swift kui_reanal",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T15:38+00:00",
-                "verified": "Read the code only; no build or tests run, since nothing changed. Confirmed on origin/master that KindFlow.reanalyzeOptions/reanalyzeChoices are used in the iOS and Android player menu, results screen and recording review, and that tests cover them (Tools/tests_kindui.swift, android KindUiTest.reanalyzeAsTest). Confirmed PR #50 and PR #67 are merged.",
-                "next_step": "On a TestFlight build from 2026-11-18 or later: open a straightaway clip that was analyzed as a start, tap More (top right) and tap \"Re-analyze as a straightaway\". For a long recording, use the \"Re-analyze as straightaways\" button on its review screen. If that flow still misses, edit the to-do to say what is missing and re-queue it."
+                "at": "2026-11-20T15:45+00:00",
+                "verified": "Checked master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices are used in StrideLab/Playback/AnalysisPlayerView.swift, ResultsViews.swift, Split/SplitStartsView.swift, Split/PassPickerView.swift and the Android AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt. ./Tools/verify.sh on master printed ALL CHECKS PASSED. xcodebuild, bend and Gradle were not run b",
+                "next_step": "Mark t127 done in the tracker so it stops being re-dispatched. To confirm on the phone: open a clip that was analysed as a start, tap More, then tap 'Re-analyze as a straightaway', and check that it re-analyses as a straightaway and keeps that type when you reopen it."
               }
             },
             {
