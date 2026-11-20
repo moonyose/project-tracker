@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on both platforms. PR #50 (branch claude/t127-reanalyze-as, merge fe99a5f; commit 1a499a2) added a one-tap 'Re-analyze as a straightaway / a curve / a start' to the player's More menu. PR #67 (c3f1d42) added the same choice to the split review, the pass picker and the finish card, and made a recording first scanned for starts get scanned again for passes once it is called straightaways. The current master still has it: iOS AnalysisPlayerView.swift lines 650-659 (KindFlow.reanalyzeOptions -> applyKind), SplitStartsView/PassPickerView ReanalyzeCard, ResultsViews finish",
+                "summary": "This is already done on both iOS and Android: one-tap \"Re-analyze as\u2026\" options went in on Nov 18 (commit 1a499a2 and PR #67), the day after your Nov 17 session. You'll find them in the player's More menu, on a finished clip's results, and on a long recording's review.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:02+00:00",
-                "verified": "Read origin/master (94d6bf0): git log shows PR #50 and #67 merged. Grepped the current iOS and Android sources and found the Re-analyze-as menu items and cards wired to applyKind / SplitModel.reanalyze. No build was run because there was no code change.",
-                "next_step": "On your phone, open a clip that was analyzed as a start, tap the More (...) button at the top right, then tap 'Re-analyze as a straightaway'. It should re-analyze as straightaways. If this still feels like manual work, edit the to-do with the screen where it fell short (for example the split review after recording) and it will be picked up again."
+                "at": "2026-11-20T04:04+00:00",
+                "verified": "Read the current origin/master (94d6bf0) code paths on iOS and Android and found the feature in each place listed above. No build was run because nothing was changed.",
+                "next_step": "On a TestFlight build at or after Nov 18 (1.0.4): record a straightaway with Filming left on Start, open the clip, tap More (top right) and tap 'Re-analyze as a straightaway'. The 'Re-analyzing as a stride' step should show, then stride coaching. If the build you tested on Nov 17 was older, this is fixed. If it still fails on a current build, reopen the task with the screen you were on."
               }
             },
             {
