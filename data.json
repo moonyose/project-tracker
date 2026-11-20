@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #50 (moonyose/claude/t127-reanalyze-as, merge fe99a5f, commit 1a499a2, Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' entries to the player's More menu on iOS (AnalysisPlayerView + KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen + KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. It is on current master, so there was nothing new to change and no PR was opened.",
+                "summary": "This is already in the app: commit c3f1d42 (merged in PR #67 on Nov 18, the day after your note) added one-tap \"Re-analyze as ...\" buttons on iOS and Android, so there was nothing left to build and no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T06:34+00:00",
-                "verified": "Confirmed in the code on origin/master (94d6bf0): the 'Re-analyze as' menu section and KindFlow.reanalyzeOptions are there on iOS and Android, and PR #50's merge is an ancestor of master. No build was run because nothing changed.",
-                "next_step": "On your phone, open a clip that was analysed as Starts, tap the More (...) button, then tap 'Re-analyze as a straightaway'. It should re-analyse the clip as a straightaway. If that works, close the to-do."
+                "at": "2026-11-20T06:36+00:00",
+                "verified": "Checked the code only; no builds were run because nothing changed. At current master (94d6bf0, after the cleanups in #77 and #78), the one-tap buttons are still connected on iOS: the long-recording review (SplitStartsView.swift ReanalyzeCard, which looks through the recording again as straightaways or curves via SplitModel.reanalyze), the pass picker (PassPickerView.swift), the finish card (Result",
+                "next_step": "On a TestFlight build that includes PR #67: record a straightaway with the record screen left on Starts. On the review, tap \"Re-analyze as straightaways\" and check that the runs come back as straightaways. Then open any analyzed start, tap More, choose \"Re-analyze as a straightaway\", and check that it re-analyzes in one tap. If something still doesn't work, edit this to-do with what you saw."
               }
             },
             {
