@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already in the app on iOS and Android: PRs #50 and #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' to the player's More menu, the starts review and 'No starts found' screens, the pass picker and the results view. Nothing new was needed, so no PR was opened.",
+                "summary": "This is already in the app on iOS and Android: the clip screen's More menu has \"Re-analyze as a straightaway\" (PR #50, merged Nov 18), and the screens for long recordings and Split Starts have the same option (PR #67). Nothing new to change, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:08+00:00",
-                "verified": "Checked origin/master (94d6bf0) by reading code and git/PR history: PR #50 and #67 are merged; #55, #60 and #70 were closed with the note that #50/#51/#67 cover t127. I ran no build or test, because no code changed.",
-                "next_step": "Mark t127 done in the tracker. To check on your phone (current TestFlight): record straightaways with Starts still selected, open the take, and tap 'Re-analyze as straightaways' on the starts review screen; or, on a clip already analyzed, tap More > 'Re-analyze as a straightaway'. If something still feels like manual work, edit the to-do to say where."
+                "at": "2026-11-20T14:10+00:00",
+                "verified": "Read master's code and git history only: confirmed PRs #50 and #67 are merged and that #77 and #78 (the analysis-screen cleanups) kept the Re-analyze options in the More menu on both platforms. Tests for it exist on both platforms (Tools/tests_kindui.swift, android KindUiTest.kt). Builds and tests were not re-run because nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with Starts still selected, open the clip, tap More (top right) and choose \"Re-analyze as a straightaway\". For a long recording, the pass picker also shows \"Re-analyze as straightaways\". If this doesn't match what you wanted, edit the task to say what's missing."
               }
             },
             {
