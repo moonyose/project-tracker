@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented on master on both platforms. Commit 1a499a2 'Add one-tap \"Re-analyze as ...\" to the player's More menu' (merged in PR #67, Nov 18) adds one-tap 'Re-analyze as a straightaway' / 'Re-analyze as a curve (Beta)' / 'Re-analyze as a start' items to the player's More menu. It uses the existing applyKind path, so the paywall, the re-analysis step and saving the choice on the clip all work as before. iOS: StrideLab/Playback/AnalysisPlayerView.swift (lines 650-659), KindFlow.reanalyzeOptions in StrideLab/Playback/KindLogic.swift. Android: AnalysisPlayerScreen.kt (line 529), KindLogic",
+                "summary": "One-tap \"Re-analyze as\u2026\" is already on master for iOS and Android: it's in the player's \u00b7\u00b7\u00b7 menu (PR #50), on the end-of-clip card, and in the long-recording review and run picker (PR #67). Nothing needed changing, so there's no new PR. Later PRs for this same to-do (#53, #55, #60, #62, #63, #65, #70) were closed as duplicates.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:57+00:00",
-                "verified": "Read the current master code. The More-menu items exist and are wired to applyKind on iOS and Android, and both have test coverage. I didn't rebuild because nothing changed. The PR checks ran when #67 merged.",
-                "next_step": "On a phone with the latest TestFlight build: open a clip analyzed as a start, tap More (...), tap 'Re-analyze as a straightaway', and check that it re-analyzes and the clip's kind now shows Straightaway. If this still feels like manual work (for example, you want the prompt shown right on the results screen), edit the task to say what's missing."
+                "at": "2026-11-20T05:59+00:00",
+                "verified": "Read the current origin/master code on both platforms and traced every caller of KindFlow.reanalyzeOptions / reanalyzeTitle / reanalyzePrompt / reanalyzeRecordingPrompt; checked with gh that PRs #50 and #67 are merged. Did not rebuild or re-run verify.sh / Gradle, because no code changed; master's PR checks covered those merges.",
+                "next_step": "Mark t127 done. To confirm on the phone: open a clip that was analysed as a start, tap the ... (More) menu at top right, tap 'Re-analyze as a straightaway', watch the 'Re-analyzing as a stride' step, and check the kind chip now reads Stride. Or scroll to the end of the coaching to the 'Analyzed as a start. Filmed something else?' card. If you want it more prominent than this (for example a banner "
               }
             },
             {
