@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master for iOS and Android (merged 2026-11-18, commits 1a499a2 'Add one-tap \"Re-analyze as ...\" to the player's More menu' and c3f1d42 'Reanalyze as another kind...'). One-tap re-analysis appears in three places. (1) In the player's More menu, as rows like 'Re-analyze as a straightaway' listing every other kind, likeliest mix-up first (KindFlow.reanalyzeOptions; AnalysisPlayerView.swift / AnalysisPlayerScreen.kt). (2) On the finished-run card: 'Analyzed as a start. Filmed something else?' with a button for each other kind (ResultsViews.swift / ResultsViews.kt). (3) On a long",
+                "summary": "Already shipped: PR #67 (commit c3f1d42, merged Nov 18, the day after the note) added one-tap \"Re-analyze as a straightaway / a curve (Beta) / a start\" on both iOS and Android. It is in the player's More menu, on the finish card, and as \"Re-analyze as straightaways\" on a long recording's review and pass picker. A recording first scanned as starts gets scanned again for passes. Nothing new was needed, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T11:23+00:00",
-                "verified": "Checked that the commits are ancestors of origin/master and that the code and tests exist on both platforms. No build was run because nothing changed.",
-                "next_step": "Install a TestFlight build made after Nov 18. Open a clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and then straightaway results. If your Nov 17 clip came from a build older than that, this is the fix. If it still doesn't show up for you, edit the task to say which screen is missing it."
+                "at": "2026-11-20T11:30+00:00",
+                "verified": "Read the code on current master (94d6bf0). iOS: KindFlow.reanalyzeOptions/reanalyzeChoices in KindLogic.swift, wired into AnalysisPlayerView.swift (More menu), ResultsViews.swift (finish card), SplitStartsView.swift and PassPickerView.swift (ReanalyzeCard). Android has the same in KindLogic.kt, AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. Confirmed that #",
+                "next_step": "On a TestFlight build with PR #67 in it: record a straightaway with the record screen still on Start, open the clip, tap More (top right), then 'Re-analyze as a straightaway'. Check that it re-analyzes and the chip reads Stride. If that works, close t127. If you wanted it somewhere else too (for example the library card's long-press menu), edit the task to say where."
               }
             },
             {
