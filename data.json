@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added the one-tap \"Re-analyze as ...\" rows to the player's More menu. PR #67 (commit c3f1d42) added them in three more places: the long-recording review/failure card, the pass picker and the finish card. It also made the scan cache record which kind it looked for, so a recording first scanned as starts gets scanned again for passes when re-analyzed as straightaways. Both PRs changed iOS and Android and added tests (Tools/tests_kindui.swift, tests_passes.swift, android KindUiTest/PassesTest). Later commits #77/#78 changed t",
+                "summary": "Already shipped on master, so no new PR. PR #50 (merged 2026-11-18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift ~line 650). PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways/starts' buttons to the recording review, pass picker and finish card (ReanalyzeCard, SplitModel.reanalyze), plus a scan cache keyed by kind so a recording first scanned as starts is scanned again for straightaway passes. Android has the same thing in AnalysisPlayerScre",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:40+00:00",
-                "verified": "Read the code and git history on origin/master (94d6bf0): checked that KindFlow.reanalyzeOptions/reanalyzeChoices are wired into the iOS and Android More menu, finish card, pass picker and split review, and that gh shows PR #50 as merged. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build at or after 94d6bf0: record a straightaway with Start still picked, then open the finished clip. Either tap 'Re-analyze as straightaways' on the review card or open More (top right) and choose 'Re-analyze as a straightaway'. If that still feels like manual work, edit the task to say which screen or step is missing it."
+                "at": "2026-11-20T13:42+00:00",
+                "verified": "Read the master code (94d6bf0) on iOS and Android and the merged PRs #50 and #67 through gh. Did not rebuild or rerun tests because nothing changed. Existing coverage: Tools/tests_kindui.swift (kui_reanalyzeAsTest, plus the player-menu checks around line 175) and android KindUiTest.kt / PassesTest.kt.",
+                "next_step": "Mark t127 done in the tracker so the scheduled run stops picking it up. Phone check: open a clip recorded with Starts selected, tap More, tap 'Re-analyze as a straightaway' and confirm it re-analyzes as a stride. For a long recording, the review screen shows 'Re-analyze as straightaways'. If something still feels manual, update the task with exactly where."
               }
             },
             {
