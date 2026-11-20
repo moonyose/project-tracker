@@ -965,11 +965,11 @@
             {
               "id": "t128",
               "text": "On the clip view, add a prominent skeleton on/off toggle (hide skeleton, dotted lines and circles; show only the tips and the runner) that also applies to export, plus a bigger Edit button beside it (top or right).",
-              "done": false,
+              "done": true,
               "notes": "Icons: toggle = stick figure with a red no-symbol circle through it; edit = skeleton icon with a pencil. Two larger buttons side by side.",
               "due": null,
               "createdAt": "2026-11-17T19:37:00-05:00",
-              "updatedAt": "2026-11-18T00:37:00.000Z",
+              "updatedAt": "2026-11-20T19:19:11.312Z",
               "transcript": "the other thing is that when the user is actually looking at their clip, I want them to be able to like, decide to remove the skeleton and only leave the tips, okay? So, like, remove the skeleton, remove the dotted lines, remove the little circles, just leave the tips and just show the runner. so, yeah, and they should be able to export it that way as well, okay? So, like, I want the skeleton, no skeleton, like, toggle to be sort of front and center on the, on the clip when they, when they see it, like when they're looking at the clip. So, and probably we should, like, we should Maybe the edit button should also be a little bit more front and center. Like, I'm thinking sort of to the right, or like at the top, but just have two buttons next to one another that are a bit bigger. so one would be like toggle on and off the skeleton, and then like, we can have a little icon that's almost like a little stick figure with like, you know, a red, like, no smoking circle sort of thing through it, you know, on or off. And then we can have next to it, maybe like, also a little skeleton icon, but with a pencil. And that way, that way it's, it's easier and more intuitive.",
               "agent": {
                 "status": "done_no_change",
@@ -978,7 +978,8 @@
                 "at": "2026-11-19T19:59+00:00",
                 "verified": "Read the code on origin/master (6540a2d) for both platforms: iOS AnalysisPlayerView.swift lines 1175-1220 and the export labels around line 578; Android PlayerStage.kt:434, PlayerState.kt:126/323 and the skeleton flag in SkeletonVideoExporter.kt. Checked with gh that #51 is merged. No build was run because nothing changed.",
                 "next_step": "Mark t128 done in the tracker so it stops being re-run. To check it on your phone: open an analyzed clip, tap the stick-figure button with the red no-symbol at the top right, and only the runner and tips should remain. Then save the video and the export should have no skeleton either. The pencil button beside it opens the edit menu."
-              }
+              },
+              "completedAt": "2026-11-20T19:19:11.312Z"
             },
             {
               "id": "t130",
