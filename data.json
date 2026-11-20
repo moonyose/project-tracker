@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android: on Nov 18, the day after your note, the player's More menu got one-tap \"Re-analyze as\u2026\" rows, with the likeliest mix-up listed first. The results screen and long-recording review got the same options. Nothing was left to change, so there is no PR.",
+                "summary": "Already on master on iOS and Android. One-tap 'Re-analyze as ...' landed in commits 1a499a2 ('Add one-tap \"Re-analyze as ...\" to the player's More menu') and c3f1d42 ('Reanalyze as another kind, ...'), via the merged reanalyze/skeleton-toggle PRs (#67 and its predecessors). Where it shows up: (1) the finished clip's More menu lists every other kind, the likeliest mix-up first (Starts -> 'Re-analyze as a straightaway'). iOS: AnalysisPlayerView.swift (KindFlow.reanalyzeOptions). Android: AnalysisPlayerScreen.kt. (2) A 'Analyzed as a start. Filmed something else?' card with one button per other k",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:46+00:00",
-                "verified": "Read the code on current master. Commit 1a499a2 (PR #67) added the menu rows, the results card and the recording-review buttons, all wired to the shared re-analyze logic, with unit tests on both platforms (Tools/tests_kindui.swift, KindUiTest.kt). No builds or checks were run because nothing changed.",
-                "next_step": "On a TestFlight build from after Nov 18, open a straightaway clip that was analyzed as a start, tap More (\u2026), then tap \"Re-analyze as a straightaway\". If it re-analyzes correctly, close this to-do."
+                "at": "2026-11-20T05:48+00:00",
+                "verified": "Read the code on origin/HEAD (94d6bf0). The Re-analyze rows are in the iOS player More menu (AnalysisPlayerView.swift lines 650-659) and the Android player menu (AnalysisPlayerScreen.kt line 529). KindFlow.reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle exist in both KindLogic.swift and KindLogic.kt, with unit tests on both platforms. I didn't rebuild or re-run the test suites because noth",
+                "next_step": "On a TestFlight build at or after 94d6bf0, open a clip that was analyzed as a start but is really a straightaway. Tap More (...) and then 'Re-analyze as a straightaway'. Check that 'Re-analyzing as a stride' shows and the results come back as a straightaway. For a long recording made with Starts selected, use 'Re-analyze as straightaways' on its review screen. If Austin's Nov 17 build was older th"
               }
             },
             {
