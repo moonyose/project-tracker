@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented and merged on both platforms: PR #50 (One-tap \"Re-analyze as...\" in the player's More menu, merged 2026-11-18) and PR #67 (Re-analyze as... for a recording filmed as the wrong kind, merged 2026-11-18). Current master (94d6bf0) still has it on iOS (AnalysisPlayerView More menu via KindFlow.reanalyzeOptions, finish card in ResultsViews, ReanalyzeCard on the recording review in SplitStartsView/PassPickerView) and Android (AnalysisPlayerScreen menu, ResultsViews, SplitStartsScreen/PassPickerScreen). PR #78 only hides the More menu while analysis is running; it shows again once ",
+                "summary": "Already shipped on master, on iOS and Android. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. PR #67 (merged Nov 18) added the same buttons on a finished clip's results card and 'Re-analyze as straightaways / starts' on a long recording's review and pass picker. That second part covers the Nov 17 case: a session recorded with Starts still picked. Seven other t127 PRs (#53, #55, #60, #62, #63, #65, #70) were closed as duplicates. Current master (94d6bf0, after #76-#78) still has the rows in AnalysisPlayerView.swift ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:20+00:00",
-                "verified": "Read the code on origin/master: KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle are wired into the UI on iOS and Android, with tests in Tools/tests_kindui.swift and android KindUiTest (reanalysisTest, reanalyzeAsTest). Did not rebuild because nothing changed.",
-                "next_step": "On a current TestFlight build, open a clip analyzed as a start, tap More (top right) and choose 'Re-analyze as a straightaway'. Or record a long session with Start picked, and on the review screen tap 'Re-analyze as straightaways'. If either is missing or doesn't work, edit the task to say what you see."
+                "at": "2026-11-20T05:23+00:00",
+                "verified": "Read the code on origin/master (94d6bf0). iOS: KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle in StrideLab/Playback/KindLogic.swift, menu rows at AnalysisPlayerView.swift:650-659, results card in ResultsViews.swift, recording review in SplitStartsView.swift and PassPickerView.swift, tests in Tools/tests_kindui.swift. Android: the same in core KindLogic.kt, AnalysisPlayerScreen.kt:529-53",
+                "next_step": "Austin: if the merged version isn't what you wanted, edit the task to say what's still missing (e.g. a button on the library card, or re-analyzing without opening the clip) and it will be picked up again. Otherwise mark t127 done. To confirm on a phone: open a clip analyzed as a start, tap More, then 'Re-analyze as a straightaway', and check that it re-analyzes and shows 'Straightaway \u00b7 your choic"
               }
             },
             {
