@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. One-tap 'Re-analyze as ...' was merged in PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2 and c3f1d42) and kept through PR #67. iOS: the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions), the finish card (ResultsViews 'Analyzed as a start. Filmed something else?'), and a long recording's review and pass picker ('Re-analyze as straightaways', SplitStartsView / PassPickerView). Android has the same: KindLogic.kt plus AnalysisPlayerScreen, ResultsViews, KindViews, SplitStartsScreen and PassPickerScreen, with tests in KindUiTest and PassesTest. A",
+                "summary": "This is already in the app on both iOS and Android. PR #67 (merged Nov 18) added one-tap \"Re-analyze as ...\" options, e.g. \"Re-analyze as a straightaway\" on a clip analyzed as a start, and \"Re-analyze as straightaways\" on a long recording scanned for starts. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:38+00:00",
-                "verified": "Read origin/master (94d6bf0). Found the merged t127 commits in git log. Grepped the iOS and Android sources and found the re-analyze UI and tests on both. No builds were run, because no code changed.",
-                "next_step": "On the current TestFlight build, record a few straightaways with Filming set to Start. On the recording's review, tap 'Re-analyze as straightaways' and check that the runs come back as straightaways. Or open a finished clip and use More > 'Re-analyze as a straightaway'. If that build doesn't show these, it predates PR #50. If it does and something is still missing, edit the task to say where."
+                "at": "2026-11-20T07:43+00:00",
+                "verified": "Read current master. iOS has the rows in the player's More menu (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions), at the end of the results (ResultsViews.swift) and in the Split starts / pass picker screens (ReanalyzeCard). Android has the same in AnalysisPlayerScreen.kt PlayerMenu, ResultsViews.kt FinishCard, SplitStartsScreen.kt and PassPickerScreen.kt. PR #78's More-button change did not r",
+                "next_step": "On your phone, open a clip that was analyzed as a Start, tap More (top right), then tap \"Re-analyze as a straightaway\". It should show \"Re-analyzing as a straightaway\" and then the straightaway results. For a long recording made with the record screen on Starts, the Split starts screen shows a \"Re-analyze as straightaways\" button. If you meant something these don't cover, edit the to-do with what'"
               }
             },
             {
