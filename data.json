@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (\"One-tap Re-analyze as... in the player's More menu\", merged 2026-11-18) and PR #67 (\"Re-analyze as... for a recording filmed as the wrong kind\", merged 2026-11-18) are on master for iOS and Android. Single clip: the player's More menu has one-tap 'Re-analyze as a straightaway' / 'as a curve (Beta)' / 'as a start' items (iOS AnalysisPlayerView.swift ~line 650, Android AnalysisPlayerScreen.kt ~line 529). Long recording filmed with 'Start' still picked: the Starts results screen shows a 'Re-analyze as straightaways' card (iOS SplitStartsView.swift ~line 1417, Android Spl",
+                "summary": "Already shipped on master for iOS and Android. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' rows to the player's More menu. PR #67 (reanalyze-skeleton-toggle-beta, merged Nov 18) added 'Analyzed as a start. Filmed something else?' buttons on the finished clip's results, and 'Re-analyze as straightaways/curves' on a long recording's review (SplitStartsView and PassPickerView). The likeliest mix-up, Starts to Straightaway, is offered first. Kotlin twins: KindLogic.kt reanalyzeOptions/reanalyzeChoices, AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScre",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:47+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) and confirmed PRs #50 and #67 are merged via gh. No build or checks run because nothing changed.",
-                "next_step": "On your phone: open a straightaway clip that was analysed as a start, tap More (top right), then tap 'Re-analyze as a straightaway'. For a long recording made with Starts picked, open its results and tap 'Re-analyze as straightaways'. If either one still feels like manual work, edit the task to say what's missing."
+                "at": "2026-11-20T07:48+00:00",
+                "verified": "Read master at 94d6bf0: StrideLab/Playback/KindLogic.swift (reanalyzeOptions, reanalyzeChoices, reanalyzeTitle, reanalyzeRecordingTitle), their call sites in AnalysisPlayerView/ResultsViews/SplitStartsView/PassPickerView, and the matching Android code. git log shows PRs #50 and #67 merged. I did not rebuild or rerun any checks, because nothing was changed.",
+                "next_step": "On a TestFlight build that includes PRs #50 and #67: record a straightaway with Start still selected, open the clip, tap 'Re-analyze as a straightaway' under 'Analyzed as a start. Filmed something else?' (also in the More menu), and confirm it re-runs as a straightaway. If it still falls short, edit the task to say what's missing and close it if not."
               }
             },
             {
