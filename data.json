@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. One-tap 'Re-analyze as...' was merged to master on 2026-11-18 in PR #50 (branch claude/t127-reanalyze-as, More menu) and PR #67 (re-analyze card on the starts review, pass picker, finish card and player More menu; the scan cache now records what it looked for, so a Starts recording is re-scanned for passes when switched to straightaways). Both iOS and Android. Current master (94d6bf0) still has it: SplitStartsView.swift review ReanalyzeCard, PassPickerView onReanalyze, AnalysisPlayerView More menu reanalyzeOptions, ResultsViews finish card; Android SplitStartsScreen.kt, PassPi",
+                "summary": "Already shipped: PR #50 (merged Nov 18) added a one-tap \"Re-analyze as...\" option, and PR #67 extended it to the results card, the pass picker and the long-recording (starts split) screen, on both iOS and Android. Nothing left to do for this to-do.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:32+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Checked the code only, with no build: confirmed PRs #50 and #67 are MERGED with gh and found the re-analyze entry points in the current master sources on iOS and Android. No changes were made, so no build or tests were run.",
-                "next_step": "Phone check on the current TestFlight build: leave the record screen on Starts, film a straightaway, then on the starts review tap the 'Re-analyze as...' card's Straightaway choice and check that it re-scans for passes. Then open an analyzed clip, tap More > 'Re-analyze as a straightaway', and check that the kind changes. If this works, close t127 in the tracker."
+                "at": "2026-11-20T05:33+00:00",
+                "verified": "Checked origin/master (94d6bf0): merge commits fe99a5f (PR #50, branch claude/t127-reanalyze-as) and cc7b90d (PR #67) are on master. Re-analyze code is present in iOS AnalysisPlayerView.swift (More menu, gated by KindFlow.canChange), ResultsViews.swift, PassPickerView.swift, SplitStartsView.swift and KindViews.swift (ReanalyzeCard), and in the Android player, results, KindViews and split screens, ",
+                "next_step": "On a TestFlight build, record a straightaway with the recording screen left on Starts. Open the clip, or the long-recording screen if it was split, tap \"Re-analyze as straightaways\", and check that the results switch to straightaway analysis. If something still doesn't work, edit the to-do with exactly what went wrong."
               }
             },
             {
