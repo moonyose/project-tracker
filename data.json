@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: one-tap \"Re-analyze as...\" landed on iOS and Android in PR #50 (player More menu, merged Nov 18) and PR #67 (\"Re-analyze as straightaways\" on a recording's review and pass-picker screens when it was filmed as the wrong kind, merged Nov 18), and it is still on master after #78.",
+                "summary": "Already shipped on master on both platforms; no new PR needed. PR #50 (branch claude/t127-reanalyze-as, merge fe99a5f) added one-tap \"Re-analyze as ...\" rows to the player's More menu (iOS AnalysisPlayerView.swift, Android AnalysisPlayerScreen.kt, shared KindFlow.reanalyzeOptions/reanalyzeTitle). PR #67 (merge cc7b90d) extended it to the results view and to long recordings in the pass picker and starts splitter (\"Re-analyze as straightaways\"). The latest change (38714a3, PR #78) only hides the More button while analysis is still running, so the rows show as soon as there is a result. The optio",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:04+00:00",
-                "verified": "Checked on origin/master (94d6bf0): PR #50 and PR #67 are both MERGED (gh pr view). iOS: the recording review screen shows a ReanalyzeCard on every review, with the comment 'Filmed straightaways with Start still picked on the record screen' (SplitStartsView.swift:1417-1424, also PassPickerView). The player's More menu has 'Re-analyze as <kind>' (AnalysisPlayerView.swift:655), and the results card ",
-                "next_step": "On your phone (TestFlight build that includes PRs #50 and #67): record a few straightaways with Start still selected. On the review screen, tap 'Re-analyze as straightaways' and confirm it finds passes. Then open any analyzed clip, tap More, choose 'Re-analyze as a start', and confirm it re-analyzes. If something still forces manual work, edit this to-do to say which screen."
+                "at": "2026-11-20T12:11+00:00",
+                "verified": "Read the current master code paths on iOS and Android. ./Tools/verify.sh printed ALL CHECKS PASSED, including the \"Re-analyze as ...\" and \"Re-analyze as another kind\" checks in tests_kindui.swift. Nothing was changed, so I did not run the xcodebuild, Gradle or bend checks again.",
+                "next_step": "On the phone, open a clip that was analyzed as a start, tap More (top right) and choose \"Re-analyze as a straightaway\". The clip should be analyzed again as a straightaway. For a long recording split as starts, use the \"Re-analyze as straightaways\" button on the pass picker. If that doesn't match what you saw on Nov 17 (for example, your TestFlight build was older than PR #50, or you were on a scr"
               }
             },
             {
