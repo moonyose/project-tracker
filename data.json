@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, iOS and Android. PR #50 (claude/t127-reanalyze-as) and PR #67 (reanalyze-skeleton-toggle-beta) were merged Nov 18, after the Nov 17 note. They added one-tap 'Re-analyze as ...' rows to the player's More menu (KindFlow.reanalyzeOptions: on a Starts clip the first row is 'Re-analyze as a straightaway'). They also added a 'Filmed something else?' card on the finished results and a 'Re-analyze as straightaways' card on a long recording's review (PassPickerView / SplitModel.reanalyze). The same is on Android: KindLogic.kt, AnalysisPlayerScreen.kt, ResultsViews.kt, PassPicker",
+                "summary": "This was already built: PR #67 (merged Nov 18) added a one-tap 'Re-analyze as\u2026' on iOS and Android, both on the review screen after a recording and in a clip's \u2026 menu, so no new PR was needed. It covers your Nov 17 case of filming straightaways with the record screen left on Starts.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:02+00:00",
-                "verified": "Read the code on origin/HEAD (94d6bf0). git log shows commits 1a499a2 and c3f1d42 reached master through the merges of PR #50 and PR #67. No build run, because nothing changed.",
-                "next_step": "On a TestFlight build that includes PR #50 and #67: open a clip analyzed as a Start, tap More, then tap 'Re-analyze as a straightaway'. It should re-analyze with straightaway phases and tips. If that's missing or doesn't work on your phone, edit the to-do to say what you see."
+                "at": "2026-11-20T08:04+00:00",
+                "verified": "Read the current master code (origin/HEAD 94d6bf0): ReanalyzeCard in StrideLab/Playback/KindViews.swift, its use in SplitStartsView.swift:1420 and PassPickerView.swift:55, the player menu in AnalysisPlayerView.swift:650-658, ResultsViews.swift:943-980, KindFlow.reanalyze* in KindLogic.swift, and the matching Android files. Did not rebuild, because nothing changed.",
+                "next_step": "On a TestFlight build that includes PR #67: (1) leave the record screen on Starts and film a straightaway; (2) on the review screen, tap 'Re-analyze as straightaways' under the cards; (3) or open any analyzed clip, tap the ... menu and pick 'Re-analyze as a straightaway'. If any of these doesn't do what you wanted, edit the to-do to say which screen falls short and close it otherwise."
               }
             },
             {
