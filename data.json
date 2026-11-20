@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master in commit c3f1d42 (Nov 18, 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta'), the day after Austin's Nov 17 note. iOS: the player's More menu has one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows (AnalysisPlayerView.swift ~L650, KindFlow.reanalyzeOptions); the results panel has an 'Analyzed as a start. Filmed something else?' card with the same buttons (ResultsViews.swift ~L962); a long recording's review screens have 'Re-analyze as straightaways' (SplitStartsView.swift ~L1420, PassPickerView.swift ~L55).",
+                "summary": "This is already on master for iOS and Android (PR #67, Nov 18). A clip analyzed as the wrong type can be re-analyzed in one tap from the player's More menu, the end of the results, a long recording's review screen, or the pass picker.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:02+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): found the commit that added the feature with git log -S, checked every iOS and Android entry point, and confirmed #78 didn't remove any of them. No build was run because nothing changed.",
-                "next_step": "On the current TestFlight build, open a clip recorded on Starts that was really a straightaway. Tap More (top right) and choose 'Re-analyze as a straightaway', or use the 'Filmed something else?' buttons in the results panel. If this is still missing on your phone, the build is older than Nov 18. If it's there but not what you wanted, edit the to-do to say what's missing."
+                "at": "2026-11-20T00:04+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): every call site of reanalyzeOptions/reanalyzeChoices/reanalyzeTitle on both platforms, and the onReanalyze wiring in AnalysisPlayerView.swift:1077 and PlayerStage.kt:216. Unit checks for it exist in Tools/tests_kindui.swift and android KindUiTest.kt. I made no code change, so I didn't run any builds.",
+                "next_step": "On the phone (TestFlight build from current master): film a straightaway with the record screen left on Start. After it analyzes, tap More (top right). The first row should be 'Re-analyze as a straightaway'. Tap it and check it shows 'Re-analyzing as a stride' and comes back with acceleration/top-speed phases. For a long recording, the review screen should show 'Re-analyze as straightaways'. If an"
               }
             },
             {
