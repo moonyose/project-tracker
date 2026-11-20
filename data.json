@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #50 (merged Nov 18) added one-tap 'Re-analyze as\u2026' on iOS and Android, in the player's More menu, on the results screen, and on a long recording's review. The task seems to have been queued again after it was done (later duplicate PRs #55, #60 and #70 were closed without merging), so no new PR was opened.",
+                "summary": "Already done on master, so no PR. One-tap 'Re-analyze as ...' shipped on Nov 18, after the Nov 17 note, on iOS and Android: commit 1a499a2 (player's More menu) and commit c3f1d42 (finished-clip results card and long-recording review). The starts option is listed first when a clip was analyzed as a straightaway, and the other way round. iOS: AnalysisPlayerView.swift More menu, ResultsViews.swift finish card, PassPickerView.swift / SplitStartsView.swift ReanalyzeCard -> SplitModel.reanalyze(as:). Android: AnalysisPlayerScreen.kt, ResultsViews.kt, PassPickerScreen.kt, SplitStartsScreen.kt -> Spli",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:32+00:00",
-                "verified": "Checked origin/master (94d6bf0): the reanalyze code is wired into the iOS player menu, results card, split review and pass picker, and into the Android equivalents, with tests on both platforms. Builds and checks were not re-run because nothing changed.",
-                "next_step": "Mark t127 done in the tracker. To confirm on your phone, open a clip analyzed as a Start, tap More, then 'Re-analyze as a straightaway'. It should re-analyze and the chip should read 'Stride \u00b7 your choice'. If something about this flow still falls short, edit the task to say exactly what."
+                "at": "2026-11-20T04:34+00:00",
+                "verified": "Read the code only: grep plus reading KindLogic.swift on origin/master (94d6bf0), and checked commit dates with git log. Nothing was built or run, because nothing changed.",
+                "next_step": "On the newest TestFlight build: open a straightaway clip that was recorded with Starts picked, tap More (...) in the player, then tap 'Re-analyze as a straightaway'. It should re-analyze in one tap. For a long recording, the review screen shows 'Re-analyze as straightaways' buttons. If something still falls short, edit this to-do to say where."
               }
             },
             {
