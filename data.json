@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu on iOS and Android. PR #67 (merged 2026-11-18) added the 'Analyzed as a start. Filmed something else?' card on the results screen and 'Re-analyze as straightaways/starts/curves' on a long recording's review (SplitStartsView / PassPickerView, plus their Android twins). A re-analyze row is a user kind choice (LAW 41), so the re-analysis keeps it. No new change was needed, so no PR was opened.",
+                "summary": "This is already in the app on iOS and Android, so there's no new PR. PR #50 and PR #67 (both merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' to the player's More menu, the card at the end of a clip's analysis, and the long-recording review and run-picker screens, with the likeliest mix-up listed first.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:32+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "./Tools/verify.sh on current master (94d6bf0) printed ALL CHECKS PASSED. That includes the re-analyze checks in Tools/tests_kindui.swift, among them 'a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways'. No xcodebuild, Gradle or bend run, because no code changed.",
-                "next_step": "On the phone: record a straightaway with the record screen left on Start. Open the clip, tap More (...), then 'Re-analyze as a straightaway'. Check that it re-analyzes and the chip says Stride, your choice. If this flow still falls short of what you wanted, edit the to-do to say what's missing, for example a button somewhere else."
+                "at": "2026-11-20T12:34+00:00",
+                "verified": "Checked the code only: read the merged commits 1a499a2 and c3f1d42 and their merges fe99a5f (#50) and cc7b90d (#67), which are on origin/master. Confirmed the re-analyze options exist in both the iOS and Android code. Nothing was built or tested because nothing changed.",
+                "next_step": "On a build from after Nov 18, open a straightaway clip that was analyzed as a start, tap More (or scroll to the card at the end) and tap 'Re-analyze as a straightaway'. For a long recording, use 'Re-analyze as straightaways' on the review screen. If it still falls short, edit the task to say what's missing."
               }
             },
             {
