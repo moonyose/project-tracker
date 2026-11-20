@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. One-tap \"Re-analyze as...\" for this to-do (t127) was merged in moonyose/StrideLab PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) and extended in PR #67 (reanalyze-skeleton-toggle-beta). On current master (94d6bf0) it is still in place on both platforms. iOS: the player's More menu has one-tap rows such as \"Re-analyze as a straightaway\" (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions), there is a ReanalyzeCard on the finished-clip results (ResultsViews.swift), and the long-recording review and pass picker have \"Re-analyze as straightaways\" (SplitStartsView.swift /",
+                "summary": "Already done: PR #50 (moonyose/StrideLab, branch claude/t127-reanalyze-as, merged 2026-11-18, after the Nov 17 note) added one-tap \"Re-analyze as ...\" and it is still on master (94d6bf0). iOS: the player's More menu has a 'Re-analyze as a straightaway / curve (Beta)' section (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle), there's a re-analyze card on results (ResultsViews.swift), and 'Re-analyze as straightaways/starts' on the pass picker and split screens. Android mirrors all of these (AnalysisPlayerScreen.kt, ResultsViews.kt, PassPickerScreen.kt, SplitStartsScreen.kt). ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T18:10+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): the reanalyze entry points are present in the iOS sources and the Android sources, with tests in Tools/tests_kindui.swift, Tools/tests_passes.swift, KindUiTest.kt and PassesTest.kt. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with Starts still selected, open the clip, tap More (top right) and choose \"Re-analyze as a straightaway\". For a long recording, use \"Re-analyze as straightaways\" on the review screen. If that still falls short of what you meant (for example, you want it offered right after recording or in the clip library), edit the to-do to say wh"
+                "at": "2026-11-20T18:12+00:00",
+                "verified": "Read the code only. Checked that the Swift and Kotlin entry points and tests exist on origin/master at 94d6bf0, and that the later PRs #77 and #78 did not remove the menu entry. I did not build or run anything, because no code changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: open a clip analyzed as Starts, tap More (top right), tap 'Re-analyze as a straightaway', and confirm it re-runs as a straightaway. If that option is missing or doesn't work on the device, edit this task to say what you saw."
               }
             },
             {
