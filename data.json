@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #67 (https://github.com/moonyose/StrideLab/pull/67, 'Curve marked Beta, and Re-analyze as... for a recording filmed as the wrong kind', merged 2026-11-18, commit c3f1d42) added a one-tap 'Re-analyze as...' card on iOS and Android. It shows on the recording review (SplitStartsView / SplitStartsScreen, e.g. 'Re-analyze as straightaways' when the recording was looked through as starts), on the pass picker, on the finish card and in the player's More menu. The scan cache now records what it looked for, so a recording first scanned as starts gets scanned again for passes. This i",
+                "summary": "This was already done on iOS and Android by PRs #50 and #67, both merged Nov 18. They add one-tap 'Re-analyze as\u2026' to the player's More menu, the recording review screen, the pass picker and the finish card, and fix why a straightaway session filmed with Starts selected was never searched for straightaways, so no new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:09+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read the current master (94d6bf0). The iOS ReanalyzeCard is wired in StrideLab/Split/SplitStartsView.swift review (around line 1420), PassPickerView, ResultsViews and AnalysisPlayerView. Android has the same in ui/split/SplitStartsScreen.kt, PassPickerScreen.kt, SplitModel.reanalyze and StartScanSession.reanalyze. gh shows PR #67 as MERGED. Nothing was rebuilt because no code changed.",
-                "next_step": "On the phone: set the record screen to Starts, film a straightaway, and stop. On the review screen, tap 'Re-analyze as straightaways' and check that the passes are found. If it still falls short (for example the card is easy to miss), edit the task to say what's wrong."
+                "at": "2026-11-20T07:11+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices in StrideLab/Playback/KindLogic.swift, wired in AnalysisPlayerView.swift (More menu and finish card), SplitStartsView.swift and PassPickerView.swift, with Kotlin twins in android/. Checked that PRs #50 and #67 are merged. Didn't rebuild or re-run checks because nothing changed; those PRs passed the PR checks when ",
+                "next_step": "On a TestFlight build that includes #67: record a straightaway session with Starts still selected, open it, and tap 'Re-analyze as straightaways' on the review screen. Passes should be found. For a clip that's already analyzed, open the player's More menu, tap 'Re-analyze as a straightaway', and check the results switch. If that works, close t127."
               }
             },
             {
