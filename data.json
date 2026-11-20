@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already done: PRs #50 and #67, both merged Nov 18, added a one-tap 'Re-analyze as\u2026' option on iOS and Android. It's in the player's More menu, on a 'Filmed something else?' card on the results screen, and on the screens shown right after recording. No new PR was needed.",
+                "summary": "This is already on master for iOS and Android, so I made no PR. PR #50 added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu. PR #67 added the same buttons on the result card, the pass picker and the starts review screen, which offers 'Re-analyze as straightaways' for a clip filmed with Start still picked. All of them are still there on current master (94d6bf0).",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:28+00:00",
-                "verified": "Read the code and git history only: found the merged commits 1a499a2, c3f1d42, fe99a5f (#50) and cc7b90d (#67), and confirmed the iOS and Android UI call sites. No build or verify.sh run, because nothing changed.",
-                "next_step": "On a TestFlight build from 2026-11-18 or later: record a straightaway with Starts still selected. On the split screen, or later in the player's More menu (...), tap 'Re-analyze as straightaways' / 'Re-analyze as a straightaway' and check that the result is a straightaway analysis. If that path still fails for you, edit the task to say where it breaks."
+                "at": "2026-11-20T07:34+00:00",
+                "verified": "./Tools/verify.sh on current master: ALL CHECKS PASSED (it includes the reanalyze-as kind UI tests). Android has matching tests in KindUiTest.kt (reanalyzeAsTest, reanalysisTest). No code changed, so I didn't run an xcodebuild, Gradle or bend run.",
+                "next_step": "Check it in TestFlight. Open a clip that was analyzed as a start, tap More (top right) and tap 'Re-analyze as a straightaway'. Or open a recording filmed with Start picked and tap 'Re-analyze as straightaways' under the starts it found. If the Nov 17 clip still couldn't be fixed this way, say which screen it was on, then close the to-do or reopen it with that detail."
               }
             },
             {
