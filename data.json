@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already done on iOS and Android: PR #67, merged Nov 18, added one-tap 'Re-analyze as\u2026' to the clip player's More menu, the results screen and a long recording's review. Nothing was left to change, so there's no new PR.",
+                "summary": "Already done on master, on both platforms. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged 2026-11-18) added one-tap \"Re-analyze as ...\" to the player's More menu. PR #67 (https://github.com/moonyose/StrideLab/pull/67, merged 2026-11-18) added the same option for a long recording filmed with the wrong kind picked on the record screen: a ReanalyzeCard on the start-review screen (SplitStartsView) and on the pass picker (PassPickerView), plus the clip results view (ResultsViews). The Android port has matching code in KindLogic.kt (reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTi",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:50+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): found the re-analyze entry points on iOS and Android listed above and the commits that added them. Builds and checks were not re-run because nothing was changed.",
-                "next_step": "On a TestFlight build at or after PR #67: film a few straightaways with the record screen left on Start. On the recording's review, tap 'Re-analyze as straightaways' and check it finds runs instead of starts. Or open a single clip analyzed as a start, tap More, then 'Re-analyze as a straightaway', and check it comes back as a straightaway. If either is missing or wrong on the phone, reopen the tas"
+                "at": "2026-11-20T13:51+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Read current master (94d6bf0). Found the Re-analyze code paths on iOS and Android. Confirmed with gh that PRs #50 and #67 are merged. I did not rebuild, because nothing changed.",
+                "next_step": "On a TestFlight build made from master after Nov 18: leave the record screen on Starts, film a straightaway, and check that the review screen shows \"Re-analyze as straightaways\". Tap it and confirm the clip comes back as a straightaway. If that works, mark t127 done in the tracker."
               }
             },
             {
