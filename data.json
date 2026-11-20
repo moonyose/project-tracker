@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2, from an earlier run of this same task) and PR #67 are merged on master. Both add a one-tap 'Re-analyze as ...' on iOS and Android: rows in the player's More menu (KindFlow.reanalyzeOptions), buttons on the finish card ('Analyzed as a start. Filmed something else?'), and 'Re-analyze as straightaways' on split recordings (SplitStartsView, PassPickerView, SplitModel.kt). PR #78 hid the More button only while analysis is running, so the menu rows still show once there is a result. No new PR was opened.",
+                "summary": "Already shipped on master, so I made no change. PR #50 (branch claude/t127-reanalyze-as) merged a one-tap 'Re-analyze as ...' option, and PR #67 extended it. It is on iOS and Android in three places: (1) the player's More menu lists 'Re-analyze as a straightaway / a start / a curve (Beta)' for every kind except the one the clip was analyzed as (iOS AnalysisPlayerView.swift around line 651, KindFlow.reanalyzeOptions; Android AnalysisPlayerScreen.kt line 529); (2) a results-screen card (ResultsViews.swift); (3) long recordings, where the split and pass picker screens show 'Re-analyze as straight",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:27+00:00",
-                "verified": "Read current master: the re-analyze code is wired in AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, AnalysisPlayerScreen.kt, ResultsViews.kt and SplitModel.kt. ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' tests in tests_kindui.swift. No xcodebuild or Gradle run, since nothing changed.",
-                "next_step": "If the Nov 17 clip came from a build older than PR #50: on the latest TestFlight build, open the clip that was analyzed as a start, tap More (top right) or scroll the finish card, then tap 'Re-analyze as a straightaway'. For a long split recording, use 'Re-analyze as straightaways' on the passes screen. If this is still missing or awkward on the current build, edit the task to say what's wrong."
+                "at": "2026-11-20T05:30+00:00",
+                "verified": "Read the current master source (94d6bf0) and its git history: commit 1a499a2 is in master through merge fe99a5f (PR #50) and PR #67. I ran no builds or checks because nothing changed.",
+                "next_step": "On your phone, open a clip that was analyzed as a Start, tap the More (...) button top right after analysis finishes, and pick 'Re-analyze as a straightaway'. For a long recording filmed with Start left on, use the 'Re-analyze as straightaways' card on the split screen. If you still had to fix it by hand on Nov 17, that build may have been older than PR #50 (TestFlight 1.0.4 or later should have i"
               }
             },
             {
