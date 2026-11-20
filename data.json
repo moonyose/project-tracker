@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) and PR #67 (merged after it) added one-tap 'Re-analyze as ...' on both platforms. iOS: rows in the player's More menu (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions, offering straightaway first for a clip analyzed as a start), a 'Filmed something else?' card on results (ResultsViews.swift), and 'Re-analyze as straightaways/curves/starts' on a long recording's review (SplitStartsView.swift, PassPickerView.swift). Android mirrors all of them (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPick",
+                "summary": "Already shipped. Commit c3f1d42 (Nov 18, after the Nov 17 note) added one-tap 'Re-analyze as ...' on iOS and Android: in the player's More menu (KindFlow.reanalyzeOptions; a clip analyzed as a start offers 'Re-analyze as a straightaway' first), on the finish/results card ('Analyzed as a start. Filmed something else?'), and on a long recording's review and pass picker ('Re-analyze as straightaways', which scans the recording again for passes). Commit 1a499a2 added the More-menu item earlier. PR #78 (Nov 19) only hides the More button while analysis is still running, and the menu still has these",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:17+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code on origin/master at 94d6bf0 and confirmed the feature is wired up in the iOS and Android UIs. Checked with gh that PR #50 is merged. No build was run because nothing changed.",
-                "next_step": "On the current TestFlight build, open a clip that was analyzed as a start, tap the More (...) menu in the player, and tap 'Re-analyze as a straightaway'. It should re-analyze as a stride with no manual marking. If that row is missing or doesn't work on your build, edit the task to say what you saw."
+                "at": "2026-11-20T09:19+00:00",
+                "verified": "Read current origin/HEAD (94d6bf0): the UI call sites are in StrideLab/Playback/AnalysisPlayerView.swift:653, ResultsViews.swift:967-973, Split/SplitStartsView.swift:1420 and Split/PassPickerView.swift:55, with Android equivalents in AnalysisPlayerScreen.kt:529, ResultsViews.kt:1290, SplitStartsScreen.kt:385 and PassPickerScreen.kt:164. Tests exist in Tools/tests_kindui.swift and android KindUiTes",
+                "next_step": "On a phone with the latest TestFlight build, open a clip analyzed as a start that was really a straightaway, tap More (top right), then 'Re-analyze as a straightaway', and check it re-analyzes as a stride. For a long recording, the review screen shows 'Looked through for starts. Filmed something else?' with a 'Re-analyze as straightaways' button. If any of these is missing or hard to find, edit th"
               }
             },
             {
