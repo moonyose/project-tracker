@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master for both iOS and Android. PR #50 (merged 2026-11-18) added 'Re-analyze as\u2026' to the player's More menu, and PR #67 (merged 2026-11-18) fixed the Nov 17 cause: the saved scan was reused even when the clip was re-analyzed as a different kind. It also added one-tap 'Re-analyze as straightaways / curves / starts' buttons to the recording review screen, the pass picker and the finish card. Later t127 PRs (#53, #55, #60, #62, #63, #65, #70) were closed as superseded at Austin's request. No new PR was opened.",
+                "summary": "This is already done: PR #67 (merged Nov 18) added a one-tap 'Re-analyze as\u2026' option on iOS and Android, on the starts review screen, the pass picker, the finish card and the player's More menu. Nothing new to build, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T15:20+00:00",
-                "verified": "Checked current master (94d6bf0). SplitStartsView.reanalyze(as:), the ReanalyzeCard on the review screen and pass picker, KindFlow.reanalyzeRecordingTitle and AnalysisPlayerView's reanalyzeOptions menu are all present. PR #67's file list includes the Android twins (SplitModel.kt, SplitStartsScreen.kt, PassPickerScreen.kt, ScanCache.kt, KindLogic.kt). No build was run because nothing changed.",
-                "next_step": "Tick off t127 in the tracker. On the phone: record straightaways with Starts still selected, open the recording's review screen, tap 'Re-analyze as straightaways' and check that the passes are found. If this still fails on a current TestFlight build, edit the task and describe what you see."
+                "at": "2026-11-20T15:27+00:00",
+                "verified": "Read the code on origin/master (94d6bf0). Ran ./Tools/verify.sh on master: ALL CHECKS PASSED. Did not run an xcodebuild or Gradle build because no code changed.",
+                "next_step": "On a current TestFlight build (1.0.4 or later): 1) Pick Starts on the record screen and film or import a straightaway. 2) On the starts review screen, scroll down to the 'Re-analyze as straightaways' card and tap it. 3) Check that it scans again and shows the pass picker. If that card is missing or doesn't do this, reopen t127 with what you saw."
               }
             },
             {
