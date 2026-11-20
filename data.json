@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on iOS and Android: PR #50 and PR #67 (both merged Nov 18) added one-tap 'Re-analyze as\u2026' options to a clip's More menu, the results screen and a long recording's review. Seven later duplicate PRs for this task were closed unmerged, so no new PR was opened.",
+                "summary": "Already done: PRs #50 and #67 (both merged Nov 18) added one-tap \"Re-analyze as\u2026\" on iOS and Android, in the player's More menu, on the results screen, and in long-recording review. No new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:52+00:00",
-                "verified": "Read origin/master (94d6bf0): KindLogic.swift/KindLogic.kt hold reanalyzeOptions, reanalyzeChoices and reanalyzeTitle, and these are wired into the iOS player menu, results card and split review, and into the matching Android screens. Confirmed with gh that #50 and #67 are merged. No build was run because nothing changed.",
-                "next_step": "Mark t127 done in the tracker so it isn't picked up again. To confirm on the phone: open a clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and come back as a straightaway."
+                "at": "2026-11-20T07:54+00:00",
+                "verified": "Checked git history (fe99a5f merge of #50, cc7b90d merge of #67 are ancestors of origin/master), gh pr view 50 (MERGED), gh pr view 70 (closed as superseded by #50/#51/#67), and grepped the call sites on both platforms. No builds were run because nothing was changed.",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone: open a clip that was analyzed as a start, tap More in the player, tap 'Re-analyze as a straightaway', and check that the clip re-analyzes as a straightaway."
               }
             },
             {
