@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms, so this run made no change. PR #50 (merged Nov 18, https://github.com/moonyose/StrideLab/pull/50) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu, plus a 'Filmed something else?' card on the results. PR #67 (merged Nov 18, https://github.com/moonyose/StrideLab/pull/67) added 'Re-analyze as straightaways / curves / starts' to a long recording's review (SplitStartsView, PassPickerView). Each rescans the recording for passes or starts. Both PRs were mirrored in Kotlin (AnalysisPlayerScreen.kt, ResultsViews.kt, Spli",
+                "summary": "Already done on master, iOS and Android. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu, using the existing applyKind path (paywall, re-analysis stage, choice saved on the clip). PR #67 (merged Nov 18) added the same option to the results card (ResultsViews), the long-recording split screen and the pass picker ('Re-analyze as straightaways'). The latest master (after #78, which only hides the More button while analysis is still running) still has all of it: AnalysisPlayerView.swift lines 65",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:40+00:00",
-                "verified": "Read the code on origin/master 94d6bf0 and confirmed with gh that PRs #50 and #67 are merged. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build at or after Nov 18: (1) Record with Filming set to Start, but film a straightaway. (2) Open the clip, tap More (top right) and pick 'Re-analyze as a straightaway'. It should re-run as a stride. (3) For a long multi-rep recording, the review screen shows 'Looked through for starts. Filmed something else?' with 'Re-analyze as straightaways'. If something still doesn't work, edi"
+                "at": "2026-11-20T17:47+00:00",
+                "verified": "Read the current master code on both platforms and the merged commits 1a499a2 (#50), cc7b90d (#67) and 38714a3 (#78). Nothing was rebuilt or re-tested, since nothing changed; those PRs passed the PR checks when merged.",
+                "next_step": "On a TestFlight build from Nov 18 or later: open a straightaway clip that was analyzed as a start, tap More (top right, once the analysis has finished) and then 'Re-analyze as a straightaway', and check that it re-analyzes and the kind chip says Straightaway. If that is what you already saw and it still felt like manual work, tell me which screen you were on so the option can be added there."
               }
             },
             {
