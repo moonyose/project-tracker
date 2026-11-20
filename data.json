@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #67 (merged Nov 18) added one-tap \"Re-analyze as\u2026\" on iOS and Android. It shows on the starts review screen, the pass picker, the finish card, the player's More menu, and the library's \"Analyze as\u2026\" menu. A recording looked through as starts is looked through again for passes once you say it's straightaways. No new PR was opened.",
+                "summary": "Already shipped on master for both platforms, so no new PR. PR #50 (merged 2026-11-18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu and the end-of-run card. PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways / curves / starts' to the review screen of a long recording (SplitStartsView / PassPickerView), which covers the Nov 17 case: a straightaway session recorded with Starts picked. Android has the same thing: AnalysisPlayerScreen.kt uses KindFlow.reanalyzeOptions, ResultsViews.kt has the end-of-run buttons, ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:54+00:00",
+                "at": "2026-11-20T12:56+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Confirmed in current master (94d6bf0): SplitModel.reanalyze(as:store:) and ReanalyzeCard in StrideLab/Split/SplitStartsView.swift and PassPickerView.swift, with KindFlow.reanalyze* in Playback/KindLogic.swift. The Kotlin versions are in android/ (SplitModel.kt, SplitStartsScreen.kt, PassPickerScreen.kt, KindLogic.kt) with KindUiTest/PassesTest. Ran ./Tools/verify.sh on master: ALL CHECKS PASSED. D",
-                "next_step": "On the latest TestFlight build, record a straightaway with Starts still picked. On the review screen, tap \"Re-analyze as straightaways\" and check that it finds the passes. If it still misses in some flow, say which screen and reopen this to-do."
+                "verified": "Read the current master (94d6bf0). The Re-analyze code paths are there in Swift (KindLogic.swift, AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift) and in Kotlin (KindLogic.kt, AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt). gh shows PR #50 and PR #67 as MERGED. No code changed, so no build was run.",
+                "next_step": "On a TestFlight build that includes PR #67: record a few straightaways with the record screen still set to Starts. On the review screen, tap 'Re-analyze as straightaways' and check that the runs are found and analyzed as straightaways. Then open any finished clip, go to More (...) > 'Re-analyze as a straightaway' and check that it re-analyzes in one tap. If that still feels like manual work, edit "
               }
             },
             {
