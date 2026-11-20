@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. Two merged PRs cover this: moonyose/StrideLab#50 (One-tap \"Re-analyze as...\" in the player's More menu, branch claude/t127-reanalyze-as, merged 2026-11-18) and #67 (Re-analyze as... for a long recording filmed as the wrong kind, with curve marked Beta, merged 2026-11-18). On origin/master (94d6bf0), iOS has KindFlow.reanalyzeOptions/reanalyzeChoices (StrideLab/Playback/KindLogic.swift). They show up as the player menu rows 'Re-analyze as a straightaway' (Starts is the first choice), the ReanalyzeCard on a finished clip and on the pass picker / long-recording ",
+                "summary": "Already shipped on both platforms. Commit c3f1d42 (merged via PR #67, Nov 18, the day after the Nov 17 note) added one-tap 'Re-analyze as straightaways / starts / a curve (Beta)'. On iOS it appears in four places: the split review screen (SplitStartsView ReanalyzeCard), the pass picker (PassPickerView), the finish card (ResultsViews) and the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions). The scan cache now records what it looked for, so a recording first looked through as starts gets looked through again for passes. The Android port mirrors it in SplitStartsScreen, PassPic",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T06:41+00:00",
-                "verified": "Checked the code on origin/master, the git history and the PR states with gh (#50 and #67 are both MERGED). I did not rebuild or re-run the checks because nothing changed.",
-                "next_step": "On a TestFlight build that includes #50/#67: record a straightaway with the record screen still on Starts, open the result, tap More (or the card under the results) and tap 'Re-analyze as a straightaway'. For a long recording, use 'Re-analyze as straightaways' on the review screen. If that still falls short, edit the task to say what is missing and where."
+                "at": "2026-11-20T06:44+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): the ReanalyzeCard and More-menu entries are wired on iOS and Android, and Swift and Kotlin tests cover the choices, titles and re-scan. I didn't rebuild or run the checks, because nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with Start still picked on the record screen. On the split review screen, scroll to the bottom and tap 'Re-analyze as straightaways'. It should look through the clip again for passes. If the button doesn't appear in the flow you used, tell me which screen it was missing from."
               }
             },
             {
