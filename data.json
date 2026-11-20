@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented and merged on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added a one-tap 'Re-analyze as ...' entry to the player's More menu (iOS AnalysisPlayerView.swift + KindLogic.swift; Android AnalysisPlayerScreen.kt + KindLogic.kt, with tests). PR #67 extended it: a 'Re-analyze as' card on the results/finish screen, and on the Starts split screens (SplitStartsView / PassPickerView, and SplitStartsScreen / PassPickerScreen on Android) so a recording made on the Starts setting can be re-run as straightaways in one tap. Current master (94d6bf0) still has all",
+                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18, merge fe99a5f) added the one-tap \"Re-analyze as ...\" rows to the player's More menu on iOS (AnalysisPlayerView + KindFlow.reanalyzeOptions, with the straightaway option first for a clip analyzed as a start) and on Android (AnalysisPlayerScreen.kt + KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 (merged the same day) added re-analyze cards in the Split/pass picker screens as well. Both are still on origin/master at 94d6bf0. Nothing new to change, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:24+00:00",
-                "verified": "Read current master: iOS AnalysisPlayerView.swift:650-659 (More menu Re-analyze section), ResultsViews.swift:942-978, SplitStartsView.swift:969-974/1329/1420, PassPickerView.swift:21-58; Android AnalysisPlayerScreen.kt:529-533, ResultsViews.kt:1295, SplitStartsScreen.kt:167-386, PassPickerScreen.kt. Did not rebuild since nothing changed.",
-                "next_step": "On a TestFlight build from current master: record a straightaway with the record screen left on Starts, open the clip, tap More (...) and choose 'Re-analyze as straightaway' (or use the Re-analyze card on the Starts screen). Confirm it re-runs as a straightaway. If it still falls short, edit the task with what's missing so the next run has something to fix."
+                "at": "2026-11-20T17:26+00:00",
+                "verified": "Checked git history and current master source: StrideLab/Playback/AnalysisPlayerView.swift:650-658 (menu section), StrideLab/Playback/KindLogic.swift:175 (reanalyzeOptions), StrideLab/Split/SplitStartsView.swift:1420 and PassPickerView.swift:55 (ReanalyzeCard), android AnalysisPlayerScreen.kt:529 and KindLogic.kt:177. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build that includes PR #50: open a clip analyzed as Starts, tap More (...), tap 'Re-analyze as a straightaway', and confirm it re-analyzes as a straightaway. If that row is missing or does the wrong thing, edit the task to say what you saw and it will be picked up again. Otherwise mark t127 done."
               }
             },
             {
