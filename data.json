@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master: PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) and PR #67 added one-tap \"Re-analyze as...\" on iOS and Android. It shows up on a long recording's review screen and pass picker (\"Re-analyze as straightaways\"), on a finished clip's results, and in the player's More menu.",
+                "summary": "Already shipped on master on both iOS and Android. Commit c3f1d42 (Nov 18, merged in PR #67 as cc7b90d) added one-tap 'Re-analyze as ...' in four places: the player's More menu (KindFlow.reanalyzeOptions; a clip analyzed as a start offers 'Re-analyze as a straightaway' first), the finish card in the results ('Analyzed as a start. Filmed something else?'), the long-recording review in SplitStartsView, and the pass picker ('Re-analyze as straightaways'). Each tap counts as the athlete's own choice of kind (LAW 41) and re-runs the analysis. The scan cache also records what a recording was searche",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:40+00:00",
-                "verified": "Read master at 94d6bf0. iOS: KindFlow.reanalyzeChoices/reanalyzeOptions/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift; SplitModel.reanalyze(as:store:) and ReanalyzeCard in StrideLab/Split/SplitStartsView.swift and PassPickerView.swift; the player's More-menu rows in AnalysisPlayerView.swift; the results card in ResultsViews.swift; tests in Tools/tests_kindui.swift. Android: SplitMo",
-                "next_step": "On a TestFlight build that includes PR #50/#67: record a straightaway with Starts still picked, open it, and tap \"Re-analyze as straightaways\" on the review screen (or \"Re-analyze as a straightaway\" in the player's More menu on a cut clip). If that still doesn't do what you want, edit the task to say what's missing and mark it as a previous attempt."
+                "at": "2026-11-20T03:43+00:00",
+                "verified": "Checked by reading the code on origin/master (94d6bf0): found the shipping commit c3f1d42 with git log -S, and confirmed every call site is still present on both platforms. No build or test run, since nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later, open a clip that was analyzed as a start. Tap More (top right) and then 'Re-analyze as a straightaway', and check that it re-analyzes as a stride. For a long recording, the review screen has a 'Re-analyze as straightaways' button. If something is still missing (for example a spot you expected the option to appear), edit the task to say where."
               }
             },
             {
