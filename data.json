@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app: PR #50 added one-tap \"Re-analyze as\u2026\" on iOS and Android, and it's still in the current code. On a finished clip, the player's More menu lists the other types with the likeliest mix-up first, so a clip analyzed as Starts offers \"Re-analyze as a straightaway\" first. Long recordings get a re-analyze card on the review and pass-picker screens. No PR opened.",
+                "summary": "Already shipped. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu on iOS and Android (KindFlow.reanalyzeOptions/reanalyzeTitle, with tests in Tools/tests_kindui.swift and KindUiTest.kt). PR #67 extended it with a 'Filmed something else? Re-analyze as ...' card on the report and on a long recording's review (ReanalyzeCard in SplitStartsView/PassPickerView and SplitStartsScreen/PassPickerScreen/ResultsViews). Current master (94d6bf0, after #77/#78 reworked the More button) still h",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:31+00:00",
-                "verified": "Read the code on current origin/master (94d6bf0) and confirmed the menu rows and review cards are wired in on iOS (AnalysisPlayerView.swift, SplitStartsView.swift, PassPickerView.swift) and Android (AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt), with existing tests (Tools/tests_kindui.swift, KindUiTest.kt). Nothing was changed, so no builds, verify.sh, bend or Gradle checks w",
-                "next_step": "On a TestFlight build that includes PR #50, open a clip analyzed as a start, tap More and pick 'Re-analyze as a straightaway'. If the option is missing or doesn't work, reopen this to-do and say what you saw. If it works, mark it done."
+                "at": "2026-11-20T13:32+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read current master: iOS AnalysisPlayerView.swift More menu still lists KindFlow.reanalyzeOptions rows (line ~653), the report passes onReanalyze, and SplitStartsView/PassPickerView show ReanalyzeCard. Android AnalysisPlayerScreen.kt (line ~529), ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt have the same. No build was run because no code changed. PR #50 reported a passing xcodebui",
+                "next_step": "On your phone: set Filming to Start, record some straightaway strides, open the clip, tap ... (More) and pick 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and then straightaway coaching. If this is the task being reopened because something still feels manual, edit the to-do to say what's missing."
               }
             },
             {
