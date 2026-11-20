@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, iOS and Android. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as a straightaway / start / curve\" item to the player's More menu, with the likeliest mix-up listed first. PR #67 (merged 2026-11-18) added \"Re-analyze as straightaways\" for a long recording filmed with the wrong kind picked, on the split-starts and pass-picker screens. Android has the same calls (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt), backed by KindFlow.reanalyzeOptions/reanalyzeTitle in core with KindUiTest coverage. Nothing left to change.",
+                "summary": "This is already in the app on iOS and Android, so no new PR. Merged PRs #50 and #67 added one-tap 'Re-analyze as \u2026' options to the player's More menu, the results screen and the long-recording review; a clip filmed as Starts lists 'Re-analyze as a straightaway' first.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:47+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code on origin/HEAD: the Swift and Kotlin call sites are wired in the player More menu, the results view and the split and pass screens. Did not rebuild, because no code changed.",
-                "next_step": "On a TestFlight build after Nov 18: open a straightaway clip that was analyzed as a start, tap More (...), tap 'Re-analyze as a straightaway', and check that the results come back as straightaway analysis. If this doesn't match what you meant (for example, you want the option offered on the library list or right after analysis), edit the task to say where."
+                "at": "2026-11-20T14:49+00:00",
+                "verified": "Read the code on origin/master at 94d6bf0. It is wired up in AnalysisPlayerView.swift (More menu, line ~650), ResultsViews.swift (onReanalyze, line ~942), SplitStartsView.swift / PassPickerView.swift, and the matching Android AnalysisPlayerScreen.kt / ResultsViews.kt / SplitStartsScreen.kt / PassPickerScreen.kt. No build was run because nothing changed.",
+                "next_step": "On the phone, record a straightaway with Filming set to Start. Open the clip, tap More, and check that 'Re-analyze as a straightaway' is the first row in its section and that it re-analyzes the clip as a stride. If it still falls short, edit the task to say what's missing."
               }
             },
             {
