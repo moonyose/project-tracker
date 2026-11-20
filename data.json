@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done and merged into master on both iOS and Android. PR #50 (moonyose/StrideLab, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More (...) menu. PR #67 (merged 2026-11-18) added 'Re-analyze as ...' buttons to the Finish card, the pass picker and the starts-split screen, so a whole recording can also be looked at again as another kind. Current master (94d6bf0) still has all of these: AnalysisPlayerView.swift uses KindFlow.reanalyzeOptions, and Android's AnalysisPlayerScreen.kt / ResultsViews.kt / PassPickerScreen.kt / SplitStartsScre",
+                "summary": "Already done on master, on iOS and Android. Commit 1a499a2 (Nov 18, 'Add one-tap \"Re-analyze as ...\" to the player's More menu') added one-tap rows to the player's More menu: on a clip analyzed as a start, 'Re-analyze as a straightaway' comes first, then 'Re-analyze as a curve (Beta)'. Each row goes through the existing applyKind path (paywall, re-analysis screen, choice saved on the clip). Other places offer the same thing: the 'Filmed something else?' buttons on the results card (ResultsViews.reanalyze), the long-recording review (SplitStartsView / SplitStartsScreen, 'Re-analyze as straighta",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:21+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Code inspection on origin/master 94d6bf0: re-analyze rows in the iOS More menu (AnalysisPlayerView.swift ~line 651), the Finish card (ResultsViews.swift), PassPickerView and SplitStartsView, with Kotlin mirrors in android/app/.../ui/player and ui/split, and tests in Tools/tests_kindui.swift and KindUiTest.kt. I ran no builds, because nothing changed. PR #50 reported that the xcodebuild, verify.sh ",
-                "next_step": "On the latest TestFlight build (anything after the Nov 18 merges): set the record screen to Start, film a few straightaway strides, open the clip, wait for analysis to finish, tap ... (More) and tap 'Re-analyze as a straightaway'. If that works, tick this to-do off. If something is still missing, edit the task to say where you expected the option."
+                "at": "2026-11-20T03:23+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): AnalysisPlayerView.swift lines 650-659 show the menu rows, and android AnalysisPlayerScreen.kt line 529 has the same rows. git log -S reanalyzeOptions shows the commit is in master's history. I did not rebuild or re-run the checks, because nothing changed.",
+                "next_step": "On your phone, open a clip recorded on Starts that was really a straightaway. Tap the More (...) menu and tap 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and then the straightaway analysis. If this still doesn't work in your current TestFlight build (it may be older than Nov 18), install the latest build. If you meant something else, such as asking right after recordi"
               }
             },
             {
