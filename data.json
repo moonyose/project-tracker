@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master in c3f1d42 ('Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta', Nov 18 2026, the day after the Nov 17 note), on iOS and Android. One-tap 'Re-analyze as ...' appears in three places. (1) The long-recording review screen: 'Looked through for starts. Filmed something else?' with 'Re-analyze as straightaways' / 'Re-analyze as curves (Beta)' (iOS SplitStartsView.swift ~L1420, Android SplitStartsScreen.kt ~L385). (2) The pass picker (PassPickerView.swift / PassPickerScreen.kt). (3) A finished clip's results card: 'Analyzed as a start",
+                "summary": "Already done on both iOS and Android: PR #50 and PR #67 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / start / curve (Beta)' to the player's More menu, the finish card, the pass picker and the 'no starts found' screen. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:14+00:00",
-                "verified": "Read the code paths on origin/HEAD (94d6bf0): KindFlow.reanalyzeChoices/reanalyzeRecordingTitle/reanalyzePrompt in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt, wired into SplitStartsView review, PassPickerView and the finished-clip results card on both platforms. Did not rebuild or run tests because no code changed.",
-                "next_step": "On a current TestFlight build, record a straightaway with 'Start' still picked. On the review screen (or the finished clip's results card), tap 'Re-analyze as straightaways' / 'Re-analyze as a straightaway' and check it re-analyzes as straightaways. If a screen you hit still lacks the button, reopen this task and name that screen."
+                "at": "2026-11-20T14:16+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) and the git history (merges fe99a5f for #50 and cc7b90d for #67) to confirm the feature is present on both platforms, with tests in tests_kindui.swift and KindUiTest.kt. Nothing changed, so no build was run.",
+                "next_step": "On the phone: record a few straightaway reps with the record screen left on Starts, open the clip, then tap More (top right) > 'Re-analyze as a straightaway'. If it stops at 'no starts found', use the 'Re-analyze as straightaways' button there. If a specific screen still forces the manual fix, edit the task to name that screen."
               }
             },
             {
