@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #50 (merged Nov 18) added one-tap \"Re-analyze as a straightaway / curve / start\" rows to the player's More menu on iOS and Android, and PR #67 added \"Filmed something else?\" re-analyze buttons on the results, split-starts and pass-picker screens. Nothing left to change.",
+                "summary": "Already shipped. PR #50 (claude/t127-reanalyze-as, commit 1a499a2) added one-tap \"Re-analyze as a straightaway / a curve (Beta) / a start\" entries to the player's More menu on iOS (AnalysisPlayerView.swift) and Android (AnalysisPlayerScreen.kt). It is merged into master and still there after later More-menu changes (#78). Recording-level \"Re-analyze as straightaways/starts\" cards also exist in the split/pass-picker flows on both platforms. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:54+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current master (94d6bf0): iOS AnalysisPlayerView More menu uses KindFlow.reanalyzeOptions (straightaway listed first for a clip analyzed as a start); ReanalyzeCard used in ResultsViews, SplitStartsView, PassPickerView. Android mirrors it in AnalysisPlayerScreen, ResultsViews, SplitStartsScreen, PassPickerScreen, covered by KindUiTest. No new build run since no code changed.",
-                "next_step": "On the current TestFlight build, open a clip analyzed as a start, tap More (...) and pick \"Re-analyze as a straightaway\". If that is still not what you meant, edit this to-do to say what is missing."
+                "at": "2026-11-20T18:01+00:00",
+                "verified": "./Tools/verify.sh on current origin/HEAD (94d6bf0): ALL CHECKS PASSED, including the Re-analyze-as option/title tests. Checked by grep that both the iOS and Android player menus still call KindFlow.reanalyzeOptions. No xcodebuild or Gradle run, because no code changed.",
+                "next_step": "On the phone: open a clip that was analysed as a start, tap More (the ... button top right, shown once analysis finishes), then tap \"Re-analyze as a straightaway\". It should re-analyze as straightaways. If this is on master but not in your TestFlight build yet, wait for the next build. If it still falls short, edit the task to say what is missing (for example, a button on the recording screen itse"
               }
             },
             {
