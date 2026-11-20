@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added the one-tap 'Re-analyze as ...' rows to the player's More menu. PR #67 (merged) added the 'Re-analyze as straightaways/starts' card to the starts-split review and the pass picker, which covers the Nov 17 case of straightaways recorded while the record screen still said Starts. Current master (94d6bf0): iOS AnalysisPlayerView.swift:650-659 (More menu, KindFlow.reanalyzeOptions), SplitStartsView.swift:1417-1424 (ReanalyzeCard, shown even when starts were found), PassPickerView.swift:54",
+                "summary": "Already shipped on master, on iOS and Android: PR #50 (one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' in the player's More menu) merged 2026-11-18, and PR #67 (a 'Re-analyze as straightaways' card for a long recording split as the wrong kind, on the pass picker and split screen) merged the same day. Current master (94d6bf0) still has both: iOS in AnalysisPlayerView.swift (More menu, KindFlow.reanalyzeOptions), PassPickerView.swift and SplitStartsView.swift (ReanalyzeCard); Android in AnalysisPlayerScreen.kt, PassPickerScreen.kt and SplitStartsScreen.kt. Tests exist in Tools/",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:07+00:00",
-                "verified": "Checked by reading the code on current origin/master and looking up PR #50 with gh (MERGED). No build was run because no code changed.",
-                "next_step": "On your phone: record straightaways with the record screen left on Starts. On the split review, tap 'Re-analyze as straightaways' under the cards. For a clip that's already analyzed, open the player's More (...) menu and tap 'Re-analyze as a straightaway'. If either one doesn't do what you wanted, edit this task to say what's still missing."
+                "at": "2026-11-20T05:09+00:00",
+                "verified": "Read the current master source and git log, and listed this task's PRs with gh. I ran no builds because I changed no code.",
+                "next_step": "Mark t127 done in the tracker so the scheduled run stops picking it up. To check on your phone (TestFlight build from master): open a clip analyzed as a start, tap More (...), then tap 'Re-analyze as a straightaway'. For a long recording filmed with Starts picked, use the 'Re-analyze as straightaways' card on the pass picker. If something is still missing from that flow, please edit the to-do to s"
               }
             },
             {
