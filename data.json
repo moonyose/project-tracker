@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done. PR #50 for this same task (branch claude/t127-reanalyze-as) was merged on 2026-11-18, and #67 built on it. Both platforms already have it. iOS: the player's More menu shows 'Re-analyze as a straightaway' and the other kinds (KindFlow.reanalyzeOptions in AnalysisPlayerView.swift), the results card has a 'Filmed something else?' row (ResultsViews.swift), and the split screens have 'Re-analyze as straightaways' for a whole recording (SplitStartsView.swift, PassPickerView.swift). Android has the same in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScre",
+                "summary": "Already done on master. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18, commit 1a499a2) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' items to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 also added 'Re-analyze as ...' cards on the split/pass screens. Later PRs (#78, which hides More while analyzing) kept these items. Nothing left to change, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:13+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked the code on origin/HEAD and that PR #50 is merged (gh pr view 50). I didn't rebuild or re-run the checks because nothing changed.",
-                "next_step": "Mark t127 done. To see it on your phone: open a clip that was analyzed as a start, tap More (...), then 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and then the straightaway results. If the 'Re-analyze as' option is missing in some place you expected, add a note to the task saying where."
+                "at": "2026-11-20T04:15+00:00",
+                "verified": "Read origin/master (94d6bf0): reanalyzeOptions is wired into the iOS More menu and the Android player menu, and both test suites cover it. No build was run because there was no code change.",
+                "next_step": "On the current TestFlight build, open a clip analyzed as a start, tap More (top right) and then 'Re-analyze as a straightaway'. Check that it re-analyzes as straightaways. Then close the task."
               }
             },
             {
