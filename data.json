@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master, on iOS and Android. PR #50 added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift and AnalysisPlayerScreen.kt). PR #67 (merged Nov 18, the day after Austin's Nov 17 note) fixed the root cause for long recordings: the saved scan didn't record which kind it had looked for, so a session filmed on Starts was never searched for straightaways. It also added 'Re-analyze as straightaways / curves / starts' buttons (ReanalyzeCard) to the recording review screen (even when no starts we",
+                "summary": "Already done on master, on iOS and Android. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu. PR #67 (cc7b90d) added the same choices as a card on a finished clip's results and on a long recording's review ('Re-analyze as straightaways'). Both go through the normal kind-choice path (paywall, re-analysis stage, choice saved on the clip). They are still there at the current master (94d6bf0): AnalysisPlayerView.swift around line 651 (More menu), ResultsViews.swift around line 942, and PassPicke",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:18+00:00",
-                "verified": "Read current master (94d6bf0). The Re-analyze entry points are wired in StrideLab/Playback/AnalysisPlayerView.swift (More menu), ResultsViews.swift (finish card), Split/SplitStartsView.swift and Split/PassPickerView.swift, plus their Android twins (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt). Did not rebuild or re-run verify.sh because no code changed. PR c",
-                "next_step": "On a current TestFlight build: 1) Record a short straightaway with the record screen left on Start. 2) Open it. On the finish card or in More (...) in the top right, tap 'Re-analyze as a straightaway'. 3) For a long recording, look on the review screen for 'Re-analyze as straightaways'. If a specific screen is still missing the option, edit the task to name it."
+                "at": "2026-11-20T14:20+00:00",
+                "verified": "Read the current master code and the git history. Found the merged PRs #50 and #67 and the call sites on both platforms. I didn't run a build or the checks because nothing changed.",
+                "next_step": "On your phone: open a clip that was analyzed as a start, tap More (top right) and tap 'Re-analyze as a straightaway'. Check that it re-analyzes as a straightaway and the kind chip changes. If this still felt manual on Nov 17, check that the TestFlight build you used includes PR #50 and #67. If you had a different flow in mind, edit the task and say which screen."
               }
             },
             {
