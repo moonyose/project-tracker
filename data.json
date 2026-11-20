@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, so no new PR. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as ...' rows to the player's More menu for a single clip. PR #67 (merged 2026-11-18 15:49Z) covered the Nov 17 case, a recording filmed with Starts still picked. It shows 'Re-analyze as straightaways / curves / starts' buttons on the recording's review screen (also when no starts were found), the pass picker and the finish card. It also fixed the root cause: the saved scan (ScanCache) was being reused for the wrong kind. Both are on iOS and Android (android/app/.../ui/player/KindViews.kt, ui/split/SplitS",
+                "summary": "Already done on iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / start / curve' to a clip's More menu and results, and PR #67 (merged Nov 18) added the same options for long recordings on the review screen.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:42+00:00",
-                "verified": "Checked only that the code is on origin/master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeRecordingTitle in Swift and Kotlin, ReanalyzeCard in iOS KindViews.swift, wired in SplitStartsView.swift and the Android split/player screens. Read PR #67's description and merge time. No builds or tests run, because nothing changed.",
-                "next_step": "On a TestFlight build at or after PR #67: film a straightaway session with Start still picked on the record screen and open it. On the review screen, tap 'Re-analyze as straightaways' and confirm the passes are found without marking anything by hand. If that works, close t127 in the tracker. If it still misses, edit the task to say exactly what you see."
+                "at": "2026-11-20T08:48+00:00",
+                "verified": "Read current master (94d6bf0): the re-analyze entry points are present and wired on both platforms. ./Tools/verify.sh prints ALL CHECKS PASSED, including the check that a recording re-analyzed as straightaways is looked through for passes again. No xcodebuild or Gradle run, because no code changed.",
+                "next_step": "On your phone, open a clip analyzed as a start, tap More (top right) and pick 'Re-analyze as a straightaway'. It should re-analyze in one tap. For a long recording filmed on Starts, the split review shows 'Re-analyze as straightaways'. If something about this still falls short, edit t127 to say what is missing."
               }
             },
             {
