@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master. PR #67 (commit c3f1d42, merged Nov 18, the day after the Nov 17 note) added one-tap 'Re-analyze as...' on iOS and Android. On iOS it is in the start review (SplitStartsView ReanalyzeCard), the pass picker, the finish card (ResultsViews) and the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions). The scan cache records what it looked for, so a recording filmed with Starts picked is looked through again for passes once it is re-analyzed as straightaways. Tests cover it: Tools/tests_kindui.swift kui_reanalyzeAsTest and tests_passes.swift on iOS, KindUiTest.kt an",
+                "summary": "Already shipped. PR #50 (merged Nov 18) added one-tap \"Re-analyze as ...\" to the player's More menu, and PR #67 merged it with the Android port. On current master (94d6bf0, after #77/#78 reworked the menu) it is still there on both platforms. iOS: AnalysisPlayerView.swift More menu, KindFlow.reanalyzeOptions/reanalyzeTitle; also on the results card and the split/pass pickers ('Re-analyze as straightaways'). Android: AnalysisPlayerScreen.kt More menu, PlayerStage.kt, KindLogic.kt. The tests in Tools/tests_kindui.swift and KindUiTest.kt cover the exact case of a take filmed on Starts that should",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:27+00:00",
-                "verified": "Read the code paths on master (94d6bf0) on both platforms. ./Tools/verify.sh on master: ALL CHECKS PASSED. I did not run the xcodebuild or Gradle builds because nothing changed.",
-                "next_step": "On your phone (TestFlight build from master), record a straightaway with Starts still picked. On the start review or finish card, tap 'Re-analyze as straightaways' (or More > 'Re-analyze as a straightaway' in the player) and check it re-analyzes as runs. If you hit a screen where the option is missing, add a to-do naming that screen."
+                "at": "2026-11-20T08:29+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read current master code on both platforms and confirmed PR #50 is merged with gh. I made no changes, so I did not rebuild or rerun checks.",
+                "next_step": "On a TestFlight build of 1.0.4 or later: open a clip analyzed as a start, tap More (top right, once analysis finishes), then tap 'Re-analyze as a straightaway'. The clip should re-run as a straightaway. If this was already working, tick the to-do off. If Austin hit the Nov 17 problem on an older build, updating fixes it."
               }
             },
             {
