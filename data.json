@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master for iOS and Android: PRs #50 and #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' to the player's More menu, the results card, the starts review screen ('Re-analyze as straightaways', the Nov 17 case) and the pass picker. No new PR was needed.",
+                "summary": "Already shipped on master, iOS and Android. Commit 1a499a2 (2026-11-18, 'Add one-tap \"Re-analyze as ...\" to the player's More menu') added a row in the player's More menu for each other kind, e.g. 'Re-analyze as a straightaway' on a clip analysed as a start. One tap runs the existing applyKind path (paywall, re-analysis screen, choice saved on the clip). Commit c3f1d42 added the 'Re-analyze as straightaways / starts' cards on the split-recording, pass-picker and results-finish screens. iOS: StrideLab/Playback/AnalysisPlayerView.swift (More menu), KindLogic.swift (reanalyzeOptions/reanalyzeChoi",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:49+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) and confirmed on GitHub that PRs #50 and #67 are MERGED. Nothing was changed, so no builds or checks were run.",
-                "next_step": "On the latest TestFlight build, record straightaways with Start still selected. Tap 'Re-analyze as straightaways' on the starts review screen and check that the passes come out right. If a screen is still missing the option, edit this to-do to say which one."
+                "at": "2026-11-20T09:51+00:00",
+                "verified": "Read the code on origin/master (94d6bf0). The More-menu 'Re-analyze as' section is still there after the latest merge (#78) and is wired on both platforms. I did not run the builds or verify.sh because nothing changed.",
+                "next_step": "On a TestFlight build that includes 1a499a2: open a clip that was analysed as a start, tap More (\u2026), tap 'Re-analyze as a straightaway', and check that it re-analyses as a straightaway. For a long recording made on Starts, the split screen shows 'Re-analyze as straightaways'. If this still doesn't cover the Nov 17 case, edit the task to say which screen is missing it."
               }
             },
             {
