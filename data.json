@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master on both platforms; no new PR needed. PR #50 (branch claude/t127-reanalyze-as, merge fe99a5f) added one-tap \"Re-analyze as ...\" rows to the player's More menu (iOS AnalysisPlayerView.swift, Android AnalysisPlayerScreen.kt, shared KindFlow.reanalyzeOptions/reanalyzeTitle). PR #67 (merge cc7b90d) extended it to the results view and to long recordings in the pass picker and starts splitter (\"Re-analyze as straightaways\"). The latest change (38714a3, PR #78) only hides the More button while analysis is still running, so the rows show as soon as there is a result. The optio",
+                "summary": "This is already on master for iOS and Android: after a clip is analyzed, the player's More menu has one-tap 'Re-analyze as a straightaway / curve / start' rows (commit 1a499a2), and long multi-run recordings get 'Re-analyze as straightaways' (commit c3f1d42). Nothing needed changing, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:11+00:00",
-                "verified": "Read the current master code paths on iOS and Android. ./Tools/verify.sh printed ALL CHECKS PASSED, including the \"Re-analyze as ...\" and \"Re-analyze as another kind\" checks in tests_kindui.swift. Nothing was changed, so I did not run the xcodebuild, Gradle or bend checks again.",
-                "next_step": "On the phone, open a clip that was analyzed as a start, tap More (top right) and choose \"Re-analyze as a straightaway\". The clip should be analyzed again as a straightaway. For a long recording split as starts, use the \"Re-analyze as straightaways\" button on the pass picker. If that doesn't match what you saw on Nov 17 (for example, your TestFlight build was older than PR #50, or you were on a scr"
+                "at": "2026-11-20T12:16+00:00",
+                "verified": "Read the current master code on both platforms. ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' tests. I did not re-run xcodebuild or Gradle because no code changed.",
+                "next_step": "On a phone with the latest TestFlight build: open a clip analyzed as Starts, tap More (top right, after analysis finishes), then 'Re-analyze as a straightaway'. Check that it re-analyzes and the kind chip says Straightaway. If this flow is what's missing for you, edit the to-do to say which screen."
               }
             },
             {
