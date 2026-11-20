@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (\"One-tap 'Re-analyze as\u2026' in the player's More menu\", branch claude/t127-reanalyze-as) was merged 2026-11-18, on iOS and Android. It adds one-tap 'Re-analyze as a straightaway / a start / a curve (Beta)' rows to the player's \u2022\u2022\u2022 menu (KindFlow.reanalyzeOptions/reanalyzeTitle; AnalysisPlayerView.swift and AnalysisPlayerScreen.kt), tested in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 then added 'Re-analyze as straightaways/starts' for long recordings in the split and pass picker screens, plus a card in the results views. Current master (94d6bf0, after #78 removed",
+                "summary": "Already shipped on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18 as fe99a5f) added one-tap \"Re-analyze as ...\" and PR #67 (cc7b90d) extended it. It is still on master after #78. iOS: the player's More menu lists 'Re-analyze as a straightaway' / 'Re-analyze as a curve (Beta)' (AnalysisPlayerView.swift:653, KindFlow.reanalyzeOptions), the results screen shows 'Analyzed as a start. Filmed something else?' with buttons (ResultsViews.swift:967), and recordings get 'Re-analyze as straightaways' on the pass picker and split screens (PassPickerView.swift:55, SplitStartsView.sw",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:36+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked that PR #50 is MERGED (gh pr view) and that its files are on master. I grepped current master for the menu rows on iOS (AnalysisPlayerView.swift ~line 653) and Android (AnalysisPlayerScreen.kt:529), and for the split and results entry points. No code changed, so I didn't rebuild or rerun the tests.",
-                "next_step": "On a TestFlight build at or after #50: record a straightaway with the record screen left on Starts. Open the clip, tap \u2022\u2022\u2022 and choose 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and then stride tips. If the take was a long recording split into reps, use 'Re-analyze as straightaways' on the split screen. If that works, mark t127 done in the tracker."
+                "at": "2026-11-20T04:38+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): found where the UI calls the re-analyze helpers on iOS and Android, found the matching tests, and checked that #78 (removed the dead More button while analyzing) left the menu entry in place once a result exists. Did not run a build because nothing changed.",
+                "next_step": "On a TestFlight build at or after Nov 18: record a straightaway with Start picked on the record screen. When analysis finishes, tap More (top right) > 'Re-analyze as a straightaway' and confirm it re-runs as a straightaway. If you need something different (for example, the option shown more prominently), edit the to-do to say so."
               }
             },
             {
