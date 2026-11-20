@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android. PR #50 added one-tap 'Re-analyze as a straightaway / curve / start' options to the player's More menu, and PR #67 added the same for long recordings with several runs. Nothing new to change.",
+                "summary": "Already shipped on master, on iOS and Android. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu. PR #67 (merged Nov 18) added 'Re-analyze as straightaways / curves / starts' buttons to a long recording's review screen, the pass picker and the finish card. It also fixed the root cause of the Nov 17 report: the saved scan was reused regardless of kind, so a session filmed on Starts was never searched for straightaways. Duplicate PRs #53, #55, #60, #62, #63, #65 and #70 were closed at Austin's request as superseded. Nothing was pus",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:56+00:00",
-                "verified": "Read the current master source (94d6bf0). The reanalyzeOptions/reanalyzeTitle logic in KindLogic and the More-menu wiring exist on iOS and Android, and both have tests (Tools/tests_kindui.swift, KindUiTest.kt). No build was run because no code changed.",
-                "next_step": "On the current TestFlight build, open a straightaway clip that was analyzed as Starts. Wait for the analysis to finish, then tap More (top right) and 'Re-analyze as a straightaway'. If the option is missing, the build on your phone is older than PR #50/#67. If you wanted something else, such as a prompt right after recording, edit the task to say so."
+                "at": "2026-11-20T08:58+00:00",
+                "verified": "Read current master (94d6bf0). iOS: KindFlow.reanalyzeOptions and reanalyzeChoices in StrideLab/Playback/KindLogic.swift are used by the player menu (AnalysisPlayerView.swift:651-659), the results card (ResultsViews.swift:971), the split review (SplitStartsView.swift:1420) and the pass picker (PassPickerView.swift:55). Android equivalents: AnalysisPlayerScreen.kt:529, ResultsViews.kt:1291, SplitSt",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone: open a clip analyzed as a start, tap More, then 'Re-analyze as a straightaway'. Or open a long recording filmed on Starts and tap 'Re-analyze as straightaways' on its review screen."
               }
             },
             {
