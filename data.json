@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android (PR #67 and commit 1a499a2, both Nov 18), so no new PR was opened. You can re-analyze a clip in one tap from the player's More menu, from the 'Analyzed as a start. Filmed something else?' card on the results, and from a long recording's review screen.",
+                "summary": "Already done on master for both iOS and Android. PR #50 (merged 2026-11-18) added 'Re-analyze as\u2026' to the player's More menu, and PR #67 (merged 2026-11-18) fixed the Nov 17 cause: the saved scan was reused even when the clip was re-analyzed as a different kind. It also added one-tap 'Re-analyze as straightaways / curves / starts' buttons to the recording review screen, the pass picker and the finish card. Later t127 PRs (#53, #55, #60, #62, #63, #65, #70) were closed as superseded at Austin's request. No new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T15:13+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) and confirmed that the merged commits are there and that each re-analyze entry point exists on both platforms. Nothing was changed, so no build or checks were re-run in this run.",
-                "next_step": "On the current TestFlight build, open a straightaway clip that was analyzed as a start. Tap More, then 'Re-analyze as a straightaway', and confirm it re-analyzes in one tap. For a long recording, check that the review screen shows 'Re-analyze as straightaways'. If something about it still falls short, edit the to-do to say what."
+                "at": "2026-11-20T15:20+00:00",
+                "verified": "Checked current master (94d6bf0). SplitStartsView.reanalyze(as:), the ReanalyzeCard on the review screen and pass picker, KindFlow.reanalyzeRecordingTitle and AnalysisPlayerView's reanalyzeOptions menu are all present. PR #67's file list includes the Android twins (SplitModel.kt, SplitStartsScreen.kt, PassPickerScreen.kt, ScanCache.kt, KindLogic.kt). No build was run because nothing changed.",
+                "next_step": "Tick off t127 in the tracker. On the phone: record straightaways with Starts still selected, open the recording's review screen, tap 'Re-analyze as straightaways' and check that the passes are found. If this still fails on a current TestFlight build, edit the task and describe what you see."
               }
             },
             {
