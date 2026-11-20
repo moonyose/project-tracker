@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already shipped on master for iOS and Android. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added the one-tap \"Re-analyze as ...\" rows to the player's More menu, and PR #67 added Re-analyze cards to the finish screen and to the long-recording (Split/Pass picker) screens. The latest master (94d6bf0, after #77/#78) still has all of it, so nothing new was needed.",
+                "summary": "Already shipped on iOS and Android: PR #50 (merged Nov 18) added one-tap 'Re-analyze as...' to the player's More menu, and PR #67 (merged Nov 18) added it to the results card and recording split/pass-picker screens. Seven later duplicate PRs (#53, #55, #60, #62, #63, #65, #70) were closed unmerged, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:41+00:00",
-                "verified": "Read the code on origin/master 94d6bf0. iOS: the More menu lists KindFlow.reanalyzeOptions (AnalysisPlayerView.swift ~L651), the finish screen has a reanalyze section (ResultsViews.swift ~L942), and ReanalyzeCard shows in SplitStartsView/PassPickerView. Android: the same menu items are in AnalysisPlayerScreen.kt ~L529, ResultsViews.kt, and ReanalyzeCard in SplitStartsScreen/PassPickerScreen. KindU",
-                "next_step": "On your phone, open a straightaway clip that was analyzed as a start. Once analysis finishes, tap More (top right) and then \"Re-analyze as a straightaway\". If that's not what you meant, edit the to-do to say what's missing, for example a one-tap fix right on the recording screen before analysis. If you're happy with it, mark t127 done."
+                "at": "2026-11-20T12:43+00:00",
+                "verified": "Read current origin/master (94d6bf0): confirmed the Re-analyze as... entry points exist in both the iOS and Android code, and checked the PR history with gh pr list. No code changed, so I did not run builds.",
+                "next_step": "Mark t127 done on the tracker so the scheduled run stops picking it up. On the phone: open a clip that was analyzed as Starts, tap More, then 'Re-analyze as a straightaway'. If that still isn't what you meant (for example, you wanted the record screen to catch the wrong mode before analysis), edit the task to say what's still missing."
               }
             },
             {
