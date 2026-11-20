@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #67 (moonyose/reanalyze-skeleton-toggle-beta, commit c3f1d42, merged Nov 18, the day after the Nov 17 note) added one-tap 'Re-analyze as ...' on iOS and Android. A recording's review screen shows a card ('Looked through for starts. Filmed something else?' with 'Re-analyze as straightaways' / 'curves'), and so does the pass picker. A finished clip gets 'Re-analyze as a straightaway/curve/start' rows in the player menu and on the finish card. All of these are still on master at 94d6bf0, so later PRs #71-#78 removed none of them. No PR opened.",
+                "summary": "This is already on iOS and Android: PR #50 and PR #67 (both merged Nov 18) added one-tap 'Re-analyze as\u2026' options to a clip's More menu, the results screen and a long recording's review. Seven later duplicate PRs for this task were closed unmerged, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:51+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). iOS: SplitStartsView.swift review ReanalyzeCard (line ~1420) and PassPickerView onReanalyze; AnalysisPlayerView.swift menu reanalyzeOptions (line ~653); ResultsViews.swift finish card; KindLogic.swift reanalyzeChoices/titles. Android: SplitStartsScreen.kt, PassPickerScreen.kt, AnalysisPlayerScreen.kt menu, ResultsViews.kt, core KindLogic.kt with KindUiTest",
-                "next_step": "On a TestFlight build that includes PR #67: record a straightaway with Starts still picked, open the recording, then scroll the review to 'Looked through for starts. Filmed something else?' and tap 'Re-analyze as straightaways'. On an already analyzed clip, open the player's menu and tap 'Re-analyze as a straightaway'. If either one is missing or doesn't work, edit the to-do with what you saw."
+                "at": "2026-11-20T07:52+00:00",
+                "verified": "Read origin/master (94d6bf0): KindLogic.swift/KindLogic.kt hold reanalyzeOptions, reanalyzeChoices and reanalyzeTitle, and these are wired into the iOS player menu, results card and split review, and into the matching Android screens. Confirmed with gh that #50 and #67 are merged. No build was run because nothing changed.",
+                "next_step": "Mark t127 done in the tracker so it isn't picked up again. To confirm on the phone: open a clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and come back as a straightaway."
               }
             },
             {
