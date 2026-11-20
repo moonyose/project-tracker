@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, on iOS and Android. Commit 1a499a2 (Nov 18, 'Add one-tap \"Re-analyze as ...\" to the player's More menu') added one-tap rows to the player's More menu: on a clip analyzed as a start, 'Re-analyze as a straightaway' comes first, then 'Re-analyze as a curve (Beta)'. Each row goes through the existing applyKind path (paywall, re-analysis screen, choice saved on the clip). Other places offer the same thing: the 'Filmed something else?' buttons on the results card (ResultsViews.reanalyze), the long-recording review (SplitStartsView / SplitStartsScreen, 'Re-analyze as straighta",
+                "summary": "Already on master, on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' items to the player's More menu. PR #67 (merged Nov 18) extended this to the record-screen mismatch case from the Nov 17 note: the start-review screen (SplitStartsView) always shows a ReanalyzeCard ('Re-analyze as straightaways' etc.), and the pass picker and results views show it too. Android mirrors all of it in SplitStartsScreen, PassPickerScreen, AnalysisPlayerScreen and ResultsViews. The later PR #78 only hides the More menu while analysis is running, and the re-",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:23+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): AnalysisPlayerView.swift lines 650-659 show the menu rows, and android AnalysisPlayerScreen.kt line 529 has the same rows. git log -S reanalyzeOptions shows the commit is in master's history. I did not rebuild or re-run the checks, because nothing changed.",
-                "next_step": "On your phone, open a clip recorded on Starts that was really a straightaway. Tap the More (...) menu and tap 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and then the straightaway analysis. If this still doesn't work in your current TestFlight build (it may be older than Nov 18), install the latest build. If you meant something else, such as asking right after recordi"
+                "at": "2026-11-20T03:24+00:00",
+                "verified": "Code inspection of origin/master at 94d6bf0: AnalysisPlayerView.swift lines 650-659 (More menu re-analyze section), SplitStartsView.swift lines 1417-1424 (ReanalyzeCard on the starts review), PassPickerView onReanalyze, and the matching Kotlin files under android/. No build was run because nothing changed.",
+                "next_step": "On the phone: record a straightaway with the record screen left on Start. On the starts review screen, tap 'Re-analyze as straightaways' and confirm it re-scans as passes. If that works, mark t127 done in the tracker. If it doesn't show up, edit the task to say which screen you were on."
               }
             },
             {
