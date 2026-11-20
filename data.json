@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' to the player's More menu. PR #67 (merged Nov 18) added a 'Re-analyze as' card to the starts review screen (SplitStartsView, the screen a take recorded on Starts opens in), to the pass picker and to the results views. Both PRs include the Android port (SplitStartsScreen, PassPickerScreen, AnalysisPlayerScreen, KindViews.ReanalyzeCard) and tests (Tools/tests_kindui.swift, android KindUiTest.kt).",
+                "summary": "This is already on master for iOS and Android. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap \"Re-analyze as ...\" rows to the player's More menu. PR #67 added \"Re-analyze as straightaways / starts\" cards to the pass picker, the start splitter and the finish screen. No new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:23+00:00",
-                "verified": "Read origin/master at 94d6bf0. Found the merged commits 1a499a2 / fe99a5f (#50) and c3f1d42 / cc7b90d (#67). Confirmed the iOS entry points (SplitStartsView.swift:1420 ReanalyzeCard, PassPickerView.swift:55, AnalysisPlayerView.swift:653 reanalyzeOptions menu, ResultsViews.swift:962) and their Android twins. Nothing was built or run because no code changed.",
-                "next_step": "Mark t127 done in the tracker. To confirm on a phone with a current TestFlight build: leave the record screen on Starts, film a straightaway, and on the starts review screen tap 'Re-analyze as straightaways'. Or open any analyzed clip, tap More, then 'Re-analyze as a straightaway'. If this still falls short of what you wanted, edit the task to say what is missing."
+                "at": "2026-11-20T07:24+00:00",
+                "verified": "Read current origin/master (94d6bf0). The iOS More menu (AnalysisPlayerView.swift:650-659) shows rows from KindFlow.reanalyzeOptions, with straightaway first for a clip analyzed as a start. Android has the same rows (AnalysisPlayerScreen.kt:529-533). Tools/tests_kindui.swift and android KindUiTest.kt already test the options, their order and their titles. PR #78 only hides the More button until an",
+                "next_step": "On the latest TestFlight build, open a clip analyzed as a start, tap More (top right) and tap \"Re-analyze as a straightaway\". If that's enough, close t127. If you wanted something different (for example the option somewhere else, or no confirmation step), edit the task to say what."
               }
             },
             {
