@@ -1002,11 +1002,11 @@
             {
               "id": "t131",
               "text": "Let the user trim a clip (video-editor style start/end handles) to just the relevant part, from the clip/analysis view, and re-analyze only the trimmed range.",
-              "done": false,
+              "done": true,
               "notes": "Auto-cut clips can be long, with much of it showing other runners and not the user. Austin called this really important.",
               "due": null,
               "createdAt": "2026-11-19T15:01:00-05:00",
-              "updatedAt": "2026-11-19T15:01:00-05:00",
+              "updatedAt": "2026-11-20T19:19:04.559Z",
               "transcript": "We need to make a fix for stride lab. The clip detection works much better now. However the clip editing has a problem. So I'm going to use one example, which is that there's a clip where I'm passing, doing a stride, like a straightaway. And there's a group of runners behind, like in the background. And they're in front of me. Okay, they're in front of me on the track in the background. And the detector is trying to analyze them instead of me. Okay, fine, that, that, that's gonna happen sometimes. The problem is that when I go to the edit button and I say, you know, this isn't me, and I, I, I have to move the clip to show myself in the frame, right? it It isn't like, when I, when I press, when I click my hip as it asks me to, I say like, this is, this is not me, like, this isn't the runner I want to analyze. I want to analyze a different runner. It says, okay, tap the hip of the runner. Right? Right? So I move the click forward to where I'm, where I begin, when I, when I enter the frame, and then I hit my hip. And it, it doesn't analyze it. at all. Like it keeps trying to analyze the people in the background. So we need to like do something to sort of force it. to analyze where the person you know, says the runner's hip is. The other thing that would be really good is if we could allow the user to shorten the clip. So, like the app cut a pretty long clip, and for a large fraction of it, I'm not even in the frame, and that's because there were people on the track who weren't me, right? So it captured those people, and it also caught me passing by. The user, when they open that clip and they're, they're trying to do the analysis or trying to look at their analysis, they should be able to like, just like in the video editor or whatever, like, shorten the clip to only the relevant part. Okay. So that's really important. And by the way, one way to maybe well, I'll just leave it at that. But we need to add that to, to the to-dos.",
               "agent": {
                 "status": "pr_opened",
@@ -1016,7 +1016,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/76",
                 "verified": "['./Tools/verify.sh: ALL CHECKS PASSED (new Trim tests included)', 'xcodebuild build, scheme StrideLab, iPhone 17 Pro simulator (iOS 26.5): BUILD SUCCEEDED', 'cd android && ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug: BUILD SUCCESSFUL (new ClipTrimTest included)', 'Reviewer subagent found 5 real defects; all fixed and the checks above re-run']",
                 "next_step": "On your phone, open a long auto-cut clip, choose More > Trim clip, drag the handles around your run, tap 'Trim and re-analyze', and check that the clip comes back trimmed and analyzed on you. Reopen it from the library to confirm the trim stuck. Repeat on Android from the menu."
-              }
+              },
+              "completedAt": "2026-11-20T19:19:04.559Z"
             }
           ],
           "updatedAt": "2026-11-06T15:17:34-05:00"
