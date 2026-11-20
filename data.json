@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap 'Re-analyze as ...' to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. It is still on master after #78, which only hides the More button while analysis is running. Re-analyze cards also show on the finish screen and in the split and pass-picker flows. No new PR opened.",
+                "summary": "Already shipped on master, so no new PR. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a start / a curve (Beta)' to the single-clip player and results. PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways / starts' cards for a whole recording, on the starts screen (SplitStartsView) and the pass picker (PassPickerView). A recording filmed with Start still picked is looked through again for passes (SplitModel.reanalyze). Android has the same thing: ReanalyzeCard in SplitStartsScreen.kt, PassPickerScreen.kt and ResultsViews.kt, with KindUiTest covering it. Aust",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:12+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current master: the iOS More menu still lists KindFlow.reanalyzeOptions (AnalysisPlayerView.swift ~L650-659) and Android AnalysisPlayerScreen.kt L529-533 does the same. ./Tools/verify.sh on master printed ALL CHECKS PASSED. No xcodebuild or Gradle run, since nothing changed.",
-                "next_step": "On the latest TestFlight build, open a clip analyzed as Starts and tap More (top right, shown once the result is in). Tap 'Re-analyze as a straightaway' and check it re-runs as a straightaway. If this is the build you used on Nov 17 and the option was missing, update TestFlight. If it still feels like manual work, edit the task to say what's missing, for example a button directly on the results sc"
+                "at": "2026-11-20T00:14+00:00",
+                "verified": "Checked the git history and code on origin/master (94d6bf0): fe99a5f (#50) and cc7b90d (#67) are merged. The re-analyze UI is wired up in StrideLab/Split/SplitStartsView.swift, StrideLab/Split/PassPickerView.swift, StrideLab/Playback/ResultsViews.swift and StrideLab/Playback/KindViews.swift, and the Android twins are in android/app/.../ui/split and ui/player. I made no code changes, so no build wa",
+                "next_step": "On a TestFlight build that includes #67 (1.0.4 or later): record a few straightaways with Start picked on the record screen, open the recording, tap 'Re-analyze as straightaways' on the starts screen, and check that its runs come back as straightaways. If that works, mark t127 done on the tracker so it stops being re-queued."
               }
             },
             {
