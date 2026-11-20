@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #50 (claude/t127-reanalyze-as, merged as fe99a5f) and PR #67 added one-tap 'Re-analyze as ...' on both platforms: iOS in the player's More menu (StrideLab/Playback/AnalysisPlayerView.swift ~L650, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift), on the finished-clip card (ResultsViews.swift), and on long-recording review (PassPickerView.swift, SplitStartsView.swift, 'Re-analyze as straightaways'). Android mirrors all of it (AnalysisPlayerScreen.kt ~L529, ResultsViews.kt, PassPickerScreen.kt, SplitStartsScreen.kt) with tests in KindUiTest.kt. For a Star",
+                "summary": "Already done: PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu on iOS and Android, and a later commit added the same for whole recordings. No new PR opened; the other PRs for this task (#53, #55, #60, #62, #63, #65, #70) were closed as duplicates.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:54+00:00",
-                "verified": "Read the current master code (94d6bf0). The re-analyze rows are still wired up in the iOS and Android player menus, on the finish card and on recording review, and the existing KindUiTest/tests_kindui cover them. I didn't rebuild, because nothing changed.",
-                "next_step": "On the phone, open a clip that was analyzed as a Start, tap the More (...) menu and tap 'Re-analyze as a straightaway'. The clip should re-analyze and show straightaway coaching. If this TestFlight build doesn't have it yet, update to a build that includes PR #50 and #67. If it still misses the Nov 17 case, edit the task to say what's missing."
+                "at": "2026-11-20T02:56+00:00",
+                "verified": "Read origin/master (94d6bf0): KindFlow.reanalyzeOptions and reanalyzeTitle exist in Swift and Kotlin, the player More menu uses them on both platforms, and both test suites cover them. gh confirms PR #50 is merged. I made no code change, so I ran no builds.",
+                "next_step": "On the current TestFlight build: open a clip analyzed as a start, tap More in the player, tap 'Re-analyze as a straightaway', and check the re-analysis runs and the clip stays a straightaway after you reopen it. If that still falls short of what you wanted, add a note on the task saying what's missing (for example, a prompt right after recording) and close or archive t127. Otherwise it will keep g"
               }
             },
             {
