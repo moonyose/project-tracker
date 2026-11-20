@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18, commit 1a499a2) added one-tap 'Re-analyze as a straightaway / a start / a curve (Beta)' items to the player's More menu, and PR #67 (merged 2026-11-18, cc7b90d) added 'Re-analyze as starts/straightaways' buttons for long recordings on the recording review, the pass picker and the finish card. It also made a recording filmed with Start picked get looked through again for passes once it is re-analyzed as straightaways, which is exactly the Nov 17 case. Both platforms have it: iOS AnalysisPlayerView.swift (More",
+                "summary": "Already on master for iOS and Android, so no PR. Commit c3f1d42 added 'Re-analyze as ...' buttons to the finished-clip card and to a long recording's review (iOS ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift; Android ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt). Commit 1a499a2 (2026-11-18) added a one-tap 'Re-analyze as a straightaway / a curve (Beta)' section to the player's More menu (iOS AnalysisPlayerView.swift; Android AnalysisPlayerScreen.kt). Both apply a single .kind pick, so a clip left on Starts is re-analyzed as straightaways with one tap. Tools/test",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T15:47+00:00",
-                "verified": "Read the current master (94d6bf0): found the merged PRs #50 and #67 in git log and the Re-analyze code paths and tests on iOS and Android. I did not re-run the builds because nothing changed.",
-                "next_step": "On the latest TestFlight build, open a clip that was analyzed as a Start and tap More (...) in the player. Check that 'Re-analyze as a straightaway' is there and that one tap re-analyzes it as a stride. For a long recording filmed with Start picked, check that the review screen shows 'Re-analyze as straightaways'. If both work, tick t127 off. If something still feels manual, edit the task to say w"
+                "at": "2026-11-20T15:48+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): KindFlow.reanalyzeOptions, reanalyzeChoices and reanalyzeTitle in KindLogic.swift and KindLogic.kt, their call sites on both platforms, and the existing tests. Nothing was changed, so no build or test was run.",
+                "next_step": "On the latest TestFlight build, open a clip analyzed as a start, tap the More (...) menu and tap 'Re-analyze as a straightaway'. It should re-analyze and the chip should read Stride. If it is missing, the build predates 1a499a2. If the flow still falls short (for example it should be offered at record time), reword the to-do with what is missing."
               }
             },
             {
