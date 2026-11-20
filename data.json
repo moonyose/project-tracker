@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already built and merged on iOS and Android. PR #50 (Nov 18) added a one-tap \"Re-analyze as a straightaway / curve / start\" to the player's More menu. PR #67 (Nov 18) also put it on the review, the pass picker and the finish card, and made a recording first scanned as starts get scanned again for passes once you call it straightaways. No new PR was opened.",
+                "summary": "Already shipped on master, so no new PR. PR #50 (merged Nov 18) added a one-tap 'Re-analyze as a straightaway / start / curve (Beta)' to the player's More menu. PR #67 (merged Nov 18) added a 'Filmed something else?' card with 'Re-analyze as straightaways / starts' buttons for a long recording, on the starts list (SplitStartsView) and the pass picker. That card is the Nov 17 case: a straightaway session filmed with Start still picked. The same flows are in the Android port: AnalysisPlayerScreen reanalyzeOptions, ReanalyzeCard in SplitStartsScreen and PassPickerScreen, and KindUiTest reanalyzeA",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T11:48+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked that commits 1a499a2 (PR #50) and c3f1d42 (PR #67) are on origin/master and that their code is still there: KindFlow.reanalyzeOptions in the player's More menu, the finish card's reanalyze buttons, ReanalyzeCard in PassPickerView and SplitStartsView, plus the Android twins in AnalysisPlayerScreen.kt, ResultsViews.kt, PassPickerScreen.kt and SplitModel.kt. I didn't rebuild or re-run any che",
-                "next_step": "On your phone, open a straightaway clip that was analyzed as Starts. Tap More, then 'Re-analyze as a straightaway', and check it re-analyzes as a straightaway. If something still doesn't work, edit the to-do to describe what you saw."
+                "at": "2026-11-20T11:50+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt, wired into the UI on both platforms. gh pr list shows #50 and #67 merged. No build was run because no code changed.",
+                "next_step": "On your phone, open a recording filmed with Start picked. Use the 'Filmed something else?' card and tap 'Re-analyze as straightaways', or open a single clip and pick More > 'Re-analyze as a straightaway'. If that works, mark t127 done. If something is still missing, edit the to-do to say exactly what."
               }
             },
             {
