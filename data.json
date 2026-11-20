@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged Nov 18, the day after the Nov 17 note) added one-tap \"Re-analyze as ...\" on iOS and Android. It is in the player's More menu (\"Re-analyze as a straightaway\" listed first on a start), on the finish card (\"Analyzed as a start. Filmed something else?\"), and on a long recording's review (\"Re-analyze as straightaways\"), which looks through the recording again for passes. Current master (94d6bf0) still has all three entry points on both platforms. No new PR opened.",
+                "summary": "This was already done: PR #67, merged Nov 18, added a one-tap 'Re-analyze as\u2026' option on iOS and Android. It's in the player's More menu (a start clip lists 'Re-analyze as a straightaway' first), on the results screen, and on the long-recording review and run picker screens, so nothing was changed this run.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:08+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "On master 94d6bf0, ./Tools/verify.sh printed ALL CHECKS PASSED, including the Re-analyze checks (\"a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways\"). The code shows the iOS player menu (AnalysisPlayerView.swift:650-659), the finish card, SplitStartsView/PassPickerView, and the Android twins (AnalysisPlayerScreen.kt, PlayerStage.kt, SplitSta",
-                "next_step": "On a TestFlight build that includes PR #50 (1.0.4 or later): set the record screen to Start, film a straightaway, open it, tap More (top right) and tap \"Re-analyze as a straightaway\". It should re-analyze with straightaway phases (Acceleration / Top speed). If you still saw only the manual fix after Nov 18, tell me which screen you were on so it can be added there."
+                "at": "2026-11-20T09:15+00:00",
+                "verified": "Read the current master code on both platforms. ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' tests in Tools/tests_kindui.swift and the reanalyze-as-straightaways pass test in Tools/tests_passes.swift. The Android KindUiTest/PassesTest mirrors exist, but I did not run Gradle or xcodebuild because nothing changed.",
+                "next_step": "On a TestFlight build that includes PR #67: set the record screen to Start, film a straightaway, open the clip, tap More (top right), then 'Re-analyze as a straightaway'. The clip should re-analyze as a straightaway. For a long recording, the split review should show 'Re-analyze as straightaways'. If this still feels like manual work, say what's missing (for example, the option should be on the li"
               }
             },
             {
