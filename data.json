@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master on both platforms, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu, and PR #67 (merged Nov 18) added a 'Re-analyze as straightaways / curves' card to a long recording's starts review and pass picker, plus a 'Filmed something else?' card on the finish screen. iOS: KindFlow.reanalyzeOptions/reanalyzeChoices in StrideLab/Playback/KindLogic.swift, used in AnalysisPlayerView, ResultsViews, SplitStartsView and PassPickerView. Android: the same in core/.../playback/KindLogic.kt, AnalysisPlayerSc",
+                "summary": "Already done: PR #50 (merged Nov 18) added one-tap 'Re-analyze as\u2026' options on iOS and Android, in the player's More menu, on the results screen, and on long-recording review. Nothing new was needed, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:38+00:00",
-                "verified": "Read origin/master (94d6bf0). Found the feature in the iOS and Android code, and with gh found PRs #50 and #67 merged. Builds and checks were not re-run, because nothing changed.",
-                "next_step": "Mark t127 done in the tracker. To confirm on your phone: record a straightaway with Filming set to Start, open it, and tap 'Re-analyze as straightaways' on the review (or, on a single clip, More > 'Re-analyze as a straightaway'). If that still misses what you hit on Nov 17, edit the task to say which screen made you fix it by hand."
+                "at": "2026-11-20T08:40+00:00",
+                "verified": "Confirmed by reading the code and git history in a fresh worktree of origin/master (94d6bf0): the feature and its tests are on both platforms. No build was run because nothing changed.",
+                "next_step": "On the current TestFlight build, open a start clip that was really a straightaway, tap More, then 'Re-analyze as a straightaway', and check that it re-analyzes as stride. If that works, close t127 in the tracker."
               }
             },
             {
