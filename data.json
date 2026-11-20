@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android: PR #50 and PR #67 (both merged Nov 18) added one-tap 'Re-analyze as\u2026' to the player's More menu, the finished-analysis card and a long recording's review screen. Nothing new was changed and no PR was opened.",
+                "summary": "Already shipped on master, on iOS and Android. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the finished clip's More menu (KindFlow.reanalyzeOptions; a straightaway is listed first for a clip analysed as a start). PR #67 (merged Nov 18) added the 'Re-analyze as straightaways / curves' card to a long recording's review (SplitStartsView and PassPickerView; on Android, SplitStartsScreen and PassPickerScreen). That card covers the Nov 17 case, a straightaway session filmed with Starts still selected. Android has the same code in KindLogic.kt, Analysis",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:42+00:00",
-                "verified": "Read current master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle, used in AnalysisPlayerView.swift:650-659, ResultsViews.swift:942-975, SplitStartsView.swift:1329-1421, PassPickerView.swift:54-58, and the Kotlin mirrors in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. ./Tools/verify.sh printed ALL CHECKS PASSED, including 'a recordi",
-                "next_step": "On the phone, open a clip that was analyzed as a start, tap More (top right), and tap 'Re-analyze as a straightaway'. It should re-analyze as a straightaway in one tap. For a long recording, the review screen has a 'Re-analyze as straightaways' button. If something about this still falls short, edit the task to say what, then re-queue it. Otherwise mark t127 done."
+                "at": "2026-11-20T10:44+00:00",
+                "verified": "Read current origin/master (94d6bf0). The re-analyze code is in StrideLab/Playback/KindLogic.swift, AnalysisPlayerView.swift, Split/SplitStartsView.swift and Split/PassPickerView.swift, and the Android twins are in android/. gh pr list shows #50 and #67 merged. No build was run because nothing was changed.",
+                "next_step": "Mark t127 done in the tracker so it stops being picked up. To confirm on the phone: (1) on the record screen set Filming to Start and film a few straightaway reps; (2) open the recording; on its review, tap 'Re-analyze as straightaways'; (3) open a finished clip analysed as a start, tap More, then 'Re-analyze as a straightaway', and check it re-analyzes as a stride. If something still doesn't work"
               }
             },
             {
