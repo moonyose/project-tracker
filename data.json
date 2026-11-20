@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master: PR #50 (branch claude/t127-reanalyze-as, merge fe99a5f, commits 1a499a2 and c3f1d42) added one-tap 'Re-analyze as a straightaway / start / curve (Beta)' on iOS. It shows in the player's More menu (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift), on the finish card (ResultsViews.swift) and, for a whole recording, in the pass picker / split screen ('Re-analyze as straightaways', SplitModel.reanalyze). Android has the same thing: AnalysisPlayerScreen.kt More menu, ReanalyzeCard in KindViews.kt, PassPickerScreen.kt, SplitStartsScreen.kt and SplitModel.reanalyze, wit",
+                "summary": "This is already in the app on iOS and Android: PR #50 (this same to-do) and PR #67 added one-tap \"Re-analyze as a straightaway / start / curve\" buttons, and both are merged to master. Nothing new was needed, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:59+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) on both platforms and confirmed the re-analyze entry points and the Android tests exist. Nothing was built or run, because nothing changed.",
-                "next_step": "On the latest TestFlight build, open a straightaway clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway', and check the phases and tips change. If that still isn't what you wanted (for example, a prompt right after recording, or re-analyzing several clips from the library at once), edit the to-do to say so."
+                "at": "2026-11-20T02:01+00:00",
+                "verified": "Read the code on origin/master (94d6bf0), no build run because nothing changed. iOS: the player's More menu has a Re-analyze section (AnalysisPlayerView.swift ~L650, KindFlow.reanalyzeOptions, shown once a result exists). The end-of-clip card has the buttons (ResultsViews.swift ~L942), and so do the long-recording review and pass picker (SplitStartsView.swift ~L1420, PassPickerView.swift ~L54, \"Re",
+                "next_step": "On a TestFlight build that includes PR #50 or later: record a straightaway with the record screen still set to Start. On the review screen, tap \"Re-analyze as straightaways\". Or open a finished clip, tap More (top right), then \"Re-analyze as a straightaway\". If this is still not working on your phone, edit the to-do with what you saw and it will be picked up again."
               }
             },
             {
