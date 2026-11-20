@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, so no new PR. PR #50 added a one-tap 'Re-analyze as ...' option to the player's More menu on iOS and Android. PR #67 added it to the Starts review screen ('Re-analyze as straightaways'), the pass picker and the finish screen.",
+                "summary": "This is already on master for iOS and Android (PR #67 and commit 1a499a2, both Nov 18), so no new PR was opened. You can re-analyze a clip in one tap from the player's More menu, from the 'Analyzed as a start. Filmed something else?' card on the results, and from a long recording's review screen.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T15:11+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): every entry point is still wired on both iOS (AnalysisPlayerView.swift:653, SplitStartsView.swift:1420, PassPickerView.swift:54, ResultsViews.swift:942) and Android (AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt, ResultsViews.kt). Nothing was built or run because nothing changed.",
-                "next_step": "On a TestFlight build that includes #67, record a straightaway with the record screen left on Starts. On the Starts review screen, tap 'Re-analyze as straightaways' and check that it rescans as straightaways. Also open an analyzed clip, tap More and check that 'Re-analyze as ...' is there. If both work, close the to-do."
+                "at": "2026-11-20T15:13+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) and confirmed that the merged commits are there and that each re-analyze entry point exists on both platforms. Nothing was changed, so no build or checks were re-run in this run.",
+                "next_step": "On the current TestFlight build, open a straightaway clip that was analyzed as a start. Tap More, then 'Re-analyze as a straightaway', and confirm it re-analyzes in one tap. For a long recording, check that the review screen shows 'Re-analyze as straightaways'. If something about it still falls short, edit the to-do to say what."
               }
             },
             {
