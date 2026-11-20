@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as\u2026' rows to the player's More menu. PR #67 (merged 2026-11-18) added it to the results card, the starts/split screen and the pass picker for a recording filmed as the wrong kind, and ported all of it to Android (KindLogic.kt reanalyzeOptions/reanalyzeChoices, AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt, ResultsViews.kt, with KindUiTest coverage). PR #78 only hides the More button while analysis is still running; the Re-analyze rows are still in the menu once a result exists (Analysis",
+                "summary": "Already shipped on master, iOS and Android. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as a straightaway / start / curve\" item to the player's More menu, with the likeliest mix-up listed first. PR #67 (merged 2026-11-18) added \"Re-analyze as straightaways\" for a long recording filmed with the wrong kind picked, on the split-starts and pass-picker screens. Android has the same calls (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt), backed by KindFlow.reanalyzeOptions/reanalyzeTitle in core with KindUiTest coverage. Nothing left to change.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:44+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read current origin/master (94d6bf0). Confirmed with gh that PRs #50 and #67 are merged, and found the Re-analyze entry points in iOS and Android source. I did not rebuild or run tests because nothing changed.",
-                "next_step": "On the latest TestFlight build: record a straightaway with the record screen still set to Starts. When results show, tap the More (\u2026) button top right and tap 'Re-analyze as a straightaway' (or use the 'Re-analyze as straightaways' card on the starts screen). Check that it re-runs as a straightaway. If that row is missing or does something else, edit this to-do with what you saw."
+                "at": "2026-11-20T14:47+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the code on origin/HEAD: the Swift and Kotlin call sites are wired in the player More menu, the results view and the split and pass screens. Did not rebuild, because no code changed.",
+                "next_step": "On a TestFlight build after Nov 18: open a straightaway clip that was analyzed as a start, tap More (...), tap 'Re-analyze as a straightaway', and check that the results come back as straightaway analysis. If this doesn't match what you meant (for example, you want the option offered on the library list or right after analysis), edit the task to say where."
               }
             },
             {
