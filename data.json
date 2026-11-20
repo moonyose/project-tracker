@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #67 (merged Nov 18, commit cc7b90d, already on master) added one-tap \"Re-analyze as starts / straightaways / curves\" on iOS and Android. It appears on a long recording's review screen, the pass picker, the finish card, the player's More menu and the library's Analyze as menu. The scan cache also records what it looked for, so a recording first scanned as starts is scanned again for passes when re-analyzed as straightaways. No new PR opened.",
+                "summary": "Already done. PR #50 for this same task (branch claude/t127-reanalyze-as) was merged on 2026-11-18, and #67 built on it. Both platforms already have it. iOS: the player's More menu shows 'Re-analyze as a straightaway' and the other kinds (KindFlow.reanalyzeOptions in AnalysisPlayerView.swift), the results card has a 'Filmed something else?' row (ResultsViews.swift), and the split screens have 'Re-analyze as straightaways' for a whole recording (SplitStartsView.swift, PassPickerView.swift). Android has the same in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScre",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:11+00:00",
-                "verified": "Read the code on origin/HEAD (94d6bf0). iOS: KindFlow.reanalyzeChoices/reanalyzeOptions/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift, ReanalyzeCard in SplitStartsView review and PassPickerView, and the re-analyze rows in the AnalysisPlayerView More menu. Android: the same in KindLogic.kt, SplitStartsScreen.kt, PassPickerScreen.kt and AnalysisPlayerScreen.kt, with tests in KindUiTe",
-                "next_step": "On a TestFlight build that includes PR #67, record a straightaway with Starts still selected, open it, and tap \"Re-analyze as straightaways\" on the review screen. If that still doesn't do what you wanted, edit the to-do to say what is missing (for example, a different place for the button) and it can be picked up again."
+                "at": "2026-11-20T04:13+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Checked the code on origin/HEAD and that PR #50 is merged (gh pr view 50). I didn't rebuild or re-run the checks because nothing changed.",
+                "next_step": "Mark t127 done. To see it on your phone: open a clip that was analyzed as a start, tap More (...), then 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and then the straightaway results. If the 'Re-analyze as' option is missing in some place you expected, add a note to the task saying where."
               }
             },
             {
