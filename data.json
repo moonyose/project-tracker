@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on iOS and Android. Commit 1a499a2 ('Add one-tap \"Re-analyze as ...\" to the player's More menu') and commit c3f1d42 ('Reanalyze as another kind ...'), both from Nov 18, add one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' in four places: the player's More menu, the finish card ('Analyzed as a start. Filmed something else?'), the long-recording review, and the pass picker ('Re-analyze as straightaways'). A recording first scanned as starts is scanned again for passes after you re-analyze it as straightaways. These are the KindFlow.reanalyzeOptions / r",
+                "summary": "Already shipped. One-tap \"Re-analyze as...\" for this to-do (t127) was merged in moonyose/StrideLab PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) and extended in PR #67 (reanalyze-skeleton-toggle-beta). On current master (94d6bf0) it is still in place on both platforms. iOS: the player's More menu has one-tap rows such as \"Re-analyze as a straightaway\" (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions), there is a ReanalyzeCard on the finished-clip results (ResultsViews.swift), and the long-recording review and pass picker have \"Re-analyze as straightaways\" (SplitStartsView.swift /",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T18:08+00:00",
-                "verified": "./Tools/verify.sh on current master printed ALL CHECKS PASSED. That run includes the re-analyze tests in Tools/tests_kindui.swift and Tools/tests_passes.swift. No xcodebuild or Gradle run, because no code changed.",
-                "next_step": "On a TestFlight build that includes the Nov 18 merges: set the record screen to Start and film a few straightaway runs. Open the clip or the recording's review, then tap 'Re-analyze as a straightaway' (or 'Re-analyze as straightaways' on the review). It should show 'Re-analyzing as a stride' and then give stride coaching. If that's done, close t127."
+                "at": "2026-11-20T18:10+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): the reanalyze entry points are present in the iOS sources and the Android sources, with tests in Tools/tests_kindui.swift, Tools/tests_passes.swift, KindUiTest.kt and PassesTest.kt. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with Starts still selected, open the clip, tap More (top right) and choose \"Re-analyze as a straightaway\". For a long recording, use \"Re-analyze as straightaways\" on the review screen. If that still falls short of what you meant (for example, you want it offered right after recording or in the clip library), edit the to-do to say wh"
               }
             },
             {
