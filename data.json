@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PRs #50 and #67 (both merged Nov 18) added one-tap \"Re-analyze as\u2026\" on iOS and Android. It's on the recording review screen ('Re-analyze as straightaways') and in a finished clip's More menu, and both are still on master. No new PR.",
+                "summary": "Already shipped. PR #67 (commit c3f1d42, merged Nov 18, the day after the Nov 17 note) added one-tap 'Re-analyze as ...' on iOS and Android. It appears on the starts review card for a long recording ('Re-analyze as straightaways', SplitStartsView.swift ~L1417 / SplitStartsScreen.kt ~L384), in the pass picker, on the finish card, and in the player's More menu. The scan cache now records what it looked for, so a recording first scanned as starts gets scanned again for passes. Tests are in Tools/tests_kindui.swift, Tools/tests_passes.swift and android/core KindUiTest/PassesTest. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:00+00:00",
-                "verified": "Code read only, nothing built. On origin/master 94d6bf0 I confirmed the ReanalyzeCard and More-menu re-analyze entries in the iOS and Android sources, and Android tests for them (KindUiTest.kt, PassesTest.kt). Builds, verify.sh and Gradle were not run because nothing changed.",
-                "next_step": "On a current TestFlight build: set the record screen to Starts, film a straightaway, and stop. On the review screen, tap 'Re-analyze as straightaways' under the start cards and check that the pass picker appears. Then open any finished clip, tap More, and check that 'Re-analyze as a straightaway' re-runs the analysis as a straightaway. If either is missing or not one tap, edit the to-do to say whi"
+                "at": "2026-11-20T05:02+00:00",
+                "verified": "Checked the code on origin/master (94d6bf0): ReanalyzeCard / KindFlow.reanalyzeChoices / reanalyzeRecordingTitle exist on both iOS and Android in the starts review, pass picker, results and player menu. Builds and tests were not re-run because nothing changed.",
+                "next_step": "On the latest TestFlight build: record a straightaway with Starts still selected, open it, scroll below the start cards, tap 'Re-analyze as straightaways' and confirm the passes show up. If something specific still feels manual, edit the to-do to say where."
               }
             },
             {
