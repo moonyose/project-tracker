@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap \"Re-analyze as ...\" to the iOS player's More menu, and PR #67 extended it. Current master has it on iOS (AnalysisPlayerView More menu via KindFlow.reanalyzeOptions; ReanalyzeCard \"Re-analyze as straightaways\" on the split-starts and pass-picker screens via SplitModel.reanalyze) and on Android (ResultsViews.kt player menu, ReanalyzeCard in SplitStartsScreen.kt and PassPickerScreen.kt, covered by KindUiTest.kt). No new PR opened.",
+                "summary": "Already done on master. PR #50 (merged Nov 18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / a start / a curve' to the clip player's More menu on iOS and Android. PR #67 (merged) added 'Re-analyze as straightaways/starts' to the review of a long recording and on the results screen, also on both platforms. In the code on master, the iOS views (AnalysisPlayerView, ResultsViews, KindViews, SplitStartsView, PassPickerView) and the matching Android screens use KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle. Tools/tests_kindui.swift and android KindUiTest.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:21+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code on origin/master (94d6bf0) and confirmed the feature is wired on both platforms. Checked that PR #50 is merged with gh. Did not rebuild, since no code changed.",
-                "next_step": "On the phone, record a straightaway with the record screen left on Starts. On the split screen or in the player's More menu, tap \"Re-analyze as straightaways\" (or \"Re-analyze as a straightaway\") and check that it re-runs as a straightaway. If it doesn't work in that exact flow, edit the task to say which screen failed."
+                "at": "2026-11-20T01:22+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) and checked with gh that PRs #50 and #67 are merged. I didn't rebuild because nothing changed.",
+                "next_step": "On the latest TestFlight build: open a straightaway clip that was analyzed as a Start, tap More (...) in the player, tap 'Re-analyze as a straightaway', and check the phases switch to Acceleration/Top speed. If that row is missing on your build, update to a build made after Nov 18 or reopen the task with what you saw."
               }
             },
             {
