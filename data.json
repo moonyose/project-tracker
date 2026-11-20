@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already implemented and merged. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap 'Re-analyze as ...' rows to the player's More menu, and PR #67 (merged 2026-11-18) added a 'Re-analyze as straightaways/curves/starts' card on a long recording's review (start cards and pass picker), which is the exact Nov 17 case (filmed straightaways with Starts still picked). master (94d6bf0) has it on iOS (KindLogic.swift reanalyzeOptions/reanalyzeChoices, AnalysisPlayerView, ResultsViews, SplitStartsView ReanalyzeCard, PassPickerView) and on Android (KindLogic.kt, SplitStartsScreen.kt",
+                "summary": "Already implemented and merged on both platforms. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a curve / a start' to the player's More menu, and PR #67 (c3f1d42) extended it to the review, pass picker and finish card. It is still on master at 94d6bf0: iOS StrideLab/Playback/AnalysisPlayerView.swift (More menu, KindFlow.reanalyzeOptions), the finish card (onReanalyze), the failed-analysis stage and Split/PassPickerView.swift. Android has it in ui/player/AnalysisPlayerScreen.kt, ResultsViews.kt, ui/split/PassPickerScree",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:45+00:00",
-                "verified": "Read the current master code paths on both platforms and confirmed via gh that PRs #50 and #67 are MERGED. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build at or after 1.0.4: record a straightaway with the record screen left on Starts. On the review screen, tap 'Re-analyze as straightaways' and check that the passes come up. Also open a finished clip, go to More, tap 'Re-analyze as a straightaway', and check that it re-runs. If that still feels like manual work, edit the to-do to say which screen falls short. Otherwise mark t127"
+                "at": "2026-11-20T10:48+00:00",
+                "verified": "Read the master source and git history to confirm the feature is present on iOS and Android. No build was run because no code changed.",
+                "next_step": "On the current TestFlight build, open a straightaway clip that was analyzed as a start. Tap More (top right) and tap 'Re-analyze as a straightaway'. It should re-analyze and show straightaway coaching. If that does not happen on your build, edit this to-do to say what you saw."
               }
             },
             {
