@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done, so no new PR: one-tap \"Re-analyze as\u2026\" shipped on iOS and Android in merged PRs #50 and #67. It's in the player's More menu, on a finished clip's results, and on the long-recording review screens. Earlier PRs #55, #60 and #70 for this to-do were already closed as superseded, so this task is probably still open by mistake.",
+                "summary": "Already on master for iOS and Android: PR #50 added 'Re-analyze as\u2026' to the clip menu and results card, and PR #67 added a one-tap 'Re-analyze as straightaways / curves (Beta)' card on the split screen for your Nov 17 case. Seven later duplicate t127 PRs were closed, so no new PR this run.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:34+00:00",
-                "verified": "Read the code at origin/master 94d6bf0. The player More menu still lists KindFlow.reanalyzeOptions (AnalysisPlayerView.swift ~line 651) after #78 removed the dead menu state. SplitStartsView.reanalyze(as:) and PassPickerView's ReanalyzeCard are present. The Android twins are present. Read the closing comment on #70 ('superseded by #50, #51 and #67 ... Closed at Austin's request'). Nothing was buil",
-                "next_step": "Mark t127 done on the tracker. To confirm on the phone: open any analyzed clip, tap More (top right) and pick 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and the kind chip should change. For a long take recorded on Starts, use 'Re-analyze as straightaways' on the starts review screen."
+                "at": "2026-11-20T13:36+00:00",
+                "verified": "Read origin/master (94d6bf0), the merged PR list, and the re-analyze code and tests on both platforms (SplitStartsView.swift, PassPickerView.swift, SplitStartsScreen.kt, PassPickerScreen.kt, tests_kindui.swift, KindUiTest.kt). Didn't run a build, verify.sh, bend or Gradle because nothing changed.",
+                "next_step": "On the current TestFlight build, leave Start selected, film a straightaway and stop recording. Then tap 'Re-analyze as straightaways' at the bottom of the split screen. If it finds the runs, mark t127 done so it stops being queued."
               }
             },
             {
