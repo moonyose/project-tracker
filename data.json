@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2 'Add one-tap \"Re-analyze as ...\" to the player's More menu') and PR #67 (c3f1d42) are merged into master. On current master (94d6bf0) one-tap re-analyze exists on iOS and Android in three places: (1) the player's More menu lists 'Re-analyze as a straightaway / a start / a curve (Beta)', with the likeliest mistake first (a take left on Starts is offered straightaway first) (KindFlow.reanalyzeOptions; AnalysisPlayerView.swift ~L651, AnalysisPlayerScreen.kt ~L529); (2) the end-of-clip finish card (ResultsViews.swift ~L962, R",
+                "summary": "This is already in the app on iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as \u2026' options to the player's More menu, and PR #67 added a 'Filmed something else?' card on the results screen with one button for each other type.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:36+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): checked the More menu, finish card and split-screen re-analyze entry points on iOS and Android, and read the #78 diff to confirm the menu still appears once a result exists. No build was run because nothing changed.",
-                "next_step": "Austin: open a clip filmed with Starts picked that is really a straightaway (or a recording with several runs), tap More (top right), then 'Re-analyze as a straightaway' (or 'Re-analyze as straightaways' on the runs screen). If that works, mark t127 done. If it fails on your build, update TestFlight/Play to a build that includes PR #50/#67. If the Nov 17 clip went down another path that had no suc"
+                "at": "2026-11-20T02:38+00:00",
+                "verified": "Read current master (94d6bf0). Grepped every call site of KindFlow.reanalyzeOptions, reanalyzeChoices, reanalyzeTitle and reanalyzeRecordingTitle on iOS and Android, and checked that #78 did not remove the menu entry. Not run, because nothing changed: no xcodebuild, Tools/verify.sh, bend or Gradle. Master's PR checks already cover this code.",
+                "next_step": "On the phone: record a straightaway with Starts still selected on the record screen and let it finish analyzing. Tap More (top right), then 'Re-analyze as a straightaway'; the results card's 'Filmed something else?' buttons do the same. If that works, tick t127 off the list. If it still felt manual on Nov 17, the build on the phone may be older than PR #67, so update from TestFlight first."
               }
             },
             {
