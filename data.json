@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. Commit c3f1d42 (Nov 18, 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta') is on master and adds one-tap 'Re-analyze as a straightaway / start / curve (Beta)' on iOS and Android, likeliest mix-up first (Starts -> Straightaways at the top). On iOS it is in four places: the player's More menu (AnalysisPlayerView.swift), the finish card (ResultsViews.swift), the long-recording review (SplitStartsView.swift ReanalyzeCard) and the pass picker (PassPickerView.swift). The Kotlin port has the same in AnalysisPlayerScreen.kt, ResultsViews.kt, S",
+                "summary": "This is already built on iOS and Android, so no change was made. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More (\u2026) menu, and PR #67 (merged Nov 18) added 'Analyzed as a start. Filmed something else?' re-analyze buttons on the results card and the long-recording screens.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:43+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): KindFlow.reanalyzeChoices/reanalyzeOptions/reanalyzeTitle in StrideLab/Playback/KindLogic.swift and the call sites above, plus the Android twins in android/core/.../playback/KindLogic.kt and the app UI files. Used git log -S to confirm c3f1d42 is on master. Ran no build or tests because nothing changed.",
-                "next_step": "On your phone (TestFlight build from Nov 18 or later): open a straightaway clip that was recorded on Starts, tap More (...) in the player, then 'Re-analyze as a straightaway'. Check that it re-analyzes with stride tips. For a long recording, the review screen shows 'Looked through for starts. Filmed something else?' with a 'Re-analyze as straightaways' button. If any of that is missing or doesn't "
+                "at": "2026-11-20T04:46+00:00",
+                "verified": "Read the code on origin/HEAD (94d6bf0): AnalysisPlayerView.swift lines 651-659 (More menu Re-analyze section), KindLogic.swift reanalyzeOptions/reanalyzeChoices/reanalyzeTitle, plus the Android twins. Confirmed via gh that PRs #50 and #67 are merged. No build or test run, because nothing was changed.",
+                "next_step": "On the phone with the current build: open a clip recorded on Starts that is really a straightaway, wait for analysis to finish, tap More (...), and tap 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a straightaway' and then straightaway results. If Austin's Nov 17 clip was on a build from before Nov 18, updating the build is the fix. If he still can't find the option, reopen the t"
               }
             },
             {
