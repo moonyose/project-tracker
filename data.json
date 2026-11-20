@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: one-tap \"Re-analyze as\u2026\" merged on Nov 18 in PR #50 (a single clip, from the player's More menu) and PR #67 (a long recording filmed as the wrong kind, e.g. Starts that were really straightaways). Both iOS and Android have it, and it is still on master after #78.",
+                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap \"Re-analyze as ...\" to the iOS player's More menu, and PR #67 extended it. Current master has it on iOS (AnalysisPlayerView More menu via KindFlow.reanalyzeOptions; ReanalyzeCard \"Re-analyze as straightaways\" on the split-starts and pass-picker screens via SplitModel.reanalyze) and on Android (ResultsViews.kt player menu, ReanalyzeCard in SplitStartsScreen.kt and PassPickerScreen.kt, covered by KindUiTest.kt). No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:19+00:00",
+                "at": "2026-11-20T01:21+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code, built nothing. On current master (94d6bf0), KindFlow.reanalyzeOptions/reanalyzeTitle drive the menu in StrideLab/Playback/AnalysisPlayerView.swift, ResultsViews.swift and SplitStartsView.swift, and on Android in AnalysisPlayerScreen.kt, ResultsViews.kt and SplitStartsScreen.kt. The Android KindUiTest.kt covers it. gh shows PRs #50 and #67 as merged.",
-                "next_step": "On the phone: open a clip that was analyzed as a start, tap More, then tap \"Re-analyze as a straightaway\" and check that it re-runs as a straightaway. If something about it still falls short, edit this to-do to say what is missing."
+                "verified": "Read the code on origin/master (94d6bf0) and confirmed the feature is wired on both platforms. Checked that PR #50 is merged with gh. Did not rebuild, since no code changed.",
+                "next_step": "On the phone, record a straightaway with the record screen left on Starts. On the split screen or in the player's More menu, tap \"Re-analyze as straightaways\" (or \"Re-analyze as a straightaway\") and check that it re-runs as a straightaway. If it doesn't work in that exact flow, edit the task to say which screen failed."
               }
             },
             {
