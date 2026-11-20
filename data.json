@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on iOS and Android: PR #50 (merged Nov 18) added one-tap 'Re-analyze as\u2026' to the finish card and the player's More menu, and PR #67 (merged Nov 18) added 'Re-analyze as straightaways/starts/curves' to the long-recording review screens. No new PR was needed.",
+                "summary": "This is already in the app on iOS and Android: PR #50 added 'Re-analyze as a straightaway / a curve / a start' to the clip player's More menu, and PR #67 added a 'Filmed something else?' card with Re-analyze buttons on the finish card and review screens. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:17+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current origin/master (94d6bf0): re-analyze code is present on iOS (StrideLab/Playback/KindLogic.swift, wired in AnalysisPlayerView, ResultsViews, PassPickerView, SplitStartsView) and Android (android/core/.../playback/KindLogic.kt, tests in KindUiTest.kt). gh shows PRs #50 and #67 merged. No code changes, so no builds were run.",
-                "next_step": "On a TestFlight build, record a straightaway with Starts still selected, then tap 'Re-analyze as a straightaway' on the finish card (or More > Re-analyze as\u2026 in the player) and confirm it re-runs. If any step still feels manual, edit the to-do to name that screen."
+                "at": "2026-11-20T03:19+00:00",
+                "verified": "Read the git history and master source only (git log, git show, git grep in StrideLab/ and android/); the feature is present on master (94d6bf0) on both platforms. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build from #67 or later, record a straightaway with the record screen left on Starts, open the clip and tap 'Re-analyze as a straightaway'. If any part is still manual, edit the task to say exactly what."
               }
             },
             {
