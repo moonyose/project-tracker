@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (\"One-tap 'Re-analyze as...' in the player's More menu\", branch claude/t127-reanalyze-as) was merged on 2026-11-18, and #67 followed it. On origin/master today, iOS has 'Re-analyze as a straightaway/start/curve' in the player's More menu (KindFlow.reanalyzeOptions in AnalysisPlayerView), on the finish card (ResultsViews onReanalyze), and a 'Re-analyze as straightaways' card for whole recordings in the Split/pass picker (ReanalyzeCard in PassPickerView/SplitStartsView, SplitModel.reanalyze). Android mirrors all three (AnalysisPlayerScreen, ResultsViews/PlayerStage, PassP",
+                "summary": "This is already on master for iOS and Android (commits 1a499a2 and c3f1d42, Nov 18). After analysis, the player's \"...\" menu has one-tap \"Re-analyze as a straightaway / curve / start\" items, and the review, pass picker and finish screens have the same option. No PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:48+00:00",
-                "verified": "Searched current origin/master (94d6bf0) on both platforms for the re-analyze entry points and confirmed with gh that PR #50 is MERGED. No build was run because no code changed.",
-                "next_step": "Install the latest TestFlight build, which includes PR #50. Open a straightaway clip that was recorded with Starts selected, tap More in the player, then tap 'Re-analyze as a straightaway'. It should re-run the analysis as a straightaway. If you still had to fix it by hand on Nov 17, that phone was probably running a build from before Nov 18. If it still misses on the new build, re-open the task a"
+                "at": "2026-11-20T02:50+00:00",
+                "verified": "Read the code at origin/master 94d6bf0: StrideLab/Playback/AnalysisPlayerView.swift (More menu, ForEach over KindFlow.reanalyzeOptions calling applyKind), KindLogic.swift, KindViews.swift ReanalyzeCard, SplitStartsView.swift/PassPickerView.swift, and the Android KindLogic.kt and KindUiTest.kt. Read the commit messages for 1a499a2 and c3f1d42, which name this exact Nov 17 scenario. No build or test",
+                "next_step": "On a TestFlight build that includes 1a499a2/c3f1d42: set the record screen to Filming: Start, film a straightaway, and open the clip once it's analyzed. Tap the More (...) button at top right and choose 'Re-analyze as a straightaway'. You should see the 'Re-analyzing' stage, then straightaway phases, and the library badge should read Stride. If it still feels manual, edit the to-do to say which sc"
               }
             },
             {
