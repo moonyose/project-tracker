@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master for iOS and Android, so no new PR. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added a one-tap 'Re-analyze as ...' to the player's More menu. PR #67 (merged Nov 18) added it to the results finish card, to the Starts review screen of a split recording (a ReanalyzeCard that says 'Re-analyze as straightaways' when a recording was scanned as starts, which is the Nov 17 case), and to the pass picker. Android has the same: ReanalyzeCard in SplitStartsScreen.kt, PassPickerScreen.kt and KindViews.kt, and re-analysis in AnalysisPlayerScreen.kt.",
+                "summary": "Already shipped on master. One-tap 'Re-analyze as ...' was merged in PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2 and c3f1d42) and kept through PR #67. iOS: the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions), the finish card (ResultsViews 'Analyzed as a start. Filmed something else?'), and a long recording's review and pass picker ('Re-analyze as straightaways', SplitStartsView / PassPickerView). Android has the same: KindLogic.kt plus AnalysisPlayerScreen, ResultsViews, KindViews, SplitStartsScreen and PassPickerScreen, with tests in KindUiTest and PassesTest. A",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:36+00:00",
-                "verified": "Read master at 94d6bf0. git log shows PRs #50 and #67 merged. Found the re-analyze option in StrideLab/Split/SplitStartsView.swift (review screen, shown whether or not starts were found), PassPickerView.swift, Playback/ResultsViews.swift, KindViews.swift and AnalysisPlayerView.swift, and in the matching Kotlin screens. Nothing was changed, so no build or verify.sh run this time; those checks ran o",
-                "next_step": "Update TestFlight to a build from after Nov 18. Record straightaways with Starts still picked on the record screen. On the Starts review screen, tap 'Re-analyze as straightaways' and check that it scans again for straightaways. Then mark t127 done in the tracker."
+                "at": "2026-11-20T07:38+00:00",
+                "verified": "Read origin/master (94d6bf0). Found the merged t127 commits in git log. Grepped the iOS and Android sources and found the re-analyze UI and tests on both. No builds were run, because no code changed.",
+                "next_step": "On the current TestFlight build, record a few straightaways with Filming set to Start. On the recording's review, tap 'Re-analyze as straightaways' and check that the runs come back as straightaways. Or open a finished clip and use More > 'Re-analyze as a straightaway'. If that build doesn't show these, it predates PR #50. If it does and something is still missing, edit the task to say where."
               }
             },
             {
