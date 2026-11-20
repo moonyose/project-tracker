@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android (commits 1a499a2 and c3f1d42, Nov 18). After analysis, the player's \"...\" menu has one-tap \"Re-analyze as a straightaway / curve / start\" items, and the review, pass picker and finish screens have the same option. No PR was needed.",
+                "summary": "Already done on master for iOS and Android (commits 1a499a2 and c3f1d42, Nov 18): one-tap 'Re-analyze as a straightaway / a start / a curve' buttons are in the player's More menu, on the finish card, and on a long recording's review screen ('Looked through for starts. Filmed something else?'). No PR needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:50+00:00",
-                "verified": "Read the code at origin/master 94d6bf0: StrideLab/Playback/AnalysisPlayerView.swift (More menu, ForEach over KindFlow.reanalyzeOptions calling applyKind), KindLogic.swift, KindViews.swift ReanalyzeCard, SplitStartsView.swift/PassPickerView.swift, and the Android KindLogic.kt and KindUiTest.kt. Read the commit messages for 1a499a2 and c3f1d42, which name this exact Nov 17 scenario. No build or test",
-                "next_step": "On a TestFlight build that includes 1a499a2/c3f1d42: set the record screen to Filming: Start, film a straightaway, and open the clip once it's analyzed. Tap the More (...) button at top right and choose 'Re-analyze as a straightaway'. You should see the 'Re-analyzing' stage, then straightaway phases, and the library badge should read Stride. If it still feels manual, edit the to-do to say which sc"
+                "at": "2026-11-20T02:52+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) and found the Re-analyze options on both platforms, with tests (Tools/tests_kindui.swift, KindUiTest.kt). No code changed, so no build or tests were run for this task.",
+                "next_step": "On a TestFlight build that includes the Nov 18 commits: record straightaways with the record screen left on Starts. On the review screen, or in the player's More (...) menu, tap 'Re-analyze as straightaways' / 'Re-analyze as a straightaway' and check that the clip comes back coached as a stride. If that's still not the flow you wanted, edit the to-do to say what's missing, for example a Library ro"
               }
             },
             {
