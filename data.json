@@ -944,13 +944,14 @@
             {
               "id": "t126",
               "text": "Label the Straightaway and Curve analysis buttons with \"(Beta)\" since that analysis isn't working right yet.",
-              "done": false,
+              "done": true,
               "notes": "",
               "due": null,
               "createdAt": "2026-10-27T21:30:46-04:00",
-              "updatedAt": "2026-10-28T01:31:07.594Z",
+              "updatedAt": "2026-11-20T19:19:14.134Z",
               "transcript": "Let's also add like a, a parentheses on straightaways and curves, like on the buttons, that it's in beta. So like when the, when the user is analyzing a straightaway or like choosing to analyze a straightaway, put in parentheses there, beta, because it's it's not working right now.",
-              "owner": "austin"
+              "owner": "austin",
+              "completedAt": "2026-11-20T19:19:14.134Z"
             },
             {
               "id": "t127",
