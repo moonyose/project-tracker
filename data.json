@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master on both platforms: PR #50 (branch claude/t127-reanalyze-as, 'Add one-tap \"Re-analyze as ...\" to the player's More menu') and follow-up PR #67. iOS: the player's More menu has one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows (AnalysisPlayerView.swift ~L650, KindFlow.reanalyzeOptions/reanalyzeTitle in Playback/KindLogic.swift), a 'Filmed something else?' row on the results (ResultsViews.swift ~L971), and 'Re-analyze as straightaways/starts' on the recording screens (Split/PassPickerView.swift, Split/SplitStartsView.swift). Android mirrors all of th",
+                "summary": "Already on master, nothing to change. PR #50 (moonyose/StrideLab, branch claude/t127-reanalyze-as, commit 1a499a2, Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu. PR #67 (c3f1d42, Nov 18) added the same one-tap choice to the long-recording review (SplitStartsView, 'Re-analyze as straightaways'), the pass picker and the finish card. It also made the scan cache record which kind it searched for, so a recording first scanned as starts is scanned again for passes. Both are on iOS (KindFlow.reanalyzeOptions/reanalyzeChoices, ReanalyzeCard) an",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:53+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): the feature is wired into the iOS and Android player menus and recording screens, and tests cover it on both (Tools/tests_kindui.swift kui_reanalyzeAsTest, android KindUiTest.reanalyzeAsTest). No builds run because nothing changed.",
-                "next_step": "On the current TestFlight build, open a clip analysed as Starts, tap More (the ... menu) and check that 'Re-analyze as a straightaway' re-runs it as straightaways in one tap. If that row is missing or does something else on your phone, edit this to-do and say what you saw."
+                "at": "2026-11-20T14:55+00:00",
+                "verified": "Read origin/master at 94d6bf0: the merge commits for #50 and #67 are in history, and the code paths are present and wired up on both platforms. No build was run because nothing changed.",
+                "next_step": "Check off the to-do. On the phone: open a clip that was analyzed as a start, tap More, and tap 'Re-analyze as a straightaway'. For a long recording left on Starts, the review screen shows a 'Re-analyze as straightaways' card. If a case still forces manual fixing, edit the task to name that screen."
               }
             },
             {
