@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #67 (merged 2026-11-18, 'Curve marked Beta, and Re-analyze as\u2026 for a recording filmed as the wrong kind', commit c3f1d42) added one-tap 'Re-analyze as\u2026' on iOS and Android: ReanalyzeCard in the split review (SplitStartsView / SplitStartsScreen) and pass picker (PassPickerView / PassPickerScreen), buttons on the finish card (ResultsViews), and entries in the player's More menu (AnalysisPlayerView / AnalysisPlayerScreen). The scan cache records which kind it looked for, so a recording scanned as starts and then switched to straightaways is looked through again for pass",
+                "summary": "This was already shipped in PR #50, which you merged. iOS and Android both have a one-tap 'Re-analyze as straightaways/starts' card on the confirm-starts screen and the pass picker, plus 'Re-analyze as\u2026' in the player's More menu. Later merges (#67, #76\u2013#78) kept all of these, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:52+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Confirmed PR #67 is merged and its commit is on origin/master (HEAD 94d6bf0). Ran ./Tools/verify.sh on current master: ALL CHECKS PASSED, including 'a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways'. Did not run an xcodebuild or Gradle build because nothing changed.",
-                "next_step": "On the phone (TestFlight build 1.0.4 or later): record a few straightaways with Start still selected. On the review screen, tap 'Re-analyze as straightaways' and check that the runs are found and coached as straightaways. If the button doesn't cover the case that happened on Nov 17, edit the task to say where it was missing."
+                "at": "2026-11-20T00:54+00:00",
+                "verified": "Read the code on origin/master at 94d6bf0 to confirm the entry points exist on both platforms. No build or tests were run, because nothing was changed.",
+                "next_step": "On the current TestFlight build, record a straightaway with Starts still picked. On the confirm-starts screen, tap 'Re-analyze as straightaways' on the card below the starts and check that it opens the pass picker or straightaway analysis. If it works, mark t127 done. If something is still missing, edit the task to say what."
               }
             },
             {
