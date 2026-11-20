@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms; no new PR. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu on iOS and Android (KindFlow.reanalyzeOptions, with tests in Tools/tests_kindui.swift and KindUiTest.kt). PR #67 (merged 2026-11-18) added the same one-tap choices to the finish card after a run, to the review screen of a long recording ('Looked through for starts. Filmed something else? Re-analyze as straightaways'), and to the pass picker, on iOS (SplitStartsView, PassPickerView, ResultsViews) and Androi",
+                "summary": "Already shipped on master in commit c3f1d42 (Nov 18, 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta'), the day after Austin's Nov 17 note. iOS: the player's More menu has one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows (AnalysisPlayerView.swift ~L650, KindFlow.reanalyzeOptions); the results panel has an 'Analyzed as a start. Filmed something else?' card with the same buttons (ResultsViews.swift ~L962); a long recording's review screens have 'Re-analyze as straightaways' (SplitStartsView.swift ~L1420, PassPickerView.swift ~L55).",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:00+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current origin/master (94d6bf0). The reanalyze code is in place on every surface listed in the summary on both platforms. Build and checks were not re-run because nothing changed. PR #50 recorded xcodebuild, verify.sh and Gradle all passing. bend was not available on the runner then.",
-                "next_step": "Check it on your phone with a TestFlight build that includes PRs #50 and #67. Set Filming to Start, record some straightaway strides, then open the clip. You should see 'Re-analyze as a straightaway' on the finish card and in the ... menu, or 'Re-analyze as straightaways' on a long recording's review. If it works, mark t127 done. If a screen is still missing the option, say which one."
+                "at": "2026-11-20T00:02+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): found the commit that added the feature with git log -S, checked every iOS and Android entry point, and confirmed #78 didn't remove any of them. No build was run because nothing changed.",
+                "next_step": "On the current TestFlight build, open a clip recorded on Starts that was really a straightaway. Tap More (top right) and choose 'Re-analyze as a straightaway', or use the 'Filmed something else?' buttons in the results panel. If this is still missing on your phone, the build is older than Nov 18. If it's there but not what you wanted, edit the to-do to say what's missing."
               }
             },
             {
