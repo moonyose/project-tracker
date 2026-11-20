@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (One-tap \"Re-analyze as...\" in the player's More menu, merged 2026-11-18) and PR #67 (Re-analyze as... for a recording filmed as the wrong kind, e.g. Starts -> Straightaways, merged 2026-11-18) cover this to-do on iOS and Android. On current master (94d6bf0) the entry points are all still there: the player's More menu (KindFlow.reanalyzeOptions in AnalysisPlayerView.swift / AnalysisPlayerScreen.kt), the results panel's onReanalyze, and ReanalyzeCard in the recording/pass picker screens (SplitStartsView.swift, PassPickerView.swift, SplitStartsScreen.kt,",
+                "summary": "Already shipped in PR #50 (merged Nov 18): one-tap \"Re-analyze as\u2026\" is on iOS and Android, in the player's More menu, the results screen, the pass picker, and a \"Filmed something else?\" card on the starts review screen that covers your Nov 17 case. Nothing new was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:42+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Checked that PRs #50 and #67 are MERGED with gh pr view, and grepped master for the reanalyze entry points on iOS and Android, including after PR #78. Did not build or run anything because nothing changed.",
-                "next_step": "Mark t127 done. To confirm on the phone: record straightaways with Starts still picked, open the recording, and tap \"Re-analyze as straightaways\" on the card (or use the player's More menu > Re-analyze as a straightaway for a single clip)."
+                "at": "2026-11-20T01:44+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read current origin/master (94d6bf0): found the re-analyze entry points in the Swift and Kotlin sources listed above, and confirmed with gh that PR #50 is MERGED. I did not rebuild or re-run checks because no code changed.",
+                "next_step": "On a TestFlight build that includes #50: record straightaways with Starts selected. On the starts review screen, scroll down to 'Filmed something else?' and tap 'Re-analyze as straightaways'. The pass picker should come up. If you tested an older build or the button didn't show where you expected, edit the task with the screen you were on."
               }
             },
             {
