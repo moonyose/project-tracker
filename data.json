@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. One-tap 'Re-analyze as ...' landed on master on Nov 18 in PR #50 (moonyose/StrideLab, branch claude/t127-reanalyze-as, commit 1a499a2) and PR #67 (c3f1d42), on both iOS and Android. It is in four places: the player's More menu ('Re-analyze as a straightaway / a curve (Beta) / a start', with straightaway listed first for a take recorded as Starts), the review's 'Analyzed as a start. Filmed something else?' card, the pass picker and the long-recording finish card ('Re-analyze as straightaways'). Each tap goes through the existing applyKind path, which handles the paywall, re-run",
+                "summary": "Already shipped on both platforms, so nothing new to do. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as a straightaway / a curve (Beta) / a start\" to the player's More menu. PR #67 (merged 2026-11-18) added \"Re-analyze as starts / straightaways / curves\" buttons to the review of a long recording (pass picker and starts split screen) and an \"Analyzed as a start. Filmed something else?\" card in the results. Current master still has all of these on iOS (AnalysisPlayerView.swift:653, ResultsViews.swift:967-971, PassPickerView.swift:54-58, SplitStartsView.swift:1420-1423) and on Android ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:49+00:00",
-                "verified": "Read current master and checked the code: KindFlow.reanalyzeOptions, reanalyzeChoices and reanalyzeTitle in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt; the menu rows in AnalysisPlayerView.swift (around line 650) and AnalysisPlayerScreen.kt (around line 530); ReanalyzeCard used in ResultsViews, SplitStartsView and PassPickerView and their Kotlin twins. Tests exist",
-                "next_step": "On the latest TestFlight build: record a straightaway with the record screen left on Starts. Open the clip and tap More (top right) > 'Re-analyze as a straightaway'. Check that it re-analyzes and the kind chip shows Stride with the person icon. If you were expecting something else (for example the option directly on the clip after recording, without opening More), edit this to-do to say where you "
+                "at": "2026-11-20T03:51+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) on both platforms and checked with gh that PRs #50 and #67 are merged. No code was changed, so no build or test was run.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with the record screen left on Start, open the clip, tap More > \"Re-analyze as a straightaway\", and check it comes back analyzed as a straightaway. If that doesn't happen on the phone, edit this to-do with what went wrong."
               }
             },
             {
