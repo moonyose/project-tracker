@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (merged 2026-11-18, 'One-tap \"Re-analyze as\u2026\" in the player's More menu') and commit c3f1d42 (merged via #67) added this on iOS and Android: the player's More menu has 'Re-analyze as a straightaway' / 'Re-analyze as a curve (Beta)' rows (likeliest mix-up first, hidden on shipped demos); the finish card in results offers the same; and the recording's pass picker and starts screen have a 'Re-analyze as straightaways' card that looks through the recording again as the new kind. I checked current master (94d6bf0) and it is all still wired after the #77/#78 player cleanup: i",
+                "summary": "Already on master as of Nov 18, after Austin's Nov 17 note. Commits 1a499a2 and c3f1d42 were merged in PR #67 (cc7b90d), on both iOS and Android. One-tap 'Re-analyze as ...' shows up in four places. (1) The player's More menu (KindFlow.reanalyzeOptions) lists the likeliest mistake first, so a clip analyzed as a start offers 'Re-analyze as a straightaway' at the top. (2) The finish card on the results screen says 'Analyzed as a start. Filmed something else?' with a button for each other kind. (3) The long-recording starts review has a ReanalyzeCard ('Re-analyze as straightaways'), which is the ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:19+00:00",
-                "verified": "./Tools/verify.sh on current master: ALL CHECKS PASSED, including the 'Re-analyze as \u2026' and 'Re-analyze as another kind' checks (tests_kindui.swift). Android has the same checks in KindUiTest.kt; I did not re-run Gradle because nothing changed. No xcodebuild run and no code changes.",
-                "next_step": "On a TestFlight build from Nov 18 or later: set the record screen to Start, film some straightaway strides, open the clip, tap More (\u2026) and choose 'Re-analyze as a straightaway'. Confirm you see 'Re-analyzing as a stride' and then straightaway coaching. A long recording shows a 'Re-analyze as straightaways' card on its runs screen. If that works, mark t127 done."
+                "at": "2026-11-20T13:21+00:00",
+                "verified": "Read the current master (94d6bf0): every call site of reanalyzeOptions, reanalyzeChoices and ReanalyzeCard on iOS and Android, and the existing tests for them. The feature merged on Nov 18, the day after the Nov 17 note. No build was run because no code changed.",
+                "next_step": "On a TestFlight build of 1.0.4 or later, record a straightaway with the record screen left on Starts. If it opens the long-recording starts review, scroll down and tap 'Re-analyze as straightaways'. If it opens a single clip, open More (...) and tap 'Re-analyze as a straightaway'. If something in that flow still feels manual, edit the to-do to say which screen."
               }
             },
             {
