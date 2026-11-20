@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (https://github.com/moonyose/StrideLab/pull/50, branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap \"Re-analyze as ...\" to the player's More menu, and PR #67 (merged 2026-11-18) added it to the results view and to the review of a long recording (SplitStartsView / PassPickerView: \"Re-analyze as straightaways\"). Current master still has both on iOS (AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift, KindLogic.swift) and on Android (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt, cor",
+                "summary": "Already done: PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap \"Re-analyze as a straightaway / a curve / a start\" to the player's More menu and the results screen, plus \"Re-analyze as straightaways/starts\" on a long recording's review, on both iOS and Android. Later merges (#67, #76) kept it, and it is on master now.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T11:37+00:00",
+                "at": "2026-11-20T11:38+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the current origin/master code: the reanalyzeOptions/reanalyzeChoices menu rows and buttons are wired in on both platforms. I made no code change, so I ran no build or checks.",
-                "next_step": "Install the current TestFlight build and open a clip analyzed as a start. Tap More: \"Re-analyze as a straightaway\" should be the first re-analyze row. For a long recording filmed on Starts, the review screen should offer \"Re-analyze as straightaways\". If either is missing on your phone, the build is probably older than Nov 18. Mark t127 done, or reword it with what is still missing."
+                "verified": "Checked current origin/master. iOS: KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle (StrideLab/Playback/KindLogic.swift), used in AnalysisPlayerView.swift (More menu), ResultsViews.swift, SplitStartsView.swift and PassPickerView.swift. Android: the same pieces in KindLogic.kt, AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. Both have tests (Tools/t",
+                "next_step": "On a TestFlight build from Nov 18 or later, open a clip that was analyzed as a start, tap More (...) in the player and pick \"Re-analyze as a straightaway\". If that's there and works, close this to-do. If it doesn't match what you wanted, edit the to-do to say what's missing."
               }
             },
             {
