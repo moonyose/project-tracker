@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no PR. One-tap \"Re-analyze as...\" exists on iOS and Android: merged PR #50 (player's More menu, Nov 18) and PR #67 (finish card and the long-recording review, e.g. 'Looked through for starts. Filmed something else?' with 'Re-analyze as straightaways', Nov 18). Code is in StrideLab/Playback/KindLogic.swift (reanalyzeOptions/reanalyzeChoices), Playback/KindViews.swift (ReanalyzeCard), Split/PassPickerView.swift and Split/SplitStartsView.swift. The Kotlin versions are in android/core/.../playback/KindLogic.kt, ui/split/SplitStartsScreen.kt and ui/player/AnalysisPlaye",
+                "summary": "Already done: PR #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' on iOS and Android, on the screen after recording, the run picker, the player's \u2022\u2022\u2022 menu and a 'Filmed something else?' card on the results. Nothing left to change, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:30+00:00",
-                "verified": "Read current master (94d6bf0). Confirmed the iOS and Android entry points by grep and confirmed with gh that #50 and #67 are merged. No code changed, so no build was run.",
-                "next_step": "On a TestFlight build at or after #67: set Filming to Start, record a straightaway, and on the recording review tap 'Re-analyze as straightaways' (or in a finished clip, More > Re-analyze as a straightaway). If that still misses what you wanted on Nov 17, edit t127 to say what's missing."
+                "at": "2026-11-20T01:32+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): KindFlow reanalyze helpers in StrideLab/Playback/KindLogic.swift, and the ReanalyzeCard wiring in SplitStartsView.swift, PassPickerView.swift, AnalysisPlayerView.swift and ResultsViews.swift. Found the matching Kotlin in android/ (SplitStartsScreen.kt, PassPickerScreen.kt, AnalysisPlayerScreen.kt, KindViews.kt) and a PassesTest case. Ran no builds because ",
+                "next_step": "On a TestFlight build from Nov 18 or later: leave Filming on Start, record a short straightaway, and tap 'Re-analyze as straightaways' on the screen after recording. If it still feels like manual work, say which screen and reopen the to-do."
               }
             },
             {
