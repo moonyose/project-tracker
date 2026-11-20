@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, so no PR. One-tap 'Re-analyze as ...' shipped on Nov 18, after the Nov 17 note, on iOS and Android: commit 1a499a2 (player's More menu) and commit c3f1d42 (finished-clip results card and long-recording review). The starts option is listed first when a clip was analyzed as a straightaway, and the other way round. iOS: AnalysisPlayerView.swift More menu, ResultsViews.swift finish card, PassPickerView.swift / SplitStartsView.swift ReanalyzeCard -> SplitModel.reanalyze(as:). Android: AnalysisPlayerScreen.kt, ResultsViews.kt, PassPickerScreen.kt, SplitStartsScreen.kt -> Spli",
+                "summary": "Already shipped. PR #50 (\"One-tap 'Re-analyze as\u2026' in the player's More menu\", branch claude/t127-reanalyze-as) was merged 2026-11-18, on iOS and Android. It adds one-tap 'Re-analyze as a straightaway / a start / a curve (Beta)' rows to the player's \u2022\u2022\u2022 menu (KindFlow.reanalyzeOptions/reanalyzeTitle; AnalysisPlayerView.swift and AnalysisPlayerScreen.kt), tested in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 then added 'Re-analyze as straightaways/starts' for long recordings in the split and pass picker screens, plus a card in the results views. Current master (94d6bf0, after #78 removed",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:34+00:00",
-                "verified": "Read the code only: grep plus reading KindLogic.swift on origin/master (94d6bf0), and checked commit dates with git log. Nothing was built or run, because nothing changed.",
-                "next_step": "On the newest TestFlight build: open a straightaway clip that was recorded with Starts picked, tap More (...) in the player, then tap 'Re-analyze as a straightaway'. It should re-analyze in one tap. For a long recording, the review screen shows 'Re-analyze as straightaways' buttons. If something still falls short, edit this to-do to say where."
+                "at": "2026-11-20T04:36+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Checked that PR #50 is MERGED (gh pr view) and that its files are on master. I grepped current master for the menu rows on iOS (AnalysisPlayerView.swift ~line 653) and Android (AnalysisPlayerScreen.kt:529), and for the split and results entry points. No code changed, so I didn't rebuild or rerun the tests.",
+                "next_step": "On a TestFlight build at or after #50: record a straightaway with the record screen left on Starts. Open the clip, tap \u2022\u2022\u2022 and choose 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and then stride tips. If the take was a long recording split into reps, use 'Re-analyze as straightaways' on the split screen. If that works, mark t127 done in the tracker."
               }
             },
             {
