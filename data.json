@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, iOS and Android. PR #50 (merged) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu (AnalysisPlayerView.swift; AnalysisPlayerScreen.kt). PR #67 (merged) added the same thing on the finish card (ResultsViews), on the review of a long recording (SplitStartsView 'Re-analyze as straightaways'), and in the pass picker. It also made the scan cache record what it looked for, so a recording scanned as starts gets scanned again for passes once it is re-analyzed as straightaways. The latest master commit (38714a3) still has these me",
+                "summary": "Already shipped: one-tap \"Re-analyze as...\" landed on iOS and Android in PR #50 (player More menu, merged Nov 18) and PR #67 (\"Re-analyze as straightaways\" on a recording's review and pass-picker screens when it was filmed as the wrong kind, merged Nov 18), and it is still on master after #78.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:02+00:00",
-                "verified": "Read the merged code on both platforms. ./Tools/verify.sh on origin/master printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' tests and the test for a recording re-analyzed as straightaways. I didn't run xcodebuild or Gradle because no code changed.",
-                "next_step": "Mark t127 done. To confirm on a phone: open a clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway'. Also check that a long recording filmed with Start still picked shows 'Re-analyze as straightaways' on its review screen."
+                "at": "2026-11-20T12:04+00:00",
+                "verified": "Checked on origin/master (94d6bf0): PR #50 and PR #67 are both MERGED (gh pr view). iOS: the recording review screen shows a ReanalyzeCard on every review, with the comment 'Filmed straightaways with Start still picked on the record screen' (SplitStartsView.swift:1417-1424, also PassPickerView). The player's More menu has 'Re-analyze as <kind>' (AnalysisPlayerView.swift:655), and the results card ",
+                "next_step": "On your phone (TestFlight build that includes PRs #50 and #67): record a few straightaways with Start still selected. On the review screen, tap 'Re-analyze as straightaways' and confirm it finds passes. Then open any analyzed clip, tap More, choose 'Re-analyze as a start', and confirm it re-analyzes. If something still forces manual work, edit this to-do to say which screen."
               }
             },
             {
