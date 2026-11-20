@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: one-tap \"Re-analyze as ...\" was added by PR #50 (claude/t127-reanalyze-as) and PR #67, both merged into master on iOS and Android. It shows in the player's More menu, on the results screen and on a long recording's review (\"Re-analyze as straightaways\"), with the likeliest mix-up (Starts to Straightaways) listed first.",
+                "summary": "Already shipped: PR #67 (merged Nov 18) added one-tap \"Re-analyze as ...\" on iOS and Android. It's in the player's More menu, on the finished-clip card, and on a long recording's review screen (\"Re-analyze as straightaways\"). I changed no code and opened no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:57+00:00",
-                "verified": "Read origin/master (94d6bf0). iOS: KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle in StrideLab/Playback/KindLogic.swift, used in AnalysisPlayerView.swift (More menu), ResultsViews.swift, SplitStartsView.swift and PassPickerView.swift, with tests in Tools/tests_kindui.swift. Android: the same functions in android/core/.../playback/KindLogic.kt, used in AnalysisPlayerScreen.kt, ResultsVie",
-                "next_step": "Mark t127 done if the current TestFlight build has it: open a clip analyzed as a start, tap More (...), then tap \"Re-analyze as a straightaway\". If that doesn't match what you wanted, edit the task to say what's still missing."
+                "at": "2026-11-20T15:04+00:00",
+                "verified": "Read current master (94d6bf0). iOS: the player's More menu lists every other kind via KindFlow.reanalyzeOptions (AnalysisPlayerView.swift ~line 653). The finish card has a \"Filmed something else?\" section (ResultsViews.swift ~line 967). The review screens for split starts and passes show ReanalyzeCard (SplitStartsView.swift ~line 1420, PassPickerView.swift ~line 55). Android mirrors all of it (Ana",
+                "next_step": "On a TestFlight build from Nov 18 or later: film a few straightaways with the record screen left on Start. On the review screen, tap \"Re-analyze as straightaways\". Or open an analyzed clip and use More > \"Re-analyze as a straightaway\". If that works, tick this off. If something is still missing, edit the to-do to say what."
               }
             },
             {
