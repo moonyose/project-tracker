@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (One-tap \"Re-analyze as...\" in the player's More menu, merged 2026-11-18) and PR #67 (Re-analyze as... for a recording filmed as the wrong kind, merged 2026-11-18) are on master on iOS and Android. iOS: AnalysisPlayerView's More menu lists KindFlow.reanalyzeOptions (for example 'Re-analyze as a straightaway'). SplitStartsView shows a ReanalyzeCard ('Re-analyze as straightaways') for a long recording. Android mirrors both (KindLogic.kt, SplitStartsScreen.kt/SplitModel.kt). No new PR was opened.",
+                "summary": "Already shipped on master, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a start / a curve (Beta)' to the clip player's More menu (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions). PR #67 (merged Nov 18) added a 'Filmed something else?' Re-analyze card to the Full report (ResultsViews.swift) and 'Re-analyze as straightaways / starts' to a long recording's run picker (PassPickerView.swift, SplitModel.reanalyze), with Android twins in KindLogic.kt and tests in KindUiTest.kt and PassesTest.kt. Later commits (#76, #77, #78) kept these entry points: the More",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:44+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Confirmed from the code on origin/master (94d6bf0) and with gh pr view (both PRs MERGED). The feature has existing harness tests in Tools/tests_kindui.swift (kui_reanalyzeAsTest) and android KindUiTest.kt. No build was run because nothing changed.",
-                "next_step": "On the phone, open a clip analyzed as a start, tap More (...) in the player and pick 'Re-analyze as a straightaway'. For a long recording split as starts, use the 'Re-analyze as straightaways' card on the split screen. If this still doesn't cover the Nov 17 case, edit the task to say which screen was missing the option."
+                "at": "2026-11-20T09:46+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): AnalysisPlayerView.swift lines 650-659 (the More menu section), ResultsViews.swift onReanalyze (around line 942), PassPickerView.swift ReanalyzeCard (around line 55). Checked PR history with gh pr list. Nothing was built, because nothing changed.",
+                "next_step": "Tick t127 off the list. To confirm on the phone, open a clip that was analyzed as a start, tap More (top right), then tap 'Re-analyze as a straightaway'. It should re-analyze with stride phases and tips. For a long recording filmed with Start picked, the run picker shows 'Re-analyze as straightaways'. If something is still missing, edit the task to say exactly where the button should be."
               }
             },
             {
