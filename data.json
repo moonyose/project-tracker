@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #50 (merged Nov 18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / a start / a curve' to the clip player's More menu on iOS and Android. PR #67 (merged) added 'Re-analyze as straightaways/starts' to the review of a long recording and on the results screen, also on both platforms. In the code on master, the iOS views (AnalysisPlayerView, ResultsViews, KindViews, SplitStartsView, PassPickerView) and the matching Android screens use KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle. Tools/tests_kindui.swift and android KindUiTest.",
+                "summary": "Already shipped on both platforms. PR #50 (merged 2026-11-18, https://github.com/moonyose/StrideLab/pull/50) added a one-tap \"Re-analyze as ...\" to the player's More menu and the results screen. PR #67 (merged 2026-11-18, https://github.com/moonyose/StrideLab/pull/67) added a \"Re-analyze as straightaways\" card to the split and pass-picker screens for a recording filmed with the wrong kind picked, which is the Nov 17 case. Android has the same behavior: KindFlow.reanalyzeOptions/reanalyzeRecordingTitle and ReanalyzeCard in SplitStartsScreen, PassPickerScreen and AnalysisPlayerScreen. Nothing ne",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:22+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) and checked with gh that PRs #50 and #67 are merged. I didn't rebuild because nothing changed.",
-                "next_step": "On the latest TestFlight build: open a straightaway clip that was analyzed as a Start, tap More (...) in the player, tap 'Re-analyze as a straightaway', and check the phases switch to Acceleration/Top speed. If that row is missing on your build, update to a build made after Nov 18 or reopen the task with what you saw."
+                "at": "2026-11-20T01:28+00:00",
+                "verified": "Read the current origin/HEAD code on iOS and Android. ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' checks: 'a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways'. No xcodebuild or Gradle run, because nothing changed.",
+                "next_step": "On a build that includes PR #67: record a few straightaway reps with the recording screen left on Starts. On the look-for-starts or pass-picker screen, tap 'Re-analyze as straightaways' and check that the passes come up as straightaways. For a single clip, open it and use More > 'Re-analyze as a straightaway'. If that still isn't one tap in some flow, edit the to-do to name the screen."
               }
             },
             {
