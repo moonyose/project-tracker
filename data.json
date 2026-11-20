@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master for iOS and Android. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18, after the Nov 17 note) added one-tap 'Re-analyze as ...' rows to the player's More menu. Commit c3f1d42 (PR #67) added the same option to the results/finish card, the pass picker and the Starts review, and made the scan cache remember what it looked for, so a recording first scanned as starts is scanned again for passes once you pick straightaways. Current master still has all of this: AnalysisPlayerView.swift around line 650 (KindFlow.reanalyzeOptions), ResultsViews.swift reanalyze(...), PassPickerV",
+                "summary": "This is already on master for iOS and Android (commits 1a499a2 and c3f1d42, Nov 18). A clip has 'Re-analyze as a straightaway / a start / a curve' in the player's More menu and on the results card. A long recording's review screen has 'Re-analyze as straightaways / starts / curves'. A take left on Starts is offered Straightaway first. No PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:11+00:00",
-                "verified": "Read the code only. Confirmed the re-analyze entry points on master (94d6bf0) in Swift and Kotlin and the history of PR #50 and #67. Did not build or run verify.sh, since nothing changed.",
-                "next_step": "On a current TestFlight build, open a clip analyzed as Starts, tap More (the ... button, which shows once analysis finishes) and tap 'Re-analyze as straightaways'. Or use the Re-analyze card on the Starts review. If that still misses the Nov 17 case, edit the to-do to say which screen or step is missing."
+                "at": "2026-11-20T05:17+00:00",
+                "verified": "Found the code on master for iOS and Android with grep and git log -S. ./Tools/verify.sh on origin/master printed ALL CHECKS PASSED, including the check that a recording re-analyzed as straightaways is looked through for passes again. No xcodebuild or Gradle run, because nothing changed.",
+                "next_step": "Use a build made after Nov 18: the last TestFlight build on record is Nov 6, which may be too old to have this. Open a clip analyzed as a Start, tap More (...), then 'Re-analyze as a straightaway'. If one screen still makes you fix it by hand, edit the to-do to name that screen."
               }
             },
             {
