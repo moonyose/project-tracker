@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged 2026-11-18, commit 1a499a2) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu on iOS (AnalysisPlayerView + KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen.kt + KindLogic.kt), with tests on both. One tap goes through the existing applyKind path: paywall, re-analysis, and the choice is saved on the clip. Earlier work (c3f1d42) also added Re-analyze cards on the finish screen and in the split/pass picker for long recordings. Nothing new to change, so no PR.",
+                "summary": "Already done: PR #50 (merged Nov 18) added one-tap \"Re-analyze as a straightaway / curve\" rows to the player's More menu on iOS and Android, and PR #67 added the same choice on the finish card and for whole recordings (\"Re-analyze as straightaways\" on the starts-confirm and pass-picker screens). Both are still on master, so no new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T06:22+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read origin/master: KindFlow.reanalyzeOptions is wired into the iOS More menu (AnalysisPlayerView.swift:653) and the Android player menu (AnalysisPlayerScreen.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. No build was run because no code was changed.",
-                "next_step": "On the current TestFlight build, open a clip analyzed as a start, tap More (the ... at top right), then tap 'Re-analyze as a straightaway'. It should re-analyze as a straightaway with no other steps. If that row is missing or the flow still feels too manual, edit the to-do to say what is wrong."
+                "at": "2026-11-20T06:27+00:00",
+                "verified": "Read current master (94d6bf0). iOS: KindFlow.reanalyzeOptions rows in the AnalysisPlayerView More menu, which is shown once a result exists after #78, plus the finish card and ReanalyzeCard in SplitStartsView/PassPickerView. Android: the same in AnalysisPlayerScreen.kt, ResultsViews.kt and the split screens. ./Tools/verify.sh on master: ALL CHECKS PASSED, including the Re-analyze-as tests. No xcod",
+                "next_step": "On the latest TestFlight build: set the record screen to Start, film a few straightaway strides, open the clip, tap More (...) and choose \"Re-analyze as a straightaway\". If that works, close this to-do. If it still feels like manual work, say which screen you were on so the option can be added there."
               }
             },
             {
