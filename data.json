@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android: PR #67 (commit 1a499a2, Nov 18) added 'Re-analyze as \u2026' rows to the player's More menu, so a clip left on Starts shows 'Re-analyze as a straightaway' at the top and fixes it in one tap. No new PR was needed.",
+                "summary": "Already shipped on master for iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu. PR #67 (merged Nov 18) added the same buttons to the finish card, the long-recording review and the pass picker ('Re-analyze as straightaways'), and made the recording get looked through again for runs. Both were checked on current master (94d6bf0): iOS AnalysisPlayerView.swift:650-659, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift; Android AnalysisPlayerScreen.kt:529-533, ResultsViews.kt, SplitSta",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:03+00:00",
-                "verified": "Read the current master code on both platforms (AnalysisPlayerView.swift More menu, Android AnalysisPlayerScreen.kt) and the existing tests (Tools/tests_kindui.swift, KindUiTest.kt). Nothing was built or run, because no change was made.",
-                "next_step": "On your phone, open a clip that was analyzed as a start, tap More (\u2026), then tap 'Re-analyze as a straightaway'. If that doesn't fix it, edit this task to say what's still missing."
+                "at": "2026-11-20T07:08+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the code on origin/master on both platforms. ./Tools/verify.sh on master printed ALL CHECKS PASSED, including the reanalyze tests in tests_kindui.swift and the check that a recording re-analyzed as straightaways is looked through for passes again. No code changed, so I did not run an xcodebuild build or the Android Gradle checks this run.",
+                "next_step": "On your phone, open a clip that was analyzed as a start but is really a straightaway. Tap More (top right) and choose 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and then coach it as a straightaway. For a long recording filmed on Starts, the review screen shows 'Re-analyze as straightaways'. If you see a case where this still doesn't work, edit this to-do with which s"
               }
             },
             {
