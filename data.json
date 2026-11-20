@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, iOS and Android. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu. PR #67 (merged Nov 18) added the same option to the review, pass picker, split screen and finish card for long recordings ('Re-analyze as straightaways'), and made the scan cache remember which kind it looked for, so a recording first scanned as starts gets scanned again for passes. Current master still has it: StrideLab/Playback/AnalysisPlayerView.swift (More menu, shown once a result exists after #78), KindLogic.swift reanalyzeOpt",
+                "summary": "Already shipped. Commit c3f1d42 (2026-11-18, merged in PR #67 'reanalyze-skeleton-toggle-beta', now on master) added one-tap 'Re-analyze as...' on both platforms: on the starts review screen (a card saying 'Filmed straightaways with Start still picked'), on the pass picker, and on the player's results panel. On iOS it's in SplitStartsView.swift (ReanalyzeCard, SplitModel.reanalyze(as:store:)), PassPickerView.swift and ResultsViews.swift. On Android it's in SplitStartsScreen.kt, SplitModel.reanalyze, PassPickerScreen.kt and KindLogic.kt (KindFlow.reanalyze*). Picking a kind saves it on the clip",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:03+00:00",
-                "verified": "Checked git log and the gh PR list: #50 and #67 are merged, and the reanalyze code paths are still on origin/master on both platforms (grep of StrideLab/Playback, StrideLab/Split, android/app, android/core). No build was run because nothing changed.",
-                "next_step": "On your phone, open a clip that was analyzed as a start, tap More (top right), then 'Re-analyze as a straightaway'. Check that it re-analyzes and the kind chip changes. For a long recording scanned as starts, use the 'Re-analyze as straightaways' card in the review. If this works, mark t127 done. If something still feels manual, edit the task to say which screen."
+                "at": "2026-11-20T02:05+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): both platforms have the re-analyze entry points, and they are wired to SplitModel.reanalyze. Nothing was rebuilt or re-tested because nothing changed.",
+                "next_step": "On a TestFlight build that includes PR #67: leave the record screen on Starts, film a straightaway, open it, and on the starts review tap 'Re-analyze as straightaways' at the bottom. It should scan again and show the pass picker. If that misses your Nov 17 case, say which screen you were on so the task can be reopened."
               }
             },
             {
