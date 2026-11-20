@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms the day after the Nov 17 report: 1a499a2 (Nov 18, 'Add one-tap \"Re-analyze as ...\" to the player's More menu') and c3f1d42 / 7fbd83d (Nov 18, 'Reanalyze as another kind...' / 'Offer one-tap \"Re-analyze as...\" when a chosen kind looks wrong'). On iOS the Starts review screen (SplitStartsView) always shows a ReanalyzeCard with 'Re-analyze as straightaways' / 'Re-analyze as a curve (Beta)', the pass picker (PassPickerView) offers 'Re-analyze as starts', the player's More menu has one-tap 'Re-analyze as a straightaway' rows (AnalysisPlayerView), and ResultsViews h",
+                "summary": "This is already built and merged: PR #50 (Nov 18) added one-tap \"Re-analyze as a straightaway / curve / start\" rows to the player's More menu, and PR #67 (Nov 18) added \"Re-analyze as starts / straightaways / curves\" buttons to a long recording's review screens. Both are on iOS and Android. Nothing new was needed, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:21+00:00",
-                "verified": "Ran ./Tools/verify.sh on origin/master (94d6bf0): ALL CHECKS PASSED, including the 'Re-analyze as another kind' tests ('a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways', and 'a start filmed by mistake is one tap from a straightaway'). Read the iOS and Android entry points. Did not run xcodebuild, bend or Gradle because nothing changed.",
-                "next_step": "On a build from Nov 18 or later: record a straightaway with Starts still selected on the record screen, open the recording, scroll to the bottom of the starts review and tap 'Re-analyze as straightaways'. Check that it finds passes. If a build that has this still felt like manual work, edit the task to say which screen."
+                "at": "2026-11-20T00:23+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read current master (94d6bf0). iOS: AnalysisPlayerView.swift More menu has a Re-analyze section built from KindFlow.reanalyzeOptions (offers Straightaway first for a clip analyzed as a start, and nothing on the shipped demos). PassPickerView.swift and SplitStartsView.swift show ReanalyzeCard for recordings. Android: AnalysisPlayerScreen.kt, PassPickerScreen.kt and SplitStartsScreen.kt do the same,",
+                "next_step": "On the current TestFlight build, open a clip that was analyzed as a start, tap More (the circle with three dots, top right), then tap \"Re-analyze as a straightaway\". If that works, close this to-do. If something about it still feels manual, add a note saying which screen and step, and it will be picked up again."
               }
             },
             {
