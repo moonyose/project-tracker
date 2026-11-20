@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master for iOS and Android: PR #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' to the player's More menu, to a 'Filmed something else?' card on results, and to a long recording's review screen. A clip analyzed as starts offers 'Re-analyze as a straightaway' first. No new PR.",
+                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2) merged on Nov 18 and added one-tap 'Re-analyze as ...' entries to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt). PR #50 also added a recording-level 'Re-analyze as starts/straightaways' in the pass picker. Both are still on master after PRs #77 and #78; the More menu now only appears once a result exists. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:21+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): the re-analyze paths are there on iOS (AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift) and Android (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt), with tests (Tools/tests_kindui.swift, KindUiTest.kt). Nothing was built or run because nothing changed.",
-                "next_step": "On a TestFlight build from PR #67 or later, open a straightaway clip that was analyzed as a start. Tap More, then 'Re-analyze as a straightaway', and check that you get stride results. If this still feels like manual work, edit the task to say which screen or step is missing."
+                "at": "2026-11-20T09:28+00:00",
+                "verified": "Read current master: the More menu in AnalysisPlayerView.swift (lines 650-659) lists KindFlow.reanalyzeOptions, and the Android AnalysisPlayerScreen.kt (line 529) lists the same. ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as ...' and 'reanalyzed as straightaways' checks. No xcodebuild or Gradle run because no code changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with the record screen left on Starts, open the clip, wait for the analysis, tap More (top right), then tap 'Re-analyze as a straightaway'. If that entry is missing, or the result is wrong, reopen the task and say what you saw."
               }
             },
             {
