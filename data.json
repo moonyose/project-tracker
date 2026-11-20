@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master for iOS and Android. One-tap 'Re-analyze as ...' was added in 1a499a2 (player More menu, Nov 18) and extended in c3f1d42 / PR #67 (finish card, long-recording review, pass picker; a recording first looked through for starts is looked through again for passes once it is said to be straightaways). The latest commit 38714a3 (PR #78) kept the More-menu rows; it only hides More while analysis is running. No PR opened.",
+                "summary": "Already shipped. PR #50 (moonyose/StrideLab, branch claude/t127-reanalyze-as, commit 1a499a2) is merged into master and added one-tap \"Re-analyze as ...\" rows to the player's More menu on iOS and Android. Earlier PRs (11b7895 / f1360c8) added \"Filmed something else?\" re-analyze buttons on a finished clip's results and on a long recording's review and pass picker (\"Re-analyze as straightaways\"). Current master still has all of these on both platforms (AnalysisPlayerView.swift:650-659, ResultsViews.swift:967-973, SplitStartsView.swift:1421, PassPickerView.swift:56; Android AnalysisPlayerScreen.k",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:20+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). iOS: KindFlow.reanalyzeOptions/reanalyzeChoices (StrideLab/Playback/KindLogic.swift), More menu rows (AnalysisPlayerView.swift:650-659), finish card (ResultsViews.swift:962), ReanalyzeCard on the split review and pass picker (SplitStartsView.swift:1420, PassPickerView.swift:55), tests in Tools/tests_kindui.swift and tests_passes.swift. Android: AnalysisPla",
-                "next_step": "On the phone (TestFlight build with PR #67/#78): open a clip analysed as a start, tap More (top right), tap 'Re-analyze as a straightaway', and check that it re-analyzes and shows Stride. For a long recording filmed on Starts, use 'Re-analyze as straightaways' on the review screen. If this doesn't match what you wanted (say, the button should be more prominent than the More menu), edit the task to"
+                "at": "2026-11-20T17:22+00:00",
+                "verified": "Read current origin/master code on both platforms and traced the merge history (PR #50 merge fe99a5f is an ancestor of HEAD 94d6bf0). Did not rebuild because no code changed.",
+                "next_step": "On the latest TestFlight build, open a clip analyzed as a start, tap More (...) and pick \"Re-analyze as a straightaway\". It should re-run as a straightaway with no other steps. If it doesn't show up, tell me which screen you were on and I'll pick the task up again."
               }
             },
             {
