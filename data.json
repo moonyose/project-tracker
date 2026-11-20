@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. Commit c3f1d42 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta' (PR #67, merged Nov 18, after the Nov 17 note) added one-tap 'Re-analyze as ...' on iOS and Android: in the clip player's More menu (KindFlow.reanalyzeOptions, straightaway offered first for a clip analyzed as a start), on the long-recording review and pass picker ('Re-analyze as straightaways', which rescans the recording for passes), and on the finish card. The later PRs #76-#78 did not remove any of it; the menu rows are still in AnalysisPlayerView.swift and AnalysisPl",
+                "summary": "Already built, so there's no new PR. One-tap 'Re-analyze as\u2026' shipped on iOS and Android in PRs #50 and #67: it's in the player's More menu, in a 'Filmed something else?' card on the results screen, and on a long recording's review screen.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T18:39+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): KindLogic.swift reanalyzeOptions/reanalyzeChoices/reanalyzeRecordingTitle, the AnalysisPlayerView.swift More menu section, SplitStartsView/PassPickerView ReanalyzeCard, and the Android twins (KindLogic.kt, AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt). Grepped the diffs of 38714a3, 5ff9e42 and af073e7: none of them touch reanalyze. No",
-                "next_step": "On a TestFlight build that includes PR #67: open a clip analyzed as a start, tap More and check for 'Re-analyze as a straightaway'. Then open a long recording that was looked through as starts and check for 'Re-analyze as straightaways' on its review. If that works, close t127. If it still felt manual on Nov 17, that build was older than PR #67."
+                "at": "2026-11-20T18:41+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) and checked that every re-analyze entry point is wired up on iOS and Android, and that git log shows PR #50 for t127 merged. I did not rebuild or run verify.sh/Gradle because no code changed; those tests already ran in PR checks when #50 and #67 merged.",
+                "next_step": "On your phone, open a clip that was analyzed as a start, tap More (top right), then tap 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and then straightaway coaching. For a long recording left on Starts, use 'Re-analyze as straightaways' on the review screen. If something about this still falls short (for example, you want it offered before the analysis finishes), edit t"
               }
             },
             {
