@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' on iOS and Android, on the screen after recording, the run picker, the player's \u2022\u2022\u2022 menu and a 'Filmed something else?' card on the results. Nothing left to change, so no PR.",
+                "summary": "Already shipped on both platforms. PR #50 (merged 2026-11-18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / start / curve (Beta)' rows to the player's More menu. PR #67 (merged 2026-11-18) added the same for long recordings (Split/PassPicker 'Re-analyze as straightaways' card). Current master still has both: iOS AnalysisPlayerView.swift uses KindFlow.reanalyzeOptions, and Android AnalysisPlayerScreen.kt, SplitStartsScreen.kt and PassPickerScreen.kt mirror it. A clip filmed on Starts lists 'Re-analyze as a straightaway' first. Nothing new to change, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:32+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): KindFlow reanalyze helpers in StrideLab/Playback/KindLogic.swift, and the ReanalyzeCard wiring in SplitStartsView.swift, PassPickerView.swift, AnalysisPlayerView.swift and ResultsViews.swift. Found the matching Kotlin in android/ (SplitStartsScreen.kt, PassPickerScreen.kt, AnalysisPlayerScreen.kt, KindViews.kt) and a PassesTest case. Ran no builds because ",
-                "next_step": "On a TestFlight build from Nov 18 or later: leave Filming on Start, record a short straightaway, and tap 'Re-analyze as straightaways' on the screen after recording. If it still feels like manual work, say which screen and reopen the to-do."
+                "at": "2026-11-20T01:39+00:00",
+                "verified": "./Tools/verify.sh on origin/master (94d6bf0) printed ALL CHECKS PASSED, including the 'Re-analyze as' tests in Tools/tests_kindui.swift (a start filmed by mistake is one tap from a straightaway). Confirmed with gh that PRs #50 and #67 are MERGED. No xcodebuild or Gradle run, because no code changed.",
+                "next_step": "On the phone, open a clip that was analyzed as Starts, tap More (top right), and tap 'Re-analyze as a straightaway'. If that works, close the to-do. If the row is missing or something else falls short, edit the task to say what it still needs."
               }
             },
             {
