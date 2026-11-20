@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a start / a curve (Beta)' to the single-clip player and results. PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways / starts' cards for a whole recording, on the starts screen (SplitStartsView) and the pass picker (PassPickerView). A recording filmed with Start still picked is looked through again for passes (SplitModel.reanalyze). Android has the same thing: ReanalyzeCard in SplitStartsScreen.kt, PassPickerScreen.kt and ResultsViews.kt, with KindUiTest covering it. Aust",
+                "summary": "Already shipped on both platforms the day after the Nov 17 report: 1a499a2 (Nov 18, 'Add one-tap \"Re-analyze as ...\" to the player's More menu') and c3f1d42 / 7fbd83d (Nov 18, 'Reanalyze as another kind...' / 'Offer one-tap \"Re-analyze as...\" when a chosen kind looks wrong'). On iOS the Starts review screen (SplitStartsView) always shows a ReanalyzeCard with 'Re-analyze as straightaways' / 'Re-analyze as a curve (Beta)', the pass picker (PassPickerView) offers 'Re-analyze as starts', the player's More menu has one-tap 'Re-analyze as a straightaway' rows (AnalysisPlayerView), and ResultsViews h",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:14+00:00",
-                "verified": "Checked the git history and code on origin/master (94d6bf0): fe99a5f (#50) and cc7b90d (#67) are merged. The re-analyze UI is wired up in StrideLab/Split/SplitStartsView.swift, StrideLab/Split/PassPickerView.swift, StrideLab/Playback/ResultsViews.swift and StrideLab/Playback/KindViews.swift, and the Android twins are in android/app/.../ui/split and ui/player. I made no code changes, so no build wa",
-                "next_step": "On a TestFlight build that includes #67 (1.0.4 or later): record a few straightaways with Start picked on the record screen, open the recording, tap 'Re-analyze as straightaways' on the starts screen, and check that its runs come back as straightaways. If that works, mark t127 done on the tracker so it stops being re-queued."
+                "at": "2026-11-20T00:21+00:00",
+                "verified": "Ran ./Tools/verify.sh on origin/master (94d6bf0): ALL CHECKS PASSED, including the 'Re-analyze as another kind' tests ('a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways', and 'a start filmed by mistake is one tap from a straightaway'). Read the iOS and Android entry points. Did not run xcodebuild, bend or Gradle because nothing changed.",
+                "next_step": "On a build from Nov 18 or later: record a straightaway with Starts still selected on the record screen, open the recording, scroll to the bottom of the starts review and tap 'Re-analyze as straightaways'. Check that it finds passes. If a build that has this still felt like manual work, edit the task to say which screen."
               }
             },
             {
