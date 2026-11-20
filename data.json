@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on iOS and Android. It came in on Nov 18 (commits 1a499a2 \"Add one-tap 'Re-analyze as ...' to the player's More menu\" and c3f1d42 \"Reanalyze as another kind...\"), the day after Austin's Nov 17 note. iOS: the player's More menu has one-tap rows such as \"Re-analyze as a straightaway\" (AnalysisPlayerView.swift, using KindFlow.reanalyzeOptions), the results/report screen has a Re-analyze card (ResultsViews.swift), and the long-recording review (SplitStartsView, PassPickerView) has \"Re-analyze as straightaways / starts / curves\" buttons. Each tap counts as the athlete's o",
+                "summary": "Already shipped on iOS and Android: PR #50 (merged Nov 18, after your Nov 17 note) added a one-tap \"Re-analyze as\u2026\" option in the player's More menu, the results card, the split-starts screen and the pass picker. Nothing left to change.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:35+00:00",
-                "verified": "Read the current master source: the KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle helpers and their call sites in the iOS player, results and split views and in the matching Android screens. Existing tests cover them in Tools/tests_kindui.swift and android KindUiTest.kt. No code changed, so I didn't rebuild.",
-                "next_step": "Install the current TestFlight build (anything after Nov 18). Open a straightaway clip that was analysed as a start, tap More (\u2026), tap \"Re-analyze as a straightaway\", and check that it shows \"Re-analyzing as a straightaway\" and comes back with stride phases. For a long recording filmed with Starts picked, the review screen should show a \"Re-analyze as straightaways\" button. If this was missing on "
+                "at": "2026-11-20T14:42+00:00",
+                "verified": "On current master (94d6bf0), ./Tools/verify.sh finished with ALL CHECKS PASSED. That includes tests_kindui's re-analyze checks: a clip filmed as a start offers 'Re-analyze as a straightaway' first, never the kind already in force, and never on a demo clip. Android has the matching tests in KindUiTest.kt. I did not run xcodebuild, the Gradle checks or bend PROOF.bend, because this run changed no co",
+                "next_step": "Install a build from master (anything after Nov 18). Open a clip recorded with the record screen on Starts but actually a straightaway, tap the player's More menu, and check that 'Re-analyze as a straightaway' is there and re-runs the analysis as a straightaway in one tap. If it's missing or broken there, re-open this task and say which screen you used."
               }
             },
             {
