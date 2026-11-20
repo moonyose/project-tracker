@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android (merged in PR #67). Once a clip has been analyzed, the player's More menu shows one-tap \"Re-analyze as \u2026\" buttons, with the likeliest mix-up first, so a Starts take offers \"Re-analyze as a straightaway\" at the top. The results card and the pass picker have the same buttons.",
+                "summary": "Already shipped on master: commit c3f1d42 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta' (Nov 18, merged via reanalyze-skeleton-toggle-beta). It adds one-tap 'Re-analyze as a straightaway / as starts / as a curve (Beta)' buttons on both iOS and Android: the single-clip finish card (ResultsViews), the long-recording review and pass picker (SplitStartsView / PassPickerView, ReanalyzeCard), and the scan cache now remembers what kind it looked for, so a recording first scanned as Starts is scanned again for straightaway passes. Later PRs #77/#78 left th",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:10+00:00",
-                "verified": "./Tools/verify.sh: ALL CHECKS PASSED on current master, including a test that a clip recorded on the Starts setting is offered straightaway first and one tap re-analyzes it as straightaways. No Xcode build or Gradle run because no code changed.",
-                "next_step": "On your phone, open a clip recorded as Starts, wait for the analysis, then tap More (top right) > \"Re-analyze as a straightaway\". If you wanted the button somewhere more visible (for example right after recording), edit this task to say where."
+                "at": "2026-11-20T10:17+00:00",
+                "verified": "./Tools/verify.sh on current master: ALL CHECKS PASSED, including the kind-UI reanalyze tests ('a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways'). Did not run xcodebuild or Gradle because no code changed.",
+                "next_step": "On a TestFlight build from master or later: record a straightaway with the recording screen left on Starts. On the review screen (or the clip's finish card) tap 'Re-analyze as straightaways' and check that the runs come back as straightaways. If that fails or the button is missing, reopen the task and say which screen."
               }
             },
             {
