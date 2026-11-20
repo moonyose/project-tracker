@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master: commit c3f1d42 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta' (Nov 18, merged via reanalyze-skeleton-toggle-beta). It adds one-tap 'Re-analyze as a straightaway / as starts / as a curve (Beta)' buttons on both iOS and Android: the single-clip finish card (ResultsViews), the long-recording review and pass picker (SplitStartsView / PassPickerView, ReanalyzeCard), and the scan cache now remembers what kind it looked for, so a recording first scanned as Starts is scanned again for straightaway passes. Later PRs #77/#78 left th",
+                "summary": "One-tap \"Re-analyze as...\" is already on master for iOS and Android. It was merged in PR #50 (t127) and PR #67, and covers the player's More menu, the results screen, and the recording and pass-picker screens, so there is nothing left to change.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:17+00:00",
-                "verified": "./Tools/verify.sh on current master: ALL CHECKS PASSED, including the kind-UI reanalyze tests ('a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways'). Did not run xcodebuild or Gradle because no code changed.",
-                "next_step": "On a TestFlight build from master or later: record a straightaway with the recording screen left on Starts. On the review screen (or the clip's finish card) tap 'Re-analyze as straightaways' and check that the runs come back as straightaways. If that fails or the button is missing, reopen the task and say which screen."
+                "at": "2026-11-20T10:26+00:00",
+                "verified": "Read the current master code. iOS: AnalysisPlayerView More menu (KindFlow.reanalyzeOptions), ResultsViews, SplitStartsView and PassPickerView ReanalyzeCard. Android: AnalysisPlayerScreen, ResultsViews.kt, SplitStartsScreen and PassPickerScreen. ./Tools/verify.sh printed ALL CHECKS PASSED, including the Re-analyze as tests. No xcodebuild or Gradle run, since nothing changed.",
+                "next_step": "On the phone, open a clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway'. On a long recording left on Starts, tap 'Re-analyze as straightaways' on the runs screen. If either is missing or still feels like manual work, edit the task with what's wrong; otherwise mark it done."
               }
             },
             {
