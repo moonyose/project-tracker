@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so there is no new PR. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap \"Re-analyze as ...\" rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen.kt). The first row offered is the likeliest mix-up, so a Starts clip shows \"Re-analyze as a straightaway\" first. PR #67 added a ReanalyzeCard (\"Re-analyze as straightaways\") to the Starts split screen and the pass picker, and a row in the results view, on both platforms. PR #78 hides the More button only while analysis is running. T",
+                "summary": "Already done on master. PR #67 (merged 2026-11-18, 'Curve marked Beta, and Re-analyze as\u2026 for a recording filmed as the wrong kind', commit c3f1d42) added one-tap 'Re-analyze as\u2026' on iOS and Android: ReanalyzeCard in the split review (SplitStartsView / SplitStartsScreen) and pass picker (PassPickerView / PassPickerScreen), buttons on the finish card (ResultsViews), and entries in the player's More menu (AnalysisPlayerView / AnalysisPlayerScreen). The scan cache records which kind it looked for, so a recording scanned as starts and then switched to straightaways is looked through again for pass",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:46+00:00",
-                "verified": "./Tools/verify.sh on current origin/master (94d6bf0) printed ALL CHECKS PASSED, including the \"Re-analyze as ...\" checks in tests_kindui.swift and tests_passes.swift. No xcodebuild or Gradle run, because no code changed.",
-                "next_step": "On the phone, open a straightaway clip that was analyzed as a start, tap More, then tap \"Re-analyze as a straightaway\". If that doesn't cover what happened on Nov 17, edit the task to say which screen still needed manual work."
+                "at": "2026-11-20T00:52+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Confirmed PR #67 is merged and its commit is on origin/master (HEAD 94d6bf0). Ran ./Tools/verify.sh on current master: ALL CHECKS PASSED, including 'a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways'. Did not run an xcodebuild or Gradle build because nothing changed.",
+                "next_step": "On the phone (TestFlight build 1.0.4 or later): record a few straightaways with Start still selected. On the review screen, tap 'Re-analyze as straightaways' and check that the runs are found and coached as straightaways. If the button doesn't cover the case that happened on Nov 17, edit the task to say where it was missing."
               }
             },
             {
