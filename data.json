@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app: PR #50 (merged Nov 18) and PR #67 added one-tap 'Re-analyze as\u2026' on both iOS and Android, in a clip's More menu and on the long-recording review screen. No new PR was needed.",
+                "summary": "Already shipped on master for iOS and Android: one-tap \"Re-analyze as ...\" was added to the player's More menu in PR #50, and to the results panel and the recording review screens (including \"Re-analyze as straightaways\" for a long recording filmed with Starts still picked) in PR #67. Seven later duplicate attempts (#53, #55, #60, #62, #63, #65, #70) were closed. Nothing new to change, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:20+00:00",
-                "verified": "Read master at 94d6bf0. Confirmed the merge commits fe99a5f (#50) and cc7b90d (#67) and their diffs, which touch AnalysisPlayerView.swift, KindLogic.swift, tests_kindui.swift, AnalysisPlayerScreen.kt, KindLogic.kt and KindUiTest.kt. Confirmed the reanalyze entry points in the player menu and the recording review on both platforms. No build was run because no code changed.",
-                "next_step": "On a TestFlight build from master or later: record a straightaway with the record screen left on Starts. On the recording review, tap 'Re-analyze as straightaways' (or open a finished clip, tap More, then 'Re-analyze as a straightaway'). Check that the result comes back as a straightaway. If that path still fails for you, edit the to-do with what you saw so the next run can fix it."
+                "at": "2026-11-20T02:26+00:00",
+                "verified": "Read master at 94d6bf0. Re-analyze entry points are present in iOS AnalysisPlayerView (More menu), ResultsViews, SplitStartsView and PassPickerView, with matching Android screens: AnalysisPlayerScreen, ResultsViews, SplitStartsScreen and PassPickerScreen. PR #78 removed only the disabled More button that showed while a clip was still analyzing; the menu still appears once there is a result. ./Tool",
+                "next_step": "Please mark t127 done in the tracker so it stops being picked up again. To check on your phone: open a clip analyzed as a start, tap More (top right) and choose 'Re-analyze as a straightaway'. Or, on a long recording's review screen, tap 'Re-analyze as straightaways'. If something about this still isn't right, edit the task to say what's missing."
               }
             },
             {
