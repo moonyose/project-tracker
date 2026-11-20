@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More (\u2026) menu on iOS and Android, and PR #67 (merged Nov 18) added it for long recordings on the pass picker, split review and results card. It's all still on master, so no new PR.",
+                "summary": "This is already in the app on iOS and Android (PRs #50 and #67): a one-tap 'Re-analyze as a straightaway' (or another type) in the player's More menu, on the results card, and on a long recording's review screen. Nothing new was needed, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:48+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code on origin/master and confirmed the Re-analyze rows are wired on both platforms. Checked with gh that PRs #50 and #67 are merged. No builds were re-run because nothing changed. PR #50 had already passed xcodebuild, Tools/verify.sh and the Android Gradle checks.",
-                "next_step": "On your phone, open a clip that was recorded as a Start, tap ... (More), then tap 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and then straightaway coaching. If that works, tick off this to-do. If it misses something, edit the task and say what is still manual."
+                "at": "2026-11-20T04:50+00:00",
+                "verified": "Read the current origin/master code on both platforms and confirmed each entry point is still wired in after the latest merges (#77, #78). No build was run because nothing changed.",
+                "next_step": "On a TestFlight build at or after PR #67, open a clip analyzed as a start, tap More, then 'Re-analyze as a straightaway'. Check that it re-runs as a straightaway. If the Nov 17 clip came from an older build, it predates this feature. If it still only let you fix it by hand on a current build, tell me which screen you were on so the next run can target that path."
               }
             },
             {
