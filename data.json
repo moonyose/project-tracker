@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #50 (merged Nov 18) added a one-tap \"Re-analyze as...\" option, and PR #67 extended it to the results card, the pass picker and the long-recording (starts split) screen, on both iOS and Android. Nothing left to do for this to-do.",
+                "summary": "Already shipped. One-tap 'Re-analyze as...' landed on master in commit c3f1d42 (PR #50, branch claude/t127-reanalyze-as, merged Nov 18; carried forward in PR #67). It is on iOS and Android: the player's More menu (KindFlow.reanalyzeOptions), the finish card (ReanalyzeCard / finishReanalyze-*), the pass picker, and the Split Starts review ('Re-analyze as straightaways' for a whole recording). The scan cache records what it looked for, so a recording first scanned as Starts is searched for passes again once it is re-analyzed as straightaways. Tests: Tools/tests_kindui.swift (kui_reanalyzeAsTest)",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:33+00:00",
-                "verified": "Checked origin/master (94d6bf0): merge commits fe99a5f (PR #50, branch claude/t127-reanalyze-as) and cc7b90d (PR #67) are on master. Re-analyze code is present in iOS AnalysisPlayerView.swift (More menu, gated by KindFlow.canChange), ResultsViews.swift, PassPickerView.swift, SplitStartsView.swift and KindViews.swift (ReanalyzeCard), and in the Android player, results, KindViews and split screens, ",
-                "next_step": "On a TestFlight build, record a straightaway with the recording screen left on Starts. Open the clip, or the long-recording screen if it was split, tap \"Re-analyze as straightaways\", and check that the results switch to straightaway analysis. If something still doesn't work, edit the to-do with exactly what went wrong."
+                "at": "2026-11-20T05:35+00:00",
+                "verified": "Checked origin/master (94d6bf0) with git log -S and grep. The feature and its tests are on both platforms. I didn't rebuild or run any checks because no code changed.",
+                "next_step": "On your phone (TestFlight 1.0.4 or later): record straightaways with Starts still picked. On the Starts review screen, tap 'Re-analyze as straightaways' and check that the runs come back as straightaways. For a single clip, open it, tap More, then 'Re-analyze as a straightaway'. If something still doesn't work, edit the to-do to say which screen."
               }
             },
             {
