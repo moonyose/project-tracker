@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: this to-do (t127) shipped in PR #50 (branch claude/t127-reanalyze-as, merged Nov 18 as fe99a5f, with commits 1a499a2 and c3f1d42), on both iOS and Android. A clip can be re-analyzed as a start, straightaway or curve in one tap from the player's More menu ('Re-analyze as a straightaway'), and also from the finish card, the pass picker and the long-recording review ('Re-analyze as straightaways'). The choice is saved on the clip and goes through the visible re-analysis stage. The scan cache also remembers what it looked for, so a recording first scanned as starts gets scanned again",
+                "summary": "This is already in the app on iOS and Android, so no new PR was opened. Merged PRs #50 and #67 added one-tap 'Re-analyze as\u2026' buttons in the player's More menu, on the finished-clip results and on a long recording's review screen; a clip analyzed as a start offers 'a straightaway' first.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:07+00:00",
-                "verified": "Read the git history and the code only, with no build in this run. PR #50 changed both iOS (KindLogic.swift, AnalysisPlayerView.swift, Tools/tests_kindui.swift) and Android (KindLogic.kt, AnalysisPlayerScreen.kt, KindUiTest.kt). Grep on current master shows the re-analyze entry points are still in both apps.",
-                "next_step": "Check the to-do off the list, or say what's still missing. To try it on your phone: open a clip that was analyzed as a Start, tap More (...) in the player, tap 'Re-analyze as a straightaway', and confirm it shows 'Re-analyzing as a stride' and then straightaway results. For a long recording, the review screen has a 'Re-analyze as straightaways' card. If you're on a TestFlight build from before Nov"
+                "at": "2026-11-20T02:09+00:00",
+                "verified": "Read origin/master (94d6bf0). Confirmed KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt, and that they are wired into the player menu, the results card and the recording review on both platforms. Merge commits fe99a5f (PR #50) and cc7b90d (PR #67) are ancestors of master. Builds were not re-run because nothi",
+                "next_step": "On the phone, open a clip that was analyzed as a start. Tap More: it should list 'Re-analyze as a straightaway' first, then 'a curve (Beta)'. Tap it and check the re-analysis screen runs and the results show strides. If that works, close this to-do. If something still feels manual, edit the to-do to name the exact screen."
               }
             },
             {
