@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already done on both iOS and Android (merged Nov 18). A single clip has 'Re-analyze as a straightaway / start / curve' in the player's More menu, and a split recording has a 'Filmed something else?' card with 'Re-analyze as straightaways', so no PR was needed.",
+                "summary": "This is already in the app on iOS and Android (merged in PR #67). Once a clip has been analyzed, the player's More menu shows one-tap \"Re-analyze as \u2026\" buttons, with the likeliest mix-up first, so a Starts take offers \"Re-analyze as a straightaway\" at the top. The results card and the pass picker have the same buttons.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:05+00:00",
-                "verified": "Read origin/master (94d6bf0): commits 1a499a2 and c3f1d42 are on master, and the menu items, reanalyze card and their tests (Tools/tests_kindui.swift, android KindUiTest.kt) are present on both platforms. Builds and tests were not re-run because nothing changed.",
-                "next_step": "On the latest TestFlight build, open a clip analyzed as Starts, tap More, then 'Re-analyze as a straightaway'. For a long recording split as starts, scroll to 'Filmed something else?' and tap 'Re-analyze as straightaways'. If either still feels manual, edit the task to say which screen."
+                "at": "2026-11-20T10:10+00:00",
+                "verified": "./Tools/verify.sh: ALL CHECKS PASSED on current master, including a test that a clip recorded on the Starts setting is offered straightaway first and one tap re-analyzes it as straightaways. No Xcode build or Gradle run because no code changed.",
+                "next_step": "On your phone, open a clip recorded as Starts, wait for the analysis, then tap More (top right) > \"Re-analyze as a straightaway\". If you wanted the button somewhere more visible (for example right after recording), edit this task to say where."
               }
             },
             {
