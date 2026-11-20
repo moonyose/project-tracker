@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (claude/t127-reanalyze-as, commit 1a499a2) added one-tap \"Re-analyze as a straightaway / a curve (Beta) / a start\" entries to the player's More menu on iOS (AnalysisPlayerView.swift) and Android (AnalysisPlayerScreen.kt). It is merged into master and still there after later More-menu changes (#78). Recording-level \"Re-analyze as straightaways/starts\" cards also exist in the split/pass-picker flows on both platforms. No new PR opened.",
+                "summary": "Already shipped on master, on iOS and Android. Commit 1a499a2 ('Add one-tap \"Re-analyze as ...\" to the player's More menu') and commit c3f1d42 ('Reanalyze as another kind ...'), both from Nov 18, add one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' in four places: the player's More menu, the finish card ('Analyzed as a start. Filmed something else?'), the long-recording review, and the pass picker ('Re-analyze as straightaways'). A recording first scanned as starts is scanned again for passes after you re-analyze it as straightaways. These are the KindFlow.reanalyzeOptions / r",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T18:01+00:00",
-                "verified": "./Tools/verify.sh on current origin/HEAD (94d6bf0): ALL CHECKS PASSED, including the Re-analyze-as option/title tests. Checked by grep that both the iOS and Android player menus still call KindFlow.reanalyzeOptions. No xcodebuild or Gradle run, because no code changed.",
-                "next_step": "On the phone: open a clip that was analysed as a start, tap More (the ... button top right, shown once analysis finishes), then tap \"Re-analyze as a straightaway\". It should re-analyze as straightaways. If this is on master but not in your TestFlight build yet, wait for the next build. If it still falls short, edit the task to say what is missing (for example, a button on the recording screen itse"
+                "at": "2026-11-20T18:08+00:00",
+                "verified": "./Tools/verify.sh on current master printed ALL CHECKS PASSED. That run includes the re-analyze tests in Tools/tests_kindui.swift and Tools/tests_passes.swift. No xcodebuild or Gradle run, because no code changed.",
+                "next_step": "On a TestFlight build that includes the Nov 18 merges: set the record screen to Start and film a few straightaway runs. Open the clip or the recording's review, then tap 'Re-analyze as a straightaway' (or 'Re-analyze as straightaways' on the review). It should show 'Re-analyzing as a stride' and then give stride coaching. If that's done, close t127."
               }
             },
             {
