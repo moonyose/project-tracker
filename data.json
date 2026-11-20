@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (merged 2026-11-18, commit 1a499a2) added one-tap \"Re-analyze as a straightaway / a curve / a start\" rows to the player's More menu on iOS (AnalysisPlayerView + KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen + KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. Each tap goes through the existing applyKind path: paywall, visible re-analysis step, and the choice saved on the clip. Other entry points are already on master too: the library long-press \"Analyze as\u2026\" menu, the results view's re-analyze buttons, and the Reana",
+                "summary": "Already on master, so no new PR: PRs #50 and #67 (both merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' on iOS and Android, in the player's More menu, the finish card, the pass picker and the Starts review card. A clip first scanned as starts gets scanned again for straightaway passes when you switch it.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:07+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Confirmed in the code on current origin/master that the feature and its tests exist on iOS and Android. No new build was run because nothing changed.",
-                "next_step": "On your phone, open a clip that was analyzed as a start and tap the More (\u2026) menu. Tap \"Re-analyze as a straightaway\" and check that the re-analysis step shows and the results come back as a straightaway. If this still feels like manual work in some flow (for example, right after recording), edit the task to name that screen."
+                "at": "2026-11-20T13:09+00:00",
+                "verified": "Read the code and git history only: found the merged PRs #50 and #67 and confirmed the re-analyze code is still on current master for iOS and Android. Made no change, so no build or checks were run.",
+                "next_step": "On a TestFlight build that includes PR #50/#67: record a straightaway with the record screen left on Starts. On the Starts review card, tap 'Re-analyze as straightaways' (or open the clip, tap More, then 'Re-analyze as a straightaway'), and check that it re-runs as passes in one tap. If it still falls short, edit the task to say which screen lacked the option."
               }
             },
             {
