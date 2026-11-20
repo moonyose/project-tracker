@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android (commits 1a499a2 and c3f1d42, Nov 18). A clip has 'Re-analyze as a straightaway / a start / a curve' in the player's More menu and on the results card. A long recording's review screen has 'Re-analyze as straightaways / starts / curves'. A take left on Starts is offered Straightaway first. No PR opened.",
+                "summary": "This is already on master: PRs #50 and #67 (merged Nov 18) added one-tap \"Re-analyze as...\" on iOS and Android, both in the player's More menu and on a recording's starts review, pass picker and finish card, and fixed the saved scan that kept a straightaway session stuck as starts. You closed PR #70 as superseded, so I opened no new PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:17+00:00",
-                "verified": "Found the code on master for iOS and Android with grep and git log -S. ./Tools/verify.sh on origin/master printed ALL CHECKS PASSED, including the check that a recording re-analyzed as straightaways is looked through for passes again. No xcodebuild or Gradle run, because nothing changed.",
-                "next_step": "Use a build made after Nov 18: the last TestFlight build on record is Nov 6, which may be too old to have this. Open a clip analyzed as a Start, tap More (...), then 'Re-analyze as a straightaway'. If one screen still makes you fix it by hand, edit the to-do to name that screen."
+                "at": "2026-11-20T05:18+00:00",
+                "verified": "Read the code only, no build or tests run. origin/master (94d6bf0) contains commits 1a499a2 and c3f1d42. iOS: KindFlow.reanalyzeOptions is wired in AnalysisPlayerView.swift:653, and reanalyzeRecordingTitle in SplitStartsView.swift:1422 and PassPickerView.swift:57. Android: the same calls in AnalysisPlayerScreen.kt:529, SplitStartsScreen.kt:387 and PassPickerScreen.kt:167. KindUiTest and Tools/test",
+                "next_step": "On your phone, record a straightaway with the record screen left on Start. On the starts review or 'No starts found' screen, tap 'Re-analyze as straightaways' and check that it shows Pick your passes. If that works, mark t127 done in the tracker."
               }
             },
             {
