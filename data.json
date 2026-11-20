@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms, so nothing new to do. PR #50 (merged 2026-11-18) added a one-tap \"Re-analyze as a straightaway / a curve (Beta) / a start\" to the player's More menu. PR #67 (merged 2026-11-18) added \"Re-analyze as starts / straightaways / curves\" buttons to the review of a long recording (pass picker and starts split screen) and an \"Analyzed as a start. Filmed something else?\" card in the results. Current master still has all of these on iOS (AnalysisPlayerView.swift:653, ResultsViews.swift:967-971, PassPickerView.swift:54-58, SplitStartsView.swift:1420-1423) and on Android ",
+                "summary": "Already shipped on both platforms. PR #50 (merged 2026-11-18, the day after the Nov 17 note) added one-tap 'Re-analyze as a straightaway / curve / start' items to the player's More menu, and PR #67 (merged 2026-11-18) added 'Filmed something else?' cards with one-tap Re-analyze buttons to the end-of-run results card, the split-starts screen and the pass picker. Android has the same entry points: AnalysisPlayerScreen.kt menu, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt. Each one reruns analysis as the chosen kind via applyKind / SplitModel.reanalyze and shows the 'Re-analyzing as",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:51+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) on both platforms and checked with gh that PRs #50 and #67 are merged. No code was changed, so no build or test was run.",
-                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with the record screen left on Start, open the clip, tap More > \"Re-analyze as a straightaway\", and check it comes back analyzed as a straightaway. If that doesn't happen on the phone, edit this to-do with what went wrong."
+                "at": "2026-11-20T03:52+00:00",
+                "verified": "Read current master (94d6bf0). iOS: AnalysisPlayerView.swift:650-659 (More menu Re-analyze items), ResultsViews.swift:942/962 (finish-card buttons), SplitStartsView.swift:1417-1423 and PassPickerView.swift:54-58 (recording cards). Android: AnalysisPlayerScreen.kt:529-533, ResultsViews.kt:1290-1295, SplitStartsScreen.kt:384, PassPickerScreen.kt:160-168. Merge dates were checked with gh. No build wa",
+                "next_step": "On a TestFlight build from Nov 18 or later: open a straightaway clip that was recorded on Starts, tap More (...), then 'Re-analyze as a straightaway'. Or play to the end and use the 'Analyzed as a start. Filmed something else?' buttons. If that still feels hidden, edit the task to say where you expected the button."
               }
             },
             {
