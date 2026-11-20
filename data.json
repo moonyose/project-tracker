@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 ('One-tap \"Re-analyze as\u2026\" in the player's More menu', merged 2026-11-18) and PR #67 (merged 2026-11-18) put this on master for iOS and Android. Current master (94d6bf0) still has it. On iOS, the player's More menu has a 'Re-analyze as a straightaway / a curve (Beta) / a start' section (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions), the results view has a 'Filmed something else?' card (ResultsViews.swift), and long-recording review has 'Re-analyze as straightaways' buttons (SplitStartsView.swift, PassPickerView.swift). Android mirrors all of these (AnalysisPlayer",
+                "summary": "Already done on master, on iOS and Android. PR #50 (merged Nov 18, 15:35 UTC, from branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. PR #67 (merged Nov 18, 15:49 UTC) added the same choice to the finish card ('Analyzed as a start. Filmed something else?') and to a long recording's review ('Re-analyze as straightaways'). Each tap records the kind as the athlete's choice and re-runs the analysis while 'Re-analyzing as a stride' shows. On iOS this is in AnalysisPlayerView.swift, ResultsViews.swift, PassPickerVi",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:29+00:00",
+                "at": "2026-11-20T00:31+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the current master source on both platforms and confirmed the menu items, the results card and the recording-review buttons are wired to a one-tap kind pick. Confirmed with gh that PR #50 is merged. No build or tests were re-run, since nothing was changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later, open a clip that was analyzed as a start. Tap More (top right), tap 'Re-analyze as a straightaway', and check that it re-analyzes and shows straightaway coaching. If that works, mark t127 done."
+                "verified": "Read current master (94d6bf0). iOS: the More menu still has the KindFlow.reanalyzeOptions rows (AnalysisPlayerView.swift ~line 651), plus the finish-card and recording-review re-analyze buttons. Android: the same paths, plus KindUiTest reanalyzeTest and reanalyzeAsTest. gh shows PRs #50 and #67 merged. No builds run because nothing changed.",
+                "next_step": "On the phone, with the current TestFlight build: open a straightaway clip that was analyzed as a start, tap More (top right), then 'Re-analyze as a straightaway'. Check that 'Re-analyzing as a stride' shows and the clip comes back with a 'Stride \u00b7 your choice' chip. If that already works, close t127."
               }
             },
             {
