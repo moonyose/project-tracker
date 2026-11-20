@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already built on iOS and Android: PRs #50 and #67 (merged Nov 18) added one-tap \"Re-analyze as\u2026\" options to a clip's More menu and the result screen, plus a \"Re-analyze as straightaways\" card for long recordings. No new PR was needed.",
+                "summary": "This is already in the app on iOS and Android: on Nov 18, the day after your note, the player's More menu got one-tap \"Re-analyze as\u2026\" rows, with the likeliest mix-up listed first. The results screen and long-recording review got the same options. Nothing was left to change, so there is no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:44+00:00",
-                "verified": "Confirmed PRs #50 and #67 are merged and their commits are in origin/master. Read the current iOS code (AnalysisPlayerView More menu reanalyzeOptions, ReanalyzeCard on split screen and pass picker) and the Android equivalents (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #78 only hides the More me",
-                "next_step": "On a TestFlight build from Nov 18 or later, film a straightaway with the record screen left on Starts. For a single clip, wait for the analysis, then tap More > 'Re-analyze as a straightaway'. For a long recording, tap 'Re-analyze as straightaways' on the split screen. If that still feels like manual work, edit this to-do to say what's missing."
+                "at": "2026-11-20T05:46+00:00",
+                "verified": "Read the code on current master. Commit 1a499a2 (PR #67) added the menu rows, the results card and the recording-review buttons, all wired to the shared re-analyze logic, with unit tests on both platforms (Tools/tests_kindui.swift, KindUiTest.kt). No builds or checks were run because nothing changed.",
+                "next_step": "On a TestFlight build from after Nov 18, open a straightaway clip that was analyzed as a start, tap More (\u2026), then tap \"Re-analyze as a straightaway\". If it re-analyzes correctly, close this to-do."
               }
             },
             {
