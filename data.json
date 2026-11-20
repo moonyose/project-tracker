@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More (\u2026) menu. PR #67 (merged Nov 18) added a 'Re-analyze as straightaways' card for long recordings scanned as the wrong kind. No new PR was opened.",
+                "summary": "This already shipped on iOS and Android, so no new PR. PR #50 (merged Nov 18) added 'Re-analyze as\u2026' to a clip's More menu, and PR #67 (merged Nov 18) added it for whole recordings, including on the starts review and the 'no starts found' card.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:45+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the current master source: the More-menu rows are in StrideLab/Playback/AnalysisPlayerView.swift:653, the recording card is in StrideLab/Split/SplitStartsView.swift:1420 and PassPickerView.swift:55, and the Android versions are in android/. gh shows PRs #50 and #67 as merged. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later, record a straightaway with Start selected, open the clip, tap More (\u2026) and choose 'Re-analyze as a straightaway'. If that still feels like manual work, edit the to-do to say what's missing, for example a prompt right after analysis instead of a menu row."
+                "at": "2026-11-20T12:47+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Read the git history and current master on both platforms: the Re-analyze options are wired in the iOS player More menu, the split/starts review and the pass picker, and in the matching Android screens. Confirmed with gh that PRs #50 and #67 are MERGED. I made no code change, so I did not rebuild.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record straightaways with the record screen left on Starts. On the starts review (or the 'no starts found' card), tap 'Re-analyze as straightaways' and check that passes are found. For a single clip, open it, tap More (top right, once analysis finishes) and pick 'Re-analyze as a straightaway'. If either step is missing or doesn't work well enough, edit t"
               }
             },
             {
