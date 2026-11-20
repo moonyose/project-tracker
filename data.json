@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android (commit c3f1d42, Nov 18). Finished clips, the player's More menu and the long-recording review all have one-tap 'Re-analyze as\u2026' buttons, so no PR was needed.",
+                "summary": "Already done on master, on both iOS and Android. PR #50 (merged Nov 18) added one-tap \"Re-analyze as a straightaway / start / curve\" to the clip player's More menu. PR #67 (merged Nov 18) added a \"Filmed something else?\" card with \"Re-analyze as straightaways / starts\" to the screen you get after recording, so a clip filmed with Starts still selected is checked again for straightaway passes with one tap. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:00+00:00",
-                "verified": "Checked by reading the code at origin/HEAD (94d6bf0) and git history (c3f1d42 is an ancestor of master). Nothing was rebuilt or re-run in this run because nothing changed.",
-                "next_step": "On a TestFlight build at or after c3f1d42: (1) Leave the record screen on Starts and film a straightaway. (2) Open the result. The finish card says 'Analyzed as a start. Filmed something else?' (3) Tap 'Re-analyze as a straightaway'. You can also use More > Re-analyze as a straightaway in the player. It should re-run as a stride with acceleration and top speed phases. For a long recording, the rev"
+                "at": "2026-11-20T09:02+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Read the code on current master (94d6bf0). iOS: ReanalyzeCard in SplitStartsView review and PassPickerView, wired to SplitModel.reanalyze(as:store:), which saves the chosen kind and checks the recording again. The player's More menu uses KindFlow.reanalyzeOptions, and the finish card uses ResultsViews onReanalyze. Android has the same behavior: ReanalyzeCard in SplitStartsScreen and PassPickerScre",
+                "next_step": "Install the current TestFlight build. Record a short straightaway with Start still selected. On the review screen, scroll to \"Filmed something else?\" and tap \"Re-analyze as straightaways\". It should find the passes and let you cut them. If that card is missing or the result is wrong, edit this to-do and say what you saw. Otherwise mark it done."
               }
             },
             {
