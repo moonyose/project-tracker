@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on iOS and Android. PR #50 added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu. PR #67 (merged Nov 18) fixed the Nov 17 case: a long recording filmed with Start still picked had its saved scan reused as a look for starts, so passes were never searched for. It added 'Re-analyze as straightaways / curves / starts' buttons on the recording review screen (including when no starts were found), the pass picker and the finish card. Nothing left to change, so no PR.",
+                "summary": "Already shipped on master for iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu. PR #67 (merged Nov 18) added the 'Analyzed as a start. Filmed something else?' card with Re-analyze buttons on the finished results, plus 'Re-analyze as straightaways/curves/starts' on a long recording's review (pass picker / split starts). Both platforms are covered: iOS AnalysisPlayerView.swift, ResultsViews.swift, PassPickerView.swift and SplitStartsView.swift; Android AnalysisPlayerScreen.kt, ResultsViews.kt, Pa",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T11:08+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). iOS: AnalysisPlayerView.swift around line 653 (More menu rows), ResultsViews.swift around line 962 (finish card), SplitStartsView.swift around line 1421 and PassPickerView.swift around line 56 (recording review and pass picker). Android twins: AnalysisPlayerScreen.kt:529, ResultsViews.kt:1290, SplitStartsScreen.kt:386, PassPickerScreen.kt:165. Tests: Tools",
-                "next_step": "On your phone, open a clip that was analyzed as a start, tap More (top right) and tap 'Re-analyze as a straightaway'. For a long recording filmed with Start left on, use 'Re-analyze as straightaways' on its review screen. If either one doesn't do what you wanted, edit the to-do to say what's missing, for example a long-press option in the library."
+                "at": "2026-11-20T11:10+00:00",
+                "verified": "Read origin/master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeTitle/reanalyzeChoices are wired into the iOS More menu and results card and into the Android equivalents. Checked gh PR history: #50 and #67 merged. No code changed, so build/verify.sh were not re-run.",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone: open a clip that was analyzed as a Start, tap the More (...) button, tap 'Re-analyze as a straightaway', and check that it re-analyzes and the badge reads Stride. If what you want is something these don't cover (for example a prompt on the record screen itself), edit the task to say so."
               }
             },
             {
