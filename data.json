@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on both iOS and Android: PR #50 and PR #67 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / start / curve (Beta)' to the player's More menu, the finish card, the pass picker and the 'no starts found' screen. No new PR was needed.",
+                "summary": "Already on master, on iOS and Android. PR #50 added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift and AnalysisPlayerScreen.kt). PR #67 (merged Nov 18, the day after Austin's Nov 17 note) fixed the root cause for long recordings: the saved scan didn't record which kind it had looked for, so a session filmed on Starts was never searched for straightaways. It also added 'Re-analyze as straightaways / curves / starts' buttons (ReanalyzeCard) to the recording review screen (even when no starts we",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:16+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) and the git history (merges fe99a5f for #50 and cc7b90d for #67) to confirm the feature is present on both platforms, with tests in tests_kindui.swift and KindUiTest.kt. Nothing changed, so no build was run.",
-                "next_step": "On the phone: record a few straightaway reps with the record screen left on Starts, open the clip, then tap More (top right) > 'Re-analyze as a straightaway'. If it stops at 'no starts found', use the 'Re-analyze as straightaways' button there. If a specific screen still forces the manual fix, edit the task to name that screen."
+                "at": "2026-11-20T14:18+00:00",
+                "verified": "Read current master (94d6bf0). The Re-analyze entry points are wired in StrideLab/Playback/AnalysisPlayerView.swift (More menu), ResultsViews.swift (finish card), Split/SplitStartsView.swift and Split/PassPickerView.swift, plus their Android twins (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt). Did not rebuild or re-run verify.sh because no code changed. PR c",
+                "next_step": "On a current TestFlight build: 1) Record a short straightaway with the record screen left on Start. 2) Open it. On the finish card or in More (...) in the top right, tap 'Re-analyze as a straightaway'. 3) For a long recording, look on the review screen for 'Re-analyze as straightaways'. If a specific screen is still missing the option, edit the task to name it."
               }
             },
             {
