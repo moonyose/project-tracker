@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master on both platforms. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged Nov 18, branch claude/t127-reanalyze-as) added a one-tap 'Re-analyze as ...' to the player's More menu, and #67 extended it. iOS: AnalysisPlayerView More menu lists KindFlow.reanalyzeOptions (e.g. 'Re-analyze as a straightaway'). The finish/results card and the Split starts / pass picker screens also show ReanalyzeCard ('Re-analyze as straightaways' for a whole recording). Android: the same in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt, with Kin",
+                "summary": "Already shipped on master for both platforms. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' items to the player's More menu (KindFlow.reanalyzeOptions, with tests in Tools/tests_kindui.swift and android KindUiTest.kt). PR #67 (merged Nov 18) added 'Re-analyze as ...' buttons on the finish/results card (ResultsViews) and a recording-level 'Re-analyze as straightaways/starts' card on the confirm-starts and pass-picker screens (SplitStartsView/PassPickerView, SplitModel.reanalyze), which covers the Nov 17 case of a straightaway take recorded on Starts. Current",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T18:14+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Code inspection of origin/master (94d6bf0) only: grep for reanalyze in StrideLab/ and android/app and core, plus a read of KindFlow.reanalyzeOptions/canChange and the More-menu code. Nothing was changed, so no build or test run was done this time.",
-                "next_step": "On the phone, open a clip analyzed as a start. Tap More (top right) and pick 'Re-analyze as a straightaway'. It should re-analyze and show straightaway results. If this doesn't match what you saw on Nov 17 (for example, you were on a build before PR #50 shipped), say which screen lacked the option and re-open the to-do with that detail."
+                "at": "2026-11-20T18:16+00:00",
+                "verified": "Read git history and current master: merge commits fe99a5f (#50) and cc7b90d (#67), and grep of AnalysisPlayerView.swift:653, ResultsViews.swift:942-978, SplitStartsView.swift:969-1423, PassPickerView.swift:21-58, and the Kotlin twins (AnalysisPlayerScreen.kt:529-533, ResultsViews.kt:1287-1295, SplitModel/SplitStartsScreen/PassPickerScreen). Builds were not re-run because nothing changed.",
+                "next_step": "On the latest TestFlight build: record a straightaway with the record screen set to Start. On the confirm-starts screen, tap 'Re-analyze as straightaways' and check it analyzes as a stride. Also open an analyzed clip, tap More, and check the 'Re-analyze as ...' items there. If this works, close t127. If something still feels manual, edit the task to say which screen."
               }
             },
             {
