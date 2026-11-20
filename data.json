@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This was already done: PR #50, merged Nov 18, added one-tap 'Re-analyze as a straightaway / start / curve' options to the player's More menu on iOS and Android, and the results and long-recording screens have them too. No new change was needed.",
+                "summary": "One-tap \"Re-analyze as...\" is already on master on iOS and Android, so there was nothing to change. It was merged in PR #50 (commit 1a499a2) and is still there after #77 and #78. It shows up in the player's More menu, on the results screen, and on the split-starts and pass-picker screens for long recordings.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:49+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked by reading code and git history only; no build or tests run this time. git log -S reanalyzeOptions finds commit 1a499a2, merged as fe99a5f (PR #50, MERGED 2026-11-18T15:35:23Z). The call sites are in origin/HEAD on both platforms: AnalysisPlayerView.swift:653, ResultsViews.swift:962, SplitStartsView.swift:1420, PassPickerView.swift:54, plus the Android equivalents in AnalysisPlayerScreen.k",
-                "next_step": "On the phone: record a straightaway with the record screen left on Starts, open the clip, tap More (the ... menu) in the player, and pick 'Re-analyze as a straightaway'. The clip should re-run as a straightaway. If that works, close this to-do. If something is still missing, such as a bulk re-analyze or a different entry point, edit the task to say what."
+                "at": "2026-11-20T01:54+00:00",
+                "verified": "Read current master. iOS: AnalysisPlayerView.swift:653 builds the More menu rows from KindFlow.reanalyzeOptions, the results screen (ResultsViews.swift:971) uses KindFlow.reanalyzeChoices, and SplitStartsView and PassPickerView use ReanalyzeCard. Android: the same rows are in AnalysisPlayerScreen.kt:529, ResultsViews.kt:1291 and SplitStartsScreen.kt:384. ./Tools/verify.sh printed ALL CHECKS PASSED",
+                "next_step": "On your phone, open a straightaway clip that was analyzed as a start. Once the result shows, tap More (top right) and then \"Re-analyze as a straightaway\". If that works, tick the to-do off. If you meant something else, like changing the kind from the library row without opening the clip, edit the task to say where you want the option."
               }
             },
             {
