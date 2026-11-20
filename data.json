@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on iOS and Android, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / start / curve' to a clip's More menu and results, and PR #67 (merged Nov 18) added the same options for long recordings on the review screen.",
+                "summary": "This is already on master for iOS and Android: PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / start / curve' to the player's More menu, and PR #67 (merged Nov 18) added the same for split recordings plus a 'Filmed something else?' card on the results. Nothing new to build, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:48+00:00",
-                "verified": "Read current master (94d6bf0): the re-analyze entry points are present and wired on both platforms. ./Tools/verify.sh prints ALL CHECKS PASSED, including the check that a recording re-analyzed as straightaways is looked through for passes again. No xcodebuild or Gradle run, because no code changed.",
-                "next_step": "On your phone, open a clip analyzed as a start, tap More (top right) and pick 'Re-analyze as a straightaway'. It should re-analyze in one tap. For a long recording filmed on Starts, the split review shows 'Re-analyze as straightaways'. If something about this still falls short, edit t127 to say what is missing."
+                "at": "2026-11-20T08:51+00:00",
+                "verified": "Read current master code on iOS and Android and confirmed the Re-analyze as... entry points are present and wired to applyKind / SplitModel.reanalyze. Confirmed with gh that PRs #50 and #67 are merged. No build was run because nothing was changed.",
+                "next_step": "On a TestFlight build from 2026-11-18 or later: open a clip recorded as Starts that is really a straightaway, wait for the analysis, tap More (top right), tap 'Re-analyze as a straightaway'. It should re-run as a straightaway. If a long recording was split, the pass picker also shows 'Re-analyze as straightaways'. If this still doesn't work on your phone, edit the task to say where it fails."
               }
             },
             {
