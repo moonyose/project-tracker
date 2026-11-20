@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master. PR #67 (commit c3f1d42, merged as cc7b90d on Nov 18, the day after the Nov 17 note) added one-tap 'Re-analyze as...' on iOS and Android. It appears on a long recording's review ('Re-analyze as straightaways / curves'), on the pass picker, on the finish card ('Analyzed as a start. Filmed something else?') and in the player's More menu. It puts the clip back through the scan as the new kind (the scan cache records what it looked for), so a take left on Starts gets looked through for straightaway passes. Later merges (#72-#78) left these entry points in place: iOS Analy",
+                "summary": "Already shipped. PR #50 (claude/t127-reanalyze-as, merged Nov 18, the day after the Nov 17 note) and PR #67 added one-tap 'Re-analyze as ...' on iOS and Android. It appears in four places: the player's More menu (AnalysisPlayerView.swift, AnalysisPlayerScreen.kt), the finish card ('Analyzed as a start. Filmed something else?', ResultsViews), and the long-recording review screens (SplitStartsView / PassPickerView and their Kotlin twins), where the buttons read 'Re-analyze as straightaways'. A clip analyzed as a start offers straightaway first. The newest master commit (#78) hid the More button ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:05+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). KindFlow.reanalyzeChoices/reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle exist in Swift and Kotlin and are wired into the review, pass picker, finish card and player menu on both platforms. Tests for them are in Tools/tests_kindui.swift, Tools/tests_passes.swift, android KindUiTest.kt and PassesTest.kt. No builds were run because nothing changed.",
-                "next_step": "On a TestFlight build at or after PR #67: record straightaways with the record screen left on Start. On the review, tap 'Re-analyze as straightaways' and check that the straightaway reps are found and analyzed. Or open a finished clip and use More > 'Re-analyze as a straightaway'. If that still falls short of what you wanted, edit the to-do to say what is missing."
+                "at": "2026-11-20T03:11+00:00",
+                "verified": "Read current master (94d6bf0) and confirmed the Re-analyze rows are still wired on both platforms. ./Tools/verify.sh prints ALL CHECKS PASSED, including the check that a recording re-analyzed as straightaways is searched for runs again. No xcodebuild or Gradle run, since nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: open a clip analyzed as a start, wait for the analysis to finish, tap More (top right) and tap 'Re-analyze as a straightaway'. The clip should re-analyze and show Straightaway as your choice. If that works, mark t127 done in the tracker."
               }
             },
             {
