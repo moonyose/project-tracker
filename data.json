@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' items to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 extended it to the results view and the split/pass-picker screens. On current master (94d6bf0, after #78 changed when the More menu shows) the options are still there once a result exists, and they also work on clips whose kind w",
+                "summary": "Already shipped on master, so no new PR. One-tap 'Re-analyze as ...' landed on both iOS and Android in PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) and was folded into PR #67 (merged 2026-11-18), which is on origin/master. Where it shows up: (1) the clip player's More menu has 'Re-analyze as a straightaway' / 'a curve (Beta)' / 'a start' rows, with the likeliest mix-up first (KindFlow.reanalyzeOptions; StrideLab/Playback/AnalysisPlayerView.swift and android/.../AnalysisPlayerScreen.kt); (2) the report has a 'Filmed something else?' card (ResultsViews.swift / ResultsViews.kt); (3",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:25+00:00",
-                "verified": "Code read only: confirmed on origin/master that the re-analyze menu items exist in iOS AnalysisPlayerView.swift (lines ~650-658) and Android AnalysisPlayerScreen.kt (~529-533), and that KindFlow.canChange only blocks fixed demos. No build run because nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later: open a clip recorded as Starts, wait for the analysis, tap More (top right), then tap 'Re-analyze as a straightaway'. You should see the re-analysis step, then straightaway coaching. If you can't find the option or it doesn't work, edit this to-do and say what you saw."
+                "at": "2026-11-20T00:27+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): confirmed merge commits fe99a5f (#50) and cc7b90d (#67) are ancestors of origin/HEAD, and found the iOS and Android call sites and tests listed above. I made no code changes, so I did not rebuild or re-run verify.sh, Gradle or bend.",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone (TestFlight build from master after Nov 18): open a clip analyzed as a start, tap More (...), tap 'Re-analyze as a straightaway', and check that the 'Re-analyzing as a stride' step appears and the results come back as a straightaway marked 'your choice'. If Austin still sees only the manual path, he should say which screen, since that would be"
               }
             },
             {
