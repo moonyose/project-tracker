@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (merged 2026-11-18, 'One-tap \"Re-analyze as\u2026\" in the player's More menu', branch claude/t127-reanalyze-as) and PR #67 (merged 2026-11-18, 'Re-analyze as\u2026 for a recording filmed as the wrong kind') are both on master. iOS: ReanalyzeCard in Playback/KindViews.swift, results-screen 'Analyzed as a start. Filmed something else?' rows in Playback/ResultsViews.swift, and recording-level 'Re-analyze as straightaways' in Split/SplitStartsView.swift and Split/PassPickerView.swift. Android has the same in KindLogic.kt, KindViews.kt, ResultsViews.kt, PassPickerScreen.kt and SplitMo",
+                "summary": "This is already done on iOS and Android: PRs #50 and #67 (merged Nov 18) added a one-tap 'Re-analyze as\u2026' option to the player's More menu, the finish card and the long-recording review screens. There was nothing left to change, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:56+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Checked that PRs #50 and #67 are MERGED with gh, and grepped origin/master for the Re-analyze as\u2026 UI and logic on iOS and Android. I didn't build because nothing changed.",
-                "next_step": "On your phone, open a clip that was analyzed as a start, then open the More menu (or the results screen) and tap 'Re-analyze as a straightaway'. For a long recording made on Starts, use the 'Re-analyze as straightaways' card on the reps screen. If that still doesn't cover the Nov 17 case, edit the task to say what's missing."
+                "at": "2026-11-20T01:57+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): the re-analyze helpers in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt are called from the iOS and Android screens listed in the summary, and both test suites cover them. I didn't run a build or the checks because nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with the record screen left on Start. Open the clip, tap More (...), then tap 'Re-analyze as a straightaway'. Check that it re-analyzes and shows stride coaching. For a long recording, the review screen should show 'Re-analyze as straightaways'. If that works, close this to-do. If something is still missing, add a note saying which "
               }
             },
             {
