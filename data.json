@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android: PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / start / curve' to the player's More menu, and PR #67 (merged Nov 18) added the same for split recordings plus a 'Filmed something else?' card on the results. Nothing new to build, so no PR.",
+                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merge fe99a5f, commit 1a499a2 on Nov 18) added a one-tap \"Re-analyze as a straightaway / a curve / a start\" list to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift, tests in Tools/tests_kindui.swift) and Android (AnalysisPlayerScreen.kt, KindLogic.kt, KindUiTest.kt). Current master (94d6bf0) still has it and has grown it: there are also re-analyze buttons in the results views on both platforms (ResultsViews.swift:973, ResultsViews.kt:1295) and a reanalyzeRecordingTitle",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:51+00:00",
-                "verified": "Read current master code on iOS and Android and confirmed the Re-analyze as... entry points are present and wired to applyKind / SplitModel.reanalyze. Confirmed with gh that PRs #50 and #67 are merged. No build was run because nothing was changed.",
-                "next_step": "On a TestFlight build from 2026-11-18 or later: open a clip recorded as Starts that is really a straightaway, wait for the analysis, tap More (top right), tap 'Re-analyze as a straightaway'. It should re-run as a straightaway. If a long recording was split, the pass picker also shows 'Re-analyze as straightaways'. If this still doesn't work on your phone, edit the task to say where it fails."
+                "at": "2026-11-20T08:53+00:00",
+                "verified": "Checked git history and grepped current origin/master: the reanalyzeOptions/reanalyzeTitle logic, menu items and tests are there in both the iOS and android/ trees. Builds were not re-run because nothing changed.",
+                "next_step": "On the phone, open a clip that was analyzed as Starts, tap More (the ... button), then tap \"Re-analyze as a straightaway\". It should re-analyze as a straightaway with no other steps. If that build doesn't have the option, it came before PR #50. If the option is there but isn't what you wanted (for example, you'd like it on the recording-done screen or the library row), edit the to-do to say where."
               }
             },
             {
