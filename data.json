@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #67, merged Nov 18, added a one-tap 'Re-analyze as\u2026' option on iOS and Android. It's on the review screen after recording (a 'Filmed something else?' card), the pass picker, the finish card and the player's More menu, so no new PR was needed.",
+                "summary": "Already shipped on master. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' to the player's More menu, and PR #67 (merged Nov 18) added 'Re-analyze as straightaways/starts/curves' buttons on the long-recording review (SplitStartsView, always shown, even when starts were found), the pass picker and the finish card. It also keys the scan cache by kind, so a recording first scanned as starts is scanned again for passes once it is called straightaways. Android has the same feature (SplitStartsScreen, PassPickerScreen, AnalysisPlayerScreen, KindLogic.kt). No",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:44+00:00",
-                "verified": "Read current master (94d6bf0). Confirmed by code reading and git history that the re-analyze entry points exist on both platforms. No builds were run because nothing changed.",
-                "next_step": "On a build from 1.0.4 or later: leave the record screen on Starts and film a straightaway. On the review screen, tap 'Re-analyze as straightaways' under 'Filmed something else?' and check that the pass picker comes up. If it still misbehaves, add a note to the to-do describing the exact screen."
+                "at": "2026-11-20T02:46+00:00",
+                "verified": "Read origin/master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle in StrideLab/Playback/KindLogic.swift; ReanalyzeCard in SplitStartsView.swift, PassPickerView.swift and ResultsViews.swift; the player menu in AnalysisPlayerView.swift; tests in Tools/tests_kindui.swift (kui_reanalyzeAsTest) and Tools/tests_passes.swift; Kotlin equivalents in android/. No build was run because ",
+                "next_step": "On a TestFlight build that includes PRs #50 and #67: record a few straightaways with Start still picked. On the review screen, tap 'Re-analyze as straightaways' and check that the passes are found. For a single clip, open it, tap More, then 'Re-analyze as a straightaway'. If either path still fails, reopen the to-do and describe the screen where it went wrong."
               }
             },
             {
