@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18 as fe99a5f) added one-tap \"Re-analyze as...\" on iOS and Android, and PR #67 (cc7b90d) extended it. Both are on master. A recording filmed with Starts still picked now shows a Re-analyze card in the starts review (SplitStartsView, the 'Filmed straightaways with Start still picked' card) and in the pass picker. A single clip gets 'Re-analyze as a straightaway / curve / start' rows in the player's More menu (KindFlow.reanalyzeOptions, straightaway offered first for a start). The scan cache records what it looked for, so a rec",
+                "summary": "This was already done: PR #67 (Nov 18, now on master) added a one-tap \"Re-analyze as\u2026\" option on iOS and Android. It's on the long recording's review screen, the pass picker, the finished clip's results card, and the player's More menu. I made no changes and opened no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:26+00:00",
-                "verified": "Confirmed fe99a5f (PR #50, t127) and cc7b90d (PR #67) are ancestors of origin/HEAD. Read the merged code paths on iOS (KindLogic.reanalyzeOptions, SplitModel.reanalyze, ReanalyzeCard in SplitStartsView/PassPickerView) and checked the Android twins exist. Builds and tests were not re-run because nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later: film a straightaway with Starts picked on the record screen, open the recording's review, and tap 'Re-analyze as straightaways' on the card. Or open any clip, then More > 'Re-analyze as a straightaway'. If something still feels manual, edit the task to say which screen."
+                "at": "2026-11-20T04:28+00:00",
+                "verified": "Read the code on origin/HEAD (94d6bf0): KindFlow.reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift, ReanalyzeCard in KindViews.swift used by SplitStartsView.swift, PassPickerView.swift and ResultsViews.swift, and the More menu in AnalysisPlayerView.swift. The Kotlin versions are in android/core/.../playback/KindLogic.kt and the ui/split and ui/player scr",
+                "next_step": "On a TestFlight build with PR #67: pick Starts on the record screen, film a straightaway rep, then stop. On the review screen, tap \"Re-analyze as straightaways\" and check that the passes are found and analyzed as straightaways. If it still falls short, edit this to-do and say what's missing."
               }
             },
             {
