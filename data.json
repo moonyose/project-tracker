@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master for iOS and Android (PR #50 and PR #67): the starts review, 'No starts found' and 'Pick your passes' screens have a one-tap 'Re-analyze as\u2026' card, and the player's results view and More menu offer it too. Nothing new to change, so no PR was opened. The later t127 PRs #55, #60 and #70 were closed unmerged.",
+                "summary": "Already shipped on master for iOS and Android: PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' rows to the player's More menu, and PR #67 added a 'Re-analyze as straightaways/curves/starts' card to the Starts recording review screen and the pass picker. All entry points are still wired after the later cleanup PRs #77/#78. No PR opened. The task can be checked off.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:52+00:00",
-                "verified": "Read the origin/master code (94d6bf0) and the GitHub PR history only. No build or tests were run because no code changed.",
-                "next_step": "Mark t127 done. To check it on your phone: record a straightaway with the record screen still on Starts, open the clip, and tap 'Re-analyze as straightaways' on the starts review screen. The 'Pick your passes' grid should appear. If a step still feels manual, edit the task to name the screen and it will be picked up again."
+                "at": "2026-11-20T10:59+00:00",
+                "verified": "Read current master: iOS SplitStartsView.swift review screen (ReanalyzeCard -> model.reanalyze(as:)), PassPickerView onReanalyze, AnalysisPlayerView More menu (KindFlow.reanalyzeOptions); Android SplitStartsScreen.kt, PassPickerScreen.kt, AnalysisPlayerScreen.kt mirror them. ./Tools/verify.sh -> ALL CHECKS PASSED. No xcodebuild or Gradle run, because no code changed.",
+                "next_step": "On the phone (TestFlight build from Nov 18 or later): set the record screen to Start, film or import some straightaways, and on the 'starts' review screen tap 'Re-analyze as straightaways'. The recording should be looked through again as straightaways. Also, in any analyzed clip, open More and check the 'Re-analyze as a ...' rows. If something still feels manual, edit the task to say which screen."
               }
             },
             {
