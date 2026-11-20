@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a start / a curve' rows to the player's More menu (KindFlow.reanalyzeOptions; the likeliest mistake, Starts -> straightaway, is listed first). PR #67 (merged Nov 18) added the same one-tap choice for a whole recording filmed as the wrong kind: a ReanalyzeCard on the Split/PassPicker screens and on the split failure state (SplitModel.reanalyze(as:)). Both are mirrored in Android (KindLogic.kt, AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt, with KindUiTest",
+                "summary": "Already done: PRs #50 and #67 (both merged Nov 18) added one-tap \"Re-analyze as\u2026\" on iOS and Android. It's on the recording review screen ('Re-analyze as straightaways') and in a finished clip's More menu, and both are still on master. No new PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:58+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the code on origin/master (StrideLab/Playback/AnalysisPlayerView.swift around line 650, KindLogic.swift reanalyzeOptions, Split/SplitStartsView.swift reanalyze(as:), PassPickerView.swift) and the Android equivalents. Confirmed with gh that PRs #50 and #67 are merged. Did not rebuild, because nothing changed.",
-                "next_step": "On a phone with a TestFlight build from Nov 18 or later: record straightaways with the record screen left on Starts. Either tap 'Re-analyze as straightaways' on the start-picker or failure card, or open the clip, tap More (top right), then 'Re-analyze as a straightaway'. If it still feels like manual work, edit this to-do and say which screen was missing the option."
+                "at": "2026-11-20T05:00+00:00",
+                "verified": "Code read only, nothing built. On origin/master 94d6bf0 I confirmed the ReanalyzeCard and More-menu re-analyze entries in the iOS and Android sources, and Android tests for them (KindUiTest.kt, PassesTest.kt). Builds, verify.sh and Gradle were not run because nothing changed.",
+                "next_step": "On a current TestFlight build: set the record screen to Starts, film a straightaway, and stop. On the review screen, tap 'Re-analyze as straightaways' under the start cards and check that the pass picker appears. Then open any finished clip, tap More, and check that 'Re-analyze as a straightaway' re-runs the analysis as a straightaway. If either is missing or not one tap, edit the to-do to say whi"
               }
             },
             {
