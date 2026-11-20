@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master on both platforms. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu (iOS AnalysisPlayerView + KindFlow.reanalyzeOptions; Android AnalysisPlayerScreen + KindLogic.kt, with tests in Tools/tests_kindui.swift and KindUiTest.kt). PR #67 added the 'Filmed something else?' ReanalyzeCard on the finished clip and the 'Re-analyze as straightaways/curves' card on a long recording's review (SplitStartsView / PassPickerView; Android SplitStartsScreen / PassPickerScreen). Checked tha",
+                "summary": "Already done on master. Commit 1a499a2 (Nov 18, 'Add one-tap \"Re-analyze as ...\" to the player's More menu') adds a 'Re-analyze as a straightaway / a curve / a start' item for each kind the clip wasn't analyzed as. It's in the analysis player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift, Tools/tests_kindui.swift) and on Android (AnalysisPlayerScreen.kt, core KindLogic.kt, KindUiTest.kt). One tap goes through the existing applyKind path: paywall, re-analysis, and the choice saved on the clip. The Starts split screen and the pass picke",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:28+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current origin/master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices exist and are wired into the More menu (AnalysisPlayerView.swift:653), the result card, and the split/pass-picker reviews on iOS, with matching Kotlin in android/. gh confirms PR #50 is MERGED. No build was run because no code changed.",
-                "next_step": "On the latest TestFlight build: set the record screen to Start, film a few straightaway strides, open the clip, tap More (...) > 'Re-analyze as a straightaway', and check that it re-analyzes and the badge reads 'Stride \u00b7 your choice'. For a long recording, check that the review screen shows 'Looked through for starts. Filmed something else?' with a 'Re-analyze as straightaways' button. If you have"
+                "at": "2026-11-20T17:30+00:00",
+                "verified": "Checked that commit 1a499a2 is on origin/HEAD and that both the iOS and Android code paths are there (grep for reanalyzeOptions/reanalyzeTitle). No builds were run because nothing changed.",
+                "next_step": "On the phone, with a TestFlight build that includes commit 1a499a2: open a clip that was analyzed as a start, tap More (the ... circle, top right), tap 'Re-analyze as a straightaway', and check that it re-analyzes and shows straightaway coaching. If that's working, close this to-do."
               }
             },
             {
