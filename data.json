@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This was already shipped in PR #50, which you merged. iOS and Android both have a one-tap 'Re-analyze as straightaways/starts' card on the confirm-starts screen and the pass picker, plus 'Re-analyze as\u2026' in the player's More menu. Later merges (#67, #76\u2013#78) kept all of these, so no new PR was opened.",
+                "summary": "Already implemented and merged on iOS and Android. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / curve / start' items to the player's More menu, going through the existing applyKind path (paywall, re-analysis stage, choice saved on the clip). PR #67 (merged 2026-11-18) added a 'Re-analyze as straightaways/starts' card for a whole recording filmed as the wrong kind (split/pass-picker screens), which looks the recording through again for passes or starts. Both have Swift (Tools/tests_kindui.swift) and Kotlin (KindUiTest.kt) tests. Current master (94d6bf0) contains both",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:54+00:00",
-                "verified": "Read the code on origin/master at 94d6bf0 to confirm the entry points exist on both platforms. No build or tests were run, because nothing was changed.",
-                "next_step": "On the current TestFlight build, record a straightaway with Starts still picked. On the confirm-starts screen, tap 'Re-analyze as straightaways' on the card below the starts and check that it opens the pass picker or straightaway analysis. If it works, mark t127 done. If something is still missing, edit the task to say what."
+                "at": "2026-11-20T00:56+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Confirmed with gh that PRs #50 and #67 are MERGED, and with grep that origin/master has the code on both platforms: KindFlow.reanalyzeOptions/reanalyzeTitle/reanalyzeChoices in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt, the More-menu items in AnalysisPlayerView.swift and AnalysisPlayerScreen.kt, ReanalyzeCard in SplitStartsView.swift/PassPickerView.swift and Kin",
+                "next_step": "On a TestFlight build that includes PRs #50/#67: record a few straightaways with the record screen left on Starts. On the results/split screen tap 'Re-analyze as straightaways' (or in the player open More > 'Re-analyze as a straightaway'). Check that it re-runs and shows straightaway coaching. If this still falls short of what you wanted, edit the to-do and say which screen is missing the option."
               }
             },
             {
