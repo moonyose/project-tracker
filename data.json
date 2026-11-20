@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master for iOS and Android (Nov 18, PR #67), so no PR this run: a one-tap \"Re-analyze as a straightaway / curve / start\" option is in the player's More menu, the finish card, the pass picker and the long-recording review, with the most likely mix-up listed first.",
+                "summary": "Already in the app on iOS and Android: PRs #50 and #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' to the player's More menu, the starts review and 'No starts found' screens, the pass picker and the results view. Nothing new was needed, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:06+00:00",
-                "verified": "./Tools/verify.sh on origin/master (94d6bf0): ALL CHECKS PASSED, including the 'Re-analyze as another kind' tests (Tools/tests_kindui.swift). I did not run xcodebuild, the Gradle checks or bend PROOF.bend, because nothing changed and those checks already run on every PR.",
-                "next_step": "On the latest TestFlight build: set the record screen to Start, film a straightaway, open the analyzed clip, tap More (top right), then tap 'Re-analyze as a straightaway'. You should see the 'Re-analyzing as a stride' step, then straightaway coaching with the kind chip showing Stride. If this was already the build you used on Nov 17, close the to-do."
+                "at": "2026-11-20T14:08+00:00",
+                "verified": "Checked origin/master (94d6bf0) by reading code and git/PR history: PR #50 and #67 are merged; #55, #60 and #70 were closed with the note that #50/#51/#67 cover t127. I ran no build or test, because no code changed.",
+                "next_step": "Mark t127 done in the tracker. To check on your phone (current TestFlight): record straightaways with Starts still selected, open the take, and tap 'Re-analyze as straightaways' on the starts review screen; or, on a clip already analyzed, tap More > 'Re-analyze as a straightaway'. If something still feels like manual work, edit the to-do to say where."
               }
             },
             {
