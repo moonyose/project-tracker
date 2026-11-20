@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, iOS and Android. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu, using the existing applyKind path (paywall, re-analysis stage, choice saved on the clip). PR #67 (merged Nov 18) added the same option to the results card (ResultsViews), the long-recording split screen and the pass picker ('Re-analyze as straightaways'). The latest master (after #78, which only hides the More button while analysis is still running) still has all of it: AnalysisPlayerView.swift lines 65",
+                "summary": "Already shipped on both platforms. One-tap \"Re-analyze as...\" is on master (merged PR #50 claude/t127-reanalyze-as on 2026-11-18, plus commits 1a499a2 and c3f1d42). iOS: More-menu rows in AnalysisPlayerView (KindFlow.reanalyzeOptions, e.g. \"Re-analyze as a straightaway\"), a ReanalyzeCard on the results/finish card (ResultsViews onReanalyze), and \"Re-analyze as straightaways\" for long recordings in SplitStartsView/PassPickerView (SplitModel.reanalyze), shown with ReanalysisStage. Android has the same: AnalysisPlayerScreen menu, PlayerStage/ResultsViews, and SplitStartsScreen ReanalyzeCard. Test",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:47+00:00",
-                "verified": "Read the current master code on both platforms and the merged commits 1a499a2 (#50), cc7b90d (#67) and 38714a3 (#78). Nothing was rebuilt or re-tested, since nothing changed; those PRs passed the PR checks when merged.",
-                "next_step": "On a TestFlight build from Nov 18 or later: open a straightaway clip that was analyzed as a start, tap More (top right, once the analysis has finished) and then 'Re-analyze as a straightaway', and check that it re-analyzes and the kind chip says Straightaway. If that is what you already saw and it still felt like manual work, tell me which screen you were on so the option can be added there."
+                "at": "2026-11-20T17:49+00:00",
+                "verified": "Read the code on origin/HEAD (94d6bf0). Searched git history for the introducing commits and confirmed the iOS and Android UI wiring and tests are there. No build was run because nothing changed.",
+                "next_step": "On your phone, open a clip that was analyzed as a Start, tap More (...) and pick \"Re-analyze as a straightaway\". For a long recording filmed with Start selected, use the \"Re-analyze as straightaways\" card on the passes/starts screen. If either doesn't show up in your build, update to a build that includes PR #50, or edit the task to say what is still missing."
               }
             },
             {
