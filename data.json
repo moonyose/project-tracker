@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already on master for iOS and Android: PR #50 added 'Re-analyze as\u2026' to the clip menu and results card, and PR #67 added a one-tap 'Re-analyze as straightaways / curves (Beta)' card on the split screen for your Nov 17 case. Seven later duplicate t127 PRs were closed, so no new PR this run.",
+                "summary": "Already shipped on both platforms. PR #50 (one-tap 'Re-analyze as...' in the player's More menu, merged 2026-11-18) and PR #67 (Re-analyze as... for a recording filmed as the wrong kind, on the pass picker / no-starts screen, iOS + 23 Android files, merged 2026-11-18) are on master. Seven later duplicate PRs (#53, #55, #60, #62, #63, #65, #70) were closed, with a comment on #70 saying #50/#51/#67 cover this task, closed at Austin's request. Opened no new PR to avoid another duplicate. This task should be marked done in the tracker.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:36+00:00",
-                "verified": "Read origin/master (94d6bf0), the merged PR list, and the re-analyze code and tests on both platforms (SplitStartsView.swift, PassPickerView.swift, SplitStartsScreen.kt, PassPickerScreen.kt, tests_kindui.swift, KindUiTest.kt). Didn't run a build, verify.sh, bend or Gradle because nothing changed.",
-                "next_step": "On the current TestFlight build, leave Start selected, film a straightaway and stop recording. Then tap 'Re-analyze as straightaways' at the bottom of the split screen. If it finds the runs, mark t127 done so it stops being queued."
+                "at": "2026-11-20T13:38+00:00",
+                "verified": "Checked current master (94d6bf0): iOS has KindFlow.reanalyzeOptions/reanalyzeChoices, the player menu rows (AnalysisPlayerView.swift:653), ReanalyzeCard on PassPickerView and SplitStartsView (SplitModel.reanalyze(as:)). Android has the matching KindLogic.kt functions, SplitModel/PassPickerScreen/AnalysisPlayerScreen wiring and KindUiTest coverage. Ran no builds because nothing changed.",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone: record a straightaway with the record screen left on Starts, open it, and tap 'Re-analyze as straightaways' on the no-starts / pass screen (or More > 'Re-analyze as a straightaway' in the player)."
               }
             },
             {
