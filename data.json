@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. Commit 1a499a2 (Nov 18, 'Add one-tap \"Re-analyze as ...\" to the player's More menu') adds a 'Re-analyze as a straightaway / a curve / a start' item for each kind the clip wasn't analyzed as. It's in the analysis player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift, Tools/tests_kindui.swift) and on Android (AnalysisPlayerScreen.kt, core KindLogic.kt, KindUiTest.kt). One tap goes through the existing applyKind path: paywall, re-analysis, and the choice saved on the clip. The Starts split screen and the pass picke",
+                "summary": "Already shipped on iOS and Android: PR #50 and PR #67 (both merged Nov 18) added one-tap 'Re-analyze as \u2026' to the player's More menu, the results card, and the pass picker and split screens for long recordings. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:30+00:00",
-                "verified": "Checked that commit 1a499a2 is on origin/HEAD and that both the iOS and Android code paths are there (grep for reanalyzeOptions/reanalyzeTitle). No builds were run because nothing changed.",
-                "next_step": "On the phone, with a TestFlight build that includes commit 1a499a2: open a clip that was analyzed as a start, tap More (the ... circle, top right), tap 'Re-analyze as a straightaway', and check that it re-analyzes and shows straightaway coaching. If that's working, close this to-do."
+                "at": "2026-11-20T17:31+00:00",
+                "verified": "Checked git history (PRs #50 and #67 merged) and searched current master (94d6bf0) for the re-analyze entry points on both platforms (AnalysisPlayerView.swift, PassPickerView.swift, SplitStartsView.swift and their Kotlin twins). No code changed, so no build or checks were run.",
+                "next_step": "On a TestFlight build from Nov 18 or later, open a straightaway clip that was analyzed as Starts, tap More (top right) once analysis finishes, then tap 'Re-analyze as a straightaway'. If you meant something more, like the app suggesting the switch by itself, edit the to-do to say so."
               }
             },
             {
