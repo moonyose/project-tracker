@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #50 (merged Nov 18) added one-tap 'Re-analyze as\u2026' options on iOS and Android, in the player's More menu, on the results screen, and on long-recording review. Nothing new was needed, so no PR was opened.",
+                "summary": "Already done on master, so no new PR. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as ...' rows to the player's More menu for a single clip. PR #67 (merged 2026-11-18 15:49Z) covered the Nov 17 case, a recording filmed with Starts still picked. It shows 'Re-analyze as straightaways / curves / starts' buttons on the recording's review screen (also when no starts were found), the pass picker and the finish card. It also fixed the root cause: the saved scan (ScanCache) was being reused for the wrong kind. Both are on iOS and Android (android/app/.../ui/player/KindViews.kt, ui/split/SplitS",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:40+00:00",
-                "verified": "Confirmed by reading the code and git history in a fresh worktree of origin/master (94d6bf0): the feature and its tests are on both platforms. No build was run because nothing changed.",
-                "next_step": "On the current TestFlight build, open a start clip that was really a straightaway, tap More, then 'Re-analyze as a straightaway', and check that it re-analyzes as stride. If that works, close t127 in the tracker."
+                "at": "2026-11-20T08:42+00:00",
+                "verified": "Checked only that the code is on origin/master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeRecordingTitle in Swift and Kotlin, ReanalyzeCard in iOS KindViews.swift, wired in SplitStartsView.swift and the Android split/player screens. Read PR #67's description and merge time. No builds or tests run, because nothing changed.",
+                "next_step": "On a TestFlight build at or after PR #67: film a straightaway session with Start still picked on the record screen and open it. On the review screen, tap 'Re-analyze as straightaways' and confirm the passes are found without marking anything by hand. If that works, close t127 in the tracker. If it still misses, edit the task to say exactly what you see."
               }
             },
             {
