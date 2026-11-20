@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' on iOS and Android, in the player's More menu, on the finish card ('Analyzed as a start. Filmed something else?') and on a long recording's review and pass picker. No new PR was needed.",
+                "summary": "Already shipped: PR #50 (merged Nov 18) added one-tap \"Re-analyze as a straightaway / curve / start\" rows to the player's More menu on iOS and Android, and PR #67 added \"Filmed something else?\" re-analyze buttons on the results, split-starts and pass-picker screens. Nothing left to change.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:52+00:00",
-                "verified": "Code inspection on origin/master (94d6bf0): found the re-analyze options in KindLogic.swift/KindLogic.kt and their use in the iOS player, results, split-starts and pass-picker views and their Android twins; tests exist in Tools/tests_kindui.swift and android KindUiTest.kt. Nothing was built or run because no code changed; PR #67's checks passed in CI.",
-                "next_step": "On a TestFlight build from 1.0.4 on, open a clip analyzed as a start, tap More, then 'Re-analyze as a straightaway'. If you wanted something else, such as a prompt on the recording screen, edit the task to say so."
+                "at": "2026-11-20T17:54+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read current master (94d6bf0): iOS AnalysisPlayerView More menu uses KindFlow.reanalyzeOptions (straightaway listed first for a clip analyzed as a start); ReanalyzeCard used in ResultsViews, SplitStartsView, PassPickerView. Android mirrors it in AnalysisPlayerScreen, ResultsViews, SplitStartsScreen, PassPickerScreen, covered by KindUiTest. No new build run since no code changed.",
+                "next_step": "On the current TestFlight build, open a clip analyzed as a start, tap More (...) and pick \"Re-analyze as a straightaway\". If that is still not what you meant, edit this to-do to say what is missing."
               }
             },
             {
