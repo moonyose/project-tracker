@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. One-tap 'Re-analyze as...' was merged on iOS and Android on Nov 18, in PR #50 (claude/t127-reanalyze-as) and PR #67 (the review/pass-picker/finish-card cards, plus a scan cache that records what it looked for). On master it is offered in four places: the player's More menu, the finish card, the long-recording review, and the pass picker. Each is one tap that re-analyzes as the chosen kind and records it as the athlete's choice. PR #78 removed a dead menu, but these rows are still wired in on both platforms. No new PR.",
+                "summary": "Already on master. PR #67 (commit c3f1d42, merged Nov 18, the day after the Nov 17 note) added one-tap 'Re-analyze as...' on iOS and Android. On iOS it is in the start review (SplitStartsView ReanalyzeCard), the pass picker, the finish card (ResultsViews) and the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions). The scan cache records what it looked for, so a recording filmed with Starts picked is looked through again for passes once it is re-analyzed as straightaways. Tests cover it: Tools/tests_kindui.swift kui_reanalyzeAsTest and tests_passes.swift on iOS, KindUiTest.kt an",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:20+00:00",
-                "verified": "Read KindLogic.swift/.kt, AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift, and the Android AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt: every 'Re-analyze as' entry is wired to applyKind / SplitModel.reanalyze. Ran ./Tools/verify.sh on origin/master (94d6bf0): ALL CHECKS PASSED. Did not run the xcodebuild or Gradle",
-                "next_step": "On a TestFlight build, open a clip recorded with the screen set to Start that was really a straightaway. Tap More, then 'Re-analyze as a straightaway', and check that it re-runs and the chip reads 'Stride'. For a long recording, the review screen has a 'Looked through for starts. Filmed something else?' card with a 'Re-analyze as straightaways' button. If something still falls short of what you wa"
+                "at": "2026-11-20T08:27+00:00",
+                "verified": "Read the code paths on master (94d6bf0) on both platforms. ./Tools/verify.sh on master: ALL CHECKS PASSED. I did not run the xcodebuild or Gradle builds because nothing changed.",
+                "next_step": "On your phone (TestFlight build from master), record a straightaway with Starts still picked. On the start review or finish card, tap 'Re-analyze as straightaways' (or More > 'Re-analyze as a straightaway' in the player) and check it re-analyzes as runs. If you hit a screen where the option is missing, add a to-do naming that screen."
               }
             },
             {
