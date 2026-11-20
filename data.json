@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "One-tap \"Re-analyze as\u2026\" is already on master for iOS and Android: it's in the player's \u00b7\u00b7\u00b7 menu (PR #50), on the end-of-clip card, and in the long-recording review and run picker (PR #67). Nothing needed changing, so there's no new PR. Later PRs for this same to-do (#53, #55, #60, #62, #63, #65, #70) were closed as duplicates.",
+                "summary": "Already shipped: PR #67 (merged Nov 18) added one-tap \"Re-analyze as starts / straightaways / curves\" on iOS and Android, so there is nothing new to build.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:59+00:00",
-                "verified": "Read the current origin/master code on both platforms and traced every caller of KindFlow.reanalyzeOptions / reanalyzeTitle / reanalyzePrompt / reanalyzeRecordingPrompt; checked with gh that PRs #50 and #67 are merged. Did not rebuild or re-run verify.sh / Gradle, because no code changed; master's PR checks covered those merges.",
-                "next_step": "Mark t127 done. To confirm on the phone: open a clip that was analysed as a start, tap the ... (More) menu at top right, tap 'Re-analyze as a straightaway', watch the 'Re-analyzing as a stride' step, and check the kind chip now reads Stride. Or scroll to the end of the coaching to the 'Analyzed as a start. Filmed something else?' card. If you want it more prominent than this (for example a banner "
+                "at": "2026-11-20T06:01+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Read the code on origin/master (94d6bf0), which includes commit c3f1d42 from PR #67. iOS has KindFlow.reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle in StrideLab/Playback/KindLogic.swift, a ReanalyzeCard on the recording review and pass picker (SplitStartsView.swift, PassPickerView.swift, which calls SplitModel.reanalyze), and 'Re-analyze as ...' rows in the player's More menu (AnalysisPl",
+                "next_step": "On your phone, open the Nov 17 straightaway recording that was analyzed as starts (or record a new one with Filming set to Start). On the review screen, tap \"Re-analyze as straightaways\" and check that it finds the runs. If you had something different in mind, edit the to-do to say what is still missing."
               }
             },
             {
