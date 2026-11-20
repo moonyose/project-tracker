@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "One-tap \"Re-analyze as...\" is already on master for iOS and Android. It was merged in PR #50 (t127) and PR #67, and covers the player's More menu, the results screen, and the recording and pass-picker screens, so there is nothing left to change.",
+                "summary": "Already on master on both platforms; no new PR needed. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu, and PR #67 (merged Nov 18) added the same buttons on the finish card and on a long recording's review ('Re-analyze as straightaways'). Each tap goes through the existing applyKind path: paywall, visible re-analysis step, and the choice saved on the clip. Current master (94d6bf0, after #78 changed the More menu) still has all of it: iOS AnalysisPlayerView.swift (More menu and finish card), PassPickerView.swift and SplitSta",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:26+00:00",
-                "verified": "Read the current master code. iOS: AnalysisPlayerView More menu (KindFlow.reanalyzeOptions), ResultsViews, SplitStartsView and PassPickerView ReanalyzeCard. Android: AnalysisPlayerScreen, ResultsViews.kt, SplitStartsScreen and PassPickerScreen. ./Tools/verify.sh printed ALL CHECKS PASSED, including the Re-analyze as tests. No xcodebuild or Gradle run, since nothing changed.",
-                "next_step": "On the phone, open a clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway'. On a long recording left on Starts, tap 'Re-analyze as straightaways' on the runs screen. If either is missing or still feels like manual work, edit the task with what's wrong; otherwise mark it done."
+                "at": "2026-11-20T10:32+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "./Tools/verify.sh on current master printed ALL CHECKS PASSED, including the 'Re-analyze as' checks in tests_kindui.swift and tests_passes.swift. I made no code changes, so I did not run xcodebuild, bend or Gradle.",
+                "next_step": "On the phone, record a straightaway with the record screen left on Start. Answer 'Start' when asked what the clip is. When the analysis opens, tap More (top right) and then 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and then straightaway coaching. If that works, close this to-do as done by PR #50 and PR #67."
               }
             },
             {
