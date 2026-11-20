@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #50 (merged Nov 18) added one-tap \"Re-analyze as\u2026\" to the player's More menu on iOS and Android, with \"Re-analyze as a straightaway\" listed first for a clip analyzed as Starts. The same choice is also on the Starts split screen, the pass picker and the library's \"Analyze as\" menu.",
+                "summary": "Already shipped. PR #50 (\"One-tap 'Re-analyze as\u2026' in the player's More menu\", merged 2026-11-18) and PR #67 (Re-analyze as another kind, merged) put one-tap Re-analyze as\u2026 on both iOS and Android, and current master (94d6bf0) still has all of it: (1) the player's More menu lists 'Re-analyze as a straightaway / a curve (Beta)' with the likeliest mix-up first (Starts -> Straightaway); see StrideLab/Playback/AnalysisPlayerView.swift:653 and android/.../ui/player/AnalysisPlayerScreen.kt:529; (2) the finish card shows 'Analyzed as a start. Filmed something else?' with a button for each other kind ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:38+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current origin/master: KindFlow.reanalyzeOptions and the More-menu rows are present in Swift (StrideLab/Playback/KindLogic.swift, AnalysisPlayerView.swift) and Kotlin (android/core/.../playback/KindLogic.kt, android/app/.../ui/player/AnalysisPlayerScreen.kt). gh confirms PR #50 is MERGED (2026-11-18). No new build run because nothing changed.",
-                "next_step": "On the phone: record a straightaway with the record screen left on Starts, open the clip, tap More (top right) once analysis finishes, then tap 'Re-analyze as a straightaway'. If that is in the build but still feels like manual work, edit the to-do to say where the one-tap option should appear instead."
+                "at": "2026-11-20T00:40+00:00",
+                "verified": "Read the code on origin/master at 94d6bf0 and confirmed the Re-analyze as\u2026 entry points on iOS and Android, plus the shared logic and tests (KindFlow.reanalyzeChoices/reanalyzeOptions; android KindUiTest.reanalyzeAsTest). Checked with gh that PR #50 is merged. No build was run because nothing changed.",
+                "next_step": "On the latest TestFlight build, open a clip that was recorded with the record screen on Starts. Once it finishes, tap More (top right) and pick 'Re-analyze as a straightaway', or use the 'Filmed something else?' buttons on the finish card. For a long recording, use 'Re-analyze as straightaways' on the review screen. If that's still too much work, say what exactly (for example, it should be offered"
               }
             },
             {
