@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android: PR #50 added 'Re-analyze as a straightaway / a curve / a start' to the clip player's More menu, and PR #67 added a 'Filmed something else?' card with Re-analyze buttons on the finish card and review screens. No new PR was needed.",
+                "summary": "Already done and merged into master on both iOS and Android. PR #50 (moonyose/StrideLab, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More (...) menu. PR #67 (merged 2026-11-18) added 'Re-analyze as ...' buttons to the Finish card, the pass picker and the starts-split screen, so a whole recording can also be looked at again as another kind. Current master (94d6bf0) still has all of these: AnalysisPlayerView.swift uses KindFlow.reanalyzeOptions, and Android's AnalysisPlayerScreen.kt / ResultsViews.kt / PassPickerScreen.kt / SplitStartsScre",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:19+00:00",
-                "verified": "Read the git history and master source only (git log, git show, git grep in StrideLab/ and android/); the feature is present on master (94d6bf0) on both platforms. No build was run because nothing changed.",
-                "next_step": "On a TestFlight build from #67 or later, record a straightaway with the record screen left on Starts, open the clip and tap 'Re-analyze as a straightaway'. If any part is still manual, edit the task to say exactly what."
+                "at": "2026-11-20T03:21+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Code inspection on origin/master 94d6bf0: re-analyze rows in the iOS More menu (AnalysisPlayerView.swift ~line 651), the Finish card (ResultsViews.swift), PassPickerView and SplitStartsView, with Kotlin mirrors in android/app/.../ui/player and ui/split, and tests in Tools/tests_kindui.swift and KindUiTest.kt. I ran no builds, because nothing changed. PR #50 reported that the xcodebuild, verify.sh ",
+                "next_step": "On the latest TestFlight build (anything after the Nov 18 merges): set the record screen to Start, film a few straightaway strides, open the clip, wait for analysis to finish, tap ... (More) and tap 'Re-analyze as a straightaway'. If that works, tick this to-do off. If something is still missing, edit the task to say where you expected the option."
               }
             },
             {
