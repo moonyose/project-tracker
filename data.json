@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app: PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' to the clip player's More menu on iOS and Android, and PR #67 (merged Nov 18) added 'Re-analyze as straightaways' for long recordings on the review screen. No new change was needed.",
+                "summary": "Already on master for iOS and Android. PR #50 (merged Nov 18) added 'Re-analyze as\u2026' to the player's More menu. PR #67 (merged Nov 18) added it for a whole recording filmed as the wrong kind: a ReanalyzeCard on the starts review (SplitStartsView) and the pass picker (PassPickerView), plus the same on Android (SplitStartsScreen, PassPickerScreen, KindViews, ResultsViews). One tap saves the new kind through ClipStore.applyKind and runs the recording again. The saved scan is tied to the chosen kind (PassDetector.cacheKey/cacheFits), so a scan made for starts is not reused once the clip is called ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:13+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read master (94d6bf0): the Re-analyze rows are in the iOS More menu (AnalysisPlayerView.swift around line 653) and the Android More menu (AnalysisPlayerScreen.kt line 529), and the recording-level ReanalyzeCard is in SplitStartsView/PassPickerView and their Android twins. gh confirms PR #50 is MERGED. Nothing was built or run because nothing changed.",
-                "next_step": "Install a TestFlight build from 1.0.4 or later (anything after Nov 18). Record a straightaway with the record screen left on Starts, open the clip, tap More, then 'Re-analyze as a straightaway'. If the clip is a long recording, use 'Re-analyze as straightaways' on the review screen. If this still doesn't work on the phone, edit the task to say which screen is missing it."
+                "at": "2026-11-20T03:15+00:00",
+                "verified": "Read the code on origin/HEAD (94d6bf0) and checked PR history with gh pr list. git merge-base confirms c3f1d42 (#67) is on master. Nothing was changed, so no build or checks were run.",
+                "next_step": "On the latest TestFlight build: record a straightaway with the record screen left on Starts. On the starts review, tap 'Re-analyze as straightaways' and confirm the passes are found. If it still falls short, edit t127 to say what is missing and close it otherwise."
               }
             },
             {
