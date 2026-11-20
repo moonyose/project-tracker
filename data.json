@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android (PR #67, Nov 18). A clip analyzed as the wrong type can be re-analyzed in one tap from the player's More menu, the end of the results, a long recording's review screen, or the pass picker.",
+                "summary": "Already shipped. \"Re-analyze as...\" is on master on iOS and Android: PR #50 (moonyose/StrideLab, branch claude/t127-reanalyze-as, merged Nov 18) added it to the player's More menu, and PR #67 (merged Nov 18) added it to the split/recording screens, where a recording analyzed as Starts can be re-run as straightaways or a curve in one tap. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:04+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): every call site of reanalyzeOptions/reanalyzeChoices/reanalyzeTitle on both platforms, and the onReanalyze wiring in AnalysisPlayerView.swift:1077 and PlayerStage.kt:216. Unit checks for it exist in Tools/tests_kindui.swift and android KindUiTest.kt. I made no code change, so I didn't run any builds.",
-                "next_step": "On the phone (TestFlight build from current master): film a straightaway with the record screen left on Start. After it analyzes, tap More (top right). The first row should be 'Re-analyze as a straightaway'. Tap it and check it shows 'Re-analyzing as a stride' and comes back with acceleration/top-speed phases. For a long recording, the review screen should show 'Re-analyze as straightaways'. If an"
+                "at": "2026-11-20T00:06+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the code on origin/master (94d6bf0), nothing built. iOS: AnalysisPlayerView.swift builds the More menu items from KindFlow.reanalyzeOptions, SplitStartsView.swift has reanalyze(as:store:) and a ReanalyzeCard, and Tools/tests_kindui.swift has tests for it. Android: KindLogic.kt, SplitModel.kt, SplitStartsScreen.kt and PassPickerScreen.kt have the same, tested in KindUiTest.kt and PassesTest.kt",
+                "next_step": "On the current TestFlight build, record a straightaway with the record screen left on Starts. On the split screen, tap 'Re-analyze as straightaways' (or open the clip and use More > Re-analyze as...). If that works, check this to-do off. If it doesn't, edit the to-do to say what went wrong."
               }
             },
             {
