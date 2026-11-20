@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (\"One-tap 'Re-analyze as\u2026' in the player's More menu\", merged 2026-11-18) and PR #67 (Re-analyze as another kind, merged) put one-tap Re-analyze as\u2026 on both iOS and Android, and current master (94d6bf0) still has all of it: (1) the player's More menu lists 'Re-analyze as a straightaway / a curve (Beta)' with the likeliest mix-up first (Starts -> Straightaway); see StrideLab/Playback/AnalysisPlayerView.swift:653 and android/.../ui/player/AnalysisPlayerScreen.kt:529; (2) the finish card shows 'Analyzed as a start. Filmed something else?' with a button for each other kind ",
+                "summary": "Already shipped on master, so there is no new PR. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap \"Re-analyze as ...\" rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen.kt). The first row offered is the likeliest mix-up, so a Starts clip shows \"Re-analyze as a straightaway\" first. PR #67 added a ReanalyzeCard (\"Re-analyze as straightaways\") to the Starts split screen and the pass picker, and a row in the results view, on both platforms. PR #78 hides the More button only while analysis is running. T",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:40+00:00",
-                "verified": "Read the code on origin/master at 94d6bf0 and confirmed the Re-analyze as\u2026 entry points on iOS and Android, plus the shared logic and tests (KindFlow.reanalyzeChoices/reanalyzeOptions; android KindUiTest.reanalyzeAsTest). Checked with gh that PR #50 is merged. No build was run because nothing changed.",
-                "next_step": "On the latest TestFlight build, open a clip that was recorded with the record screen on Starts. Once it finishes, tap More (top right) and pick 'Re-analyze as a straightaway', or use the 'Filmed something else?' buttons on the finish card. For a long recording, use 'Re-analyze as straightaways' on the review screen. If that's still too much work, say what exactly (for example, it should be offered"
+                "at": "2026-11-20T00:46+00:00",
+                "verified": "./Tools/verify.sh on current origin/master (94d6bf0) printed ALL CHECKS PASSED, including the \"Re-analyze as ...\" checks in tests_kindui.swift and tests_passes.swift. No xcodebuild or Gradle run, because no code changed.",
+                "next_step": "On the phone, open a straightaway clip that was analyzed as a start, tap More, then tap \"Re-analyze as a straightaway\". If that doesn't cover what happened on Nov 17, edit the task to say which screen still needed manual work."
               }
             },
             {
