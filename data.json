@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: PR #67 (merged Nov 18) added one-tap \"Re-analyze as ...\" on iOS and Android. It's in the player's More menu, on the finished-clip card, and on a long recording's review screen (\"Re-analyze as straightaways\"). I changed no code and opened no PR.",
+                "summary": "Already shipped. PR #50 (merged Nov 18, commit 1a499a2, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift) and Android (AnalysisPlayerScreen.kt, KindLogic.kt), plus a results-screen button (ResultsViews.swift / ResultsViews.kt). Each row goes through the existing applyKind path (paywall, re-analysis step, choice saved on the clip). The later PR #78 only hid the More button while analysis is still running, so the rows show o",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T15:04+00:00",
-                "verified": "Read current master (94d6bf0). iOS: the player's More menu lists every other kind via KindFlow.reanalyzeOptions (AnalysisPlayerView.swift ~line 653). The finish card has a \"Filmed something else?\" section (ResultsViews.swift ~line 967). The review screens for split starts and passes show ReanalyzeCard (SplitStartsView.swift ~line 1420, PassPickerView.swift ~line 55). Android mirrors all of it (Ana",
-                "next_step": "On a TestFlight build from Nov 18 or later: film a few straightaways with the record screen left on Start. On the review screen, tap \"Re-analyze as straightaways\". Or open an analyzed clip and use More > \"Re-analyze as a straightaway\". If that works, tick this off. If something is still missing, edit the to-do to say what."
+                "at": "2026-11-20T15:10+00:00",
+                "verified": "Read current origin/master: the menu rows and the results button are still wired on iOS and Android. ./Tools/verify.sh on master printed ALL CHECKS PASSED, including the 'Re-analyze as' tests in tests_kindui.swift. Android KindUiTest.kt has the matching tests. I did not rebuild in Xcode or Gradle because no code changed.",
+                "next_step": "On your phone (TestFlight build from Nov 18 or later): record a straightaway with the record screen left on Starts and open it once it's analyzed. Tap More (top right) and choose 'Re-analyze as a straightaway'. It should re-analyze with straightaway coaching and keep that choice. If you can't find the option, or it's in the wrong place, edit the to-do and say what to change."
               }
             },
             {
