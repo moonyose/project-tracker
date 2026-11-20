@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (merge fe99a5f, commit 1a499a2 \"Add one-tap 'Re-analyze as ...' to the player's More menu\") added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' entries to the analysis player's More menu on both iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt), with tests on both. The entries are still on current master after PR #78 (the change that hides the More button while analyzing). Re-analyze choices also show in ResultsViews, PassPickerView and SplitStartsView. No new PR opened.",
+                "summary": "This is already in the app on iOS and Android (PRs #50 and #67, both merged). A clip analyzed as a start has 'Re-analyze as a straightaway' at the top of the player's More menu. The results screen has a 'Filmed something else?' card, and the long-recording review and run picker have a 'Re-analyze as straightaways' card. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:32+00:00",
-                "verified": "./Tools/verify.sh on current master printed ALL CHECKS PASSED, including the 'Re-analyze as ...' option and title checks in Tools/tests_kindui.swift. I read AnalysisPlayerView.swift lines 650-659 and the menu section is still there. I did not rebuild in xcodebuild or run Gradle because nothing changed.",
-                "next_step": "On the phone, open a clip that was analysed as Starts, wait for the analysis to finish and tap the More (...) button. Tap 'Re-analyze as a straightaway' and check that the clip re-analyses as straightaways and stays that way after you close and reopen it. If this doesn't match what you saw on Nov 17, check that the TestFlight build you used includes PR #50."
+                "at": "2026-11-20T03:33+00:00",
+                "verified": "I read the code on origin/master (94d6bf0) and checked the git history. I did not run a build or checks, because nothing changed.",
+                "next_step": "On the phone, open a clip that was analyzed as a start, tap More (top right), then tap 'Re-analyze as a straightaway'. If you only get the manual flow, your TestFlight build is older than PR #50. If one screen is still missing the option, add which one to the to-do's notes and re-open it."
               }
             },
             {
