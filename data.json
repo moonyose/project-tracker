@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu on iOS and Android. PR #67 (merged 2026-11-18) added the long-recording case from the Nov 17 note: 'Re-analyze as straightaways / curves / starts' on the recording review screen (including when no starts were found), the pass picker and the finish card, and fixed the saved scan being reused for the wrong kind (ScanCache lookedFor). Checked that the later cleanups (#77, #78) did not remove the rows: they are st",
+                "summary": "Already shipped. PR #67 (commit c3f1d42, 'Reanalyze as another kind...', merged Nov 18, the day after Austin's note) added a one-tap 'Re-analyze as ...' on both iOS and Android. It appears on the long-recording review (SplitStartsView ReanalyzeCard: 'Looked through for starts. Filmed something else?' then 'Re-analyze as straightaways'), the pass picker, the finished clip's results card, and the player's More menu (KindFlow.reanalyzeOptions, with the straightaway offered first for a start). The scan cache records what it looked for, so a recording first scanned for starts gets scanned again for",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T19:04+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "./Tools/verify.sh on current origin/master printed ALL CHECKS PASSED, including the 'Re-analyze as ...' checks. Read the code to confirm the More-menu rows are present on iOS and Android. No xcodebuild or Gradle run, because nothing changed.",
-                "next_step": "Check it on your phone with the current TestFlight build. Set the record screen to Start, film straightaways, open the clip, tap ... (More) and then 'Re-analyze as a straightaway'. For a long recording, use 'Re-analyze as straightaways' on the review screen. If it works, close t127. If something is still missing, edit the task to say what."
+                "at": "2026-11-20T19:06+00:00",
+                "verified": "Read the code only. Confirmed that KindFlow.reanalyzeChoices/reanalyzeOptions/reanalyzeTitle and the ReanalyzeCard/onReanalyze call sites exist in StrideLab/Split/SplitStartsView.swift, StrideLab/Split/PassPickerView.swift, StrideLab/Playback/ResultsViews.swift and StrideLab/Playback/AnalysisPlayerView.swift, and that the Android twins exist (SplitStartsScreen, PassPickerScreen, AnalysisPlayerScre",
+                "next_step": "On a TestFlight build that includes PR #67 or later: set Filming to Start, record a few straightaway reps, and let it finish scanning. On the review screen, tap 'Re-analyze as straightaways' and check that it finds the passes. Also open any finished start clip, tap More, then 'Re-analyze as a straightaway'. If either one is missing or misbehaves, edit this to-do with what you saw."
               }
             },
             {
