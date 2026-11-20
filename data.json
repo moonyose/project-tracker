@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master on both iOS and Android. Commit c3f1d42 (Nov 18, merged in PR #67 as cc7b90d) added one-tap 'Re-analyze as ...' in four places: the player's More menu (KindFlow.reanalyzeOptions; a clip analyzed as a start offers 'Re-analyze as a straightaway' first), the finish card in the results ('Analyzed as a start. Filmed something else?'), the long-recording review in SplitStartsView, and the pass picker ('Re-analyze as straightaways'). Each tap counts as the athlete's own choice of kind (LAW 41) and re-runs the analysis. The scan cache also records what a recording was searche",
+                "summary": "Already done: one-tap \"Re-analyze as\u2026\" shipped in PR #50 and PR #67 (both merged Nov 18) on iOS and Android, so no new PR was opened. It shows in the clip player's More menu (e.g. \"Re-analyze as a straightaway\" on a clip analyzed as a start) and as a \"Re-analyze as straightaways / starts\" card on the recording review and pass-picker screens.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T03:43+00:00",
-                "verified": "Checked by reading the code on origin/master (94d6bf0): found the shipping commit c3f1d42 with git log -S, and confirmed every call site is still present on both platforms. No build or test run, since nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later, open a clip that was analyzed as a start. Tap More (top right) and then 'Re-analyze as a straightaway', and check that it re-analyzes as a stride. For a long recording, the review screen has a 'Re-analyze as straightaways' button. If something is still missing (for example a spot you expected the option to appear), edit the task to say where."
+                "at": "2026-11-20T03:45+00:00",
+                "verified": "Read current master (94d6bf0). iOS: AnalysisPlayerView More menu uses KindFlow.reanalyzeOptions; SplitStartsView review and PassPickerView show ReanalyzeCard; tests in Tools/tests_kindui.swift. Android: the same paths exist in KindLogic.kt, SplitStartsScreen.kt, PassPickerScreen.kt and AnalysisPlayerScreen.kt, with KindUiTest/PassesTest. #78 (Nov 19) only hides the More button until a result exist",
+                "next_step": "On a TestFlight build from Nov 18 or later: record straightaways with Starts still picked. On the review screen tap \"Re-analyze as straightaways\", or open the clip, tap More, then \"Re-analyze as a straightaway\". If it works, check off t127. If something is still missing, edit the task to say exactly where."
               }
             },
             {
