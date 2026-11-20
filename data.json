@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18, commit 1a499a2) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' items to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 also added 'Re-analyze as ...' cards on the split/pass screens. Later PRs (#78, which hides More while analyzing) kept these items. Nothing left to change, so no PR was opened.",
+                "summary": "This is already on master on both iOS and Android, from commit c3f1d42 (Nov 18). The starts review screen, pass picker, player More menu and results card each have a one-tap 'Re-analyze as straightaways / curves' option, so no PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:15+00:00",
-                "verified": "Read origin/master (94d6bf0): reanalyzeOptions is wired into the iOS More menu and the Android player menu, and both test suites cover it. No build was run because there was no code change.",
-                "next_step": "On the current TestFlight build, open a clip analyzed as a start, tap More (top right) and then 'Re-analyze as a straightaway'. Check that it re-analyzes as straightaways. Then close the task."
+                "at": "2026-11-20T04:17+00:00",
+                "verified": "Read the current origin/master (94d6bf0) code paths for iOS and Android and traced the exact Nov 17 case: a recording made with Starts picked that was really straightaways. Both platforms show a one-tap Re-analyze card on the starts review screen. Did not rebuild, since nothing changed; PR checks ran when c3f1d42 was merged.",
+                "next_step": "On a TestFlight build that includes c3f1d42 or later: record a straightaway with Starts picked on the record screen. On the review screen, below the starts (or the 'no starts' message), tap 'Re-analyze as straightaways' and confirm it finds the passes. If that build still lacks it or the card is hard to find, edit the task to say what's missing."
               }
             },
             {
