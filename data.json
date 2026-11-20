@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master for iOS and Android. PR #50 added 'Re-analyze as\u2026' to a clip's \u2022\u2022\u2022 menu, and PR #67 (merged Nov 18) fixed your Nov 17 case by adding 'Re-analyze as straightaways / curves / starts' buttons to the recording review, the pass picker and the finish card.",
+                "summary": "Already done: one-tap 'Re-analyze as\u2026' shipped on iOS and Android in PR #50 (Nov 18) and was extended in PR #67. It's in the player's More menu and on the pass picker, starts review and finish card. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:56+00:00",
-                "verified": "Checked by reading the code and git history; no build or tests were run because nothing changed. Swift: SplitStartsView.reanalyze(as:store:), ReanalyzeCard, and the AnalysisPlayerView menu built from KindFlow.reanalyzeOptions. Kotlin: KindFlow.reanalyzeOptions/reanalyzeChoices in the app UI, covered by KindUiTest and PassesTest. The PR #67 description covers this exact case.",
-                "next_step": "On a TestFlight build that includes #67, film a few straightaways with Start still picked. On the review screen, tap 'Re-analyze as straightaways' and check that the passes are found. Then open a single clip and use \u2022\u2022\u2022 \u2192 'Re-analyze as a straightaway'. If either fails, reopen t127 and say which screen."
+                "at": "2026-11-20T07:58+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): checked that the iOS and Android player menu items, pass picker and split ReanalyzeCard, and their unit tests are present. Nothing was built or run because nothing changed.",
+                "next_step": "Mark t127 done. To confirm on your phone: record a straightaway with the record screen left on Starts, open the clip, tap More (top right) once analysis finishes, and tap 'Re-analyze as a straightaway'. It should re-run as a straightaway without any manual marking. If the recording opens on the pass picker or the starts review, the 'Re-analyze as straightaways' button at the bottom does the same."
               }
             },
             {
