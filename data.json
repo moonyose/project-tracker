@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2) and PR #67 (c3f1d42) added a one-tap 'Re-analyze as...' option, and it is still on master after PR #78. iOS has it in three places: the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions), the results 'Analyzed as X. Filmed something else?' card (ResultsViews), and a ReanalyzeCard on the split screens (SplitStartsView, PassPickerView; SplitModel.reanalyze), so a recording analyzed as starts can be re-run as straightaways in one tap. The Android port has the same pieces: KindFlow.reanalyze* in core, Reanaly",
+                "summary": "This is already in the app: PR #50 (merged Nov 18) and PR #67 added one-tap 'Re-analyze as\u2026' on both iOS and Android, in a clip's More menu and on the long-recording review screen. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:17+00:00",
-                "verified": "Read the code only. Checked git history (merges #50 and #67) and grepped the iOS and Android sources on origin/master (94d6bf0) for the re-analyze entry points and the Android tests. Confirmed the latest PR #78 (dead More menu removal) did not touch the re-analyze code. No build was run because nothing changed.",
-                "next_step": "If this still didn't work for Austin on Nov 17, check whether his TestFlight build predates PR #50/#67. To confirm on a current build: record a straightaway with 'Start' selected, then tap 'Re-analyze as straightaways' on the result screen (or More > Re-analyze as a straightaway in the clip player). If it was missing in a specific screen, edit the task to name that screen."
+                "at": "2026-11-20T02:20+00:00",
+                "verified": "Read master at 94d6bf0. Confirmed the merge commits fe99a5f (#50) and cc7b90d (#67) and their diffs, which touch AnalysisPlayerView.swift, KindLogic.swift, tests_kindui.swift, AnalysisPlayerScreen.kt, KindLogic.kt and KindUiTest.kt. Confirmed the reanalyze entry points in the player menu and the recording review on both platforms. No build was run because no code changed.",
+                "next_step": "On a TestFlight build from master or later: record a straightaway with the record screen left on Starts. On the recording review, tap 'Re-analyze as straightaways' (or open a finished clip, tap More, then 'Re-analyze as a straightaway'). Check that the result comes back as a straightaway. If that path still fails for you, edit the to-do with what you saw so the next run can fix it."
               }
             },
             {
