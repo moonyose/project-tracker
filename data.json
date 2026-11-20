@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android, so no new PR. PR #50 added a one-tap \"Re-analyze as\u2026\" option and PR #67 extended it; it's in the player's More (\u2026) menu once the analysis has finished.",
+                "summary": "Already implemented and merged on master (PR #67, merged Nov 18; commit 1a499a2 'Add one-tap \"Re-analyze as ...\" to the player's More menu'). On iOS and Android, the player's More menu lists 'Re-analyze as a straightaway / a curve / a start' (KindFlow.reanalyzeOptions, which goes through applyKind with the paywall, the re-analysis stage and the choice saved on the clip). The finish card has one-tap re-analyze buttons (ResultsViews). Long recordings get a 'Re-analyze as straightaways' card in the Split starts and pass picker screens (ReanalyzeCard, SplitModel.reanalyze). PR #78 later hid the Mo",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:36+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): checked that the iOS and Android UI call sites and the tests exist, and that PR #78 did not remove the menu. I ran no build or tests because nothing changed.",
-                "next_step": "On your phone: open a clip that was analyzed as Starts, wait for the analysis to finish, tap the More (...) button in the top-right corner of the player, then tap \"Re-analyze as a straightaway\". If you can't find it there, or it's too buried, edit this to-do to say where you expected the button (for example right on the results screen) and it can be moved."
+                "at": "2026-11-20T17:38+00:00",
+                "verified": "Read current master (94d6bf0). Confirmed by code inspection that the re-analyze paths exist on iOS (AnalysisPlayerView.swift:653, ResultsViews.swift:942, SplitStartsView.swift:1420, PassPickerView.swift:54) and on Android (AnalysisPlayerScreen.kt:529, ResultsViews.kt:1287, SplitStartsScreen.kt:384, PassPickerScreen.kt:160). The existing tests are in Tools/tests_kindui.swift and KindUiTest.kt. I di",
+                "next_step": "On a TestFlight build that includes PR #67: open a straightaway clip that was analyzed as a start, tap More (top right) and pick 'Re-analyze as a straightaway'. Check that the 'Re-analyzing as a stride' step appears and the result comes back as a straightaway. If that works, close t127. If it misses a case (for example a screen where the option doesn't show), edit the task to name it."
               }
             },
             {
