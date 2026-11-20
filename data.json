@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PRs #50 and #67 (both merged Nov 18) added one-tap \"Re-analyze as\u2026\" on iOS and Android, in the player's More menu, on the results screen, and in long-recording review. No new PR was opened.",
+                "summary": "Already done on master for iOS and Android. PR #50 added 'Re-analyze as\u2026' to a clip's \u2022\u2022\u2022 menu, and PR #67 (merged Nov 18) fixed your Nov 17 case by adding 'Re-analyze as straightaways / curves / starts' buttons to the recording review, the pass picker and the finish card.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:54+00:00",
-                "verified": "Checked git history (fe99a5f merge of #50, cc7b90d merge of #67 are ancestors of origin/master), gh pr view 50 (MERGED), gh pr view 70 (closed as superseded by #50/#51/#67), and grepped the call sites on both platforms. No builds were run because nothing was changed.",
-                "next_step": "Mark t127 done in the tracker. To confirm on the phone: open a clip that was analyzed as a start, tap More in the player, tap 'Re-analyze as a straightaway', and check that the clip re-analyzes as a straightaway."
+                "at": "2026-11-20T07:56+00:00",
+                "verified": "Checked by reading the code and git history; no build or tests were run because nothing changed. Swift: SplitStartsView.reanalyze(as:store:), ReanalyzeCard, and the AnalysisPlayerView menu built from KindFlow.reanalyzeOptions. Kotlin: KindFlow.reanalyzeOptions/reanalyzeChoices in the app UI, covered by KindUiTest and PassesTest. The PR #67 description covers this exact case.",
+                "next_step": "On a TestFlight build that includes #67, film a few straightaways with Start still picked. On the review screen, tap 'Re-analyze as straightaways' and check that the passes are found. Then open a single clip and use \u2022\u2022\u2022 \u2192 'Re-analyze as a straightaway'. If either fails, reopen t127 and say which screen."
               }
             },
             {
