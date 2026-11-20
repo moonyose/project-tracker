@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, on both platforms. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged 2026-11-18) added one-tap \"Re-analyze as ...\" to the player's More menu. PR #67 (https://github.com/moonyose/StrideLab/pull/67, merged 2026-11-18) added the same option for a long recording filmed with the wrong kind picked on the record screen: a ReanalyzeCard on the start-review screen (SplitStartsView) and on the pass picker (PassPickerView), plus the clip results view (ResultsViews). The Android port has matching code in KindLogic.kt (reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTi",
+                "summary": "Already done: PRs #50 and #67 (merged Nov 18, after your Nov 17 note) added one-tap 'Re-analyze as\u2026' on iOS and Android, in the player's More menu, at the end of the results ('Filmed something else?'), and on the split/pass-picker screens for long recordings.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:51+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read current master (94d6bf0). Found the Re-analyze code paths on iOS and Android. Confirmed with gh that PRs #50 and #67 are merged. I did not rebuild, because nothing changed.",
-                "next_step": "On a TestFlight build made from master after Nov 18: leave the record screen on Starts, film a straightaway, and check that the review screen shows \"Re-analyze as straightaways\". Tap it and confirm the clip comes back as a straightaway. If that works, mark t127 done in the tracker."
+                "at": "2026-11-20T13:53+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) for both platforms and the merge history (PRs #50 and #67). No build was run because nothing changed.",
+                "next_step": "On the current TestFlight build, open a Starts clip that was really straightaways, tap More (top right) and then 'Re-analyze as a straightaway'. Or use the 'Filmed something else?' buttons at the end of the results. If this still feels like manual work, edit the to-do to say which screen is missing the option."
               }
             },
             {
