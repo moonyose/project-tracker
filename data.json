@@ -983,11 +983,11 @@
             {
               "id": "t130",
               "text": "Fix 'This isn't me, tap the runner's hip': after the user scrubs to a frame and taps a hip, force analysis to lock onto and track that runner instead of falling back to background runners.",
-              "done": false,
+              "done": true,
               "notes": "Repro: straightaway stride clip with a group of runners in the background ahead of Austin; detector analyzes them. Edit > this isn't me > scrub to where Austin enters frame > tap his hip > nothing re-analyzes, still tracks the background group. The tapped point (and frame) must seed/override the target person, and tracking should carry from that frame.",
               "due": null,
               "createdAt": "2026-11-19T15:01:00-05:00",
-              "updatedAt": "2026-11-19T15:01:00-05:00",
+              "updatedAt": "2026-11-20T19:19:07.667Z",
               "transcript": "We need to make a fix for stride lab. The clip detection works much better now. However the clip editing has a problem. So I'm going to use one example, which is that there's a clip where I'm passing, doing a stride, like a straightaway. And there's a group of runners behind, like in the background. And they're in front of me. Okay, they're in front of me on the track in the background. And the detector is trying to analyze them instead of me. Okay, fine, that, that, that's gonna happen sometimes. The problem is that when I go to the edit button and I say, you know, this isn't me, and I, I, I have to move the clip to show myself in the frame, right? it It isn't like, when I, when I press, when I click my hip as it asks me to, I say like, this is, this is not me, like, this isn't the runner I want to analyze. I want to analyze a different runner. It says, okay, tap the hip of the runner. Right? Right? So I move the click forward to where I'm, where I begin, when I, when I enter the frame, and then I hit my hip. And it, it doesn't analyze it. at all. Like it keeps trying to analyze the people in the background. So we need to like do something to sort of force it. to analyze where the person you know, says the runner's hip is. The other thing that would be really good is if we could allow the user to shorten the clip. So, like the app cut a pretty long clip, and for a large fraction of it, I'm not even in the frame, and that's because there were people on the track who weren't me, right? So it captured those people, and it also caught me passing by. The user, when they open that clip and they're, they're trying to do the analysis or trying to look at their analysis, they should be able to like, just like in the video editor or whatever, like, shorten the clip to only the relevant part. Okay. So that's really important. And by the way, one way to maybe well, I'll just leave it at that. But we need to add that to, to the to-dos.",
               "agent": {
                 "status": "pr_opened",
@@ -997,7 +997,8 @@
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/75",
                 "verified": "iOS: xcodebuild -scheme StrideLab build on the iPhone 17 Pro simulator (iOS 26.5, Xcode 26.6) succeeded (exit 0). ./Tools/verify.sh printed ALL CHECKS PASSED, and anchorLateEntryTest gave 0.000/0.000/0.000. Android: ./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug printed BUILD SUCCESSFUL with no test failures, and the Kotlin anchorLateEntryTest gave the same 0.000 results as Swift. ",
                 "next_step": "1) Fix the PR #75 description by hand. It still says iOS only and xcodebuild unconfirmed, but Android is now ported, all Gradle checks pass, and the iOS simulator build passes. 2) Confirm the PR checks are green. 3) On iPhone and then on Android: open the straightaway clip, go to Edit > This isn't me, scrub to where you enter, put the crosshair on your hips and tap 'This is the athlete'. The skele"
-              }
+              },
+              "completedAt": "2026-11-20T19:19:07.667Z"
             },
             {
               "id": "t131",
