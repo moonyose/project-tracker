@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android: the clip screen's More menu has \"Re-analyze as a straightaway\" (PR #50, merged Nov 18), and the screens for long recordings and Split Starts have the same option (PR #67). Nothing new to change, so no PR was opened.",
+                "summary": "Already done on master, nothing new to change. One-tap 'Re-analyze as...' was merged in PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2, the player's More menu) and built on in PR #67 (commit c3f1d42). It is offered on the confirm-starts review (ReanalyzeCard, 'Filmed straightaways with Start still picked'), the pass picker, the finish card and the player's More menu ('Re-analyze as a straightaway / a curve / a start'). One tap goes through the paywall and the re-analysis stage, and the choice is saved on the clip. When a recording looked through as starts is re-analyzed as straightawa",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T14:10+00:00",
-                "verified": "Read master's code and git history only: confirmed PRs #50 and #67 are merged and that #77 and #78 (the analysis-screen cleanups) kept the Re-analyze options in the More menu on both platforms. Tests for it exist on both platforms (Tools/tests_kindui.swift, android KindUiTest.kt). Builds and tests were not re-run because nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with Starts still selected, open the clip, tap More (top right) and choose \"Re-analyze as a straightaway\". For a long recording, the pass picker also shows \"Re-analyze as straightaways\". If this doesn't match what you wanted, edit the task to say what's missing."
+                "at": "2026-11-20T14:12+00:00",
+                "verified": "Read the code on origin/master 94d6bf0. KindFlow.reanalyzeOptions and ReanalyzeCard are wired into the iOS SplitStartsView review, PassPickerView, FinishCard and the AnalysisPlayerView More menu, and the matching Android screens. No build was run because no code changed.",
+                "next_step": "On a TestFlight build from master: record with the record screen left on Starts but film a straightaway. On the confirm-starts screen, tap 'Straightaways' in the re-analyze card (or open the clip, then More, then 'Re-analyze as a straightaway'). Check that it re-analyzes as a straightaway without opening 'What's in this clip'. If that still isn't enough, edit the to-do to say which screen is missi"
               }
             },
             {
