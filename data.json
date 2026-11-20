@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (one-tap 'Re-analyze as...' in the player's More menu, merged 2026-11-18) and PR #67 (Re-analyze as... for a recording filmed as the wrong kind, on the pass picker / no-starts screen, iOS + 23 Android files, merged 2026-11-18) are on master. Seven later duplicate PRs (#53, #55, #60, #62, #63, #65, #70) were closed, with a comment on #70 saying #50/#51/#67 cover this task, closed at Austin's request. Opened no new PR to avoid another duplicate. This task should be marked done in the tracker.",
+                "summary": "Already on master. PR #50 (claude/t127-reanalyze-as, merged 2026-11-18) added the one-tap \"Re-analyze as ...\" rows to the player's More menu. PR #67 (commit c3f1d42) added them in three more places: the long-recording review/failure card, the pass picker and the finish card. It also made the scan cache record which kind it looked for, so a recording first scanned as starts gets scanned again for passes when re-analyzed as straightaways. Both PRs changed iOS and Android and added tests (Tools/tests_kindui.swift, tests_passes.swift, android KindUiTest/PassesTest). Later commits #77/#78 changed t",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:38+00:00",
-                "verified": "Checked current master (94d6bf0): iOS has KindFlow.reanalyzeOptions/reanalyzeChoices, the player menu rows (AnalysisPlayerView.swift:653), ReanalyzeCard on PassPickerView and SplitStartsView (SplitModel.reanalyze(as:)). Android has the matching KindLogic.kt functions, SplitModel/PassPickerScreen/AnalysisPlayerScreen wiring and KindUiTest coverage. Ran no builds because nothing changed.",
-                "next_step": "Mark t127 done in the tracker. To confirm on the phone: record a straightaway with the record screen left on Starts, open it, and tap 'Re-analyze as straightaways' on the no-starts / pass screen (or More > 'Re-analyze as a straightaway' in the player)."
+                "at": "2026-11-20T13:40+00:00",
+                "verified": "Read the code and git history on origin/master (94d6bf0): checked that KindFlow.reanalyzeOptions/reanalyzeChoices are wired into the iOS and Android More menu, finish card, pass picker and split review, and that gh shows PR #50 as merged. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build at or after 94d6bf0: record a straightaway with Start still picked, then open the finished clip. Either tap 'Re-analyze as straightaways' on the review card or open More (top right) and choose 'Re-analyze as a straightaway'. If that still feels like manual work, edit the task to say which screen or step is missing it."
               }
             },
             {
