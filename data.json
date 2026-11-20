@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on iOS and Android. PR #50 (claude/t127-reanalyze-as) and PR #67 are merged. The one-tap 'Re-analyze as...' rows are in the player's More menu (iOS AnalysisPlayerView.swift:653, Android AnalysisPlayerScreen.kt:529), on the results card (ResultsViews), and in a long recording's review/pass picker as 'Re-analyze as straightaways' (SplitStartsView / PassPickerView, plus their Android twins). A Starts take is offered Straightaway first. Duplicate PRs #55, #60 and #70 were closed at Austin's request on Nov 18 as superseded by #50/#51/#67. No new PR opened.",
+                "summary": "Already shipped. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged Nov 18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as ...' rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen.kt). Straightaway is listed first for a clip analysed as a start, and the rows are hidden on demo clips. Recordings also get a 'Filmed something else?' card with 'Re-analyze as straightaways/starts' in SplitStartsView/PassPickerView and their Android twins. Later PRs #77/#78 left it in place; #78 only hides the More bu",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:23+00:00",
-                "verified": "Read origin/master (94d6bf0): KindFlow.reanalyzeOptions, reanalyzeChoices and reanalyzeTitle exist in Swift and Kotlin and are wired into the player menu, results view and split review on both platforms. Checked PR history with gh. No build was run because nothing changed.",
-                "next_step": "Mark t127 done in the tracker. To confirm on a phone running the current TestFlight build: open a clip analyzed as a start, tap More (...), then 'Re-analyze as a straightaway', and check that the report changes to straightaway analysis. If the Nov 17 session was on an older build without #50/#67, update TestFlight first."
+                "at": "2026-11-20T13:29+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "On current master (94d6bf0): ./Tools/verify.sh prints ALL CHECKS PASSED, including the 'Re-analyze as' checks in tests_kindui.swift. Read the iOS and Android More-menu code to confirm the rows are still wired to applyKind. No xcodebuild, Gradle or bend run, since nothing changed.",
+                "next_step": "On a TestFlight build at or after PR #50: film a straightaway with Start picked on the record screen, open the clip, tap More (top right), tap 'Re-analyze as a straightaway', and check that it re-analyzes as a stride. If it still falls short, edit the to-do and say what is missing."
               }
             },
             {
