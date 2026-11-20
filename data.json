@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already done on iOS and Android: PRs #50 and #67 (merged Nov 18) added a one-tap 'Re-analyze as\u2026' option to the player's More menu, the finish card and the long-recording review screens. There was nothing left to change, so no PR was opened.",
+                "summary": "Already shipped on master: PR #50 (branch claude/t127-reanalyze-as, merge fe99a5f, commits 1a499a2 and c3f1d42) added one-tap 'Re-analyze as a straightaway / start / curve (Beta)' on iOS. It shows in the player's More menu (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift), on the finish card (ResultsViews.swift) and, for a whole recording, in the pass picker / split screen ('Re-analyze as straightaways', SplitModel.reanalyze). Android has the same thing: AnalysisPlayerScreen.kt More menu, ReanalyzeCard in KindViews.kt, PassPickerScreen.kt, SplitStartsScreen.kt and SplitModel.reanalyze, wit",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:57+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): the re-analyze helpers in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt are called from the iOS and Android screens listed in the summary, and both test suites cover them. I didn't run a build or the checks because nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with the record screen left on Start. Open the clip, tap More (...), then tap 'Re-analyze as a straightaway'. Check that it re-analyzes and shows stride coaching. For a long recording, the review screen should show 'Re-analyze as straightaways'. If that works, close this to-do. If something is still missing, add a note saying which "
+                "at": "2026-11-20T01:59+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) on both platforms and confirmed the re-analyze entry points and the Android tests exist. Nothing was built or run, because nothing changed.",
+                "next_step": "On the latest TestFlight build, open a straightaway clip that was analyzed as a start, tap More, then 'Re-analyze as a straightaway', and check the phases and tips change. If that still isn't what you wanted (for example, a prompt right after recording, or re-analyzing several clips from the library at once), edit the to-do to say so."
               }
             },
             {
