@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PRs #50 and #67 (merged Nov 18, after your Nov 17 note) added one-tap 'Re-analyze as\u2026' on iOS and Android, in the player's More menu, at the end of the results ('Filmed something else?'), and on the split/pass-picker screens for long recordings.",
+                "summary": "Already shipped on both platforms. PR #50 (merged 2026-11-18, branch claude/t127-reanalyze-as) added one-tap \"Re-analyze as ...\" to the player's More menu. PR #67 (merged 2026-11-18) added the same for a recording filmed as the wrong kind, in the pass picker and split-starts screens: \"Re-analyze as straightaways\" / \"Re-analyze as starts\". On current master, iOS (AnalysisPlayerView.swift, PassPickerView.swift, SplitStartsView.swift, KindLogic.swift) and Android (AnalysisPlayerScreen.kt, PassPickerScreen.kt, SplitStartsScreen.kt) both still offer it. PR #78, which hid the More button while a cli",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:53+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) for both platforms and the merge history (PRs #50 and #67). No build was run because nothing changed.",
-                "next_step": "On the current TestFlight build, open a Starts clip that was really straightaways, tap More (top right) and then 'Re-analyze as a straightaway'. Or use the 'Filmed something else?' buttons at the end of the results. If this still feels like manual work, edit the to-do to say which screen is missing the option."
+                "at": "2026-11-20T13:55+00:00",
+                "verified": "Read the current source on master (94d6bf0). KindFlow.reanalyzeOptions / reanalyzeChoices / reanalyzeTitle are used by the player More menu and the pass picker on both iOS and Android. Engine tests (Tools/tests_kindui.swift) and Android KindUiTest.kt cover them. Confirmed with gh that PRs #50 and #67 are merged. No build was run because nothing changed.",
+                "next_step": "On the phone, open a clip that was analyzed as a start, tap More (top right, once analysis finishes) and tap \"Re-analyze as a straightaway\". For a whole recording filmed with Starts picked, use \"Re-analyze as straightaways\" on the pass picker screen. If this still feels like manual work, edit the task to say which screen or step is missing it."
               }
             },
             {
