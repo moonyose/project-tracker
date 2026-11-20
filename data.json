@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master, on iOS and Android. PR #50 (merged Nov 18, 15:35 UTC, from branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu. PR #67 (merged Nov 18, 15:49 UTC) added the same choice to the finish card ('Analyzed as a start. Filmed something else?') and to a long recording's review ('Re-analyze as straightaways'). Each tap records the kind as the athlete's choice and re-runs the analysis while 'Re-analyzing as a stride' shows. On iOS this is in AnalysisPlayerView.swift, ResultsViews.swift, PassPickerVi",
+                "summary": "Already done: PR #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' buttons on iOS and Android, including 'Re-analyze as straightaways' on the long-recording review screen. No new PR needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:31+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current master (94d6bf0). iOS: the More menu still has the KindFlow.reanalyzeOptions rows (AnalysisPlayerView.swift ~line 651), plus the finish-card and recording-review re-analyze buttons. Android: the same paths, plus KindUiTest reanalyzeTest and reanalyzeAsTest. gh shows PRs #50 and #67 merged. No builds run because nothing changed.",
-                "next_step": "On the phone, with the current TestFlight build: open a straightaway clip that was analyzed as a start, tap More (top right), then 'Re-analyze as a straightaway'. Check that 'Re-analyzing as a stride' shows and the clip comes back with a 'Stride \u00b7 your choice' chip. If that already works, close t127."
+                "at": "2026-11-20T00:33+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): KindFlow re-analyze options in StrideLab/Playback/KindLogic.swift and android/core KindLogic.kt, wired into SplitStartsView, PassPickerView, ResultsViews, AnalysisPlayerView and the matching Android screens (covered by KindUiTest/PassesTest). Did not build or run tests, since nothing changed.",
+                "next_step": "On a TestFlight build made after Nov 18, record straightaways with Start still picked, then tap 'Re-analyze as straightaways' on the review screen. If it doesn't do what you wanted, edit the to-do to say what's wrong."
               }
             },
             {
