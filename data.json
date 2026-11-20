@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master for iOS and Android: PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' rows to the player's More menu, and PR #67 added a 'Re-analyze as straightaways/curves/starts' card to the Starts recording review screen and the pass picker. All entry points are still wired after the later cleanup PRs #77/#78. No PR opened. The task can be checked off.",
+                "summary": "This is already in the app on iOS and Android: 'Re-analyze as\u2026' is in the player's More menu, on the card shown when analysis finishes, and on a long recording's review screen (added in commit 1a499a2 and PR #67). PR #67 also fixed your Nov 17 case, so a recording first scanned as starts gets scanned again for straightaways once you switch it.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:59+00:00",
-                "verified": "Read current master: iOS SplitStartsView.swift review screen (ReanalyzeCard -> model.reanalyze(as:)), PassPickerView onReanalyze, AnalysisPlayerView More menu (KindFlow.reanalyzeOptions); Android SplitStartsScreen.kt, PassPickerScreen.kt, AnalysisPlayerScreen.kt mirror them. ./Tools/verify.sh -> ALL CHECKS PASSED. No xcodebuild or Gradle run, because no code changed.",
-                "next_step": "On the phone (TestFlight build from Nov 18 or later): set the record screen to Start, film or import some straightaways, and on the 'starts' review screen tap 'Re-analyze as straightaways'. The recording should be looked through again as straightaways. Also, in any analyzed clip, open More and check the 'Re-analyze as a ...' rows. If something still feels manual, edit the task to say which screen."
+                "at": "2026-11-20T11:01+00:00",
+                "verified": "Read the code on both platforms (iOS AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift; Android AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt) and used git merge-base --is-ancestor to confirm 1a499a2 and c3f1d42 are on origin/master. Nothing changed, so no build or tests were run.",
+                "next_step": "On a TestFlight build that includes PR #67, record a straightaway with the record screen still set to Starts, open the clip and tap More > 'Re-analyze as a straightaway'. If that works, close this task. If not, edit it to say where the option was missing."
               }
             },
             {
