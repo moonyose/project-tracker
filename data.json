@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added a one-tap \"Re-analyze as a straightaway / curve / start\" item to the player's More menu on iOS and Android. PR #67 (merged Nov 18) added the same buttons to the results screen and a \"Re-analyze as straightaways\" card on the long-recording split screen. PR #78 later hid the More button until a result exists, and the Re-analyze items are still in it. On current master (94d6bf0) the entry points are: iOS AnalysisPlayerView.swift (More menu, KindFlow.reanalyzeOptions), ResultsViews.swift (finish ",
+                "summary": "Already shipped on master on iOS and Android: PR #50 (claude/t127-reanalyze-as, commits 1a499a2/c3f1d42) and PR #67 added one-tap 'Re-analyze as ...' rows. The player's More menu (AnalysisPlayerView.swift ~L650 / AnalysisPlayerScreen.kt ~L529) lists every other kind, straightaway first for a clip analysed as a start (KindFlow.reanalyzeOptions). The results view, pass picker and Split Starts also show a 'Filmed something else?' card with re-analyze buttons. Still present after PR #78, which now hides the More menu only while analysis is running. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:53+00:00",
-                "verified": "Read the code only. git log shows #50 and #67 merged, and grep on origin/HEAD 94d6bf0 confirms the re-analyze entry points are present on both platforms. I made no code changes, so I ran no builds.",
-                "next_step": "On a TestFlight build at or after PR #50/#67: open a clip that was analyzed as a start, tap More (top right) and check that 'Re-analyze as a straightaway' re-runs the analysis as straightaways in one tap. If the Nov 17 clip came from a build older than Nov 18, that explains why only the manual fix was available. If something still feels like manual work, add a note to the task saying where."
+                "at": "2026-11-20T10:01+00:00",
+                "verified": "Read the current master code on both platforms. ./Tools/verify.sh: ALL CHECKS PASSED, including kui_reanalyzeAsTest and the re-analyze options tests. No xcodebuild or Gradle run because nothing changed.",
+                "next_step": "On the phone, open a clip analysed as a Start, tap More (top right) and tap 'Re-analyze as a straightaway'. It should re-run as straightaways. If this works, mark t127 done in the tracker. If it doesn't, edit the task to say what is missing."
               }
             },
             {
