@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on iOS and Android. PR #50 (merged Nov 18, https://github.com/moonyose/StrideLab/pull/50) added one-tap 'Re-analyze as a straightaway / start / curve (Beta)' rows to the player's More menu (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift and AnalysisPlayerScreen.kt). PR #67 (merged Nov 18, https://github.com/moonyose/StrideLab/pull/67) added a 'Looked through for starts. Filmed something else?' card with 'Re-analyze as straightaways' buttons on a long recording's review (PassPickerView / SplitStartsView and their Kotlin twins), and a re-analyze card on the result",
+                "summary": "Already done: PR #67, merged Nov 18, added one-tap 'Re-analyze as\u2026' on iOS and Android. It's on the review screen after recording, the run picker, the end of a finished clip, and the clip viewer's More menu, and it searches the recording again for the new kind of run instead of only relabelling it.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:22+00:00",
-                "verified": "Checked that origin/master (94d6bf0) has KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle/reanalyzeRecordingTitle in Swift and Kotlin and that the player menu, pass picker, split-starts review and results screen all use them on both platforms. gh confirms PRs #50 and #67 are merged. I didn't rebuild, because nothing changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later, open a clip that was analyzed as a start and tap More. You should see 'Re-analyze as a straightaway' and one tap should re-run the analysis. For a long recording filmed on Starts, the review screen should show 'Re-analyze as straightaways'. If that still feels like manual work, edit the to-do and say which screen or step is missing."
+                "at": "2026-11-20T04:24+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
+                "verified": "Read the current master code and commit c3f1d42, and confirmed with gh that PR #67 is merged. No build or tests were run because nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later, film straightaways with the record screen left on Starts, then tap 'Re-analyze as straightaways' on the review screen and check it finds the runs. If a screen still makes you fix it by hand, add a note naming that screen."
               }
             },
             {
