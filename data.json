@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #50 (moonyose/StrideLab, branch claude/t127-reanalyze-as, merged 2026-11-18, after the Nov 17 note) added one-tap \"Re-analyze as ...\" and it is still on master (94d6bf0). iOS: the player's More menu has a 'Re-analyze as a straightaway / curve (Beta)' section (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle), there's a re-analyze card on results (ResultsViews.swift), and 'Re-analyze as straightaways/starts' on the pass picker and split screens. Android mirrors all of these (AnalysisPlayerScreen.kt, ResultsViews.kt, PassPickerScreen.kt, SplitStartsScreen.kt). ",
+                "summary": "Already shipped on master on both platforms. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged Nov 18, branch claude/t127-reanalyze-as) added a one-tap 'Re-analyze as ...' to the player's More menu, and #67 extended it. iOS: AnalysisPlayerView More menu lists KindFlow.reanalyzeOptions (e.g. 'Re-analyze as a straightaway'). The finish/results card and the Split starts / pass picker screens also show ReanalyzeCard ('Re-analyze as straightaways' for a whole recording). Android: the same in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt, with Kin",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T18:12+00:00",
-                "verified": "Read the code only. Checked that the Swift and Kotlin entry points and tests exist on origin/master at 94d6bf0, and that the later PRs #77 and #78 did not remove the menu entry. I did not build or run anything, because no code changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later: open a clip analyzed as Starts, tap More (top right), tap 'Re-analyze as a straightaway', and confirm it re-runs as a straightaway. If that option is missing or doesn't work on the device, edit this task to say what you saw."
+                "at": "2026-11-20T18:14+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Code inspection of origin/master (94d6bf0) only: grep for reanalyze in StrideLab/ and android/app and core, plus a read of KindFlow.reanalyzeOptions/canChange and the More-menu code. Nothing was changed, so no build or test run was done this time.",
+                "next_step": "On the phone, open a clip analyzed as a start. Tap More (top right) and pick 'Re-analyze as a straightaway'. It should re-analyze and show straightaway results. If this doesn't match what you saw on Nov 17 (for example, you were on a build before PR #50 shipped), say which screen lacked the option and re-open the to-do with that detail."
               }
             },
             {
