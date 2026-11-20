@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (merged 2026-11-18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / start / curve (Beta)' rows to the player's More menu. PR #67 (merged 2026-11-18) added the same for long recordings (Split/PassPicker 'Re-analyze as straightaways' card). Current master still has both: iOS AnalysisPlayerView.swift uses KindFlow.reanalyzeOptions, and Android AnalysisPlayerScreen.kt, SplitStartsScreen.kt and PassPickerScreen.kt mirror it. A clip filmed on Starts lists 'Re-analyze as a straightaway' first. Nothing new to change, so no PR.",
+                "summary": "This is already on master. Commit c3f1d42 (Nov 18, the day after your note) added one-tap \"Re-analyze as...\" buttons on iOS and Android: on the long-recording review (\"Re-analyze as straightaways\"), the pass picker, the finish card and the player's More menu. The recording is then scanned again for passes instead of starts.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:39+00:00",
-                "verified": "./Tools/verify.sh on origin/master (94d6bf0) printed ALL CHECKS PASSED, including the 'Re-analyze as' tests in Tools/tests_kindui.swift (a start filmed by mistake is one tap from a straightaway). Confirmed with gh that PRs #50 and #67 are MERGED. No xcodebuild or Gradle run, because no code changed.",
-                "next_step": "On the phone, open a clip that was analyzed as Starts, tap More (top right), and tap 'Re-analyze as a straightaway'. If that works, close the to-do. If the row is missing or something else falls short, edit the task to say what it still needs."
+                "at": "2026-11-20T01:41+00:00",
+                "verified": "Read the code on origin/master (94d6bf0). On iOS, SplitStartsView.swift review (ReanalyzeCard, always shown and only disabled while a search is running, calling SplitModel.reanalyze(as:store:)), PassPickerView.swift, ResultsViews.swift finish card and AnalysisPlayerView.swift More menu (KindFlow.reanalyzeOptions) all have it, with titles and choice order in KindLogic.swift. Android has matching co",
+                "next_step": "Check it on a TestFlight build that includes c3f1d42. Record a straightaway session with Starts still selected, open it, and on the review screen tap \"Re-analyze as straightaways\". It should look through the clip again and show the pass picker with your runs. If the button doesn't show or doesn't do the right thing in your case, add a note to the to-do saying what you saw and which screen you were"
               }
             },
             {
