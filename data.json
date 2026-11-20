@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap \"Re-analyze as ...\" to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt). PR #67 extended it: a \"Filmed something else?\" prompt with buttons in the results (ResultsViews), and \"Re-analyze as straightaways\" on the pass picker and split-starts screens for a recording filmed with Start picked. It is still wired on current master (94d6bf0). PR #78 only hides the More button until there is a result. No new PR open",
+                "summary": "Already built: PR #67 (merged Nov 18, the day after the Nov 17 note) added one-tap \"Re-analyze as a straightaway / a curve (Beta) / a start\" on iOS and Android. It shows in the player's More menu, on the results panel, and as \"Re-analyze as straightaways\" on a long recording's review screen, and the likeliest mix-up (Start to Straightaway) is listed first.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:00+00:00",
-                "verified": "Read current origin/master: the iOS menu section is at StrideLab/Playback/AnalysisPlayerView.swift:650-659, the Android one at android/app/src/main/kotlin/com/austinmunoz/stridelab/ui/player/AnalysisPlayerScreen.kt:529-533, and there are recording-level entries in PassPickerView/SplitStartsView and their Kotlin twins. Tools/tests_kindui.swift and KindUiTest.kt already test the options and copy. No",
-                "next_step": "On the phone: open a clip that was analyzed as a start, tap More (top right) and choose \"Re-analyze as a straightaway\". If it is still not there, or not easy enough to find, edit the to-do to say where you expected the button, and close this task if it works."
+                "at": "2026-11-20T17:03+00:00",
+                "verified": "Read current master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle in StrideLab/Playback/KindLogic.swift are wired into AnalysisPlayerView's More menu, ResultsViews, SplitStartsView and PassPickerView. The Kotlin twins are wired into AnalysisPlayerScreen, ResultsViews, SplitStartsScreen and PassPickerScreen, with tests in KindUiTest.kt. Confirmed the menu section is still the",
+                "next_step": "On a TestFlight build from Nov 18 or later, open a clip analyzed as a start, tap More (the ... button) and pick \"Re-analyze as a straightaway\". If that's not enough (for example, you want the record screen to warn before analyzing), edit the to-do with what's still missing."
               }
             },
             {
