@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on iOS and Android: PR #50 (one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' in the player's More menu) merged 2026-11-18, and PR #67 (a 'Re-analyze as straightaways' card for a long recording split as the wrong kind, on the pass picker and split screen) merged the same day. Current master (94d6bf0) still has both: iOS in AnalysisPlayerView.swift (More menu, KindFlow.reanalyzeOptions), PassPickerView.swift and SplitStartsView.swift (ReanalyzeCard); Android in AnalysisPlayerScreen.kt, PassPickerScreen.kt and SplitStartsScreen.kt. Tests exist in Tools/",
+                "summary": "Already on master for iOS and Android. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18, after the Nov 17 note) added one-tap 'Re-analyze as ...' rows to the player's More menu. Commit c3f1d42 (PR #67) added the same option to the results/finish card, the pass picker and the Starts review, and made the scan cache remember what it looked for, so a recording first scanned as starts is scanned again for passes once you pick straightaways. Current master still has all of this: AnalysisPlayerView.swift around line 650 (KindFlow.reanalyzeOptions), ResultsViews.swift reanalyze(...), PassPickerV",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:09+00:00",
-                "verified": "Read the current master source and git log, and listed this task's PRs with gh. I ran no builds because I changed no code.",
-                "next_step": "Mark t127 done in the tracker so the scheduled run stops picking it up. To check on your phone (TestFlight build from master): open a clip analyzed as a start, tap More (...), then tap 'Re-analyze as a straightaway'. For a long recording filmed with Starts picked, use the 'Re-analyze as straightaways' card on the pass picker. If something is still missing from that flow, please edit the to-do to s"
+                "at": "2026-11-20T05:11+00:00",
+                "verified": "Read the code only. Confirmed the re-analyze entry points on master (94d6bf0) in Swift and Kotlin and the history of PR #50 and #67. Did not build or run verify.sh, since nothing changed.",
+                "next_step": "On a current TestFlight build, open a clip analyzed as Starts, tap More (the ... button, which shows once analysis finishes) and tap 'Re-analyze as straightaways'. Or use the Re-analyze card on the Starts review. If that still misses the Nov 17 case, edit the to-do to say which screen or step is missing."
               }
             },
             {
