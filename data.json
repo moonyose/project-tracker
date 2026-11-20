@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already done: PR #67, merged Nov 18, added a one-tap 'Re-analyze as straightaways / starts / a curve' option on iOS and Android. It's on the Starts review screen, the pass picker, the finish card and the player's More menu, so no new PR was needed.",
+                "summary": "Already shipped on master in commit c3f1d42 (Nov 18, 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta'), after the Nov 17 incident. iOS: the player's More menu has one-tap 'Re-analyze as a straightaway / a curve (Beta)' rows (AnalysisPlayerView.swift ~L650, KindFlow.reanalyzeOptions, likeliest mix-up first: Starts -> Straightaway), the results/finish card has a ReanalyzeCard (ResultsViews.swift), and a long recording's review offers 'Re-analyze as straightaways' (SplitStartsView.swift / PassPickerView.swift -> SplitModel.reanalyze). Android has the sam",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:06+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) for both platforms and traced the option to the merge with git log -S. I didn't build or run tests because nothing changed.",
-                "next_step": "On a current TestFlight build, record straightaways with Start still selected. On the 'Found N starts' review screen, scroll down and tap 'Re-analyze as straightaways'. The recording should be looked through again and the pass picker should show the straightaway runs. If this doesn't match what Austin wanted, he should edit the task to say what is still missing."
+                "at": "2026-11-20T04:08+00:00",
+                "verified": "Read the code on origin/HEAD (94d6bf0): confirmed c3f1d42 is an ancestor of the default branch and that the re-analyze options are wired into the player menu, the results card and the recording review on iOS and Android. No build was run because nothing changed.",
+                "next_step": "On a current TestFlight build: record a straightaway with the record screen left on Starts. Open the clip, tap the More (...) menu, then tap 'Re-analyze as a straightaway'. It should re-analyze as a straightaway with no manual marking. For a long recording, the review screen should show 'Re-analyze as straightaways'. If that isn't what you meant (for example, if you want it offered somewhere else)"
               }
             },
             {
