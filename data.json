@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped: one-tap \"Re-analyze as\u2026\" was merged to master on Nov 18 in PR #50 (player More menu) and PR #67 (review, pass picker, finish card, split screen; the scan cache now looks a Starts recording through again for passes once it is re-analyzed as straightaways), on iOS and Android. Later duplicate PRs #55, #60 and #70 were closed at Austin's request as superseded. No new PR opened, to avoid another duplicate. Austin: please mark t127 done in the tracker so it stops being re-queued.",
+                "summary": "Already shipped on master, on both platforms. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added the one-tap 'Re-analyze as ...' rows to the player's More menu. PR #67 (merged) added the 'Re-analyze as straightaways/starts' card to the starts-split review and the pass picker, which covers the Nov 17 case of straightaways recorded while the record screen still said Starts. Current master (94d6bf0): iOS AnalysisPlayerView.swift:650-659 (More menu, KindFlow.reanalyzeOptions), SplitStartsView.swift:1417-1424 (ReanalyzeCard, shown even when starts were found), PassPickerView.swift:54",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:05+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Confirmed on origin/master (94d6bf0) that KindFlow.reanalyzeOptions/reanalyzeTitle drive the player's More menu rows (AnalysisPlayerView.swift:653) and that ReanalyzeCard is wired into PassPickerView, SplitStartsView and ResultsViews. The Android equivalents are in KindLogic.kt, SplitStartsScreen.kt and PassPickerScreen.kt. No build was run because nothing changed.",
-                "next_step": "On the phone, open a straightaway clip that was analyzed as a start. Tap More > \"Re-analyze as a straightaway\" and check that it re-analyzes and reports straightaway results. For a long recording, check that the split/pass screen shows \"Re-analyze as straightaways\". Then mark t127 done in the tracker."
+                "at": "2026-11-20T05:07+00:00",
+                "verified": "Checked by reading the code on current origin/master and looking up PR #50 with gh (MERGED). No build was run because no code changed.",
+                "next_step": "On your phone: record straightaways with the record screen left on Starts. On the split review, tap 'Re-analyze as straightaways' under the cards. For a clip that's already analyzed, open the player's More (...) menu and tap 'Re-analyze as a straightaway'. If either one doesn't do what you wanted, edit this task to say what's still missing."
               }
             },
             {
