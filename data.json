@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on iOS and Android in PR #50 and PR #67, both merged Nov 18. A clip's More menu now has one-tap \"Re-analyze as a straightaway / a curve (Beta)\", the results screen shows a \"Filmed something else?\" card, and a long recording has a \"Re-analyze as straightaways\" card. No new PR was opened.",
+                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 extended it: 'Filmed something else?' Re-analyze buttons on the finish card (ResultsViews), and 'Re-analyze as straightaways' on long recordings in the split-starts and pass-picker screens, on both platforms. Current master (94d6bf0) sti",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:40+00:00",
-                "verified": "gh shows PRs #50 and #67 merged into master. A search of current master found the Re-analyze code on iOS (KindLogic.swift, AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift) and on Android (KindLogic.kt and the matching screens, with tests in KindUiTest.kt and PassesTest.kt). No builds were run because no code changed.",
-                "next_step": "On a TestFlight build from after Nov 18, record a straightaway with Starts still selected, open the clip, and tap More (...) > \"Re-analyze as a straightaway\". If it still feels like manual work, edit this to-do to say which screen or step falls short."
+                "at": "2026-11-20T05:42+00:00",
+                "verified": "Read the code on origin/master at 94d6bf0. The Re-analyze rows are still in the iOS More menu (AnalysisPlayerView.swift:650-659) and the Android menu (AnalysisPlayerScreen.kt:529). The finish card, SplitStartsView/SplitStartsScreen and PassPickerView/PassPickerScreen all have Re-analyze cards. Tests cover it on both platforms. No build was run because nothing changed.",
+                "next_step": "On the phone with the current TestFlight build: open a clip analysed as a start, tap More (...) and tap 'Re-analyze as a straightaway'. It should re-run as a straightaway in one tap. For a long recording made on Starts, use the 'Re-analyze as straightaways' button on the split screen. If the build he has doesn't show these, it predates PR #50/#67. If he wanted a different entry point (for example "
               }
             },
             {
