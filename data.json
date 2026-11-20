@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master on iOS and Android. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' to the player's More menu. PR #67 (merged Nov 18) added 'Re-analyze as straightaways / curves / starts' to a long recording's review screen, the pass picker and the finish card. It also fixed the root cause behind Austin's Nov 17 problem: the saved scan of a recording didn't record which kind it had looked for, so a straightaway session filmed on Starts was never searched for passes. On PR #70, Austin closed the later duplicate t127 PRs (#53, #55, #60, #62, #63,",
+                "summary": "Already shipped, so no new PR. 'Re-analyze as ...' was merged on Nov 18 in PR #50 (one tap in the player's More menu) and PR #67 (the same for a whole recording on the split-starts and pass-picker screens, plus the results view). Both are on iOS and Android. Current master (94d6bf0, after #78 changed the More button) still has it: iOS AnalysisPlayerView.swift:650-659 lists KindFlow.reanalyzeOptions as 'Re-analyze as a straightaway' / 'Re-analyze as a curve (Beta)' and calls applyKind on tap; Android AnalysisPlayerScreen.kt:529-533 does the same. SplitStartsView/PassPickerView and their Android",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:18+00:00",
-                "verified": "Read origin/master (94d6bf0). KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle are used in AnalysisPlayerView.swift (More menu), ResultsViews.swift (finish card), SplitStartsView.swift and PassPickerView.swift (recording review). The Kotlin twins are in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. Tests: Tools/tests_kindui.swift and android KindU",
-                "next_step": "Mark t127 done in the tracker. Phone check: open a clip analysed as a start, tap More, tap 'Re-analyze as a straightaway', and confirm it re-analyzes as a straightaway. For a long recording filmed on Starts, use 'Re-analyze as straightaways' on its review screen."
+                "at": "2026-11-20T12:20+00:00",
+                "verified": "Read the code on origin/master and the PR history with gh: the feature and its tests are on master on both platforms. I changed nothing, so I ran no builds.",
+                "next_step": "On the latest TestFlight build: open a clip analysed as Start, tap the More (...) button at the top right once analysis finishes, and tap 'Re-analyze as a straightaway'. The 'Re-analyzing as a straightaway' screen should show, then the clip comes back with straightaway phases. If that works, mark t127 done. If it isn't what you meant, edit the task to say what is still missing (for example, the ap"
               }
             },
             {
