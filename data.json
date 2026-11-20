@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master for iOS and Android (commits 1a499a2 and c3f1d42, Nov 18): one-tap 'Re-analyze as a straightaway / a start / a curve' buttons are in the player's More menu, on the finish card, and on a long recording's review screen ('Looked through for starts. Filmed something else?'). No PR needed.",
+                "summary": "Already shipped on master. PR #50 (claude/t127-reanalyze-as, merged as fe99a5f) and PR #67 added one-tap 'Re-analyze as ...' on both platforms: iOS in the player's More menu (StrideLab/Playback/AnalysisPlayerView.swift ~L650, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift), on the finished-clip card (ResultsViews.swift), and on long-recording review (PassPickerView.swift, SplitStartsView.swift, 'Re-analyze as straightaways'). Android mirrors all of it (AnalysisPlayerScreen.kt ~L529, ResultsViews.kt, PassPickerScreen.kt, SplitStartsScreen.kt) with tests in KindUiTest.kt. For a Star",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:52+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) and found the Re-analyze options on both platforms, with tests (Tools/tests_kindui.swift, KindUiTest.kt). No code changed, so no build or tests were run for this task.",
-                "next_step": "On a TestFlight build that includes the Nov 18 commits: record straightaways with the record screen left on Starts. On the review screen, or in the player's More (...) menu, tap 'Re-analyze as straightaways' / 'Re-analyze as a straightaway' and check that the clip comes back coached as a stride. If that's still not the flow you wanted, edit the to-do to say what's missing, for example a Library ro"
+                "at": "2026-11-20T02:54+00:00",
+                "verified": "Read the current master code (94d6bf0). The re-analyze rows are still wired up in the iOS and Android player menus, on the finish card and on recording review, and the existing KindUiTest/tests_kindui cover them. I didn't rebuild, because nothing changed.",
+                "next_step": "On the phone, open a clip that was analyzed as a Start, tap the More (...) menu and tap 'Re-analyze as a straightaway'. The clip should re-analyze and show straightaway coaching. If this TestFlight build doesn't have it yet, update to a build that includes PR #50 and #67. If it still misses the Nov 17 case, edit the task to say what's missing."
               }
             },
             {
