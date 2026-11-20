@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged Nov 18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as ...' rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen.kt). Straightaway is listed first for a clip analysed as a start, and the rows are hidden on demo clips. Recordings also get a 'Filmed something else?' card with 'Re-analyze as straightaways/starts' in SplitStartsView/PassPickerView and their Android twins. Later PRs #77/#78 left it in place; #78 only hides the More bu",
+                "summary": "This is already in the app: PR #50 added one-tap \"Re-analyze as\u2026\" on iOS and Android, and it's still in the current code. On a finished clip, the player's More menu lists the other types with the likeliest mix-up first, so a clip analyzed as Starts offers \"Re-analyze as a straightaway\" first. Long recordings get a re-analyze card on the review and pass-picker screens. No PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:29+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "On current master (94d6bf0): ./Tools/verify.sh prints ALL CHECKS PASSED, including the 'Re-analyze as' checks in tests_kindui.swift. Read the iOS and Android More-menu code to confirm the rows are still wired to applyKind. No xcodebuild, Gradle or bend run, since nothing changed.",
-                "next_step": "On a TestFlight build at or after PR #50: film a straightaway with Start picked on the record screen, open the clip, tap More (top right), tap 'Re-analyze as a straightaway', and check that it re-analyzes as a stride. If it still falls short, edit the to-do and say what is missing."
+                "at": "2026-11-20T13:31+00:00",
+                "verified": "Read the code on current origin/master (94d6bf0) and confirmed the menu rows and review cards are wired in on iOS (AnalysisPlayerView.swift, SplitStartsView.swift, PassPickerView.swift) and Android (AnalysisPlayerScreen.kt, SplitStartsScreen.kt, PassPickerScreen.kt), with existing tests (Tools/tests_kindui.swift, KindUiTest.kt). Nothing was changed, so no builds, verify.sh, bend or Gradle checks w",
+                "next_step": "On a TestFlight build that includes PR #50, open a clip analyzed as a start, tap More and pick 'Re-analyze as a straightaway'. If the option is missing or doesn't work, reopen this to-do and say what you saw. If it works, mark it done."
               }
             },
             {
