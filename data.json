@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for both iOS and Android, so there's no PR. Two changes merged Nov 18 (1a499a2, c3f1d42) added one-tap 'Re-analyze as\u2026' choices in three places: the player's More menu, the end-of-analysis summary card, and the review screen for long recordings.",
+                "summary": "Already shipped. PR #50 (\"One-tap Re-analyze as... in the player's More menu\", branch claude/t127-reanalyze-as, merged 2026-11-18) added it on both platforms. On iOS: the player's More menu has one-tap rows like 'Re-analyze as a straightaway' (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift), the finish card has 'Analyzed as a start. Filmed something else?' with one-tap buttons (ResultsViews.swift), and a long recording's review screen has 'Re-analyze as straightaways' (PassPickerView / SplitModel.reanalyze). Each one is the athlete's choice of kind (LAW 41) and re-runs the analysis on the",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:06+00:00",
-                "verified": "Read the code on origin/master: KindLogic.swift reanalyzeOptions/reanalyzeChoices; call sites in AnalysisPlayerView.swift:653, ResultsViews.swift:942, SplitStartsView.swift:1363/1420, PassPickerView.swift:54; Android AnalysisPlayerScreen.kt:529, ResultsViews.kt:1287, SplitStartsScreen.kt:221/386, PassPickerScreen.kt:160. Checked the git history (1a499a2, c3f1d42). No build was run because no code ",
-                "next_step": "On the current TestFlight build, record a straightaway with the record screen left on Starts. Open the clip, tap More (top right) and tap 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and then straightaway results. For a long recording, the review screen should show 'Re-analyze as straightaways'. If any of that is missing on device, reopen this task and say which screen"
+                "at": "2026-11-20T01:08+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the current origin/master (94d6bf0) code on both platforms and the diffs of #50 and #78. No builds run because nothing changed.",
+                "next_step": "On the phone (TestFlight build from after Nov 18): open a clip analyzed as a start, tap More (top right) and pick 'Re-analyze as a straightaway'. The re-analysis step should show, then straightaway coaching. If this doesn't do what you wanted, edit the to-do to say what's missing (for example, a different entry point) and it will be picked up again."
               }
             },
             {
