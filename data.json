@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #67 (merged Nov 18, the day after Austin's note) added one-tap \"Re-analyze as ...\" rows to the player's More menu, on iOS (StrideLab/Playback/AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle in KindLogic.swift) and on Android (AnalysisPlayerScreen.kt, KindLogic.kt). A clip analyzed as a start shows \"Re-analyze as a straightaway\" first, then \"Re-analyze as a curve (Beta)\". Each row is a single kind pick, so it counts as the athlete's choice (LAW 41) and is kept through later re-analysis. Demo clips don't show the rows. Long recordings get the same buttons i",
+                "summary": "Already shipped. PR #50 (moonyose/StrideLab, 'One-tap \"Re-analyze as...\" in the player's More menu', branch claude/t127-reanalyze-as) was merged 2026-11-18 on iOS and Android. It touched AnalysisPlayerView.swift, KindLogic.swift and tests_kindui.swift, plus AnalysisPlayerScreen.kt, KindLogic.kt and KindUiTest.kt. Current master (94d6bf0) still has it: the player's More menu lists 'Re-analyze as a straightaway / a start / a curve (Beta)' from KindFlow.reanalyzeOptions, and both apps have the same entry. Long recordings also get 'Re-analyze as straightaways/starts' cards in the split and pass-pi",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T04:19+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): the iOS More menu (AnalysisPlayerView.swift lines 650-659) and the Android overflow menu (AnalysisPlayerScreen.kt lines 528-535) both list the reanalyzeOptions rows. Tests already cover the options and copy: Tools/tests_kindui.swift and android/core/.../KindUiTest.kt. I ran no builds because no code changed.",
-                "next_step": "On your phone, open a clip that was analyzed as Starts, wait for the analysis to finish, tap More (top right) and tap \"Re-analyze as a straightaway\". The kind chip should change to Straightaway and the tips should be redone. If you were looking for this somewhere else (for example right after recording, or in the clip list), add a note to the task saying where."
+                "at": "2026-11-20T04:21+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the code only, no build run. PR #50 is MERGED (gh pr view). On current master, KindFlow.reanalyzeOptions is still wired into the iOS player menu (AnalysisPlayerView.swift around line 653) and the Android player menu (AnalysisPlayerScreen.kt around line 529), after the Nov 19 More-menu cleanup in PR #78. Tests for it exist in Tools/tests_kindui.swift and KindUiTest.kt.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with the record screen left on Starts, open the clip, tap More, then 'Re-analyze as a straightaway'. Confirm it re-analyzes as a straightaway. If it falls short (for example you want the option somewhere else, like the record result or the split screen when no starts are found), edit the task to say where."
               }
             },
             {
