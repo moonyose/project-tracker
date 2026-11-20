@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms; no new PR opened. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / start / curve' to the player's More menu, and PR #67 (merged 2026-11-18) added the 'Filmed something else? Re-analyze as straightaways/starts' card to the Split pass picker, the Split failure screen and the results finish card. That covers the Nov 17 case: a recording filmed with Starts picked on the record screen. Android has the same in AnalysisPlayerScreen.kt, PassPickerScreen.kt, SplitStartsScreen.kt and ResultsViews.kt, and KindUiTest.kt tests it. Seven duplicate t",
+                "summary": "Already shipped on master for iOS and Android (PR #50 and PR #67): the starts review, 'No starts found' and 'Pick your passes' screens have a one-tap 'Re-analyze as\u2026' card, and the player's results view and More menu offer it too. Nothing new to change, so no PR was opened. The later t127 PRs #55, #60 and #70 were closed unmerged.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:49+00:00",
-                "verified": "Read master at 94d6bf0. ReanalyzeCard and the KindFlow.reanalyzeChoices/reanalyzeOptions/reanalyzeRecordingTitle helpers are wired into PassPickerView.swift, SplitStartsView.swift, AnalysisPlayerView.swift and ResultsViews.swift on iOS, and into the matching Kotlin screens on Android, with tests in Tools/tests_kindui.swift and android/core KindUiTest.kt. Checked with gh that PRs #50 and #67 are me",
-                "next_step": "Mark t127 done in the tracker. To confirm on the phone with a TestFlight build from after Nov 18: record a straightaway with Starts picked, open it, and tap 'Re-analyze as straightaways' on the runs screen (or More > 'Re-analyze as a straightaway' in the player)."
+                "at": "2026-11-20T10:52+00:00",
+                "verified": "Read the origin/master code (94d6bf0) and the GitHub PR history only. No build or tests were run because no code changed.",
+                "next_step": "Mark t127 done. To check it on your phone: record a straightaway with the record screen still on Starts, open the clip, and tap 'Re-analyze as straightaways' on the starts review screen. The 'Pick your passes' grid should appear. If a step still feels manual, edit the task to name the screen and it will be picked up again."
               }
             },
             {
