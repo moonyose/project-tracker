@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This was already built: PR #67 (merged Nov 18) added a one-tap 'Re-analyze as\u2026' on iOS and Android, both on the review screen after a recording and in a clip's \u2026 menu, so no new PR was needed. It covers your Nov 17 case of filming straightaways with the record screen left on Starts.",
+                "summary": "Already on master for iOS and Android (merged in PR #50, again in PR #67): one tap on 'Re-analyze as\u2026' in the player's More menu (straightaway is listed first for a clip analyzed as a start), on the results card, or in the long-recording review and pass picker. I didn't change anything.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:04+00:00",
-                "verified": "Read the current master code (origin/HEAD 94d6bf0): ReanalyzeCard in StrideLab/Playback/KindViews.swift, its use in SplitStartsView.swift:1420 and PassPickerView.swift:55, the player menu in AnalysisPlayerView.swift:650-658, ResultsViews.swift:943-980, KindFlow.reanalyze* in KindLogic.swift, and the matching Android files. Did not rebuild, because nothing changed.",
-                "next_step": "On a TestFlight build that includes PR #67: (1) leave the record screen on Starts and film a straightaway; (2) on the review screen, tap 'Re-analyze as straightaways' under the cards; (3) or open any analyzed clip, tap the ... menu and pick 'Re-analyze as a straightaway'. If any of these doesn't do what you wanted, edit the to-do to say which screen falls short and close it otherwise."
+                "at": "2026-11-20T08:05+00:00",
+                "verified": "Read the code on origin/master (94d6bf0). Confirmed the entry points above are wired on both platforms and covered by the existing kind-UI tests. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build at or after PR #67: open a clip that was analyzed as a start, wait for the result, tap More (top right) and pick 'Re-analyze as a straightaway'. If you actually wanted it somewhere else (for example on the library row before opening the clip, or on the record screen right after you stop), edit the to-do to say where."
               }
             },
             {
