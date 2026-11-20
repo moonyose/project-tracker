@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (merged 2026-11-18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift ~line 650). PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways/starts' buttons to the recording review, pass picker and finish card (ReanalyzeCard, SplitModel.reanalyze), plus a scan cache keyed by kind so a recording first scanned as starts is scanned again for straightaway passes. Android has the same thing in AnalysisPlayerScre",
+                "summary": "Already done. One-tap 'Re-analyze as ...' shipped on iOS and Android in commit c3f1d42 (Nov 18, merged as PR #67 'reanalyze-skeleton-toggle-beta'), the day after the Nov 17 note. iOS: player menu rows (KindFlow.reanalyzeOptions, AnalysisPlayerView), a card on the finished results (ResultsViews 'Analyzed as a start. Filmed something else?'), and a ReanalyzeCard on a long recording's review (SplitStartsView / PassPickerView: 'Re-analyze as straightaways'). A start goes straight to straightaway first. Android mirrors it in KindLogic.kt, AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:42+00:00",
-                "verified": "Read the master code (94d6bf0) on iOS and Android and the merged PRs #50 and #67 through gh. Did not rebuild or rerun tests because nothing changed. Existing coverage: Tools/tests_kindui.swift (kui_reanalyzeAsTest, plus the player-menu checks around line 175) and android KindUiTest.kt / PassesTest.kt.",
-                "next_step": "Mark t127 done in the tracker so the scheduled run stops picking it up. Phone check: open a clip recorded with Starts selected, tap More, tap 'Re-analyze as a straightaway' and confirm it re-analyzes as a stride. For a long recording, the review screen shows 'Re-analyze as straightaways'. If something still feels manual, update the task with exactly where."
+                "at": "2026-11-20T13:44+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): KindLogic.swift reanalyzeChoices/reanalyzeOptions/reanalyzeTitle/reanalyzeRecordingTitle, wired in AnalysisPlayerView, ResultsViews, SplitStartsView and PassPickerView. Android has the same functions and UI wiring, plus core tests. Nothing was built or run because no code changed.",
+                "next_step": "On a TestFlight build that includes PR #67, open a clip analyzed as a start and tap the player menu. 'Re-analyze as a straightaway' should be the first option. On a long recording looked through for starts, the review screen should offer 'Re-analyze as straightaways'. If either is missing or doesn't work, reopen this to-do with what you saw."
               }
             },
             {
