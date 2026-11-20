@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already built: PR #67 (merged Nov 18, the day after the Nov 17 note) added one-tap \"Re-analyze as a straightaway / a curve (Beta) / a start\" on iOS and Android. It shows in the player's More menu, on the results panel, and as \"Re-analyze as straightaways\" on a long recording's review screen, and the likeliest mix-up (Start to Straightaway) is listed first.",
+                "summary": "This was already built: PRs #50 and #67, merged Nov 18, added a one-tap \"Re-analyze as\u2026\" option on iOS and Android. It's in the player's More menu, on the results screen, and on the review screen for a long recording, so no new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T17:03+00:00",
-                "verified": "Read current master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle in StrideLab/Playback/KindLogic.swift are wired into AnalysisPlayerView's More menu, ResultsViews, SplitStartsView and PassPickerView. The Kotlin twins are wired into AnalysisPlayerScreen, ResultsViews, SplitStartsScreen and PassPickerScreen, with tests in KindUiTest.kt. Confirmed the menu section is still the",
-                "next_step": "On a TestFlight build from Nov 18 or later, open a clip analyzed as a start, tap More (the ... button) and pick \"Re-analyze as a straightaway\". If that's not enough (for example, you want the record screen to warn before analyzing), edit the to-do with what's still missing."
+                "at": "2026-11-20T17:09+00:00",
+                "verified": "Read current origin/master (94d6bf0): StrideLab/Playback/AnalysisPlayerView.swift lines 650-659, StrideLab/Playback/KindLogic.swift (reanalyzeOptions/reanalyzeChoices/titles), StrideLab/Split/SplitStartsView.swift and PassPickerView.swift ReanalyzeCard, and the Android twins (AnalysisPlayerScreen.kt line 529, SplitStartsScreen.kt, PassPickerScreen.kt, KindUiTest.kt reanalyzeAsTest). Confirmed PRs ",
+                "next_step": "On a TestFlight build at or after 2026-11-18: record a straightaway with Start still picked on the record screen. On the recording review, tap 'Re-analyze as straightaways'. Or open a single clip, tap More (top right), then 'Re-analyze as a straightaway'. Check that it re-runs as a straightaway. If something still forces manual fixing, add a note to the task saying which screen it was."
               }
             },
             {
