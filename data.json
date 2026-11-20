@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, on iOS and Android. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / start / curve' rows to the player's More menu. PR #67 (merged Nov 18) added the same one-tap choice to the finished-results screen and to a long recording's review ('Looked through for starts. Filmed something else? Look through it again:' with 'Re-analyze as straightaways' buttons). For a clip analyzed as a start, the first option offered is Straightaway. iOS: KindFlow.reanalyzeOptions/reanalyzeChoices in StrideLab/Playback/KindLogic.swift, used ",
+                "summary": "Already shipped. PR #50 (https://github.com/moonyose/StrideLab/pull/50, branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap \"Re-analyze as ...\" to the player's More menu, and PR #67 (merged 2026-11-18) added it to the results view and to the review of a long recording (SplitStartsView / PassPickerView: \"Re-analyze as straightaways\"). Current master still has both on iOS (AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift, KindLogic.swift) and on Android (AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt, cor",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T11:35+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). Every entry point listed above is present on both platforms. The latest commit (38714a3) hides the More menu only while analysis is running, so Re-analyze still shows once a result exists. I did not run builds because nothing changed.",
-                "next_step": "On a TestFlight build at or after PR #67: record straightaways with the recording screen left on Starts. On the recording review, tap 'Re-analyze as straightaways'. Or open a single clip, tap More (top right) and choose 'Re-analyze as a straightaway'. If this still falls short of what you wanted on Nov 17 (for example you're on an older build, or you want it somewhere else), edit the task to say w"
+                "at": "2026-11-20T11:37+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the current origin/master code: the reanalyzeOptions/reanalyzeChoices menu rows and buttons are wired in on both platforms. I made no code change, so I ran no build or checks.",
+                "next_step": "Install the current TestFlight build and open a clip analyzed as a start. Tap More: \"Re-analyze as a straightaway\" should be the first re-analyze row. For a long recording filmed on Starts, the review screen should offer \"Re-analyze as straightaways\". If either is missing on your phone, the build is probably older than Nov 18. Mark t127 done, or reword it with what is still missing."
               }
             },
             {
