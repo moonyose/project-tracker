@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #67 (commit c3f1d42, 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta', Nov 18, merged as cc7b90d) added one-tap 'Re-analyze as ...' on iOS and Android, one day after the Nov 17 note. Where it appears: the player's More menu (AnalysisPlayerView.swift ~L650, AnalysisPlayerScreen.kt ~L529), the finish card (ResultsViews.swift ~L967 / ResultsViews.kt ~L1290), and a long recording's review and pass picker (SplitStartsView.swift ~L1420, PassPickerView.swift ~L55, plus their Kotlin twins). On a clip analysed as a start, the first option o",
+                "summary": "Already shipped on master, on iOS and Android. PR #50 added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu. PR #67 (merged Nov 18) fixed the Nov 17 case: a long recording filmed with Start still picked had its saved scan reused as a look for starts, so passes were never searched for. It added 'Re-analyze as straightaways / curves / starts' buttons on the recording review screen (including when no starts were found), the pass picker and the finish card. Nothing left to change, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T11:06+00:00",
-                "verified": "Read the code only, nothing built or run. Confirmed with grep and git log on origin/master (94d6bf0) that the feature and its tests (Tools/tests_kindui.swift, android KindUiTest.kt) exist, and that 'git diff cc7b90d HEAD -G reanaly' shows no changes after the merge.",
-                "next_step": "On a TestFlight build made after the Nov 18 merge of PR #67 (the last one noted is from Nov 6, which won't have it): open a clip analysed as a start, tap the More (...) menu in the player, tap 'Re-analyze as a straightaway', and check it re-analyzes as a stride. If it's missing or hard to find, edit the to-do to say where you expected the button."
+                "at": "2026-11-20T11:08+00:00",
+                "verified": "Read the code on origin/master (94d6bf0). iOS: AnalysisPlayerView.swift around line 653 (More menu rows), ResultsViews.swift around line 962 (finish card), SplitStartsView.swift around line 1421 and PassPickerView.swift around line 56 (recording review and pass picker). Android twins: AnalysisPlayerScreen.kt:529, ResultsViews.kt:1290, SplitStartsScreen.kt:386, PassPickerScreen.kt:165. Tests: Tools",
+                "next_step": "On your phone, open a clip that was analyzed as a start, tap More (top right) and tap 'Re-analyze as a straightaway'. For a long recording filmed with Start left on, use 'Re-analyze as straightaways' on its review screen. If either one doesn't do what you wanted, edit the to-do to say what's missing, for example a long-press option in the library."
               }
             },
             {
