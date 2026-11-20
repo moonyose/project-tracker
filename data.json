@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a start / a curve (Beta)' to the clip player's More menu (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions). PR #67 (merged Nov 18) added a 'Filmed something else?' Re-analyze card to the Full report (ResultsViews.swift) and 'Re-analyze as straightaways / starts' to a long recording's run picker (PassPickerView.swift, SplitModel.reanalyze), with Android twins in KindLogic.kt and tests in KindUiTest.kt and PassesTest.kt. Later commits (#76, #77, #78) kept these entry points: the More",
+                "summary": "Already shipped. Commit c3f1d42 (Nov 18, 'Reanalyze as another kind...'), which is on master, added one-tap 'Re-analyze as starts / straightaways / curve (Beta)' on iOS and Android. It shows on the split review screen ('Filmed straightaways with Start still picked...'), the pass picker, the results finish card and the player's More menu. Re-analyzing a recording sets its kind to the athlete's choice and scans it again (passes for straightaways and curves, starts for a start). The scan cache records what it looked for, so a recording first scanned as starts is scanned again for passes. Tests co",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:46+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): AnalysisPlayerView.swift lines 650-659 (the More menu section), ResultsViews.swift onReanalyze (around line 942), PassPickerView.swift ReanalyzeCard (around line 55). Checked PR history with gh pr list. Nothing was built, because nothing changed.",
-                "next_step": "Tick t127 off the list. To confirm on the phone, open a clip that was analyzed as a start, tap More (top right), then tap 'Re-analyze as a straightaway'. It should re-analyze with stride phases and tips. For a long recording filmed with Start picked, the run picker shows 'Re-analyze as straightaways'. If something is still missing, edit the task to say exactly where the button should be."
+                "at": "2026-11-20T09:47+00:00",
+                "verified": "Read the code on origin/HEAD (94d6bf0): ReanalyzeCard is used in SplitStartsView.swift review, PassPickerView.swift, ResultsViews.swift and the AnalysisPlayerView More menu. Android has the same in SplitStartsScreen.kt, PassPickerScreen.kt, ResultsViews.kt and AnalysisPlayerScreen.kt. Checked with git merge-base that c3f1d42 is in master. No builds were run because nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: record straightaways with Start still picked on the record screen. On the review screen, tap 'Re-analyze as straightaways' and check that it scans again for passes. Also open an analyzed clip and check More > 'Re-analyze as a straightaway'. If a spot is still missing where you expected the button, re-open the task and name that screen."
               }
             },
             {
