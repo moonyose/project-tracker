@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app: commit c3f1d42 (merged in PR #67 on Nov 18, the day after your note) added one-tap \"Re-analyze as ...\" buttons on iOS and Android, so there was nothing left to build and no PR was opened.",
+                "summary": "This to-do is already shipped on master on both platforms. PR #50 (https://github.com/moonyose/StrideLab/pull/50, merged Nov 18, branch claude/t127-reanalyze-as) added one-tap 'Re-analyze as ...' rows to the player's More menu (iOS AnalysisPlayerView via KindFlow.reanalyzeOptions; Android AnalysisPlayerScreen). PR #67 (merged Nov 18) added 'Re-analyze as ...' buttons on the finished-clip results (ResultsViews) and 'Re-analyze as straightaways/starts/curves' on a long recording's review (SplitStartsView / PassPickerView; Android ResultsViews, ReanalyzeCard, PassPickerScreen, StartScanSession.re",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T06:36+00:00",
-                "verified": "Checked the code only; no builds were run because nothing changed. At current master (94d6bf0, after the cleanups in #77 and #78), the one-tap buttons are still connected on iOS: the long-recording review (SplitStartsView.swift ReanalyzeCard, which looks through the recording again as straightaways or curves via SplitModel.reanalyze), the pass picker (PassPickerView.swift), the finish card (Result",
-                "next_step": "On a TestFlight build that includes PR #67: record a straightaway with the record screen left on Starts. On the review, tap \"Re-analyze as straightaways\" and check that the runs come back as straightaways. Then open any analyzed start, tap More, choose \"Re-analyze as a straightaway\", and check that it re-analyzes in one tap. If something still doesn't work, edit this to-do with what you saw."
+                "at": "2026-11-20T06:38+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the code only, nothing built or run: confirmed both merge commits are ancestors of origin/master HEAD 94d6bf0 and grepped the call sites for reanalyzeOptions/reanalyzeChoices/reanalyzeRecordingTitle in StrideLab/ and android/. No build or checks were run because nothing changed.",
+                "next_step": "On the latest TestFlight build: record a straightaway with Start still selected on the record screen. Once it's analyzed, tap the More (...) button top right and pick 'Re-analyze as a straightaway'. Or use the 'Analyzed as a start. Filmed something else?' buttons under the results, or 'Re-analyze as straightaways' on a long recording's review. If it still felt manual on Nov 17, that build was prob"
               }
             },
             {
