@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already done: PR #50, merged Nov 18, added a one-tap \"Re-analyze as\u2026\" option to the player's More menu on iOS and Android (a clip analyzed as a start offers \"Re-analyze as a straightaway\" first). It's still on master, and the More menu shows once analysis finishes, so no new PR was opened.",
+                "summary": "This is already on master for iOS and Android: PR #50 and PR #67 (both merged Nov 18) added one-tap 'Re-analyze as\u2026' to the player's More menu, the finished-analysis card and a long recording's review screen. Nothing new was changed and no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:35+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read master source on both platforms (iOS AnalysisPlayerView.swift, KindLogic.swift, SplitStartsView.swift, PassPickerView.swift; Android AnalysisPlayerScreen.kt, KindLogic.kt, KindUiTest.kt). gh confirms PR #50 is merged. Nothing changed, so no builds were run.",
-                "next_step": "On a TestFlight build from master: open a clip that was analyzed as a start, wait for it to finish, tap More (top right) and tap 'Re-analyze as a straightaway'. If that's in the menu, close t127. If it isn't what you wanted (say you want the option somewhere easier to find, like the kind chip or the library), edit the task to say where."
+                "at": "2026-11-20T10:42+00:00",
+                "verified": "Read current master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle, used in AnalysisPlayerView.swift:650-659, ResultsViews.swift:942-975, SplitStartsView.swift:1329-1421, PassPickerView.swift:54-58, and the Kotlin mirrors in AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt. ./Tools/verify.sh printed ALL CHECKS PASSED, including 'a recordi",
+                "next_step": "On the phone, open a clip that was analyzed as a start, tap More (top right), and tap 'Re-analyze as a straightaway'. It should re-analyze as a straightaway in one tap. For a long recording, the review screen has a 'Re-analyze as straightaways' button. If something about this still falls short, edit the task to say what, then re-queue it. Otherwise mark t127 done."
               }
             },
             {
