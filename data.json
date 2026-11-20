@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "One-tap \"Re-analyze as...\" is already on master on iOS and Android: PR #50 (branch claude/t127-reanalyze-as, merged as fe99a5f) and PR #67 (cc7b90d). It shows on the Starts review screen after a recording (Austin's Nov 17 case), the pass picker, the finished-results card and the player's More menu.",
+                "summary": "This is already on master for iOS and Android, so no PR was opened. PR #50 (merged Nov 18) added a one-tap 'Re-analyze as\u2026' to an analyzed clip's More menu, and PR #67 (merged Nov 18) added a 'Re-analyze as straightaways' card for recordings filmed with Start still picked.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:40+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). iOS: ReanalyzeCard in SplitStartsView review (lines ~1417-1424) calls SplitModel.reanalyze(as:), which saves the chosen kind and scans again. PassPickerView and ResultsViews have the same card, and the AnalysisPlayerView More menu uses KindFlow.reanalyzeOptions. Android has the same paths in SplitStartsScreen, PassPickerScreen and the AnalysisPlayerScreen ",
-                "next_step": "If you're on a build from 1.0.4 or later: record straightaways with Starts still selected. On the Starts review screen, tap \"Re-analyze as straightaways\" near the bottom and check that the pass picker comes up. If you still had to fix it by hand, say which screen you were on and reopen the task with that detail."
+                "at": "2026-11-20T02:42+00:00",
+                "verified": "Checked the code only, with no builds because nothing changed. gh pr view shows PRs #50 and #67 merged, and the re-analyze code and its tests (Tools/tests_kindui.swift, KindUiTest.kt) are on origin/master (94d6bf0) for iOS and Android.",
+                "next_step": "On a current TestFlight build, record straightaways with Start still picked, then tap 'Re-analyze as straightaways' on the next screen. Also check that an analyzed clip's More menu shows 'Re-analyze as a straightaway'. If you reopened this to-do because something still goes wrong, edit it to say what."
               }
             },
             {
