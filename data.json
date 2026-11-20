@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. PRs #50 and #67 (merged) added one-tap \"Re-analyze as ...\" on iOS and Android. It appears in three places: rows in the player's More menu (straightaway is listed first for a clip analyzed as a start), a card on the finished results, and a \"Re-analyze as straightaways/curves\" card on a long recording's review (SplitStartsView / PassPickerView). Each row is one tap that sets the kind as the athlete's choice and re-analyzes. iOS code: KindFlow.reanalyzeOptions/reanalyzeChoices in StrideLab/Playback/KindLogic.swift, wired in AnalysisPlayerView.swift:650-659",
+                "summary": "This is already on master for iOS and Android, so there was nothing to change. PR #50 (merged Nov 18) added a one-tap \"Re-analyze as\u2026\" option to the player's More menu. PR #67 added the same option to the finish card, the pass picker and the Starts split screen. They are still there on current master (94d6bf0). PRs #55, #60 and #70 were earlier copies of this to-do and were closed without merging.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T06:14+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): iOS player menu rows, results card and recording review card are present, and the Android player menu and split screens use the same KindFlow functions. Confirmed with gh that #50/#67 are merged and #70 was closed as superseded at Austin's request. No build was run because nothing changed.",
-                "next_step": "Mark t127 done. On the phone: open a clip that was analyzed as a start, wait for the analysis to finish, tap the More (...) menu, tap \"Re-analyze as a straightaway\" and check the coaching switches to straightaway. If that doesn't match what you saw on Nov 17 (for example the build you used came before #50/#67, or you went through the long-recording review), edit the task with the screen where the "
+                "at": "2026-11-20T06:16+00:00",
+                "verified": "Read the code only, no build run because nothing changed. Re-analyze entries are present in iOS AnalysisPlayerView.swift (More menu), ResultsViews.swift (finish card), PassPickerView.swift and SplitStartsView.swift, and in Android AnalysisPlayerScreen.kt, ResultsViews.kt, PassPickerScreen.kt and SplitStartsScreen.kt.",
+                "next_step": "On a current TestFlight build: record a straightaway with the record screen left on Starts. If it opens in the player, tap More (top right, once analysis finishes) and then 'Re-analyze as a straightaway'. If it lands on the Starts split screen instead, use the re-analyze card there. If that flow still doesn't work for you, edit this to-do with the exact screen where it fails, and close it if it wo"
               }
             },
             {
