@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as) and PR #67 added one-tap 'Re-analyze as ...' on both iOS and Android, and both are merged into master. Current master still has it: on iOS in the player's More menu (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions, so a clip analyzed as a start offers 'Re-analyze as a straightaway' first), as a 'Filmed something else?' card on the results/report (ResultsViews.swift), and as 'Re-analyze as straightaways' on a long recording's review (SplitStartsView.swift, PassPickerView.swift). Android has the same in AnalysisPlayerScreen.kt, Result",
+                "summary": "Already shipped on master on both platforms, so no new PR. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu, and PR #67 (merged Nov 18) added a 'Re-analyze as straightaways / curves' card to a long recording's starts review and pass picker, plus a 'Filmed something else?' card on the finish screen. iOS: KindFlow.reanalyzeOptions/reanalyzeChoices in StrideLab/Playback/KindLogic.swift, used in AnalysisPlayerView, ResultsViews, SplitStartsView and PassPickerView. Android: the same in core/.../playback/KindLogic.kt, AnalysisPlayerSc",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T08:36+00:00",
-                "verified": "./Tools/verify.sh on origin/master (94d6bf0): ALL CHECKS PASSED, including the tests_kindui re-analyze checks. I did not run an xcodebuild or Gradle build because no code changed.",
-                "next_step": "On the phone, record a straightaway with the record screen left on Start and open the clip. Tap the More (...) button at the top right: the first re-analyze row should read 'Re-analyze as a straightaway'. Tap it and check that the clip re-analyzes and the kind chip shows Stride. If the Nov 17 clip was on an older build, update to the latest TestFlight first. If one tap still isn't enough, edit the"
+                "at": "2026-11-20T08:38+00:00",
+                "verified": "Read origin/master (94d6bf0). Found the feature in the iOS and Android code, and with gh found PRs #50 and #67 merged. Builds and checks were not re-run, because nothing changed.",
+                "next_step": "Mark t127 done in the tracker. To confirm on your phone: record a straightaway with Filming set to Start, open it, and tap 'Re-analyze as straightaways' on the review (or, on a single clip, More > 'Re-analyze as a straightaway'). If that still misses what you hit on Nov 17, edit the task to say which screen made you fix it by hand."
               }
             },
             {
