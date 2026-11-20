@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app. PR #67 (merged Nov 18) added one-tap 'Re-analyze as\u2026' on iOS and Android, so no new PR was opened. It shows up in three places: on the finish card under a result ('Analyzed as a start. Filmed something else?', with straightaway first), in the player's More menu, and on a long recording's review screen and pass picker ('Re-analyze as straightaways').",
+                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2) and PR #67 (c3f1d42) added a one-tap 'Re-analyze as...' option, and it is still on master after PR #78. iOS has it in three places: the player's More menu (AnalysisPlayerView, KindFlow.reanalyzeOptions), the results 'Analyzed as X. Filmed something else?' card (ResultsViews), and a ReanalyzeCard on the split screens (SplitStartsView, PassPickerView; SplitModel.reanalyze), so a recording analyzed as starts can be re-run as straightaways in one tap. The Android port has the same pieces: KindFlow.reanalyze* in core, Reanaly",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:15+00:00",
-                "verified": "Read master at 94d6bf0. iOS: KindFlow.reanalyzeChoices/reanalyzeOptions/reanalyzeTitle (StrideLab/Playback/KindLogic.swift) are wired into ResultsViews.swift (finish card), AnalysisPlayerView.swift (More menu), SplitStartsView.swift (recording review) and PassPickerView.swift. Android has the same wiring in ResultsViews.kt, SplitStartsScreen.kt and PassPickerScreen.kt, and KindUiTest.kt covers it.",
-                "next_step": "Use a build made after Nov 18. The last TestFlight build in the notes is from Nov 6 and may not have this. Record a straightaway with the record screen left on Starts, open the result and tap 'Re-analyze as a straightaway' (or More > Re-analyze as\u2026), then check that it re-runs as a straightaway. If something still falls short, edit the to-do to say what."
+                "at": "2026-11-20T02:17+00:00",
+                "verified": "Read the code only. Checked git history (merges #50 and #67) and grepped the iOS and Android sources on origin/master (94d6bf0) for the re-analyze entry points and the Android tests. Confirmed the latest PR #78 (dead More menu removal) did not touch the re-analyze code. No build was run because nothing changed.",
+                "next_step": "If this still didn't work for Austin on Nov 17, check whether his TestFlight build predates PR #50/#67. To confirm on a current build: record a straightaway with 'Start' selected, then tap 'Re-analyze as straightaways' on the result screen (or More > Re-analyze as a straightaway in the clip player). If it was missing in a specific screen, edit the task to name that screen."
               }
             },
             {
