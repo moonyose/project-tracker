@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (\"One-tap Re-analyze as... in the player's More menu\", branch claude/t127-reanalyze-as, merged 2026-11-18) added it on both platforms. On iOS: the player's More menu has one-tap rows like 'Re-analyze as a straightaway' (KindFlow.reanalyzeOptions, AnalysisPlayerView.swift), the finish card has 'Analyzed as a start. Filmed something else?' with one-tap buttons (ResultsViews.swift), and a long recording's review screen has 'Re-analyze as straightaways' (PassPickerView / SplitModel.reanalyze). Each one is the athlete's choice of kind (LAW 41) and re-runs the analysis on the",
+                "summary": "Already shipped on master, so there is no new PR. PR #50 (merged 2026-11-18) added one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' to the player's More menu and the results card. PR #67 (merged 2026-11-18) added 'Re-analyze as straightaways/starts' for a whole recording, on the pass picker and the split screen. Both are on iOS and Android: KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt, plus ReanalyzeCard in KindViews (Swift and Kotlin). Tests: Tools/tests_kindui.swift kui_reanalyzeAsT",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:08+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read the current origin/master (94d6bf0) code on both platforms and the diffs of #50 and #78. No builds run because nothing changed.",
-                "next_step": "On the phone (TestFlight build from after Nov 18): open a clip analyzed as a start, tap More (top right) and pick 'Re-analyze as a straightaway'. The re-analysis step should show, then straightaway coaching. If this doesn't do what you wanted, edit the to-do to say what's missing (for example, a different entry point) and it will be picked up again."
+                "at": "2026-11-20T01:10+00:00",
+                "verified": "Read the code on origin/master (94d6bf0) and checked with gh that #50 and #67 are merged. Nothing was changed, so no build was run.",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone: record a straightaway with Starts selected on the record screen. Open the recording and tap 'Re-analyze as straightaways' on the pass picker or split screen. Or open one clip, tap More, then 'Re-analyze as a straightaway'."
               }
             },
             {
