@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged Nov 18 as fe99a5f) added one-tap \"Re-analyze as...\" for a clip or a recording filmed as the wrong kind. PR #67 (c3f1d42) extended it: Re-analyze as starts / straightaways / curve from the split-starts review, the pass picker, the finish card and the player's More menu, on iOS and Android. It also made the scan cache record what it looked for, so a recording first scanned as starts is scanned again for passes when re-analyzed as straightaways. Both commits are on origin/master, and the current master still has the UI hooked up (Sp",
+                "summary": "This is already done on iOS and Android: PR #67, merged Nov 18, added one-tap 'Re-analyze as\u2026' to the clip player's More menu, the results screen and a long recording's review. Nothing was left to change, so there's no new PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T13:48+00:00",
-                "verified": "Checked with git merge-base --is-ancestor that fe99a5f and c3f1d42 are on origin/master. Used grep to confirm the reanalyze UI is still hooked up on iOS and Android after later cleanup PRs (#77, #78). Tests cover it: Tools/tests_kindui.swift and android/core KindUiTest.reanalyzeAsTest. Nothing changed, so no build was run.",
-                "next_step": "On the phone, record with Starts selected but film a straightaway. On the split/review screen (or the pass picker), tap \"Re-analyze as straightaways\" and confirm the runs come back as straightaways. If this misses something specific, edit the task to say what's still wrong."
+                "at": "2026-11-20T13:50+00:00",
+                "verified": "Read the code on origin/master (94d6bf0): found the re-analyze entry points on iOS and Android listed above and the commits that added them. Builds and checks were not re-run because nothing was changed.",
+                "next_step": "On a TestFlight build at or after PR #67: film a few straightaways with the record screen left on Start. On the recording's review, tap 'Re-analyze as straightaways' and check it finds runs instead of starts. Or open a single clip analyzed as a start, tap More, then 'Re-analyze as a straightaway', and check it comes back as a straightaway. If either is missing or wrong on the phone, reopen the tas"
               }
             },
             {
