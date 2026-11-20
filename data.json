@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2) is merged into the default branch. It adds one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions in KindLogic.swift) and Android (AnalysisPlayerScreen.kt PlayerMenu, KindLogic.kt). Each row is one tap through the existing applyKind path: paywall, visible re-analysis stage, and the choice saved on the clip. The results screen and the pass/starts pickers also have 'Re-analyze as' buttons (reanalyzeChoices). The rows stay ",
+                "summary": "This is already shipped. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu on iOS and Android, and PR #67 added the same choice to the finish card and to a split recording's 'Re-analyze as straightaways' card. Both are on master, so nothing new was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:24+00:00",
-                "verified": "Read the code on origin/HEAD (94d6bf0). KindFlow.reanalyzeOptions is wired into the iOS player More menu (AnalysisPlayerView.swift around line 653) and the Android PlayerMenu (AnalysisPlayerScreen.kt around line 529). Tests for it exist in Tools/tests_kindui.swift (kui_reanalysisTest, kui_reanalyzeAsTest) and android/core KindUiTest.kt. Builds and tests were not re-run because nothing changed.",
-                "next_step": "On the phone, open a clip that was recorded as Starts and wait for the analysis. Tap More (top right) and pick 'Re-analyze as a straightaway'. The re-analysis screen should appear and the clip should come back analyzed as a straightaway. If you still had to fix it by hand on Nov 17, check that the build on your phone includes PR #50 (1.0.4 or later; the Nov 17 take was probably on an older build)."
+                "at": "2026-11-20T12:26+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read master at 94d6bf0. iOS: AnalysisPlayerView's More menu still lists KindFlow.reanalyzeOptions, and the menu is shown once there is a result (PR #78 only hid it while analysis is running). ResultsViews, PassPickerView and SplitStartsView offer ReanalyzeCard. Android mirrors these in AnalysisPlayerScreen, ResultsViews, PassPickerScreen and SplitStartsScreen. Tools/tests_kindui.swift and KindUiTe",
+                "next_step": "On a TestFlight build that includes PR #50/#67: record with Filming set to Start, open the clip, tap ... (More), then 'Re-analyze as a straightaway'. If that works, mark t127 done in the tracker. If it still felt manual, edit the task to say what you tapped and where it fell short."
               }
             },
             {
