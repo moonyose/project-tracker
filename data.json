@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android, merged Nov 18. PR #50 added one-tap 'Re-analyze as a straightaway / curve / start' options to the player's More menu, and PR #67 added a 'Filmed something else?' button on the results screen. No new PR was needed.",
+                "summary": "Already shipped on iOS and Android (merged Nov 18): one-tap 'Re-analyze as a straightaway / curve' is in the player's More menu, on the finish card ('Analyzed as a start. Filmed something else?') and on the long-recording review screens. Nothing needed changing, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T19:08+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read current origin/master (94d6bf0): KindFlow.reanalyzeOptions/reanalyzeChoices/reanalyzeTitle in StrideLab/Playback/KindLogic.swift and android/core/.../playback/KindLogic.kt, used in AnalysisPlayerView.swift:653 (More menu), ResultsViews.swift:967, SplitStartsView.swift:1420, PassPickerView.swift:55 and the Android twins; covered by Tools/tests_kindui.swift and KindUiTest.kt. No build run, sinc",
-                "next_step": "On the phone (TestFlight build from after Nov 18): open a clip analyzed as a Start, tap More (top right), tap 'Re-analyze as a straightaway'. It should re-analyze as Stride with no manual marking. If this still doesn't cover the Nov 17 case (for example, a long recording split into starts), say which screen it was on and re-open the to-do with that detail."
+                "at": "2026-11-20T19:13+00:00",
+                "verified": "Read the current master code paths on both platforms. ./Tools/verify.sh on origin/master prints ALL CHECKS PASSED, and that includes the reanalyze tests in Tools/tests_kindui.swift. Android has matching tests in KindUiTest.kt, which weren't run. The xcodebuild and Gradle builds weren't run because no code changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: open a straightaway clip that was analyzed as a start, tap More (...), then tap 'Re-analyze as a straightaway'. If you wanted the option somewhere else (for example, the library card), edit the to-do to say where."
               }
             },
             {
