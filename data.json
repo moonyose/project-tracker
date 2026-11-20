@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "\"Re-analyze as\u2026\" is already in the app on iOS and Android, merged in PR #50 (branch claude/t127-reanalyze-as) and PR #67. After a result, the player's More menu offers one tap to re-analyze as each other kind (e.g. \"Re-analyze as a straightaway\" on a clip analyzed as a start). The results card and the long-recording pass picker have the same option (\"Re-analyze as straightaways\"). No new PR was needed.",
+                "summary": "Already done: PR #50 (merged Nov 18) added one-tap 'Re-analyze as\u2026' on iOS and Android. It appears on the review screen for long recordings ('Re-analyze as straightaways', which covers your Nov 17 case), in the pass picker, and in the player's More menu and results card. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:11+00:00",
-                "verified": "Read current master (94d6bf0). iOS: KindFlow.reanalyzeOptions/reanalyzeTitle (KindLogic.swift) are wired into the More menu in AnalysisPlayerView.swift:653, the results card in ResultsViews.swift:943, and the ReanalyzeCard in SplitStartsView.swift/PassPickerView.swift. Android: the same pieces are in AnalysisPlayerScreen.kt:529, ResultsViews.kt and SplitStartsScreen/PassPickerScreen. Tests already",
-                "next_step": "On your phone, open a clip that was analyzed as a start. Tap More (top right), then \"Re-analyze as a straightaway\", and check the clip is re-analyzed as a straightaway. For a long recording, the pass picker's \"Re-analyze as straightaways\" card does the same. If this isn't what you meant (for example, you want it somewhere more visible than the More menu), edit the to-do to say where."
+                "at": "2026-11-20T01:13+00:00",
+                "verified": "Read the code on origin/master (94d6bf0). Confirmed that the PR #50 merge (fe99a5f) and commit 1a499a2 wire up re-analyze in the iOS views (SplitStartsView, PassPickerView, AnalysisPlayerView, ResultsViews) and the Android screens (KindLogic.kt, KindUiTest). No build was run because nothing changed.",
+                "next_step": "On your phone, record straightaways with Start still picked, then tap 'Re-analyze as straightaways' on the review screen and check that the passes are found. If your build doesn't have the option or it falls short, edit the task to say what's missing."
               }
             },
             {
