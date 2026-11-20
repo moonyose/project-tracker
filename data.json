@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. One-tap \"Re-analyze as\u2026\" is on master from PR #50 (merged 2026-11-18) and PR #67, on iOS and Android. It appears in three places: the player's More menu (KindFlow.reanalyzeOptions, with Straightaway listed first for a clip analysed as a start), the results/report card, and a long recording's review screen (\"Re-analyze as straightaways\", SplitStartsView / PassPickerScreen). Later duplicate PRs #55, #60 and #70 were closed as superseded, #70 at Austin's request. No new PR opened, to avoid another duplicate.",
+                "summary": "Already shipped in PR #50, merged Nov 18: on both iOS and Android, the player's More menu has one-tap 'Re-analyze as \u2026' options, and a Starts clip offers 'Re-analyze as a straightaway' first. No new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:11+00:00",
+                "at": "2026-11-20T02:13+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "Read origin/master (94d6bf0). iOS: StrideLab/Playback/AnalysisPlayerView.swift:653 (More menu rows), StrideLab/Playback/ResultsViews.swift:973, StrideLab/Split/SplitStartsView.swift:1420 (recording review card), with the logic in StrideLab/Playback/KindLogic.swift. Android: AnalysisPlayerScreen.kt:529, ResultsViews.kt:1295, PassPickerScreen.kt / SplitModel.reanalyze, with tests in KindUiTest.kt. g",
-                "next_step": "On a TestFlight build from Nov 18 or later: open a clip analysed as a start, tap More, then 'Re-analyze as a straightaway', and check it re-analyzes as a straightaway. If that works, tick t127 off the list. If something is still missing, edit the task to say what, so the next run has a previous_attempt to work from."
+                "verified": "Read the code on origin/master (94d6bf0): iOS StrideLab/Playback/AnalysisPlayerView.swift lines 650-659, StrideLab/Playback/KindLogic.swift reanalyzeOptions; Android ui/player/AnalysisPlayerScreen.kt lines 528-535. Confirmed with gh that PR #50 is MERGED (2026-11-18T15:35Z). Did not build or run checks because nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later, open a clip that was analyzed as Starts, wait for the result, tap More (top right) and tap 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a straightaway' and then the straightaway result. If that works, mark t127 done in the tracker."
               }
             },
             {
