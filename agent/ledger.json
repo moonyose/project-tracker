@@ -2,15 +2,6 @@
  "spent_usd": 186.0218,
  "runs": [
   {
-   "at": "2026-11-19T21:38+00:00",
-   "cost_usd": 0.3105,
-   "auth": "subscription",
-   "turns": 5,
-   "session": "f0a766a1-8a9c-4762-ad82-b4e258178306",
-   "tasks": 1,
-   "run_id": "44620442684"
-  },
-  {
    "at": "2026-11-19T21:39+00:00",
    "cost_usd": 0.3034,
    "auth": "subscription",
@@ -1800,7 +1791,16 @@
    "session": "7067ce96-ee24-4935-98bc-9334341d5736",
    "tasks": 1,
    "run_id": "44682060923"
+  },
+  {
+   "at": "2026-11-20T05:39+00:00",
+   "cost_usd": 0.2965,
+   "auth": "subscription",
+   "turns": 5,
+   "session": "ff846065-7cdb-42e0-8507-ce5f25c4ded5",
+   "tasks": 1,
+   "run_id": "44682288936"
   }
  ],
- "subscription_notional_usd": 530.5998
+ "subscription_notional_usd": 530.8963
 }

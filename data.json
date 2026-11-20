@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master on both platforms. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as ...' rows to the player's More menu (iOS AnalysisPlayerView + KindFlow.reanalyzeOptions; Android AnalysisPlayerScreen + KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. PR #67 extended it: 'Re-analyze as starts/straightaways' buttons on the recording review (SplitStartsView / SplitStartsScreen), the pass picker and the finish card, plus a scan cache keyed by kind so a recording first scanned as starts gets scanned for passes after the change. The op",
+                "summary": "Already shipped on master, no new PR. PR #50 (claude/t127-reanalyze-as, merged) added one-tap 'Re-analyze as a straightaway / curve / start' rows to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions) and Android (AnalysisPlayerScreen.kt PlayerMenu). PR #67 extended it with Re-analyze buttons on the results card (ResultsViews) and a ReanalyzeCard on the split/pass-picker screens, on both platforms. I read current master (94d6bf0): the latest merge (#78) only hides the More button until there is a result, so the re-analyze rows are still there once the clip is an",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:37+00:00",
-                "verified": "Read the current origin/master code: the AnalysisPlayerView.swift More menu still has the reanalyzeOptions section (lines ~650-659), the Android AnalysisPlayerScreen.kt menu has it at ~529-533, and ReanalyzeCard is used in SplitStartsView/PassPickerView and SplitStartsScreen/PassPickerScreen. No builds or tests run because nothing changed.",
-                "next_step": "On the phone (TestFlight build that includes PR #50/#67): open a clip analyzed as Starts, tap More, then 'Re-analyze as a straightaway', and check that it re-analyzes as a straightaway. If it's still missing or awkward in a specific spot (like the record-screen review of a multi-rep recording), edit the to-do to name that screen."
+                "at": "2026-11-20T05:39+00:00",
+                "verified": "Read the code on origin/master at 94d6bf0. iOS: the More-menu section at AnalysisPlayerView.swift:650-659 calls applyKind([.kind(k)]). Android: AnalysisPlayerScreen.kt:529-533 calls model.applyKind. Tests already cover it in Tools/tests_kindui.swift and KindUiTest.kt (reanalysisTest, reanalyzeAsTest). I made no code change, so I re-ran no builds this run; PR #50 recorded passing verify.sh, the xco",
+                "next_step": "On the phone: set Filming to Start, record a few straightaway strides, open the clip, wait for the analysis to finish, tap ... (More) and then 'Re-analyze as a straightaway'. You should get straightaway coaching and a Stride chip. If this still felt like manual work on Nov 17, the build on the phone may have been older than PR #50. Otherwise, edit the to-do to say where the one-tap option was miss"
               }
             },
             {
