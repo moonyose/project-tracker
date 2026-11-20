@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android, so I made no PR. PR #50 added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu. PR #67 added the same buttons on the result card, the pass picker and the starts review screen, which offers 'Re-analyze as straightaways' for a clip filmed with Start still picked. All of them are still there on current master (94d6bf0).",
+                "summary": "Already shipped on master for iOS and Android, so no new PR. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added a one-tap 'Re-analyze as ...' to the player's More menu. PR #67 (merged Nov 18) added it to the results finish card, to the Starts review screen of a split recording (a ReanalyzeCard that says 'Re-analyze as straightaways' when a recording was scanned as starts, which is the Nov 17 case), and to the pass picker. Android has the same: ReanalyzeCard in SplitStartsScreen.kt, PassPickerScreen.kt and KindViews.kt, and re-analysis in AnalysisPlayerScreen.kt.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:34+00:00",
-                "verified": "./Tools/verify.sh on current master: ALL CHECKS PASSED (it includes the reanalyze-as kind UI tests). Android has matching tests in KindUiTest.kt (reanalyzeAsTest, reanalysisTest). No code changed, so I didn't run an xcodebuild, Gradle or bend run.",
-                "next_step": "Check it in TestFlight. Open a clip that was analyzed as a start, tap More (top right) and tap 'Re-analyze as a straightaway'. Or open a recording filmed with Start picked and tap 'Re-analyze as straightaways' under the starts it found. If the Nov 17 clip still couldn't be fixed this way, say which screen it was on, then close the to-do or reopen it with that detail."
+                "at": "2026-11-20T07:36+00:00",
+                "verified": "Read master at 94d6bf0. git log shows PRs #50 and #67 merged. Found the re-analyze option in StrideLab/Split/SplitStartsView.swift (review screen, shown whether or not starts were found), PassPickerView.swift, Playback/ResultsViews.swift, KindViews.swift and AnalysisPlayerView.swift, and in the matching Kotlin screens. Nothing was changed, so no build or verify.sh run this time; those checks ran o",
+                "next_step": "Update TestFlight to a build from after Nov 18. Record straightaways with Starts still picked on the record screen. On the Starts review screen, tap 'Re-analyze as straightaways' and check that it scans again for straightaways. Then mark t127 done in the tracker."
               }
             },
             {
