@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already built, so there's no new PR. One-tap 'Re-analyze as\u2026' shipped on iOS and Android in PRs #50 and #67: it's in the player's More menu, in a 'Filmed something else?' card on the results screen, and on a long recording's review screen.",
+                "summary": "Already shipped on master, no new PR. This same task was merged as PR #50 (branch claude/t127-reanalyze-as, Nov 18) and carried forward in PR #67. iOS: the player's More menu has one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows (KindFlow.reanalyzeOptions, AnalysisPlayerView). The results view has an 'Analyzed as a start. Filmed something else?' card (ResultsViews). Long recordings get 'Re-analyze as straightaways' on the split and pass-picker screens (SplitModel.reanalyze). Android mirrors all of it: AnalysisPlayerScreen, ResultsViews, SplitStartsScreen, PassPickerScreen,",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T18:41+00:00",
-                "verified": "Read the code on origin/master (94d6bf0) and checked that every re-analyze entry point is wired up on iOS and Android, and that git log shows PR #50 for t127 merged. I did not rebuild or run verify.sh/Gradle because no code changed; those tests already ran in PR checks when #50 and #67 merged.",
-                "next_step": "On your phone, open a clip that was analyzed as a start, tap More (top right), then tap 'Re-analyze as a straightaway'. You should see 'Re-analyzing as a stride' and then straightaway coaching. For a long recording left on Starts, use 'Re-analyze as straightaways' on the review screen. If something about this still falls short (for example, you want it offered before the analysis finishes), edit t"
+                "at": "2026-11-20T18:49+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "./Tools/verify.sh on current master (94d6bf0) printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' checks and the check that a recording re-analyzed as straightaways is searched for passes again. I did not rebuild iOS or Android because nothing changed.",
+                "next_step": "On the phone: record with Starts selected but film a straightaway. Open the clip, tap More, then 'Re-analyze as a straightaway', and check that the analysis reruns as a straightaway. If the existing flow still falls short (for example, it is hard to find), edit the task to describe what is missing."
               }
             },
             {
