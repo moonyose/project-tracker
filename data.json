@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #67 (commit c3f1d42, merged Nov 18, the day after the Nov 17 note) added one-tap 'Re-analyze as ...' on iOS and Android. It appears on the starts review card for a long recording ('Re-analyze as straightaways', SplitStartsView.swift ~L1417 / SplitStartsScreen.kt ~L384), in the pass picker, on the finish card, and in the player's More menu. The scan cache now records what it looked for, so a recording first scanned as starts gets scanned again for passes. Tests are in Tools/tests_kindui.swift, Tools/tests_passes.swift and android/core KindUiTest/PassesTest. No new PR opened.",
+                "summary": "Already shipped on master, so no new PR. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added a one-tap 'Re-analyze as a straightaway / a start / a curve' section to the player's More menu. PR #67 (merged 2026-11-18) added the 'Filmed something else? Re-analyze as straightaways' card for a long recording filmed as the wrong kind (pass picker and split screen). That second case is the Nov 17 scenario. Both are on iOS (AnalysisPlayerView.swift, PassPickerView.swift, SplitStartsView.swift, KindViews.swift ReanalyzeCard) and Android (AnalysisPlayerScreen.kt, PassPickerScreen.kt, KindV",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T05:02+00:00",
-                "verified": "Checked the code on origin/master (94d6bf0): ReanalyzeCard / KindFlow.reanalyzeChoices / reanalyzeRecordingTitle exist on both iOS and Android in the starts review, pass picker, results and player menu. Builds and tests were not re-run because nothing changed.",
-                "next_step": "On the latest TestFlight build: record a straightaway with Starts still selected, open it, scroll below the start cards, tap 'Re-analyze as straightaways' and confirm the passes show up. If something specific still feels manual, edit the to-do to say where."
+                "at": "2026-11-20T05:04+00:00",
+                "verified": "Read the code on origin/HEAD (94d6bf0) and confirmed with gh that PRs #50 and #67 are MERGED. No code was changed, so no build was run.",
+                "next_step": "On a phone with the current TestFlight build: open a clip analyzed as Starts, tap More, then 'Re-analyze as a straightaway', and check it re-runs as a straightaway. For a long recording made with Starts picked, check the 'Re-analyze as straightaways' card on the pass picker. If something still feels like manual work, edit the task to say which screen."
               }
             },
             {
