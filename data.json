@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on both iOS and Android. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' options to the player's More menu. PR #67 added the same buttons to the finish card, the pass picker and the long-recording review. No new PR was needed.",
+                "summary": "This is already on master: PR #50 (branch claude/t127-reanalyze-as) added a one-tap 'Re-analyze as ...' option, and PR #67 extended it. It is in the player's More menu and on the results report, on both iOS and Android. Nothing new to build, so no PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T15:34+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). The re-analyze options are used in the iOS player menu, finish card, PassPickerView and SplitStartsView, and in the matching Android screens. Tests for them exist in Tools/tests_kindui.swift and in Android's KindUiTest.kt and PassesTest.kt. Nothing was rebuilt or run, because nothing changed.",
-                "next_step": "On a TestFlight build that includes #67, open a clip analyzed as a start, tap More (top right), then 'Re-analyze as a straightaway', and check that the kind chip changes to Stride. If it still feels manual, reopen the task and say which screen you were on."
+                "at": "2026-11-20T15:36+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read current origin/master (94d6bf0). On iOS, the More menu (AnalysisPlayerView.swift ~line 653) lists KindFlow.reanalyzeOptions and the results report (ResultsViews.swift ~line 962) shows reanalyzeChoices buttons. The split/long-recording view has a 'Re-analyze as straightaways' path (SplitStartsView.swift ~line 969). Android has the same in AnalysisPlayerScreen.kt ~line 529 and ResultsViews.kt ~",
+                "next_step": "Mark t127 done in the tracker. To confirm on the phone, open a clip analysed as a Start, tap More (top right) and pick 'Re-analyze as a straightaway'. The clip should run again and come back labelled Straightaway."
               }
             },
             {
