@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done on master. Commit c3f1d42 (2026-11-18, 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta') added one-tap 'Re-analyze as ...' on iOS and Android. It appears in four places: the player's More menu (the likeliest mix-up comes first, e.g. a Starts clip offers 'Re-analyze as a straightaway'), the results card ('Analyzed as a start. Filmed something else?'), and the review screens for long recordings and split starts ('Re-analyze as straightaways'). Demo clips don't get it. Tests: Tools/tests_kindui.swift (kui_reanalyzeAsTest) and android core Ki",
+                "summary": "Already shipped on iOS and Android: PRs #50 and #67 (both merged Nov 18, after your Nov 17 note) added one-tap 'Re-analyze as\u2026' to the player's More menu, the results screen, and a 'Filmed something else?' card on the starts review and pass picker. Nothing new to change, so no PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:00+00:00",
-                "verified": "Code read only, at origin/HEAD 94d6bf0. I checked KindLogic.swift (reanalyzeOptions/reanalyzeChoices/titles) and where it is used in AnalysisPlayerView.swift:650-659, ResultsViews.swift:971, PassPickerView.swift:55 and SplitStartsView.swift:1420, plus the matching Android code in KindLogic.kt, AnalysisPlayerScreen.kt:529, ResultsViews.kt:1287, PassPickerScreen.kt and SplitStartsScreen.kt. git log ",
-                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with the record screen left on Starts, then open the clip. Tap More (the ... button) and choose 'Re-analyze as a straightaway', or use the button on the results card. It should re-analyze it as strides with one tap. For a long recording, the review screen should show 'Re-analyze as straightaways'. If this still fails on the current "
+                "at": "2026-11-20T01:02+00:00",
+                "verified": "Read master at 94d6bf0 and found every call site of ReanalyzeCard, reanalyzeOptions and reanalyzeChoices on iOS and Android. Confirmed with gh that PRs #50 and #67 are merged. Did not build, since no code changed.",
+                "next_step": "On a TestFlight build from after Nov 18: pick Start on the record screen and film a straightaway. When the starts review appears, tap 'Re-analyze as straightaways' under 'Filmed something else?'. For a single clip that was already analyzed, open it, tap More and choose 'Re-analyze as a straightaway'. If that doesn't work for you, edit the to-do to say where it fails."
               }
             },
             {
