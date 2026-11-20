@@ -1940,11 +1940,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android (commit 1a499a2, Nov 18), so there's no PR. The player's More menu has one-tap 'Re-analyze as a straightaway' and 'Re-analyze as a curve (Beta)' options, and existing tests cover the case where a start is really a straightaway.",
+                "summary": "Already done: one-tap 'Re-analyze as\u2026' shipped Nov 18 in PR #67 on both iOS and Android, so nothing new was built. It's on the long-recording review screen ('Looked through for starts. Filmed something else?'), in a finished clip's More menu, and on the results card.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T19:18+00:00",
-                "verified": "Code reading only: the call sites on both platforms are present on origin/master (94d6bf0). I could not run ./Tools/verify.sh, xcodebuild or Gradle because the run's permission mode refused them. No code was changed.",
-                "next_step": "On your phone (TestFlight build from Nov 18 or later): open a clip analyzed as a start, tap the More (...) menu in the player, tap 'Re-analyze as a straightaway', and check that it re-analyzes and the results show straightaway metrics. If you don't see the option, tell me which screen you were on so the gap can be filed as a new task."
+                "at": "2026-11-20T19:20+00:00",
+                "verified": "Code reading only. I confirmed the entry points are wired in StrideLab/Split/SplitStartsView.swift (ReanalyzeCard on the review screen and the pass picker, SplitModel.reanalyze), StrideLab/Playback/AnalysisPlayerView.swift (More menu rows, finish card) and StrideLab/Playback/KindLogic.swift (copy and order). The Android twins and tests exist under android/. I did not run builds, because nothing ch",
+                "next_step": "On the latest TestFlight build (1.0.4 or later), record a few straightaways with Starts still picked. On the review screen, scroll down to 'Looked through for starts...' and tap 'Re-analyze as straightaways'. It should scan again for runs. If that card doesn't show up, or doesn't do what you wanted, edit this to-do and say what was missing."
               }
             },
             {
