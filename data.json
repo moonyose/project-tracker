@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, iOS and Android. PR #50 (claude/t127-reanalyze-as, merge fe99a5f) added one-tap 'Re-analyze as a straightaway / curve / start' to the player's More menu. PR #67 (merge cc7b90d) extended it to the starts review screen, the pass picker and the finish card. The scan cache now records what it looked for, so a recording first scanned as starts is scanned again for passes once it is re-analyzed as straightaways. No new PR opened.",
+                "summary": "This is already done on both iOS and Android (merged Nov 18). A single clip has 'Re-analyze as a straightaway / start / curve' in the player's More menu, and a split recording has a 'Filmed something else?' card with 'Re-analyze as straightaways', so no PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T10:03+00:00",
-                "verified": "Checked git history on origin/HEAD (94d6bf0): commits 1a499a2 and c3f1d42 are merged. The code is present in StrideLab/Split/SplitStartsView.swift (ReanalyzeCard on the review), StrideLab/Split/PassPickerView.swift, StrideLab/Playback/ResultsViews.swift (FinishCard), StrideLab/Playback/AnalysisPlayerView.swift, and the Android mirrors (SplitStartsScreen.kt, PassPickerScreen.kt, AnalysisPlayerScree",
-                "next_step": "On a TestFlight build that includes PR #67: record a straightaway with the record screen left on Starts. On the starts review screen (or the finish card, or the player's More menu), tap 'Re-analyze as straightaways' and check that it finds the passes. If that still fails, edit this to-do to say where."
+                "at": "2026-11-20T10:05+00:00",
+                "verified": "Read origin/master (94d6bf0): commits 1a499a2 and c3f1d42 are on master, and the menu items, reanalyze card and their tests (Tools/tests_kindui.swift, android KindUiTest.kt) are present on both platforms. Builds and tests were not re-run because nothing changed.",
+                "next_step": "On the latest TestFlight build, open a clip analyzed as Starts, tap More, then 'Re-analyze as a straightaway'. For a long recording split as starts, scroll to 'Filmed something else?' and tap 'Re-analyze as straightaways'. If either still feels manual, edit the task to say which screen."
               }
             },
             {
