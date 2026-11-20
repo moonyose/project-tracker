@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped in PR #67 (merged Nov 18) on iOS and Android: a one-tap \"Re-analyze as\u2026\" in the player's \u2022\u2022\u2022 menu, on the results screen, and on the long-recording review screens, which re-runs analysis without re-tracking the video. Nothing left to change, so no new PR.",
+                "summary": "Already shipped. PR #67 (commit c3f1d42, 'Reanalyze as another kind, a skeleton on/off toggle and an Edit button, curve marked Beta', Nov 18, merged as cc7b90d) added one-tap 'Re-analyze as ...' on iOS and Android, one day after the Nov 17 note. Where it appears: the player's More menu (AnalysisPlayerView.swift ~L650, AnalysisPlayerScreen.kt ~L529), the finish card (ResultsViews.swift ~L967 / ResultsViews.kt ~L1290), and a long recording's review and pass picker (SplitStartsView.swift ~L1420, PassPickerView.swift ~L55, plus their Kotlin twins). On a clip analysed as a start, the first option o",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T11:04+00:00",
-                "verified": "Read current origin/master (94d6bf0). Found the KindFlow.reanalyzeOptions / reanalyzeChoices / reanalyzeTitle helpers and their call sites in the iOS views and the Android screens, plus their tests on each platform. Traced them to commit c3f1d42, merged in PR #67. Didn't rebuild or run tests because no code changed.",
-                "next_step": "On a TestFlight build that includes PR #67 (1.0.4 or later): open a straightaway clip that was analyzed as a start, tap the \u2022\u2022\u2022 menu in the player, and tap \"Re-analyze as a straightaway\". It should show \"Re-analyzing as a stride\" and come back with acceleration and top-speed phases. If that works, close t127. If it's still hard to find, say where you expected the button to be."
+                "at": "2026-11-20T11:06+00:00",
+                "verified": "Read the code only, nothing built or run. Confirmed with grep and git log on origin/master (94d6bf0) that the feature and its tests (Tools/tests_kindui.swift, android KindUiTest.kt) exist, and that 'git diff cc7b90d HEAD -G reanaly' shows no changes after the merge.",
+                "next_step": "On a TestFlight build made after the Nov 18 merge of PR #67 (the last one noted is from Nov 6, which won't have it): open a clip analysed as a start, tap the More (...) menu in the player, tap 'Re-analyze as a straightaway', and check it re-analyzes as a stride. If it's missing or hard to find, edit the to-do to say where you expected the button."
               }
             },
             {
