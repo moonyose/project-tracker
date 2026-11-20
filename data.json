@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on both platforms. PR #50 (merged 2026-11-18, https://github.com/moonyose/StrideLab/pull/50) added a one-tap \"Re-analyze as ...\" to the player's More menu and the results screen. PR #67 (merged 2026-11-18, https://github.com/moonyose/StrideLab/pull/67) added a \"Re-analyze as straightaways\" card to the split and pass-picker screens for a recording filmed with the wrong kind picked, which is the Nov 17 case. Android has the same behavior: KindFlow.reanalyzeOptions/reanalyzeRecordingTitle and ReanalyzeCard in SplitStartsScreen, PassPickerScreen and AnalysisPlayerScreen. Nothing ne",
+                "summary": "Already shipped on master, so no PR. One-tap \"Re-analyze as...\" exists on iOS and Android: merged PR #50 (player's More menu, Nov 18) and PR #67 (finish card and the long-recording review, e.g. 'Looked through for starts. Filmed something else?' with 'Re-analyze as straightaways', Nov 18). Code is in StrideLab/Playback/KindLogic.swift (reanalyzeOptions/reanalyzeChoices), Playback/KindViews.swift (ReanalyzeCard), Split/PassPickerView.swift and Split/SplitStartsView.swift. The Kotlin versions are in android/core/.../playback/KindLogic.kt, ui/split/SplitStartsScreen.kt and ui/player/AnalysisPlaye",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T01:28+00:00",
-                "verified": "Read the current origin/HEAD code on iOS and Android. ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' checks: 'a recording reanalyzed as straightaways is looked through for passes again, and its runs are straightaways'. No xcodebuild or Gradle run, because nothing changed.",
-                "next_step": "On a build that includes PR #67: record a few straightaway reps with the recording screen left on Starts. On the look-for-starts or pass-picker screen, tap 'Re-analyze as straightaways' and check that the passes come up as straightaways. For a single clip, open it and use More > 'Re-analyze as a straightaway'. If that still isn't one tap in some flow, edit the to-do to name the screen."
+                "at": "2026-11-20T01:30+00:00",
+                "verified": "Read current master (94d6bf0). Confirmed the iOS and Android entry points by grep and confirmed with gh that #50 and #67 are merged. No code changed, so no build was run.",
+                "next_step": "On a TestFlight build at or after #67: set Filming to Start, record a straightaway, and on the recording review tap 'Re-analyze as straightaways' (or in a finished clip, More > Re-analyze as a straightaway). If that still misses what you wanted on Nov 17, edit t127 to say what's missing."
               }
             },
             {
