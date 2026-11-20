@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, so no new PR. One-tap 'Re-analyze as ...' landed on both iOS and Android in PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) and was folded into PR #67 (merged 2026-11-18), which is on origin/master. Where it shows up: (1) the clip player's More menu has 'Re-analyze as a straightaway' / 'a curve (Beta)' / 'a start' rows, with the likeliest mix-up first (KindFlow.reanalyzeOptions; StrideLab/Playback/AnalysisPlayerView.swift and android/.../AnalysisPlayerScreen.kt); (2) the report has a 'Filmed something else?' card (ResultsViews.swift / ResultsViews.kt); (3",
+                "summary": "Already shipped. PR #50 ('One-tap \"Re-analyze as\u2026\" in the player's More menu', merged 2026-11-18) and PR #67 (merged 2026-11-18) put this on master for iOS and Android. Current master (94d6bf0) still has it. On iOS, the player's More menu has a 'Re-analyze as a straightaway / a curve (Beta) / a start' section (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions), the results view has a 'Filmed something else?' card (ResultsViews.swift), and long-recording review has 'Re-analyze as straightaways' buttons (SplitStartsView.swift, PassPickerView.swift). Android mirrors all of these (AnalysisPlayer",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:27+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): confirmed merge commits fe99a5f (#50) and cc7b90d (#67) are ancestors of origin/HEAD, and found the iOS and Android call sites and tests listed above. I made no code changes, so I did not rebuild or re-run verify.sh, Gradle or bend.",
-                "next_step": "Mark t127 done in the tracker. To confirm on the phone (TestFlight build from master after Nov 18): open a clip analyzed as a start, tap More (...), tap 'Re-analyze as a straightaway', and check that the 'Re-analyzing as a stride' step appears and the results come back as a straightaway marked 'your choice'. If Austin still sees only the manual path, he should say which screen, since that would be"
+                "at": "2026-11-20T00:29+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read the current master source on both platforms and confirmed the menu items, the results card and the recording-review buttons are wired to a one-tap kind pick. Confirmed with gh that PR #50 is merged. No build or tests were re-run, since nothing was changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later, open a clip that was analyzed as a start. Tap More (top right), tap 'Re-analyze as a straightaway', and check that it re-analyzes and shows straightaway coaching. If that works, mark t127 done."
               }
             },
             {
