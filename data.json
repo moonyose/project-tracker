@@ -1935,12 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped on master, no new PR. This same task was merged as PR #50 (branch claude/t127-reanalyze-as, Nov 18) and carried forward in PR #67. iOS: the player's More menu has one-tap 'Re-analyze as a straightaway / a curve (Beta) / a start' rows (KindFlow.reanalyzeOptions, AnalysisPlayerView). The results view has an 'Analyzed as a start. Filmed something else?' card (ResultsViews). Long recordings get 'Re-analyze as straightaways' on the split and pass-picker screens (SplitModel.reanalyze). Android mirrors all of it: AnalysisPlayerScreen, ResultsViews, SplitStartsScreen, PassPickerScreen,",
+                "summary": "Already shipped. PR #50 (claude/t127-reanalyze-as, merged as fe99a5f) and PR #67 added one-tap 'Re-analyze as ...' on iOS and Android. It appears in three places: (1) the player's More menu (AnalysisPlayerView.swift:650-659 / AnalysisPlayerScreen.kt:529-533; straightaway is listed first for a clip analyzed as a start), (2) the finished-result card (ResultsViews.swift:973 / ResultsViews.kt:1291), and (3) the review of a long recording in Split / pass picker ('Re-analyze as straightaways', SplitStartsView.swift:1420 / SplitStartsScreen.kt:385). That third one covers the Nov 17 case of a session ",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T18:49+00:00",
-                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
-                "verified": "./Tools/verify.sh on current master (94d6bf0) printed ALL CHECKS PASSED, including the 'Re-analyze as another kind' checks and the check that a recording re-analyzed as straightaways is searched for passes again. I did not rebuild iOS or Android because nothing changed.",
-                "next_step": "On the phone: record with Starts selected but film a straightaway. Open the clip, tap More, then 'Re-analyze as a straightaway', and check that the analysis reruns as a straightaway. If the existing flow still falls short (for example, it is hard to find), edit the task to describe what is missing."
+                "at": "2026-11-20T18:56+00:00",
+                "verified": "Read current origin/master code on both platforms. ./Tools/verify.sh printed ALL CHECKS PASSED, including the tests_kindui checks for reanalyzeOptions, reanalyzeChoices and the titles. No xcodebuild or Gradle run was needed because nothing changed.",
+                "next_step": "On a TestFlight build at or after PR #50: open a clip analyzed as a start, tap More (top right), then 'Re-analyze as a straightaway'. For a long recording made on Starts, use 'Re-analyze as straightaways' on the review screen. If this still feels like manual work, re-open the task and say which screen you were on."
               }
             },
             {
