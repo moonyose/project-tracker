@@ -956,12 +956,13 @@
             {
               "id": "t127",
               "text": "Make it easy to re-analyze a clip as a different type (e.g. recorded as Starts but actually Straightaways), with a one-tap \"Re-analyze as\u2026\" option instead of manual work.",
-              "done": false,
+              "done": true,
               "notes": "Nov 17: Austin recorded straightaways but forgot to switch the recording screen off Starts; the app analyzed it as starts and only allowed fixing it manually.",
               "due": null,
               "createdAt": "2026-11-17T19:37:00-05:00",
-              "updatedAt": "2026-11-18T00:37:00.000Z",
-              "transcript": "Can you add something to the to-dos on Stride Lab? a couple of things. Number one is that if you if the user forgets to mark, correctly mark what they're recording, it should be much easier to just reanalyze the clip. So, for example, today I did starts first in one clip and that worked perfectly, but then I went and recorded straightaways, but I forgot to switch it. I forgot to switch from starts to straightaways on the, on the recording screen. And so it tried to analyze that clip as only starts, and it didn't allow me to say, oh, reanalyze as straightaways. It only let me do so manually. So that's a, that's a big pain, so I wanna fix that."
+              "updatedAt": "2026-11-20T19:19:18.592Z",
+              "transcript": "Can you add something to the to-dos on Stride Lab? a couple of things. Number one is that if you if the user forgets to mark, correctly mark what they're recording, it should be much easier to just reanalyze the clip. So, for example, today I did starts first in one clip and that worked perfectly, but then I went and recorded straightaways, but I forgot to switch it. I forgot to switch from starts to straightaways on the, on the recording screen. And so it tried to analyze that clip as only starts, and it didn't allow me to say, oh, reanalyze as straightaways. It only let me do so manually. So that's a, that's a big pain, so I wanna fix that.",
+              "completedAt": "2026-11-20T19:19:18.592Z"
             },
             {
               "id": "t128",
