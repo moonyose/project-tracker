@@ -1935,11 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (claude/t127-reanalyze-as, merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu on iOS and Android, going through the existing applyKind path (paywall, re-analysis stage, choice saved on the clip). Commit c3f1d42 (PR #67) then extended it to the finish card, the split review and the pass picker ('Re-analyze as straightaways' for a whole recording, re-scanning for passes instead of starts). Checked on current master (94d6bf0, after PR #78 hid the More button only while analysing): iOS AnalysisPlayerView.swift line",
+                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, merged 2026-11-18) added one-tap 'Re-analyze as ...' to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt), with tests in Tools/tests_kindui.swift and KindUiTest.kt. It is still on master after #78, which only hides the More button while analysis is running. Re-analyze cards also show on the finish screen and in the split and pass-picker flows. No new PR opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T00:08+00:00",
-                "verified": "Read the code on origin/master at 94d6bf0 (git log/show of 1a499a2, c3f1d42, fe99a5f; grep of the iOS and Android call sites). No build run, since nothing was changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later: record a short straightaway with the record screen left on Starts. Then either use the 'Re-analyze as straightaways' card in the review / pass picker, or open the clip, tap More and pick 'Re-analyze as a straightaway'. It should re-analyze as a straightaway in one tap. If that still doesn't happen for you, re-open this to-do and say which screen it was o"
+                "at": "2026-11-20T00:12+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/50",
+                "verified": "Read current master: the iOS More menu still lists KindFlow.reanalyzeOptions (AnalysisPlayerView.swift ~L650-659) and Android AnalysisPlayerScreen.kt L529-533 does the same. ./Tools/verify.sh on master printed ALL CHECKS PASSED. No xcodebuild or Gradle run, since nothing changed.",
+                "next_step": "On the latest TestFlight build, open a clip analyzed as Starts and tap More (top right, shown once the result is in). Tap 'Re-analyze as a straightaway' and check it re-runs as a straightaway. If this is the build you used on Nov 17 and the option was missing, update TestFlight. If it still feels like manual work, edit the task to say what's missing, for example a button directly on the results sc"
               }
             },
             {
