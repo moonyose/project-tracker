@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already built, so there's no new PR: 'Re-analyze as\u2026' went in with PR #50 (later merged into master again with #67) and is on master for iOS and Android. It's in the player's More menu, on the report card 'Filmed something else?', and on a long recording's review and passes screens.",
+                "summary": "This is already on master for iOS and Android (commit 1a499a2, Nov 18), so there's no PR. The player's More menu has one-tap 'Re-analyze as a straightaway' and 'Re-analyze as a curve (Beta)' options, and existing tests cover the case where a start is really a straightaway.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T19:15+00:00",
-                "verified": "Read the code only: the iOS and Android call sites and the tests in Tools/tests_kindui.swift and android KindUiTest.kt are all on origin/master. No build or test was run because nothing changed.",
-                "next_step": "On the phone: record a straightaway with Filming set to Start, then on the review screen tap 'Re-analyze as straightaways' and check the passes come up. Then open any analyzed clip, tap More, tap 'Re-analyze as a straightaway' and check it re-analyzes. If that works, tick t127 off. If something still needed manual work, edit the task to say which screen."
+                "at": "2026-11-20T19:18+00:00",
+                "verified": "Code reading only: the call sites on both platforms are present on origin/master (94d6bf0). I could not run ./Tools/verify.sh, xcodebuild or Gradle because the run's permission mode refused them. No code was changed.",
+                "next_step": "On your phone (TestFlight build from Nov 18 or later): open a clip analyzed as a start, tap the More (...) menu in the player, tap 'Re-analyze as a straightaway', and check that it re-analyzes and the results show straightaway metrics. If you don't see the option, tell me which screen you were on so the gap can be filed as a new task."
               }
             },
             {
