@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, commit 1a499a2) merged on Nov 18 and added one-tap 'Re-analyze as ...' entries to the player's More menu on iOS (AnalysisPlayerView.swift, KindFlow.reanalyzeOptions/reanalyzeTitle) and Android (AnalysisPlayerScreen.kt, KindLogic.kt). PR #50 also added a recording-level 'Re-analyze as starts/straightaways' in the pass picker. Both are still on master after PRs #77 and #78; the More menu now only appears once a result exists. No new PR opened.",
+                "summary": "Already shipped. PR #50 (branch claude/t127-reanalyze-as, commit c3f1d42, merged 2026-11-18) plus the follow-up merge #67 added one-tap 'Re-analyze as starts / straightaways / curves' on iOS and Android. It appears on the starts review screen, the pass picker, the finish card and the player's More menu. The scan cache records what it looked for, so a recording first scanned as starts is scanned again for passes once you say it's straightaways. Nothing left to change, so no new PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T09:28+00:00",
-                "verified": "Read current master: the More menu in AnalysisPlayerView.swift (lines 650-659) lists KindFlow.reanalyzeOptions, and the Android AnalysisPlayerScreen.kt (line 529) lists the same. ./Tools/verify.sh printed ALL CHECKS PASSED, including the 'Re-analyze as ...' and 'reanalyzed as straightaways' checks. No xcodebuild or Gradle run because no code changed.",
-                "next_step": "On a TestFlight build from Nov 18 or later: record a straightaway with the record screen left on Starts, open the clip, wait for the analysis, tap More (top right), then tap 'Re-analyze as a straightaway'. If that entry is missing, or the result is wrong, reopen the task and say what you saw."
+                "at": "2026-11-20T09:34+00:00",
+                "verified": "Read master at 94d6bf0. The iOS code is in StrideLab/Split/SplitStartsView.swift (SplitModel.reanalyze), PassPickerView.swift, Playback/ResultsViews.swift, AnalysisPlayerView.swift and KindViews.swift (ReanalyzeCard). The Android code is in android/app/.../ui/split/SplitModel.kt, PassPickerScreen.kt, ui/player/*, with tests in KindUiTest.kt and PassesTest.kt. ./Tools/verify.sh on master printed AL",
+                "next_step": "Install the latest TestFlight build, which includes PR #50. Record a straightaway with the record screen left on Starts. When the review or result comes up, tap 'Re-analyze as straightaways' (or More > Re-analyze as a straightaway in the player). The clip should be scanned again for passes and analyzed as a straightaway. If you mark this task done, it will stop coming back to the queue."
               }
             },
             {
