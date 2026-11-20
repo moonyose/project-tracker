@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android: 'Re-analyze as\u2026' is in the player's More menu, on the card shown when analysis finishes, and on a long recording's review screen (added in commit 1a499a2 and PR #67). PR #67 also fixed your Nov 17 case, so a recording first scanned as starts gets scanned again for straightaways once you switch it.",
+                "summary": "Already shipped in PR #67 (merged Nov 18) on iOS and Android: a one-tap \"Re-analyze as\u2026\" in the player's \u2022\u2022\u2022 menu, on the results screen, and on the long-recording review screens, which re-runs analysis without re-tracking the video. Nothing left to change, so no new PR.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T11:01+00:00",
-                "verified": "Read the code on both platforms (iOS AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift; Android AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt) and used git merge-base --is-ancestor to confirm 1a499a2 and c3f1d42 are on origin/master. Nothing changed, so no build or tests were run.",
-                "next_step": "On a TestFlight build that includes PR #67, record a straightaway with the record screen still set to Starts, open the clip and tap More > 'Re-analyze as a straightaway'. If that works, close this task. If not, edit it to say where the option was missing."
+                "at": "2026-11-20T11:04+00:00",
+                "verified": "Read current origin/master (94d6bf0). Found the KindFlow.reanalyzeOptions / reanalyzeChoices / reanalyzeTitle helpers and their call sites in the iOS views and the Android screens, plus their tests on each platform. Traced them to commit c3f1d42, merged in PR #67. Didn't rebuild or run tests because no code changed.",
+                "next_step": "On a TestFlight build that includes PR #67 (1.0.4 or later): open a straightaway clip that was analyzed as a start, tap the \u2022\u2022\u2022 menu in the player, and tap \"Re-analyze as a straightaway\". It should show \"Re-analyzing as a stride\" and come back with acceleration and top-speed phases. If that works, close t127. If it's still hard to find, say where you expected the button to be."
               }
             },
             {
