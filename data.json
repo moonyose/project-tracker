@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: PR #50 and PR #67 (both merged Nov 18) added one-tap 'Re-analyze as\u2026' options on iOS and Android, in the player's More menu, the results card, the pass picker and the 'no starts found' screen. Nothing new was needed, so no PR was opened.",
+                "summary": "Already done: the one-tap \"Re-analyze as\u2026\" option shipped on iOS and Android in PRs #50 and #67, both merged Nov 18, the day after your note. It's in the player's More menu, on a \"Filmed something else?\" card in the results, and in each clip's \"Analyze as\" menu in the library, so no new change was made.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T06:58+00:00",
-                "verified": "Read the code on origin/master (94d6bf0). Confirmed the menu entries and ReanalyzeCard call sites on iOS and Android, and found the merged commits 1a499a2 (#50) and c3f1d42 (#67). No build was run because nothing changed.",
-                "next_step": "Install the latest TestFlight build (anything after Nov 18). Open a clip that was analyzed as a start, tap More (...), and tap 'Re-analyze as a straightaway'. It should re-run as a straightaway with no other steps. If the Nov 17 clip still looks wrong on that build, re-open the task and describe which screen was missing the option."
+                "at": "2026-11-20T07:00+00:00",
+                "verified": "Read the code at origin/master 94d6bf0 on both platforms and checked git history for PRs #50 and #67. No build was run because nothing changed.",
+                "next_step": "On a TestFlight build from Nov 18 or later: open a Starts clip that is really a straightaway, tap More (top right) and choose 'Re-analyze as a straightaway'. It should show 'Re-analyzing as a stride' and then the straightaway results. If that row is missing, re-open the to-do and say which screen you were on."
               }
             },
             {
