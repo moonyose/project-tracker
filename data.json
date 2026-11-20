@@ -1935,12 +1935,12 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This already shipped on iOS and Android, so no new PR. PR #50 (merged Nov 18) added 'Re-analyze as\u2026' to a clip's More menu, and PR #67 (merged Nov 18) added it for whole recordings, including on the starts review and the 'no starts found' card.",
+                "summary": "Already shipped: PR #67 (merged Nov 18) added one-tap \"Re-analyze as\u2026\" on iOS and Android. It shows on the starts review screen, the pass picker, the finish card, the player's More menu, and the library's \"Analyze as\u2026\" menu. A recording looked through as starts is looked through again for passes once you say it's straightaways. No new PR was opened.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T12:47+00:00",
+                "at": "2026-11-20T12:54+00:00",
                 "pr_url": "https://github.com/moonyose/StrideLab/pull/67",
-                "verified": "Read the git history and current master on both platforms: the Re-analyze options are wired in the iOS player More menu, the split/starts review and the pass picker, and in the matching Android screens. Confirmed with gh that PRs #50 and #67 are MERGED. I made no code change, so I did not rebuild.",
-                "next_step": "On a TestFlight build from Nov 18 or later: record straightaways with the record screen left on Starts. On the starts review (or the 'no starts found' card), tap 'Re-analyze as straightaways' and check that passes are found. For a single clip, open it, tap More (top right, once analysis finishes) and pick 'Re-analyze as a straightaway'. If either step is missing or doesn't work well enough, edit t"
+                "verified": "Confirmed in current master (94d6bf0): SplitModel.reanalyze(as:store:) and ReanalyzeCard in StrideLab/Split/SplitStartsView.swift and PassPickerView.swift, with KindFlow.reanalyze* in Playback/KindLogic.swift. The Kotlin versions are in android/ (SplitModel.kt, SplitStartsScreen.kt, PassPickerScreen.kt, KindLogic.kt) with KindUiTest/PassesTest. Ran ./Tools/verify.sh on master: ALL CHECKS PASSED. D",
+                "next_step": "On the latest TestFlight build, record a straightaway with Starts still picked. On the review screen, tap \"Re-analyze as straightaways\" and check that it finds the passes. If it still misses in some flow, say which screen and reopen this to-do."
               }
             },
             {
