@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already in the app on iOS and Android: PR #50 (this same to-do) and PR #67 added one-tap \"Re-analyze as a straightaway / start / curve\" buttons, and both are merged to master. Nothing new was needed, so no PR was opened.",
+                "summary": "Already shipped on master, iOS and Android. PR #50 (merged Nov 18) added one-tap 'Re-analyze as a straightaway / a curve / a start' rows to the player's More menu. PR #67 (merged Nov 18) added the same option to the review, pass picker, split screen and finish card for long recordings ('Re-analyze as straightaways'), and made the scan cache remember which kind it looked for, so a recording first scanned as starts gets scanned again for passes. Current master still has it: StrideLab/Playback/AnalysisPlayerView.swift (More menu, shown once a result exists after #78), KindLogic.swift reanalyzeOpt",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:01+00:00",
-                "verified": "Read the code on origin/master (94d6bf0), no build run because nothing changed. iOS: the player's More menu has a Re-analyze section (AnalysisPlayerView.swift ~L650, KindFlow.reanalyzeOptions, shown once a result exists). The end-of-clip card has the buttons (ResultsViews.swift ~L942), and so do the long-recording review and pass picker (SplitStartsView.swift ~L1420, PassPickerView.swift ~L54, \"Re",
-                "next_step": "On a TestFlight build that includes PR #50 or later: record a straightaway with the record screen still set to Start. On the review screen, tap \"Re-analyze as straightaways\". Or open a finished clip, tap More (top right), then \"Re-analyze as a straightaway\". If this is still not working on your phone, edit the to-do with what you saw and it will be picked up again."
+                "at": "2026-11-20T02:03+00:00",
+                "verified": "Checked git log and the gh PR list: #50 and #67 are merged, and the reanalyze code paths are still on origin/master on both platforms (grep of StrideLab/Playback, StrideLab/Split, android/app, android/core). No build was run because nothing changed.",
+                "next_step": "On your phone, open a clip that was analyzed as a start, tap More (top right), then 'Re-analyze as a straightaway'. Check that it re-analyzes and the kind chip changes. For a long recording scanned as starts, use the 'Re-analyze as straightaways' card in the review. If this works, mark t127 done. If something still feels manual, edit the task to say which screen."
               }
             },
             {
