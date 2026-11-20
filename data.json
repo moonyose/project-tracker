@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "Already done: one-tap 'Re-analyze as\u2026' shipped on iOS and Android in PR #50 (Nov 18) and was extended in PR #67. It's in the player's More menu and on the pass picker, starts review and finish card. No new PR was needed.",
+                "summary": "This is already on master for iOS and Android, so no PR. PR #50 added one-tap 'Re-analyze as a straightaway / a curve / a start' to the player's More menu, and PR #67 added 'Re-analyze as straightaways' to the long-recording review, pass picker and finish card.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T07:58+00:00",
-                "verified": "Read the code on origin/master (94d6bf0): checked that the iOS and Android player menu items, pass picker and split ReanalyzeCard, and their unit tests are present. Nothing was built or run because nothing changed.",
-                "next_step": "Mark t127 done. To confirm on your phone: record a straightaway with the record screen left on Starts, open the clip, tap More (top right) once analysis finishes, and tap 'Re-analyze as a straightaway'. It should re-run as a straightaway without any manual marking. If the recording opens on the pass picker or the starts review, the 'Re-analyze as straightaways' button at the bottom does the same."
+                "at": "2026-11-20T08:00+00:00",
+                "verified": "Read the code and git history on origin/master (94d6bf0): found the reanalyze code in KindLogic.swift/KindLogic.kt, the UI call sites on both platforms (AnalysisPlayerView.swift, ResultsViews.swift, SplitStartsView.swift, PassPickerView.swift; AnalysisPlayerScreen.kt, ResultsViews.kt, SplitStartsScreen.kt, PassPickerScreen.kt), and the tests in Tools/tests_kindui.swift, tests_passes.swift, KindUiT",
+                "next_step": "On the current TestFlight build, open a clip that was analyzed as a start, tap More on the player and check that 'Re-analyze as a straightaway' re-runs it as strides with one tap. For a long recording, check that the review screen shows 'Re-analyze as straightaways'. If something still feels like manual work, edit the to-do to say which screen."
               }
             },
             {
