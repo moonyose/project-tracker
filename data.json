@@ -1935,11 +1935,11 @@
               "owner": "austin",
               "agent": {
                 "status": "done_no_change",
-                "summary": "This is already on master for iOS and Android, so no PR was opened. PR #50 (merged Nov 18) added a one-tap 'Re-analyze as\u2026' to an analyzed clip's More menu, and PR #67 (merged Nov 18) added a 'Re-analyze as straightaways' card for recordings filmed with Start still picked.",
+                "summary": "Already done: PR #67, merged Nov 18, added a one-tap 'Re-analyze as\u2026' option on iOS and Android. It's on the review screen after recording (a 'Filmed something else?' card), the pass picker, the finish card and the player's More menu, so no new PR was needed.",
                 "hash": "5b7c5737b18c",
-                "at": "2026-11-20T02:42+00:00",
-                "verified": "Checked the code only, with no builds because nothing changed. gh pr view shows PRs #50 and #67 merged, and the re-analyze code and its tests (Tools/tests_kindui.swift, KindUiTest.kt) are on origin/master (94d6bf0) for iOS and Android.",
-                "next_step": "On a current TestFlight build, record straightaways with Start still picked, then tap 'Re-analyze as straightaways' on the next screen. Also check that an analyzed clip's More menu shows 'Re-analyze as a straightaway'. If you reopened this to-do because something still goes wrong, edit it to say what."
+                "at": "2026-11-20T02:44+00:00",
+                "verified": "Read current master (94d6bf0). Confirmed by code reading and git history that the re-analyze entry points exist on both platforms. No builds were run because nothing changed.",
+                "next_step": "On a build from 1.0.4 or later: leave the record screen on Starts and film a straightaway. On the review screen, tap 'Re-analyze as straightaways' under 'Filmed something else?' and check that the pass picker comes up. If it still misbehaves, add a note to the to-do describing the exact screen."
               }
             },
             {
