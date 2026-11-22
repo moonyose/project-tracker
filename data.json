@@ -2158,9 +2158,11 @@
             {
               "id": "t22",
               "text": "Fund it with $500",
-              "done": false,
+              "done": true,
               "notes": "Oct 16 ~12:49 PM ET: Mercury confirms $1,000 transfer from Ally Checking \u2022\u20226931 on its way to Collins Park Mercury checking \u2022\u20224738 (more than the $500 target). Confirm it posts (ACH typically 1\u20133 business days) before relying on the account. After Mercury account is approved: fund Collins Park Enterprises Mercury account with $500 (ACH from personal/other bank, wire, or Mercury deposit methods). Confirm $500 posts before relying on the account.",
-              "due": null
+              "due": null,
+              "completedAt": "2026-11-22T17:56:29.995Z",
+              "updatedAt": "2026-11-22T17:56:29.995Z"
             },
             {
               "id": "t29",
