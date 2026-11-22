@@ -2249,9 +2249,11 @@
             {
               "id": "t32",
               "text": "Confirm Chase\u2192Mercury transfer cleared before closing Chase",
-              "done": false,
+              "done": true,
               "notes": "Verify Mercury balance; wait for ACH hold if any; then proceed to close Chase (t25).",
-              "due": null
+              "due": null,
+              "completedAt": "2026-11-22T17:56:36.822Z",
+              "updatedAt": "2026-11-22T17:56:36.822Z"
             },
             {
               "id": "t59",
