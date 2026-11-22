@@ -2224,9 +2224,11 @@
             {
               "id": "t24",
               "text": "Move money from Chase to Mercury",
-              "done": false,
+              "done": true,
               "notes": "Chase \u2022\u20229371 linked via Plaid; $2,499 ACH pull submitted Oct 16 ~2:45 PM ET, arriving Oct 19\u201320 (first pull capped under $2,500). Move the rest after Emma confirms; keep the Chase minimum balance until then.",
-              "due": null
+              "due": null,
+              "completedAt": "2026-11-22T17:56:33.087Z",
+              "updatedAt": "2026-11-22T17:56:33.087Z"
             },
             {
               "id": "t25",
