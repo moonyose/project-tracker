@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-11-23",
-  "rev": 48,
+  "rev": 49,
   "categories": [
     {
       "id": "top-priority",
@@ -263,7 +263,7 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:47 AM ET (an earlier ~8:37 AM ET run failed because 1.0.2 was already approved); 1.0.3 (202610271631) hit TestFlight Oct 27 ~12:37 PM ET; Oct 27 ~12:01 PM ET Apple emailed that three Development certificates on the team were revoked (revoker shown as 'null null', likely an API key/CI run), so local Xcode dev profiles may need regenerating; GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1; Nov 6 ~1:18 PM ET: StrideLab 1.0.3 (202611061811) hit TestFlight (CI)",
+          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:47 AM ET (an earlier ~8:37 AM ET run failed because 1.0.2 was already approved); 1.0.3 (202610271631) hit TestFlight Oct 27 ~12:37 PM ET; Oct 27 ~12:01 PM ET Apple emailed that three Development certificates on the team were revoked (revoker shown as 'null null', likely an API key/CI run), so local Xcode dev profiles may need regenerating; GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1; Nov 6 ~1:18 PM ET: StrideLab 1.0.3 (202611061811) hit TestFlight (CI); Nov 23 ~1:39 PM ET: StrideLab iOS 1.0.5 (build 202611221824, submission 962c51a9-2e72-4df5-9a35-031c253cff53, submitted ~1:32 PM ET Nov 22) passed App Review and is READY_FOR_SALE / READY_FOR_DISTRIBUTION / downloadable; release type is AFTER_APPROVAL so it went live without a manual release. The public App Store listing already shows 1.0.5 (currentVersionReleaseDate 1:39 PM ET Nov 23)",
           "tasks": [
             {
               "id": "t6",
@@ -297,7 +297,7 @@
                 "next_step": "Install the PR build, record or import a clip and open it. Check that it asks start, stride or curve before any tips, even when the guess is confident."
               },
               "completedAt": "2026-10-19T13:11:42.560Z",
-              "updatedAt": "2026-10-19T13:11:42.560Z"
+              "updatedAt": "2026-11-23T15:17:25-05:00"
             },
             {
               "id": "t37",
