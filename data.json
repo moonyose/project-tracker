@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-11-22",
-  "rev": 47,
+  "updated": "2026-11-23",
+  "rev": 48,
   "categories": [
     {
       "id": "top-priority",
@@ -83,7 +83,7 @@
         {
           "id": "lanesync-sprint-timing",
           "name": "LaneSync (sprint timing)",
-          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~8:06 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:46 AM ET (a later main TestFlight run at ~9:19 AM ET failed on an upload timeout); a rerun succeeded and 1.0.3 (202610271359) hit TestFlight Oct 27 ~10:05 AM ET; Apple Ads' Emerging team (Sarishti Arora) emailed Oct 27 ~9:58 AM ET offering help growing Apple Ads, optional sales outreach; Oct 27 ~11:40 AM ET App Store Connect flagged build 202610271359 with ITMS-90863 (links @rpath/ConnectIQ.framework, the Garmin SDK, which isn't present on macOS, so Apple-silicon Mac availability is affected; delivery still succeeded, fix in next build or untick Mac availability); GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1",
+          "status": "live on App Store, marketing phase; v1.0.1 passed App Review Oct 16; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~8:06 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:46 AM ET (a later main TestFlight run at ~9:19 AM ET failed on an upload timeout); a rerun succeeded and 1.0.3 (202610271359) hit TestFlight Oct 27 ~10:05 AM ET; Apple Ads' Emerging team (Sarishti Arora) emailed Oct 27 ~9:58 AM ET offering help growing Apple Ads, optional sales outreach; Oct 27 ~11:40 AM ET App Store Connect flagged build 202610271359 with ITMS-90863 (links @rpath/ConnectIQ.framework, the Garmin SDK, which isn't present on macOS, so Apple-silicon Mac availability is affected; delivery still succeeded, fix in next build or untick Mac availability); GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1; Nov 23 ~9:57 AM ET: LaneSync iOS 1.0.3 (build 12, submission 88e37a26-4661-4ed1-8f85-2336c42969e9, submitted ~12:44 PM ET Nov 22) passed App Review and is READY_FOR_SALE / READY_FOR_DISTRIBUTION / downloadable; release type is AFTER_APPROVAL so it went live without a manual release. The public App Store listing already shows 1.0.3 (currentVersionReleaseDate 9:57 AM ET Nov 23)",
           "tasks": [
             {
               "id": "t2",
@@ -258,7 +258,7 @@
               }
             }
           ],
-          "updatedAt": "2026-10-27T09:30:00-04:00"
+          "updatedAt": "2026-11-23T11:23:59-05:00"
         },
         {
           "id": "stridelab-sprint-form-analysis",
