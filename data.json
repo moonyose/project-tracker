@@ -1048,7 +1048,16 @@
               "notes": "Nov 23 ~9:23 PM ET: TestFlight build on master (2667eb6, merge of PR #81 start-contacts-fixes) failed at the Upload to TestFlight step (run 45311603290, https://github.com/moonyose/StrideLab/actions/runs/45311603290). The archive succeeded; Apple rejected it because 1.0.5 is already approved and live: \"Invalid Pre-Release Train. The train version '1.0.5' is closed for new build submissions\" and CFBundleShortVersionString must be higher than the previously approved 1.0.5. MARKETING_VERSION is still 1.0.5. Next: bump to 1.0.6 and re-run the TestFlight workflow.",
               "due": null,
               "createdAt": "2026-11-24T07:23:15-05:00",
-              "updatedAt": "2026-11-24T07:23:15-05:00"
+              "updatedAt": "2026-11-24T07:23:15-05:00",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Bumped iOS MARKETING_VERSION 1.0.5 -> 1.0.6 (Debug + Release of the StrideLab target), mirroring the 1.0.5 bump commit f03fc32. Build number and Android untouched (the upload workflow sets CURRENT_PROJECT_VERSION to a timestamp).",
+                "hash": "c4423fc06422",
+                "at": "2026-11-24T12:29+00:00",
+                "pr_url": "https://github.com/moonyose/StrideLab/pull/82",
+                "verified": "xcodebuild build (scheme StrideLab, iPhone 17 Pro sim iOS 26.5, Xcode 26.6) succeeded; built app CFBundleShortVersionString = 1.0.6. ./Tools/verify.sh: ALL CHECKS PASSED. bend CLI not installed on runner (no laws touched). Android checks not applicable (no android/ changes). Reviewer found no other 1.0.5 pins and confirmed the pbxproj change is not in testflight.yml paths-ignore.",
+                "next_step": "Merge PR #82: the push to master automatically triggers the 'TestFlight build' workflow (no manual run needed). Confirm the Upload to TestFlight step passes, then install StrideLab 1.0.6 from TestFlight on your iPhone and launch it."
+              }
             }
           ],
           "updatedAt": "2026-11-24T07:23:15-05:00"
