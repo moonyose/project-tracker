@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-11-23",
-  "rev": 49,
+  "updated": "2026-11-24",
+  "rev": 50,
   "categories": [
     {
       "id": "top-priority",
@@ -263,7 +263,7 @@
         {
           "id": "stridelab-sprint-form-analysis",
           "name": "StrideLab (sprint form analysis)",
-          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:47 AM ET (an earlier ~8:37 AM ET run failed because 1.0.2 was already approved); 1.0.3 (202610271631) hit TestFlight Oct 27 ~12:37 PM ET; Oct 27 ~12:01 PM ET Apple emailed that three Development certificates on the team were revoked (revoker shown as 'null null', likely an API key/CI run), so local Xcode dev profiles may need regenerating; GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1; Nov 6 ~1:18 PM ET: StrideLab 1.0.3 (202611061811) hit TestFlight (CI); Nov 23 ~1:39 PM ET: StrideLab iOS 1.0.5 (build 202611221824, submission 962c51a9-2e72-4df5-9a35-031c253cff53, submitted ~1:32 PM ET Nov 22) passed App Review and is READY_FOR_SALE / READY_FOR_DISTRIBUTION / downloadable; release type is AFTER_APPROVAL so it went live without a manual release. The public App Store listing already shows 1.0.5 (currentVersionReleaseDate 1:39 PM ET Nov 23)",
+          "status": "live on App Store; accepted Oct 16 (~7 PM ET); v1.0.1 passed App Review Oct 17 (~5:53 PM ET, eligible for distribution; release it in App Store Connect if set to manual); 1.0.2 builds on TestFlight Oct 18\u201319; new submission (likely 1.0.2, sent by CI ~2:36 PM ET Oct 21) passed App Review Oct 21 ~5:55 PM ET, eligible for distribution; release it in App Store Connect if set to manual; 1.0.3 (202610271241) on TestFlight Oct 27 ~8:47 AM ET (an earlier ~8:37 AM ET run failed because 1.0.2 was already approved); 1.0.3 (202610271631) hit TestFlight Oct 27 ~12:37 PM ET; Oct 27 ~12:01 PM ET Apple emailed that three Development certificates on the team were revoked (revoker shown as 'null null', likely an API key/CI run), so local Xcode dev profiles may need regenerating; GitHub Actions at 90% of the 2,000 included minutes as of Oct 27, resets Nov 1; Nov 6 ~1:18 PM ET: StrideLab 1.0.3 (202611061811) hit TestFlight (CI); Nov 23 ~1:39 PM ET: StrideLab iOS 1.0.5 (build 202611221824, submission 962c51a9-2e72-4df5-9a35-031c253cff53, submitted ~1:32 PM ET Nov 22) passed App Review and is READY_FOR_SALE / READY_FOR_DISTRIBUTION / downloadable; release type is AFTER_APPROVAL so it went live without a manual release. The public App Store listing already shows 1.0.5 (currentVersionReleaseDate 1:39 PM ET Nov 23); Nov 23 ~9:23 PM ET: TestFlight build on master (2667eb6, after PR #81 start-contacts-fixes merged) failed at upload because 1.0.5 is already live (Invalid Pre-Release Train; CFBundleShortVersionString must be higher than the approved 1.0.5); bump to 1.0.6 and re-upload (t133)",
           "tasks": [
             {
               "id": "t6",
@@ -1040,9 +1040,18 @@
                 "verified": "Not attempted; non-code task.",
                 "next_step": "Update the screenshots in App Store Connect yourself."
               }
+            },
+            {
+              "id": "t133",
+              "text": "Bump StrideLab's version past 1.0.5 and re-upload the latest master build to TestFlight.",
+              "done": false,
+              "notes": "Nov 23 ~9:23 PM ET: TestFlight build on master (2667eb6, merge of PR #81 start-contacts-fixes) failed at the Upload to TestFlight step (run 45311603290, https://github.com/moonyose/StrideLab/actions/runs/45311603290). The archive succeeded; Apple rejected it because 1.0.5 is already approved and live: \"Invalid Pre-Release Train. The train version '1.0.5' is closed for new build submissions\" and CFBundleShortVersionString must be higher than the previously approved 1.0.5. MARKETING_VERSION is still 1.0.5. Next: bump to 1.0.6 and re-run the TestFlight workflow.",
+              "due": null,
+              "createdAt": "2026-11-24T07:23:15-05:00",
+              "updatedAt": "2026-11-24T07:23:15-05:00"
             }
           ],
-          "updatedAt": "2026-11-21T23:01:24-05:00"
+          "updatedAt": "2026-11-24T07:23:15-05:00"
         },
         {
           "id": "trolley-tracker-miami-beach",
