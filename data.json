@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-11-24",
-  "rev": 51,
+  "rev": 52,
   "categories": [
     {
       "id": "top-priority",
@@ -256,9 +256,19 @@
                 "verified": "No work done; task is not a code change.",
                 "next_step": "Decide whether Garmin support is worth building; if so, add a concrete coding task."
               }
+            },
+            {
+              "id": "t134",
+              "text": "Auto-detect a DNF (a run the runner didn't finish) so start times and finish clips stay matched.",
+              "done": false,
+              "notes": "Detection signals: (1) the start device sent more start times than finish clips selected (e.g. 5 starts, 4 clips), meaning a missed clip or a DNF; (2) implausible implied times from misaligned start/finish pairing (e.g. 2-3 minutes for a 40-yard dash). Real case: Austin sent 5 starts, the first was a DNF, he selected 4 finish clips, and every time came back as minutes because the pairs were shifted.",
+              "due": null,
+              "createdAt": "2026-11-24T18:04:00-05:00",
+              "updatedAt": "2026-11-24T18:04:00-05:00",
+              "transcript": "Can you add a to-do to lane sync to add a feature to auto-detect when there was a DNF, like a runner didn't finish a specific run? I think the way to detect it would be, like, if the person selects, like, every couple of ways to detect it. First of all, if there were, say, five times sent by the start device, but only four clips selected, that would imply that they either missed a clip or there was a DNF clip. the other thing would be to look at the times, the implied times of the, of the specific runs, cause, like, for example, I had an issue now where I selected, I sent five times, but one of them, the first one was a DNF. And then I went and selected four clips, the finishes that I had done. And then my times, because I missed the first run with the clips, my times came back as like, you know, two or three minutes for a 40, 40-yard dash which obviously doesn't make sense. So let's, that would be another way to detect it. So let's add that to the to-dos for line sync."
             }
           ],
-          "updatedAt": "2026-11-23T11:23:59-05:00"
+          "updatedAt": "2026-11-24T18:04:00-05:00"
         },
         {
           "id": "stridelab-sprint-form-analysis",
