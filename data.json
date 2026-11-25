@@ -1,6 +1,6 @@
 {
   "title": "Austin's Project Tracker",
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "rev": 54,
   "categories": [
     {
@@ -1087,7 +1087,15 @@
               "due": null,
               "createdAt": "2026-11-24T19:20:00-05:00",
               "updatedAt": "2026-11-24T19:20:00-05:00",
-              "transcript": "does it update on android as well? ... yeah add to the tracker please"
+              "transcript": "does it update on android as well? ... yeah add to the tracker please",
+              "agent": {
+                "status": "skipped_not_code",
+                "summary": "Skipped: this is a signed Play release and upload, not a code change. The repo has no workflow that builds an AAB or uploads to Play, and the upload key and Play Console access aren't on the runner.",
+                "hash": "0541369d4aaa",
+                "at": "2026-11-25T00:21+00:00",
+                "verified": "Checked .github/workflows: none build an AAB or upload to Play. android/gradle.properties has stridelab.versionCode=1 and versionName=1.0, and both can be overridden with -P.",
+                "next_step": "On your Mac, in android/, run: ./gradlew :app:bundleRelease -Pstridelab.versionCode=2 -Pstridelab.playPublicKey=<key>, using your upload keystore through keystore.properties. Then upload the AAB in Play Console, or bump versionCode in gradle.properties first if you want it committed."
+              }
             }
           ],
           "updatedAt": "2026-11-24T19:20:00-05:00"
