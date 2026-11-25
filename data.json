@@ -1,7 +1,7 @@
 {
   "title": "Austin's Project Tracker",
   "updated": "2026-11-24",
-  "rev": 53,
+  "rev": 54,
   "categories": [
     {
       "id": "top-priority",
@@ -1078,9 +1078,19 @@
                 "verified": "xcodebuild build (scheme StrideLab, iPhone 17 Pro sim iOS 26.5, Xcode 26.6) succeeded; built app CFBundleShortVersionString = 1.0.6. ./Tools/verify.sh: ALL CHECKS PASSED. bend CLI not installed on runner (no laws touched). Android checks not applicable (no android/ changes). Reviewer found no other 1.0.5 pins and confirmed the pbxproj change is not in testflight.yml paths-ignore.",
                 "next_step": "Merge PR #82: the push to master automatically triggers the 'TestFlight build' workflow (no manual run needed). Confirm the Upload to TestFlight step passes, then install StrideLab 1.0.6 from TestFlight on your iPhone and launch it."
               }
+            },
+            {
+              "id": "t135",
+              "text": "Build StrideLab Android versionCode 2 from the latest master (with the start-analysis fixes) and upload it to Google Play.",
+              "done": false,
+              "notes": "The App Store release doesn't update Android. Play still has only StrideLab 1.0 (versionCode 1), in production review since Nov 19. The Nov 23 start-analysis fixes (PR #81, 19e4949: panning block starts, set-tip timing, hip angle to back of neck, ground contacts on a panning camera) are in the Android code on master but not in any Play build. Next: build a signed AAB with versionCode 2 from master and upload it to Play, ideally after the 1.0 review clears.",
+              "due": null,
+              "createdAt": "2026-11-24T19:20:00-05:00",
+              "updatedAt": "2026-11-24T19:20:00-05:00",
+              "transcript": "does it update on android as well? ... yeah add to the tracker please"
             }
           ],
-          "updatedAt": "2026-11-24T19:17:00-05:00"
+          "updatedAt": "2026-11-24T19:20:00-05:00"
         },
         {
           "id": "trolley-tracker-miami-beach",
