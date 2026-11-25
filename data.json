@@ -280,11 +280,11 @@
             {
               "id": "t136",
               "text": "Bump LaneSync's version past 1.0.3 and re-upload the latest main build (including the t134 DNF detection) to TestFlight.",
-              "done": false,
+              "done": true,
               "notes": "Nov 24 ~7:27 PM ET: TestFlight build on main (09c24f8, merge of PR #10 t134 DNF detection) failed at the Upload to TestFlight step (run 45517941639, https://github.com/moonyose/LaneSync/actions/runs/45517941639). The archive succeeded; Apple rejected it because 1.0.3 is already approved and live: \"Invalid Pre-Release Train. The train version '1.0.3' is closed for new build submissions\" and CFBundleShortVersionString must be higher than the previously approved 1.0.3. MARKETING_VERSION is still 1.0.3. Next: bump to 1.0.4 and re-run the TestFlight workflow so the DNF feature can be tested.",
               "due": null,
               "createdAt": "2026-11-25T07:23:00-05:00",
-              "updatedAt": "2026-11-25T07:23:00-05:00",
+              "updatedAt": "2026-11-25T13:54:34.050Z",
               "agent": {
                 "status": "pr_opened",
                 "summary": "Bumped MARKETING_VERSION 1.0.3 -> 1.0.4 for the iPhone app and the Watch app (Debug and Release) in LaneSync.xcodeproj. Apple rejected the 09c24f8 upload because train 1.0.3 is closed. The build number is unchanged because CI sets it from a timestamp. Android has its own version and was not changed. testflight.yml runs on push to main and the pbxproj is not in paths-ignore, so merging the PR uploads the build. Separate issue: the default version on the app-store-submit.yml form is still 1.0.2.",
@@ -293,7 +293,8 @@
                 "pr_url": "https://github.com/moonyose/LaneSync/pull/11",
                 "verified": "xcodebuild build of scheme LaneSync for the iPhone 17 Pro simulator (iOS 26.5, Xcode 26.6) succeeded. The built app and the embedded Watch app Info.plists both show CFBundleShortVersionString 1.0.4. A repo-wide search finds no other 1.0.3. The reviewer subagent found no defects. Not verified: the actual TestFlight upload, which only CI can do.",
                 "next_step": "Merge PR #11. Then check that the TestFlight workflow on main goes green. If it didn't start, run Actions > TestFlight > Run workflow. Once processing finishes, install 1.0.4 from TestFlight."
-              }
+              },
+              "completedAt": "2026-11-25T13:54:34.050Z"
             }
           ],
           "updatedAt": "2026-11-25T07:23:00-05:00"
