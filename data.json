@@ -267,13 +267,13 @@
               "updatedAt": "2026-11-24T18:04:00-05:00",
               "transcript": "Can you add a to-do to lane sync to add a feature to auto-detect when there was a DNF, like a runner didn't finish a specific run? I think the way to detect it would be, like, if the person selects, like, every couple of ways to detect it. First of all, if there were, say, five times sent by the start device, but only four clips selected, that would imply that they either missed a clip or there was a DNF clip. the other thing would be to look at the times, the implied times of the, of the specific runs, cause, like, for example, I had an issue now where I selected, I sent five times, but one of them, the first one was a DNF. And then I went and selected four clips, the finishes that I had done. And then my times, because I missed the first run with the clips, my times came back as like, you know, two or three minutes for a 40, 40-yard dash which obviously doesn't make sense. So let's, that would be another way to detect it. So let's add that to the to-dos for line sync.",
               "agent": {
-                "status": "pr_opened",
-                "summary": "Root cause: single-runner review paired start i with selected finish i by position, so one DNF shifted every later pair and times came out in minutes. Runs now take the first selected finish between their start and the next start whose time is plausible for the distance (10 s + 2.5 m/s); runs with none are DNF. Assign times shows a 'N starts, M finishes - Run X marked DNF' banner, flags times too long for the distance with a 'Re-pair by start time' action that moves only the flagged finishes, and warns at save. iOS only; the Android port still pairs by position.",
-                "hash": "797a3bcf2240",
-                "at": "2026-11-24T23:13+00:00",
+                "status": "done_no_change",
+                "summary": "Confirmed merged: main is at 09c24f8 (merge of PR #10), which contains 58bb47b 'Pair runs to finishes by start time so a DNF doesn't shift every time' (LaneSync/ReconcileView.swift, including the 'marked DNF' banner and the 'Re-pair by start time' action). It ships with the 1.0.4 TestFlight build from t136 (PR #11). iOS only; the Android port still pairs by position.",
+                "hash": "5c1c12dda691",
+                "at": "2026-11-25T12:29+00:00",
                 "pr_url": "https://github.com/moonyose/LaneSync/pull/10",
-                "verified": "xcodebuild build of scheme LaneSync on an iPhone 17 Pro simulator (iOS 26.5, Xcode 26.6) succeeded. A standalone copy of RunPairing.pair passed 5 cases, including the reported 5-starts/4-clips first-run DNF. Fixes from the reviewer subagent are in. No screenshot: the review flow needs a real two-device or watch session. The project has no unit-test target.",
-                "next_step": "On the phone, with one runner: start 3 runs and let nobody cross on run 1. End the session, select the 2 real clips and tap Assign times. Expect 'Run 1 marked DNF' and normal sprint times on runs 2 and 3."
+                "verified": "git log origin/HEAD shows 09c24f8 and 58bb47b. ReconcileView.swift on main contains the DNF banner and the re-pair action. The 1.0.4 simulator build from t136 compiled this code.",
+                "next_step": "Once 1.0.4 is on TestFlight, test on the phone with one runner. Start 3 runs, and have nobody cross the line on run 1. Select the 2 real clips and tap Assign times. Expect 'Run 1 marked DNF' and normal times on runs 2 and 3."
               }
             },
             {
@@ -283,7 +283,16 @@
               "notes": "Nov 24 ~7:27 PM ET: TestFlight build on main (09c24f8, merge of PR #10 t134 DNF detection) failed at the Upload to TestFlight step (run 45517941639, https://github.com/moonyose/LaneSync/actions/runs/45517941639). The archive succeeded; Apple rejected it because 1.0.3 is already approved and live: \"Invalid Pre-Release Train. The train version '1.0.3' is closed for new build submissions\" and CFBundleShortVersionString must be higher than the previously approved 1.0.3. MARKETING_VERSION is still 1.0.3. Next: bump to 1.0.4 and re-run the TestFlight workflow so the DNF feature can be tested.",
               "due": null,
               "createdAt": "2026-11-25T07:23:00-05:00",
-              "updatedAt": "2026-11-25T07:23:00-05:00"
+              "updatedAt": "2026-11-25T07:23:00-05:00",
+              "agent": {
+                "status": "pr_opened",
+                "summary": "Bumped MARKETING_VERSION 1.0.3 -> 1.0.4 for the iPhone app and the Watch app (Debug and Release) in LaneSync.xcodeproj. Apple rejected the 09c24f8 upload because train 1.0.3 is closed. The build number is unchanged because CI sets it from a timestamp. Android has its own version and was not changed. testflight.yml runs on push to main and the pbxproj is not in paths-ignore, so merging the PR uploads the build. Separate issue: the default version on the app-store-submit.yml form is still 1.0.2.",
+                "hash": "537e2b613ebf",
+                "at": "2026-11-25T12:29+00:00",
+                "pr_url": "https://github.com/moonyose/LaneSync/pull/11",
+                "verified": "xcodebuild build of scheme LaneSync for the iPhone 17 Pro simulator (iOS 26.5, Xcode 26.6) succeeded. The built app and the embedded Watch app Info.plists both show CFBundleShortVersionString 1.0.4. A repo-wide search finds no other 1.0.3. The reviewer subagent found no defects. Not verified: the actual TestFlight upload, which only CI can do.",
+                "next_step": "Merge PR #11. Then check that the TestFlight workflow on main goes green. If it didn't start, run Actions > TestFlight > Run workflow. Once processing finishes, install 1.0.4 from TestFlight."
+              }
             }
           ],
           "updatedAt": "2026-11-25T07:23:00-05:00"
