@@ -2132,9 +2132,9 @@
           "tasks": [
             {
               "id": "t16",
-              "text": "Plato reading: Minos + Republic, Book 1 (Week 12, ~30 pp)",
+              "text": "Plato reading: Republic, Book 2 (Week 13, ~20 pp)",
               "done": false,
-              "notes": "Then Week 13: Republic, Book 2",
+              "notes": "Then Week 14: Republic, Books 3\u20134",
               "due": null,
               "attachments": [
                 {
@@ -2145,9 +2145,9 @@
             },
             {
               "id": "t17",
-              "text": "Torah reading: Vayishlach",
+              "text": "Torah reading: Vayeshev",
               "done": false,
-              "notes": "Last read Vayetze",
+              "notes": "Last read Vayishlach",
               "due": null,
               "attachments": [
                 {
